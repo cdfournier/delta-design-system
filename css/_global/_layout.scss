@@ -1,0 +1,90 @@
+// MAIN
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0 auto;
+  padding: 4rem 1rem 1rem;
+}
+
+
+// LAYOUT
+.row {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+  .column {
+    margin: 0;
+    padding: 1rem;
+    figure:last-of-type {padding: 1rem 0 0;}
+    figure:first-of-type {padding: 0 0 1rem;}
+  }
+}
+
+.row.wide {
+  width: 100%;
+  padding: 1rem;
+}
+
+@media (min-width: 48rem) {
+  .row {
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .row.wide {
+    .column {width: 100%}
+  }
+  .row.golden.left {
+    .column {width: 61.8%;}
+    .column:last-of-type {width: 38.2%}    
+  }
+  .row.golden.right {
+    .column {width: 61.8%;}
+    .column:first-of-type {width: 38.2%}
+  }
+  .row.fifty .column {width: 50%}
+  .row.thirds .column {width: 33.3%;}
+  .row.fourths .column {width: 50%;}
+}
+
+@media (min-width: 64rem) {
+  .row.fourths .column {width: 25%;}
+}
+
+
+// FIGURE
+figure {
+  display: grid;
+  margin: 0;
+  padding: 1rem 0;
+  figcaption + p {padding: 0 0 0.8rem;}
+  pre {
+    margin: 0;
+    padding: 0 0 1rem;
+    overflow-x: auto;
+  }
+}
+
+
+// GOLDEN RATIO GUIDE
+@media (min-width: 48rem) {
+  .row.golden.left.guide,
+  .row.golden.right.guide {
+    min-height: calc(94vw / 1.61803398875);
+    background-position: center top;
+    background-repeat: repeat-y;
+    background-size: cover;
+    .row {background: none;}
+  }
+  .row.golden.left.guide {background-image: url(../assets/images/golden-ratio-right-rail_wo-circles.png);}
+  .row.golden.right.guide {background-image: url(../assets/images/golden-ratio-left-rail_wo-circles.png);}
+}
+
+.row.thirds, .row.fourths {
+  min-height: inherit;
+  background: none;
+}

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- css -->
+    <link href="../../../assets/css/normalize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ovo|Montserrat:400,700&display=swap" rel="stylesheet">
+    <link href="../../../assets/css/aos.css" rel="stylesheet">
+    <link href="../../../css/master.css" rel="stylesheet">
+  </head>
+  <body data-aos="fade-in">
+
+    <!-- scripts -->
+    <script src="../../assets/scripts/jquery.min.js"></script>
+    <script src="../../assets/modernizr.min.js"></script>
+    <script src="../../assets/scripts/headroom.js"></script>
+    <script src="../../assets/scripts/aos.js"></script>
+    <script src="../../scripts/site.js"></script>
+    <script>
+      AOS.init({duration: 600});
+    </script>
+    <script>
+      var myElement = document.querySelector('header');
+      var headroom  = new Headroom(myElement);
+      headroom.init(); 
+    </script>
+  </body>
+</html>

@@ -1,0 +1,246 @@
+html {
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  text-rendering: optimizeLegibility;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000000; }
+
+@media (min-width: 77.5rem) {
+  html {
+    font-size: 20px; } }
+
+@media (min-width: 90rem) {
+  html {
+    font-size: 22px; } }
+
+body, .body {
+  width: 100%;
+  height: auto;
+  overflow-x: hidden;
+  margin: 0 auto;
+  padding: 0; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+a {
+  text-decoration: none;
+  color: #df3a32;
+  cursor: pointer;
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+a:hover, a:focus {
+  color: #003442; }
+
+img {
+  width: 100%;
+  height: auto;
+  margin: 0; }
+
+/* 
+  NOTES:  
+  All headline classes are set to a 1.2 minor third type scale
+  Body copy is set to a 1.25 major third type scale
+*/
+h1, h2, h3, p {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-style: normal; }
+
+h1, h2, h3, h4 {
+  padding: 1rem 0 0;
+  font-family: "Ovo", serif;
+  font-weight: normal;
+  line-height: 1.1; }
+
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child {
+  padding: 0; }
+
+h1 {
+  font-size: 3.157rem; }
+
+h2 {
+  font-size: 2.369rem; }
+
+h3 {
+  font-size: 1.777rem; }
+
+h4 {
+  font-size: 1.333rem; }
+
+p {
+  width: 100%;
+  max-width: 39rem;
+  padding: 0.8rem 0;
+  font-size: 1rem; }
+
+p:last-child {
+  padding: 0.8rem 0 0; }
+
+strong, em, b {
+  font-style: normal;
+  font-weight: 600; }
+
+small {
+  font-size: 0.8rem; }
+
+h1.center, h2.center, h3.center, p.center, strong.center, em.center, small.center {
+  margin: 0 auto;
+  text-align: center; }
+
+h1.right, h2.right, h3.right, p.right, strong.right, em.right, small.right {
+  text-align: right; }
+
+@media (min-width: 48rem) {
+  h1.title {
+    font-size: 4.209rem; }
+  h1.title + p {
+    font-size: 1.5rem; } }
+
+ul, ol {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0.8rem 0 0.8rem 1.5rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  text-align: left; }
+
+ul {
+  list-style-type: disc; }
+
+ol {
+  list-style-type: decimal; }
+
+ul li, ol li {
+  width: 100%;
+  padding: 0 0 0.8rem 0.25rem; }
+
+ul li:last-child, ol li:last-child {
+  padding: 0 0 0 0.25rem; }
+
+p a, small a, li a {
+  font-weight: 600; }
+
+figcaption {
+  font-size: 0.64rem;
+  font-weight: 600;
+  text-transform: uppercase; }
+
+pre {
+  line-height: 1.2; }
+
+p > code {
+  font-size: 1rem;
+  white-space: nowrap; }
+
+p > code.other {
+  padding: 0.125rem 0.25rem; }
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0 auto;
+  padding: 4rem 1rem 1rem; }
+
+.row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0; }
+  .row .column {
+    margin: 0;
+    padding: 1rem; }
+    .row .column figure:last-of-type {
+      padding: 1rem 0 0; }
+    .row .column figure:first-of-type {
+      padding: 0 0 1rem; }
+
+.row.wide {
+  width: 100%;
+  padding: 1rem; }
+
+@media (min-width: 48rem) {
+  .row {
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap; }
+  .row.wide .column {
+    width: 100%; }
+  .row.golden.left .column {
+    width: 61.8%; }
+  .row.golden.left .column:last-of-type {
+    width: 38.2%; }
+  .row.golden.right .column {
+    width: 61.8%; }
+  .row.golden.right .column:first-of-type {
+    width: 38.2%; }
+  .row.fifty .column {
+    width: 50%; }
+  .row.thirds .column {
+    width: 33.3%; }
+  .row.fourths .column {
+    width: 50%; } }
+
+@media (min-width: 64rem) {
+  .row.fourths .column {
+    width: 25%; } }
+
+figure {
+  display: grid;
+  margin: 0;
+  padding: 1rem 0; }
+  figure figcaption + p {
+    padding: 0 0 0.8rem; }
+  figure pre {
+    margin: 0;
+    padding: 0 0 1rem;
+    overflow-x: auto; }
+
+@media (min-width: 48rem) {
+  .row.golden.left.guide,
+  .row.golden.right.guide {
+    min-height: calc(94vw / 1.61803398875);
+    background-position: center top;
+    background-repeat: repeat-y;
+    background-size: cover; }
+    .row.golden.left.guide .row,
+    .row.golden.right.guide .row {
+      background: none; }
+  .row.golden.left.guide {
+    background-image: url(../assets/images/golden-ratio-right-rail_wo-circles.png); }
+  .row.golden.right.guide {
+    background-image: url(../assets/images/golden-ratio-left-rail_wo-circles.png); } }
+
+.row.thirds, .row.fourths {
+  min-height: inherit;
+  background: none; }
