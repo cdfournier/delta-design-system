@@ -2,10 +2,10 @@
 An open-source design system framework that can be used to build sites, apps, and prototypes responsively and quickly.
 
 ## Style
-- [Layout]
-- [Typography]
 - [Colors]
 - [Icons]
+- [Layout]
+- [Typography]
 
 ## Atoms
 - [Alerts]
