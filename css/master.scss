@@ -2,10 +2,19 @@
 @import "_global/typography";
 @import "_global/layout";
 
-@import "_atoms/navigation";
 @import "_atoms/buttons";
+@import "_atoms/alerts";
+@import "_atoms/blockquotes";
+@import "_atoms/images";
+@import "_atoms/form-elements";
 
+@import "_molecules/navigation";
+@import "_molecules/banners";
 @import "_molecules/cards";
+@import "_molecules/accordions";
+@import "_molecules/search";
 
-@import "_organisms/header";
-@import "_organisms/footer";
+@import "_organisms/headers";
+@import "_organisms/footers";
+@import "_organisms/authentication";
+@import "_organisms/forgot-password";

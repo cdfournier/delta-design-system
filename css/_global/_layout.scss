@@ -5,8 +5,10 @@ main {
   width: 100%;
   overflow-x: hidden;
   margin: 0 auto;
-  padding: 4rem 1rem 1rem;
+  padding: 5.5rem 1rem 0;
 }
+
+main > section.row:first-of-type {padding: 0 1rem 1rem;}
 
 
 // LAYOUT
@@ -17,6 +19,7 @@ main {
 	margin: 0;
 	padding: 0;
   .column {
+    width: 100%;
     margin: 0;
     padding: 1rem;
     figure:last-of-type {padding: 1rem 0 0;}
@@ -40,11 +43,11 @@ main {
   }
   .row.golden.left {
     .column {width: 61.8%;}
-    .column:last-of-type {width: 38.2%}    
+    .column:last-child {width: 38.2%}    
   }
   .row.golden.right {
     .column {width: 61.8%;}
-    .column:first-of-type {width: 38.2%}
+    .column:first-child {width: 38.2%}
   }
   .row.fifty .column {width: 50%}
   .row.thirds .column {width: 33.3%;}

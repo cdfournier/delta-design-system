@@ -5,6 +5,7 @@ An open-source design system framework that can be used to build sites, apps, an
 - [Layout]
 - [Typography]
 - [Colors]
+- [Icons]
 
 ## Atoms
 - [Alerts]
@@ -22,13 +23,12 @@ An open-source design system framework that can be used to build sites, apps, an
 
 ## Organisms
 - [Authentication]
-- [Footer]
+- [Footers]
 - [Forgot Password]
-- [Header]
+- [Headers]
 
 ## Downloads
 - [Sketch Library]
-- [Icons]
 
 ## Current Dependencies
 - [jQuery](https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js)
