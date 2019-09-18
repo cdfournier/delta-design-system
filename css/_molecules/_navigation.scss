@@ -8,9 +8,12 @@ nav {
     padding: 0;
     border: none;
     background-color: transparent;
-    svg {fill: $primary;}
+    svg {
+      width: 2rem;
+      height: 2rem;
+      fill: $primary;
+    }
     svg.menu-toggle-open {
-      width: 1.5rem;
       @include transition (width, 0.25s, ease);
     }
     svg.menu-toggle-close {
@@ -34,7 +37,7 @@ nav {
 nav.open {
   button.menu-toggle {
     svg.menu-toggle-open {width: 0;}
-    svg.menu-toggle-close {width: 1.5rem;}
+    svg.menu-toggle-close {width: 2rem;}
   }
   ul {
     height: 100vh;

@@ -266,9 +266,10 @@ nav {
     border: none;
     background-color: transparent; }
     nav button.menu-toggle svg {
+      width: 2rem;
+      height: 2rem;
       fill: #df3a32; }
     nav button.menu-toggle svg.menu-toggle-open {
-      width: 1.5rem;
       -webkit-transition: width 0.25s ease 0s;
       -moz-transition: width 0.25s ease 0s;
       -ms-transition: width 0.25s ease 0s;
@@ -302,7 +303,7 @@ nav.open button.menu-toggle svg.menu-toggle-open {
   width: 0; }
 
 nav.open button.menu-toggle svg.menu-toggle-close {
-  width: 1.5rem; }
+  width: 2rem; }
 
 nav.open ul {
   height: 100vh;
