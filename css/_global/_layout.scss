@@ -33,6 +33,7 @@ main > section.row:first-of-type {padding: 0 1rem 1rem;}
   width: 100%;
   padding: 1rem;
   .column {padding: 1rem 0;}
+  .column:last-child {padding: 1rem 0 0;}
 }
 
 @media (min-width: 48rem) {

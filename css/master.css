@@ -148,7 +148,7 @@ ol {
 ul li, ol li {
   width: 100%;
   max-width: 39rem;
-  padding: 0 0 0.8rem 0.25rem; }
+  padding: 0 0 1rem 0.25rem; }
 
 ul li:last-child, ol li:last-child {
   padding: 0 0 0 0.25rem; }
@@ -166,7 +166,8 @@ pre {
 
 p > code, li > code {
   font-size: 1rem;
-  white-space: nowrap; }
+  white-space: nowrap;
+  background-color: #e9eae9; }
 
 p > code.other {
   padding: 0.125rem 0.25rem; }
@@ -206,6 +207,8 @@ main > section.row:first-of-type {
   padding: 1rem; }
   .row.wide .column {
     padding: 1rem 0; }
+  .row.wide .column:last-child {
+    padding: 1rem 0 0; }
 
 @media (min-width: 48rem) {
   .row {
