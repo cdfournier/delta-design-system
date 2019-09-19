@@ -9,6 +9,30 @@
     <link href="https://fonts.googleapis.com/css?family=Ovo|Montserrat:400,700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
     <link href="../../css/master.css" rel="stylesheet">
+    <style>
+      p.header-one, p.header-two, p.header-three, p.header-four {
+        padding: 0.25rem 0 0;
+        font-family: 'Ovo', serif;
+        font-weight: normal;
+        line-height: 1.1;
+      }
+      p.header-one {font-size: 3.157rem;}
+      p.header-two {font-size: 2.369rem;}
+      p.header-three {font-size: 1.777rem;}
+      p.header-four {font-size: 1.333rem;}
+      p.header-one.title + p > code {
+        font-size: inherit;
+        white-space: normal;
+      }
+    
+      @media (min-width: 48rem) {
+        p.header-one.title {font-size: 4.209rem;}
+        p.header-one.title + p {
+          max-width: 48rem;
+          font-size: 1.5rem;
+        }
+      }
+    </style>
   </head>
   <body data-aos="fade-in">
     <header>
@@ -30,7 +54,93 @@
     </header>
     <main>
       <section class="introduction row wide">
-        <h1 class="title">Trypography</h1>
+        <h1 class="title">Typography</h1>
+        <p>Typography expresses hierarchy and enables improved consumption of content. Good typography, by definition, helps content fulfill its purpose of communication.</p>
+        <p>There are four essential properties to typography:</p>
+        <ul>
+          <li>Font family</li>
+          <li>Font size</li>
+          <li>Line height</li>
+          <li>Line width</li>
+        </ul>
+        <h2>Font Family</h2>
+        <p>The Delta Design System uses <a href="https://fonts.google.com/specimen/Ovo" target="_blank">Ovo</a> as our headline font family and <a href="https://fonts.google.com/specimen/Montserrat" target="_blank">Montserrat</a> as our body copy and all-purpose font family. The font weights we use for each depend on the use case, but are intended to provide the most legible option for each situation.</p>
+        <h2>Font Size</h2>
+        <p>Font size is another established part of the system we use to provide a subtle but powerful consistency and rhythm to the way in which different aspects of our typography renders at multiple screen sizes. We utilize a <a href="https://type-scale.com/" target="_blank">type scale</a> to help enable this consistency.</p>
+        <ul>
+          <li>Headline font sizes are set to a 1.200 Minor Third type scale</li>
+          <li>Body copy font sizes are set to a 1.250 Major Third type scale</li>
+        </ul>
+        <h2>Line Height</h2>
+        <p>Typography also has both a vertical and horizontal rhythm to improve readability. Type scale enables us to combine font size and line height to provide a better, more consistent user experience.</p>
+        <p>You should notice that the Delta Design System has a consistent vertical rhythm to copy. Line heights are set differently for headline and body copy, but both are optimized to make it easier to consume content. This is also true of the spacing between headlines and body copy, as well as copy and other elements on the screen.</p>
+        <h2>Line Length</h2>
+        <p>Long lines of text have been proven to be more difficult to read. Browser window width and typographic measure are linked: the wider the viewport, the more characters per line. Keeping in mind that a range of 45-75 characters per line is generally accepted as safe for comfortable reading, there are a couple of things that can be done to avoid extra long lines of text.</p>
+        <p>The first thing we do is control the length or width of each line. We can test our container width by dropping some lorem text into the layout with two asterisks. The first marks the 45th character, and the second marks the 75th. See below at various widths.</p>
+        <p style="font-weight: 600;">Lorem ipsum dolor sit amet, consectetur adip*isicing elit, sed do eiusmod *tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>If at any point the two asterisks appear on the same line of text, we know it’s time to either decrease the width of the container or increase the font size.</p>
+        <h2>Relative Units</h2>
+        <p>The other thing the Delta Design System uses to improve legibility and prevent extra long lines of text is use the <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Values_and_units" target="_blank">rem relative unit</a> to define things like font size, margins, and padding. Using rem means that all size is relative to the base <code class="other">&lt;html&gt;</code> element (instead of each individual parent container).</p>
+        <p>This helps to ensure that our designs are relative to font or viewport size, meaning that the layout will continue to look correct even if the user drastically increases or decreases the font size via their browser.</p>
+      </section>
+      <section class="typography-system row wide">
+        <h2>Typography System</h2>
+        <p>The Delta Design System typography system engineered for semantics, legibility, consistency, flexibility, and simplicity. Too often typography becomes a complex web of customizations, and we want to avoid that situation. Here are some of the basics of the typography system:</p>
+        <ul>
+          <li><code>&lt;h1&gt;&mdash;&lt;h4&gt;</code> section headings</li>
+          <li><code>&lt;p&gt;</code> for body copy</li>
+          <li><code>&lt;ol&gt;</code> and <code>&lt;ul&gt;</code> for ordered and unordered lists</li>
+          <li><code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, and <code>&lt;bold&gt;</code> for importance and emphasis. Please consult the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong#Usage_notes" target="_blank">Usage notes</a> by <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong$history" target="_blank">Mozilla Contributors</a> for more detail on how to use <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, and <code>&lt;bold&gt;</code>.</li>
+          <li>All text is left-aligned by default. You can change the horizontal alignment of text by adding either a <code>center</code> or <code>right</code> class to any text element.</li>
+        </ul>
+        <p>Also, here are a couple of things to avoid:</p>
+        <ul>
+          <li>Do not skip heading levels: always start from <code>&lt;h1&gt;</code>, then <code>&lt;h2&gt;</code> and so on. Semantic headings use are part of the document outline and proper use is critical for adaptive technologies. </li>
+          <li>Do not use heading tags to resize text. Use CSS for general-purpose resizing.</li>
+          <li>Avoid using <code>&lt;h1&gt;</code> more than once on a page</li>
+        </ul>
+      </section>
+      <section class="typography-styles row wide">
+        <h2>Typography Styles</h2>
+        <figure class="column">
+          <figcaption>h1 title</figcaption>
+          <p class="header-one title">A quick brown fox jumps over the lazy dog.</p>
+          <p>On screens wider than 48rem, the first paragraph after an <code>&lt;h1 class=&quot;title&quot;&gt;</code> is set to a larger font size compared to normal <code>&lt;p&gt;</code> copy to better match the increased size of the <code>&lt;h1 class=&quot;title&quot;&gt;</code> heading.</p>
+        </figure>
+        <figure class="column">
+          <figcaption>h1</figcaption>
+          <p class="header-one">A quick brown fox jumps over the lazy dog.</p>
+        </figure>
+        <figure class="column">
+          <figcaption>h2</figcaption>
+          <p class="header-two">A quick brown fox jumps over the lazy dog.</p>
+        </figure>
+        <figure class="column">
+          <figcaption>h3</figcaption>
+          <p class="header-three">A quick brown fox jumps over the lazy dog.</p>
+        </figure>
+        <figure class="column">
+          <figcaption>h4</figcaption>
+          <p class="header-four">A quick brown fox jumps over the lazy dog.</p>
+        </figure>
+        <figure class="column">
+          <figcaption>p</figcaption>
+          <p style="padding: 0;">A quick brown fox jumps over the lazy dog.</p>
+        </figure>
+        <figure class="column">
+          <figcaption>ol</figcaption>
+          <ol style="padding: 0.5rem 0 0.8rem 1.5rem;">
+            <li>A quick brown fox jumps over the lazy dog.</li>
+            <li>A quick brown fox jumps over the lazy dog.</li>
+          </ol>
+        </figure>
+        <figure class="column">
+          <figcaption>ul</figcaption>
+          <ul style="padding: 0.5rem 0 0.8rem 1.5rem;">
+            <li>A quick brown fox jumps over the lazy dog.</li>
+            <li>A quick brown fox jumps over the lazy dog.</li>
+          </ul>
+        </figure>
       </section>
     </main>
     <footer>

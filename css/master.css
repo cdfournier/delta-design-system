@@ -62,7 +62,7 @@ img {
   All headline classes are set to a 1.2 minor third type scale
   Body copy is set to a 1.25 major third type scale
 */
-h1, h2, h3, p {
+h1, h2, h3, h4, p {
   display: block;
   width: 100%;
   margin: 0;
@@ -108,7 +108,7 @@ p > cite {
 
 strong, em, b {
   font-style: normal;
-  font-weight: 600; }
+  font-weight: 700; }
 
 small {
   font-size: 0.8rem; }
@@ -136,7 +136,7 @@ ul, ol {
   margin: 0 auto;
   padding: 0.8rem 0 0.8rem 1.5rem;
   font-size: 1rem;
-  line-height: 1.25;
+  line-height: 1.75;
   text-align: left; }
 
 ul {
@@ -147,6 +147,7 @@ ol {
 
 ul li, ol li {
   width: 100%;
+  max-width: 39rem;
   padding: 0 0 0.8rem 0.25rem; }
 
 ul li:last-child, ol li:last-child {
@@ -163,7 +164,7 @@ figcaption {
 pre {
   line-height: 1.2; }
 
-p > code {
+p > code, li > code {
   font-size: 1rem;
   white-space: nowrap; }
 
@@ -195,10 +196,16 @@ main > section.row:first-of-type {
       padding: 1rem 0 0; }
     .row .column figure:first-of-type {
       padding: 0 0 1rem; }
+  .row .row .column:first-child {
+    padding: 1rem 1rem 1rem 0; }
+  .row .row .column:last-child {
+    padding: 1rem 0 1rem 1rem; }
 
 .row.wide {
   width: 100%;
   padding: 1rem; }
+  .row.wide .column {
+    padding: 1rem 0; }
 
 @media (min-width: 48rem) {
   .row {

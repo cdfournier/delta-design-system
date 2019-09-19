@@ -25,11 +25,14 @@ main > section.row:first-of-type {padding: 0 1rem 1rem;}
     figure:last-of-type {padding: 1rem 0 0;}
     figure:first-of-type {padding: 0 0 1rem;}
   }
+  .row .column:first-child {padding: 1rem 1rem 1rem 0;}
+  .row .column:last-child {padding: 1rem 0 1rem 1rem;}
 }
 
 .row.wide {
   width: 100%;
   padding: 1rem;
+  .column {padding: 1rem 0;}
 }
 
 @media (min-width: 48rem) {
