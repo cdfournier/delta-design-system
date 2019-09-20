@@ -61,10 +61,16 @@ footer:before {
 }
 
 @media (min-width: 48rem) {
-  footer nav ul li {
-    font-size: 0.8rem;
-    text-align: left;
+  footer {
+    padding: 0 2rem 2rem;
+    nav ul li {
+      font-size: 0.8rem;
+      text-align: left;
+    }
+    .row {align-items: center;}
+    .copyright.row {
+      padding: 1rem 0 0;
+      p {text-align: left;}
+    }
   }
-  footer .row {align-items: center;}
-  footer .copyright.row p {text-align: left;}
 }

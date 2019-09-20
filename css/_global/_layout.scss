@@ -23,17 +23,18 @@ main > section.row:first-of-type {padding: 0 1rem 1rem;}
     margin: 0;
     padding: 1rem;
     figure:last-of-type {padding: 1rem 0 0;}
-    figure:first-of-type {padding: 0 0 1rem;}
+//     figure:first-of-type {padding: 0 0 1rem;}
   }
+/*
   .row .column:first-child {padding: 1rem 1rem 1rem 0;}
   .row .column:last-child {padding: 1rem 0 1rem 1rem;}
+*/
 }
 
 .row.wide {
   width: 100%;
   padding: 1rem;
   .column {padding: 1rem 0;}
-  .column:last-child {padding: 1rem 0 0;}
 }
 
 @media (min-width: 48rem) {
@@ -56,10 +57,18 @@ main > section.row:first-of-type {padding: 0 1rem 1rem;}
   .row.fifty .column {width: 50%}
   .row.thirds .column {width: 33.3%;}
   .row.fourths .column {width: 50%;}
+  .row .column:first-child {padding: 1rem 1rem 1rem 0;}
+  .row .column:last-child {padding: 1rem 0 1rem 1rem;}
+  .row.fourths .column:nth-of-type(2n) {padding: 1rem 0 1rem 1rem;}
+  .row.fourths .column:nth-of-type(3n) {padding: 1rem 1rem 1rem 0;}
+  .row.fourths .column:nth-of-type(4n) {padding: 1rem 0 1rem 1rem;}
 }
 
 @media (min-width: 64rem) {
   .row.fourths .column {width: 25%;}
+  .row.fourths .column:nth-of-type(2n) {padding: 1rem;}
+  .row.fourths .column:nth-of-type(3n) {padding: 1rem;}
+  .row.fourths .column:nth-of-type(4n) {padding: 1rem 0 1rem 1rem;}
 }
 
 
@@ -72,26 +81,12 @@ figure {
   pre {
     margin: 0;
     padding: 0 0 1rem;
+    padding: 0;
     overflow-x: auto;
   }
 }
 
-
-// GOLDEN RATIO GUIDE
 @media (min-width: 48rem) {
-  .row.golden.left.guide,
-  .row.golden.right.guide {
-    min-height: calc(94vw / 1.61803398875);
-    background-position: center top;
-    background-repeat: repeat-y;
-    background-size: cover;
-    .row {background: none;}
-  }
-  .row.golden.left.guide {background-image: url(../assets/images/golden-ratio-right-rail_wo-circles.png);}
-  .row.golden.right.guide {background-image: url(../assets/images/golden-ratio-left-rail_wo-circles.png);}
-}
-
-.row.thirds, .row.fourths {
-  min-height: inherit;
-  background: none;
+  .row figure.column,
+  .row figure.column:last-child {padding: 1rem 0;}
 }
