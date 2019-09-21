@@ -310,7 +310,8 @@ nav {
     -o-transition: all 0.325s ease 0s;
     transition: all 0.325s ease 0s; }
     nav ul li {
-      padding: 1rem 0; }
+      padding: 1rem 0;
+      font-weight: 600; }
   nav ul li:last-child {
     padding: 1rem 0; }
 
@@ -390,6 +391,8 @@ footer {
   width: 100%;
   margin: 0;
   padding: 0 1rem 1rem; }
+  footer h1 {
+    display: none; }
   footer nav ul {
     flex-direction: column;
     height: auto;
@@ -408,6 +411,7 @@ footer {
     footer .logo svg {
       width: 6rem; }
     footer .logo h1 {
+      display: block;
       font-size: 1.5rem; }
   footer .github {
     display: flex;

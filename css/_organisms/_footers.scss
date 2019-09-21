@@ -6,6 +6,7 @@ footer {
   width: 100%;
   margin: 0;
   padding: 0 1rem 1rem;
+  h1 {display: none;}
   nav ul {
     flex-direction: column;
     height: auto;
@@ -23,7 +24,10 @@ footer {
     width: 100%;
     padding: 0 0 0.5rem;
     svg {width: 6rem;}
-    h1 {font-size: 1.5rem;}
+    h1 {
+      display: block;
+      font-size: 1.5rem;
+    }
   }
   .github {
     display: flex;

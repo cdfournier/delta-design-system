@@ -29,7 +29,10 @@ nav {
     list-style-type: none;
     transform: translateX(-100rem);
     @include transition (all, 0.325s, ease);
-    li {padding: 1rem 0;}
+    li {
+      padding: 1rem 0;
+      font-weight: 600;
+    }
   }
   ul li:last-child {padding: 1rem 0;}
 }
