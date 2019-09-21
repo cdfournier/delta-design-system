@@ -231,6 +231,8 @@ main > section.row:first-of-type {
     width: 50%; }
   .row.thirds .column {
     width: 33.3%; }
+  .row.thirds .column:nth-of-type(2n) {
+    padding: 1rem; }
   .row.fourths .column {
     width: 50%; }
   .row .column:first-child {
@@ -422,8 +424,14 @@ footer {
     footer .github a {
       line-height: 1; }
     footer .github a svg {
-      fill: #df3a32; }
-    footer .github a:hover svg {
+      fill: #df3a32;
+      -webkit-transition: all 0.25s ease 0s;
+      -moz-transition: all 0.25s ease 0s;
+      -ms-transition: all 0.25s ease 0s;
+      -o-transition: all 0.25s ease 0s;
+      transition: all 0.25s ease 0s; }
+    footer .github a:hover svg,
+    footer .github a:focus svg {
       fill: #003442; }
     footer .github svg {
       width: 2rem;

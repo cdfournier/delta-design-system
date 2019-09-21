@@ -36,8 +36,12 @@ footer {
     width: 100%;
     text-align: center;
     a {line-height: 1;}
-    a svg {fill: $primary;}
-    a:hover svg {fill: $secondary;}
+    a svg {
+      fill: $primary;
+      @include transition (all, 0.25s, ease);
+    }
+    a:hover svg,
+    a:focus svg {fill: $secondary;}
     svg {
       width: 2rem;
       height: 2rem;

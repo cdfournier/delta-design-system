@@ -56,6 +56,7 @@ main > section.row:first-of-type {padding: 0 1rem 1rem;}
   }
   .row.fifty .column {width: 50%}
   .row.thirds .column {width: 33.3%;}
+  .row.thirds .column:nth-of-type(2n) {padding: 1rem;}
   .row.fourths .column {width: 50%;}
   .row .column:first-child {padding: 1rem 1rem 1rem 0;}
   .row .column:last-child {padding: 1rem 0 1rem 1rem;}
