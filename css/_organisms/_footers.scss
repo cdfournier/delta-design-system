@@ -10,6 +10,7 @@ footer {
   nav ul {
     flex-direction: column;
     height: auto;
+    padding: 0;
     transform: translateX(0);
     li {
       padding: 0 0 1rem;
@@ -17,6 +18,7 @@ footer {
     }
     li:last-child {padding: 0;}
   }
+  .row nav.column ul:last-child {padding: 0;}
   .logo {
     display: flex;
     flex-direction: column;

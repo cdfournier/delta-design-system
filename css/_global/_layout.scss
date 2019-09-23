@@ -23,14 +23,17 @@ main > section.row:first-of-type {padding: 0 1rem 1rem;}
     margin: 0;
     padding: 1rem;
     p:first-child {padding: 0 0 0.8rem;}
-    figure:last-of-type {padding: 1rem 0 0;}
+    ul:last-child, ol:last-child {padding: 0.8rem 0 0 1.5rem;}
   }
 }
 
 .row.wide {
+  flex-direction: column;
   width: 100%;
   padding: 1rem;
   .column {padding: 1rem 0;}
+  ul:last-child, ol:last-child {padding: 0.8rem 0 0 1.5rem;}
+  ul.no-bullets:last-child {padding: 0.8rem 0 0.8rem 0;}
 }
 
 @media (min-width: 48rem) {
@@ -73,7 +76,7 @@ main > section.row:first-of-type {padding: 0 1rem 1rem;}
 figure {
   display: grid;
   margin: 0;
-  padding: 1rem 0;
+  padding: 0;
   figcaption + p {padding: 0 0 0.8rem;}
   pre {
     margin: 0;
@@ -81,9 +84,4 @@ figure {
     padding: 0;
     overflow-x: auto;
   }
-}
-
-@media (min-width: 48rem) {
-  .row figure.column,
-  .row figure.column:last-child {padding: 1rem 0;}
 }
