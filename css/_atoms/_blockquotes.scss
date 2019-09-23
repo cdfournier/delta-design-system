@@ -1,1 +1,36 @@
 // BLOCKQUOTES
+blockquote {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 1rem auto;
+  padding: 1rem;
+  border: 1px solid $lt-gray;
+  p {
+    padding: 0 0 0.8rem;
+    font-weight: 600;
+    cite {font-size: 0.8rem;}
+  }
+  p:last-child {padding: 0;}
+}
+
+blockquote:before {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 3rem;
+  height: 3rem;
+  font-family: $font-head;
+  font-size: 6rem;
+  color: $lt-gray;
+  line-height: 1.1;
+  text-align: center;
+  background-color: $white;
+  transform: translate(-50%, -60%);
+  content: "\201C";
+}
+
+@media (min-width: 64rem) {
+  blockquote {width: 90%;}
+}

@@ -11,7 +11,88 @@
     <link href="../../css/master.css" rel="stylesheet">
   </head>
   <body data-aos="fade-in">
+    <header>
+      <h1>Header</h1>
+      <nav aria-labelledby="header-navigation">
+        <button class="menu-toggle" aria-expanded="false" aria-controls="header-navigation">
+          <svg class="menu-toggle-open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></svg>
+          <svg class="menu-toggle-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+        </button>
+        <ul>
+          <li><a href="../../index.html">Overview</a></li>
+          <li><a href="../../atoms/atoms.html">Atoms</a></li>
+          <li><a href="../../molecules/molecules.html">Molecules</a></li>
+          <li><a href="../../organisms/organisms.html">Organisms</a></li>
+          <li><a href="../../style/style.html">Style</a></li>
+          <li><a href="../../downloads/downloads.html">Downloads</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="row wide">
+        <h1 class="title">Blockquotes</h1>
+        <p>The blockquote element represents a section that is quoted from another source. Content inside a blockquote must be quoted from another source, whose address, if it has one, may be cited in the cite attribute.</p>
+        <p><cite><a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-blockquote-element" target="_blank">HTML Living Standard</a></cite></p>
+        <p>As with other modules in the Delta Design System, we separate the function of a blockquote from the presentation of a blockquote. In other words, don't think of blockquotes only in terms of their style, but also what they represent in the absence of style.</p>
+      </section>
+      <section class="row wide">
+        <h1>Blockquote Example</h1>
+        <div class="row fifty">
+          <div class="column">
+            <blockquote cite="https://alistapart.com/article/responsive-web-design/">
+              <p>Now more than ever, we’re designing work meant to be viewed along a gradient of different experiences.</p>
+              <p><cite><a href="https://alistapart.com/article/responsive-web-design/" target="_blank">Ethan Marcotte, Responsive Web Design</a></cite></p>
+            </blockquote>
+          </div>
+          <div class="column"></div>
+        </div>
+        <div class="row fifty">
+          <div class="column">
+            <p>Searching the internet, there are many different ways to mark-up blockquotes. The Delta Design System mostly adheres to the approach illustrated by <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote" target="_blank">Mozilla web docs</a>:</p>
+            <ul>
+              <li>We add a <code>&lt;cite&gt;</code> to the opening <code>&lt;blockquote&gt;</code> tag.</li>
+              <li>We use <code>p</code> tags inside the <code>&lt;blockquote&gt;</code> tag.</li>
+              <li>We do not, however, use a <code>&lt;footer&gt;</code> tag in our blockquote.</li>
+            </ul>
+          </div>
+          <figure class="column">
+            <figcaption>html</figcaption>
+<pre><code>&lt;blockquote cite=&quot;https://alistapart.com/article/responsive-web-design/&quot;&gt;
+  &lt;p&gt;Now more than ever, we&rsquo;re designing work meant to be viewed along a gradient of different experiences.&lt;/p&gt;
+  &lt;p&gt;&lt;cite&gt;&lt;a href=&quot;https://alistapart.com/article/responsive-web-design/&quot; target=&quot;_blank&quot;&gt;Ethan Marcotte, Responsive Web Design&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</code></pre>
+          </figure>
+        </div>
+      </section>
 
+    </main>
+    <footer>
+      <h1>Footer</h1>
+      <div class="row fifty">
+        <nav class="column" aria-labelledby="footer-navigation">
+          <ul>
+            <li><a href="../../index.html">Overview</a></li>
+            <li><a href="../../atoms/atoms.html">Atoms</a></li>
+            <li><a href="../../molecules/molecules.html">Molecules</a></li>
+            <li><a href="../../organisms/organisms.html">Organisms</a></li>
+            <li><a href="../../style/style.html">Style</a></li>
+            <li><a href="../../downloads/downloads.html">Downloads</a></li>
+          </ul>
+        </nav>
+        <section class="meta-content column">
+          <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 796"><defs><style>.cls-1{fill:#01232d;}.cls-2{fill:#013342;}</style></defs><title>delta-design-system-logo</title><polygon id="right-side" class="cls-1" points="512 796 1024 796 512 0 512 796"/><polygon id="left-side" class="cls-2" points="0 796 512 796 512 0 0 796"/></svg>
+            <h1 class="center">The Delta Design System</h1>
+          </div>
+          <div class="github">
+            <a href="https://github.com/cdfournier/delta-design-system" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 2C6.475 2 2 6.475 2 12a9.994 9.994 0 0 0 6.838 9.488c.5.087.687-.213.687-.476 0-.237-.013-1.024-.013-1.862-2.512.463-3.162-.612-3.362-1.175-.113-.288-.6-1.175-1.025-1.413-.35-.187-.85-.65-.013-.662.788-.013 1.35.725 1.538 1.025.9 1.512 2.338 1.087 2.912.825.088-.65.35-1.087.638-1.337-2.225-.25-4.55-1.113-4.55-4.938 0-1.088.387-1.987 1.025-2.688-.1-.25-.45-1.275.1-2.65 0 0 .837-.262 2.75 1.026a9.28 9.28 0 0 1 2.5-.338c.85 0 1.7.112 2.5.337 1.912-1.3 2.75-1.024 2.75-1.024.55 1.375.2 2.4.1 2.65.637.7 1.025 1.587 1.025 2.687 0 3.838-2.337 4.688-4.562 4.938.362.312.675.912.675 1.85 0 1.337-.013 2.412-.013 2.75 0 .262.188.574.688.474A10.016 10.016 0 0 0 22 12c0-5.525-4.475-10-10-10z"/></svg></a>
+          </div>
+        </section>
+      </div>
+      <div class="copyright row wide">
+        <p>&copy; 2019 Delta Design System</p>
+      </div>
+    </footer>
     <!-- scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>

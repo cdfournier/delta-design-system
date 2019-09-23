@@ -78,6 +78,8 @@ ul, ol {
   text-align: left;
 }
 
+ul:last-child, ol:last-child {padding: 0.8rem 0 0 1.5rem;}
+
 ul {list-style-type: disc;}
 
 ol {list-style-type: decimal;}
