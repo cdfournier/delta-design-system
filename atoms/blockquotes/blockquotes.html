@@ -34,20 +34,14 @@
         <p>The blockquote element represents a section that is quoted from another source. Content inside a blockquote must be quoted from another source, whose address, if it has one, may be cited in the cite attribute.</p>
         <p><cite><a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-blockquote-element" target="_blank">HTML Living Standard</a></cite></p>
         <p>As with other modules in the Delta Design System, we separate the function of a blockquote from the presentation of a blockquote. In other words, don't think of blockquotes only in terms of their style, but also what they represent in the absence of style.</p>
-      </section>
-      <section class="row wide">
-        <h1>Blockquote Example</h1>
+        <h2>Blockquote Example</h2>
+        <blockquote cite="https://alistapart.com/article/responsive-web-design/">
+          <p>Now more than ever, we’re designing work meant to be viewed along a gradient of different experiences.</p>
+          <p><cite><a href="https://alistapart.com/article/responsive-web-design/" target="_blank">Ethan Marcotte, Responsive Web Design</a></cite></p>
+        </blockquote>
         <div class="row fifty">
           <div class="column">
-            <blockquote cite="https://alistapart.com/article/responsive-web-design/">
-              <p>Now more than ever, we’re designing work meant to be viewed along a gradient of different experiences.</p>
-              <p><cite><a href="https://alistapart.com/article/responsive-web-design/" target="_blank">Ethan Marcotte, Responsive Web Design</a></cite></p>
-            </blockquote>
-          </div>
-        </div>
-        <div class="row fifty">
-          <div class="column">
-            <p>Searching the internet, there are many different ways to mark-up blockquotes. The Delta Design System mostly adheres to the approach illustrated by <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote" target="_blank">Mozilla web docs</a>:</p>
+            <p>Searching the internet, there are many different ways to mark-up blockquotes. The Delta Design System mostly adheres to the approach illustrated by <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote" target="_blank">MDN web docs</a>:</p>
             <ul>
               <li>We add a <code>&lt;cite&gt;</code> to the opening <code>&lt;blockquote&gt;</code> tag.</li>
               <li>We use <code>p</code> tags inside the <code>&lt;blockquote&gt;</code> tag.</li>
