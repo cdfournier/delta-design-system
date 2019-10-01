@@ -19,15 +19,9 @@ html {
   color: $black;
 }
 
-@media (min-width: 77.5rem) {
-html {
-  font-size: 20px;
-}}
+@media (min-width: 77.5rem) {html {font-size: 20px;}}
 
-@media (min-width: 90rem) {
-html {
-  font-size: 22px;
-}}
+@media (min-width: 90rem) {html {font-size: 22px;}}
 
 body, .body {
   width: 100%;

@@ -282,14 +282,13 @@ button, .button {
   max-width: 100%;
   max-height: 2.5rem;
   overflow: hidden;
-  margin: 0;
+  margin: 1rem 0 0;
   padding: 0.75rem 1.25rem;
   border: 1px solid #df3a32;
   border-radius: 0.25rem;
   font-family: "Montserrat", sans-serif;
   font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 1px;
   text-align: center;
   text-decoration: none;
   text-overflow: ellipsis;
@@ -361,6 +360,110 @@ button.secondary.reverse:focus, .button.secondary.reverse:focus {
   button.secondary.reverse:focus svg, .button.secondary.reverse:focus svg {
     fill: #ffffff; }
 
+.alerts {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 500;
+  width: 100%;
+  margin: 0; }
+  .alerts .error, .alerts .success, .alerts .confirm {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 1rem;
+    color: #ffffff;
+    -webkit-transform: translateY(-10rem);
+    -moz-transform: translateY(-10rem);
+    -ms-transform: translateY(-10rem);
+    -o-transform: translateY(-10rem);
+    transform: translateY(-10rem);
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    -moz-transition: all 0.5s ease-in-out 0s;
+    -ms-transition: all 0.5s ease-in-out 0s;
+    -o-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s; }
+    .alerts .error p, .alerts .success p, .alerts .confirm p {
+      margin: 0;
+      padding: 0 0.5rem;
+      max-width: none;
+      line-height: 1.5; }
+    .alerts .error svg, .alerts .success svg, .alerts .confirm svg {
+      width: 1.75rem;
+      height: 1.75rem;
+      fill: #ffffff; }
+    .alerts .error svg.close, .alerts .success svg.close, .alerts .confirm svg.close {
+      cursor: pointer; }
+    .alerts .error .buttons, .alerts .success .buttons, .alerts .confirm .buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      .alerts .error .buttons button, .alerts .success .buttons button, .alerts .confirm .buttons button {
+        justify-content: center;
+        min-width: 4rem;
+        max-height: none;
+        padding: 0.5rem 1rem;
+        border-color: #ffffff;
+        border-radius: 0.25rem;
+        font-family: "Montserrat", sans-serif; }
+      .alerts .error .buttons button.no, .alerts .success .buttons button.no, .alerts .confirm .buttons button.no {
+        margin: 0 0 0.25rem;
+        color: #ffffff;
+        background-color: #c00c00; }
+      .alerts .error .buttons button.no:hover, .alerts .error .buttons button.no:focus, .alerts .success .buttons button.no:hover, .alerts .success .buttons button.no:focus, .alerts .confirm .buttons button.no:hover, .alerts .confirm .buttons button.no:focus {
+        color: #c00c00;
+        background-color: #ffffff; }
+      .alerts .error .buttons button.yes, .alerts .success .buttons button.yes, .alerts .confirm .buttons button.yes {
+        margin: 0.25rem 0 0;
+        border-color: #ffffff;
+        color: #c00c00;
+        background-color: #ffffff; }
+      .alerts .error .buttons button.yes:hover, .alerts .error .buttons button.yes:focus, .alerts .success .buttons button.yes:hover, .alerts .success .buttons button.yes:focus, .alerts .confirm .buttons button.yes:hover, .alerts .confirm .buttons button.yes:focus {
+        color: #ffffff;
+        background-color: #c00c00; }
+  .alerts .error, .alerts .confirm {
+    background-color: #c00c00; }
+  .alerts .success {
+    background-color: #008000; }
+    .alerts .success p {
+      padding: 0 0.5rem 0 0; }
+  .alerts .confirm p {
+    width: calc(100% - 5.75rem); }
+  .alerts .error.show, .alerts .success.show, .alerts .confirm.show {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0); }
+
+@media (min-width: 40rem) {
+  .alerts .confirm p {
+    width: calc(100% - 10.25rem); }
+  .alerts .confirm .buttons {
+    flex-direction: row; }
+    .alerts .confirm .buttons button.no {
+      margin: 0 0.25rem 0 0; }
+    .alerts .confirm .buttons button.yes {
+      margin: 0 0 0 0.25rem; } }
+
+@media (min-width: 48rem) {
+  .alerts .error p, .alerts .confirm p {
+    padding: 0 1rem;
+    font-size: 1.25rem; }
+  .alerts .error svg, .alerts .confirm svg {
+    width: 2.1875rem;
+    height: 2.1875rem; }
+  .alerts .success p {
+    padding: 0 1rem 0 0;
+    font-size: 1.25rem; } }
+
 blockquote {
   display: block;
   position: relative;
@@ -390,8 +493,12 @@ blockquote:before {
   line-height: 1.1;
   text-align: center;
   background-color: #ffffff;
-  transform: translate(-50%, -60%);
-  content: "\201C"; }
+  content: "\201C";
+  -webkit-transform: translate(-50%, -60%);
+  -moz-transform: translate(-50%, -60%);
+  -ms-transform: translate(-50%, -60%);
+  -o-transform: translate(-50%, -60%);
+  transform: translate(-50%, -60%); }
 
 @media (min-width: 64rem) {
   blockquote {
@@ -869,6 +976,10 @@ nav {
     height: 0;
     padding: 0;
     list-style-type: none;
+    -webkit-transform: translateX(-100rem);
+    -moz-transform: translateX(-100rem);
+    -ms-transform: translateX(-100rem);
+    -o-transform: translateX(-100rem);
     transform: translateX(-100rem);
     -webkit-transition: all 0.325s ease 0s;
     -moz-transition: all 0.325s ease 0s;
@@ -890,6 +1001,10 @@ nav.open button.menu-toggle svg.menu-toggle-close {
 nav.open ul {
   height: 100vh;
   padding: 1rem 0 0;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
   transform: translateX(0); }
 
 @media (min-width: 48rem) {
@@ -901,6 +1016,10 @@ nav.open ul {
       flex-direction: row;
       height: auto;
       padding: 0;
+      -webkit-transform: translateX(0);
+      -moz-transform: translateX(0);
+      -ms-transform: translateX(0);
+      -o-transform: translateX(0);
       transform: translateX(0); }
       nav ul li {
         width: auto;
