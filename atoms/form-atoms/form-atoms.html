@@ -45,7 +45,6 @@
       <section class="row wide">
         <h1 class="title">Form Atoms</h1>
         <p>The &lt;form&gt; element represents a document section that contains interactive controls enabling users to submit or retrieve information.</p>
-        <p>Let's first review all of the components of forms in the Delta Design System, and then we'll wrap up by reviewing the <code>&lt;form&gt;</code> structure itself.</p>
         <h2>Inputs</h2>
         <p>The <code>&lt;input&gt;</code> element is used to create interactive controls for forms in order to accept or retrieve data from/for the user. The function or value of an <code>&lt;input&gt;</code> depends on the <code>value</code> of its type <code>attribute</code>. For more information on <code>&lt;input&gt;</code> values, please see the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_<input>_types" target="_blank">MDN web docs</a>.</p>
         <p>As with other elements in the Delta Design System, we try to be as semantic and use the fewest elements as possible to create our forms. We use css transitions to move the <code>&lt;label&gt;</code> out of place and expose the <code>:placeholder</code> when the <code>&lt;input&gt;</code> is in the <code>:focus</code> state.</p>
@@ -186,6 +185,48 @@
 <pre><code>&lt;fieldset class=&quot;radio&quot;&gt;
   &lt;label for=&quot;radio-one&quot; class=&quot;radio&quot;&gt;Label&lt;input type=&quot;radio&quot; name=&quot;radio&quot; id=&quot;radio-one&quot;&gt;&lt;/label&gt;
   &lt;label for=&quot;radio-two&quot; class=&quot;radio&quot;&gt;Label&lt;input type=&quot;radio&quot; name=&quot;radio&quot; id=&quot;radio-two&quot;&gt;&lt;/label&gt;
+  &lt;span class=&quot;error-message&quot;&gt;Error message goes here&lt;/span&gt;
+&lt;/fieldset&gt;</code></pre>
+            </figure>
+          </div>
+        </div>
+        <div class="row fifty">
+          <div class="column">
+            <h3>Toggle Switches</h3>
+            <form action="" method="">
+              <legend>Toggle Switches</legend>
+              <fieldset class="toggle">
+                <label for="toggle" class="toggle">Label<input type="checkbox" name="toggle" class="toggle" id="toggle"></label>
+                <span class="error-message">Error message goes here</span>
+              </fieldset>
+            </form>
+          </div>
+          <div class="column">
+            <figure>
+              <figcaption>html</figcaption>
+<pre><code>&lt;fieldset class=&quot;checkbox&quot;&gt;
+  &lt;label for=&quot;toggle&quot; class=&quot;toggle&quot;&gt;Label&lt;input type=&quot;checkbox&quot; name=&quot;toggle&quot; class=&quot;toggle&quot; id=&quot;toggle&quot;&gt;&lt;/label&gt;
+  &lt;span class=&quot;error-message&quot;&gt;Error message goes here&lt;/span&gt;
+&lt;/fieldset&gt;</code></pre>
+            </figure>
+          </div>
+        </div>
+        <div class="row fifty">
+          <div class="column">
+            <h3>Buttons</h3>
+            <form action="" method="">
+              <legend>Buttons</legend>
+              <fieldset class="button-input">
+                <input type="button" name="button" id="button" value="button">
+                <span class="error-message">Error message goes here</span>
+              </fieldset>
+            </form>
+          </div>
+          <div class="column">
+            <figure>
+              <figcaption>html</figcaption>
+<pre><code>&lt;fieldset class=&quot;button-input&quot;&gt;
+  &lt;input type=&quot;button&quot; name=&quot;button&quot; id=&quot;button&quot; value=&quot;button&quot;&gt;
   &lt;span class=&quot;error-message&quot;&gt;Error message goes here&lt;/span&gt;
 &lt;/fieldset&gt;</code></pre>
             </figure>
