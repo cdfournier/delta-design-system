@@ -650,7 +650,7 @@ label.radio {
   cursor: pointer; }
 
 input[type="radio"] {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -658,9 +658,11 @@ input[type="radio"] {
   top: 0;
   left: 0.125rem;
   width: 1.25rem;
+  max-width: 1.25rem;
+  min-width: 1.25rem;
   height: 1.25rem;
   max-height: 1.25rem;
-  min-height: inherit;
+  min-height: 1.25rem;
   margin: 0;
   border: 1px solid #000000;
   border-radius: 100%;
@@ -679,8 +681,8 @@ input[type="radio"]:checked:before {
   display: block;
   position: relative;
   margin: 0;
-  width: 60%;
-  height: 60%;
+  width: 50%;
+  height: 50%;
   border-radius: 100%;
   background-color: #003442;
   content: ""; }
@@ -733,6 +735,7 @@ input.toggle[type="checkbox"]:after {
   left: 0;
   margin: 0;
   background-image: url(../assets/icons/close-circle-fill.svg);
+  background-position-x: left;
   background-repeat: no-repeat;
   background-size: contain;
   content: "";
@@ -743,8 +746,8 @@ input.toggle[type="checkbox"]:after {
   transition: all 0.25s ease 0s; }
 
 input.toggle[type="checkbox"]:checked:after {
-  left: calc(100% - 1.125rem);
   background-image: url(../assets/icons/checkbox-circle-fill.svg);
+  background-position-x: right;
   background-repeat: no-repeat;
   background-size: contain;
   content: ""; }
