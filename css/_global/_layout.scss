@@ -53,6 +53,7 @@ main > section.row:first-of-type {padding: 0 1rem 1rem;}
     .column {width: 61.8%;}
     .column:first-child {width: 38.2%}
   }
+  .row.wide .column:last-child {padding: 1rem 0 0;}
   .row.fifty .column {width: 50%}
   .row.thirds .column {width: 33.3%;}
   .row.thirds .column:nth-of-type(2n) {padding: 1rem;}

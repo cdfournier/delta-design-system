@@ -1,1 +1,65 @@
 // BANNERS
+.banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: calc(100% + 2rem);
+  margin: 0 -1rem;
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 2rem;
+  }
+}
+
+.banner:first-of-type {margin: 1rem -1rem 0;}
+.banner:last-of-type {margin: 0 -1rem 1rem;}
+
+.banner.tall {min-height: 90vh;}
+.banner.short {min-height: 45vh;}
+
+.banner.left {align-items: flex-start;}
+.banner.right {align-items: flex-end;}
+
+@media (min-width: 48rem) {
+  .banner {
+    .text {width: 55%;}
+  }
+}
+
+
+// PHOTO BACKGROUNDS
+.bg-photo {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-photo .overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $black;
+}
+
+.bg-photo.center {background-position: center center;}
+.bg-photo.center-bottom {background-position: center bottom;}
+.bg-photo.center-top {background-position: center top;}
+.bg-photo.left-bottom {background-position: left bottom;}
+.bg-photo.left-center {background-position: left center;}
+.bg-photo.left-top {background-position: left top;}
+.bg-photo.right-bottom {background-position: right bottom;}
+.bg-photo.right-center {background-position: right center;}
+.bg-photo.right-top {background-position: right top;}
+.bg-photo.dark {color: $white;}
+.bg-photo.light {color: $black;}
