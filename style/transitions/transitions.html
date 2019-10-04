@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Transitions | Delta Design System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ovo|Montserrat:400,700&display=swap" rel="stylesheet">
+    <link href="../../css/master.css" rel="stylesheet">
+  </head>
+  <body>
+    <main>
+      <article>
+        <section class="row wide">
+          <div class="column">
+            <h1 class="title">Transitions</h1>
+            <p>CSS transitions provide a way to interpolate CSS property values when they change as a result of underlying property changes. This provides an easy way to do simple animation.</p>
+            <p>Transitions enable you to define the transition between two states of an element. Learn more about the details of transitions and animations at the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition" target="_blank">MDN web docs</a>. In the meantime, here's how we've defined transitions for the Delta Design System:</p>
+            <figure>
+              <figcaption>scss</figcaption>
+<pre><code>@mixin transition($property: all, $duration: 0.25s, $timing: ease, $delay: 0s) {
+  -webkit-transition: $property $duration $timing $delay;
+  -moz-transition: $property $duration $timing $delay;
+  -ms-transition: $property $duration $timing $delay;
+  -o-transition: $property $duration $timing $delay;
+  transition: $property $duration $timing $delay;
+};</code></pre>
+            </figure>
+            <p>All of that translates&mdash;basically&mdash;to:</p>
+            <figure>
+              <figcaption>css</figcaption>
+<pre><code>transition: all 0.25s ease 0s;</code></pre>
+            </figure>
+            <p>We use that transition for pretty much everything, from <code>:focus</code> and <code>:hover</code> states, to opening and closing mobile menus, accordions, and more.</p>
+            <p>We may sometimes change the duration or the easing method, but for the most part we've chosen this setting as the most effective and subtle means of adding a little interaction to the experience.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+    <!-- scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="https://unpkg.com/headroom.js@0.9.4/dist/headroom.js"></script>
+    <script src="../../assets/scripts/site.js"></script>
+<!--
+    <script>
+      var myElement = document.querySelector('header');
+      var headroom  = new Headroom(myElement);
+      headroom.init(); 
+    </script>
+-->
+  </body>
+</html>
