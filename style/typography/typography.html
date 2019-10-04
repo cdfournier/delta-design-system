@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Ovo|Montserrat:400,600&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ovo|Montserrat:400,700&display=swap" rel="stylesheet">
     <link href="../../css/master.css" rel="stylesheet">
     <style>
       p.header-one, p.header-two, p.header-three, p.header-four {
@@ -34,158 +33,116 @@
       }
     </style>
   </head>
-  <body data-aos="fade-in">
-    <header>
-      <h1>Header</h1>
-      <nav aria-labelledby="header-navigation">
-        <button class="menu-toggle" aria-expanded="false" aria-controls="header-navigation">
-          <svg class="menu-toggle-open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></svg>
-          <svg class="menu-toggle-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
-        </button>
-        <ul>
-          <li><a href="../../index.html">Overview</a></li>
-          <li><a href="../../atoms/atoms.html">Atoms</a></li>
-          <li><a href="../../molecules/molecules.html">Molecules</a></li>
-          <li><a href="../../organisms/organisms.html">Organisms</a></li>
-          <li><a href="../../style/style.html">Style</a></li>
-          <li><a href="../../downloads/downloads.html">Downloads</a></li>
-        </ul>
-      </nav>
-    </header>
+  <body>
     <main>
-      <section class="row wide">
-        <h1 class="title">Typography</h1>
-        <p>Typography expresses hierarchy and enables improved consumption of content. Good typography, by definition, helps content fulfill its purpose of communication.</p>
-        <p>There are four essential properties to typography:</p>
-        <ul>
-          <li>Font family</li>
-          <li>Font size</li>
-          <li>Line height</li>
-          <li>Line width</li>
-        </ul>
-        <h2>Font Family</h2>
-        <p>The Delta Design System uses <a href="https://fonts.google.com/specimen/Ovo" target="_blank">Ovo</a> as our headline font family and <a href="https://fonts.google.com/specimen/Montserrat" target="_blank">Montserrat</a> as our body copy and all-purpose font family. The font weights we use for each depend on the use case, but are intended to provide the most legible option for each situation. We use the following Sass declarations in our style sheets to set the font-family:</p>
-        <ul>
-          <li><code>font-family: $font-head</code></li>
-          <li><code>font-family: $font-body</code></li>
-        </ul>
-        <h2>Font Size</h2>
-        <p>Font size is another established part of the system we use to provide a subtle but powerful consistency and rhythm to the way in which different aspects of our typography renders at multiple screen sizes. We utilize a <a href="https://type-scale.com/" target="_blank">type scale</a> to help enable this consistency.</p>
-        <ul>
-          <li>Headline font sizes are set to a 1.200 Minor Third type scale</li>
-          <li>Body copy font sizes are set to a 1.250 Major Third type scale</li>
-        </ul>
-        <h2>Line Height</h2>
-        <p>Typography also has both a vertical and horizontal rhythm to improve readability. Type scale enables us to combine font size and line height to provide a better, more consistent user experience.</p>
-        <p>You should notice that the Delta Design System has a consistent vertical rhythm to copy. Line heights are set differently for headline and body copy, but both are optimized to make it easier to consume content. This is also true of the spacing between headlines and body copy, as well as copy and other elements on the screen.</p>
-        <h2>Line Length</h2>
-        <p>Long lines of text have been proven to be more difficult to read. Browser window width and typographic measure are linked: the wider the viewport, the more characters per line. Keeping in mind that a range of 45-75 characters per line is generally accepted as safe for comfortable reading, there are a couple of things that can be done to avoid extra long lines of text.</p>
-        <p>The first thing we do is control the length or width of each line. We can test our container width by dropping some lorem text into the layout with two asterisks. The first marks the 45th character, and the second marks the 75th. See below at various widths.</p>
-        <p style="font-weight: 600;">Lorem ipsum dolor sit amet, consectetur adip*isicing elit, sed do eiusmod *tempor incididunt ut labore et dolore magna aliqua.</p>
-        <p>If at any point the two asterisks appear on the same line of text, we know it’s time to either decrease the width of the container or increase the font size.</p>
-        <h2>Relative Units</h2>
-        <p>The other thing the Delta Design System uses to improve legibility and prevent extra long lines of text is use the <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Values_and_units" target="_blank">rem relative unit</a> to define things like font size, margins, and padding. Using rem means that all size is relative to the base <code class="other">&lt;html&gt;</code> element (instead of each individual parent container).</p>
-        <p>This helps to ensure that our designs are relative to font or viewport size, meaning that the layout will continue to look correct even if the user drastically increases or decreases the font size via their browser.</p>
-      </section>
-      <section class="row wide">
-        <h2>Typography System</h2>
-        <p>The Delta Design System typography system engineered for semantics, legibility, consistency, flexibility, and simplicity. Too often typography becomes a complex web of customizations, and we want to avoid that situation. Here are some of the basics of the typography system:</p>
-        <ul>
-          <li><code>&lt;h1&gt;&mdash;&lt;h4&gt;</code> section headings</li>
-          <li><code>&lt;p&gt;</code> for body copy</li>
-          <li><code>&lt;ol&gt;</code> and <code>&lt;ul&gt;</code> for ordered and unordered lists</li>
-          <li><code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, and <code>&lt;bold&gt;</code> for importance and emphasis. Please consult the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong#Usage_notes" target="_blank">Usage notes</a> by <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong$history" target="_blank">Mozilla Contributors</a> for more detail on how to use <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, and <code>&lt;bold&gt;</code>.</li>
-          <li>All text is left-aligned by default. You can change the horizontal alignment of text by adding either a <code>.center</code> or <code>.right</code> class to any text element.</li>
-        </ul>
-        <p>Also, here are a couple of things to avoid:</p>
-        <ul>
-          <li>Do not skip heading levels: always start from <code>&lt;h1&gt;</code>, then <code>&lt;h2&gt;</code> and so on. Semantic headings use are part of the document outline and proper use is critical for adaptive technologies. </li>
-          <li>Do not use heading tags to resize text. Use CSS for general-purpose resizing.</li>
-        </ul>
-      </section>
-      <section class="row wide">
-        <h2>Typography Examples</h2>
-        <figure class="column">
-          <figcaption>h1 title</figcaption>
-          <p class="header-one title">A quick brown fox jumps over the lazy dog.</p>
-          <p>On screens wider than 48rem, the first paragraph after an <code>&lt;h1 class=&quot;title&quot;&gt;</code> is set to a larger font size compared to normal <code>&lt;p&gt;</code> copy to better match the increased size of the <code>&lt;h1 class=&quot;title&quot;&gt;</code> heading.</p>
-        </figure>
-        <figure class="column">
-          <figcaption>h1</figcaption>
-          <p class="header-one">A quick brown fox jumps over the lazy dog.</p>
-        </figure>
-        <figure class="column">
-          <figcaption>h2</figcaption>
-          <p class="header-two">A quick brown fox jumps over the lazy dog.</p>
-        </figure>
-        <figure class="column">
-          <figcaption>h3</figcaption>
-          <p class="header-three">A quick brown fox jumps over the lazy dog.</p>
-        </figure>
-        <figure class="column">
-          <figcaption>h4</figcaption>
-          <p class="header-four">A quick brown fox jumps over the lazy dog.</p>
-        </figure>
-        <figure class="column">
-          <figcaption>p</figcaption>
-          <p style="padding: 0;">A quick brown fox jumps over the lazy dog.</p>
-        </figure>
-        <figure class="column">
-          <figcaption>ol</figcaption>
-          <ol style="padding: 0.5rem 0 0.8rem 1.5rem;">
-            <li>A quick brown fox jumps over the lazy dog.</li>
-            <li>A quick brown fox jumps over the lazy dog.</li>
-          </ol>
-        </figure>
-        <figure class="column">
-          <figcaption>ul</figcaption>
-          <ul style="padding: 0.5rem 0 0 1.5rem;">
-            <li>A quick brown fox jumps over the lazy dog.</li>
-            <li>A quick brown fox jumps over the lazy dog.</li>
-          </ul>
-        </figure>
-      </section>
-    </main>
-    <footer>
-      <h1>Footer</h1>
-      <div class="row fifty">
-        <nav class="column" aria-labelledby="footer-navigation">
-          <ul>
-            <li><a href="../../index.html">Overview</a></li>
-            <li><a href="../../atoms/atoms.html">Atoms</a></li>
-            <li><a href="../../molecules/molecules.html">Molecules</a></li>
-            <li><a href="../../organisms/organisms.html">Organisms</a></li>
-            <li><a href="../../style/style.html">Style</a></li>
-            <li><a href="../../downloads/downloads.html">Downloads</a></li>
-          </ul>
-        </nav>
-        <section class="meta-content column">
-          <div class="logo">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 796"><defs><style>.cls-1{fill:#01232d;}.cls-2{fill:#013342;}</style></defs><title>delta-design-system-logo</title><polygon id="right-side" class="cls-1" points="512 796 1024 796 512 0 512 796"/><polygon id="left-side" class="cls-2" points="0 796 512 796 512 0 0 796"/></svg>
-            <h1 class="center">The Delta Design System</h1>
-          </div>
-          <div class="github">
-            <a href="https://github.com/cdfournier/delta-design-system" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 2C6.475 2 2 6.475 2 12a9.994 9.994 0 0 0 6.838 9.488c.5.087.687-.213.687-.476 0-.237-.013-1.024-.013-1.862-2.512.463-3.162-.612-3.362-1.175-.113-.288-.6-1.175-1.025-1.413-.35-.187-.85-.65-.013-.662.788-.013 1.35.725 1.538 1.025.9 1.512 2.338 1.087 2.912.825.088-.65.35-1.087.638-1.337-2.225-.25-4.55-1.113-4.55-4.938 0-1.088.387-1.987 1.025-2.688-.1-.25-.45-1.275.1-2.65 0 0 .837-.262 2.75 1.026a9.28 9.28 0 0 1 2.5-.338c.85 0 1.7.112 2.5.337 1.912-1.3 2.75-1.024 2.75-1.024.55 1.375.2 2.4.1 2.65.637.7 1.025 1.587 1.025 2.687 0 3.838-2.337 4.688-4.562 4.938.362.312.675.912.675 1.85 0 1.337-.013 2.412-.013 2.75 0 .262.188.574.688.474A10.016 10.016 0 0 0 22 12c0-5.525-4.475-10-10-10z"/></svg></a>
+      <article>
+        <section class="row wide">
+          <div class="column">
+            <h1 class="title">Typography</h1>
+            <p>Typography expresses hierarchy and enables improved consumption of content. Good typography, by definition, helps content fulfill its purpose of communication.</p>
+            <p>There are four essential properties to typography:</p>
+            <ul>
+              <li>Font family</li>
+              <li>Font size</li>
+              <li>Line height</li>
+              <li>Line width</li>
+            </ul>
+            <h2>Font Family</h2>
+            <p>The Delta Design System uses <a href="https://fonts.google.com/specimen/Ovo" target="_blank">Ovo</a> as our headline font family and <a href="https://fonts.google.com/specimen/Montserrat" target="_blank">Montserrat</a> as our body copy and all-purpose font family.</p>
+            <h2>Font Size</h2>
+            <p>Font size is another established part of the system we use to provide a subtle but powerful consistency and rhythm to the way in which different aspects of our typography renders at multiple screen sizes. We utilize a <a href="https://type-scale.com/" target="_blank">type scale</a> to help enable this consistency.</p>
+            <ul>
+              <li>Headline font sizes are set to a 1.200 Minor Third type scale</li>
+              <li>Body copy font sizes are set to a 1.250 Major Third type scale</li>
+            </ul>
+            <h2>Line Height</h2>
+            <p>Typography also has both a vertical and horizontal rhythm to improve readability. Type scale enables us to combine font size and line height to provide a better, more consistent user experience.</p>
+            <p>You should notice that the Delta Design System has a consistent vertical rhythm to copy. Line heights are set differently for headline and body copy, but both are optimized to make it easier to consume content. This is also true of the spacing between headlines and body copy, as well as copy and other elements on the screen.</p>
+            <h2>Line Length</h2>
+            <p>Long lines of text have been proven to be more difficult to read. Browser window width and typographic measure are linked: the wider the viewport, the more characters per line. Keeping in mind that a range of 45-75 characters per line is generally accepted as safe for comfortable reading, there are a couple of things that can be done to avoid extra long lines of text.</p>
+            <p>The first thing we do is control the length or width of each line. We can test our container width by dropping some lorem text into the layout with two asterisks. The first marks the 45th character, and the second marks the 75th. See below at various widths.</p>
+            <p style="font-weight: 600;">Lorem ipsum dolor sit amet, consectetur adip*isicing elit, sed do eiusmod *tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>If at any point the two asterisks appear on the same line of text, we know it’s time to either decrease the width of the container or increase the font size.</p>
+            <h2>Relative Units</h2>
+            <p>The other thing the Delta Design System uses to improve legibility and prevent extra long lines of text is use the <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Values_and_units" target="_blank">rem relative unit</a> to define things like font size, margins, and padding. Using rem means that all size is relative to the base <code class="other">&lt;html&gt;</code> element (instead of each individual parent container).</p>
+            <p>This helps to ensure that our designs are relative to font or viewport size, meaning that the layout will continue to look correct even if the user drastically increases or decreases the font size via their browser.</p>
           </div>
         </section>
-      </div>
-      <div class="copyright row wide">
-        <p>&copy; 2019 Delta Design System</p>
-      </div>
-    </footer>
+        <section class="row wide">
+          <div class="column">
+            <h2>Typography System</h2>
+            <p>The Delta Design System typography system engineered for semantics, legibility, consistency, flexibility, and simplicity. Too often typography becomes a complex web of customizations, and we want to avoid that situation. Here are some of the basics of the typography system:</p>
+            <ul>
+              <li><code>&lt;h1&gt;&mdash;&lt;h4&gt;</code> section headings</li>
+              <li><code>&lt;p&gt;</code> for body copy</li>
+              <li><code>&lt;ol&gt;</code> and <code>&lt;ul&gt;</code> for ordered and unordered lists</li>
+              <li><code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, and <code>&lt;bold&gt;</code> for importance and emphasis. Please consult the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong#Usage_notes" target="_blank">Usage notes</a> by <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong$history" target="_blank">Mozilla Contributors</a> for more detail on how to use <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, and <code>&lt;bold&gt;</code>.</li>
+              <li>All text is left-aligned by default. You can change the horizontal alignment of text by adding either a <code>.center</code> or <code>.right</code> class to any text element.</li>
+            </ul>
+            <p>Also, here are a couple of things to avoid:</p>
+            <ul>
+              <li>Do not skip heading levels: always start from <code>&lt;h1&gt;</code>, then <code>&lt;h2&gt;</code> and so on. Semantic headings use are part of the document outline and proper use is critical for adaptive technologies. </li>
+              <li>Do not use heading tags to resize text. Use CSS for general-purpose resizing.</li>
+            </ul>
+          </div>
+        </section>
+        <section class="row wide">
+          <h2>Typography Examples</h2>
+          <div class="column">
+            <figure>
+              <figcaption>h1 title</figcaption>
+              <p class="header-one title">A quick brown fox jumps over the lazy dog.</p>
+              <p>On screens wider than 48rem, the first paragraph after an <code>&lt;h1 class=&quot;title&quot;&gt;</code> is set to a larger font size compared to normal <code>&lt;p&gt;</code> copy to better match the increased size of the <code>&lt;h1 class=&quot;title&quot;&gt;</code> heading.</p>
+            </figure>
+            <figure>
+              <figcaption>h1</figcaption>
+              <p class="header-one">A quick brown fox jumps over the lazy dog.</p>
+            </figure>
+            <figure>
+              <figcaption>h2</figcaption>
+              <p class="header-two">A quick brown fox jumps over the lazy dog.</p>
+            </figure>
+            <figure>
+              <figcaption>h3</figcaption>
+              <p class="header-three">A quick brown fox jumps over the lazy dog.</p>
+            </figure>
+            <figure>
+              <figcaption>h4</figcaption>
+              <p class="header-four">A quick brown fox jumps over the lazy dog.</p>
+            </figure>
+            <figure>
+              <figcaption>p</figcaption>
+              <p style="padding: 0;">A quick brown fox jumps over the lazy dog.</p>
+            </figure>
+            <figure>
+              <figcaption>ol</figcaption>
+              <ol style="padding: 0.5rem 0 0 1.5rem;">
+                <li>A quick brown fox jumps over the lazy dog.</li>
+                <li>A quick brown fox jumps over the lazy dog.</li>
+              </ol>
+            </figure>
+            <figure>
+              <figcaption>ul</figcaption>
+              <ul style="padding: 0.5rem 0 0 1.5rem;">
+                <li>A quick brown fox jumps over the lazy dog.</li>
+                <li>A quick brown fox jumps over the lazy dog.</li>
+              </ul>
+            </figure>
+          </div>
+        </section>
+      </article>
+    </main>
     <!-- scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <script src="https://unpkg.com/headroom.js@0.9.4/dist/headroom.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="../../assets/scripts/site.js"></script>
-    <script>
-      AOS.init({duration: 600});
-    </script>
+<!--
     <script>
       var myElement = document.querySelector('header');
       var headroom  = new Headroom(myElement);
       headroom.init(); 
     </script>
+-->
   </body>
 </html>

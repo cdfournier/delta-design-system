@@ -1,39 +1,81 @@
-// MAIN
+// LAYOUT
 main {
   display: flex;
   flex-direction: column;
   width: 100%;
   overflow-x: hidden;
   margin: 0 auto;
-  padding: 5.5rem 1rem 0;
+  padding: 0;
 }
 
-main > section.row:first-of-type {padding: 0 1rem 1rem;}
-
-
-// LAYOUT
 .row {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 	margin: 0;
 	padding: 0;
+	.row.wide {padding: 1rem 0;}
+	.row.fifty {padding: 1rem 0;}
+	.row.golden.left {padding: 1rem 0;}
+	.row.golden.right {padding: 1rem 0;}
+	.row.thirds {padding: 1rem 0;}
+	.row.fourths {padding: 1rem 0;}
+}
+
+.row > h1, .row > h2, .row > h3, .row > h4 {padding: 0 1rem 0.25rem;}
+
+.row > h1 + p, .row > h2 + p, .row > h3 + p, .row > h4 + p {padding: 0.25rem 1rem 0;}
+
+.row.wide {
+  width: 100%;
+  padding: 1rem;
   .column {
     width: 100%;
-    margin: 0;
-    padding: 1rem;
-    p:first-child {padding: 0 0 0.8rem;}
-    ul:last-child, ol:last-child {padding: 0.8rem 0 0 1.5rem;}
+    padding: 0 1rem;
   }
 }
 
-.row.wide {
-  flex-direction: column;
+.row.fifty {
   width: 100%;
   padding: 1rem;
-  .column {padding: 1rem 0;}
-  ul:last-child, ol:last-child {padding: 0.8rem 0 0 1.5rem;}
-  ul.no-bullets:last-child {padding: 0.8rem 0 0.8rem 0;}
+  .column {width: 100%;}
+  .column:nth-of-type(1n) {padding: 0 1rem;}
+  .column:nth-of-type(2n) {padding: 1rem 1rem 0;}
+}
+
+.row.golden.left, .row.golden.right {
+  width: 100%;
+  padding: 1rem;
+  .column {width: 100%;}
+  .column:nth-of-type(1n) {padding: 0 1rem;}
+  .column:nth-of-type(2n) {padding: 1rem 1rem 0;}
+}
+
+.row.thirds {
+  width: 100%;
+  padding: 1rem;
+  .column {width: 100%;}
+  .column:nth-of-type(1n) {padding: 0 1rem;}
+  .column:nth-of-type(2n) {padding: 1rem 1rem 0;}
+  .column:nth-of-type(3n) {padding: 1rem 1rem 0;}
+}
+
+.row.fourths {
+  width: 100%;
+  padding: 1rem;
+  .column {width: 100%;}
+  .column:nth-of-type(1n) {padding: 0 1rem;}
+  .column:nth-of-type(2n) {padding: 1rem 1rem 0;}
+  .column:nth-of-type(3n) {padding: 1rem 1rem 0;}
+  .column:nth-of-type(4n) {padding: 1rem 1rem 0;}
+}
+
+.column {
+  h1:first-child,
+  h2:first-child,
+  h3:first-child,
+  h4:first-child,
+  p:first-child {padding: 0;}
 }
 
 @media (min-width: 48rem) {
@@ -42,42 +84,60 @@ main > section.row:first-of-type {padding: 0 1rem 1rem;}
     align-items: flex-start;
     flex-wrap: wrap;
   }
-  .row.wide {
-    .column {width: 100%;}
+  .row.fifty {
+    .column {width: 50%;}
+    .column:nth-of-type(1n) {padding: 0 1rem;}
+    .column:nth-of-type(2n) {padding: 0 1rem;}
   }
   .row.golden.left {
-    .column {width: 61.8%;}
-    .column:last-child {width: 38.2%}    
+    .column:nth-of-type(1n) {
+      width: 62%;
+      padding: 0 1rem;
+    }
+    .column:nth-of-type(2n) {
+      width: 38%;
+      padding: 0 1rem;
+    }
   }
   .row.golden.right {
-    .column {width: 61.8%;}
-    .column:first-child {width: 38.2%}
+    .column:nth-of-type(1n) {
+      width: 38%;
+      padding: 0 1rem;
+    }
+    .column:nth-of-type(2n) {
+      width: 62%;
+      padding: 0 1rem;
+    }
   }
-  .row.wide .column:last-child {padding: 1rem 0 0;}
-  .row.fifty .column {width: 50%}
-  .row.thirds .column {width: 33.3%;}
-  .row.thirds .column:nth-of-type(2n) {padding: 1rem;}
-  .row.fourths .column {width: 50%;}
-  .row .column:first-child {padding: 1rem 1rem 1rem 0;}
-  .row .column:last-child {padding: 1rem 0 1rem 1rem;}
-  .row.fourths .column:nth-of-type(2n) {padding: 1rem 0 1rem 1rem;}
-  .row.fourths .column:nth-of-type(3n) {padding: 1rem 1rem 1rem 0;}
-  .row.fourths .column:nth-of-type(4n) {padding: 1rem 0 1rem 1rem;}
+  .row.thirds {
+    .column {width: 33.3%;}
+    .column:nth-of-type(1n) {padding: 0 1rem;}
+    .column:nth-of-type(2n) {padding: 0 1rem;}
+    .column:nth-of-type(3n) {padding: 0 1rem;}
+  }
+  .row.fourths {
+    .column {width: 50%;}
+    .column:nth-of-type(1n) {padding: 0 1rem 1rem;}
+    .column:nth-of-type(2n) {padding: 0 1rem 1rem;}
+    .column:nth-of-type(3n) {padding: 1rem 1rem 0;}
+    .column:nth-of-type(4n) {padding: 1rem 1rem 0;}
+  }
 }
 
 @media (min-width: 64rem) {
-  .row.fourths .column {width: 25%;}
-  .row.fourths .column:nth-of-type(2n) {padding: 1rem;}
-  .row.fourths .column:nth-of-type(3n) {padding: 1rem;}
-  .row.fourths .column:nth-of-type(4n) {padding: 1rem 0 1rem 1rem;}
+  .row.fourths {
+    .column {width: 25%;}
+    .column:nth-of-type(1n) {padding: 0 1rem;}
+    .column:nth-of-type(2n) {padding: 0 1rem;}
+    .column:nth-of-type(3n) {padding: 0 1rem;}
+    .column:nth-of-type(4n) {padding: 0 1rem;}
+  }
 }
 
-
-// FIGURE
 figure {
   display: grid;
   margin: 0;
-  padding: 0;
+  padding: 1rem 0;
   figcaption + p {padding: 0 0 0.8rem;}
   pre {
     margin: 0;

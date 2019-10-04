@@ -14,14 +14,16 @@ html {
   text-rendering: optimizeLegibility;
   font-size: 16px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: $font-body-norm;
   line-height: 1.5;
   color: $black;
 }
 
+/*
 @media (min-width: 77.5rem) {html {font-size: 20px;}}
 
 @media (min-width: 90rem) {html {font-size: 22px;}}
+*/
 
 body, .body {
   width: 100%;
@@ -36,22 +38,6 @@ body, .body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-
-a {
-  text-decoration: none;
-  color: $primary;
-  cursor: pointer;
-  @include transition(all, 0.25s, ease);
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-a:hover, a:focus {color: $secondary;}
 
 img {
   width: 100%;

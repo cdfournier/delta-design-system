@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Fonts | Delta Design System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ovo|Montserrat:400,700&display=swap" rel="stylesheet">
+    <link href="../../css/master.css" rel="stylesheet">
+  </head>
+  <body>
+    <main>
+      <article>
+        <section class="row wide">
+          <div class="column">
+            <h1 class="title">Fonts</h1>
+            <p>In both traditional typesetting and modern usage, the word &#8220;font&#8221; refers to the delivery mechanism of the typeface design. In traditional typesetting, the font would be made from metal or wood. Today, a font is a digital file.</p>
+            <p><cite><a href="https://en.wikipedia.org/w/index.php?title=Font&oldid=919206214" target="_blank">Font</a> by Wikipedia contributors.</cite></p>
+            <h2>Font Family</h2>
+            <p>The Delta Design System uses <a href="https://fonts.google.com/specimen/Ovo" target="_blank">Ovo</a> as our headline font family and <a href="https://fonts.google.com/specimen/Montserrat" target="_blank">Montserrat</a> as our body copy and all-purpose font family. The font weights we use for each depend on the use case, but are intended to provide the most legible option for each situation. We use the following Sass declarations in our style sheets to set the font-family:</p>
+            <ul>
+              <li><code style="white-space: normal;">$font-head: ("Ovo", serif);</code></li>
+              <li><code style="white-space: normal;">$font-body: ("Montserrat", sans-serif);</code></li>
+              <li><code>$font-body-norm: 400;</code></li>
+              <li><code>$font-body-bold: 700;</code></li>
+            </ul>
+          </div>
+        </section>
+      </article>
+    </main>
+    <!-- scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="https://unpkg.com/headroom.js@0.9.4/dist/headroom.js"></script>
+    <script src="../../assets/scripts/site.js"></script>
+<!--
+    <script>
+      var myElement = document.querySelector('header');
+      var headroom  = new Headroom(myElement);
+      headroom.init(); 
+    </script>
+-->
+  </body>
+</html>

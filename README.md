@@ -3,29 +3,32 @@ An open-source design system framework that can be used to build sites, apps, an
 
 ## Style
 - [Colors]
-- [Icons]
+- [Fonts]
 - [Layout]
 - [Typography]
 
 ## Atoms
-- [Alerts]
-- [Blockquotes]
 - [Buttons]
-- [Form Elements]
+- [Feedback]
+- [Forms]
 - [Images]
 
 ## Molecules
 - [Accordions]
 - [Banners]
+- [Blockquotes]
 - [Cards]
+- [Forms]
+- [Media Grids]
+- [Messaging]
 - [Navigation]
-- [Search]
 
 ## Organisms
-- [Authentication]
+- [Cards]
 - [Footers]
-- [Forgot Password]
+- [Forms]
 - [Headers]
+- [Media Grids]
 
 ## Downloads
 - [Sketch Library]
