@@ -5,7 +5,11 @@ main {
   width: 100%;
   overflow-x: hidden;
   margin: 0 auto;
-  padding: 0;
+  padding: 5rem 0 0;
+}
+
+@media (min-width: 48rem) {
+  main {padding: 4rem 0 0;}
 }
 
 .row {

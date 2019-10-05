@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Fonts | Delta Design System</title>
+    <title>Navigation | Delta Design System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
@@ -36,17 +36,10 @@
       <article>
         <section class="row wide">
           <div class="column">
-            <h1 class="title">Fonts</h1>
-            <p>In both traditional typesetting and modern usage, the word &#8220;font&#8221; refers to the delivery mechanism of the typeface design. In traditional typesetting, the font would be made from metal or wood. Today, a font is a digital file.</p>
-            <p><cite><a href="https://en.wikipedia.org/w/index.php?title=Font&oldid=919206214" target="_blank">Font</a> by Wikipedia contributors.</cite></p>
-            <h2>Font Family</h2>
-            <p>The Delta Design System uses <a href="https://fonts.google.com/specimen/Ovo" target="_blank">Ovo</a> as our headline font family and <a href="https://fonts.google.com/specimen/Montserrat" target="_blank">Montserrat</a> as our body copy and all-purpose font family. The font weights we use for each depend on the use case, but are intended to provide the most legible option for each situation. We use the following Sass declarations in our style sheets to set the font-family:</p>
-            <ul>
-              <li><code style="white-space: normal;">$font-head: ("Ovo", serif);</code></li>
-              <li><code style="white-space: normal;">$font-body: ("Montserrat", sans-serif);</code></li>
-              <li><code>$font-body-norm: 400;</code></li>
-              <li><code>$font-body-bold: 700;</code></li>
-            </ul>
+            <h1 class="title">Navigation</h1>
+            <p>The &lt;nav&gt; element represents a section of a page whose purpose is to provide navigation links, either within the current document or to other documents. Common examples of navigation sections are menus, tables of contents, and indexes.</p>
+            <p><cite><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav" target="_blank">&lt;nav&gt;</a> by <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav$history" target="_blank">Mozilla Contributors</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/2.5/" target="_blank">CC-BY-SA 2.5</a>.</cite></p>
+            <p>According to the <a href="https://a11y-style-guide.com/style-guide/section-navigation.html#kssref-navigation-navigation-basic" target="_blank">A11Y Style Guide</a>, all navigation elements should be inside a <code>&lt;nav&gt;</code> tag. Furthermore, menus should be labeled according to their individual function. The Delta Design System features a <code>&lt;nav&gt;</code> in the <code>&lt;header&gt;</code> and <code>&lt;footer&gt;</code> and uses <code style="white-space: normal;">aria-labelledby="header-navigation"</code> and <code style="white-space: normal;">aria-labelledby="footer-navigation"</code> to provide context and improve accessibility.</p>
           </div>
         </section>
       </article>

@@ -145,9 +145,8 @@ pre {
 }
 
 p > code, li > code {
-  font-size: 1rem;
+  font-family: consolas,"Liberation Mono",courier,monospace;
+  font-size: 0.975rem;
   white-space: nowrap;
   background-color: $lt-gray;
 }
-
-p > code.other {padding: 0.125rem 0.25rem;}
