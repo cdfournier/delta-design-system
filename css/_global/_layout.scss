@@ -163,3 +163,7 @@ figure {
     overflow-x: auto;
   }
 }
+
+@media (min-width: 48rem) {
+  .column > figure {padding: 0 0 1rem;}
+}
