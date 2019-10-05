@@ -5,6 +5,7 @@ An open-source design system framework that can be used to build sites, apps, an
 - [Colors]
 - [Fonts]
 - [Layout]
+- [Transitions]
 - [Typography]
 
 ## Atoms
@@ -42,4 +43,4 @@ An open-source design system framework that can be used to build sites, apps, an
 - [Animate On Scroll](https://github.com/michalsnik/aos/tree/v2)
 - [Headroom](https://wicky.nillia.ms/headroom.js/)
 
-Version 1.0
+Version 1.1

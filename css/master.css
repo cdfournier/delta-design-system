@@ -287,9 +287,11 @@ figure {
     padding: 0;
     overflow-x: auto; }
 
-@media (min-width: 48rem) {
-  .column > figure {
-    padding: 0 0 1rem; } }
+.column > figure:first-child {
+  padding: 0 0 1rem; }
+
+p + figure {
+  padding: 2rem 0 1rem; }
 
 /* 
   NOTES:  
@@ -441,6 +443,11 @@ p > code, li > code {
   font-size: 0.975rem;
   white-space: nowrap;
   background-color: #eeeeee; }
+
+img + figcaption {
+  padding: 0.8rem 0 0;
+  font-size: 0.8rem;
+  text-transform: none; }
 
 button, .button {
   display: inline-flex;

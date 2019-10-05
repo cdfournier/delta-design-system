@@ -164,6 +164,6 @@ figure {
   }
 }
 
-@media (min-width: 48rem) {
-  .column > figure {padding: 0 0 1rem;}
-}
+.column > figure:first-child {padding: 0 0 1rem;}
+
+p + figure {padding: 2rem 0 1rem;}

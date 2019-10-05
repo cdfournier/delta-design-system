@@ -150,3 +150,9 @@ p > code, li > code {
   white-space: nowrap;
   background-color: $lt-gray;
 }
+
+img + figcaption {
+  padding: 0.8rem 0 0;
+  font-size: 0.8rem;
+  text-transform: none;
+}
