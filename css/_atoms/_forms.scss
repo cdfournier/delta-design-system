@@ -304,7 +304,10 @@ input.toggle[type="checkbox"]:checked:after {
 // BUTTONS
 fieldset.button-input > input[type="button"],
 fieldset.button-input > input[type="submit"],
-fieldset.button-input > input[type="reset"] {margin: 0;}
+fieldset.button-input > input[type="reset"] {
+  min-height: inherit;
+  margin: 0;
+}
 
 
 // SHOW-HIDE PASSWORD
