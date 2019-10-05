@@ -26,6 +26,19 @@ main {
 	.row.fourths {padding: 1rem 0;}
 }
 
+.row.fence:after {
+  display: block;
+  width: calc(100% - 2rem);
+  height: 1px;
+  margin: 2rem auto 0;
+  background-color: #eeeeee;
+  content: "";
+}
+
+.row.fence:last-of-type:after {
+  display: none;
+}
+
 .row > h1, .row > h2, .row > h3, .row > h4 {padding: 0 1rem 0.25rem;}
 
 .row > h1 + p, .row > h2 + p, .row > h3 + p, .row > h4 + p {padding: 0.25rem 1rem 0;}

@@ -144,6 +144,17 @@ main {
   .row .row.fourths {
     padding: 1rem 0; }
 
+.row.fence:after {
+  display: block;
+  width: calc(100% - 2rem);
+  height: 1px;
+  margin: 2rem auto 0;
+  background-color: #eeeeee;
+  content: ""; }
+
+.row.fence:last-of-type:after {
+  display: none; }
+
 .row > h1, .row > h2, .row > h3, .row > h4 {
   padding: 0 1rem 0.25rem; }
 
@@ -426,6 +437,91 @@ p > code, li > code {
   font-size: 0.975rem;
   white-space: nowrap;
   background-color: #eeeeee; }
+
+button, .button {
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+  max-width: 100%;
+  max-height: 2.5rem;
+  overflow: hidden;
+  margin: 1rem 0 0;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid #df3a32;
+  border-radius: 0.25rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  text-transform: capitalize;
+  color: #ffffff;
+  background-color: #df3a32;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s; }
+  button svg, .button svg {
+    margin: 0;
+    height: 1rem;
+    fill: #ffffff; }
+
+button + button {
+  margin: 0 0 0 1rem; }
+
+button:hover, button:focus,
+.button:hover, .button:focus {
+  color: #df3a32;
+  background-color: #ffffff; }
+  button:hover svg, button:focus svg,
+  .button:hover svg, .button:focus svg {
+    fill: #df3a32; }
+
+button.secondary, .button.secondary {
+  border: 1px solid #003442;
+  background-color: #003442; }
+  button.secondary svg, .button.secondary svg {
+    fill: #ffffff; }
+
+button.secondary:hover, button.secondary:focus,
+.button.secondary:hover, .button.secondary:focus {
+  color: #003442;
+  background-color: #ffffff; }
+  button.secondary:hover svg, button.secondary:focus svg,
+  .button.secondary:hover svg, .button.secondary:focus svg {
+    fill: #003442; }
+
+button.reverse, .button.reverse {
+  color: #df3a32;
+  background-color: #ffffff; }
+  button.reverse svg, .button.reverse svg {
+    fill: #df3a32; }
+
+button.reverse:hover, .button.reverse:hover,
+button.reverse:focus, .button.reverse:focus {
+  color: #ffffff;
+  background-color: #df3a32; }
+  button.reverse:hover svg, .button.reverse:hover svg,
+  button.reverse:focus svg, .button.reverse:focus svg {
+    fill: #ffffff; }
+
+button.secondary.reverse, .button.secondary.reverse {
+  color: #003442;
+  background-color: #ffffff; }
+  button.secondary.reverse svg, .button.secondary.reverse svg {
+    fill: #003442; }
+
+button.secondary.reverse:hover, .button.secondary.reverse:hover,
+button.secondary.reverse:focus, .button.secondary.reverse:focus {
+  color: #ffffff;
+  background-color: #003442; }
+  button.secondary.reverse:hover svg, .button.secondary.reverse:hover svg,
+  button.secondary.reverse:focus svg, .button.secondary.reverse:focus svg {
+    fill: #ffffff; }
 
 nav {
   width: 100%;
