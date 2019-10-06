@@ -279,6 +279,8 @@ main {
 
 figure {
   display: grid;
+  width: 100%;
+  max-width: 39rem;
   margin: 0;
   padding: 1rem 0; }
   figure figcaption + p {
@@ -1072,6 +1074,46 @@ nav.open ul {
     margin: 1rem; }
   .card-row .card:last-child {
     margin: 1rem 0 1rem 1rem; } }
+
+blockquote {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 36rem;
+  margin: 2rem auto 2rem 0;
+  padding: 1rem;
+  border: 1px solid #eeeeee; }
+  blockquote p {
+    padding: 0 0 0.8rem;
+    font-weight: 600; }
+    blockquote p cite {
+      font-size: 0.8rem; }
+  blockquote p:last-child {
+    padding: 0; }
+
+blockquote:before {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 3rem;
+  height: 3rem;
+  font-family: "Ovo", serif;
+  font-size: 6rem;
+  color: #cccccc;
+  line-height: 1.1;
+  text-align: center;
+  background-color: #ffffff;
+  content: "\201C";
+  -webkit-transform: translate(-50%, -60%);
+  -moz-transform: translate(-50%, -60%);
+  -ms-transform: translate(-50%, -60%);
+  -o-transform: translate(-50%, -60%);
+  transform: translate(-50%, -60%); }
+
+@media (min-width: 64rem) {
+  blockquote {
+    width: 90%; } }
 
 header {
   display: flex;

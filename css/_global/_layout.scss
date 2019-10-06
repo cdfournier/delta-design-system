@@ -154,6 +154,8 @@ main {
 
 figure {
   display: grid;
+  width: 100%;
+  max-width: 39rem;
   margin: 0;
   padding: 1rem 0;
   figcaption + p {padding: 0 0 0.8rem;}
