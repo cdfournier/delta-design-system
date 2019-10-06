@@ -337,7 +337,7 @@ h2 + h3,
 h2 + p,
 h3 + p,
 h4 + p {
-  padding: 0.25rem 0 0; }
+  padding: 0.4rem 0 0; }
 
 p + h1, p + h2, p + h3, p + h4,
 ul + h1, ul + h2, ul + h3, ul + h4,
@@ -999,6 +999,79 @@ nav.open ul {
         padding: 0 2rem 0 0; }
     nav ul li:last-child {
       padding: 0; } }
+
+.card-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0 1rem; }
+  .card-row .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 1rem 0;
+    padding: 0;
+    border: 1px solid #eeeeee;
+    border-radius: 0.25rem; }
+    .card-row .card figure {
+      padding: 0; }
+      .card-row .card figure img {
+        border-radius: 0.25rem 0.25rem 0 0; }
+    .card-row .card .text {
+      padding: 1rem; }
+      .card-row .card .text h1, .card-row .card .text h2, .card-row .card .text h3, .card-row .card .text h4 {
+        padding: 0; }
+      .card-row .card .text p a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start; }
+        .card-row .card .text p a span {
+          display: flex;
+          flex-direction: column;
+          justify-content: center; }
+          .card-row .card .text p a span svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            margin: 0 0 0 0.25rem;
+            fill: #df3a32;
+            -webkit-transition: all 0.25s ease 0s;
+            -moz-transition: all 0.25s ease 0s;
+            -ms-transition: all 0.25s ease 0s;
+            -o-transition: all 0.25s ease 0s;
+            transition: all 0.25s ease 0s; }
+    .card-row .card .text p a:hover span svg,
+    .card-row .card .text p a:focus span svg {
+      margin: 0 0 0 0.5rem;
+      fill: #003442; }
+
+@media (min-width: 48rem) {
+  .card-row {
+    flex-direction: row;
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: flex-start; }
+    .card-row .card {
+      width: calc(50% - 1rem); }
+    .card-row .card:nth-of-type(odd) {
+      margin: 1rem 1rem 1rem 0; }
+    .card-row .card:nth-of-type(even) {
+      margin: 1rem 0 1rem 1rem; }
+    .card-row .card:last-child {
+      margin: 1rem 0 0; } }
+
+@media (min-width: 64rem) {
+  .card-row .card {
+    width: calc(32.75% - 1rem); }
+  .card-row .card:nth-of-type(odd) {
+    margin: 1rem 1rem 1rem 0; }
+  .card-row .card:nth-of-type(even) {
+    margin: 1rem; }
+  .card-row .card:last-child {
+    margin: 1rem 0 1rem 1rem; } }
 
 header {
   display: flex;
