@@ -65,7 +65,7 @@ footer:before {
   display: block;
   width: calc(100% - 2rem);
   height: 1px;
-  margin: 1rem auto;
+  margin: 0 auto 2rem;
   background-color: $md-gray;
   content: "";
 }

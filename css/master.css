@@ -119,11 +119,11 @@ main {
   width: 100%;
   overflow-x: hidden;
   margin: 0 auto;
-  padding: 5rem 0 0; }
+  padding: 6rem 0 0; }
 
 @media (min-width: 48rem) {
   main {
-    padding: 4.5rem 0 0; } }
+    padding: 5.5rem 0 0; } }
 
 .row {
   display: flex;
@@ -132,17 +132,17 @@ main {
   margin: 0;
   padding: 0; }
   .row .row.wide {
-    padding: 1rem 0; }
+    padding: 0 0 2rem; }
   .row .row.fifty {
-    padding: 1rem 0; }
+    padding: 0 0 2rem; }
   .row .row.golden.left {
-    padding: 1rem 0; }
+    padding: 0 0 2rem; }
   .row .row.golden.right {
-    padding: 1rem 0; }
+    padding: 0 0 2rem; }
   .row .row.thirds {
-    padding: 1rem 0; }
+    padding: 0 0 2rem; }
   .row .row.fourths {
-    padding: 1rem 0; }
+    padding: 0 0 2rem; }
 
 .row.fence:after {
   display: block;
@@ -156,21 +156,23 @@ main {
   display: none; }
 
 .row > h1, .row > h2, .row > h3, .row > h4 {
-  padding: 0 1rem 0.25rem; }
+  padding: 0 1rem 0.4rem; }
 
 .row > h1 + p, .row > h2 + p, .row > h3 + p, .row > h4 + p {
   padding: 0.25rem 1rem 0; }
 
 .row.wide {
   width: 100%;
-  padding: 1rem; }
+  padding: 0 1rem 2rem; }
   .row.wide .column {
     width: 100%;
     padding: 0 1rem; }
+  .row.wide .row:last-child {
+    padding: 0; }
 
 .row.fifty {
   width: 100%;
-  padding: 1rem; }
+  padding: 0 1rem 2rem; }
   .row.fifty .column {
     width: 100%; }
   .row.fifty .column:nth-of-type(1n) {
@@ -180,7 +182,7 @@ main {
 
 .row.golden.left, .row.golden.right {
   width: 100%;
-  padding: 1rem; }
+  padding: 0 1rem 2rem; }
   .row.golden.left .column, .row.golden.right .column {
     width: 100%; }
   .row.golden.left .column:nth-of-type(1n), .row.golden.right .column:nth-of-type(1n) {
@@ -190,7 +192,7 @@ main {
 
 .row.thirds {
   width: 100%;
-  padding: 1rem; }
+  padding: 0 1rem 2rem; }
   .row.thirds .column {
     width: 100%; }
   .row.thirds .column:nth-of-type(1n) {
@@ -202,7 +204,7 @@ main {
 
 .row.fourths {
   width: 100%;
-  padding: 1rem; }
+  padding: 0 1rem 2rem; }
   .row.fourths .column {
     width: 100%; }
   .row.fourths .column:nth-of-type(1n) {
@@ -287,8 +289,8 @@ figure {
     padding: 0;
     overflow-x: auto; }
 
-.column > figure:first-child {
-  padding: 0 0 1rem; }
+.column > figure:last-child {
+  padding: 1rem 0 0; }
 
 p + figure {
   padding: 2rem 0 1rem; }
@@ -1113,7 +1115,7 @@ footer:before {
   display: block;
   width: calc(100% - 2rem);
   height: 1px;
-  margin: 1rem auto;
+  margin: 0 auto 2rem;
   background-color: #cccccc;
   content: ""; }
 

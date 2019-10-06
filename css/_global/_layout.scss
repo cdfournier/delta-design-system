@@ -5,11 +5,11 @@ main {
   width: 100%;
   overflow-x: hidden;
   margin: 0 auto;
-  padding: 5rem 0 0;
+  padding: 6rem 0 0;
 }
 
 @media (min-width: 48rem) {
-  main {padding: 4.5rem 0 0;}
+  main {padding: 5.5rem 0 0;}
 }
 
 .row {
@@ -18,12 +18,12 @@ main {
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	.row.wide {padding: 1rem 0;}
-	.row.fifty {padding: 1rem 0;}
-	.row.golden.left {padding: 1rem 0;}
-	.row.golden.right {padding: 1rem 0;}
-	.row.thirds {padding: 1rem 0;}
-	.row.fourths {padding: 1rem 0;}
+	.row.wide {padding: 0 0 2rem;}
+	.row.fifty {padding: 0 0 2rem;}
+	.row.golden.left {padding: 0 0 2rem;}
+	.row.golden.right {padding: 0 0 2rem;}
+	.row.thirds {padding: 0 0 2rem;}
+	.row.fourths {padding: 0 0 2rem;}
 }
 
 .row.fence:after {
@@ -39,22 +39,23 @@ main {
   display: none;
 }
 
-.row > h1, .row > h2, .row > h3, .row > h4 {padding: 0 1rem 0.25rem;}
+.row > h1, .row > h2, .row > h3, .row > h4 {padding: 0 1rem 0.4rem;}
 
 .row > h1 + p, .row > h2 + p, .row > h3 + p, .row > h4 + p {padding: 0.25rem 1rem 0;}
 
 .row.wide {
   width: 100%;
-  padding: 1rem;
+  padding: 0 1rem 2rem;
   .column {
     width: 100%;
     padding: 0 1rem;
   }
+  .row:last-child {padding: 0;}
 }
 
 .row.fifty {
   width: 100%;
-  padding: 1rem;
+  padding: 0 1rem 2rem;
   .column {width: 100%;}
   .column:nth-of-type(1n) {padding: 0 1rem;}
   .column:nth-of-type(2n) {padding: 1rem 1rem 0;}
@@ -62,7 +63,7 @@ main {
 
 .row.golden.left, .row.golden.right {
   width: 100%;
-  padding: 1rem;
+  padding: 0 1rem 2rem;
   .column {width: 100%;}
   .column:nth-of-type(1n) {padding: 0 1rem;}
   .column:nth-of-type(2n) {padding: 1rem 1rem 0;}
@@ -70,7 +71,7 @@ main {
 
 .row.thirds {
   width: 100%;
-  padding: 1rem;
+  padding: 0 1rem 2rem;
   .column {width: 100%;}
   .column:nth-of-type(1n) {padding: 0 1rem;}
   .column:nth-of-type(2n) {padding: 1rem 1rem 0;}
@@ -79,7 +80,7 @@ main {
 
 .row.fourths {
   width: 100%;
-  padding: 1rem;
+  padding: 0 1rem 2rem;
   .column {width: 100%;}
   .column:nth-of-type(1n) {padding: 0 1rem;}
   .column:nth-of-type(2n) {padding: 1rem 1rem 0;}
@@ -164,6 +165,6 @@ figure {
   }
 }
 
-.column > figure:first-child {padding: 0 0 1rem;}
+.column > figure:last-child {padding: 1rem 0 0;}
 
 p + figure {padding: 2rem 0 1rem;}
