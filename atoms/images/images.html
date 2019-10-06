@@ -42,20 +42,27 @@
         </section>
         <section>
           <div class="row fifty">
-            <h2>Aspect Ratio</h2>
             <div class="column">
+              <h2>Aspect Ratio</h2>
               <p>In keeping with other features of this design system, we believe that images should be sized and cropped according to the <a href="https://en.wikipedia.org/wiki/Golden_ratio" target="_blank">Golden Ratio</a>.</p>
+            </div>            
+            <div class="column">
               <figure>
                 <img src="../../assets/images/montreal-2x.jpg" srcset="../../assets/images/montreal-1x.jpg 1x, ../../assets/images/montreal-2x.jpg 2x" alt="Example of horizontal golden aspect ratio image">
                 <figcaption><a href="https://www.stockio.com/free-photo/montreal-75" target="_blank">Montreal by Luke Chesser</a></figcaption>
               </figure>
+            </div>
+          </div>
+          <div class="row golden left">
+            <div class="column">
               <h2>Responsive Images</h2>
               <p>Okay&hellip; here's where it gets a little tricky. There are several different ways to render responsive images, and rendering responsive images is the right thing to do. With the Delta Design System, we're currently only using a solution for retina and non-retina displays.</p>
+              <p>Adding a <code>srcset</code> attribute to our <code>&lt;img&gt;</code> element enables us to present a high-resolution image only to retina devices and fall back to the low-resolution version for standard screens. The <code>srcset</code> attribute points to a list of alternative image files. The <code>1x</code> tells the browser to display the lower-resolution image on standard-resolution screens. The 2x means that the higher-resolution image is used for retina screens. Older browsers that don’t understand <code>srcset</code> fall back to the src attribute.</p>
               <figure>
                 <figcaption>html</figcaption>
 <pre style="white-space: normal;"><code>&lt;img src=&quot;../../assets/images/sample-bridge-2x.jpg&quot; srcset=&quot;../../assets/images/sample-bridge-1x.jpg 1x, ../../assets/images/sample-bridge-2x.jpg 2x&quot; alt=&quot;Example of horizontal golden aspect ratio image&quot;&gt;</code></pre>
               </figure>
-            </div>            
+            </div>
             <div class="column">
               <figure>
                 <img src="../../assets/images/mountain-2-2x.jpg" srcset="../../assets/images/mountain-2-1x.jpg 1x, ../../assets/images/mountain-2-2x.jpg 2x" alt="Example of vertical golden aspect ratio image">
@@ -65,12 +72,7 @@
           </div>
           <div class="row wide">
             <div class="column">
-              <p>Adding a <code>srcset</code> attribute to our <code>&lt;img&gt;</code> element enables us to present a high-resolution image only to retina devices and fall back to the low-resolution version for standard screens. The <code>srcset</code> attribute points to a list of alternative image files. The <code>1x</code> tells the browser to display the lower-resolution image on standard-resolution screens. The 2x means that the higher-resolution image is used for retina screens. Older browsers that don’t understand <code>srcset</code> fall back to the src attribute.</p>
-            </div>
-          </div>
-          <div class="row wide">
-            <h2>Important Guidelines</h2>
-            <div class="column">
+              <h2>Important Guidelines</h2>
               <ul>
                 <li>Every <code>&lt;img&gt;</code> you add to your site needs to have an <code>alt</code> attribute. If the image is informational, set the <code>alt</code> equal to a descriptive alternative for that image.</li>
                 <li>If the image is decorative or redundant to adjacent text, set <code>alt=&quot;&quot;</code>, which conveys to assistive technology users that the image isn't necessary for understanding the page.</li>

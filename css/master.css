@@ -295,6 +295,14 @@ figure {
 p + figure {
   padding: 2rem 0 1rem; }
 
+@media (min-width: 48rem) {
+  .column > figure:last-child {
+    padding: 1rem 0 0; }
+  .column > figure:first-child {
+    padding: 0 0 1rem; }
+  .column p + figure:last-child {
+    padding: 2rem 0 0; } }
+
 /* 
   NOTES:  
   All headline classes are set to a 1.2 minor third type scale
