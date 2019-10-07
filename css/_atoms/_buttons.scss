@@ -33,8 +33,12 @@ button + button {margin: 0 0 0 1rem;}
 
 button:hover, button:focus,
 .button:hover, .button:focus {
+  background-color: transparent;
+}
+
+button:hover, button:focus,
+.button:hover, .button:focus {
   color: $primary;
-  background-color: $white;
   svg {fill: $primary;}
 }
 
@@ -49,7 +53,6 @@ button.secondary, .button.secondary {
 button.secondary:hover, button.secondary:focus,
 .button.secondary:hover, .button.secondary:focus {
   color: $secondary;
-  background-color: $white;
   svg {fill: $secondary;}
 }
 
