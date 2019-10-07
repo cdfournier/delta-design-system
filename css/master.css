@@ -1139,6 +1139,8 @@ blockquote:before {
             -ms-transition: all 0.25s ease 0s;
             -o-transition: all 0.25s ease 0s;
             transition: all 0.25s ease 0s; }
+      .card-row .card .text p cite a {
+        display: inline; }
     .card-row .card .text p a:hover span svg,
     .card-row .card .text p a:focus span svg {
       margin: 0 0 0 0.5rem;
