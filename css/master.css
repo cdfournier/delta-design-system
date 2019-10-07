@@ -1008,13 +1008,13 @@ nav.open ul {
   align-items: center;
   width: 100%;
   margin: 0;
-  padding: 0 1rem; }
+  padding: 0; }
   .card-row .card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    margin: 1rem 0;
+    width: calc(100% - 2rem);
+    margin: 1rem;
     padding: 0;
     border: 1px solid #eeeeee;
     border-radius: 0.25rem; }
@@ -1023,7 +1023,8 @@ nav.open ul {
       .card-row .card figure img {
         border-radius: 0.25rem 0.25rem 0 0; }
     .card-row .card .text {
-      padding: 1rem; }
+      padding: 1rem;
+      width: 100%; }
       .card-row .card .text h1, .card-row .card .text h2, .card-row .card .text h3, .card-row .card .text h4 {
         padding: 0; }
       .card-row .card .text p a {
@@ -1057,23 +1058,11 @@ nav.open ul {
     flex-wrap: wrap;
     justify-content: flex-start; }
     .card-row .card {
-      width: calc(50% - 1rem); }
-    .card-row .card:nth-of-type(odd) {
-      margin: 1rem 1rem 1rem 0; }
-    .card-row .card:nth-of-type(even) {
-      margin: 1rem 0 1rem 1rem; }
-    .card-row .card:last-child {
-      margin: 1rem 0 0; } }
+      width: calc(50% - 2rem); } }
 
 @media (min-width: 64rem) {
   .card-row .card {
-    width: calc(32.75% - 1rem); }
-  .card-row .card:nth-of-type(odd) {
-    margin: 1rem 1rem 1rem 0; }
-  .card-row .card:nth-of-type(even) {
-    margin: 1rem; }
-  .card-row .card:last-child {
-    margin: 1rem 0 1rem 1rem; } }
+    width: calc(32.75% - 2rem); } }
 
 blockquote {
   display: block;

@@ -5,13 +5,13 @@
   align-items: center;
   width: 100%;
   margin: 0;
-  padding: 0 1rem;
+  padding: 0;
   .card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    margin: 1rem 0;
+    width: calc(100% - 2rem);
+    margin: 1rem;
     padding: 0;
     border: 1px solid $lt-gray;
     border-radius: 0.25rem;
@@ -20,6 +20,7 @@
     }
     .text {
       padding: 1rem;
+      width: 100%;
       h1, h2, h3, h4 {padding: 0;}
       p a {
         display: flex;
@@ -54,18 +55,12 @@
     align-items: stretch;
     flex-wrap: wrap;
     justify-content: flex-start;
-    .card {width: calc(50% - 1rem);}
-    .card:nth-of-type(odd) {margin: 1rem 1rem 1rem 0;}
-    .card:nth-of-type(even) {margin: 1rem 0 1rem 1rem;}
-    .card:last-child {margin: 1rem 0 0;}
+    .card {width: calc(50% - 2rem);}
   }
 }
 
 @media (min-width: 64rem) {
   .card-row {
-    .card {width: calc(32.75% - 1rem);}
-    .card:nth-of-type(odd) {margin: 1rem 1rem 1rem 0;}
-    .card:nth-of-type(even) {margin: 1rem;}
-    .card:last-child {margin: 1rem 0 1rem 1rem;}
+    .card {width: calc(32.75% - 2rem);}
   }
 }
