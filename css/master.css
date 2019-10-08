@@ -944,6 +944,77 @@ fieldset.button-input > input[type="reset"] {
 .show-hide-password.show svg.hide {
   opacity: 1; }
 
+.accordion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto 1rem;
+  padding: 1rem;
+  border: 1px solid #eeeeee;
+  border-radius: 0.25rem;
+  background-color: #ffffff;
+  cursor: pointer; }
+  .accordion input {
+    display: none; }
+  .accordion label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+    cursor: pointer; }
+    .accordion label svg {
+      -webkit-transition: all 0.25s ease 0s;
+      -moz-transition: all 0.25s ease 0s;
+      -ms-transition: all 0.25s ease 0s;
+      -o-transition: all 0.25s ease 0s;
+      transition: all 0.25s ease 0s; }
+  .accordion input:not(:placeholder-shown) + label, .accordion input:focus + label {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0); }
+  .accordion .details {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    -webkit-transition: max-height 0.25s ease-in-out 0s;
+    -moz-transition: max-height 0.25s ease-in-out 0s;
+    -ms-transition: max-height 0.25s ease-in-out 0s;
+    -o-transition: max-height 0.25s ease-in-out 0s;
+    transition: max-height 0.25s ease-in-out 0s; }
+    .accordion .details p {
+      margin: 0.8rem 0 0; }
+
+.row .column .accordion label p:first-child,
+.row .column .accordion label p:last-child,
+.row .column .accordion .details p:first-child,
+.row .column .accordion .details p:last-child {
+  padding: 0; }
+
+.accordion input:checked ~ .details {
+  max-height: 20rem; }
+
+.accordion input:checked ~ label svg {
+  -webkit-transform: rotate(-0.5turn);
+  -moz-transform: rotate(-0.5turn);
+  -ms-transform: rotate(-0.5turn);
+  -o-transform: rotate(-0.5turn);
+  transform: rotate(-0.5turn); }
+
+.accordion:last-of-type {
+  margin: 0 auto; }
+
 .banner {
   display: flex;
   flex-direction: column;
