@@ -435,6 +435,31 @@ a:hover, a:focus {
 p a, small a, li a {
   font-weight: 700; }
 
+p.icon a {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start; }
+  p.icon a span {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    p.icon a span svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      margin: 0 0 0 0.25rem;
+      fill: #df3a32;
+      -webkit-transition: all 0.25s ease 0s;
+      -moz-transition: all 0.25s ease 0s;
+      -ms-transition: all 0.25s ease 0s;
+      -o-transition: all 0.25s ease 0s;
+      transition: all 0.25s ease 0s; }
+
+p.icon a:hover span svg,
+p.icon a:focus span svg {
+  margin: 0 0 0 0.5rem;
+  fill: #003442; }
+
 figcaption {
   font-size: 0.64rem;
   font-weight: 700;
@@ -1127,31 +1152,6 @@ blockquote:before {
       width: 100%; }
       .card-row .card .text h1, .card-row .card .text h2, .card-row .card .text h3, .card-row .card .text h4 {
         padding: 0; }
-      .card-row .card .text p a {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start; }
-        .card-row .card .text p a span {
-          display: flex;
-          flex-direction: column;
-          justify-content: center; }
-          .card-row .card .text p a span svg {
-            width: 1.25rem;
-            height: 1.25rem;
-            margin: 0 0 0 0.25rem;
-            fill: #df3a32;
-            -webkit-transition: all 0.25s ease 0s;
-            -moz-transition: all 0.25s ease 0s;
-            -ms-transition: all 0.25s ease 0s;
-            -o-transition: all 0.25s ease 0s;
-            transition: all 0.25s ease 0s; }
-      .card-row .card .text p cite a {
-        display: inline; }
-    .card-row .card .text p a:hover span svg,
-    .card-row .card .text p a:focus span svg {
-      margin: 0 0 0 0.5rem;
-      fill: #003442; }
 
 @media (min-width: 48rem) {
   .card-row {
@@ -1325,7 +1325,6 @@ footer:before {
   footer {
     padding: 0 0 2rem; }
     footer nav ul li {
-      font-size: 0.8rem;
       text-align: left; }
     footer .row {
       align-items: center; }

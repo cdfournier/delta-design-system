@@ -108,7 +108,7 @@ ul li, ol li {
 ul li:last-child, ol li:last-child {padding: 0 0 0 0.25rem;}
 
 
-// TEXT LINKS
+// TEXT LINK STYLES
 a {
   color: $primary;
   cursor: pointer;
@@ -125,6 +125,31 @@ a {
 a:hover, a:focus {color: $secondary;}
 
 p a, small a, li a {font-weight: $font-body-bold;}
+
+p.icon a {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  span {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      margin: 0 0 0 0.25rem;
+      fill: $primary;
+      @include transition(all, 0.25s, ease);
+    }
+  }
+}
+
+p.icon a:hover span svg,
+p.icon a:focus span svg {
+  margin: 0 0 0 0.5rem;
+  fill: $secondary;
+}
 
 
 // FIGURE TYPOGRAPHY
