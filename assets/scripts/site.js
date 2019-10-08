@@ -13,27 +13,27 @@ $(".show-hide-password").click(function() {
 });
 
 $('.show-error').click( function() {
-  $('.alerts .error').addClass('show');
+  $('.messaging .error').addClass('show');
   setTimeout(function() { 
-    $('.alerts .error').removeClass('show') }, 10000);
+    $('.messaging .error').removeClass('show') }, 10000);
 });
 $('svg.close').click( function() {
-  $('.alerts .error').removeClass('show');
+  $('.messaging .error').removeClass('show');
 });
 $('.show-success').click( function() {
-  $('.alerts .success').addClass('show');
+  $('.messaging .success').addClass('show');
   setTimeout(function() { 
-    $('.alerts .success').removeClass('show') }, 10000);
+    $('.messaging .success').removeClass('show') }, 10000);
 });
 $('svg.close').click( function() {
-  $('.alerts .success').removeClass('show');
+  $('.messaging .success').removeClass('show');
 });
 $('.show-confirm').click( function() {
-  $('.alerts .confirm').addClass('show');
+  $('.messaging .confirm').addClass('show');
 });
 $('button.no').click( function() {
-  $('.alerts .confirm').removeClass('show');
+  $('.messaging .confirm').removeClass('show');
 });
 $('button.yes').click( function() {
-  $('.alerts .confirm').removeClass('show');
+  $('.messaging .confirm').removeClass('show');
 });

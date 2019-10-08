@@ -1237,6 +1237,128 @@ blockquote:before {
   .card-row .card {
     width: calc(32.75% - 2rem); } }
 
+.messaging {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 500;
+  width: 100%;
+  margin: 0; }
+  .messaging .error, .messaging .success, .messaging .confirm {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 1rem;
+    color: #ffffff;
+    -webkit-transform: translateY(-10rem);
+    -moz-transform: translateY(-10rem);
+    -ms-transform: translateY(-10rem);
+    -o-transform: translateY(-10rem);
+    transform: translateY(-10rem);
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    -moz-transition: all 0.5s ease-in-out 0s;
+    -ms-transition: all 0.5s ease-in-out 0s;
+    -o-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s; }
+    .messaging .error p, .messaging .success p, .messaging .confirm p {
+      margin: 0;
+      padding: 0 0.5rem;
+      max-width: none;
+      line-height: 1.5; }
+    .messaging .error svg, .messaging .success svg, .messaging .confirm svg {
+      width: 1.75rem;
+      height: 1.75rem;
+      fill: #ffffff; }
+    .messaging .error svg.close, .messaging .success svg.close, .messaging .confirm svg.close {
+      cursor: pointer; }
+    .messaging .error .buttons, .messaging .success .buttons, .messaging .confirm .buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      .messaging .error .buttons button, .messaging .success .buttons button, .messaging .confirm .buttons button {
+        justify-content: center;
+        min-width: 4rem;
+        max-height: none;
+        padding: 0.5rem 1rem;
+        border-color: #ffffff;
+        border-radius: 0.25rem;
+        font-family: "Montserrat", sans-serif; }
+      .messaging .error .buttons button.no, .messaging .success .buttons button.no, .messaging .confirm .buttons button.no {
+        margin: 0 0 0.25rem;
+        color: #ffffff;
+        background-color: #c00c00; }
+      .messaging .error .buttons button.no:hover, .messaging .error .buttons button.no:focus, .messaging .success .buttons button.no:hover, .messaging .success .buttons button.no:focus, .messaging .confirm .buttons button.no:hover, .messaging .confirm .buttons button.no:focus {
+        color: #c00c00;
+        background-color: #ffffff; }
+      .messaging .error .buttons button.yes, .messaging .success .buttons button.yes, .messaging .confirm .buttons button.yes {
+        margin: 0.25rem 0 0;
+        border-color: #ffffff;
+        color: #c00c00;
+        background-color: #ffffff; }
+      .messaging .error .buttons button.yes:hover, .messaging .error .buttons button.yes:focus, .messaging .success .buttons button.yes:hover, .messaging .success .buttons button.yes:focus, .messaging .confirm .buttons button.yes:hover, .messaging .confirm .buttons button.yes:focus {
+        color: #ffffff;
+        background-color: #c00c00; }
+  .messaging .error, .messaging .confirm {
+    background-color: #c00c00; }
+  .messaging .success {
+    background-color: #008000; }
+    .messaging .success p {
+      padding: 0 0.5rem 0 0; }
+  .messaging .confirm p {
+    width: calc(100% - 5.75rem); }
+  .messaging .error.show, .messaging .success.show, .messaging .confirm.show {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0); }
+
+.messaging.bottom {
+  top: auto;
+  bottom: 0; }
+  .messaging.bottom .error, .messaging.bottom .success, .messaging.bottom .confirm {
+    top: auto;
+    bottom: 0;
+    -webkit-transform: translateY(10rem);
+    -moz-transform: translateY(10rem);
+    -ms-transform: translateY(10rem);
+    -o-transform: translateY(10rem);
+    transform: translateY(10rem); }
+  .messaging.bottom .error.show, .messaging.bottom .success.show, .messaging.bottom .confirm.show {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0); }
+
+@media (min-width: 40rem) {
+  .messaging .confirm p {
+    width: calc(100% - 10.25rem); }
+  .messaging .confirm .buttons {
+    flex-direction: row; }
+    .messaging .confirm .buttons button.no {
+      margin: 0 0.25rem 0 0; }
+    .messaging .confirm .buttons button.yes {
+      margin: 0 0 0 0.25rem; } }
+
+@media (min-width: 48rem) {
+  .messaging .error p, .messaging .confirm p {
+    padding: 0 1rem;
+    font-size: 1.25rem; }
+  .messaging .error svg, .messaging .confirm svg {
+    width: 2.1875rem;
+    height: 2.1875rem; }
+  .messaging .success p {
+    padding: 0 1rem 0 0;
+    font-size: 1.25rem; } }
+
 nav {
   width: 100%;
   padding: 1rem; }

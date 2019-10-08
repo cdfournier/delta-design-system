@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Messaging | Delta Design System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ovo|Montserrat:400,700&display=swap" rel="stylesheet">
+    <link href="../../css/master.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <h1>Header</h1>
+      <div class="logo">
+        <a href="../../index.html">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 796"><defs><style>.cls-1{fill:#01232d;}.cls-2{fill:#013342;}</style></defs><title>delta-design-system-logo</title><polygon id="right-side" class="cls-1" points="512 796 1024 796 512 0 512 796"/><polygon id="left-side" class="cls-2" points="0 796 512 796 512 0 0 796"/></svg>
+        </a>
+      </div>
+      <nav aria-labelledby="header-navigation">
+        <button class="menu-toggle" aria-expanded="false" aria-controls="header-navigation">
+          <svg class="menu-toggle-open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></svg>
+          <svg class="menu-toggle-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+        </button>
+        <ul>
+          <li><a href="../../index.html">Overview</a></li>
+          <li><a href="../../atoms/atoms.html">Atoms</a></li>
+          <li><a href="../../molecules/molecules.html">Molecules</a></li>
+          <li><a href="../../organisms/organisms.html">Organisms</a></li>
+          <li><a href="../../style/style.html">Style</a></li>
+          <li><a href="../../downloads/downloads.html">Downloads</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <article>
+        <section class="row wide">
+          <div class="column">
+            <h1 class="title">Messaging</h1>
+            <p>Messages convey important information related to the state of your app or the device and often request feedback.</p>
+            <p>Messages are fixed to the top of the window by default and can be triggered by any means necessary, and most messages will dismiss themselves &ndash; unless they require the user to confirm an action &ndash; after 10 seconds, or the user can dismiss them using the close icon.</p>
+            <p>If you'd rather have your messages on the bottom of the screen, simply add a <code>.bottom</code> class to the parent <code style="white-space: normal">&lt;div class=&quot;messages&quot;&gt;</code>.</p>
+          </div>
+        </section>
+        <section class="row wide">
+          <div class="row fence fifty">
+            <h2>Error Messages</h2>
+            <div class="column">
+              <p>An error message provides contextual information displayed when an unexpected condition occurs.</p>
+              <button type="button" class="show-error">Show Error</button>
+            </div>
+            <div class="column">
+              <figure>
+                <figcaption>html</figcaption>
+<pre><code>&lt;div class=&quot;error&quot;&gt;
+  &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot; class=&quot;warning&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm0-8h2v6h-2V7z&quot;&gt;&lt;/svg&gt;
+  &lt;p&gt;This is an error alert message&lt;/p&gt;
+  &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot; class=&quot;close&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0-9.414l2.828-2.829 1.415 1.415L13.414 12l2.829 2.828-1.415 1.415L12 13.414l-2.828 2.829-1.415-1.415L10.586 12 7.757 9.172l1.415-1.415L12 10.586z&quot; /&gt;&lt;/svg&gt;
+&lt;/div&gt;</code></pre>
+              </figure>
+            </div>
+          </div>
+          <div class="row fence fifty">
+            <h2>Success Messages</h2>
+            <div class="column">
+              <p>A success message provides assurances to the user that an intended action is successful.</p>
+              <button type="button" class="show-success">Show Success</button>
+            </div>
+            <div class="column">
+              <figure>
+                <figcaption>html</figcaption>
+<pre><code>&lt;div class=&quot;success&quot;&gt;
+  &lt;p&gt;This is a success alert message&lt;/p&gt;
+  &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot; class=&quot;close&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0-9.414l2.828-2.829 1.415 1.415L13.414 12l2.829 2.828-1.415 1.415L12 13.414l-2.828 2.829-1.415-1.415L10.586 12 7.757 9.172l1.415-1.415L12 10.586z&quot; /&gt;&lt;/svg&gt;
+&lt;/div&gt;</code></pre>
+              </figure>
+            </div>
+          </div>
+          <div class="row fence fifty">
+            <h2>Confirmation Messages</h2>
+            <div class="column">
+              <p>A confirmation message provides the user an opportunity to confirm a requested action.</p>
+              <button type="button" class="show-confirm">Show Confirm</button>
+            </div>
+            <div class="column">
+              <figure>
+                <figcaption>html</figcaption>
+<pre><code>&lt;div class=&quot;confirm&quot;&gt;
+  &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot; class=&quot;warning&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm0-8h2v6h-2V7z&quot;&gt;&lt;/svg&gt;
+  &lt;p&gt;This is a confirmation alert message. Are you sure you want to continue?&lt;/p&gt;
+  &lt;div class=&quot;buttons&quot;&gt;
+    &lt;button type=&quot;button&quot; class=&quot;no&quot;&gt;No&lt;/button&gt;
+    &lt;button type=&quot;button&quot; class=&quot;yes&quot;&gt;Yes&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </figure>
+            </div>
+          </div>
+        </section>
+      </article>
+      <section class="messaging">
+        <div class="error">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="warning"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm0-8h2v6h-2V7z"></svg>
+          <p>This is an error alert message</p>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="close"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0-9.414l2.828-2.829 1.415 1.415L13.414 12l2.829 2.828-1.415 1.415L12 13.414l-2.828 2.829-1.415-1.415L10.586 12 7.757 9.172l1.415-1.415L12 10.586z" /></svg>
+        </div>
+        <div class="success">
+          <p>This is a success alert message</p>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="close"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0-9.414l2.828-2.829 1.415 1.415L13.414 12l2.829 2.828-1.415 1.415L12 13.414l-2.828 2.829-1.415-1.415L10.586 12 7.757 9.172l1.415-1.415L12 10.586z" /></svg>
+        </div>
+        <div class="confirm">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="warning"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm0-8h2v6h-2V7z"></svg>
+          <p>This is a confirmation alert message. Are you sure you want to continue?</p>
+          <div class="buttons">
+            <button type="button" class="no">No</button>
+            <button type="button" class="yes">Yes</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <h1>Footer</h1>
+      <div class="row fifty">
+        <nav class="column" aria-labelledby="footer-navigation">
+          <ul>
+            <li><a href="../../index.html">Overview</a></li>
+            <li><a href="../../atoms/atoms.html">Atoms</a></li>
+            <li><a href="../../molecules/molecules.html">Molecules</a></li>
+            <li><a href="../../organisms/organisms.html">Organisms</a></li>
+            <li><a href="../../style/style.html">Style</a></li>
+            <li><a href="../../downloads/downloads.html">Downloads</a></li>
+          </ul>
+        </nav>
+        <section class="meta-content column">
+          <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 796"><defs><style>.cls-1{fill:#01232d;}.cls-2{fill:#013342;}</style></defs><title>delta-design-system-logo</title><polygon id="right-side" class="cls-1" points="512 796 1024 796 512 0 512 796"/><polygon id="left-side" class="cls-2" points="0 796 512 796 512 0 0 796"/></svg>
+            <h1 class="center">The Delta Design System</h1>
+          </div>
+          <div class="github">
+            <a href="https://github.com/cdfournier/delta-design-system" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 2C6.475 2 2 6.475 2 12a9.994 9.994 0 0 0 6.838 9.488c.5.087.687-.213.687-.476 0-.237-.013-1.024-.013-1.862-2.512.463-3.162-.612-3.362-1.175-.113-.288-.6-1.175-1.025-1.413-.35-.187-.85-.65-.013-.662.788-.013 1.35.725 1.538 1.025.9 1.512 2.338 1.087 2.912.825.088-.65.35-1.087.638-1.337-2.225-.25-4.55-1.113-4.55-4.938 0-1.088.387-1.987 1.025-2.688-.1-.25-.45-1.275.1-2.65 0 0 .837-.262 2.75 1.026a9.28 9.28 0 0 1 2.5-.338c.85 0 1.7.112 2.5.337 1.912-1.3 2.75-1.024 2.75-1.024.55 1.375.2 2.4.1 2.65.637.7 1.025 1.587 1.025 2.687 0 3.838-2.337 4.688-4.562 4.938.362.312.675.912.675 1.85 0 1.337-.013 2.412-.013 2.75 0 .262.188.574.688.474A10.016 10.016 0 0 0 22 12c0-5.525-4.475-10-10-10z"/></svg></a>
+          </div>
+        </section>
+      </div>
+      <div class="copyright row wide">
+        <p>&copy; 2019 Delta Design System</p>
+      </div>
+    </footer>
+    <!-- scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="https://unpkg.com/headroom.js@0.9.4/dist/headroom.js"></script>
+    <script src="../../assets/scripts/site.js"></script>
+    <script>
+      var myElement = document.querySelector('header');
+      var headroom  = new Headroom(myElement);
+      headroom.init(); 
+    </script>
+  </body>
+</html>
