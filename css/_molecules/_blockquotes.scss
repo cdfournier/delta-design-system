@@ -10,10 +10,16 @@ blockquote {
   p {
     padding: 0 0 0.8rem;
     font-weight: 600;
-    cite {font-size: 0.8rem;}
+    cite {
+      padding: 0.8rem 0 0;
+      font-size: 0.8rem;
+    }
   }
   p:last-child {padding: 0;}
 }
+
+blockquote.center {margin: 2rem auto;}
+blockquote.right {margin: 2rem 0 2rem auto;}
 
 blockquote:before {
   display: block;
