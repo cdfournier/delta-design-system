@@ -40,6 +40,32 @@
             <p>The &lt;header&gt; element represents introductory content, typically a group of introductory or navigational aids. It may contain some heading elements but also a logo, a search form, an author name, and other elements.</p>
             <p><cite><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header" target="_blank">&lt;header&gt;</a> by <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header$history" target="_blank">Mozilla Contributors</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/2.5/" target="_blank">CC-BY-SA 2.5</a>.</cite></p>
             <p>The Delta Design System uses the <a href="https://wicky.nillia.ms/headroom.js/" target="_blank">Headroom</a> JavaScript widget to slide the header (and the header navigation) out of view when users scroll down, and then slide it back into view whenever the user scrolls up. This enables us to bring the header into view when appropriate and give focus to our content the rest of the time.</p>
+            <p>On screens wide than 48rem will reveal a <code>.logo</code> <code>div</code> that links to a site's or application's home page.</p>
+            <figure>
+              <figcaption>html</figcaption>
+<pre><code>&lt;header&gt;
+  &lt;h1&gt;Header&lt;/h1&gt;
+  &lt;div class=&quot;logo&quot;&gt;
+    &lt;a href=&quot;../../index.html&quot;&gt;
+      &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 1024 796&quot;&gt;&lt;defs&gt;&lt;style&gt;.cls-1{fill:#01232d;}.cls-2{fill:#013342;}&lt;/style&gt;&lt;/defs&gt;&lt;title&gt;delta-design-system-logo&lt;/title&gt;&lt;polygon id=&quot;right-side&quot; class=&quot;cls-1&quot; points=&quot;512 796 1024 796 512 0 512 796&quot;/&gt;&lt;polygon id=&quot;left-side&quot; class=&quot;cls-2&quot; points=&quot;0 796 512 796 512 0 0 796&quot;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+  &lt;nav aria-labelledby=&quot;header-navigation&quot;&gt;
+    &lt;button class=&quot;menu-toggle&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;header-navigation&quot;&gt;
+      &lt;svg class=&quot;menu-toggle-open&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z&quot;/&gt;&lt;/svg&gt;
+      &lt;svg class=&quot;menu-toggle-close&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z&quot;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;../../index.html&quot;&gt;Overview&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;../../atoms/atoms.html&quot;&gt;Atoms&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;../../molecules/molecules.html&quot;&gt;Molecules&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;../../organisms/organisms.html&quot;&gt;Organisms&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;../../style/style.html&quot;&gt;Style&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;../../downloads/downloads.html&quot;&gt;Downloads&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;</code></pre>
+            </figure>
           </div>
         </section>
       </article>
