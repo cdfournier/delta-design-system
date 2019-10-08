@@ -1237,6 +1237,57 @@ blockquote:before {
   .card-row .card {
     width: calc(32.75% - 2rem); } }
 
+.media-grid-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0; }
+  .media-grid-block .media-grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 1rem; }
+    .media-grid-block .media-grid-item figure {
+      padding: 0; }
+    .media-grid-block .media-grid-item .text {
+      padding: 1rem 0 0;
+      width: 100%; }
+      .media-grid-block .media-grid-item .text h1, .media-grid-block .media-grid-item .text h2, .media-grid-block .media-grid-item .text h3, .media-grid-block .media-grid-item .text h4 {
+        padding: 0; }
+  .media-grid-block .media-grid-item:before {
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin: 0 0 2rem;
+    background-color: #eeeeee;
+    content: ""; }
+  .media-grid-block .media-grid-item:first-child {
+    padding: 0 1rem 1rem; }
+  .media-grid-block .media-grid-item:last-child {
+    padding: 1rem 1rem 0; }
+
+@media (min-width: 48rem) {
+  .media-grid-block .media-grid-item {
+    flex-direction: row;
+    flex-wrap: wrap; }
+    .media-grid-block .media-grid-item figure {
+      width: 35%; }
+      .media-grid-block .media-grid-item figure img {
+        border-radius: 0.25rem 0 0 0.25rem; }
+    .media-grid-block .media-grid-item .text {
+      width: 65%;
+      padding: 1rem 0 1rem 2rem; }
+  .media-grid-block .media-grid-item.reverse {
+    flex-direction: row-reverse; }
+    .media-grid-block .media-grid-item.reverse figure img {
+      border-radius: 0 0.25rem 0.25rem 0; }
+    .media-grid-block .media-grid-item.reverse .text {
+      padding: 1rem 2rem 1rem 0; } }
+
 .messaging {
   display: block;
   position: fixed;

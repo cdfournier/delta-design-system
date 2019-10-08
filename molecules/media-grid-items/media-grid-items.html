@@ -2,18 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Organisms | Delta Design System</title>
+    <title>Media Grid Items | Delta Design System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ovo|Montserrat:400,700&display=swap" rel="stylesheet">
-    <link href="../css/master.css" rel="stylesheet">
+    <link href="../../css/master.css" rel="stylesheet">
   </head>
   <body>
     <header>
       <h1>Header</h1>
       <div class="logo">
-        <a href="../index.html">
+        <a href="../../index.html">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 796"><defs><style>.cls-1{fill:#01232d;}.cls-2{fill:#013342;}</style></defs><title>delta-design-system-logo</title><polygon id="right-side" class="cls-1" points="512 796 1024 796 512 0 512 796"/><polygon id="left-side" class="cls-2" points="0 796 512 796 512 0 0 796"/></svg>
         </a>
       </div>
@@ -23,12 +23,12 @@
           <svg class="menu-toggle-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
         </button>
         <ul>
-          <li><a href="../index.html">Overview</a></li>
-          <li><a href="../atoms/atoms.html">Atoms</a></li>
-          <li><a href="../molecules/molecules.html">Molecules</a></li>
-          <li>Organisms</li>
-          <li><a href="../style/style.html">Style</a></li>
-          <li><a href="../downloads/downloads.html">Downloads</a></li>
+          <li><a href="../../index.html">Overview</a></li>
+          <li><a href="../../atoms/atoms.html">Atoms</a></li>
+          <li><a href="../../molecules/molecules.html">Molecules</a></li>
+          <li><a href="../../organisms/organisms.html">Organisms</a></li>
+          <li><a href="../../style/style.html">Style</a></li>
+          <li><a href="../../downloads/downloads.html">Downloads</a></li>
         </ul>
       </nav>
     </header>
@@ -36,42 +36,38 @@
       <article>
         <section class="row wide">
           <div class="column">
-            <h1 class="title">Organisms</h1>
-            <p>Organisms are relatively complex UI components composed of groups of molecules and/or atoms and/or other organisms. These organisms form distinct sections of an interface.</p>
-            <p><cite><a href="http://atomicdesign.bradfrost.com/chapter-2/#organisms">Organisms</a> from <a href="http://atomicdesign.bradfrost.com/" target="_blank">Atomic Design</a> by <a href="https://bradfrost.com" target="_blank">Brad Frost</a></cite></p>
+            <h1 class="title">Media Grid Items</h1>
+            <p>Media grid items contain a media element &mdash; typically an image &mdash; on the left with a headline and text on the right (or, in the Delta Design System, vice-versa). When grouped together in a media grid block, this pattern is perfect view into content such as blog posts, user information, and other types.</p>
+            <p>Here are some of the options and features of media grid items:</p>
+            <ul>
+              <li>On smaller screens, menu grid items stack vertically, and those menu grid items stack one on top of the next in the block.</li>
+              <li>On screens wider than 48rem, each menu grid item changes to a horizontal alignment.</li>
+              <li>Menu grid items are left-aligned horizontally be default. Use the <code>.reverse</code> class to change to right-aligned. In this way, you can actually create a menu grid block with items that flip in either direction.</li>
+            </ul>
           </div>
         </section>
         <section class="row wide">
-          <h2>Delta Design System Organisms</h2>
-          <div class="card-row">
-            <div class="card">
+          <div class="media-grid-block">
+            <div class="media-grid-item">
+              <figure>
+                <img src="../../assets/images/bratislava-2x.jpg" srcset="../../assets/images/bratislava-1x.jpg 1x, ../../assets/images/bratislava-2x.jpg 2x" alt="Example of image used in media grid item layout">
+              </figure>
               <div class="text">
-                <h3>Cards</h3>
-                <p>Coming soon</p>
+                <h2>Media Grid Item Headline</h2>
+                <p>The difference between menu grid items and cards is that media grid items stretch the entire width of their parent.</p>
+                <p><cite>Photo: <a href="https://www.stockio.com/free-photo/bratislava-2" target="_blank">Bratislava</a> by David Cohen</cite></p>
+                <p class="icon"><a href="#!">Learn more<span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"/></svg></span></a></p>
               </div>
             </div>
-            <div class="card">
+            <div class="media-grid-item reverse">
+              <figure>
+                <img src="../../assets/images/building-2x.jpg" srcset="../../assets/images/building-1x.jpg 1x, ../../assets/images/building-2x.jpg 2x" alt="Example of image used in media grid item layout">
+              </figure>
               <div class="text">
-                <h3>Footers</h3>
-                <p class="icon"><a href="footers/footers.html">Learn more<span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"/></svg></span></a></p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="text">
-                <h3>Forms</h3>
-                <p>Coming soon</p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="text">
-                <h3>Headers</h3>
-                <p class="icon"><a href="headers/headers.html">Learn more<span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"/></svg></span></a></p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="text">
-                <h3>Media Grid Blocks</h3>
-                <p>Coming soon</p>
+                <h2>Media Grid Item Headline</h2>
+                <p>Menu grid items also unpack themselves horizontally on screens wider than 48rem. Cards remain stacked vertically.</p>
+                <p><cite>Photo: <a href="https://www.stockio.com/free-photo/building-coen-van" target="_blank">Building</a> by Coen Van</cite></p>
+                <p class="icon"><a href="#!">Learn more<span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"/></svg></span></a></p>
               </div>
             </div>
           </div>
@@ -83,12 +79,12 @@
       <div class="row fifty">
         <nav class="column" aria-labelledby="footer-navigation">
           <ul>
-            <li><a href="../index.html">Overview</a></li>
-            <li><a href="../atoms/atoms.html">Atoms</a></li>
-            <li><a href="../molecules/molecules.html">Molecules</a></li>
-            <li>Organisms</li>
-            <li><a href="../style/style.html">Style</a></li>
-            <li><a href="../downloads/downloads.html">Downloads</a></li>
+            <li><a href="../../index.html">Overview</a></li>
+            <li><a href="../../atoms/atoms.html">Atoms</a></li>
+            <li><a href="../../molecules/molecules.html">Molecules</a></li>
+            <li><a href="../../organisms/organisms.html">Organisms</a></li>
+            <li><a href="../../style/style.html">Style</a></li>
+            <li><a href="../../downloads/downloads.html">Downloads</a></li>
           </ul>
         </nav>
         <section class="meta-content column">
@@ -109,7 +105,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <script src="https://unpkg.com/headroom.js@0.9.4/dist/headroom.js"></script>
-    <script src="../assets/scripts/site.js"></script>
+    <script src="../../assets/scripts/site.js"></script>
     <script>
       var myElement = document.querySelector('header');
       var headroom  = new Headroom(myElement);
