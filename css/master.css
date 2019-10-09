@@ -486,6 +486,12 @@ img + figcaption {
   font-size: 0.8rem;
   text-transform: none; }
 
+img + figcaption > cite {
+  padding: 0.8rem 1rem;
+  font-size: 0.8rem;
+  font-style: normal;
+  text-transform: none; }
+
 button, .button {
   display: inline-flex;
   align-items: center;
@@ -1198,14 +1204,14 @@ blockquote:before {
   blockquote {
     width: 90%; } }
 
-.card-row {
+.card-group {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   margin: 0;
   padding: 0; }
-  .card-row .card {
+  .card-group .card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1214,27 +1220,34 @@ blockquote:before {
     padding: 0;
     border: 1px solid #eeeeee;
     border-radius: 0.25rem; }
-    .card-row .card figure {
+    .card-group .card figure {
       padding: 0; }
-      .card-row .card figure img {
+      .card-group .card figure img {
         border-radius: 0.25rem 0.25rem 0 0; }
-    .card-row .card .text {
+      .card-group .card figure figcaption > cite {
+        display: inline-block;
+        padding: 0 1rem;
+        font-size: 0.8rem;
+        font-style: normal;
+        font-weight: 400;
+        text-transform: none; }
+    .card-group .card .text {
       padding: 1rem;
       width: 100%; }
-      .card-row .card .text h1, .card-row .card .text h2, .card-row .card .text h3, .card-row .card .text h4 {
+      .card-group .card .text h1, .card-group .card .text h2, .card-group .card .text h3, .card-group .card .text h4 {
         padding: 0; }
 
 @media (min-width: 48rem) {
-  .card-row {
+  .card-group {
     flex-direction: row;
     align-items: stretch;
     flex-wrap: wrap;
     justify-content: flex-start; }
-    .card-row .card {
+    .card-group .card {
       width: calc(50% - 2rem); } }
 
 @media (min-width: 64rem) {
-  .card-row .card {
+  .card-group .card {
     width: calc(32.75% - 2rem); } }
 
 .media-grid-block {
@@ -1253,6 +1266,13 @@ blockquote:before {
     padding: 1rem; }
     .media-grid-block .media-grid-item figure {
       padding: 0; }
+      .media-grid-block .media-grid-item figure figcaption > cite {
+        display: inline-block;
+        padding: 0;
+        font-size: 0.8rem;
+        font-style: normal;
+        font-weight: 400;
+        text-transform: none; }
     .media-grid-block .media-grid-item .text {
       padding: 1rem 0 0;
       width: 100%; }
@@ -1273,20 +1293,24 @@ blockquote:before {
 @media (min-width: 48rem) {
   .media-grid-block .media-grid-item {
     flex-direction: row;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    align-items: flex-start; }
     .media-grid-block .media-grid-item figure {
       width: 35%; }
-      .media-grid-block .media-grid-item figure img {
-        border-radius: 0.25rem 0 0 0.25rem; }
     .media-grid-block .media-grid-item .text {
       width: 65%;
-      padding: 1rem 0 1rem 2rem; }
+      padding: 0 0 0 2rem; }
   .media-grid-block .media-grid-item.reverse {
     flex-direction: row-reverse; }
-    .media-grid-block .media-grid-item.reverse figure img {
-      border-radius: 0 0.25rem 0.25rem 0; }
     .media-grid-block .media-grid-item.reverse .text {
-      padding: 1rem 2rem 1rem 0; } }
+      padding: 0 2rem 0 0; } }
+
+@media (min-width: 90rem) {
+  .media-grid-block {
+    width: 75%;
+    margin: 0; }
+  .media-grid-block.center {
+    margin: 0 auto; } }
 
 .messaging {
   display: block;
