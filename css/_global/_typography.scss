@@ -124,6 +124,8 @@ a {
 
 a:hover, a:focus {color: $secondary;}
 
+h1 a, h2 a, h3 a, h4 a {text-decoration: none;}
+
 p a, small a, li a {font-weight: $font-body-bold;}
 
 p.icon a {

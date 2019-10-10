@@ -24,12 +24,13 @@ nav {
     flex-direction: column;
     height: 0;
     padding: 0;
+    font-size: 1.5rem;
     list-style-type: none;
     @include transform(translateX(-100rem));
     @include transition(all, 0.325s, ease);
     li {
       padding: 1rem 0;
-      font-weight: 600;
+      font-weight: $font-body-bold;
     }
     li a {text-decoration: none;}
   }
@@ -56,6 +57,7 @@ nav.open {
       flex-direction: row;
       height: auto;
       padding: 0;
+      font-size: 1rem;
       @include transform (translateX(0));
       li {
         width: auto;
