@@ -17,6 +17,7 @@
     top: 0;
     width: 100%;
     padding: 1rem;
+    font-weight: $font-body-bold;
     color: $white;
     @include transform(translateY(-10rem));
     @include transition(all, 0.5s, ease-in-out);
@@ -45,6 +46,7 @@
         border-color: $white;
         border-radius: 0.25rem;
         font-family: $font-body;
+        font-size: 1rem;
       }
       button.no {
         margin: 0 0 0.25rem;
@@ -93,8 +95,8 @@
       p {width: calc(100% - 10.25rem);}
       .buttons {
         flex-direction: row;
-        button.no {margin: 0 0.25rem 0 0;}
-        button.yes {margin: 0 0 0 0.25rem;}
+        button.no {margin: 0 0.5rem 0 0;}
+        button.yes {margin: 0 0 0 0.5rem;}
       }
     }
   }

@@ -1331,6 +1331,7 @@ blockquote:before {
     top: 0;
     width: 100%;
     padding: 1rem;
+    font-weight: 700;
     color: #ffffff;
     -webkit-transform: translateY(-10rem);
     -moz-transform: translateY(-10rem);
@@ -1365,7 +1366,8 @@ blockquote:before {
         padding: 0.5rem 1rem;
         border-color: #ffffff;
         border-radius: 0.25rem;
-        font-family: "Montserrat", sans-serif; }
+        font-family: "Montserrat", sans-serif;
+        font-size: 1rem; }
       .messaging .error .buttons button.no, .messaging .success .buttons button.no, .messaging .confirm .buttons button.no {
         margin: 0 0 0.25rem;
         color: #ffffff;
@@ -1420,9 +1422,9 @@ blockquote:before {
   .messaging .confirm .buttons {
     flex-direction: row; }
     .messaging .confirm .buttons button.no {
-      margin: 0 0.25rem 0 0; }
+      margin: 0 0.5rem 0 0; }
     .messaging .confirm .buttons button.yes {
-      margin: 0 0 0 0.25rem; } }
+      margin: 0 0 0 0.5rem; } }
 
 @media (min-width: 48rem) {
   .messaging .error p, .messaging .confirm p {
