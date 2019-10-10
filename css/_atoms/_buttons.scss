@@ -53,6 +53,7 @@ button.secondary, .button.secondary {
 button.secondary:hover, button.secondary:focus,
 .button.secondary:hover, .button.secondary:focus {
   color: $secondary;
+  background-color: $white;
   svg {fill: $secondary;}
 }
 

@@ -546,7 +546,8 @@ button.secondary, .button.secondary {
 
 button.secondary:hover, button.secondary:focus,
 .button.secondary:hover, .button.secondary:focus {
-  color: #003442; }
+  color: #003442;
+  background-color: #ffffff; }
   button.secondary:hover svg, button.secondary:focus svg,
   .button.secondary:hover svg, .button.secondary:focus svg {
     fill: #003442; }
