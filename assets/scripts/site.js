@@ -1,5 +1,6 @@
 $('button.menu-toggle').click(function() {
   $('nav').toggleClass('open');
+  $('body').toggleClass('open');
   $('header .logo').toggleClass('open');
 });
 

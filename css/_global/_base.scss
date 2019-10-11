@@ -29,9 +29,12 @@ body, .body {
   width: 100%;
   height: auto;
   overflow-x: hidden;
+  overflow-y: auto;
   margin: 0 auto;
   padding: 0;
 }
+
+body.open {overflow-y: hidden;}
 
 * {
   -webkit-box-sizing: border-box;
