@@ -6,7 +6,7 @@ $('button.menu-toggle').click(function() {
 
 $(".show-hide-password").click(function() {
   $(this).toggleClass("show");
-  var input = $($(this).attr("toggle"));
+  var input = $($(this).attr("id"));
   if (input.attr("type") == "password") {
     input.attr("type", "text");
   } else {

@@ -6,7 +6,7 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  margin: 0 auto 1rem;
+  margin: 1rem auto 0;
   padding: 1rem;
   border: 1px solid $lt-gray;
   border-radius: 0.25rem;
@@ -26,8 +26,13 @@
     padding: 0;
     cursor: pointer;
     svg {
+      position: absolute;
+      right: 0;
       @include transition(all, 0.25s, ease);
     }
+  }
+  input:focus + label, input:not(:placeholder-shown) + label {
+    font-size: 1rem;
   }
   input:not(:placeholder-shown) + label, input:focus + label {
     @include transform(translate(0,0));
@@ -54,5 +59,3 @@
 .accordion input:checked ~ label svg {
   @include transform(rotate(-0.5turn));
 }
-
-.accordion:last-of-type {margin: 0 auto;}

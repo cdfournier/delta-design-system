@@ -385,6 +385,19 @@ h1.center, h2.center, h3.center, p.center, strong.center, em.center, small.cente
 h1.right, h2.right, h3.right, p.right, strong.right, em.right, small.right {
   text-align: right; }
 
+article h1 {
+  padding: 0 2rem; }
+
+article h1 ~ p {
+  padding: 1rem 2rem 0; }
+
+article h1 ~ ul,
+article h1 ~ ol {
+  padding: 1rem 2rem 0 3.5rem; }
+
+article section:first-of-type.row {
+  padding: 2rem 1rem; }
+
 @media (min-width: 48rem) {
   h1.title {
     font-size: 4.209rem; }
@@ -968,7 +981,7 @@ fieldset.button-input > input[type="reset"] {
   position: relative;
   width: 100%;
   overflow: hidden;
-  margin: 0 auto 1rem;
+  margin: 1rem auto 0;
   padding: 1rem;
   border: 1px solid #eeeeee;
   border-radius: 0.25rem;
@@ -989,11 +1002,15 @@ fieldset.button-input > input[type="reset"] {
     padding: 0;
     cursor: pointer; }
     .accordion label svg {
+      position: absolute;
+      right: 0;
       -webkit-transition: all 0.25s ease 0s;
       -moz-transition: all 0.25s ease 0s;
       -ms-transition: all 0.25s ease 0s;
       -o-transition: all 0.25s ease 0s;
       transition: all 0.25s ease 0s; }
+  .accordion input:focus + label, .accordion input:not(:placeholder-shown) + label {
+    font-size: 1rem; }
   .accordion input:not(:placeholder-shown) + label, .accordion input:focus + label {
     -webkit-transform: translate(0, 0);
     -moz-transform: translate(0, 0);
@@ -1028,9 +1045,6 @@ fieldset.button-input > input[type="reset"] {
   -ms-transform: rotate(-0.5turn);
   -o-transform: rotate(-0.5turn);
   transform: rotate(-0.5turn); }
-
-.accordion:last-of-type {
-  margin: 0 auto; }
 
 blockquote {
   display: block;
@@ -1400,13 +1414,9 @@ nav.open {
       transform: translateX(0); }
       nav ul li {
         width: auto;
-        padding: 0 1rem 0 0; }
+        padding: 0 2rem 0 0; }
     nav ul li:last-child {
       padding: 0; } }
-
-@media (min-width: 64rem) {
-  nav ul li {
-    padding: 0 2rem 0 0; } }
 
 nav form.search {
   display: flex;
@@ -1496,6 +1506,8 @@ nav button.search-toggle {
     padding: 2rem; }
     .banner .text h1, .banner .text h2, .banner .text h3, .banner .text h4 {
       padding: 0; }
+    .banner .text p {
+      padding: 1rem 0 0; }
   .banner img {
     width: calc(100% - 4rem);
     margin: 0 auto; }
@@ -1643,7 +1655,7 @@ footer {
     padding: 2rem 0 0.5rem; }
     footer .logo svg {
       width: 6rem; }
-    footer .logo h1 {
+    footer .logo h2 {
       display: block;
       font-size: 1.5rem; }
   footer .github {

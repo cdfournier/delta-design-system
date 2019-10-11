@@ -69,6 +69,15 @@ h1.center, h2.center, h3.center, p.center, strong.center, em.center, small.cente
 
 h1.right, h2.right, h3.right, p.right, strong.right, em.right, small.right {text-align: right;}
 
+article h1 {padding: 0 2rem;}
+
+article h1 ~ p {padding: 1rem 2rem 0;}
+
+article h1 ~ ul,
+article h1 ~ ol {padding: 1rem 2rem 0 3.5rem;}
+
+article section:first-of-type.row {padding: 2rem 1rem;}
+
 @media (min-width: 48rem) {
   h1.title {font-size: 4.209rem;}
   h1.title + p {

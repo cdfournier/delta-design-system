@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Ovo|Montserrat:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ovo&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
     <link href="../../css/master.css" rel="stylesheet">
   </head>
   <body>
     <header>
-      <h1>Header</h1>
       <div class="logo">
         <a href="../../index.html">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 796"><defs><style>.cls-1{fill:#01232d;}.cls-2{fill:#013342;}</style></defs><title>delta-design-system-logo</title><polygon class="cls-1" points="512 796 1024 796 512 0 512 796"/><polygon class="cls-2" points="0 796 512 796 512 0 0 796"/></svg>
@@ -22,7 +23,7 @@
           <svg class="menu-toggle-open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></svg>
           <svg class="menu-toggle-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
         </button>
-        <ul>
+        <ul id="header-navigation">
           <li><a href="../../index.html">Overview</a></li>
           <li><a href="../../atoms/atoms.html">Atoms</a></li>
           <li><a href="../../molecules/molecules.html">Molecules</a></li>
@@ -34,19 +35,16 @@
     </header>
     <main>
       <article>
-        <section class="row wide">
-          <div class="column">
-            <h1 class="title">Accordions</h1>
-            <p>Accordions are elements that expand when clicked. They allow you to hide content that is not immediately relevant to the user.</p>
-            <p>We use a checkbox <code style="white-space: normal;">&lt;input type=&quot;checkbox&quot;&gt;</code> and css to create these accordions. In this way no JavaScript is required.</p>
-          </div>
-        </section>
+        <h1 class="title">Accordions</h1>
+        <p>Accordions are elements that expand when clicked. They allow you to hide content that is not immediately relevant to the user.</p>
+        <p>We use a checkbox <code style="white-space: normal;">&lt;input type=&quot;checkbox&quot;&gt;</code> and css to create these accordions. In this way no JavaScript is required.</p>
         <section class="row fifty">
+          <h2>Accordion Details</h2>
           <div class="column">
             <div class="accordion">
               <input type="checkbox" name="accordion-sample" id="accordion-sample">
               <label for="accordion-sample">
-                <p>What is an accordion?</p>
+                What is an accordion?
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z"/></svg>
               </label>
               <div class="details">
@@ -73,10 +71,9 @@
       </article>
     </main>
     <footer>
-      <h1>Footer</h1>
       <div class="row fifty">
         <nav class="column" aria-labelledby="footer-navigation">
-          <ul>
+          <ul id="footer-navigation">
             <li><a href="../../index.html">Overview</a></li>
             <li><a href="../../atoms/atoms.html">Atoms</a></li>
             <li><a href="../../molecules/molecules.html">Molecules</a></li>
@@ -88,7 +85,7 @@
         <section class="meta-content column">
           <div class="logo">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 796"><defs><style>.cls-1{fill:#01232d;}.cls-2{fill:#013342;}</style></defs><title>delta-design-system-logo</title><polygon class="cls-1" points="512 796 1024 796 512 0 512 796"/><polygon class="cls-2" points="0 796 512 796 512 0 0 796"/></svg>
-            <h1 class="center">The Delta Design System</h1>
+            <h2 class="center">The Delta Design System</h2>
           </div>
           <div class="github">
             <a href="https://github.com/cdfournier/delta-design-system" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 2C6.475 2 2 6.475 2 12a9.994 9.994 0 0 0 6.838 9.488c.5.087.687-.213.687-.476 0-.237-.013-1.024-.013-1.862-2.512.463-3.162-.612-3.362-1.175-.113-.288-.6-1.175-1.025-1.413-.35-.187-.85-.65-.013-.662.788-.013 1.35.725 1.538 1.025.9 1.512 2.338 1.087 2.912.825.088-.65.35-1.087.638-1.337-2.225-.25-4.55-1.113-4.55-4.938 0-1.088.387-1.987 1.025-2.688-.1-.25-.45-1.275.1-2.65 0 0 .837-.262 2.75 1.026a9.28 9.28 0 0 1 2.5-.338c.85 0 1.7.112 2.5.337 1.912-1.3 2.75-1.024 2.75-1.024.55 1.375.2 2.4.1 2.65.637.7 1.025 1.587 1.025 2.687 0 3.838-2.337 4.688-4.562 4.938.362.312.675.912.675 1.85 0 1.337-.013 2.412-.013 2.75 0 .262.188.574.688.474A10.016 10.016 0 0 0 22 12c0-5.525-4.475-10-10-10z"/></svg></a>
@@ -103,7 +100,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <script src="https://unpkg.com/headroom.js@0.9.4/dist/headroom.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="../../assets/scripts/site.js"></script>
+    <script>
+      AOS.init({duration: 600});
+    </script>
     <script>
       var myElement = document.querySelector('header');
       var headroom  = new Headroom(myElement);

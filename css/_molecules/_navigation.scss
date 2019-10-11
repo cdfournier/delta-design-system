@@ -68,7 +68,7 @@ nav.open {
       @include transform (translateX(0));
       li {
         width: auto;
-        padding: 0 1rem 0 0;
+        padding: 0 2rem 0 0;
       }
     }
     ul li:last-child {padding: 0;}
@@ -76,9 +76,4 @@ nav.open {
 }
 
 @media (min-width: 64rem) {
-  nav {
-    ul {
-      li {padding: 0 2rem 0 0;}
-    }
-  }
 }
