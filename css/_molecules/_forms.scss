@@ -241,11 +241,11 @@ input[type="radio"] {
 input[type="radio"]:checked:before {
   display: block;
   position: absolute;
-  top: 0.325rem;
-  left: 0.325rem;
+  top: 20%;
+  left: 20%;
   margin: 0;
-  width: 0.75rem;
-  height: 0.75rem;
+  width: 60%;
+  height: 60%;
   border-radius: 100%;
   background-color: $black;
   content: "";
@@ -261,6 +261,7 @@ input.toggle[type="checkbox"] {
   align-items: center;
   position: absolute;
   top: 0;
+  right: 0;
   left: 0;
   width: 3rem;
   height: 1.5rem;
@@ -283,6 +284,7 @@ input.toggle[type="checkbox"]:after {
   right: 0;
   bottom: 0;
   left: 0;
+  width: 2.9rem;
   margin: 0;
   background-image: url(../assets/icons/close-circle-fill.svg);
   background-position-x: left;
