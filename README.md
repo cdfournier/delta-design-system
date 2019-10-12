@@ -1,5 +1,5 @@
 # Delta Design System
-An open-source design system framework that can be used to build sites, apps, and prototypes responsively and quickly.
+An open-source design system framework that can be used to build responsive sites, apps, and prototypes quickly.
 
 ## Atoms
 - [Buttons](https://cdfournier.github.io/delta-design-system/atoms/buttons/buttons.html)
