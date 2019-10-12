@@ -449,6 +449,13 @@ a {
   -ms-user-select: none;
   user-select: none; }
 
+a svg {
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s; }
+
 a:hover, a:focus {
   color: #003442; }
 

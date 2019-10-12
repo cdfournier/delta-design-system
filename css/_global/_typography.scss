@@ -131,6 +131,8 @@ a {
   user-select: none;
 }
 
+a svg {@include transition(all, 0.25s, ease);}
+
 a:hover, a:focus {color: $secondary;}
 
 h1 a, h2 a, h3 a, h4 a {text-decoration: none;}
