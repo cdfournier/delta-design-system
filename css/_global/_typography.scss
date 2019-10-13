@@ -198,8 +198,9 @@ img + figcaption {
 }
 
 img + figcaption > cite {
-  padding: 0.8rem 1rem;
+  padding: 0.8rem 0 0;
   font-size: 0.8rem;
   font-style: normal;
+  font-weight: $font-body-norm;
   text-transform: none;
 }

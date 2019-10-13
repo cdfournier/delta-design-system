@@ -519,9 +519,10 @@ img + figcaption {
   text-transform: none; }
 
 img + figcaption > cite {
-  padding: 0.8rem 1rem;
+  padding: 0.8rem 0 0;
   font-size: 0.8rem;
   font-style: normal;
+  font-weight: 400;
   text-transform: none; }
 
 button, .button {
