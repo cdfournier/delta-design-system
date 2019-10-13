@@ -1664,8 +1664,6 @@ form {
   width: 100%;
   margin: 2rem auto 0;
   padding: 0; }
-  form button {
-    margin: 0; }
 
 form:before {
   display: block;
