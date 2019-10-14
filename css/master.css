@@ -13,6 +13,12 @@
 .bg-lt-gray {
   background-color: #eeeeee; }
 
+.bg-primary {
+  background-color: #df3a32; }
+
+.bg-secondary {
+  background-color: #003442; }
+
 .bg-dk-blue {
   background-color: #003442; }
 
@@ -524,6 +530,9 @@ img + figcaption > cite {
   font-style: normal;
   font-weight: 400;
   text-transform: none; }
+
+cite a {
+  font-weight: 700; }
 
 button, .button {
   display: inline-flex;
