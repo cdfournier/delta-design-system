@@ -1,5 +1,4 @@
 # Delta Design System
-https://cdfournier.github.io/delta-design-system/index.html
 An open-source design system that can be used to build responsive sites, apps, and prototypes quickly.
 
 ## Atoms
