@@ -22,6 +22,12 @@
 .bg-crimson {
   background-color: #df3a32; }
 
+.bg-primary {
+  background-color: #df3a32; }
+
+.bg-secondary {
+  background-color: #003442; }
+
 .color-card-row {
   display: flex;
   flex-direction: column;
@@ -524,6 +530,9 @@ img + figcaption > cite {
   font-style: normal;
   font-weight: 400;
   text-transform: none; }
+
+cite a {
+  font-weight: 700; }
 
 button, .button {
   display: inline-flex;

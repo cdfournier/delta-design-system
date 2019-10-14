@@ -6,11 +6,6 @@ $md-gray: #cccccc;
 $lt-gray: #eeeeee;
 
 
-// SYSTEM COLORS
-$error: #c00c00;
-$valid: #008000;
-
-
 // BRAND COLORS
 $dk-blue: #003442;
 $lt-blue: #4f7272;
@@ -18,6 +13,11 @@ $crimson: #df3a32;
 
 $primary: #df3a32;
 $secondary: #003442;
+
+
+// SYSTEM COLORS
+$error: #c00c00;
+$valid: #008000;
 
 
 // BACKGROUND-COLOR APPLICATION
@@ -29,6 +29,9 @@ $secondary: #003442;
 .bg-dk-blue {background-color: $dk-blue;}
 .bg-lt-blue {background-color: $lt-blue;}
 .bg-crimson {background-color: $crimson;}
+
+.bg-primary {background-color: $primary;}
+.bg-secondary {background-color: $secondary;}
 
 
 // COLOR CARDS
