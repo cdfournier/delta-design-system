@@ -32,22 +32,29 @@ footer {
       font-size: 1.5rem;
     }
   }
-  .github {
+  .links {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    width: 100%;
-    text-align: center;
-    a {line-height: 1;}
-    a svg {
-      fill: $primary;
-      @include transition (all, 0.25s, ease);
-    }
-    a:hover svg,
-    a:focus svg {fill: $secondary;}
-    svg {
+    justify-content: center;
+    .github, .slack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       width: 2rem;
       height: 2rem;
+      margin: 0 0.25rem;
+      a {line-height: 0.7;}
+      a svg {
+        fill: $primary;
+        @include transition (all, 0.25s, ease);
+      }
+      a:hover svg,
+      a:focus svg {fill: $secondary;}
+      svg {
+        width: 2rem;
+        height: 2rem;
+      }
     }
   }
   .copyright.row {

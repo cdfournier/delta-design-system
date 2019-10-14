@@ -1601,27 +1601,34 @@ footer {
     footer .logo h2 {
       display: block;
       font-size: 1.5rem; }
-  footer .github {
+  footer .links {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    width: 100%;
-    text-align: center; }
-    footer .github a {
-      line-height: 1; }
-    footer .github a svg {
-      fill: #df3a32;
-      -webkit-transition: all 0.25s ease 0s;
-      -moz-transition: all 0.25s ease 0s;
-      -ms-transition: all 0.25s ease 0s;
-      -o-transition: all 0.25s ease 0s;
-      transition: all 0.25s ease 0s; }
-    footer .github a:hover svg,
-    footer .github a:focus svg {
-      fill: #003442; }
-    footer .github svg {
+    justify-content: center; }
+    footer .links .github, footer .links .slack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       width: 2rem;
-      height: 2rem; }
+      height: 2rem;
+      margin: 0 0.25rem; }
+      footer .links .github a, footer .links .slack a {
+        line-height: 0.7; }
+      footer .links .github a svg, footer .links .slack a svg {
+        fill: #df3a32;
+        -webkit-transition: all 0.25s ease 0s;
+        -moz-transition: all 0.25s ease 0s;
+        -ms-transition: all 0.25s ease 0s;
+        -o-transition: all 0.25s ease 0s;
+        transition: all 0.25s ease 0s; }
+      footer .links .github a:hover svg,
+      footer .links .github a:focus svg, footer .links .slack a:hover svg,
+      footer .links .slack a:focus svg {
+        fill: #003442; }
+      footer .links .github svg, footer .links .slack svg {
+        width: 2rem;
+        height: 2rem; }
   footer .copyright.row {
     padding: 0 1rem 1rem; }
     footer .copyright.row p {
