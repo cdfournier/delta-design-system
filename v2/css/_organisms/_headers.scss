@@ -1,0 +1,57 @@
+// HEADERS
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  margin: 0;
+  padding: 1rem;
+  background-color: $white;
+  h1 {display: none;}
+  .logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 1.5rem;
+    width: 4rem;
+    margin: 0 0 0 1rem;
+    @include transition(all, 0.25s, ease);
+    a {line-height: 0.7;}
+  }
+}
+
+header .logo.open {
+  @include transform(translateX(-10rem));
+}
+
+.header--fixed {
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  top: 0
+}
+
+.headroom {
+  @include transition(all, 0.25s, ease);
+  will-change: transform
+}
+
+.headroom--pinned {@include transform(translateY(0));}
+
+.headroom--unpinned {@include transform(translateY(-100%));}
+
+@media (min-width: 48rem) {
+  header {
+    flex-direction: row;
+    align-items: center;
+    .logo {
+      position: relative;
+      top: auto;
+    }
+    nav ul {align-items: center;}
+  }
+}

@@ -1,0 +1,85 @@
+// FOOTERS
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 2rem;
+  nav {
+    padding: 0;
+    ul {
+      flex-direction: column;
+      height: auto;
+      padding: 0;
+      font-size: 1rem;
+      transform: translateX(0);
+      li {
+        padding: 0 0 1rem;
+        text-align: center;
+      }
+    }
+  }
+  section.meta-content {
+    .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      padding: 1rem 0;
+      svg {width: 6rem;}
+      h2 {
+        display: block;
+        padding: 1rem 0 0;
+        font-size: 1.5rem;
+      }
+    }
+    .links {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      .github, .slack {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 2rem;
+        height: 2rem;
+        margin: 0 0.25rem;
+        a {line-height: 0.7;}
+        a svg {
+          fill: $primary;
+          @include transition (all, 0.25s, ease);
+        }
+        a:hover svg,
+        a:focus svg {fill: $secondary;}
+        svg {
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+    }
+  }
+  .copyright p {
+    max-width: none;
+    margin: 0 auto;
+    padding: 1rem 0 0;
+    font-size: 0.64rem;
+    text-align: center;
+  }
+}
+
+@media (min-width: 48rem) {
+  footer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    nav {
+      width: 50%;
+      ul li {text-align: left;}
+    }
+    section.meta-content {
+      width: 50%;
+      .logo {padding: 0 0 1rem;}
+    }
+  }
+}

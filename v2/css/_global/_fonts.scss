@@ -1,0 +1,15 @@
+// FONTS
+$font-head: ("Ovo", serif);
+$font-body: ("Montserrat", sans-serif);
+$font-weight-base:    400;
+$font-weight-bold:    700;
+
+@mixin font-body {
+  font-family: $font-body;
+  font-weight: $font-weight-base;
+}
+
+@mixin font-bold {
+  font-family: $font-body;
+  font-weight: $font-weight-bold;
+}

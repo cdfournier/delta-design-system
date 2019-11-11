@@ -1,0 +1,21 @@
+// LAYOUT
+main {padding: 4rem 0 0;}
+
+@media (min-width: 48rem) {main {padding: 5.5rem 0 0;}}
+
+main:after {
+  display: block;
+  width: calc(100% - 4rem);
+  height: 1px;
+  margin: 2rem auto 0;
+  background-color: $md-gray;
+  content: "";
+}
+
+section.text {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 2rem 0;
+}
