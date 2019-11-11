@@ -1,0 +1,19 @@
+// FIGURES
+figure {
+  display: grid;
+  width: 100%;
+  max-width: 39rem;
+  margin: 0;
+  padding: 1rem 0;
+  pre {
+    margin: 0;
+    padding: 0 0 1rem;
+    padding: 0;
+    overflow-x: auto;
+  }
+  figcaption {
+    @include font-bold;
+    font-size: 0.64rem;
+    text-transform: uppercase;
+  }
+}

@@ -41,6 +41,19 @@ p {
   line-height: 1.75;
 }
 
+p > cite {
+  display: block;
+  font-size: 0.8rem;
+  font-style: normal;
+}
+
+p > cite a {
+  display: inline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 strong, em, b {
   @include font-bold;
   font-style: normal;
@@ -91,7 +104,12 @@ ul li, ol li {
   padding: 0 0 1rem 0.25rem;
 }
 
-// ul li:last-child, ol li:last-child {padding: 0 0 0 0.25rem;}
+ul + p, ol + p {padding: 0;}
+
+/*
+section.row ul li:last-child,
+section.row ol li:last-child {padding: 0 0 0 0.25rem;}
+*/
 
 
 // TEXT LINK STYLES
@@ -106,3 +124,19 @@ a:hover, a:focus {color: $secondary;}
 h1 a, h2 a, h3 a, h4 a {text-decoration: none;}
 
 p a, small a, li a {@include font-bold;}
+
+
+// CODE
+pre {
+  margin: 0.4rem 0 0;
+  line-height: 1.2;
+}
+
+p > code, li > code {
+  margin: 0;
+  padding: 0.15rem 0.25rem;
+  font-family: consolas,"Liberation Mono",courier,monospace;
+  font-size: 0.975rem;
+  white-space: nowrap;
+  background-color: $lt-gray;
+}
