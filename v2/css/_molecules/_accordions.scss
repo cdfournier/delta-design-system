@@ -1,0 +1,62 @@
+// ACCORDIONS
+.accordion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 1rem auto 0;
+  padding: 1rem;
+  border: 1px solid $lt-gray;
+  border-radius: 0.25rem;
+  background-color: $white;
+  cursor: pointer;
+  input {display: none;}
+  label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+    @include font-bold;
+    cursor: pointer;
+    svg {
+      position: absolute;
+      right: 0;
+      @include transition(all, 0.25s, ease);
+    }
+  }
+  input:focus + label, input:not(:placeholder-shown) + label {
+    font-size: 1rem;
+  }
+  input:not(:placeholder-shown) + label, input:focus + label {
+    @include transform(translate(0,0));
+  }
+  .details {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    @include transition(max-height, 0.25s, ease-in-out);
+    p {margin: 0.8rem 0 0;}
+  }
+}
+
+.row .column .accordion label p:first-child,
+.row .column .accordion label p:last-child,
+.row .column .accordion .details p:first-child,
+.row .column .accordion .details p:last-child, {padding: 0;}
+
+.accordion input:checked ~ .details {
+  max-height: 20rem;
+}
+
+.accordion input:checked ~ label svg {
+  @include transform(rotate(-0.5turn));
+}

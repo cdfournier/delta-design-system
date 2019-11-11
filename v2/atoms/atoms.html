@@ -2,19 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title> | Delta Design System</title>
+    <title>Atoms | Delta Design System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ovo&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
-    <link href="../../css/master.css" rel="stylesheet">
+    <link href="../css/master.css" rel="stylesheet">
   </head>
   <body>
     <header>
       <div class="logo">
-        <a href="../../index.html">
+        <a href="../index.html">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 796"><defs><style>.cls-1{fill:#01232d;}.cls-2{fill:#013342;}</style></defs><title>delta-design-system-logo</title><polygon class="cls-1" points="512 796 1024 796 512 0 512 796"/><polygon class="cls-2" points="0 796 512 796 512 0 0 796"/></svg>
         </a>
       </div>
@@ -24,26 +24,32 @@
           <svg class="menu-toggle-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
         </button>
         <ul id="header-navigation">
-          <li><a href="../../about/about.html">About</a></li>
-          <li><a href="../../atoms/atoms.html">Atoms</a></li>
-          <li><a href="../../molecules/molecules.html">Molecules</a></li>
-          <li><a href="../../organisms/organisms.html">Organisms</a></li>
-          <li><a href="../../style/style.html">Style</a></li>
-          <li><a href="../../downloads/downloads.html">Downloads</a></li>
+          <li><a href="../about/about.html">About</a></li>
+          <li>Atoms</li>
+          <li><a href="../molecules/molecules.html">Molecules</a></li>
+          <li><a href="../organisms/organisms.html">Organisms</a></li>
+          <li><a href="../style/style.html">Style</a></li>
+          <li><a href="../downloads/downloads.html">Downloads</a></li>
         </ul>
       </nav>
     </header>
     <main>
+      <section class="row wide">
+        <h1 class="title">Atoms</h1>
+        <p>If atoms are the basic building blocks of matter, then the atoms of our interfaces serve as the building blocks of our design system.</p>
+        <p><cite><a href="http://atomicdesign.bradfrost.com/chapter-2/#atoms">Atoms</a> from <a href="http://atomicdesign.bradfrost.com/" target="_blank">Atomic Design</a> by <a href="https://bradfrost.com" target="_blank">Brad Frost</a></cite></p>
+        <p>Note that there aren't many atoms. I haven't broken everything down into atoms yet, and I'm not sure if I will. Some things make more sense when paired into molecules and organisms. There are also some things that I've bundled into <a href="../style/style.html">Styles</a>, so perhaps you'll find more there.</p>
+      </section>
     </main>
     <footer>
       <nav aria-labelledby="footer-navigation">
         <ul id="footer-navigation">
-          <li><a href="../../about/about.html">About</a></li>
-          <li><a href="../../atoms/atoms.html">Atoms</a></li>
-          <li><a href="../../molecules/molecules.html">Molecules</a></li>
-          <li><a href="../../organisms/organisms.html">Organisms</a></li>
-          <li><a href="../../style/style.html">Style</a></li>
-          <li><a href="../../downloads/downloads.html">Downloads</a></li>
+          <li><a href="../about/about.html">About</a></li>
+          <li>Downloads</li>
+          <li><a href="../molecules/molecules.html">Molecules</a></li>
+          <li><a href="../organisms/organisms.html">Organisms</a></li>
+          <li><a href="../style/style.html">Style</a></li>
+          <li><a href="../downloads/downloads.html">Downloads</a></li>
         </ul>
       </nav>
       <section class="meta-content">
@@ -69,7 +75,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <script src="https://unpkg.com/headroom.js@0.9.4/dist/headroom.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="../../assets/scripts/site.js"></script>
+    <script src="../assets/scripts/site.js"></script>
     <script>
       AOS.init({duration: 600});
     </script>

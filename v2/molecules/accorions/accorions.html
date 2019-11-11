@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title> | Delta Design System</title>
+    <title>Accorions | Delta Design System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
@@ -14,7 +14,7 @@
   <body>
     <header>
       <div class="logo">
-        <a href="../../index.html">
+        <a href="../../../index.html">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 796"><defs><style>.cls-1{fill:#01232d;}.cls-2{fill:#013342;}</style></defs><title>delta-design-system-logo</title><polygon class="cls-1" points="512 796 1024 796 512 0 512 796"/><polygon class="cls-2" points="0 796 512 796 512 0 0 796"/></svg>
         </a>
       </div>
@@ -24,7 +24,7 @@
           <svg class="menu-toggle-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
         </button>
         <ul id="header-navigation">
-          <li><a href="../../about/about.html">About</a></li>
+          <li>About</li>
           <li><a href="../../atoms/atoms.html">Atoms</a></li>
           <li><a href="../../molecules/molecules.html">Molecules</a></li>
           <li><a href="../../organisms/organisms.html">Organisms</a></li>
@@ -34,6 +34,41 @@
       </nav>
     </header>
     <main>
+      <section class="row wide">
+        <h1 class="title">Accorions</h1>
+        <p>Accordions are elements that expand when clicked. They allow you to hide content that is not immediately relevant to the user.</p>
+        <p>We use a checkbox <code style="white-space: normal;">&lt;input type=&quot;checkbox&quot;&gt;</code> and css to create these accordions. In this way no JavaScript is required.</p>
+      </section>
+      <section class="row fifty">
+        <h2>Accordion Details</h2>
+        <div class="column">
+          <div class="accordion">
+            <input type="checkbox" name="accordion-sample" id="accordion-sample">
+            <label for="accordion-sample">
+              What is an accordion?
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z"/></svg>
+            </label>
+            <div class="details">
+              <p>Accordions are elements that can be clicked to reveal or hide content associated with them.</p>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <figure>
+            <figcaption>html</figcaption>
+<pre><code>&lt;div class=&quot;accordion&quot;&gt;
+  &lt;input type=&quot;checkbox&quot; name=&quot;accordion-sample&quot; id=&quot;accordion-sample&quot;&gt;
+  &lt;label for=&quot;accordion-sample&quot;&gt;
+    &lt;p&gt;What is an accordion?&lt;/p&gt;
+    &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z&quot;/&gt;&lt;/svg&gt;
+  &lt;/label&gt;
+  &lt;div class=&quot;details&quot;&gt;
+    &lt;p&gt;An accordion menu is a vertically stacked list of headers that can be clicked to reveal or hide content associated with them.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </figure>
+        </div>
+      </section>
     </main>
     <footer>
       <nav aria-labelledby="footer-navigation">
