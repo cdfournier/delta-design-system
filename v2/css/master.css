@@ -111,6 +111,10 @@ ul + h1, ul + h2, ul + h3, ul + h4,
 ol + h1, ol + h2, ol + h3, ol + h4 {
   padding: 2rem 0 0; }
 
+ul + h2, ul + h3, ul + h4,
+ol + h2, ol + h3, ol + h4 {
+  padding: 1rem 0 0; }
+
 p {
   width: 100%;
   max-width: 39rem;
@@ -201,6 +205,31 @@ h1 a, h2 a, h3 a, h4 a {
 p a, small a, li a {
   font-family: "Montserrat", sans-serif;
   font-weight: 700; }
+
+p.icon a {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start; }
+  p.icon a span {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    p.icon a span svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      margin: 0 0 0 0.25rem;
+      fill: #df3a32;
+      -webkit-transition: all 0.25s ease 0s;
+      -moz-transition: all 0.25s ease 0s;
+      -ms-transition: all 0.25s ease 0s;
+      -o-transition: all 0.25s ease 0s;
+      transition: all 0.25s ease 0s; }
+
+p.icon a:hover span svg,
+p.icon a:focus span svg {
+  margin: 0 0 0 0.5rem;
+  fill: #003442; }
 
 pre {
   margin: 0.4rem 0 0;
