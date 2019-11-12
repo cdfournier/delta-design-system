@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Buttons | Delta Design System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ovo&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+    <link href="../../css/master.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="../../index.html">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 796"><defs><style>.cls-1{fill:#01232d;}.cls-2{fill:#013342;}</style></defs><title>delta-design-system-logo</title><polygon class="cls-1" points="512 796 1024 796 512 0 512 796"/><polygon class="cls-2" points="0 796 512 796 512 0 0 796"/></svg>
+        </a>
+      </div>
+      <nav aria-labelledby="header-navigation">
+        <button class="menu-toggle" aria-expanded="false" aria-controls="header-navigation">
+          <svg class="menu-toggle-open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></svg>
+          <svg class="menu-toggle-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+        </button>
+        <ul id="header-navigation">
+          <li><a href="../../about/about.html">About</a></li>
+          <li><a href="../../atoms/atoms.html">Atoms</a></li>
+          <li><a href="../../molecules/molecules.html">Molecules</a></li>
+          <li><a href="../../organisms/organisms.html">Organisms</a></li>
+          <li><a href="../../style/style.html">Style</a></li>
+          <li><a href="../../downloads/downloads.html">Downloads</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="row wide">
+        <h1 class="title">Buttons</h1>
+        <p>The &lt;button&gt; element represents a clickable button, which can be used in forms or anywhere in a document that needs simple, standard button functionality.</p>
+        <p><cite><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button" target="_blank">&lt;button&gt;</a> by <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button$history" target="_blank">Mozilla Contributors</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/2.5/" target="_blank">CC-BY-SA 2.5</a>.</cite></p>
+        <h2>Button Details</h2>
+        <p>There are lots and lots and lots of rules for buttons, and there are also lots and lots of options for buttons. It's worth reading up on the dos and don'ts of buttons in order to ensure your buttons will function as expected by all users. Here are some good places to start:</p>
+        <ul>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button" target="_blank">MDN web docs</a></li>
+          <li><a href="https://a11y-style-guide.com/style-guide/section-general.html#kssref-general-buttons" target="_blank">A11Y Style Guide</a></li>
+          <li><a href="https://www.w3schools.com/tags/tag_button.asp" target="_blank">W3 Schools</a></li>
+        </ul>
+        <p>Whenever semantically appropriate, anything that functions as a button should be coded as a <code>&lt;button&gt;</code>. However, the Delta Design System does provide CSS classes to make any <code>&lt;span&gt;</code> or <code>&lt;a href&gt;</code> element look like a button.</p>
+        <p>The Delta Design System's normal button uses the <code>$primary</code> color application and handles both the default button state, as well as the <code>:hover</code> and <code>:focus</code> states.</p>
+      </section>
+      <section class="row wide">
+        <h2>Button Examples</h2>
+        <div class="row fifty border">
+          <div class="column">
+            <h3>Primary Buttons</h3>
+            <button type="button">Button</button>
+          </div>
+          <div class="column">
+            <figure>
+              <figcaption>html</figcaption>
+<pre><code>&lt;button type=&quot;button&quot;&gt;Button&lt;/button&gt;</code></pre>
+            </figure>
+          </div>
+        </div>
+        <div class="row fifty border">
+          <div class="column">
+            <h3>Secondary Buttons</h3>
+            <p>Add a <code>.secondary</code> class to the button to use the design system's secondary color application.</p>
+            <button type="button" class="secondary">Button</button>
+          </div>
+          <div class="column">
+            <figure>
+              <figcaption>html</figcaption>
+<pre><code>&lt;button type=&quot;button&quot; class=&quot;secondary&quot;&gt;Button&lt;/button&gt;</code></pre>
+            </figure>
+          </div>
+        </div>
+        <div class="row fifty border">
+          <div class="column">
+            <h3>Reverse Buttons</h3>
+            <p>Though we'd prefer you keep it simple and not use too many button styles, you can also add a <code>.reverse</code> class to the button to create a button with a white background. This option works for both the primary and secondary colors.</p>
+            <button type="button" class="reverse">Button</button>
+            <button type="button" class="reverse secondary">Button</button>
+          </div>
+          <div class="column">
+            <figure>
+              <figcaption>html</figcaption>
+<pre><code>&lt;button type=&quot;button&quot; class=&quot;reverse&quot;&gt;Button&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;reverse secondary&quot;&gt;Button&lt;/button&gt;</code></pre>
+            </figure>
+          </div>
+        </div>
+        <div class="row fifty">
+          <div class="column">
+            <h3>Buttons with Icons</h3>
+            <p>Lots of situations these days call for a button with an icon. Just add the desired svg code to the button label and you should be all set.</p>
+            <button type="button">Button<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"/></svg></button>
+          </div>
+          <div class="column">
+            <figure>
+              <figcaption>html</figcaption>
+<pre><code>&lt;button type=&quot;button&quot;&gt;Button&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z&quot;/&gt;&lt;/svg&gt;&lt;/button&gt;</code></pre>
+            </figure>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <nav aria-labelledby="footer-navigation">
+        <ul id="footer-navigation">
+          <li><a href="../../about/about.html">About</a></li>
+          <li><a href="../../atoms/atoms.html">Atoms</a></li>
+          <li><a href="../../molecules/molecules.html">Molecules</a></li>
+          <li><a href="../../organisms/organisms.html">Organisms</a></li>
+          <li><a href="../../style/style.html">Style</a></li>
+          <li><a href="../../downloads/downloads.html">Downloads</a></li>
+        </ul>
+      </nav>
+      <section class="meta-content">
+        <div class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 796"><defs><style>.cls-1{fill:#01232d;}.cls-2{fill:#013342;}</style></defs><title>delta-design-system-logo</title><polygon class="cls-1" points="512 796 1024 796 512 0 512 796"/><polygon class="cls-2" points="0 796 512 796 512 0 0 796"/></svg>
+          <h2 class="center">The Delta Design System</h2>
+        </div>
+        <div class="links">
+          <div class="github">
+            <a href="https://github.com/cdfournier/delta-design-system" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 2C6.475 2 2 6.475 2 12a9.994 9.994 0 0 0 6.838 9.488c.5.087.687-.213.687-.476 0-.237-.013-1.024-.013-1.862-2.512.463-3.162-.612-3.362-1.175-.113-.288-.6-1.175-1.025-1.413-.35-.187-.85-.65-.013-.662.788-.013 1.35.725 1.538 1.025.9 1.512 2.338 1.087 2.912.825.088-.65.35-1.087.638-1.337-2.225-.25-4.55-1.113-4.55-4.938 0-1.088.387-1.987 1.025-2.688-.1-.25-.45-1.275.1-2.65 0 0 .837-.262 2.75 1.026a9.28 9.28 0 0 1 2.5-.338c.85 0 1.7.112 2.5.337 1.912-1.3 2.75-1.024 2.75-1.024.55 1.375.2 2.4.1 2.65.637.7 1.025 1.587 1.025 2.687 0 3.838-2.337 4.688-4.562 4.938.362.312.675.912.675 1.85 0 1.337-.013 2.412-.013 2.75 0 .262.188.574.688.474A10.016 10.016 0 0 0 22 12c0-5.525-4.475-10-10-10z"/></svg></a>
+          </div>
+          <div class="slack">
+            <a href="https://delta-design-system.slack.com" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M14.5 3A1.5 1.5 0 0 1 16 4.5v5a1.5 1.5 0 0 1-3 0v-5A1.5 1.5 0 0 1 14.5 3zm-10 10H6v1.5A1.5 1.5 0 1 1 4.5 13zm8.5 5h1.5a1.5 1.5 0 1 1-1.5 1.5V18zm1.5-5h5a1.5 1.5 0 0 1 0 3h-5a1.5 1.5 0 0 1 0-3zm5-5a1.5 1.5 0 0 1 0 3H18V9.5A1.5 1.5 0 0 1 19.5 8zm-15 0h5a1.5 1.5 0 0 1 0 3h-5a1.5 1.5 0 0 1 0-3zm5-5A1.5 1.5 0 0 1 11 4.5V6H9.5a1.5 1.5 0 0 1 0-3zm0 10a1.5 1.5 0 0 1 1.5 1.5v5a1.5 1.5 0 0 1-3 0v-5A1.5 1.5 0 0 1 9.5 13z"/></svg></a>
+          </div>
+        </div>
+      </section>
+      <div class="copyright">
+        <p>&copy; 2019 Delta Design System. Conceived and developed by <a href="https://chris.blackcoffeeshoppe.com" target="_blank">Chris Fournier</a>.</p>
+      </div>
+    </footer>
+    <!-- scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="https://unpkg.com/headroom.js@0.9.4/dist/headroom.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="../../assets/scripts/site.js"></script>
+    <script>
+      AOS.init({duration: 600});
+    </script>
+    <script>
+      var myElement = document.querySelector('header');
+      var headroom  = new Headroom(myElement);
+      headroom.init(); 
+    </script>
+  </body>
+</html>
