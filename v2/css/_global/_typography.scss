@@ -109,11 +109,6 @@ ul li, ol li {
 
 ul + p, ol + p {padding: 0;}
 
-/*
-section.row ul li:last-child,
-section.row ol li:last-child {padding: 0 0 0 0.25rem;}
-*/
-
 
 // TEXT LINK STYLES
 a {
@@ -168,3 +163,5 @@ p > code, li > code {
   white-space: nowrap;
   background-color: $lt-gray;
 }
+
+li > code {padding: 0.05rem 0.25rem;}

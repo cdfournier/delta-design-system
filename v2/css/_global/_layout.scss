@@ -1,6 +1,4 @@
 // LAYOUT
-main {padding: 4rem 0 0;}
-
 main:after {
   display: block;
   width: calc(100% - 4rem);
@@ -27,6 +25,8 @@ main:after {
   h3 + .column,
   h4 + .column {padding: 0.5rem 0 0;}
 }
+
+main > .row:first-of-type {padding: 6rem 2rem 0;}
 
 .wide, .golden, .thirds, .fourths {width: 100%;}
 
