@@ -466,6 +466,17 @@ figure {
     font-weight: 700;
     font-size: 0.64rem;
     text-transform: uppercase; }
+  figure figcaption > cite {
+    display: inline-block;
+    padding: 1rem 0 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+    font-style: normal;
+    text-transform: none; }
+  figure figcaption > cite a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700; }
 
 ul.chips {
   display: flex;

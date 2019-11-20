@@ -16,4 +16,13 @@ figure {
     font-size: 0.64rem;
     text-transform: uppercase;
   }
+  figcaption > cite {
+    display: inline-block;
+    padding: 1rem 0 0;
+    @include font-body;
+    font-size: 0.8rem;
+    font-style: normal;
+    text-transform: none;
+  }
+  figcaption > cite a {@include font-bold;}
 }
