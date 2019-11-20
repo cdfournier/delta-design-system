@@ -106,6 +106,9 @@ ul.no-bullets {
 ol {list-style-type: decimal;}
 
 ul li, ol li {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
   width: 100%;
   max-width: 39rem;
   padding: 0 0 1rem 0.25rem;

@@ -187,6 +187,9 @@ ol {
   list-style-type: decimal; }
 
 ul li, ol li {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
   width: 100%;
   max-width: 39rem;
   padding: 0 0 1rem 0.25rem; }
@@ -576,6 +579,27 @@ ul.chips {
     border-radius: 100%; }
   ul.chips li.avatar img + span {
     padding: 0 0.75rem 0 0.25rem; }
+
+span.badge {
+  display: flex;
+  position: absolute;
+  right: 0;
+  padding: 0 0.5rem;
+  border-radius: 1rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem; }
+
+.accordion label span.badge {
+  right: 1.5rem; }
+
+span.badge.bg-black,
+span.badge.bg-primary,
+span.badge.bg-secondary,
+span.badge.bg-lt-blue,
+span.badge.bg-error,
+span.badge.bg-valid {
+  color: #ffffff; }
 
 nav {
   width: 100%;
@@ -1652,3 +1676,49 @@ footer {
 @media (min-width: 48rem) {
   .bg-photo.fixed {
     background-attachment: fixed; } }
+
+/*
+ul.tabs {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  width: 100%;
+  overflow-x: scroll;
+  padding: 1rem 0 0;
+  @include font-bold;
+  font-size: 0.8rem;
+  li {
+    width: auto;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    @include transition(all, 0.25s, ease);
+  }
+  li:hover, li:focus {background-color: $lt-gray;}
+  li a, li a:hover, li a:focus {
+    color: $black;
+    text-decoration: none;
+  }
+}
+
+.tab-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  .tab {
+    width: 0;
+    height: 0;
+    @include transform(scale(0));
+    @include transition(all, 0.25s, ease);
+  }
+  .tab.show {
+    width: 100%;
+    height: 100%;
+    @include transform(scale(1));
+  }
+}
+*/

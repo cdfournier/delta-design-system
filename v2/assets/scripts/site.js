@@ -68,3 +68,28 @@ $('ul.chips li.dismiss-4 svg.close').click( function() {
 $('ul.chips li.dismiss-reset').click( function() {
   $('ul.chips li').removeClass('dismissed');
 });
+
+$('.tab-a').click(function() {
+  $('.tab.a').addClass('show');
+  $('.tab.b').removeClass('show');
+  $('.tab.c').removeClass('show');
+  $('.tab.d').removeClass('show');
+});
+$('.tab-b').click(function() {
+  $('.tab.a').removeClass('show');
+  $('.tab.b').addClass('show');
+  $('.tab.c').removeClass('show');
+  $('.tab.d').removeClass('show');
+});
+$('.tab-c').click(function() {
+  $('.tab.a').removeClass('show');
+  $('.tab.b').removeClass('show');
+  $('.tab.c').addClass('show');
+  $('.tab.d').removeClass('show');
+});
+$('.tab-d').click(function() {
+  $('.tab.a').removeClass('show');
+  $('.tab.b').removeClass('show');
+  $('.tab.c').removeClass('show');
+  $('.tab.d').addClass('show');
+});

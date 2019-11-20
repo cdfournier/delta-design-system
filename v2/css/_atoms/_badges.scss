@@ -1,0 +1,23 @@
+// BADGES
+span.badge {
+  display: flex;
+  position: absolute;
+  right: 0;
+  padding: 0 0.5rem;
+  border-radius: 1rem;
+  @include font-bold;
+  font-size: 0.8rem;
+}
+
+
+// ACCORDION BADGES
+.accordion label span.badge {right: 1.5rem;}
+
+span.badge.bg-black,
+span.badge.bg-primary,
+span.badge.bg-secondary,
+span.badge.bg-lt-blue,
+span.badge.bg-error,
+span.badge.bg-valid {
+  color: $white;
+}
