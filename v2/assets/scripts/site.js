@@ -15,27 +15,56 @@ $(".show-hide-password").click(function() {
 });
 
 $('.show-error').click( function() {
-  $('.messaging .error').addClass('show');
+  $('.messages .error').addClass('show');
   setTimeout(function() { 
-    $('.messaging .error').removeClass('show') }, 10000);
+    $('.messages .error').removeClass('show') }, 10000);
 });
 $('svg.close').click( function() {
-  $('.messaging .error').removeClass('show');
+  $('.messages .error').removeClass('show');
 });
 $('.show-success').click( function() {
-  $('.messaging .success').addClass('show');
+  $('.messages .success').addClass('show');
   setTimeout(function() { 
-    $('.messaging .success').removeClass('show') }, 10000);
+    $('.messages .success').removeClass('show') }, 10000);
 });
 $('svg.close').click( function() {
-  $('.messaging .success').removeClass('show');
+  $('.messages .success').removeClass('show');
 });
 $('.show-confirm').click( function() {
-  $('.messaging .confirm').addClass('show');
+  $('.messages .confirm').addClass('show');
 });
 $('button.no').click( function() {
-  $('.messaging .confirm').removeClass('show');
+  $('.messages .confirm').removeClass('show');
 });
 $('button.yes').click( function() {
-  $('.messaging .confirm').removeClass('show');
+  $('.messages .confirm').removeClass('show');
+});
+
+$('ul.chips li.option-1').click( function() {
+  $('ul.chips li.option-1 svg.check').toggleClass('show');
+});
+$('ul.chips li.option-2').click( function() {
+  $('ul.chips li.option-2 svg.check').toggleClass('show');
+});
+$('ul.chips li.option-3').click( function() {
+  $('ul.chips li.option-3 svg.check').toggleClass('show');
+});
+$('ul.chips li.option-4').click( function() {
+  $('ul.chips li.option-4 svg.check').toggleClass('show');
+});
+
+$('ul.chips li.dismiss-1 svg.close').click( function() {
+  $('ul.chips li.dismiss-1').addClass('dismissed');
+});
+$('ul.chips li.dismiss-2 svg.close').click( function() {
+  $('ul.chips li.dismiss-2').addClass('dismissed');
+});
+$('ul.chips li.dismiss-3 svg.close').click( function() {
+  $('ul.chips li.dismiss-3').addClass('dismissed');
+});
+$('ul.chips li.dismiss-4 svg.close').click( function() {
+  $('ul.chips li.dismiss-4').addClass('dismissed');
+});
+$('ul.chips li.dismiss-reset').click( function() {
+  $('ul.chips li').removeClass('dismissed');
 });

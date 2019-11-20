@@ -40,6 +40,15 @@
     align-items: stretch;
     flex-wrap: wrap;
     justify-content: space-between;
-    .card {width: calc(50% - 2rem);}
+    .card {
+      width: calc(50% - 1rem);
+      max-width: 38rem;
+    }
+  }
+}
+
+@media (min-width: 64rem) {
+  .card-group {
+    .card {width: calc(32.75% - 1rem);}
   }
 }

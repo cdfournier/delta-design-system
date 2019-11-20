@@ -54,6 +54,7 @@
                 <span class="valid">Valid message goes here</span>
               </div>
             </fieldset>
+            <p>Though we're only showing a text input example above, this is the same code structure required for other input types such as email, phone, search, url, etc.</p>
           </div>
           <div class="column">
             <figure>
@@ -179,6 +180,131 @@
             </figure>
           </div>
         </div>
+        <div class="row fifty border">
+          <div class="column">
+            <h3>Checkboxes</h3>
+            <fieldset class="checkbox">
+              <label for="checkbox" class="checkbox">Label<input type="checkbox" name="checkbox" id="checkbox"></label>
+              <div class="message">
+                <span class="error">Error message goes here</span>
+                <span class="valid">Valid message goes here</span>
+              </div>
+            </fieldset>
+            <p>For checkboxes we wrap the <code>&lt;input&gt;</code> inside the <code>&lt;label&gt;</code>. This is still semantically correct, and we use css to create a design consistent with the other elements of the system.</p>
+          </div>
+          <div class="column">
+            <figure>
+              <figcaption>html</figcaption>
+<pre><code>&lt;fieldset class=&quot;checkbox&quot;&gt;
+  &lt;label for=&quot;checkbox&quot; class=&quot;checkbox&quot;&gt;Label&lt;input type=&quot;checkbox&quot; name=&quot;checkbox&quot; id=&quot;checkbox&quot;&gt;&lt;/label&gt;
+  &lt;div class=&quot;message&quot;&gt;
+    &lt;span class=&quot;error&quot;&gt;Error message goes here&lt;/span&gt;
+    &lt;span class=&quot;valid&quot;&gt;Valid message goes here&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
+            </figure>
+          </div>
+        </div>
+        <div class="row fifty border">
+          <div class="column">
+            <h3>Radio Buttons</h3>
+            <fieldset class="radio">
+              <label for="radio-one" class="radio">Radio label one<input type="radio" name="radio" id="radio-one"></label>
+              <label for="radio-two" class="radio">Radio label two<input type="radio" name="radio" id="radio-two"></label>
+              <div class="message">
+                <span class="error">Error message goes here</span>
+                <span class="valid">Valid message goes here</span>
+              </div>
+            </fieldset>
+            <p>For radio buttons we wrap the <code>&lt;input&gt;</code> inside the <code>&lt;label&gt;</code>. This is still semantically correct, and we use css to create a design consistent with the other elements of the system.</p>
+          </div>
+          <div class="column">
+            <figure>
+              <figcaption>html</figcaption>
+<pre><code>&lt;fieldset class=&quot;radio&quot;&gt;
+  &lt;label for=&quot;radio-one&quot; class=&quot;radio&quot;&gt;Radio label one&lt;input type=&quot;radio&quot; name=&quot;radio&quot; id=&quot;radio-one&quot;&gt;&lt;/label&gt;
+  &lt;label for=&quot;radio-two&quot; class=&quot;radio&quot;&gt;Radio label two&lt;input type=&quot;radio&quot; name=&quot;radio&quot; id=&quot;radio-two&quot;&gt;&lt;/label&gt;
+  &lt;div class=&quot;message&quot;&gt;
+    &lt;span class=&quot;error&quot;&gt;Error message goes here&lt;/span&gt;
+    &lt;span class=&quot;valid&quot;&gt;Valid message goes here&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
+            </figure>
+          </div>
+        </div>
+        <div class="row fifty border">
+          <div class="column">
+            <h3>Toggle Switches</h3>
+            <fieldset class="toggle">
+              <label for="toggle" class="toggle">Label<input type="checkbox" name="toggle" class="toggle" id="toggle"></label>
+              <div class="message">
+                <span class="error">Error message goes here</span>
+                <span class="valid">Valid message goes here</span>
+              </div>
+            </fieldset>
+            <p>For toggles we wrap the <code>&lt;input&gt;</code> inside the <code>&lt;label&gt;</code>. This is still semantically correct, and we use css to create a design consistent with the other elements of the system.</p>
+          </div>
+          <div class="column">
+            <figure>
+              <figcaption>html</figcaption>
+<pre><code>&lt;fieldset class=&quot;toggle&quot;&gt;
+  &lt;label for=&quot;toggle&quot; class=&quot;toggle&quot;&gt;Label&lt;input type=&quot;checkbox&quot; name=&quot;toggle&quot; class=&quot;toggle&quot; id=&quot;toggle&quot;&gt;&lt;/label&gt;
+  &lt;div class=&quot;message&quot;&gt;
+    &lt;span class=&quot;error&quot;&gt;Error message goes here&lt;/span&gt;
+    &lt;span class=&quot;valid&quot;&gt;Valid message goes here&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
+            </figure>
+          </div>
+        </div>
+        <div class="row fifty border">
+          <div class="column">
+            <h3>Buttons</h3>
+            <fieldset class="button-input">
+              <input type="button" name="button" id="button" class="button" value="Button" aria-pressed="false">
+            </fieldset>
+            <p><code>&lt;input&gt;</code> elements of type button are rendered as simple push buttons, which can be programmed to control custom functionality as required when assigned an event handler function (typically for the <code>click</code> event).</p>
+            <p><code>&lt;input type=&quot;button&quot;&gt;</code> elements have no default behavior (their cousins, <code>&lt;input type=&quot;submit&quot;&gt;</code> and <code>&lt;input type=&quot;reset&quot;&gt;</code> are used to submit and reset forms, respectively). To make buttons do anything, you have to write JavaScript code to do the work.</p>
+            <p><cite><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/button" target="_blank">&lt;input type=&quot;button&quot;&gt;</a> by <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/button$history" target="_blank">Mozilla Contributors</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/2.5/" target="_blank">CC-BY-SA 2.5</a>.</cite></p>
+          </div>
+          <div class="column">
+            <figure>
+              <figcaption>html</figcaption>
+<pre><code>&lt;fieldset class=&quot;button-input&quot;&gt;
+  &lt;input type=&quot;button&quot; name=&quot;button&quot; id=&quot;button&quot; class=&quot;button&quot; value=&quot;Button&quot; aria-pressed=&quot;false&quot;&gt;
+&lt;/fieldset&gt;</code></pre>
+            </figure>
+          </div>
+        </div>
+      </section>
+      <section class="row wide">
+        <h2>Small Inputs</h2>
+        <p>If you need to create an input that is less wide than normal, just add a <code>.sm</code> class to that input's <code>fieldset</code>.</p>
+        <div class="row fifty">
+          <div class="column">
+            <fieldset class="sm">
+              <input type="text" name="text-input-small" id="text-input-small" placeholder="Placeholder">
+              <label for="text-input-small">Label</label>
+              <div class="message">
+                <span class="error">Error message goes here</span>
+                <span class="valid">Valid message goes here</span>
+              </div>
+            </fieldset>
+          </div>
+          <div class="column">
+            <figure>
+              <figcaption>html</figcaption>
+<pre><code>&lt;fieldset class=&quot;sm&quot;&gt;
+  &lt;input type=&quot;text&quot; name=&quot;text-input-small&quot; id=&quot;text-input-small&quot; placeholder=&quot;Placeholder&quot;&gt;
+  &lt;label for=&quot;text-input-small&quot;&gt;Label&lt;/label&gt;
+  &lt;div class=&quot;message&quot;&gt;
+    &lt;span class=&quot;error&quot;&gt;Error message goes here&lt;/span&gt;
+    &lt;span class=&quot;valid&quot;&gt;Valid message goes here&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
+            </figure>
+          </div>
+        </div>
       </section>
     </main>
     <footer>
@@ -192,7 +318,7 @@
           <li><a href="../../downloads/downloads.html">Downloads</a></li>
         </ul>
       </nav>
-      <section class="meta-content">
+      <section class="brand-content">
         <div class="logo">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 796"><defs><style>.cls-1{fill:#01232d;}.cls-2{fill:#013342;}</style></defs><title>delta-design-system-logo</title><polygon class="cls-1" points="512 796 1024 796 512 0 512 796"/><polygon class="cls-2" points="0 796 512 796 512 0 0 796"/></svg>
           <h2 class="center">The Delta Design System</h2>

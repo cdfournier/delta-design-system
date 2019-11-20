@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Colors | Delta Design System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ovo&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+    <link href="../../css/master.css" rel="stylesheet">
+    <style>
+      .color-chips {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        width: calc(100% + 2rem);
+        margin: 0 -1rem;
+        padding: 0 0 2rem;
+      }
+      .color-chips:last-of-type {padding: 0;}
+      .color-chips .chip {
+        width: calc(50% - 2rem);
+        max-width: 10rem;
+        margin: 1rem;
+        padding: 1rem;
+        border: 1px solid #eeeeee;
+        border-radius: 0.25rem;
+      }
+      .color-chips .chip figure {
+        padding: 0;
+      }
+      .color-chips .chip figure div {
+        margin: -1rem -1rem 0rem;
+        padding: 3rem;
+        border-radius: 0.25rem 0.25rem 0 0;
+      }
+      .color-chips .chip figure figcaption {
+        text-transform: none;
+      }
+      .color-chips .chip figure figcaption p {
+        padding: 0;
+        line-height: 1.5;
+      }
+      .color-chips .chip figure figcaption p:first-of-type {
+        padding: 1rem 0 0;
+      }
+      .color-chips .chip figure figcaption p code {
+        padding: 0;
+        font-size: 1rem;
+        font-weight: 400;
+        background-color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="../../index.html">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 796"><defs><style>.cls-1{fill:#01232d;}.cls-2{fill:#013342;}</style></defs><title>delta-design-system-logo</title><polygon class="cls-1" points="512 796 1024 796 512 0 512 796"/><polygon class="cls-2" points="0 796 512 796 512 0 0 796"/></svg>
+        </a>
+      </div>
+      <nav aria-labelledby="header-navigation">
+        <button class="menu-toggle" aria-expanded="false" aria-controls="header-navigation">
+          <svg class="menu-toggle-open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></svg>
+          <svg class="menu-toggle-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+        </button>
+        <ul id="header-navigation">
+          <li><a href="../../about/about.html">About</a></li>
+          <li><a href="../../atoms/atoms.html">Atoms</a></li>
+          <li><a href="../../molecules/molecules.html">Molecules</a></li>
+          <li><a href="../../organisms/organisms.html">Organisms</a></li>
+          <li><a href="../../style/style.html">Style</a></li>
+          <li><a href="../../downloads/downloads.html">Downloads</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="row wide">
+        <h1 class="title">Colors</h1>
+        <p>Color plays an important role in brand identity. Color is also a critical component in an accessible design system.</p>
+        <p>You can customize the application of color any way you like, but all efforts should be made to ensure for acceptable <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html" target="_blank">accessibility color contrast</a>.</p>
+        <ul>
+          <li>All type is set in <code>$black</code>. Unless&hellip;</li>
+          <li>Type set on a dark background should use <code>$white</code>.</li>
+          <li>Error messages use <code>$error</code> and valid form entries or success messages use <code>$valid</code>.</li>
+          <li>Text link color is set to <code>$primary</code> while <code>:hover</code> and <code>:focus</code> states are set to <code>$secondary</code>.</li>
+          <li>Avoid using color only to communicate information. In the case of links, use another identifier such as bold or underline to indicate a link verses using color alone.</li>
+          <li>Never set link <code>:focus</code> states to <code>outline: none</code>.</li>
+        </ul>
+      </section>
+      <section class="row wide">
+        <h2>Color Styles</h2>
+        <p>Here's how we're currently declaring colors in the Delta Design System:</p>
+        <h3>Global Colors</h3>
+        <div class="color-chips">
+          <div class="chip">
+            <figure>
+              <div class="bg-black"></div>
+              <figcaption>
+                <p>Black</p>
+                <p><code>$black</code></p>
+                <p><code>#000000</code></p>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="chip">
+            <figure>
+              <div class="bg-dk-gray"></div>
+              <figcaption>
+                <p>Dark Gray</p>
+                <p><code>$dk-gray</code></p>
+                <p><code>#919191</code></p>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="chip">
+            <figure>
+              <div class="bg-md-gray"></div>
+              <figcaption>
+                <p>Medium Gray</p>
+                <p><code>$md-gray</code></p>
+                <p><code>#cccccc</code></p>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="chip">
+            <figure>
+              <div class="bg-lt-gray"></div>
+              <figcaption>
+                <p>Light Gray</p>
+                <p><code>$lt-gray</code></p>
+                <p><code>#eeeeee</code></p>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="chip">
+            <figure>
+              <div class="bg-white"></div>
+              <figcaption>
+                <p>White</p>
+                <p><code>$white</code></p>
+                <p><code>#ffffff</code></p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <h3>Design System Colors</h3>
+        <div class="color-chips">
+          <div class="chip">
+            <figure>
+              <div class="bg-primary"></div>
+              <figcaption>
+                <p>Primary</p>
+                <p><code>$primary</code></p>
+                <p><code>#df3a32</code></p>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="chip">
+            <figure>
+              <div class="bg-secondary"></div>
+              <figcaption>
+                <p>Secondary</p>
+                <p><code>$secondary</code></p>
+                <p><code>#003442</code></p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <h3>Message Colors</h3>
+        <div class="color-chips">
+          <div class="chip">
+            <figure>
+              <div class="bg-error"></div>
+              <figcaption>
+                <p>Error</p>
+                <p><code>$error</code></p>
+                <p><code>#c00c00</code></p>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="chip">
+            <figure>
+              <div class="bg-valid"></div>
+              <figcaption>
+                <p>Valid</p>
+                <p><code>$valid</code></p>
+                <p><code>#008000</code></p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+      <section class="row wide">
+        <h2>Color Application</h2>
+        <p>To apply a <code>background-color</code> using any of the defined colors in the system, simply add a <code>.bg-</code> prefix to any of the color declarations above. For example, to make an element's background light gray, add a <code>.bg-lt-gray</code> to the appropriate tag.</p>
+      </section>
+    </main>
+    <footer>
+      <nav aria-labelledby="footer-navigation">
+        <ul id="footer-navigation">
+          <li><a href="../../about/about.html">About</a></li>
+          <li><a href="../../atoms/atoms.html">Atoms</a></li>
+          <li><a href="../../molecules/molecules.html">Molecules</a></li>
+          <li><a href="../../organisms/organisms.html">Organisms</a></li>
+          <li><a href="../../style/style.html">Style</a></li>
+          <li><a href="../../downloads/downloads.html">Downloads</a></li>
+        </ul>
+      </nav>
+      <section class="brand-content">
+        <div class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 796"><defs><style>.cls-1{fill:#01232d;}.cls-2{fill:#013342;}</style></defs><title>delta-design-system-logo</title><polygon class="cls-1" points="512 796 1024 796 512 0 512 796"/><polygon class="cls-2" points="0 796 512 796 512 0 0 796"/></svg>
+          <h2 class="center">The Delta Design System</h2>
+        </div>
+        <div class="links">
+          <div class="github">
+            <a href="https://github.com/cdfournier/delta-design-system" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 2C6.475 2 2 6.475 2 12a9.994 9.994 0 0 0 6.838 9.488c.5.087.687-.213.687-.476 0-.237-.013-1.024-.013-1.862-2.512.463-3.162-.612-3.362-1.175-.113-.288-.6-1.175-1.025-1.413-.35-.187-.85-.65-.013-.662.788-.013 1.35.725 1.538 1.025.9 1.512 2.338 1.087 2.912.825.088-.65.35-1.087.638-1.337-2.225-.25-4.55-1.113-4.55-4.938 0-1.088.387-1.987 1.025-2.688-.1-.25-.45-1.275.1-2.65 0 0 .837-.262 2.75 1.026a9.28 9.28 0 0 1 2.5-.338c.85 0 1.7.112 2.5.337 1.912-1.3 2.75-1.024 2.75-1.024.55 1.375.2 2.4.1 2.65.637.7 1.025 1.587 1.025 2.687 0 3.838-2.337 4.688-4.562 4.938.362.312.675.912.675 1.85 0 1.337-.013 2.412-.013 2.75 0 .262.188.574.688.474A10.016 10.016 0 0 0 22 12c0-5.525-4.475-10-10-10z"/></svg></a>
+          </div>
+          <div class="slack">
+            <a href="https://delta-design-system.slack.com" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M14.5 3A1.5 1.5 0 0 1 16 4.5v5a1.5 1.5 0 0 1-3 0v-5A1.5 1.5 0 0 1 14.5 3zm-10 10H6v1.5A1.5 1.5 0 1 1 4.5 13zm8.5 5h1.5a1.5 1.5 0 1 1-1.5 1.5V18zm1.5-5h5a1.5 1.5 0 0 1 0 3h-5a1.5 1.5 0 0 1 0-3zm5-5a1.5 1.5 0 0 1 0 3H18V9.5A1.5 1.5 0 0 1 19.5 8zm-15 0h5a1.5 1.5 0 0 1 0 3h-5a1.5 1.5 0 0 1 0-3zm5-5A1.5 1.5 0 0 1 11 4.5V6H9.5a1.5 1.5 0 0 1 0-3zm0 10a1.5 1.5 0 0 1 1.5 1.5v5a1.5 1.5 0 0 1-3 0v-5A1.5 1.5 0 0 1 9.5 13z"/></svg></a>
+          </div>
+        </div>
+      </section>
+      <div class="copyright">
+        <p>&copy; 2019 Delta Design System. Conceived and developed by <a href="https://chris.blackcoffeeshoppe.com" target="_blank">Chris Fournier</a>.</p>
+      </div>
+    </footer>
+    <!-- scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="https://unpkg.com/headroom.js@0.9.4/dist/headroom.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="../../assets/scripts/site.js"></script>
+    <script>
+      AOS.init({duration: 600});
+    </script>
+    <script>
+      var myElement = document.querySelector('header');
+      var headroom  = new Headroom(myElement);
+      headroom.init(); 
+    </script>
+  </body>
+</html>

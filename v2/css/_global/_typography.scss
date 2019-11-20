@@ -31,10 +31,12 @@ h4 + p {padding: 0.25rem 0 0;}
 
 p + h1, p + h2, p + h3, p + h4,
 ul + h1, ul + h2, ul + h3, ul + h4,
-ol + h1, ol + h2, ol + h3, ol + h4 {padding: 2rem 0 0;}
+ol + h1, ol + h2, ol + h3, ol + h4,
+dl + h1, dl + h2, dl + h3, dl + h4 {padding: 2rem 0 0;}
 
 ul + h2, ul + h3, ul + h4,
-ol + h2, ol + h3, ol + h4 {padding: 1rem 0 0;}
+ol + h2, ol + h3, ol + h4,
+dl + h2, dl + h3, dl + h4 {padding: 1rem 0 0;}
 
 p {
   width: 100%;
@@ -71,6 +73,8 @@ h1.center, h2.center, h3.center, p.center, strong.center, em.center, small.cente
 
 h1.right, h2.right, h3.right, p.right, strong.right, em.right, small.right {text-align: right;}
 
+.visuallyhidden {display: none;}
+
 @media (min-width: 48rem) {
   h1.title {font-size: 4.209rem;}
   h1.title + p {
@@ -80,7 +84,7 @@ h1.right, h2.right, h3.right, p.right, strong.right, em.right, small.right {text
 }
 
 
-// LISTS
+// UNORDERED & ORDERED LISTS
 ul, ol {
   display: flex;
   flex-direction: column;
@@ -108,6 +112,26 @@ ul li, ol li {
 }
 
 ul + p, ol + p {padding: 0;}
+
+
+// DEFINITION LISTS
+dl {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 0 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: left;
+  dt {
+    font-family: $font-head;
+    font-size: 1.777rem;
+  }
+  dd {
+    margin: 0;
+  }
+}
 
 
 // TEXT LINK STYLES

@@ -33,6 +33,9 @@ $valid: #008000;
 .bg-primary {background-color: $primary;}
 .bg-secondary {background-color: $secondary;}
 
+.bg-error {background-color: $error;}
+.bg-valid {background-color: $valid;}
+
 
 // SELECTION
 ::-moz-selection {

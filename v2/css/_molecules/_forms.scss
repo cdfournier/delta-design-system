@@ -3,6 +3,7 @@ FORM ELEMENTS
   resets
   fieldset
   input, label, placeholder
+  disabled
   select
   checkbox
   radio button
@@ -62,13 +63,9 @@ fieldset {
   }
 }
 
-fieldset.checkbox,
-fieldset.radio,
-fieldset.toggle {
-  .message {
-    .error, .valid {padding: 0;}
-  }
-}
+fieldset.checkbox, fieldset.radio, fieldset.toggle, fieldset.button-input {padding: 0;}
+
+fieldset.sm {width: 50%;}
 
 
 // INPUT, LABEL, PLACEHOLDER
@@ -131,6 +128,10 @@ input:not(:placeholder-shown) + label {
 }
 
 
+// DISABLED
+input:disabled + label {color: $md-gray;}
+
+
 // SELECT
 select {
   display: inline-block;
@@ -171,6 +172,161 @@ label[for="select"] {
   font-size: 0.8rem;
   background-color: transparent;
   @include transform(translate(0,0));
+}
+
+
+// CHECKBOX
+label.checkbox, label.radio, label.toggle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: fit-content;
+  height: auto;
+  min-height: 1.5rem;
+  margin: 0;
+  padding: 0 0 0 2rem;
+  cursor: pointer;
+  @include transform(translate(0,0));
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  max-height: 1.5rem;
+  min-height: inherit;
+  margin: 0;
+  border: 1px solid $black;
+  border-radius: 0;
+  background-color: $white;
+  cursor: pointer;
+  @include appearance(none);
+  @include transition(all, 0.25s, ease);
+}
+
+input[type="checkbox"]:checked:before {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  background-image: url(../assets/icons/check-line.svg);
+  background-size: contain;
+  content: "";
+}
+
+input[type="checkbox"]:checked:not(:disabled) {
+  border-color: $black;
+  background-color: $black;
+}
+
+
+// RADIO
+label.radio {margin: 0.5rem 0 0 0;}
+label.radio:first-child {margin: 0;}
+
+input[type="radio"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.5rem;
+  max-width: 1.5rem;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  max-height: 1.5rem;
+  min-height: 1.5rem;
+  margin: 0;
+  border: 1px solid $black;
+  border-radius: 100%;
+  background-color: $white;
+  cursor: pointer;
+  @include appearance(none);
+  @include transition(all, 0.25s, ease);
+}
+
+input[type="radio"]:checked:before {
+  display: block;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  margin: 0;
+  width: 60%;
+  height: 60%;
+  border-radius: 100%;
+  background-color: $black;
+  content: "";
+}
+
+
+// TOGGLE SWITCHES
+label.toggle {padding: 0 0 0 3.5rem;}
+
+input.toggle[type="checkbox"] {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 3rem;
+  height: 1.5rem;
+  max-height: 1.5rem;
+  min-height: inherit;
+  margin: 0;
+  border: 1px solid $black;
+  border-radius: 2rem;
+  background-color: $white;
+  cursor: pointer;
+  @include appearance(none);
+  @include transition(all, 0.25s, ease);
+}
+
+input.toggle[type="checkbox"]:checked:before {display: none;}
+
+input.toggle[type="checkbox"]:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 2.9rem;
+  margin: 0;
+  background-image: url(../assets/icons/close-circle-fill.svg);
+  background-position-x: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  @include transition(all, 0.25s, ease);
+}
+
+input.toggle[type="checkbox"]:checked:after {
+  background-image: url(../assets/icons/checkbox-circle-fill.svg);
+  background-position-x: right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+}
+
+
+// BUTTONS
+fieldset.button-input > input[type="button"],
+fieldset.button-input > input[type="submit"],
+fieldset.button-input > input[type="reset"] {
+  min-height: inherit;
+  margin: 0;
 }
 
 
