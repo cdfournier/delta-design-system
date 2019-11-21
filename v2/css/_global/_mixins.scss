@@ -15,6 +15,14 @@
   transform: $transform;
 };
 
+@mixin transform-origin($transform-origin: all) {
+  -webkit-transform-origin: $transform-origin;
+  -moz-transform-origin: $transform-origin;
+  -ms-transform-origin: $transform-origin;
+  -o-transform-origin: $transform-origin;
+  transform-origin: $transform-origin;
+};
+
 @mixin appearance($appearance: none) {
   -webkit-appearance: none;
   -moz-appearance: none;

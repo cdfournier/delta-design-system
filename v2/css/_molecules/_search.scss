@@ -1,0 +1,92 @@
+// SEARCH
+nav .search {
+  display: none;
+  height: 0;
+  padding: 0;
+  @include transform(translateX(-100rem));
+  @include transition(all, 0.325s, ease);
+  fieldset {
+    padding: 0;
+    label {display: none;}
+    .input-icon {display: none;}
+  }
+  button[type="submit"] {
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    width: auto;
+    height: calc(100% - 1rem);
+    max-height: none;
+    margin: 0;
+    border-radius: 0 0.25rem 0.25rem 0;
+    @include transition(all, 0.325s, ease);
+  }
+  span.trigger {display: none;}
+}
+
+nav.open .search {
+  display: flex;
+  height: auto;
+  @include transform(translateX(0rem));
+}
+
+@media (min-width: 48rem) {
+  nav .search {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 1rem;
+    width: 100%;
+    height: auto;
+    @include transform(translateX(0rem));
+    fieldset {
+      max-width: none;
+      margin: 0 0 0 2rem;
+      padding: 0;
+      @include transition(all, 0.325s, ease);
+      @include transform(scale(0,1));
+      @include transform-origin(right);
+      label {display: none;}
+      .input-icon {
+        display: flex;
+        top: 0;
+        right: 6rem;
+        @include transition(all, 0.325s, ease);
+        @include transform(scale(0));        
+      }
+      .input-icon svg {@include transition(all, 0.25s, ease);}
+      .input-icon:hover svg, .input-icon:focus svg {fill: $secondary;}
+    }
+    button[type="submit"] {
+      display: none;
+      top: 0;
+      height: 100%;
+      border-radius: 0 0.25rem 0.25rem 0;
+      @include transform(scale(0));
+    }
+    span.trigger {
+      display: inline-flex;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      max-height: none;
+      margin: 0;
+      padding: 0.5rem;
+      @include transition(all, 0.325s, ease);
+      @include transform(scale(1));
+    }
+    fieldset.open {
+      @include transform(scale(1));
+      .input-icon {@include transform(scale(1,1));}
+    }
+    span.trigger.open {
+      display: none;
+      @include transform(scale(0));
+    }
+    button[type="submit"].open {
+      display: inline-flex;
+      @include transform(scale(1));
+    }
+  }
+}
