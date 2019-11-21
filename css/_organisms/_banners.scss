@@ -4,7 +4,9 @@
   flex-direction: column;
   justify-content: center;
   position: relative;
+  z-index: 500;
   width: 100%;
+  height: auto;
   margin: 0;
   .text {
     display: flex;
@@ -16,66 +18,41 @@
     height: 100%;
     margin: 0;
     padding: 2rem;
-    h1, h2, h3, h4 {padding: 0;}
-    p {padding: 1rem 0 0;}
   }
-  img {
-    width: calc(100% - 4rem);
-    margin: 0 auto;
+  .overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $black;
   }
 }
-
-.banner:last-of-type {margin: 0 auto 2rem;}
-
-.banner ~ .row {margin: 2rem auto 0;}
 
 .banner.tall {min-height: 90vh;}
 .banner.short {min-height: 45vh;}
 
-.banner.left {align-items: flex-start;}
-.banner.right {align-items: flex-end;}
-
-.dark {color: $white;}
-.light {color: $black;}
+.banner.light {color: $black;}
+.banner.dark {color: $white;}
 
 @media (min-width: 48rem) {
   .banner {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    img {width: 45%;}
-    .text {width: 55%;}
+    .text {
+      width: auto;
+      max-width: 65%;
+      min-width: 50%;
+    }
   }
-  .banner.left {
-    flex-direction: row-reverse;
-    align-items: center;
-    justify-content: flex-start;
-    img {padding-right: 2rem;}
-  }
-  .banner.right {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-    img {padding-left: 2rem;}
-  }
+  .banner.left {align-items: flex-start;}
+  .banner.right {align-items: flex-end;}
 }
 
 
 // PHOTO BACKGROUNDS
 .bg-photo {
-  position: relative;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.bg-photo .overlay {
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: $black;
 }
 
 .bg-photo.center {background-position: center center;}
@@ -88,30 +65,6 @@
 .bg-photo.right-center {background-position: right center;}
 .bg-photo.right-top {background-position: right top;}
 
-
-// BUTTONS COLOR ADJUSTMENTS
-.banner.dark.bg-crimson {
-  button, .button {
-    border-color: $white;
-    color: $white;
-  }
-}
-
-.banner.dark.bg-crimson {
-  button:hover, button:focus,
-  .button:hover, .button:focus {
-    color: $crimson;
-    background-color: $white;
-  }
-}
-
-.banner.dark.bg-black,
-.banner.dark.bg-dk-gray,
-.banner.dark.bg-dk-blue,
-.banner.dark.bg-lt-blue {
-  button:hover, button:focus,
-  .button:hover, .button:focus {
-    border-color: $white;
-    color: $white;
-  }
+@media (min-width: 48rem) {
+  .bg-photo.fixed {background-attachment: fixed;}
 }

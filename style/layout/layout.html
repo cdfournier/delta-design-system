@@ -26,7 +26,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../../assets/icons/favicon-16x16.png">
     <link rel="manifest" href="../../assets/icons/manifest.json">
     <meta name="msapplication-TileColor" content="#eeeeee">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="../../assets/icons/ms-icon-144x144.png">
     <meta name="theme-color" content="#eeeeee">
     <!-- css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
@@ -61,7 +61,7 @@
     <!-- End Google Tag Manager (noscript) -->
     <header>
       <div class="logo">
-        <a href="../../index.html">
+        <a href="../../../index.html">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 796"><defs><style>.cls-1{fill:#01232d;}.cls-2{fill:#013342;}</style></defs><title>delta-design-system-logo</title><polygon class="cls-1" points="512 796 1024 796 512 0 512 796"/><polygon class="cls-2" points="0 796 512 796 512 0 0 796"/></svg>
         </a>
       </div>
@@ -71,7 +71,7 @@
           <svg class="menu-toggle-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
         </button>
         <ul id="header-navigation">
-          <li><a href="../../about/about.html">About</a></li>
+          <li>About</li>
           <li><a href="../../atoms/atoms.html">Atoms</a></li>
           <li><a href="../../molecules/molecules.html">Molecules</a></li>
           <li><a href="../../organisms/organisms.html">Organisms</a></li>
@@ -81,125 +81,113 @@
       </nav>
     </header>
     <main>
-      <article>
+      <section class="row wide">
         <h1 class="title">Layout</h1>
         <p>The goal of content is to be discoverable and easy to absorb, and a site's or application's layout should not complicate that process.</p>
         <p>The Delta Design System is built on a <a href="https://alistapart.com/article/responsive-web-design/" target="_blank">responsive design</a> framework using <a href="https://developer.mozilla.org/en-US/docs/Glossary/Flexbox" target="_blank">flexbox</a>.</p>
-        <p>The parent container in the framework is a <code>.row</code>. Each <code>.row</code> can be assigned an additional classes that define how its child columns occupy the horizontal space of the row. On screens smaller than 48rem wide, all columns in the <code>.row</code> span the full width of the browser and stack vertically. On screens wider than 48rem:</p>
-        <ul>
-          <li><code>class="row wide"</code> each <code>.column</code> child will span the full width of the browser window.</li>
-          <li><code>class="row fifty"</code> each <code>.column</code> child will span 50% of the width of the browser window.</li>
-          <li><code>class="row golden left"</code> the first <code>.column</code> will span 62% of the width of the browser window and the second <code>.column</code> will span 38%.</li>
-          <li><code>class="row golden right"</code> the first <code>.column</code> will span 38% of the width of the browser window and the second <code>.column</code> will span 62%.</li>
-          <li><code>class="row thirds"</code> each <code>.column</code> child will span approximately 33% of the width of the browser window.</li>
-          <li><code>class="row fourths"</code> each <code>.column</code> child will span approximately 50% of the width of the browser window on screens wider than 48rem but smaller than 64rem. On screens wider than 64rem, each <code>.column</code> child will span approximately 25% of the width of the browser window.</li>
-        </ul>
-        <section class="row wide">
-          <h2>Layout Examples</h2>
-          <div class="row fence wide">
-            <h3>Wide Row</h3>
-            <div class="column">
-              <p>Columns in a <code>.wide</code> row occupy 100% of the available width on screens of all widths. More than one <code>.wide</code> column in a row will stack themselves vertically.</p>
-            </div>
+        <p>The parent container in the framework is a <code>.row</code>. Each <code>.row</code> can be assigned an additional class that define how its child columns occupy the horizontal space of the row. On screens smaller than 48rem wide, all columns in the <code>.row</code> span the full width of the browser and stack vertically.</p>
+      </section>
+      <section class="row wide">
+        <h2>Layout Examples</h2>
+        <div class="row wide border">
+          <h3>Wide Row</h3>
+          <p>A <code>.wide</code> row occupy 100% of the available width on screens of all widths.</p>
+        </div>
+        <div class="row fifty border">
+          <h3>Fifty Fifty Row</h3>
+          <div class="column">
+            <h4>Left Column</h4>
+            <p>Columns in a <code>.fifty</code> row occupy 50% of the available width on screens wider than 48rem.</p>
           </div>
-          <div class="row fence fifty">
-            <h3>Fifty Fifty Row</h3>
-            <div class="column">
-              <h4>Left Column</h4>
-              <p>Columns in a <code>.fifty</code> row occupy 50% of the available width on screens wider than 48rem.</p>
-            </div>
-            <div class="column">
-              <h4>Right Column</h4>
-              <p>Columns in a <code>.fifty</code> row occupy 50% of the available width on screens wider than 48rem.</p>
-            </div>
+          <div class="column">
+            <h4>Right Column</h4>
+            <p>Columns in a <code>.fifty</code> row occupy 50% of the available width on screens wider than 48rem.</p>
           </div>
-          <div class="row fence golden left">
-            <h3>Golden Left Row</h3>
-            <div class="column">
-              <h4>Left Column</h4>
-              <p>The left column in a golden left row occupies 62% of the available width on screens wider than 48rem.</p>
-            </div>
-            <div class="column">
-              <h4>Right Column</h4>
-              <p>The right column in a golden left row occupies 38% of the available width on screens wider than 48rem.</p>
-            </div>
+        </div>
+        <div class="row golden left border">
+          <h3>Golden Left Row</h3>
+          <div class="column">
+            <h4>Left Column</h4>
+            <p>The left column in a golden left row occupies 62% of the available width on screens wider than 48rem.</p>
           </div>
-          <div class="row fence golden right">
-            <h3>Golden Right Row</h3>
-            <div class="column">
-              <h4>Left Column</h4>
-              <p>The left column in a golden right row occupies 62% of the available width on screens wider than 48rem.</p>
-            </div>
-            <div class="column">
-              <h4>Right Column</h4>
-              <p>The right column in a golden right row occupies 38% of the available width on screens wider than 48rem.</p>
-            </div>
+          <div class="column">
+            <h4>Right Column</h4>
+            <p>The right column in a golden left row occupies 38% of the available width on screens wider than 48rem.</p>
           </div>
-          <div class="row fence thirds">
-            <h3>Thirds Row</h3>
-            <div class="column">
-              <h4>First Column</h4>
-              <p>The first column in a <code>.thirds</code> row occupies 33% of the available width on screens wider than 48rem.</p>
-            </div>
-            <div class="column">
-              <h4>Second Column</h4>
-              <p>The second column in a <code>.thirds</code> row occupies 33% of the available width on screens wider than 48rem.</p>
-            </div>
-            <div class="column">
-              <h4>Third Column</h4>
-              <p>The third column in a <code>.thirds</code> row occupies 33% of the available width on screens wider than 48rem.</p>
-            </div>
+        </div>
+        <div class="row golden right border">
+          <h3>Golden Right Row</h3>
+          <div class="column">
+            <h4>Left Column</h4>
+            <p>The left column in a golden right row occupies 62% of the available width on screens wider than 48rem.</p>
           </div>
-          <div class="row fence fourths">
-            <h3>Fourths Row</h3>
-            <div class="column">
-              <h4>First Column</h4>
-              <p>The first column in a <code>.fourths</code> row occupies 50% of the available width on screens wider than 48rem and 25% of the available width on screens wider than 64rem.</p>
-            </div>
-            <div class="column">
-              <h4>Second Column</h4>
-              <p>The second column in a <code>.fourths</code> row occupies 50% of the available width on screens wider than 48rem and 25% of the available width on screens wider than 64rem.</p>
-            </div>
-            <div class="column">
-              <h4>Third Column</h4>
-              <p>The third column in a <code>.fourths</code> row occupies 50% of the available width on screens wider than 48rem and 25% of the available width on screens wider than 64rem.</p>
-            </div>
-            <div class="column">
-              <h4>Fourth Column</h4>
-              <p>The fourth column in a <code>.fourths</code> row occupies 50% of the available width on screens wider than 48rem and 25% of the available width on screens wider than 64rem.</p>
-            </div>
+          <div class="column">
+            <h4>Right Column</h4>
+            <p>The right column in a golden right row occupies 38% of the available width on screens wider than 48rem.</p>
           </div>
-        </section>
-      </article>
+        </div>
+        <div class="row thirds border">
+          <h3>Thirds Row</h3>
+          <div class="column">
+            <h4>First Column</h4>
+            <p>The first column in a <code>.thirds</code> row occupies 33% of the available width on screens wider than 48rem.</p>
+          </div>
+          <div class="column">
+            <h4>Second Column</h4>
+            <p>The second column in a <code>.thirds</code> row occupies 33% of the available width on screens wider than 48rem.</p>
+          </div>
+          <div class="column">
+            <h4>Third Column</h4>
+            <p>The third column in a <code>.thirds</code> row occupies 33% of the available width on screens wider than 48rem.</p>
+          </div>
+        </div>
+        <div class="row fourths">
+          <h3>Fourths Row</h3>
+          <div class="column">
+            <h4>First Column</h4>
+            <p>The first column in a <code>.fourths</code> row occupies 50% of the available width on screens wider than 48rem and 25% of the available width on screens wider than 64rem.</p>
+          </div>
+          <div class="column">
+            <h4>Second Column</h4>
+            <p>The second column in a <code>.fourths</code> row occupies 50% of the available width on screens wider than 48rem and 25% of the available width on screens wider than 64rem.</p>
+          </div>
+          <div class="column">
+            <h4>Third Column</h4>
+            <p>The third column in a <code>.fourths</code> row occupies 50% of the available width on screens wider than 48rem and 25% of the available width on screens wider than 64rem.</p>
+          </div>
+          <div class="column">
+            <h4>Fourth Column</h4>
+            <p>The fourth column in a <code>.fourths</code> row occupies 50% of the available width on screens wider than 48rem and 25% of the available width on screens wider than 64rem.</p>
+          </div>
+        </div>
+      </section>
     </main>
     <footer>
-      <div class="row fifty">
-        <nav class="column" aria-labelledby="footer-navigation">
-          <ul id="footer-navigation">
-            <li><a href="../../about/about.html">About</a></li>
-            <li><a href="../../atoms/atoms.html">Atoms</a></li>
-            <li><a href="../../molecules/molecules.html">Molecules</a></li>
-            <li><a href="../../organisms/organisms.html">Organisms</a></li>
-            <li><a href="../../style/style.html">Style</a></li>
-            <li><a href="../../downloads/downloads.html">Downloads</a></li>
-          </ul>
-        </nav>
-        <section class="meta-content column">
-          <div class="logo">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 796"><defs><style>.cls-1{fill:#01232d;}.cls-2{fill:#013342;}</style></defs><title>delta-design-system-logo</title><polygon class="cls-1" points="512 796 1024 796 512 0 512 796"/><polygon class="cls-2" points="0 796 512 796 512 0 0 796"/></svg>
-            <h2 class="center">The Delta Design System</h2>
+      <nav aria-labelledby="footer-navigation">
+        <ul id="footer-navigation">
+          <li><a href="../../about/about.html">About</a></li>
+          <li><a href="../../atoms/atoms.html">Atoms</a></li>
+          <li><a href="../../molecules/molecules.html">Molecules</a></li>
+          <li><a href="../../organisms/organisms.html">Organisms</a></li>
+          <li><a href="../../style/style.html">Style</a></li>
+          <li><a href="../../downloads/downloads.html">Downloads</a></li>
+        </ul>
+      </nav>
+      <section class="brand-content">
+        <div class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 796"><defs><style>.cls-1{fill:#01232d;}.cls-2{fill:#013342;}</style></defs><title>delta-design-system-logo</title><polygon class="cls-1" points="512 796 1024 796 512 0 512 796"/><polygon class="cls-2" points="0 796 512 796 512 0 0 796"/></svg>
+          <h2 class="center">The Delta Design System</h2>
+        </div>
+        <div class="links">
+          <div class="github">
+            <a href="https://github.com/cdfournier/delta-design-system" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 2C6.475 2 2 6.475 2 12a9.994 9.994 0 0 0 6.838 9.488c.5.087.687-.213.687-.476 0-.237-.013-1.024-.013-1.862-2.512.463-3.162-.612-3.362-1.175-.113-.288-.6-1.175-1.025-1.413-.35-.187-.85-.65-.013-.662.788-.013 1.35.725 1.538 1.025.9 1.512 2.338 1.087 2.912.825.088-.65.35-1.087.638-1.337-2.225-.25-4.55-1.113-4.55-4.938 0-1.088.387-1.987 1.025-2.688-.1-.25-.45-1.275.1-2.65 0 0 .837-.262 2.75 1.026a9.28 9.28 0 0 1 2.5-.338c.85 0 1.7.112 2.5.337 1.912-1.3 2.75-1.024 2.75-1.024.55 1.375.2 2.4.1 2.65.637.7 1.025 1.587 1.025 2.687 0 3.838-2.337 4.688-4.562 4.938.362.312.675.912.675 1.85 0 1.337-.013 2.412-.013 2.75 0 .262.188.574.688.474A10.016 10.016 0 0 0 22 12c0-5.525-4.475-10-10-10z"/></svg></a>
           </div>
-          <div class="links">
-            <div class="github">
-              <a href="https://github.com/cdfournier/delta-design-system" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 2C6.475 2 2 6.475 2 12a9.994 9.994 0 0 0 6.838 9.488c.5.087.687-.213.687-.476 0-.237-.013-1.024-.013-1.862-2.512.463-3.162-.612-3.362-1.175-.113-.288-.6-1.175-1.025-1.413-.35-.187-.85-.65-.013-.662.788-.013 1.35.725 1.538 1.025.9 1.512 2.338 1.087 2.912.825.088-.65.35-1.087.638-1.337-2.225-.25-4.55-1.113-4.55-4.938 0-1.088.387-1.987 1.025-2.688-.1-.25-.45-1.275.1-2.65 0 0 .837-.262 2.75 1.026a9.28 9.28 0 0 1 2.5-.338c.85 0 1.7.112 2.5.337 1.912-1.3 2.75-1.024 2.75-1.024.55 1.375.2 2.4.1 2.65.637.7 1.025 1.587 1.025 2.687 0 3.838-2.337 4.688-4.562 4.938.362.312.675.912.675 1.85 0 1.337-.013 2.412-.013 2.75 0 .262.188.574.688.474A10.016 10.016 0 0 0 22 12c0-5.525-4.475-10-10-10z"/></svg></a>
-            </div>
-            <div class="slack">
-              <a href="https://delta-design-system.slack.com" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M14.5 3A1.5 1.5 0 0 1 16 4.5v5a1.5 1.5 0 0 1-3 0v-5A1.5 1.5 0 0 1 14.5 3zm-10 10H6v1.5A1.5 1.5 0 1 1 4.5 13zm8.5 5h1.5a1.5 1.5 0 1 1-1.5 1.5V18zm1.5-5h5a1.5 1.5 0 0 1 0 3h-5a1.5 1.5 0 0 1 0-3zm5-5a1.5 1.5 0 0 1 0 3H18V9.5A1.5 1.5 0 0 1 19.5 8zm-15 0h5a1.5 1.5 0 0 1 0 3h-5a1.5 1.5 0 0 1 0-3zm5-5A1.5 1.5 0 0 1 11 4.5V6H9.5a1.5 1.5 0 0 1 0-3zm0 10a1.5 1.5 0 0 1 1.5 1.5v5a1.5 1.5 0 0 1-3 0v-5A1.5 1.5 0 0 1 9.5 13z"/></svg></a>
-            </div>
+          <div class="slack">
+            <a href="https://delta-design-system.slack.com" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M14.5 3A1.5 1.5 0 0 1 16 4.5v5a1.5 1.5 0 0 1-3 0v-5A1.5 1.5 0 0 1 14.5 3zm-10 10H6v1.5A1.5 1.5 0 1 1 4.5 13zm8.5 5h1.5a1.5 1.5 0 1 1-1.5 1.5V18zm1.5-5h5a1.5 1.5 0 0 1 0 3h-5a1.5 1.5 0 0 1 0-3zm5-5a1.5 1.5 0 0 1 0 3H18V9.5A1.5 1.5 0 0 1 19.5 8zm-15 0h5a1.5 1.5 0 0 1 0 3h-5a1.5 1.5 0 0 1 0-3zm5-5A1.5 1.5 0 0 1 11 4.5V6H9.5a1.5 1.5 0 0 1 0-3zm0 10a1.5 1.5 0 0 1 1.5 1.5v5a1.5 1.5 0 0 1-3 0v-5A1.5 1.5 0 0 1 9.5 13z"/></svg></a>
           </div>
-        </section>
-      </div>
-      <div class="copyright row wide">
+        </div>
+      </section>
+      <div class="copyright">
         <p>&copy; 2019 Delta Design System. Conceived and developed by <a href="https://chris.blackcoffeeshoppe.com" target="_blank">Chris Fournier</a>.</p>
       </div>
     </footer>

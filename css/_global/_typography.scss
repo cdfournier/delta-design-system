@@ -14,7 +14,6 @@ h1, h2, h3, h4, p {
 }
 
 h1, h2, h3, h4 {
-  padding: 1rem 0 0;
   font-family: $font-head;
   font-weight: normal;
   line-height: 1.1;
@@ -28,11 +27,16 @@ h4 {font-size: 1.333rem;}
 h2 + h3,
 h2 + p,
 h3 + p,
-h4 + p {padding: 0.4rem 0 0;}
+h4 + p {padding: 0.25rem 0 0;}
 
 p + h1, p + h2, p + h3, p + h4,
 ul + h1, ul + h2, ul + h3, ul + h4,
-ol + h1, ol + h2, ol + h3, ol + h4 {padding: 2rem 0 0;}
+ol + h1, ol + h2, ol + h3, ol + h4,
+dl + h1, dl + h2, dl + h3, dl + h4 {padding: 2rem 0 0;}
+
+ul + h2, ul + h3, ul + h4,
+ol + h2, ol + h3, ol + h4,
+dl + h2, dl + h3, dl + h4 {padding: 1rem 0 0;}
 
 p {
   width: 100%;
@@ -56,8 +60,8 @@ p > cite a {
 }
 
 strong, em, b {
+  @include font-bold;
   font-style: normal;
-  font-weight: $font-body-bold;
 }
 
 small {font-size: 0.8rem;}
@@ -69,14 +73,7 @@ h1.center, h2.center, h3.center, p.center, strong.center, em.center, small.cente
 
 h1.right, h2.right, h3.right, p.right, strong.right, em.right, small.right {text-align: right;}
 
-article h1 {padding: 0 2rem;}
-
-article h1 ~ p {padding: 1rem 2rem 0;}
-
-article h1 ~ ul,
-article h1 ~ ol {padding: 1rem 2rem 0 3.5rem;}
-
-article section:first-of-type.row {padding: 2rem 1rem;}
+.visuallyhidden {display: none;}
 
 @media (min-width: 48rem) {
   h1.title {font-size: 4.209rem;}
@@ -87,10 +84,9 @@ article section:first-of-type.row {padding: 2rem 1rem;}
 }
 
 
-// LISTS
+// UNORDERED & ORDERED LISTS
 ul, ol {
-  display: flex;
-  flex-direction: column;
+  display: block;
   width: 100%;
   margin: 0 auto;
   padding: 1rem 0 0 1.5rem;
@@ -102,19 +98,40 @@ ul, ol {
 ul {list-style-type: disc;}
 
 ul.no-bullets {
-  padding: 0.8rem 0 0 0;
+  padding: 1rem 0 0 0;
   list-style-type: none;
 }
 
 ol {list-style-type: decimal;}
 
 ul li, ol li {
+  position: relative;
   width: 100%;
   max-width: 39rem;
   padding: 0 0 1rem 0.25rem;
 }
 
-ul li:last-child, ol li:last-child {padding: 0 0 0 0.25rem;}
+ul + p, ol + p {padding: 0;}
+
+
+// DEFINITION LISTS
+dl {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 0 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: left;
+  dt {
+    font-family: $font-head;
+    font-size: 1.777rem;
+  }
+  dd {
+    margin: 0;
+  }
+}
 
 
 // TEXT LINK STYLES
@@ -122,22 +139,13 @@ a {
   color: $primary;
   cursor: pointer;
   @include transition(all, 0.25s, ease);
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
-
-a svg {@include transition(all, 0.25s, ease);}
 
 a:hover, a:focus {color: $secondary;}
 
 h1 a, h2 a, h3 a, h4 a {text-decoration: none;}
 
-p a, small a, li a {font-weight: $font-body-bold;}
+p a, small a, li a {@include font-bold;}
 
 p.icon a {
   display: inline-flex;
@@ -165,44 +173,19 @@ p.icon a:focus span svg {
 }
 
 
-// FIGURE TYPOGRAPHY
-figcaption {
-  font-size: 0.64rem;
-  font-weight: $font-body-bold;
-  text-transform: uppercase;
-}
-
-figcaption + h1,
-figcaption + h2,
-figcaption + h3,
-figcaption + h1 {padding: 0.25rem 0 0;}
-
+// CODE
 pre {
   margin: 0.4rem 0 0;
   line-height: 1.2;
 }
 
 p > code, li > code {
-  margin: 0 0.15rem;
-  padding: 0.15rem;
+  margin: 0;
+  padding: 0.15rem 0.25rem;
   font-family: consolas,"Liberation Mono",courier,monospace;
   font-size: 0.975rem;
   white-space: nowrap;
   background-color: $lt-gray;
 }
 
-img + figcaption {
-  padding: 0.8rem 0 0;
-  font-size: 0.8rem;
-  text-transform: none;
-}
-
-img + figcaption > cite {
-  padding: 0.8rem 0 0;
-  font-size: 0.8rem;
-  font-style: normal;
-  font-weight: $font-body-norm;
-  text-transform: none;
-}
-
-cite a {font-weight: $font-body-bold;}
+li > code {padding: 0.05rem 0.25rem;}

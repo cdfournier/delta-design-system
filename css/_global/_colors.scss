@@ -33,64 +33,17 @@ $valid: #008000;
 .bg-primary {background-color: $primary;}
 .bg-secondary {background-color: $secondary;}
 
+.bg-error {background-color: $error;}
+.bg-valid {background-color: $valid;}
 
-// COLOR CARDS
-.color-card-row {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  .color-card {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    margin: 1rem 0;
-    padding: 1rem;
-    border: 1px solid $lt-gray;
-    border-radius: 0.25rem;
-    .color-sample {
-      display: block;
-      width: 4rem;
-      height: 4rem;
-      padding: 0;
-      border-radius: 100%;
-    }
-    .color-values {
-      padding: 0.6rem 0 0;
-    }
-  }
+
+// SELECTION
+::-moz-selection {
+  color: $white;
+  background: $primary;
 }
 
-@media (min-width: 48rem) {
-  .color-card-row {
-    flex-direction: row;
-    align-items: stretch;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    .color-card {
-      width: calc(34% - 2rem);
-      margin: 1rem 2rem 1rem 0;
-    }
-    .color-card:nth-of-type(3n) {margin: 1rem 0;}
-  }
-}
-
-@media (min-width: 64rem) {
-  .color-card-row {
-    .color-card {width: calc(25.5% - 2rem);}
-    .color-card:nth-of-type(3n) {margin: 1rem 2rem 1rem 0;}
-    .color-card:nth-of-type(4n) {margin: 1rem 0;}
-  }
-}
-
-@media (min-width: 90rem) {
-  .color-card-row {
-    .color-card {width: calc(20.25% - 2rem);}
-    .color-card:nth-of-type(3n) {margin: 1rem 2rem 1rem 0;}
-    .color-card:nth-of-type(4n) {margin: 1rem 2rem 1rem 0;}
-    .color-card:nth-of-type(5n) {margin: 1rem 0;}
-  }
+::selection {
+  color: $white;
+  background: $primary;
 }

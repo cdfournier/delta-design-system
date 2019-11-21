@@ -24,6 +24,7 @@
     height: auto;
     margin: 0 auto;
     padding: 0;
+    @include font-bold;
     cursor: pointer;
     svg {
       position: absolute;

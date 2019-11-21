@@ -30,11 +30,10 @@ nav {
     @include transition(all, 0.325s, ease);
     li {
       padding: 1rem 0;
-      font-weight: $font-body-bold;
+      @include font-bold;
     }
     li a {text-decoration: none;}
   }
-  ul li:last-child {padding: 1rem 0;}
 }
 
 nav.open {
@@ -60,6 +59,7 @@ nav.open {
     button.menu-toggle {display: none;}
     ul {
       flex-direction: row;
+      z-index: 10;
       width: auto;
       height: auto;
       margin: 0;
@@ -71,9 +71,5 @@ nav.open {
         padding: 0 2rem 0 0;
       }
     }
-    ul li:last-child {padding: 0;}
   }
-}
-
-@media (min-width: 64rem) {
 }

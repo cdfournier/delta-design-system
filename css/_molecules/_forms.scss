@@ -1,7 +1,9 @@
 /*
 FORM ELEMENTS
   resets
+  fieldset
   input, label, placeholder
+  disabled
   select
   checkbox
   radio button
@@ -24,35 +26,34 @@ input[type="file"],
 input[type="text"],
 input[type="tel"],
 input[type="url"] {
-  outline-color: $primary;
   font-size: 1rem;
   @include appearance(none);
   @include transition(all, 0.25s, ease);
 }
 
 
-// FIELDSET, INPUT, LABEL, PLACEHOLDER
+// FIELDSET
 fieldset {
   position: relative;
   width: 100%;
   max-width: 36rem;
-  margin: 0.8rem 0 0;
-  padding: 0;
+  margin: 1rem 0 0;
+  padding: 1.5rem 0 0;
   border: none;
   .message {
     display: block;
     position: relative;
     width: 100%;
     min-height: 1.25rem;
-    margin: 0.4rem 0 0;
+    margin: 0.5rem 0 0;
     padding: 0;
+    @include font-bold;
     font-size: 0.8rem;
-    font-weight: $font-body-bold;
     .error, .valid {
       position: absolute;
       top: 0;
       width: 100%;
-      padding: 0 0.4rem;
+      padding: 0;
       opacity: 0;
       @include transition(all, 0.25s, ease);
     }
@@ -62,19 +63,17 @@ fieldset {
   }
 }
 
-fieldset.checkbox,
-fieldset.radio,
-fieldset.toggle {
-  .message {
-    .error, .valid {padding: 0;}
-  }
-}
+fieldset.checkbox, fieldset.radio, fieldset.toggle, fieldset.button-input {padding: 0;}
 
+fieldset.sm {width: 50%;}
+
+
+// INPUT, LABEL, PLACEHOLDER
 input {
   width: 100%;
   min-height: 3rem;
-  margin: 1rem 0 0;
-  padding: 0.4rem;
+  margin: 0;
+  padding: 0.5rem;
   border: 1px solid $dk-gray;
   border-radius: 0.25rem;
   cursor: text;
@@ -92,26 +91,46 @@ label {
   display: flex;
   align-items: center;
   position: absolute;
-  top: 1rem;
-  left: 0.4rem;
-  width: calc(100% - 0.8rem);
-  height: calc(3rem - 0.8rem);
-  margin: 0.4rem 0;
-  padding: 0 0.4rem;
-  font-size: 0.9rem;
-  font-weight: 600;
+  top: 0;
+  left: 0;
+  width: calc(100% - 1rem);
+  height: auto;
+  margin: 0;
+  padding: 0;
+  @include font-bold;
+  font-size: 1rem;
   background-color: $white;
-  @include transform(translate(0,0));
+  @include transform(translate(0.5rem, 2.25rem));
   @include transition(all, 0.25s, ease);
 }
 
 input:focus + label,
 input:not(:placeholder-shown) + label {
-  padding: 0;
+  width: 100%;
   font-size: 0.8rem;
   background-color: transparent;
-  @include transform(translate(-0.4rem,-2.4rem));
+  @include transform(translate(0,0));
 }
+
+.input-icon {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 1.5rem;
+  right: 0.5rem;
+  width: 1.5rem;
+  height: 3rem;
+  cursor: pointer;
+  svg {
+    position: absolute;
+    right: 0;
+    fill: $primary;
+  }
+}
+
+
+// DISABLED
+input:disabled + label {color: $md-gray;}
 
 
 // SELECT
@@ -121,11 +140,10 @@ select {
   z-index: 1;
   width: 100%;
   min-height: 3rem;
-  margin: 1rem 0 0;
-  padding: 0.4rem;
+  margin: 0;
+  padding: 0.5rem;
   border: 1px solid $dk-gray;
   border-radius: 0.25rem;
-  outline-color: $primary;
   background-color: transparent;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -145,8 +163,8 @@ select option {
   display: flex;
   align-items: center;
   position: absolute;
-  top: 1rem;
-  right: 0.4rem;
+  top: 1.5rem;
+  right: 0.5rem;
   height: 3rem;
   cursor: pointer;
 }
@@ -154,7 +172,7 @@ select option {
 label[for="select"] {
   font-size: 0.8rem;
   background-color: transparent;
-  @include transform(translate(-0.4rem,-2.4rem));
+  @include transform(translate(0,0));
 }
 
 
@@ -174,6 +192,7 @@ label.checkbox, label.radio, label.toggle {
   margin: 0;
   padding: 0 0 0 2rem;
   cursor: pointer;
+  @include transform(translate(0,0));
 }
 
 input[type="checkbox"] {
@@ -216,7 +235,7 @@ input[type="checkbox"]:checked:not(:disabled) {
 
 
 // RADIO
-label.radio {margin: 0.8rem 0 0 0;}
+label.radio {margin: 0.5rem 0 0 0;}
 label.radio:first-child {margin: 0;}
 
 input[type="radio"] {
@@ -317,8 +336,8 @@ fieldset.button-input > input[type="reset"] {
   display: flex;
   align-items: center;
   position: absolute;
-  top: 1rem;
-  right: 0.4rem;
+  top: 1.5rem;
+  right: 0.5rem;
   width: 1.5rem;
   height: 3rem;
   cursor: pointer;

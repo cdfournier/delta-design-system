@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Welcome to the Delta Design System</title>
+    <title>The Delta Design System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -26,7 +26,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
     <link rel="manifest" href="assets/icons/manifest.json">
     <meta name="msapplication-TileColor" content="#eeeeee">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="assets/icons/ms-icon-144x144.png">
     <meta name="theme-color" content="#eeeeee">
     <!-- css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
@@ -43,7 +43,7 @@
         z-index: 500;
         width: 100%;
         min-height: 90vh;
-        margin: 0 auto 2rem;
+        margin: 0 auto;
         padding: 1rem;
       }
       .intro .logo {
@@ -99,9 +99,16 @@
         font-size: 1.5rem;
       }
       .intro .action.row.wide {flex-direction: column;}
-      .about .column {width: 75%;}
-      .about .column p {margin: 0 auto;}
+      .about {
+        width: 75%;
+        margin: 0 auto;
+      }
+      .about p {margin: 0 auto;}
       .contribute .card-group {justify-content: center;}
+      .contribute .card {
+        width: calc(50% - 2rem);
+        margin: 1rem;
+      }
     }
     </style>
     <!-- JSON-LD markup -->
@@ -150,86 +157,79 @@
         </ul>
       </nav>
     </header>
-    <main style="padding: 0;">
-      <article>
-        <h1 class="visuallyhidden">Welcome to the Delta Design System</h1>
-        <section class="intro bg-lt-gray">
-          <div class="logo">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 796"><defs><style>.cls-1{fill:#01232d;}.cls-2{fill:#013342;}</style></defs><title>delta-design-system-logo</title><polygon class="cls-1" points="512 796 1024 796 512 0 512 796"/><polygon class="cls-2" points="0 796 512 796 512 0 0 796"/></svg>
+    <main>
+      <section class="intro bg-lt-gray">
+        <div class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 796"><defs><style>.cls-1{fill:#01232d;}.cls-2{fill:#013342;}</style></defs><title>delta-design-system-logo</title><polygon class="cls-1" points="512 796 1024 796 512 0 512 796"/><polygon class="cls-2" points="0 796 512 796 512 0 0 796"/></svg>
+        </div>
+        <div class="text">
+          <h2 class="center">The Delta Design System</h2>
+          <p class="center">An open-source design system that can be used to build responsive sites, apps, and prototypes quickly.</p>
+        </div>
+        <div class="action row wide">
+          <a href="https://github.com/cdfournier/delta-design-system/archive/master.zip"><span class="button">Download</span></a>
+          <p class="center"><small>Version 2.1. Code licensed <a href="https://github.com/cdfournier/delta-design-system/blob/master/LICENSE" target="_blank">MIT</a>.</small></p>
+          <div class="links">
+            <a class="github" href="https://github.com/cdfournier/delta-design-system" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 2C6.475 2 2 6.475 2 12a9.994 9.994 0 0 0 6.838 9.488c.5.087.687-.213.687-.476 0-.237-.013-1.024-.013-1.862-2.512.463-3.162-.612-3.362-1.175-.113-.288-.6-1.175-1.025-1.413-.35-.187-.85-.65-.013-.662.788-.013 1.35.725 1.538 1.025.9 1.512 2.338 1.087 2.912.825.088-.65.35-1.087.638-1.337-2.225-.25-4.55-1.113-4.55-4.938 0-1.088.387-1.987 1.025-2.688-.1-.25-.45-1.275.1-2.65 0 0 .837-.262 2.75 1.026a9.28 9.28 0 0 1 2.5-.338c.85 0 1.7.112 2.5.337 1.912-1.3 2.75-1.024 2.75-1.024.55 1.375.2 2.4.1 2.65.637.7 1.025 1.587 1.025 2.687 0 3.838-2.337 4.688-4.562 4.938.362.312.675.912.675 1.85 0 1.337-.013 2.412-.013 2.75 0 .262.188.574.688.474A10.016 10.016 0 0 0 22 12c0-5.525-4.475-10-10-10z"/></svg></a>
+            <a class="slack" href="https://delta-design-system.slack.com" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M14.5 3A1.5 1.5 0 0 1 16 4.5v5a1.5 1.5 0 0 1-3 0v-5A1.5 1.5 0 0 1 14.5 3zm-10 10H6v1.5A1.5 1.5 0 1 1 4.5 13zm8.5 5h1.5a1.5 1.5 0 1 1-1.5 1.5V18zm1.5-5h5a1.5 1.5 0 0 1 0 3h-5a1.5 1.5 0 0 1 0-3zm5-5a1.5 1.5 0 0 1 0 3H18V9.5A1.5 1.5 0 0 1 19.5 8zm-15 0h5a1.5 1.5 0 0 1 0 3h-5a1.5 1.5 0 0 1 0-3zm5-5A1.5 1.5 0 0 1 11 4.5V6H9.5a1.5 1.5 0 0 1 0-3zm0 10a1.5 1.5 0 0 1 1.5 1.5v5a1.5 1.5 0 0 1-3 0v-5A1.5 1.5 0 0 1 9.5 13z"/></svg></a>
           </div>
-          <div class="text">
-            <h2 class="center">The Delta Design System</h2>
-            <p class="center">An open-source design system that can be used to build responsive sites, apps, and prototypes quickly.</p>
-          </div>
-          <div class="action row wide">
-            <a href="https://github.com/cdfournier/delta-design-system/archive/master.zip"><span class="button">Download</span></a>
-            <p class="center"><small>Version 1.1. Code licensed <a href="https://github.com/cdfournier/delta-design-system/blob/master/LICENSE" target="_blank">MIT</a>.</small></p>
-            <div class="links">
-              <a class="github" href="https://github.com/cdfournier/delta-design-system" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 2C6.475 2 2 6.475 2 12a9.994 9.994 0 0 0 6.838 9.488c.5.087.687-.213.687-.476 0-.237-.013-1.024-.013-1.862-2.512.463-3.162-.612-3.362-1.175-.113-.288-.6-1.175-1.025-1.413-.35-.187-.85-.65-.013-.662.788-.013 1.35.725 1.538 1.025.9 1.512 2.338 1.087 2.912.825.088-.65.35-1.087.638-1.337-2.225-.25-4.55-1.113-4.55-4.938 0-1.088.387-1.987 1.025-2.688-.1-.25-.45-1.275.1-2.65 0 0 .837-.262 2.75 1.026a9.28 9.28 0 0 1 2.5-.338c.85 0 1.7.112 2.5.337 1.912-1.3 2.75-1.024 2.75-1.024.55 1.375.2 2.4.1 2.65.637.7 1.025 1.587 1.025 2.687 0 3.838-2.337 4.688-4.562 4.938.362.312.675.912.675 1.85 0 1.337-.013 2.412-.013 2.75 0 .262.188.574.688.474A10.016 10.016 0 0 0 22 12c0-5.525-4.475-10-10-10z"/></svg></a>
-              <a class="slack" href="https://delta-design-system.slack.com" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M14.5 3A1.5 1.5 0 0 1 16 4.5v5a1.5 1.5 0 0 1-3 0v-5A1.5 1.5 0 0 1 14.5 3zm-10 10H6v1.5A1.5 1.5 0 1 1 4.5 13zm8.5 5h1.5a1.5 1.5 0 1 1-1.5 1.5V18zm1.5-5h5a1.5 1.5 0 0 1 0 3h-5a1.5 1.5 0 0 1 0-3zm5-5a1.5 1.5 0 0 1 0 3H18V9.5A1.5 1.5 0 0 1 19.5 8zm-15 0h5a1.5 1.5 0 0 1 0 3h-5a1.5 1.5 0 0 1 0-3zm5-5A1.5 1.5 0 0 1 11 4.5V6H9.5a1.5 1.5 0 0 1 0-3zm0 10a1.5 1.5 0 0 1 1.5 1.5v5a1.5 1.5 0 0 1-3 0v-5A1.5 1.5 0 0 1 9.5 13z"/></svg></a>
+        </div>
+      </section>
+      <section class="row wide about">
+        <h2 class="center">Meet the Delta Design System</h2>
+        <p>I create handcrafted, responsive websites and applications, and I frequently find myself reusing my own code. So I decided to turn my work into an open source framework that makes it easy to design responsive websites, apps, and prototypes with code that is semantic, flexible, customizable, and wicked efficient.</p>
+        <p class="icon" style="width: 8rem;"><a href="about/about.html">Learn more<span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"/></svg></span></a></p>
+      </section>
+      <section class="row wide contribute">
+        <h2 class="center">Get Involved</h2>
+        <div class="card-group">
+          <div class="card">
+            <figure>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M7.105 15.21A3.001 3.001 0 1 1 5 15.17V8.83a3.001 3.001 0 1 1 2 0V12c.836-.628 1.874-1 3-1h4a3.001 3.001 0 0 0 2.895-2.21 3.001 3.001 0 1 1 2.032.064A5.001 5.001 0 0 1 14 13h-4a3.001 3.001 0 0 0-2.895 2.21zM6 17a1 1 0 1 0 0 2 1 1 0 0 0 0-2zM6 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm12 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg>
+            </figure>
+            <div class="text">
+              <h3 class="center">Branch &amp; Fork</h3>
+              <p>Add your expertise! The Delta Design System needs contributions for everything from documentation to Sass, JavaScript, package management, visual design, and more. Please help!</p>
             </div>
           </div>
-        </section>
-        <section class="row wide about">
-          <h2 class="center">Meet the Delta Design System</h2>
-          <div class="column" style="align-items: center;">
-            <p>I create handcrafted, responsive websites and applications, and I frequently find myself reusing my own code. So I decided to turn my work into an open source framework that makes it easy to design responsive websites, apps, and prototypes with code that is semantic, flexible, customizable, and wicked efficient.</p>
-            <p class="icon" style="width: 8rem;"><a href="about/about.html">Learn more<span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"/></svg></span></a></p>
-          </div>
-        </section>
-        <section class="row wide contribute">
-          <h2 class="center">Get Involved</h2>
-          <div class="card-group">
-            <div class="card">
-              <figure>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M7.105 15.21A3.001 3.001 0 1 1 5 15.17V8.83a3.001 3.001 0 1 1 2 0V12c.836-.628 1.874-1 3-1h4a3.001 3.001 0 0 0 2.895-2.21 3.001 3.001 0 1 1 2.032.064A5.001 5.001 0 0 1 14 13h-4a3.001 3.001 0 0 0-2.895 2.21zM6 17a1 1 0 1 0 0 2 1 1 0 0 0 0-2zM6 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm12 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg>
-              </figure>
-              <div class="text">
-                <h3 class="center">Branch &amp; Fork</h3>
-                <p>Add your expertise! The Delta Design System needs contributions for everything from documentation to Sass, JavaScript, package management, visual design, and more. Please help!</p>
-              </div>
-            </div>
-            <div class="card">
-              <figure>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M13 19.9a5.002 5.002 0 0 0 4-4.9v-3a4.98 4.98 0 0 0-.415-2h-9.17A4.98 4.98 0 0 0 7 12v3a5.002 5.002 0 0 0 4 4.9V14h2v5.9zm-7.464-2.21A6.979 6.979 0 0 1 5 15H2v-2h3v-1c0-.643.087-1.265.249-1.856L3.036 8.866l1-1.732L6.056 8.3a7.01 7.01 0 0 1 .199-.3h11.49c.069.098.135.199.199.3l2.02-1.166 1 1.732-2.213 1.278c.162.59.249 1.213.249 1.856v1h3v2h-3c0 .953-.19 1.862-.536 2.69l2.5 1.444-1 1.732-2.526-1.458A6.986 6.986 0 0 1 12 22a6.986 6.986 0 0 1-5.438-2.592l-2.526 1.458-1-1.732 2.5-1.443zM8 6a4 4 0 1 1 8 0H8z"/></svg>
-              </figure>
-              <div class="text">
-                <h3 class="center">Document Issues</h3>
-                <p>See something? Say something! If you see something wrong or have a suggestion, please let us know by creating new <a href="https://github.com/cdfournier/delta-design-system/issues" target="_blank">issues</a> so we can make it better.</p>
-              </div>
+          <div class="card">
+            <figure>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M13 19.9a5.002 5.002 0 0 0 4-4.9v-3a4.98 4.98 0 0 0-.415-2h-9.17A4.98 4.98 0 0 0 7 12v3a5.002 5.002 0 0 0 4 4.9V14h2v5.9zm-7.464-2.21A6.979 6.979 0 0 1 5 15H2v-2h3v-1c0-.643.087-1.265.249-1.856L3.036 8.866l1-1.732L6.056 8.3a7.01 7.01 0 0 1 .199-.3h11.49c.069.098.135.199.199.3l2.02-1.166 1 1.732-2.213 1.278c.162.59.249 1.213.249 1.856v1h3v2h-3c0 .953-.19 1.862-.536 2.69l2.5 1.444-1 1.732-2.526-1.458A6.986 6.986 0 0 1 12 22a6.986 6.986 0 0 1-5.438-2.592l-2.526 1.458-1-1.732 2.5-1.443zM8 6a4 4 0 1 1 8 0H8z"/></svg>
+            </figure>
+            <div class="text">
+              <h3 class="center">Document Issues</h3>
+              <p>See something? Say something! If you see something wrong or have a suggestion, please let us know by creating new <a href="https://github.com/cdfournier/delta-design-system/issues" target="_blank">issues</a> so we can make it better.</p>
             </div>
           </div>
-        </section>
-      </article>
+        </div>
+      </section>
     </main>
     <footer>
-      <div class="row fifty">
-        <nav class="column" aria-labelledby="footer-navigation">
-          <ul id="footer-navigation">
-            <li><a href="about/about.html">About</a></li>
-            <li><a href="atoms/atoms.html">Atoms</a></li>
-            <li><a href="molecules/molecules.html">Molecules</a></li>
-            <li><a href="organisms/organisms.html">Organisms</a></li>
-            <li><a href="style/style.html">Style</a></li>
-            <li><a href="downloads/downloads.html">Downloads</a></li>
-          </ul>
-        </nav>
-        <section class="meta-content column">
-          <div class="logo">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 796"><defs><style>.cls-1{fill:#01232d;}.cls-2{fill:#013342;}</style></defs><title>delta-design-system-logo</title><polygon class="cls-1" points="512 796 1024 796 512 0 512 796"/><polygon class="cls-2" points="0 796 512 796 512 0 0 796"/></svg>
-            <h2 class="center">The Delta Design System</h2>
+      <nav aria-labelledby="footer-navigation">
+        <ul id="footer-navigation">
+          <li><a href="about/about.html">About</a></li>
+          <li><a href="atoms/atoms.html">Atoms</a></li>
+          <li><a href="molecules/molecules.html">Molecules</a></li>
+          <li><a href="organisms/organisms.html">Organisms</a></li>
+          <li><a href="style/style.html">Style</a></li>
+          <li><a href="downloads/downloads.html">Downloads</a></li>
+        </ul>
+      </nav>
+      <section class="brand-content">
+        <div class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 796"><defs><style>.cls-1{fill:#01232d;}.cls-2{fill:#013342;}</style></defs><title>delta-design-system-logo</title><polygon class="cls-1" points="512 796 1024 796 512 0 512 796"/><polygon class="cls-2" points="0 796 512 796 512 0 0 796"/></svg>
+          <h2 class="center">The Delta Design System</h2>
+        </div>
+        <div class="links">
+          <div class="github">
+            <a href="https://github.com/cdfournier/delta-design-system" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 2C6.475 2 2 6.475 2 12a9.994 9.994 0 0 0 6.838 9.488c.5.087.687-.213.687-.476 0-.237-.013-1.024-.013-1.862-2.512.463-3.162-.612-3.362-1.175-.113-.288-.6-1.175-1.025-1.413-.35-.187-.85-.65-.013-.662.788-.013 1.35.725 1.538 1.025.9 1.512 2.338 1.087 2.912.825.088-.65.35-1.087.638-1.337-2.225-.25-4.55-1.113-4.55-4.938 0-1.088.387-1.987 1.025-2.688-.1-.25-.45-1.275.1-2.65 0 0 .837-.262 2.75 1.026a9.28 9.28 0 0 1 2.5-.338c.85 0 1.7.112 2.5.337 1.912-1.3 2.75-1.024 2.75-1.024.55 1.375.2 2.4.1 2.65.637.7 1.025 1.587 1.025 2.687 0 3.838-2.337 4.688-4.562 4.938.362.312.675.912.675 1.85 0 1.337-.013 2.412-.013 2.75 0 .262.188.574.688.474A10.016 10.016 0 0 0 22 12c0-5.525-4.475-10-10-10z"/></svg></a>
           </div>
-          <div class="links">
-            <div class="github">
-              <a href="https://github.com/cdfournier/delta-design-system" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 2C6.475 2 2 6.475 2 12a9.994 9.994 0 0 0 6.838 9.488c.5.087.687-.213.687-.476 0-.237-.013-1.024-.013-1.862-2.512.463-3.162-.612-3.362-1.175-.113-.288-.6-1.175-1.025-1.413-.35-.187-.85-.65-.013-.662.788-.013 1.35.725 1.538 1.025.9 1.512 2.338 1.087 2.912.825.088-.65.35-1.087.638-1.337-2.225-.25-4.55-1.113-4.55-4.938 0-1.088.387-1.987 1.025-2.688-.1-.25-.45-1.275.1-2.65 0 0 .837-.262 2.75 1.026a9.28 9.28 0 0 1 2.5-.338c.85 0 1.7.112 2.5.337 1.912-1.3 2.75-1.024 2.75-1.024.55 1.375.2 2.4.1 2.65.637.7 1.025 1.587 1.025 2.687 0 3.838-2.337 4.688-4.562 4.938.362.312.675.912.675 1.85 0 1.337-.013 2.412-.013 2.75 0 .262.188.574.688.474A10.016 10.016 0 0 0 22 12c0-5.525-4.475-10-10-10z"/></svg></a>
-            </div>
-            <div class="slack">
-              <a href="https://delta-design-system.slack.com" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M14.5 3A1.5 1.5 0 0 1 16 4.5v5a1.5 1.5 0 0 1-3 0v-5A1.5 1.5 0 0 1 14.5 3zm-10 10H6v1.5A1.5 1.5 0 1 1 4.5 13zm8.5 5h1.5a1.5 1.5 0 1 1-1.5 1.5V18zm1.5-5h5a1.5 1.5 0 0 1 0 3h-5a1.5 1.5 0 0 1 0-3zm5-5a1.5 1.5 0 0 1 0 3H18V9.5A1.5 1.5 0 0 1 19.5 8zm-15 0h5a1.5 1.5 0 0 1 0 3h-5a1.5 1.5 0 0 1 0-3zm5-5A1.5 1.5 0 0 1 11 4.5V6H9.5a1.5 1.5 0 0 1 0-3zm0 10a1.5 1.5 0 0 1 1.5 1.5v5a1.5 1.5 0 0 1-3 0v-5A1.5 1.5 0 0 1 9.5 13z"/></svg></a>
-            </div>
+          <div class="slack">
+            <a href="https://delta-design-system.slack.com" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M14.5 3A1.5 1.5 0 0 1 16 4.5v5a1.5 1.5 0 0 1-3 0v-5A1.5 1.5 0 0 1 14.5 3zm-10 10H6v1.5A1.5 1.5 0 1 1 4.5 13zm8.5 5h1.5a1.5 1.5 0 1 1-1.5 1.5V18zm1.5-5h5a1.5 1.5 0 0 1 0 3h-5a1.5 1.5 0 0 1 0-3zm5-5a1.5 1.5 0 0 1 0 3H18V9.5A1.5 1.5 0 0 1 19.5 8zm-15 0h5a1.5 1.5 0 0 1 0 3h-5a1.5 1.5 0 0 1 0-3zm5-5A1.5 1.5 0 0 1 11 4.5V6H9.5a1.5 1.5 0 0 1 0-3zm0 10a1.5 1.5 0 0 1 1.5 1.5v5a1.5 1.5 0 0 1-3 0v-5A1.5 1.5 0 0 1 9.5 13z"/></svg></a>
           </div>
-        </section>
-      </div>
-      <div class="copyright row wide">
+        </div>
+      </section>
+      <div class="copyright">
         <p>&copy; 2019 Delta Design System. Conceived and developed by <a href="https://chris.blackcoffeeshoppe.com" target="_blank">Chris Fournier</a>.</p>
       </div>
     </footer>

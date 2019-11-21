@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Blockquotes | Delta Design System</title>
+    <title>Messages | Delta Design System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -81,37 +82,86 @@
     </header>
     <main>
       <section class="row wide">
-        <h1 class="title">Blockquotes</h1>
-        <p>The blockquote element represents a section that is quoted from another source. Content inside a blockquote must be quoted from another source, whose address, if it has one, may be cited in the cite attribute.</p>
-        <p><cite><a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-blockquote-element" target="_blank">HTML Living Standard</a></cite></p>
-        <p>As with other modules in the Delta Design System, we separate the function of a blockquote from the presentation of a blockquote. In other words, don't think of blockquotes only in terms of their style, but also what they represent in the absence of style.</p>
-      </section>
-      <section class="row fifty">
-        <h2>Blockquote Example</h2>
-        <div class="column">
-          <blockquote cite="https://alistapart.com/article/responsive-web-design/">
-            <p>Now more than ever, we’re designing work meant to be viewed along a gradient of different experiences.</p>
-            <p><cite><a href="https://alistapart.com/article/responsive-web-design/" target="_blank">Ethan Marcotte, Responsive Web Design</a></cite></p>
-          </blockquote>
-        </div>
-        <div class="column">
-          <figure>
-            <figcaption>html</figcaption>
-<pre><code>&lt;blockquote cite=&quot;https://alistapart.com/article/responsive-web-design/&quot;&gt;
-  &lt;p&gt;Now more than ever, we&rsquo;re designing work meant to be viewed along a gradient of different experiences.&lt;/p&gt;
-  &lt;p&gt;&lt;cite&gt;&lt;a href=&quot;https://alistapart.com/article/responsive-web-design/&quot; target=&quot;_blank&quot;&gt;Ethan Marcotte, Responsive Web Design&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</code></pre>
-          </figure>
-        </div>
+        <h1 class="title">Messages</h1>
+        <p>Messages convey important information related to the state of your app or the device and often request feedback.</p>
+        <p>Messages are fixed to the top of the window by default and can be triggered by any means necessary, and most messages will dismiss themselves &ndash; unless they require the user to confirm an action &ndash; after 10 seconds, or the user can dismiss them using the close icon.</p>
+        <p>If you'd rather have your messages on the bottom of the screen, simply add a <code>.bottom</code> class to the parent <code style="white-space: normal">&lt;div class=&quot;messages&quot;&gt;</code>.</p>
       </section>
       <section class="row wide">
-        <p>Searching the internet, there are many different ways to mark-up blockquotes. The Delta Design System mostly adheres to the approach illustrated by <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote" target="_blank">MDN web docs</a>:</p>
-        <ul>
-          <li>We add a <code>&lt;cite&gt;</code> to the opening <code>&lt;blockquote&gt;</code> tag.</li>
-          <li>We use <code>&lt;p&gt;</code> tags inside the <code>&lt;blockquote&gt;</code> tag.</li>
-          <li>We do not, however, use a <code>&lt;footer&gt;</code> tag in our blockquote.</li>
-        </ul>
-        <p><code>&lt;blockquote&gt;</code> elements are left-aligned by default, but you can add a <code>.center</code> or <code>.right</code> class to change the horizontal alignment to suit your needs.</p>
+        <h2>Message Examples</h2>
+        <div class="row fifty border">
+          <div class="column">
+            <h3>Error Messages</h3>
+            <p>An error message provides contextual information displayed when an unexpected condition occurs.</p>
+            <button type="button" class="show-error">Show Error</button>
+          </div>
+          <div class="column">
+            <figure>
+              <figcaption>html</figcaption>
+<pre><code>&lt;div class=&quot;error&quot;&gt;
+  &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot; class=&quot;warning&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm0-8h2v6h-2V7z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;
+  &lt;p&gt;This is an error alert message&lt;/p&gt;
+  &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot; class=&quot;close&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0-9.414l2.828-2.829 1.415 1.415L13.414 12l2.829 2.828-1.415 1.415L12 13.414l-2.828 2.829-1.415-1.415L10.586 12 7.757 9.172l1.415-1.415L12 10.586z&quot; /&gt;&lt;/svg&gt;
+&lt;/div&gt;</code></pre>
+            </figure>
+          </div>
+        </div>
+        <div class="row fifty border">
+          <div class="column">
+            <h3>Success Messages</h3>
+            <p>A success message provides assurances to the user that an intended action is successful.</p>
+            <button type="button" class="show-success">Show Success</button>
+          </div>
+          <div class="column">
+            <figure>
+              <figcaption>html</figcaption>
+<pre><code>&lt;div class=&quot;success&quot;&gt;
+  &lt;p&gt;This is a success alert message&lt;/p&gt;
+  &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot; class=&quot;close&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0-9.414l2.828-2.829 1.415 1.415L13.414 12l2.829 2.828-1.415 1.415L12 13.414l-2.828 2.829-1.415-1.415L10.586 12 7.757 9.172l1.415-1.415L12 10.586z&quot; /&gt;&lt;/svg&gt;
+&lt;/div&gt;</code></pre>
+            </figure>
+          </div>
+        </div>
+        <div class="row fifty">
+          <div class="column">
+            <h3>Confirmation Messages</h3>
+            <p>A confirmation message provides the user an opportunity to confirm a requested action.</p>
+            <button type="button" class="show-confirm">Show Confirm</button>
+          </div>
+          <div class="column">
+            <figure>
+              <figcaption>html</figcaption>
+<pre><code>&lt;div class=&quot;confirm&quot;&gt;
+  &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot; class=&quot;warning&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm0-8h2v6h-2V7z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;
+  &lt;p&gt;This is a confirmation alert message. Are you sure you want to continue?&lt;/p&gt;
+  &lt;div class=&quot;buttons&quot;&gt;
+    &lt;button type=&quot;button&quot; class=&quot;no&quot;&gt;No&lt;/button&gt;
+    &lt;button type=&quot;button&quot; class=&quot;yes&quot;&gt;Yes&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </figure>
+          </div>
+        </div>
+      </section>
+      <section class="messages">
+        <h2 class="visuallyhidden">Messages</h2>
+        <div class="error">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="warning"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm0-8h2v6h-2V7z"></path></svg>
+          <p>This is an error alert message</p>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="close"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0-9.414l2.828-2.829 1.415 1.415L13.414 12l2.829 2.828-1.415 1.415L12 13.414l-2.828 2.829-1.415-1.415L10.586 12 7.757 9.172l1.415-1.415L12 10.586z" /></svg>
+        </div>
+        <div class="success">
+          <p>This is a success alert message</p>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="close"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0-9.414l2.828-2.829 1.415 1.415L13.414 12l2.829 2.828-1.415 1.415L12 13.414l-2.828 2.829-1.415-1.415L10.586 12 7.757 9.172l1.415-1.415L12 10.586z" /></svg>
+        </div>
+        <div class="confirm">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="warning"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm0-8h2v6h-2V7z"></path></svg>
+          <p>This is a confirmation alert message. Are you sure you want to continue?</p>
+          <div class="buttons">
+            <button type="button" class="no">No</button>
+            <button type="button" class="yes">Yes</button>
+          </div>
+        </div>
       </section>
     </main>
     <footer>

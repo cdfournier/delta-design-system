@@ -10,8 +10,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: calc(100% - 2rem);
-    margin: 1rem;
+    width: 100%;
+    margin: 1rem 0;
     padding: 0;
     border: 1px solid $lt-gray;
     border-radius: 0.25rem;
@@ -19,17 +19,17 @@
       img {border-radius: 0.25rem 0.25rem 0 0;}
       figcaption > cite {
         display: inline-block;
-        padding: 0 1rem;
+        padding: 1rem 1rem 0;
+        @include font-body;
         font-size: 0.8rem;
         font-style: normal;
-        font-weight: $font-body-norm;
         text-transform: none;
       }
+      figcaption > cite a {@include font-bold;}
     }
     .text {
       padding: 1rem;
       width: 100%;
-      h1, h2, h3, h4 {padding: 0;}
     }
   }
 }
@@ -39,13 +39,16 @@
     flex-direction: row;
     align-items: stretch;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    .card {width: calc(50% - 2rem);}
+    justify-content: space-between;
+    .card {
+      width: calc(50% - 1rem);
+      max-width: 38rem;
+    }
   }
 }
 
 @media (min-width: 64rem) {
   .card-group {
-    .card {width: calc(32.75% - 2rem);}
+    .card {width: calc(32.75% - 1rem);}
   }
 }
