@@ -103,12 +103,8 @@ $('.tab-d').click(function() {
 });
 
 $('nav .search span.trigger').click(function() {
-  $('nav .search span.trigger').addClass('open');
-  $('nav .search fieldset').addClass('open');
-  $('nav .search button[type="submit"]').addClass('open');
+  $('nav .search').addClass('open');
 });
 $('nav .search fieldset .input-icon.close').click(function() {
-  $('nav .search span.trigger').removeClass('open');
-  $('nav .search fieldset').removeClass('open');
-  $('nav .search button[type="submit"]').removeClass('open');
+  $('nav .search').removeClass('open');
 });

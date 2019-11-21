@@ -86,8 +86,7 @@ h1.right, h2.right, h3.right, p.right, strong.right, em.right, small.right {text
 
 // UNORDERED & ORDERED LISTS
 ul, ol {
-  display: flex;
-  flex-direction: column;
+  display: block;
   width: 100%;
   margin: 0 auto;
   padding: 1rem 0 0 1.5rem;
@@ -106,9 +105,6 @@ ul.no-bullets {
 ol {list-style-type: decimal;}
 
 ul li, ol li {
-  display: inline-flex;
-  align-items: center;
-  position: relative;
   width: 100%;
   max-width: 39rem;
   padding: 0 0 1rem 0.25rem;

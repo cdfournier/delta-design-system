@@ -35,6 +35,7 @@ nav.open .search {
     display: flex;
     align-items: center;
     position: absolute;
+    z-index: 0;
     right: 1rem;
     width: 100%;
     height: auto;
@@ -76,15 +77,18 @@ nav.open .search {
       @include transition(all, 0.325s, ease);
       @include transform(scale(1));
     }
-    fieldset.open {
+  }
+  nav .search.open {
+    z-index: 100;
+    fieldset {
       @include transform(scale(1));
       .input-icon {@include transform(scale(1,1));}
     }
-    span.trigger.open {
+    span.trigger {
       display: none;
       @include transform(scale(0));
     }
-    button[type="submit"].open {
+    button[type="submit"] {
       display: inline-flex;
       @include transform(scale(1));
     }

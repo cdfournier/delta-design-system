@@ -167,8 +167,7 @@ h1.right, h2.right, h3.right, p.right, strong.right, em.right, small.right {
     font-size: 1.5rem; } }
 
 ul, ol {
-  display: flex;
-  flex-direction: column;
+  display: block;
   width: 100%;
   margin: 0 auto;
   padding: 1rem 0 0 1.5rem;
@@ -187,9 +186,6 @@ ol {
   list-style-type: decimal; }
 
 ul li, ol li {
-  display: inline-flex;
-  align-items: center;
-  position: relative;
   width: 100%;
   max-width: 39rem;
   padding: 0 0 1rem 0.25rem; }
@@ -677,6 +673,7 @@ nav.open {
       display: none; }
     nav ul {
       flex-direction: row;
+      z-index: 10;
       width: auto;
       height: auto;
       margin: 0;
@@ -1138,6 +1135,7 @@ nav.open .search {
     display: flex;
     align-items: center;
     position: absolute;
+    z-index: 0;
     right: 1rem;
     width: 100%;
     height: auto;
@@ -1218,26 +1216,28 @@ nav.open .search {
       -ms-transform: scale(1);
       -o-transform: scale(1);
       transform: scale(1); }
-    nav .search fieldset.open {
+  nav .search.open {
+    z-index: 100; }
+    nav .search.open fieldset {
       -webkit-transform: scale(1);
       -moz-transform: scale(1);
       -ms-transform: scale(1);
       -o-transform: scale(1);
       transform: scale(1); }
-      nav .search fieldset.open .input-icon {
+      nav .search.open fieldset .input-icon {
         -webkit-transform: scale(1, 1);
         -moz-transform: scale(1, 1);
         -ms-transform: scale(1, 1);
         -o-transform: scale(1, 1);
         transform: scale(1, 1); }
-    nav .search span.trigger.open {
+    nav .search.open span.trigger {
       display: none;
       -webkit-transform: scale(0);
       -moz-transform: scale(0);
       -ms-transform: scale(0);
       -o-transform: scale(0);
       transform: scale(0); }
-    nav .search button[type="submit"].open {
+    nav .search.open button[type="submit"] {
       display: inline-flex;
       -webkit-transform: scale(1);
       -moz-transform: scale(1);

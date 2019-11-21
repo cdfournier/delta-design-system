@@ -59,6 +59,7 @@ nav.open {
     button.menu-toggle {display: none;}
     ul {
       flex-direction: row;
+      z-index: 10;
       width: auto;
       height: auto;
       margin: 0;
