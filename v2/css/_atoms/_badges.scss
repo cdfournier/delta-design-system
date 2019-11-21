@@ -1,9 +1,13 @@
 // BADGES
 span.badge {
   display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
+  top: 0;
   right: 0;
-  padding: 0 0.5rem;
+  height: calc(100% - 1rem);
+  padding: 0 0.75rem;
   border-radius: 1rem;
   @include font-bold;
   font-size: 0.8rem;
@@ -11,7 +15,10 @@ span.badge {
 
 
 // ACCORDION BADGES
-.accordion label span.badge {right: 1.5rem;}
+.accordion label span.badge {
+  right: 1.5rem;
+  height: 100%;
+}
 
 span.badge.bg-black,
 span.badge.bg-primary,

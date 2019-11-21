@@ -186,6 +186,7 @@ ol {
   list-style-type: decimal; }
 
 ul li, ol li {
+  position: relative;
   width: 100%;
   max-width: 39rem;
   padding: 0 0 1rem 0.25rem; }
@@ -578,16 +579,21 @@ ul.chips {
 
 span.badge {
   display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
+  top: 0;
   right: 0;
-  padding: 0 0.5rem;
+  height: calc(100% - 1rem);
+  padding: 0 0.75rem;
   border-radius: 1rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 0.8rem; }
 
 .accordion label span.badge {
-  right: 1.5rem; }
+  right: 1.5rem;
+  height: 100%; }
 
 span.badge.bg-black,
 span.badge.bg-primary,
@@ -1849,7 +1855,8 @@ footer {
     align-items: center;
     width: 100%;
     margin: 0;
-    padding: 0; }
+    padding: 0;
+    list-style-type: none; }
     .tabs ul li {
       flex-direction: column;
       justify-content: center;
