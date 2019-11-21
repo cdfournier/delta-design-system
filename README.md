@@ -2,7 +2,9 @@
 An open-source design system that can be used to build responsive sites, apps, and prototypes quickly.
 
 ## Atoms
+- [Badges](https://cdfournier.github.io/delta-design-system/atoms/badges/badges.html)
 - [Buttons](https://cdfournier.github.io/delta-design-system/atoms/buttons/buttons.html)
+- [Chips](https://cdfournier.github.io/delta-design-system/atoms/chips/chips.html)
 - Feedback coming soon
 - [Images](https://cdfournier.github.io/delta-design-system/atoms/images/images.html)
 
@@ -10,25 +12,24 @@ An open-source design system that can be used to build responsive sites, apps, a
 - [Accordions](https://cdfournier.github.io/delta-design-system/molecules/accordions/accordions.html)
 - [Blockquotes](https://cdfournier.github.io/delta-design-system/molecules/blockquotes/blockquotes.html)
 - [Cards](https://cdfournier.github.io/delta-design-system/molecules/cards/cards.html)
-- [Forms](https://cdfournier.github.io/delta-design-system/molecules/forms/forms.html)
+- [Forms &amp; Inputs](https://cdfournier.github.io/delta-design-system/molecules/forms/forms.html)
 - [Media Grid Items](https://cdfournier.github.io/delta-design-system/molecules/media-grid-items/media-grid-items.html)
-- [Messaging](https://cdfournier.github.io/delta-design-system/molecules/messaging/messaging.html)
+- [Messages](https://cdfournier.github.io/delta-design-system/molecules/messages/messages.html)
 - [Navigation](https://cdfournier.github.io/delta-design-system/molecules/navigation/navigation.html)
-- Search coming soon
+- [Search](https://cdfournier.github.io/delta-design-system/molecules/search/search.html)
 
 ## Organisms
 - [Banners](https://cdfournier.github.io/delta-design-system/organisms/banners/banners.html)
 - [Card Groups](https://cdfournier.github.io/delta-design-system/organisms/card-groups/card-groups.html)
 - [Footers](https://cdfournier.github.io/delta-design-system/organisms/footers/footers.html)
-- [Forms](https://cdfournier.github.io/delta-design-system/organisms/forms/forms.html)
 - [Headers](https://cdfournier.github.io/delta-design-system/organisms/headers/headers.html)
 - [Media Grid Blocks](https://cdfournier.github.io/delta-design-system/organisms/media-grid-blocks/media-grid-blocks.html)
+- [Tabs](https://cdfournier.github.io/delta-design-system/organisms/tabs/tabs.html)
 
 ## Style
 - [Colors](https://cdfournier.github.io/delta-design-system/style/colors/colors.html)
 - [Fonts](https://cdfournier.github.io/delta-design-system/style/fonts/fonts.html)
 - [Layout](https://cdfournier.github.io/delta-design-system/style/layout/layout.html)
-- [Transitions](https://cdfournier.github.io/delta-design-system/style/transitions/transitions.html)
 - [Typography](https://cdfournier.github.io/delta-design-system/style/typography/typography.html)
 
 ## Downloads
@@ -43,4 +44,4 @@ An open-source design system that can be used to build responsive sites, apps, a
 - [Animate On Scroll](https://github.com/michalsnik/aos/tree/v2)
 - [Headroom](https://wicky.nillia.ms/headroom.js/)
 
-Version 1.1
+Version 2.1
