@@ -1,46 +1,56 @@
 // TABS
-/*
-ul.tabs {
-  display: inline-flex;
-  flex-direction: row;
-  align-items: center;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  width: 100%;
-  overflow-x: scroll;
-  padding: 1rem 0 0;
-  @include font-bold;
-  font-size: 0.8rem;
-  li {
-    width: auto;
-    margin: 0;
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    @include transition(all, 0.25s, ease);
-  }
-  li:hover, li:focus {background-color: $lt-gray;}
-  li a, li a:hover, li a:focus {
-    color: $black;
-    text-decoration: none;
-  }
-}
-
-.tab-row {
+.tabs {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  flex-direction: column;
+  position: relative;
   width: 100%;
-  .tab {
-    width: 0;
-    height: 0;
-    @include transform(scale(0));
-    @include transition(all, 0.25s, ease);
-  }
-  .tab.show {
+  margin: 0;
+  padding: 1rem 0 0;
+  ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     width: 100%;
-    height: 100%;
-    @include transform(scale(1));
+    margin: 0;
+    padding: 0;
+    li {
+      flex-direction: column;
+      justify-content: center;
+      width: auto;
+      padding: 1rem 1.5rem;
+      border-right: 1px solid $md-gray;
+      @include font-bold;
+      font-size: 0.8rem;
+      line-height: 1.3;
+      text-align: center;
+      color: $primary;
+      cursor: pointer;
+      @include transition(all, 0.5s, ease);
+      svg {
+        margin: 0 auto 0.5rem;
+        fill: $primary;
+      }
+    }
+    li:hover, li:focus, li.active {
+      color: $secondary;
+      svg {fill: $secondary;}
+    }
+    li:last-of-type {border-right: none;}
+  }
+  .tab-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    .tab {
+      width: 0;
+      height: 0;
+      @include transform(scale(0));
+      @include transition(all, 0.5s, ease);
+    }
+    .tab.active {
+      width: auto;
+      height: 100%;
+      @include transform(scale(1));
+    }
   }
 }
-*/

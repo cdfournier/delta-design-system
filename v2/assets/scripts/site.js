@@ -70,26 +70,34 @@ $('ul.chips li.dismiss-reset').click( function() {
 });
 
 $('.tab-a').click(function() {
-  $('.tab.a').addClass('show');
-  $('.tab.b').removeClass('show');
-  $('.tab.c').removeClass('show');
-  $('.tab.d').removeClass('show');
+  $('.tab.a').addClass('active');
+  $('.tab.b').removeClass('active');
+  $('.tab.c').removeClass('active');
+  $('.tab-a').addClass('active');
+  $('.tab-b').removeClass('active');
+  $('.tab-c').removeClass('active');
 });
 $('.tab-b').click(function() {
-  $('.tab.a').removeClass('show');
-  $('.tab.b').addClass('show');
-  $('.tab.c').removeClass('show');
-  $('.tab.d').removeClass('show');
+  $('.tab.a').removeClass('active');
+  $('.tab.b').addClass('active');
+  $('.tab.c').removeClass('active');
+  $('.tab-a').removeClass('active');
+  $('.tab-b').addClass('active');
+  $('.tab-c').removeClass('active');
 });
 $('.tab-c').click(function() {
-  $('.tab.a').removeClass('show');
-  $('.tab.b').removeClass('show');
-  $('.tab.c').addClass('show');
-  $('.tab.d').removeClass('show');
+  $('.tab.a').removeClass('active');
+  $('.tab.b').removeClass('active');
+  $('.tab.c').addClass('active');
+  $('.tab-a').removeClass('active');
+  $('.tab-b').removeClass('active');
+  $('.tab-c').addClass('active');
 });
 $('.tab-d').click(function() {
-  $('.tab.a').removeClass('show');
-  $('.tab.b').removeClass('show');
-  $('.tab.c').removeClass('show');
-  $('.tab.d').addClass('show');
+  $('.tab.a').removeClass('active');
+  $('.tab.b').removeClass('active');
+  $('.tab.c').removeClass('active');
+  $('.tab-a').removeClass('active');
+  $('.tab-b').removeClass('active');
+  $('.tab-c').removeClass('active');
 });

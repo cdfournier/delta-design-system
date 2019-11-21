@@ -19,7 +19,7 @@
     padding: 1rem;
     @include font-bold;
     color: $white;
-    @include transform(translateY(-10rem));
+    @include transform(translateY(-100rem));
     @include transition(all, 0.5s, ease-in-out);
     p {
       margin: 0;
@@ -84,7 +84,7 @@
   .error, .success, .confirm {
     top: auto;
     bottom: 0;
-    @include transform(translateY(10rem));
+    @include transform(translateY(100rem));
   }
   .error.show, .success.show, .confirm.show {@include transform(translateY(0));}
 }
