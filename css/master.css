@@ -1365,14 +1365,17 @@ nav.open .search {
     flex-direction: row;
     align-items: stretch;
     flex-wrap: wrap;
-    justify-content: space-between; }
+    justify-content: flex-start;
+    width: calc(100% + 2rem);
+    margin: 0 0 0 -1rem; }
     .card-group .card {
-      width: calc(50% - 1rem);
-      max-width: 38rem; } }
+      width: calc(50% - 2rem);
+      max-width: 38rem;
+      margin: 1rem; } }
 
 @media (min-width: 64rem) {
   .card-group .card {
-    width: calc(32.75% - 1rem); } }
+    width: calc(33.3% - 2rem); } }
 
 blockquote {
   display: block;
@@ -1464,9 +1467,9 @@ blockquote:before {
     flex-wrap: wrap;
     align-items: flex-start; }
     .media-grid-block .media-grid-item figure {
-      width: 35%; }
+      width: 30%; }
     .media-grid-block .media-grid-item .text {
-      width: 65%;
+      width: 70%;
       padding: 0 0 0 2rem; }
   .media-grid-block .media-grid-item.reverse {
     flex-direction: row-reverse; }

@@ -39,16 +39,19 @@
     flex-direction: row;
     align-items: stretch;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
+    width: calc(100% + 2rem);
+    margin: 0 0 0 -1rem;
     .card {
-      width: calc(50% - 1rem);
+      width: calc(50% - 2rem);
       max-width: 38rem;
+      margin: 1rem;
     }
   }
 }
 
 @media (min-width: 64rem) {
   .card-group {
-    .card {width: calc(32.75% - 1rem);}
+    .card {width: calc(33.3% - 2rem);}
   }
 }
