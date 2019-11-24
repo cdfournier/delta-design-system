@@ -69,37 +69,24 @@ $('ul.chips li.dismiss-reset').click( function() {
   $('ul.chips li').removeClass('dismissed');
 });
 
-$('.tab-a').click(function() {
-  $('.tab.a').addClass('active');
-  $('.tab.b').removeClass('active');
-  $('.tab.c').removeClass('active');
-  $('.tab-a').addClass('active');
-  $('.tab-b').removeClass('active');
-  $('.tab-c').removeClass('active');
+
+$('li.tab-item button#tab-label-1').click(function() {
+  $('li.tab-item button.is-active').removeClass('is-active').attr('aria-selected', false);
+  $('li.tab-item button#tab-label-1').addClass('is-active').attr('aria-selected', true);
+  $('.panels .panel.is-current').removeClass('is-current').attr('aria-hidden', true);
+  $('.panels .panel#tab-panel-1').addClass('is-current').attr('aria-hidden', false);
 });
-$('.tab-b').click(function() {
-  $('.tab.a').removeClass('active');
-  $('.tab.b').addClass('active');
-  $('.tab.c').removeClass('active');
-  $('.tab-a').removeClass('active');
-  $('.tab-b').addClass('active');
-  $('.tab-c').removeClass('active');
+$('li.tab-item button#tab-label-2').click(function() {
+  $('li.tab-item button.is-active').removeClass('is-active').attr('aria-selected', false);
+  $('li.tab-item button#tab-label-2').addClass('is-active').attr('aria-selected', true);
+  $('.panels .panel.is-current').removeClass('is-current').attr('aria-hidden', true);
+  $('.panels .panel#tab-panel-2').addClass('is-current').attr('aria-hidden', false);
 });
-$('.tab-c').click(function() {
-  $('.tab.a').removeClass('active');
-  $('.tab.b').removeClass('active');
-  $('.tab.c').addClass('active');
-  $('.tab-a').removeClass('active');
-  $('.tab-b').removeClass('active');
-  $('.tab-c').addClass('active');
-});
-$('.tab-d').click(function() {
-  $('.tab.a').removeClass('active');
-  $('.tab.b').removeClass('active');
-  $('.tab.c').removeClass('active');
-  $('.tab-a').removeClass('active');
-  $('.tab-b').removeClass('active');
-  $('.tab-c').removeClass('active');
+$('li.tab-item button#tab-label-3').click(function() {
+  $('li.tab-item button.is-active').removeClass('is-active').attr('aria-selected', false);
+  $('li.tab-item button#tab-label-3').addClass('is-active').attr('aria-selected', true);
+  $('.panels .panel.is-current').removeClass('is-current').attr('aria-hidden', true);
+  $('.panels .panel#tab-panel-3').addClass('is-current').attr('aria-hidden', false);
 });
 
 $('nav .search span.trigger').click(function() {

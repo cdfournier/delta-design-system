@@ -84,69 +84,35 @@
       <section class="row wide">
         <h1 class="title">Tabs</h1>
         <p>Tabs are a familiar and convenient way to display groups of related information where only one tab is active and shown while the other tabs are hidden or obscured until the user clicks or touches the tab trigger to reveal it.</p>
-        <p>The Delta Design System uses an unordered list to create a block of tab triggers. We then use css <code>transform</code> to manipulate tab content to show and hide active and inactive tabs.</p>
-        <p>In future releases we will improve both the visual design and function of tabs, as well as explore additional options for layout. You can make your own adjustments in the meantime by changing things like the css width and flexbox values for the <code>.tab</code> container, <code>ul</code>, and <code>.tab-group</code>.</p>
+        <p>The Delta Design System uses an unordered list to create a block of tab triggers using buttons. The tab content is nested inside a <code>.panels</code> component.</p>
       </section>
-      <section class="row wide">
-        <h2>Tab Example</h2>
-        <div class="tabs">
-          <ul>
-            <li class="tab-a active">Bridge</li>
-            <li class="tab-b">Building</li>
-            <li class="tab-c">Field</li>
-          </ul>
-          <div class="tab-group">
-            <div class="tab a active">
-              <figure>
-                <img src="../../assets/images/bridge-2x.jpg" srcset="../../assets/images/bridge-1x.jpg 1x, ../../assets/images/bridge-2x.jpg 2x" alt="Example of image used in card layout">
-                <figcaption><cite><a href="https://www.stockio.com/free-photo/bridge-mason-jones" target="_blank">Bridge</a> by Mason Jones</cite></figcaption>
-              </figure>
-            </div>
-            <div class="tab b">
-              <figure>
-                <img src="../../assets/images/building-2x.jpg" srcset="../../assets/images/building-1x.jpg 1x, ../../assets/images/building-2x.jpg 2x" alt="Example of image used in card layout">
-                <figcaption><cite><a href="https://www.stockio.com/free-photo/building-coen-van" target="_blank">Building</a> by Coen Van</cite></figcaption>
-              </figure>
-            </div>
-            <div class="tab c">
-              <figure>
-                <img src="../../assets/images/field-2x.jpg" srcset="../../assets/images/field-1x.jpg 1x, ../../assets/images/field-2x.jpg 2x" alt="Example of image used in card layout">
-                <figcaption><cite><a href="https://www.stockio.com/free-photo/field-konrad-marx" target="_blank">Field</a> by Konrad Marx</cite></figcaption>
-              </figure>
-            </div>
+      <section class="tabs" aria-multiselectable="false">
+        <ul role="tab-list">
+          <li class="tab-item" role="presentation">
+            <button class="tab-trigger is-active" id="tab-label-1" role="tab" aria-setsize="3" aria-posinset="1" aria-controls="tab-panel-1" aria-selected="true">Tab 1</button>
+          </li>
+          <li class="tab-item" role="presentation">
+            <button class="tab-trigger" id="tab-label-2" role="tab" aria-setsize="3" aria-posinset="2" aria-controls="tab-panel-2" aria-selected="false">Tab 2</button>
+          </li>
+          <li class="tab-item" role="presentation">
+            <button class="tab-trigger" id="tab-label-3" role="tab" aria-setsize="3" aria-posinset="3" aria-controls="tab-panel-3" aria-selected="false">Tab 3</button>
+          </li>
+        </ul>
+        <div class="panels">
+          <div class="panel is-current" id="tab-panel-1" role="tabpanel" aria-labelledby="tab-label-1" aria-hidden="false">
+            <h3>Tab 1</h3>
+            <p>The important achievement of Apollo was demonstrating that humanity is not forever chained to this planet and our visions go rather further than that and our opportunities are unlimited.</p>
+          </div>
+          <div class="panel" id="tab-panel-2" role="tabpanel" aria-labelledby="tab-label-2" aria-hidden="true">
+            <h3>Tab 2</h3>
+            <p>Never limit yourself because of others' limited imagination; never limit others because of your own limited imagination.</p>
+          </div>
+          <div class="panel" id="tab-panel-3" role="tabpanel" aria-labelledby="tab-label-3" aria-hidden="true">
+            <h3>Tab 3</h3>
+            <p>After Apollo 17, America stopped looking towards the next horizon. The United States had become a space-faring nation, but threw it away. We have sacrificed space exploration for space exploitation, which is interesting but scarcely visionary.</p>
           </div>
         </div>
-        <figure>
-          <figcaption>html</figcaption>
-<pre><code>&lt;div class=&quot;tabs&quot;&gt;
-  &lt;ul&gt;
-    &lt;li class=&quot;tab-a active&quot;&gt;Bridge&lt;/li&gt;
-    &lt;li class=&quot;tab-b&quot;&gt;Building&lt;/li&gt;
-    &lt;li class=&quot;tab-c&quot;&gt;Field&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;div class=&quot;tab-group&quot;&gt;
-    &lt;div class=&quot;tab a active&quot;&gt;
-      &lt;figure&gt;
-        &lt;img src=&quot;../../assets/images/bridge-2x.jpg&quot; srcset=&quot;../../assets/images/bridge-1x.jpg 1x, ../../assets/images/bridge-2x.jpg 2x&quot; alt=&quot;Example of image used in card layout&quot;&gt;
-        &lt;figcaption&gt;&lt;cite&gt;&lt;a href=&quot;https://www.stockio.com/free-photo/bridge-mason-jones&quot; target=&quot;_blank&quot;&gt;Bridge&lt;/a&gt; by Mason Jones&lt;/cite&gt;&lt;/figcaption&gt;
-      &lt;/figure&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;tab b&quot;&gt;
-      &lt;figure&gt;
-        &lt;img src=&quot;../../assets/images/building-2x.jpg&quot; srcset=&quot;../../assets/images/building-1x.jpg 1x, ../../assets/images/building-2x.jpg 2x&quot; alt=&quot;Example of image used in card layout&quot;&gt;
-        &lt;figcaption&gt;&lt;cite&gt;&lt;a href=&quot;https://www.stockio.com/free-photo/building-coen-van&quot; target=&quot;_blank&quot;&gt;Building&lt;/a&gt; by Coen Van&lt;/cite&gt;&lt;/figcaption&gt;
-      &lt;/figure&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;tab c&quot;&gt;
-      &lt;figure&gt;
-        &lt;img src=&quot;../../assets/images/field-2x.jpg&quot; srcset=&quot;../../assets/images/field-1x.jpg 1x, ../../assets/images/field-2x.jpg 2x&quot; alt=&quot;Example of image used in card layout&quot;&gt;
-        &lt;figcaption&gt;&lt;cite&gt;&lt;a href=&quot;https://www.stockio.com/free-photo/field-konrad-marx&quot; target=&quot;_blank&quot;&gt;Field&lt;/a&gt; by Konrad Marx&lt;/cite&gt;&lt;/figcaption&gt;
-      &lt;/figure&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-        </figure>
-      </section>
+      </section>      
     </main>
     <footer>
       <nav aria-labelledby="footer-navigation">

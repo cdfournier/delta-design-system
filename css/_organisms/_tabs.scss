@@ -1,57 +1,48 @@
 // TABS
 .tabs {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  margin: 0;
-  padding: 1rem 0 0;
+  display: block;
+  padding: 2rem 2rem 0;
   ul {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
+    position: relative;
     margin: 0;
     padding: 0;
-    list-style-type: none;
     li {
-      flex-direction: column;
-      justify-content: center;
+      display: inline-block;
       width: auto;
-      padding: 1rem 1.5rem;
-      border-right: 1px solid $md-gray;
-      @include font-bold;
-      font-size: 0.8rem;
-      line-height: 1.3;
-      text-align: center;
-      color: $primary;
-      cursor: pointer;
-      @include transition(all, 0.5s, ease);
-      svg {
-        margin: 0 auto 0.5rem;
-        fill: $primary;
+      margin: 0 0.5rem 0 0;
+      padding: 0;
+      button {
+        margin: 0;
+        border-color: $primary;
+        color: $primary;
+        background-color: $white;
+      }
+      button:hover, button:focus {
+        color: $white;
+        background-color: $primary;
       }
     }
-    li:hover, li:focus, li.active {
-      color: $secondary;
-      svg {fill: $secondary;}
+    li button.is-active {
+      color: $white;
+      background-color: $primary;
     }
-    li:last-of-type {border-right: none;}
   }
-  .tab-group {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    .tab {
-      width: 0;
+  .panels {
+    margin: 1rem 0 0;
+    padding: 0;
+    .panel {
+      display: none;
       height: 0;
-      @include transform(scale(0));
-      @include transition(all, 0.5s, ease);
+      padding: 0;
+      @include transition(all, 0.325s, ease);
     }
-    .tab.active {
-      width: auto;
+    .panel.is-current {
+      display: block;
       height: 100%;
-      @include transform(scale(1));
+      padding: 1rem;
+      border: 1px solid $lt-gray;
+      border-radius: 0.25rem;
+      opacity: 1;
     }
   }
 }
