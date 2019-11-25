@@ -89,9 +89,11 @@ $('li.tab-item button#tab-label-3').click(function() {
   $('.panels .panel#tab-panel-3').addClass('is-current').attr('aria-hidden', false);
 });
 
-$('nav .search span.trigger').click(function() {
+$('button.trigger').click(function() {
   $('nav .search').addClass('open');
+  $('button.trigger').addClass('hidden');
 });
 $('nav .search fieldset .input-icon.close').click(function() {
   $('nav .search').removeClass('open');
+  $('button.trigger').removeClass('hidden');
 });
