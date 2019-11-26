@@ -65,6 +65,9 @@ body, .body {
   padding: 0; }
 
 body.open {
+  position: fixed;
+  height: 100%;
+  max-height: 100vh;
   overflow-y: hidden; }
 
 * {
