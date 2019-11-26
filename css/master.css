@@ -1124,9 +1124,8 @@ nav .search {
     -ms-transition: all 0.325s ease 0s;
     -o-transition: all 0.325s ease 0s;
     transition: all 0.325s ease 0s; }
-
-button.trigger {
-  display: none; }
+  nav .search span.trigger {
+    display: none; }
 
 nav.open .search {
   display: flex;
@@ -1138,25 +1137,6 @@ nav.open .search {
   transform: translateX(0rem); }
 
 @media (min-width: 48rem) {
-  button.trigger {
-    display: inline-flex;
-    position: absolute;
-    right: 0;
-    z-index: 10;
-    max-height: none;
-    margin: 0;
-    padding: 0.5rem;
-    cursor: pointer;
-    -webkit-transition: all 0.325s ease 0s;
-    -moz-transition: all 0.325s ease 0s;
-    -ms-transition: all 0.325s ease 0s;
-    -o-transition: all 0.325s ease 0s;
-    transition: all 0.325s ease 0s;
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1); }
   nav .search {
     display: flex;
     align-items: center;
@@ -1193,12 +1173,8 @@ nav.open .search {
         display: none; }
       nav .search fieldset .input-icon {
         display: flex;
-        top: 0.25rem;
+        top: 0;
         right: 6rem;
-        margin: 0;
-        padding: 0;
-        border: none;
-        background-color: transparent;
         -webkit-transition: all 0.325s ease 0s;
         -moz-transition: all 0.325s ease 0s;
         -ms-transition: all 0.325s ease 0s;
@@ -1210,7 +1186,6 @@ nav.open .search {
         -o-transform: scale(0);
         transform: scale(0); }
       nav .search fieldset .input-icon svg {
-        height: 2rem;
         -webkit-transition: all 0.25s ease 0s;
         -moz-transition: all 0.25s ease 0s;
         -ms-transition: all 0.25s ease 0s;
@@ -1228,6 +1203,25 @@ nav.open .search {
       -ms-transform: scale(0);
       -o-transform: scale(0);
       transform: scale(0); }
+    nav .search span.trigger {
+      display: inline-flex;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      max-height: none;
+      margin: 0;
+      padding: 0.5rem;
+      -webkit-transition: all 0.325s ease 0s;
+      -moz-transition: all 0.325s ease 0s;
+      -ms-transition: all 0.325s ease 0s;
+      -o-transition: all 0.325s ease 0s;
+      transition: all 0.325s ease 0s;
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+      transform: scale(1); }
   nav .search.open {
     z-index: 100; }
     nav .search.open fieldset {
@@ -1242,20 +1236,20 @@ nav.open .search {
         -ms-transform: scale(1, 1);
         -o-transform: scale(1, 1);
         transform: scale(1, 1); }
+    nav .search.open span.trigger {
+      display: none;
+      -webkit-transform: scale(0);
+      -moz-transform: scale(0);
+      -ms-transform: scale(0);
+      -o-transform: scale(0);
+      transform: scale(0); }
     nav .search.open button[type="submit"] {
       display: inline-flex;
       -webkit-transform: scale(1);
       -moz-transform: scale(1);
       -ms-transform: scale(1);
       -o-transform: scale(1);
-      transform: scale(1); }
-  button.trigger.hidden {
-    display: none;
-    -webkit-transform: scale(0);
-    -moz-transform: scale(0);
-    -ms-transform: scale(0);
-    -o-transform: scale(0);
-    transform: scale(0); } }
+      transform: scale(1); } }
 
 .accordion {
   display: flex;
