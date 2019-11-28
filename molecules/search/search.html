@@ -78,17 +78,15 @@
           <li><a href="../../style/style.html">Style</a></li>
           <li><a href="../../downloads/downloads.html">Downloads</a></li>
         </ul>
-        <form class="search" role="search">
+        <button class="search-toggle" aria-expanded="false">
+          <svg class="search-toggle-open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M11 2c4.968 0 9 4.032 9 9s-4.032 9-9 9-9-4.032-9-9 4.032-9 9-9zm0 16c3.867 0 7-3.133 7-7 0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7zm8.485.071l2.829 2.828-1.415 1.415-2.828-2.829 1.414-1.414z"/></svg>            
+          <svg class="search-toggle-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+        </button>
+        <form class="search" role="search" aria-hidden="true">
           <fieldset>
             <input type="search" name="q" id="search-input" placeholder="Search" aria-label="Search site content">
             <label for="search-input">Search</label>
-            <div class="input-icon close">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
-            </div>
           </fieldset>
-          <span class="button trigger">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M11 2c4.968 0 9 4.032 9 9s-4.032 9-9 9-9-4.032-9-9 4.032-9 9-9zm0 16c3.867 0 7-3.133 7-7 0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7zm8.485.071l2.829 2.828-1.415 1.415-2.828-2.829 1.414-1.414z"/></svg>            
-          </span>
           <button type="submit">Search</button>
         </form>
       </nav>
@@ -98,20 +96,20 @@
         <h1 class="title">Search</h1>
         <p>&lt;input&gt; elements of type search are very similar to those of type text, except that they are specifically intended for handling search terms. They are basically equivalent in behavior, but user agents may choose to style them differently by default (and, of course, sites may use stylesheets to apply custom styles to them).</p>
         <p><cite><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/search" target="_blank">&lt;search&gt;</a> by <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/search$history" target="_blank">Mozilla Contributors</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/2.5/" target="_blank">CC-BY-SA 2.5</a>.</cite></p>
-        <p>Because search is a form of navigation, we've placed it in the navigation element of the header. On smaller screens and mobile devices the search form is hidden (like the <code>nav</code>) until the user taps the hamburger icon to reveal the navigation. On screens wider than 48rem, the navigation is fully exposed, and we use a trigger <code>&lt;span&gt;</code> to reveal the search form <code>fieldset</code>.</p>
+        <p>Because search is a form of navigation, we've placed it in the navigation organism (which itself is part of the header organism).</p>
+        <p>On smaller screens and mobile devices the search form is hidden until the user taps the hamburger icon to reveal the navigation. On screens wider than 48rem, the navigation is fully exposed, and we use a trigger <code>&lt;button&gt;</code> to reveal the search form.</p>
+        <p>Note that as of Version 2.2, the search functions should be keyboard accessible.</p>
         <figure>
           <figcaption>html</figcaption>
-<pre><code>&lt;form class=&quot;search&quot; role=&quot;search&quot;&gt;
+<pre><code>&lt;button class=&quot;search-toggle&quot; aria-expanded=&quot;false&quot;&gt;
+  &lt;svg class=&quot;search-toggle-open&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M11 2c4.968 0 9 4.032 9 9s-4.032 9-9 9-9-4.032-9-9 4.032-9 9-9zm0 16c3.867 0 7-3.133 7-7 0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7zm8.485.071l2.829 2.828-1.415 1.415-2.828-2.829 1.414-1.414z&quot;/&gt;&lt;/svg&gt;            
+  &lt;svg class=&quot;search-toggle-close&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z&quot;/&gt;&lt;/svg&gt;
+&lt;/button&gt;
+&lt;form class=&quot;search&quot; role=&quot;search&quot; aria-hidden=&quot;true&quot;&gt;
   &lt;fieldset&gt;
     &lt;input type=&quot;search&quot; name=&quot;q&quot; id=&quot;search-input&quot; placeholder=&quot;Search&quot; aria-label=&quot;Search site content&quot;&gt;
     &lt;label for=&quot;search-input&quot;&gt;Search&lt;/label&gt;
-    &lt;div class=&quot;input-icon close&quot;&gt;
-      &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z&quot;/&gt;&lt;/svg&gt;
-    &lt;/div&gt;
   &lt;/fieldset&gt;
-  &lt;span class=&quot;button trigger&quot;&gt;
-    &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M11 2c4.968 0 9 4.032 9 9s-4.032 9-9 9-9-4.032-9-9 4.032-9 9-9zm0 16c3.867 0 7-3.133 7-7 0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7zm8.485.071l2.829 2.828-1.415 1.415-2.828-2.829 1.414-1.414z&quot;/&gt;&lt;/svg&gt;            
-  &lt;/span&gt;
   &lt;button type=&quot;submit&quot;&gt;Search&lt;/button&gt;
 &lt;/form&gt;</code></pre>
         </figure>

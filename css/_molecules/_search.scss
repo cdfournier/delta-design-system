@@ -21,8 +21,9 @@ nav .search {
     border-radius: 0 0.25rem 0.25rem 0;
     @include transition(all, 0.325s, ease);
   }
-  span.trigger {display: none;}
 }
+
+nav button.search-toggle {display: none;}
 
 nav.open .search {
   display: flex;
@@ -37,7 +38,7 @@ nav.open .search {
     position: absolute;
     z-index: 0;
     right: 1rem;
-    width: 100%;
+    width: 0;
     height: auto;
     @include transform(translateX(0rem));
     fieldset {
@@ -65,28 +66,43 @@ nav.open .search {
       border-radius: 0 0.25rem 0.25rem 0;
       @include transform(scale(0));
     }
-    span.trigger {
-      display: inline-flex;
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 100%;
-      max-height: none;
-      margin: 0;
-      padding: 0.5rem;
-      @include transition(all, 0.325s, ease);
-      @include transform(scale(1));
+  }
+  nav button.search-toggle {
+    display: inline-flex;
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    height: calc(100% - 1rem);
+    max-height: none;
+    margin: 0;
+    padding: 0.5rem;
+    @include transition(all, 0.325s, ease);
+    svg.search-toggle-close {width: 0;}
+  }
+  nav button.search-toggle.open {
+    right: 6.5rem;
+    z-index: 110;
+    border: none;
+    background-color: $white;
+    svg.search-toggle-open {
+      width: 0;
+      height: 0;
+    }
+    svg.search-toggle-close {
+      width: 2rem;
+      height: 2rem;
+      margin-top: -0.25rem;
+      fill: $primary;
     }
   }
+  nav button.search-toggle.open:hover svg.search-toggle-close,
+  nav button.search-toggle.open:focus svg.search-toggle-close {fill: $secondary;}
   nav .search.open {
     z-index: 100;
+    width: 100%;
     fieldset {
       @include transform(scale(1));
       .input-icon {@include transform(scale(1,1));}
-    }
-    span.trigger {
-      display: none;
-      @include transform(scale(0));
     }
     button[type="submit"] {
       display: inline-flex;

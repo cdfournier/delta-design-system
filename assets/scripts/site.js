@@ -4,6 +4,11 @@ $('button.menu-toggle').click(function() {
   $('header .logo').toggleClass('open');
 });
 
+$('button.search-toggle').click(function() {
+  $('nav .search').toggleClass('open');
+  $('button.search-toggle').toggleClass('open');
+});
+
 $(".show-hide-password").click(function() {
   $(this).toggleClass("show");
   var input = $($(this).attr("id"));
@@ -87,11 +92,4 @@ $('li.tab-item button#tab-label-3').click(function() {
   $('li.tab-item button#tab-label-3').addClass('is-active').attr('aria-selected', true);
   $('.panels .panel.is-current').removeClass('is-current').attr('aria-hidden', true);
   $('.panels .panel#tab-panel-3').addClass('is-current').attr('aria-hidden', false);
-});
-
-$('nav .search span.trigger').click(function() {
-  $('nav .search').addClass('open');
-});
-$('nav .search fieldset .input-icon.close').click(function() {
-  $('nav .search').removeClass('open');
 });

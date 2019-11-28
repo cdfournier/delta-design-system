@@ -1127,8 +1127,9 @@ nav .search {
     -ms-transition: all 0.325s ease 0s;
     -o-transition: all 0.325s ease 0s;
     transition: all 0.325s ease 0s; }
-  nav .search span.trigger {
-    display: none; }
+
+nav button.search-toggle {
+  display: none; }
 
 nav.open .search {
   display: flex;
@@ -1146,7 +1147,7 @@ nav.open .search {
     position: absolute;
     z-index: 0;
     right: 1rem;
-    width: 100%;
+    width: 0;
     height: auto;
     -webkit-transform: translateX(0rem);
     -moz-transform: translateX(0rem);
@@ -1206,27 +1207,41 @@ nav.open .search {
       -ms-transform: scale(0);
       -o-transform: scale(0);
       transform: scale(0); }
-    nav .search span.trigger {
-      display: inline-flex;
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 100%;
-      max-height: none;
-      margin: 0;
-      padding: 0.5rem;
-      -webkit-transition: all 0.325s ease 0s;
-      -moz-transition: all 0.325s ease 0s;
-      -ms-transition: all 0.325s ease 0s;
-      -o-transition: all 0.325s ease 0s;
-      transition: all 0.325s ease 0s;
-      -webkit-transform: scale(1);
-      -moz-transform: scale(1);
-      -ms-transform: scale(1);
-      -o-transform: scale(1);
-      transform: scale(1); }
+  nav button.search-toggle {
+    display: inline-flex;
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    height: calc(100% - 1rem);
+    max-height: none;
+    margin: 0;
+    padding: 0.5rem;
+    -webkit-transition: all 0.325s ease 0s;
+    -moz-transition: all 0.325s ease 0s;
+    -ms-transition: all 0.325s ease 0s;
+    -o-transition: all 0.325s ease 0s;
+    transition: all 0.325s ease 0s; }
+    nav button.search-toggle svg.search-toggle-close {
+      width: 0; }
+  nav button.search-toggle.open {
+    right: 6.5rem;
+    z-index: 110;
+    border: none;
+    background-color: #ffffff; }
+    nav button.search-toggle.open svg.search-toggle-open {
+      width: 0;
+      height: 0; }
+    nav button.search-toggle.open svg.search-toggle-close {
+      width: 2rem;
+      height: 2rem;
+      margin-top: -0.25rem;
+      fill: #df3a32; }
+  nav button.search-toggle.open:hover svg.search-toggle-close,
+  nav button.search-toggle.open:focus svg.search-toggle-close {
+    fill: #003442; }
   nav .search.open {
-    z-index: 100; }
+    z-index: 100;
+    width: 100%; }
     nav .search.open fieldset {
       -webkit-transform: scale(1);
       -moz-transform: scale(1);
@@ -1239,13 +1254,6 @@ nav.open .search {
         -ms-transform: scale(1, 1);
         -o-transform: scale(1, 1);
         transform: scale(1, 1); }
-    nav .search.open span.trigger {
-      display: none;
-      -webkit-transform: scale(0);
-      -moz-transform: scale(0);
-      -ms-transform: scale(0);
-      -o-transform: scale(0);
-      transform: scale(0); }
     nav .search.open button[type="submit"] {
       display: inline-flex;
       -webkit-transform: scale(1);
@@ -1343,7 +1351,8 @@ nav.open .search {
     margin: 1rem 0;
     padding: 0;
     border: 1px solid #eeeeee;
-    border-radius: 0.25rem; }
+    border-radius: 0.25rem;
+    background-color: #ffffff; }
     .card-group .card figure {
       padding: 0; }
       .card-group .card figure img {
