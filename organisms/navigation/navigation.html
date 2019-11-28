@@ -90,7 +90,8 @@
       <section class="row wide">
         <h2>Navigation Structure</h2>
         <p>In both the <code>&lt;header&gt;</code> and <code>&lt;footer&gt;</code> the <code>&lt;navigation&gt;</code> is a simple <code>&lt;ul&gt;</code>. However, the <code>&lt;header&gt;</code> also includes a button for mobile to open and close the header navigation.</p>
-        <div class="row fifty">
+        <p>Note that we also have a <a href="../../molecules/search/search.html">Search</a> molecule that can be added to your navigation.
+        <div class="row thirds">
           <div class="column">
             <h3>Header Navigation</h3>
             <figure>
@@ -108,6 +109,37 @@
     &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Style&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Downloads&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </figure>
+          </div>
+          <div class="column">
+            <h3>Header Navigation with Search</h3>
+            <figure>
+              <figcaption>html</figcaption>
+<pre><code>&lt;nav aria-labelledby=&quot;header-navigation&quot;&gt;
+  &lt;button class=&quot;menu-toggle&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;header-navigation&quot;&gt;
+    &lt;svg class=&quot;menu-toggle-open&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z&quot;/&gt;&lt;/svg&gt;
+    &lt;svg class=&quot;menu-toggle-close&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z&quot;/&gt;&lt;/svg&gt;
+  &lt;/button&gt;
+  &lt;ul id=&quot;header-navigation&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Atoms&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Molecules&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Organisms&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Style&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Downloads&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;button class=&quot;search-toggle&quot; aria-expanded=&quot;false&quot;&gt;
+    &lt;svg class=&quot;search-toggle-open&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M11 2c4.968 0 9 4.032 9 9s-4.032 9-9 9-9-4.032-9-9 4.032-9 9-9zm0 16c3.867 0 7-3.133 7-7 0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7zm8.485.071l2.829 2.828-1.415 1.415-2.828-2.829 1.414-1.414z&quot;/&gt;&lt;/svg&gt;            
+    &lt;svg class=&quot;search-toggle-close&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z&quot;/&gt;&lt;/svg&gt;
+  &lt;/button&gt;
+  &lt;form class=&quot;search&quot; role=&quot;search&quot; aria-hidden=&quot;true&quot;&gt;
+    &lt;fieldset&gt;
+      &lt;input type=&quot;search&quot; name=&quot;q&quot; id=&quot;search-input&quot; placeholder=&quot;Search&quot; aria-label=&quot;Search site content&quot;&gt;
+      &lt;label for=&quot;search-input&quot;&gt;Search&lt;/label&gt;
+    &lt;/fieldset&gt;
+    &lt;button type=&quot;submit&quot;&gt;Search&lt;/button&gt;
+  &lt;/form&gt;
 &lt;/nav&gt;</code></pre>
             </figure>
           </div>
