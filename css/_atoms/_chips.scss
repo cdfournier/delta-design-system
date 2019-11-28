@@ -13,63 +13,196 @@ ul.chips {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     width: auto;
-    height: 2rem;
-    max-height: 2rem;
     margin: 0.5rem 0.5rem 0 0;
     padding: 0;
-    border-radius: 2rem;
-    background-color: $lt-gray;
-    cursor: pointer;
-    @include transition(all, 0.25s, ease);
     span {
-      padding: 0 0.75rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: auto;
+      height: 2rem;
+      max-height: 2rem;
+      padding: 0 1rem;
+      border-radius: 2rem;
+      @include font-body;
+      color: $black;
+      background-color: $lt-gray;
       @include transition(all, 0.25s, ease);
     }
-    svg {
-      width: 1.5rem;
-      fill: $dk-gray;
-    }
-    svg.close {
-      width: 1.125rem;
-      margin: 0 0.25rem 0 -0.5rem;
+    button {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: auto;
+      height: 2rem;
+      max-height: 2rem;
+      margin: 0;
+      padding: 0 1rem;
+      border: none;
+      border-radius: 2rem;
+      @include font-body;
+      color: $black;
+      background-color: $lt-gray;
+      cursor: pointer;
       @include transition(all, 0.25s, ease);
+      svg.check {
+        width: 0;
+        margin: 0;
+        fill: $black;
+        @include transform(scale(0));
+        @include transition(all, 0.25s, ease);
+      }
+      svg.check.show {
+        width: 1rem;
+        margin: 0 0.25rem 0 0;
+        @include transform(scale(1));
+      }
     }
-    svg.close:hover, svg.close:focus {fill: $black;}
+    button:hover, button:focus {background-color: $dk-gray;}
   }
   li.icon-left {
-    svg {margin: 0 0 0 0.25rem;}
-    span {padding: 0 0.75rem 0 0.25rem;}
-    svg.close {margin: 0 0.25rem 0 -0.5rem;}
+    span {
+      padding: 0 1rem 0 0.25rem;
+      svg {
+        margin: 0 0.5rem 0 0;
+        fill: $dk-gray;
+      }
+    }
   }
   li.icon-right {
-    span {padding: 0 0.25rem 0 0.75rem;}
-    svg {margin: 0 0.25rem 0 0;}
+    span {
+      padding: 0 0.25rem 0 1rem;
+      svg {
+        margin: 0 0 0 0.5rem;
+        fill: $dk-gray;
+      }
+    }
   }
-  li:hover, li:focus {background-color: $md-gray;}
-  li svg.check {
-    width: 0;
-    margin: 0;
-    fill: $black;
-    @include transform(scale(0));
+  li.avatar {
+    span {
+      padding: 0 1rem 0 0;
+      img {
+        width: 2rem;
+        height: 2rem;
+        margin: 0 0.5rem 0 0;
+        border-radius: 100%;
+      }
+    }
+  }
+}
+
+ul.chips.dismiss {
+  li {
+    justify-content: flex-start;
     @include transition(all, 0.25s, ease);
+    span {
+      padding: 0 0.25rem 0 1rem;
+      button {
+        padding: 0;
+        background-color: transparent;
+        svg {
+          fill: $black;
+          @include transition(all, 0.25s, ease);
+        }
+      }
+      button:hover, button:focus {
+        svg {fill: $dk-gray;}
+      }
+    }
   }
-  li svg.check.show {
-    width: 1.5rem;
-    margin: 0 0 0 0.25rem;
-    @include transform(scale(1));
-  }
-  li svg.check.show + span {padding: 0 0.75rem 0 0.25rem;}
   li.dismissed {
     width: 0;
     margin: 0;
     @include transform(scale(0));
   }
-  li.avatar img {
-    width: 2rem;
-    height: 2rem;
-    border-radius: 100%;
+  li.dismiss-reset span {
+    padding: 0 0.75rem;
+    cursor: pointer;
+    @include transition(all, 0.25s, ease);
   }
-  li.avatar img + span {padding: 0 0.75rem 0 0.25rem;}
+  li.dismiss-reset span:hover, li.dismiss-reset span:focus {background-color: $dk-gray;}
+  li.avatar {
+    justify-content: flex-start;
+    @include transition(all, 0.25s, ease);
+    span {
+      padding: 0 0.25rem 0 0;
+      button {
+        padding: 0 0 0 0.25rem;
+        background-color: transparent;
+        svg {
+          fill: $black;
+          @include transition(all, 0.25s, ease);
+        }
+      }
+      button:hover, button:focus {
+        svg {fill: $dk-gray;}
+      }
+    }
+  }
+  li.icon-left {
+    span {
+      padding: 0 0.25rem;
+      button svg {margin: 0;}
+    }
+  }
+  li.icon-right {
+    span {
+      padding: 0 0.25rem 0 1rem;
+      button svg {margin: 0;}
+    }
+  }
+}
+
+
+/* CHIP COLOR OPTIONS */
+ul.chips.bg-primary {
+  background-color: transparent;
+  li {
+    button, span {
+      color: $white;
+      background-color: $primary;
+      svg {fill: $white;}
+    }
+    button:hover, button:focus {background-color: $secondary;}
+  }
+}
+
+ul.chips.dismiss.bg-primary {
+  background-color: transparent;
+  li, li.avatar {
+    button, span {
+      color: $white;
+      background-color: $primary;
+      svg {fill: $white;}
+    }
+    button:hover, button:focus {background-color: transparent;}
+  }
+}
+
+ul.chips.bg-secondary {
+  background-color: transparent;
+  li {
+    button, span {
+      color: $white;
+      background-color: $secondary;
+      svg {fill: $white;}
+    }
+    button:hover, button:focus {background-color: $primary;}
+  }
+}
+
+ul.chips.dismiss.bg-secondary {
+  background-color: transparent;
+  li, li.avatar {
+    button, span {
+      color: $white;
+      background-color: $secondary;
+      svg {fill: $white;}
+    }
+    button:hover, button:focus {background-color: transparent;}
+  }
 }

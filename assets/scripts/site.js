@@ -58,17 +58,26 @@ $('ul.chips li.option-4').click( function() {
   $('ul.chips li.option-4 svg.check').toggleClass('show');
 });
 
-$('ul.chips li.dismiss-1 svg.close').click( function() {
+$('ul.chips li.dismiss-1 button').click( function() {
   $('ul.chips li.dismiss-1').addClass('dismissed');
 });
-$('ul.chips li.dismiss-2 svg.close').click( function() {
+$('ul.chips li.dismiss-2 button').click( function() {
   $('ul.chips li.dismiss-2').addClass('dismissed');
 });
-$('ul.chips li.dismiss-3 svg.close').click( function() {
+$('ul.chips li.dismiss-3 button').click( function() {
   $('ul.chips li.dismiss-3').addClass('dismissed');
 });
-$('ul.chips li.dismiss-4 svg.close').click( function() {
+$('ul.chips li.dismiss-4 button').click( function() {
   $('ul.chips li.dismiss-4').addClass('dismissed');
+});
+$('ul.chips li.dismiss-5 button').click( function() {
+  $('ul.chips li.dismiss-5').addClass('dismissed');
+});
+$('ul.chips li.dismiss-6 button').click( function() {
+  $('ul.chips li.dismiss-6').addClass('dismissed');
+});
+$('ul.chips li.dismiss-7 button').click( function() {
+  $('ul.chips li.dismiss-7').addClass('dismissed');
 });
 $('ul.chips li.dismiss-reset').click( function() {
   $('ul.chips li').removeClass('dismissed');
