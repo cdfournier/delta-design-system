@@ -15,7 +15,6 @@ An open-source design system that can be used to build responsive sites, apps, a
 - [Forms &amp; Inputs](https://cdfournier.github.io/delta-design-system/molecules/forms/forms.html)
 - [Media Grid Items](https://cdfournier.github.io/delta-design-system/molecules/media-grid-items/media-grid-items.html)
 - [Messages](https://cdfournier.github.io/delta-design-system/molecules/messages/messages.html)
-- [Navigation](https://cdfournier.github.io/delta-design-system/molecules/navigation/navigation.html)
 - [Search](https://cdfournier.github.io/delta-design-system/molecules/search/search.html)
 
 ## Organisms
@@ -24,6 +23,7 @@ An open-source design system that can be used to build responsive sites, apps, a
 - [Footers](https://cdfournier.github.io/delta-design-system/organisms/footers/footers.html)
 - [Headers](https://cdfournier.github.io/delta-design-system/organisms/headers/headers.html)
 - [Media Grid Blocks](https://cdfournier.github.io/delta-design-system/organisms/media-grid-blocks/media-grid-blocks.html)
+- [Navigation](https://cdfournier.github.io/delta-design-system/molecules/navigation/navigation.html)
 - [Tabs](https://cdfournier.github.io/delta-design-system/organisms/tabs/tabs.html)
 
 ## Style
@@ -44,4 +44,4 @@ An open-source design system that can be used to build responsive sites, apps, a
 - [Animate On Scroll](https://github.com/michalsnik/aos/tree/v2)
 - [Headroom](https://wicky.nillia.ms/headroom.js/)
 
-Version 2.1
+Version 2.2
