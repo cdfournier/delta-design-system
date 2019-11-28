@@ -1929,6 +1929,16 @@ footer {
 
 .banner.dark {
   color: #ffffff; }
+  .banner.dark button:hover, .banner.dark button:focus {
+    border-color: #ffffff;
+    color: #ffffff; }
+
+.banner.split {
+  padding: 2rem; }
+  .banner.split figure {
+    padding: 0; }
+  .banner.split .text {
+    padding: 2rem 0 0; }
 
 @media (min-width: 48rem) {
   .banner .text {
@@ -1938,7 +1948,18 @@ footer {
   .banner.left {
     align-items: flex-start; }
   .banner.right {
-    align-items: flex-end; } }
+    align-items: flex-end; }
+  .banner.split {
+    flex-direction: row;
+    align-items: center; }
+    .banner.split figure {
+      padding: 0; }
+    .banner.split .text {
+      padding: 0 0 0 2rem; }
+  .banner.split.reverse {
+    flex-direction: row-reverse; }
+    .banner.split.reverse .text {
+      padding: 0 2rem 0 0; } }
 
 .bg-photo {
   background-repeat: no-repeat;

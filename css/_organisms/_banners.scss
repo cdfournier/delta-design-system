@@ -34,7 +34,19 @@
 .banner.short {min-height: 45vh;}
 
 .banner.light {color: $black;}
-.banner.dark {color: $white;}
+.banner.dark {
+  color: $white;
+  button:hover, button:focus {
+    border-color: $white;
+    color: $white;
+  }
+}
+
+.banner.split {
+  padding: 2rem;
+  figure {padding: 0;}
+  .text {padding: 2rem 0 0;}
+}
 
 @media (min-width: 48rem) {
   .banner {
@@ -46,6 +58,16 @@
   }
   .banner.left {align-items: flex-start;}
   .banner.right {align-items: flex-end;}
+  .banner.split {
+    flex-direction: row;
+    align-items: center;
+    figure {padding: 0;}
+    .text {padding: 0 0 0 2rem;}
+  }
+  .banner.split.reverse {
+    flex-direction: row-reverse;
+    .text {padding: 0 2rem 0 0;}
+  }
 }
 
 
