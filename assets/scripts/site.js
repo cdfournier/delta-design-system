@@ -1,3 +1,4 @@
+// MOBILE NAVIGATION TOGGLES
 $('button.menu-toggle svg.menu-toggle-open').click(function() {
   $('nav').addClass('open');
   $('body').addClass('open');
@@ -5,7 +6,6 @@ $('button.menu-toggle svg.menu-toggle-open').click(function() {
   $('button.menu-toggle').attr('aria-expanded',true);
   $('nav ul').attr('aria-hidden',false);
 });
-
 $('button.menu-toggle svg.menu-toggle-close').click(function() {
   $('nav').removeClass('open');
   $('body').removeClass('open');
@@ -13,7 +13,13 @@ $('button.menu-toggle svg.menu-toggle-close').click(function() {
   $('button.menu-toggle').attr('aria-expanded',false);
   $('nav ul').attr('aria-hidden',true);
 });
+window.onload = function() {
+  if($(window).width()>768) {
+    $('nav ul').attr('aria-hidden',false);
+  }
+};
 
+// WIDESCREEN SEARCH TOGGLES
 $('button.search-toggle svg.search-toggle-open').click(function() {
   $('nav .search').addClass('open').attr('aria-hidden',false);
   $('button.search-toggle').addClass('open').attr('aria-expanded',true);
@@ -23,6 +29,7 @@ $('button.search-toggle svg.search-toggle-close').click(function() {
   $('button.search-toggle').removeClass('open').attr('aria-expanded',false);
 });
 
+// SHOW/HIDE PASSWORD
 $(".show-hide-password").click(function() {
   $(this).toggleClass("show");
   var input = $($(this).attr("id"));
@@ -33,6 +40,7 @@ $(".show-hide-password").click(function() {
   }
 });
 
+// SHOW MESSAGES
 $('.show-error').click( function() {
   $('.messages .error').addClass('show');
   setTimeout(function() { 
@@ -59,6 +67,7 @@ $('button.yes').click( function() {
   $('.messages .confirm').removeClass('show');
 });
 
+// CHIP CHECK TOGGLES
 $('ul.chips li.option-1').click( function() {
   $('ul.chips li.option-1 svg.check').toggleClass('show');
 });
@@ -72,6 +81,7 @@ $('ul.chips li.option-4').click( function() {
   $('ul.chips li.option-4 svg.check').toggleClass('show');
 });
 
+// DISMISS CHIPS
 $('ul.chips li.dismiss-1 button').click( function() {
   $('ul.chips li.dismiss-1').addClass('dismissed');
 });
@@ -97,7 +107,7 @@ $('ul.chips li.dismiss-reset').click( function() {
   $('ul.chips li').removeClass('dismissed');
 });
 
-
+// TABS
 $('li.tab-item button#tab-label-1').click(function() {
   $('li.tab-item button.is-active').removeClass('is-active').attr('aria-selected', false);
   $('li.tab-item button#tab-label-1').addClass('is-active').attr('aria-selected', true);
