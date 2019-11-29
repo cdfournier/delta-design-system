@@ -4,9 +4,13 @@ $('button.menu-toggle').click(function() {
   $('header .logo').toggleClass('open');
 });
 
-$('button.search-toggle').click(function() {
-  $('nav .search').toggleClass('open');
-  $('button.search-toggle').toggleClass('open');
+$('button.search-toggle svg.search-toggle-open').click(function() {
+  $('nav .search').addClass('open').attr('aria-hidden',false);
+  $('button.search-toggle').addClass('open').attr('aria-expanded',true);
+});
+$('button.search-toggle svg.search-toggle-close').click(function() {
+  $('nav .search').removeClass('open').attr('aria-hidden',true);
+  $('button.search-toggle').removeClass('open').attr('aria-expanded',false);
 });
 
 $(".show-hide-password").click(function() {
