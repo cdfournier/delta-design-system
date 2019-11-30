@@ -2010,15 +2010,15 @@ footer {
       padding: 0; }
       .tabs ul li button {
         margin: 0;
-        border-color: #df3a32;
+        border: none;
+        border-bottom: 1px solid #df3a32;
+        border-radius: 0;
         color: #df3a32;
-        background-color: #ffffff; }
-      .tabs ul li button:hover, .tabs ul li button:focus {
-        color: #ffffff;
-        background-color: #df3a32; }
-    .tabs ul li button.is-active {
-      color: #ffffff;
-      background-color: #df3a32; }
+        background-color: transparent; }
+      .tabs ul li button:hover, .tabs ul li button:focus, .tabs ul li button.is-active {
+        border-bottom-width: 4px;
+        color: #df3a32;
+        background-color: transparent; }
   .tabs .panels {
     margin: 1rem 0 0;
     padding: 0; }

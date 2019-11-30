@@ -13,18 +13,17 @@
       padding: 0;
       button {
         margin: 0;
-        border-color: $primary;
+        border: none;
+        border-bottom: 1px solid $primary;
+        border-radius: 0;
         color: $primary;
-        background-color: $white;
+        background-color: transparent;
       }
-      button:hover, button:focus {
-        color: $white;
-        background-color: $primary;
+      button:hover, button:focus, button.is-active {
+        border-bottom-width: 4px;
+        color: $primary;
+        background-color: transparent;
       }
-    }
-    li button.is-active {
-      color: $white;
-      background-color: $primary;
     }
   }
   .panels {
