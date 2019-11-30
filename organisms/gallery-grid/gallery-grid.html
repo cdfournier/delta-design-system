@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Media Grid Blocks | Delta Design System</title>
+    <title>Gallery Grid | Delta Design System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -54,11 +54,7 @@
     }
     </script>
   </head>
-  <body data-aos="fade-in">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5W57LD3"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+  <body>
     <header>
       <div class="logo">
         <a href="../../index.html">
@@ -82,82 +78,39 @@
     </header>
     <main>
       <section class="row wide">
-        <h1 class="title">Media Grid Blocks</h1>
-        <p>Media grid blocks are a collection of media grid items and are the perfect component to preview content such as blog posts, user information, and more.</p>
+        <h1 class="title">Gallery Grid</h1>
+        <p>Inspired in part by Apple's cover flow and the UX of some Apple TV apps, the gallery grid is a visual list of card-like elements.</p>
+        <p>At the moment, the gallery grid is a custom <code>&lt;ul&gt;</code> that spill out of the window horizontally enabling the user to scroll through entire list.</p>
+        <h2>Gallery Grid Options</h2>
+        <ul>
+          <li>Make any item in the list twice as wide by adding a <code>.double</code> class to the list item.</li>
+          <li>If you'd like to add some space between each grid item in the gallery, add a <code>.margin</code> class to the <code>&lt;ul&gt;</code>.</li>
+        </ul>
+        <p>We're continuing to work on an option that would enable you to wrap gallery grids so there is no overflow off the screen.</p>
+      </section>
+      <section class="gallery-grid">
+        <ul class="">
+          <li><a href="#!"><img src="../../assets/images/bratislava-2x.jpg" srcset="../../assets/images/bratislava-1x.jpg 1x, ../../assets/images/bratislava-2x.jpg 2x" alt="Example of image used in gallery grid layout"></a></li>
+          <li><a href="#!"><img src="../../assets/images/bridge-2x.jpg" srcset="../../assets/images/bridge-1x.jpg 1x, ../../assets/images/bridge-2x.jpg 2x" alt="Example of image used in gallery grid layout"></a></li>
+          <li class="double"><a href="#!"><img src="../../assets/images/building-2x.jpg" srcset="../../assets/images/building-1x.jpg 1x, ../../assets/images/building-2x.jpg 2x" alt="Example of image used in gallery grid layout"></a></li>
+          <li><a href="#!"><img src="../../assets/images/field-2x.jpg" srcset="../../assets/images/field-1x.jpg 1x, ../../assets/images/field-2x.jpg 2x" alt="Example of image used in gallery grid layout"></a></li>
+          <li class="double"><a href="#!"><img src="../../assets/images/london-2x.jpg" srcset="../../assets/images/london-1x.jpg 1x, ../../assets/images/london-2x.jpg 2x" alt="Example of image used in gallery grid layout"></a></li>
+          <li><a href="#!"><img src="../../assets/images/boston-2x.jpg" srcset="../../assets/images/boston-1x.jpg 1x, ../../assets/images/boston-2x.jpg 2x" alt="Example of image used in gallery grid layout"></a></li>
+        </ul>
       </section>
       <section class="row wide">
-        <div class="media-grid-block">
-          <div class="media-grid-item">
-            <figure>
-              <img src="../../assets/images/bridge-2x.jpg" srcset="../../assets/images/bridge-1x.jpg 1x, ../../assets/images/bridge-2x.jpg 2x" alt="Example of image used in media grid block layout">
-              <figcaption><cite><a href="https://www.stockio.com/free-photo/bridge-mason-jones" target="_blank">Bridge</a> by Mason Jones</cite></figcaption>
-            </figure>
-            <div class="text">
-              <h2>Headline</h2>
-              <p>Media grid items are the perfect component to use when you need to create an easy to read table of contents.</p>
-              <p class="icon"><a href="#!">Learn more<span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"/></svg></span></a></p>
-            </div>
-          </div>
-          <div class="media-grid-item reverse">
-            <figure>
-              <img src="../../assets/images/building-2x.jpg" srcset="../../assets/images/building-1x.jpg 1x, ../../assets/images/building-2x.jpg 2x" alt="Example of image used in media grid block layout">
-              <figcaption><cite><a href="https://www.stockio.com/free-photo/building-coen-van" target="_blank">Building</a> by Coen Van</cite></figcaption>
-            </figure>
-            <div class="text">
-              <h2>Headline</h2>
-              <p>Media grid items are the perfect component to use when you need to create an easy to read table of contents.</p>
-              <p class="icon"><a href="#!">Learn more<span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"/></svg></span></a></p>
-            </div>
-          </div>
-          <div class="media-grid-item">
-            <figure>
-              <img src="../../assets/images/field-2x.jpg" srcset="../../assets/images/field-1x.jpg 1x, ../../assets/images/field-2x.jpg 2x" alt="Example of image used in media grid block layout">
-              <figcaption><cite><a href="https://www.stockio.com/free-photo/field-konrad-marx" target="_blank">Field</a> by Konrad Marx</cite></figcaption>
-            </figure>
-            <div class="text">
-              <h2>Headline</h2>
-              <p>Media grid items are the perfect component to use when you need to create an easy to read table of contents.</p>
-              <p class="icon"><a href="#!">Learn more<span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"/></svg></span></a></p>
-            </div>
-          </div>
-        </div>
         <figure>
           <figcaption>html</figcaption>
-<pre><code>&lt;div class=&quot;media-grid-block&quot;&gt;
-  &lt;div class=&quot;media-grid-item&quot;&gt;
-    &lt;figure&gt;
-      &lt;img src=&quot;../../assets/images/bridge-2x.jpg&quot; srcset=&quot;../../assets/images/bridge-1x.jpg 1x, ../../assets/images/bridge-2x.jpg 2x&quot; alt=&quot;Example of image used in card layout&quot;&gt;
-      &lt;figcaption&gt;&lt;cite&gt;&lt;a href=&quot;https://www.stockio.com/free-photo/bridge-mason-jones&quot; target=&quot;_blank&quot;&gt;Bridge&lt;/a&gt; by Mason Jones&lt;/cite&gt;&lt;/figcaption&gt;
-    &lt;/figure&gt;
-    &lt;div class=&quot;text&quot;&gt;
-      &lt;h2&gt;Headline&lt;/h2&gt;
-      &lt;p&gt;Media grid items are the perfect component to use when you need to create an easy to read table of contents.&lt;/p&gt;
-      &lt;p class=&quot;icon&quot;&gt;&lt;a href=&quot;#!&quot;&gt;Learn more&lt;span&gt;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;media-grid-item reverse&quot;&gt;
-    &lt;figure&gt;
-      &lt;img src=&quot;../../assets/images/building-2x.jpg&quot; srcset=&quot;../../assets/images/building-1x.jpg 1x, ../../assets/images/building-2x.jpg 2x&quot; alt=&quot;Example of image used in card layout&quot;&gt;
-      &lt;figcaption&gt;&lt;cite&gt;&lt;a href=&quot;https://www.stockio.com/free-photo/building-coen-van&quot; target=&quot;_blank&quot;&gt;Building&lt;/a&gt; by Coen Van&lt;/cite&gt;&lt;/figcaption&gt;
-    &lt;/figure&gt;
-    &lt;div class=&quot;text&quot;&gt;
-      &lt;h2&gt;Headline&lt;/h2&gt;
-      &lt;p&gt;Media grid items are the perfect component to use when you need to create an easy to read table of contents.&lt;/p&gt;
-      &lt;p class=&quot;icon&quot;&gt;&lt;a href=&quot;#!&quot;&gt;Learn more&lt;span&gt;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;media-grid-item&quot;&gt;
-    &lt;figure&gt;
-      &lt;img src=&quot;../../assets/images/field-2x.jpg&quot; srcset=&quot;../../assets/images/field-1x.jpg 1x, ../../assets/images/field-2x.jpg 2x&quot; alt=&quot;Example of image used in card layout&quot;&gt;
-      &lt;figcaption&gt;&lt;cite&gt;&lt;a href=&quot;https://www.stockio.com/free-photo/field-konrad-marx&quot; target=&quot;_blank&quot;&gt;Field&lt;/a&gt; by Konrad Marx&lt;/cite&gt;&lt;/figcaption&gt;
-    &lt;/figure&gt;
-    &lt;div class=&quot;text&quot;&gt;
-      &lt;h2&gt;Headline&lt;/h2&gt;
-      &lt;p&gt;Media grid items are the perfect component to use when you need to create an easy to read table of contents.&lt;/p&gt;
-      &lt;p class=&quot;icon&quot;&gt;&lt;a href=&quot;#!&quot;&gt;Learn more&lt;span&gt;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+<pre><code>&lt;section class=&quot;gallery-grid&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;#!&quot;&gt;&lt;img src=&quot;../../assets/images/bratislava-2x.jpg&quot; srcset=&quot;../../assets/images/bratislava-1x.jpg 1x, ../../assets/images/bratislava-2x.jpg 2x&quot; alt=&quot;Example of image used in gallery grid layout&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#!&quot;&gt;&lt;img src=&quot;../../assets/images/bridge-2x.jpg&quot; srcset=&quot;../../assets/images/bridge-1x.jpg 1x, ../../assets/images/bridge-2x.jpg 2x&quot; alt=&quot;Example of image used in gallery grid layout&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;double&quot;&gt;&lt;a href=&quot;#!&quot;&gt;&lt;img src=&quot;../../assets/images/building-2x.jpg&quot; srcset=&quot;../../assets/images/building-1x.jpg 1x, ../../assets/images/building-2x.jpg 2x&quot; alt=&quot;Example of image used in gallery grid layout&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#!&quot;&gt;&lt;img src=&quot;../../assets/images/field-2x.jpg&quot; srcset=&quot;../../assets/images/field-1x.jpg 1x, ../../assets/images/field-2x.jpg 2x&quot; alt=&quot;Example of image used in gallery grid layout&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;double&quot;&gt;&lt;a href=&quot;#!&quot;&gt;&lt;img src=&quot;../../assets/images/london-2x.jpg&quot; srcset=&quot;../../assets/images/london-1x.jpg 1x, ../../assets/images/london-2x.jpg 2x&quot; alt=&quot;Example of image used in gallery grid layout&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#!&quot;&gt;&lt;img src=&quot;../../assets/images/boston-2x.jpg&quot; srcset=&quot;../../assets/images/boston-1x.jpg 1x, ../../assets/images/boston-2x.jpg 2x&quot; alt=&quot;Example of image used in gallery grid layout&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/section&gt;</code></pre>
         </figure>
       </section>
     </main>
