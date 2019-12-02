@@ -126,3 +126,17 @@ $('li.tab-item button#tab-label-3').click(function() {
   $('.panels .panel.is-current').removeClass('is-current').attr('aria-hidden', true);
   $('.panels .panel#tab-panel-3').addClass('is-current').attr('aria-hidden', false);
 });
+
+$('button#start-loading').click(function() {
+  var val = 0;
+  var interval = setInterval(function() {
+    $('progress#loading').attr('aria-valuenow', val++).attr('value', val++);
+    if (val > 100) {
+      clearInterval(interval);
+      $('progress#loading').addClass('complete');
+    }
+  }, 100);
+});
+$('button#reset-loading').click( function() {
+  $('progress#loading').removeClass('complete').attr('aria-valuenow', 0).attr('value', 0);
+});

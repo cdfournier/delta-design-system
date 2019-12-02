@@ -39,13 +39,23 @@
   animation-duration: $duration;
 };
 
+@mixin animation-fill-mode($animation-fill-mode: both) {
+  -webkit-animation-fill-mode: $animation-fill-mode;
+  animation-fill-mode: $animation-fill-mode;
+};
+
+@mixin animation-iteration-count($iteration) {
+  -webkit-animation-iteration-count: $iteration;
+  animation-iteration-count: $iteration;
+};
+
+@mixin animation-name($name: name) {
+  -webkit-animation-name: $name;
+  animation-name: $name;
+};
+
 @mixin transition-timing-function($transition-timing: ease-in) {
   -webkit-transition-timing-function: $transition-timing;
   -o-transition-timing-function: $transition-timing;
   transition-timing-function: $transition-timing;
-};
-
-@mixin animation-fill-mode($animation-fill-mode: both) {
-  -webkit-animation-fill-mode: $animation-fill-mode;
-  animation-fill-mode: $animation-fill-mode;
 };

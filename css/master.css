@@ -724,6 +724,129 @@ span.badge.bg-error,
 span.badge.bg-valid {
   color: #ffffff; }
 
+label.progress {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  font-size: 0.8rem;
+  -webkit-transform: translate(0);
+  -moz-transform: translate(0);
+  -ms-transform: translate(0);
+  -o-transform: translate(0);
+  transform: translate(0);
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s; }
+  label.progress progress[value] {
+    display: block;
+    width: 100%;
+    height: 0.25rem;
+    margin: 0.5rem auto 0;
+    border: none;
+    background-color: #eeeeee;
+    -webkit-transition: all 0.25s ease 0s;
+    -moz-transition: all 0.25s ease 0s;
+    -ms-transition: all 0.25s ease 0s;
+    -o-transition: all 0.25s ease 0s;
+    transition: all 0.25s ease 0s; }
+  label.progress progress[value]::-moz-progress-bar {
+    background-color: #df3a32;
+    -webkit-transition: all 0.25s ease 0s;
+    -moz-transition: all 0.25s ease 0s;
+    -ms-transition: all 0.25s ease 0s;
+    -o-transition: all 0.25s ease 0s;
+    transition: all 0.25s ease 0s; }
+  label.progress progress[value]::-webkit-progress-bar {
+    background-color: #eeeeee; }
+  label.progress progress[value]::-webkit-progress-value {
+    background-color: #df3a32;
+    -webkit-transition: all 0.25s ease 0s;
+    -moz-transition: all 0.25s ease 0s;
+    -ms-transition: all 0.25s ease 0s;
+    -o-transition: all 0.25s ease 0s;
+    transition: all 0.25s ease 0s; }
+  label.progress progress[value].complete {
+    opacity: 0; }
+  label.progress span {
+    text-align: right; }
+  label.progress progress:not([value]) {
+    display: block;
+    width: 100%;
+    height: 0.25rem;
+    margin: 0.5rem auto 0;
+    border: none;
+    background-color: #eeeeee; }
+  label.progress span.indicator {
+    display: block;
+    position: relative;
+    top: -0.25rem;
+    width: 25%;
+    height: 0.25rem;
+    background-color: #df3a32;
+    -webkit-animation-name: indicator-span;
+    animation-name: indicator-span;
+    -webkit-animation-duration: 2.5s;
+    animation-duration: 2.5s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite; }
+
+@keyframes indicator-span {
+  from {
+    left: calc(0% - 25%); }
+  to {
+    left: 100%; } }
+
+label.meter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  font-size: 0.8rem;
+  -webkit-transform: translate(0);
+  -moz-transform: translate(0);
+  -ms-transform: translate(0);
+  -o-transform: translate(0);
+  transform: translate(0);
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s; }
+  label.meter meter {
+    display: block;
+    width: 100%;
+    height: 1rem;
+    margin: 0.5rem auto 0;
+    border: none;
+    color: transparent;
+    background: #eeeeee;
+    -webkit-transition: all 0.25s ease 0s;
+    -moz-transition: all 0.25s ease 0s;
+    -ms-transition: all 0.25s ease 0s;
+    -o-transition: all 0.25s ease 0s;
+    transition: all 0.25s ease 0s; }
+  label.meter meter::-webkit-meter-bar {
+    background: #eeeeee; }
+  label.meter meter::-webkit-meter-optimum-value {
+    background: #008000; }
+  label.meter meter:-moz-meter-optimum::-moz-meter-bar {
+    background: #008000; }
+  label.meter meter::-webkit-meter-suboptimum-value {
+    background: #c00c00; }
+  label.meter meter:-moz-meter-sub-optimum::-moz-meter-bar {
+    background: #c00c00; }
+  label.meter meter::-webkit-meter-even-less-good-value {
+    background: #c00c00; }
+  label.meter meter:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+    background: #c00c00; }
+
 nav {
   width: 100%;
   padding: 1rem; }
