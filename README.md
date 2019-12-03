@@ -3,14 +3,14 @@ An open-source design system that can be used to build responsive sites, apps, a
 
 ## Atoms
 - [Badges](https://cdfournier.github.io/delta-design-system/atoms/badges/badges.html)
+- [Blockquotes](https://cdfournier.github.io/delta-design-system/atoms/blockquotes/blockquotes.html)
 - [Buttons](https://cdfournier.github.io/delta-design-system/atoms/buttons/buttons.html)
 - [Chips](https://cdfournier.github.io/delta-design-system/atoms/chips/chips.html)
-- Feedback coming soon
+- [Feedback](https://cdfournier.github.io/delta-design-system/atoms/feedback/feedback.html)
 - [Images](https://cdfournier.github.io/delta-design-system/atoms/images/images.html)
 
 ## Molecules
 - [Accordions](https://cdfournier.github.io/delta-design-system/molecules/accordions/accordions.html)
-- [Blockquotes](https://cdfournier.github.io/delta-design-system/molecules/blockquotes/blockquotes.html)
 - [Cards](https://cdfournier.github.io/delta-design-system/molecules/cards/cards.html)
 - [Forms &amp; Inputs](https://cdfournier.github.io/delta-design-system/molecules/forms/forms.html)
 - [Media Grid Items](https://cdfournier.github.io/delta-design-system/molecules/media-grid-items/media-grid-items.html)
@@ -21,6 +21,7 @@ An open-source design system that can be used to build responsive sites, apps, a
 - [Banners](https://cdfournier.github.io/delta-design-system/organisms/banners/banners.html)
 - [Card Groups](https://cdfournier.github.io/delta-design-system/organisms/card-groups/card-groups.html)
 - [Footers](https://cdfournier.github.io/delta-design-system/organisms/footers/footers.html)
+- [Gallery Grid](https://cdfournier.github.io/delta-design-system/organisms/gallery-grid/gallery-grid.html)
 - [Headers](https://cdfournier.github.io/delta-design-system/organisms/headers/headers.html)
 - [Media Grid Blocks](https://cdfournier.github.io/delta-design-system/organisms/media-grid-blocks/media-grid-blocks.html)
 - [Navigation](https://cdfournier.github.io/delta-design-system/molecules/navigation/navigation.html)
