@@ -459,6 +459,24 @@ button.secondary.reverse:focus, .button.secondary.reverse:focus {
   button.secondary.reverse:focus svg, .button.secondary.reverse:focus svg {
     fill: #ffffff; }
 
+button:disabled, button.secondary:disabled {
+  border-color: #eeeeee;
+  background-color: #eeeeee;
+  cursor: not-allowed; }
+  button:disabled svg, button.secondary:disabled svg {
+    fill: #ffffff; }
+
+button:hover:disabled, button:focus:disabled,
+button.secondary:hover:disabled, button.secondary:focus:disabled {
+  color: #ffffff; }
+
+button.reverse:disabled, button.secondary.reverse:disabled {
+  border-color: #eeeeee;
+  color: #eeeeee;
+  background-color: #ffffff; }
+  button.reverse:disabled svg, button.secondary.reverse:disabled svg {
+    fill: #ffffff; }
+
 figure {
   display: grid;
   width: 100%;
@@ -1307,6 +1325,30 @@ fieldset.button-input > input[type="reset"] {
 
 .show-hide-password.show svg.hide {
   opacity: 1; }
+
+fieldset:disabled .input-icon, fieldset:disabled .show-hide-password, fieldset:disabled .select-icon {
+  cursor: default; }
+  fieldset:disabled .input-icon svg, fieldset:disabled .show-hide-password svg, fieldset:disabled .select-icon svg {
+    fill: #cccccc; }
+
+fieldset:disabled select {
+  border-color: #cccccc;
+  cursor: default; }
+
+fieldset:disabled label.checkbox, fieldset:disabled label.radio, fieldset:disabled label.toggle {
+  color: #cccccc;
+  cursor: default; }
+  fieldset:disabled label.checkbox input, fieldset:disabled label.radio input, fieldset:disabled label.toggle input {
+    border-color: #cccccc;
+    cursor: default; }
+  fieldset:disabled label.checkbox input.toggle[type="checkbox"]:after, fieldset:disabled label.radio input.toggle[type="checkbox"]:after, fieldset:disabled label.toggle input.toggle[type="checkbox"]:after {
+    background-image: url(../assets/icons/close-circle-fill-disabled.svg); }
+
+fieldset:disabled input[type="button"] {
+  border-color: #cccccc;
+  color: #ffffff;
+  background-color: #cccccc;
+  cursor: default; }
 
 nav .search {
   display: none;

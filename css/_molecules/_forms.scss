@@ -356,3 +356,33 @@ fieldset.button-input > input[type="reset"] {
   svg.show {opacity: 0;}
   svg.hide {opacity: 1;}
 }
+
+
+// DISABLED INPUTS
+fieldset:disabled {
+  .input-icon, .show-hide-password, .select-icon {
+    cursor: default;
+    svg {fill: $md-gray;}
+  }
+  select {
+    border-color: $md-gray;
+    cursor: default;
+  }
+  label.checkbox, label.radio, label.toggle {
+    color: $md-gray;
+    cursor: default;
+    input {
+      border-color: $md-gray;
+      cursor: default;
+    }
+    input.toggle[type="checkbox"]:after {
+      background-image: url(../assets/icons/close-circle-fill-disabled.svg);
+    }
+  }
+  input[type="button"] {
+    border-color: $md-gray;
+    color: $white;
+    background-color: $md-gray;
+    cursor: default;
+  }
+}

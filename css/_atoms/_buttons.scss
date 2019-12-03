@@ -84,3 +84,20 @@ button.secondary.reverse:focus, .button.secondary.reverse:focus {
   background-color: $secondary;
   svg {fill: $white;}
 }
+
+
+// DISABLED BUTTON SETTINGS
+button:disabled, button.secondary:disabled {
+  border-color: $lt-gray;
+  background-color: $lt-gray;
+  cursor: not-allowed;
+  svg {fill: $white;}
+}
+button:hover:disabled, button:focus:disabled,
+button.secondary:hover:disabled, button.secondary:focus:disabled {color: $white;}
+button.reverse:disabled, button.secondary.reverse:disabled {
+  border-color: $lt-gray;
+  color: $lt-gray;
+  background-color: $white;
+  svg {fill: $white;}
+}
