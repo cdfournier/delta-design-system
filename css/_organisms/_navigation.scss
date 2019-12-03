@@ -33,6 +33,7 @@ nav {
       @include font-bold;
     }
     li a {text-decoration: none;}
+    li:last-child {padding: 1rem 0;}
   }
 }
 
@@ -70,6 +71,7 @@ nav.open {
         width: auto;
         padding: 0 2rem 0 0;
       }
+      li:last-child {padding: 0 2rem 0 0;}
     }
   }
 }

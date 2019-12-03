@@ -100,6 +100,8 @@
             </figure>
           </div>
         </div>
+      </section>
+      <section class="row wide">
         <h2>Responsive Images</h2>
         <p>Okay&hellip; here's where it gets a little tricky. There are several different ways to render responsive images, and rendering responsive images is the right thing to do. With the Delta Design System, we're currently only using a solution for retina and non-retina displays.</p>
         <p>Adding a <code>srcset</code> attribute to our <code>&lt;img&gt;</code> element enables us to present a high-resolution image only to retina devices and fall back to the low-resolution version for standard screens. The <code>srcset</code> attribute points to a list of alternative image files. The <code>1x</code> tells the browser to display the lower-resolution image on standard-resolution screens. The 2x means that the higher-resolution image is used for retina screens. Older browsers that don’t understand <code>srcset</code> fall back to the src attribute.</p>
@@ -107,6 +109,8 @@
           <figcaption>html</figcaption>
 <pre style="white-space: normal;"><code>&lt;img src=&quot;../../assets/images/sample-bridge-2x.jpg&quot; srcset=&quot;../../assets/images/sample-bridge-1x.jpg 1x, ../../assets/images/sample-bridge-2x.jpg 2x&quot; alt=&quot;Example of horizontal golden aspect ratio image&quot;&gt;</code></pre>
         </figure>
+      </section>
+      <section class="row wide">
         <h2>Important Guidelines</h2>
         <ul>
           <li>Every <code>&lt;img&gt;</code> you add to your site needs to have an <code>alt</code> attribute. If the image is informational, set the <code>alt</code> equal to a descriptive alternative for that image.</li>

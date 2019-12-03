@@ -33,6 +33,7 @@
       width: 100%;
     }
   }
+  .card:last-child {margin: 1rem 0 0;}
 }
 
 @media (min-width: 48rem) {
@@ -48,6 +49,7 @@
       max-width: 38rem;
       margin: 1rem;
     }
+    .card:last-child {margin: 1rem;}
   }
 }
 

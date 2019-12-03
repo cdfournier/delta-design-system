@@ -26,3 +26,11 @@ figure {
   }
   figcaption > cite a {@include font-bold;}
 }
+
+figure:last-child {padding: 1rem 0 0;}
+
+.column > figure, .row > figure {padding: 0 0 1rem;}
+.column > figure:last-child, .row > figure:last-child {padding: 0;}
+
+.row > p + figure {padding: 1rem 0;}
+.row > p + figure:last-child {padding: 1rem 0 0;}

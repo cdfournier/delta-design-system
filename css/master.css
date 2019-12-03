@@ -121,11 +121,11 @@ ol + h1, ol + h2, ol + h3, ol + h4,
 dl + h1, dl + h2, dl + h3, dl + h4 {
   padding: 2rem 0 0; }
 
+/*
 ul + h2, ul + h3, ul + h4,
 ol + h2, ol + h3, ol + h4,
-dl + h2, dl + h3, dl + h4 {
-  padding: 1rem 0 0; }
-
+dl + h2, dl + h3, dl + h4 {padding: 1rem 0 0;}
+*/
 p {
   width: 100%;
   max-width: 39rem;
@@ -184,6 +184,10 @@ ul {
 ul.no-bullets {
   padding: 1rem 0 0 0;
   list-style-type: none; }
+  ul.no-bullets li {
+    padding: 0 0 1rem 0; }
+  ul.no-bullets li:last-child {
+    padding: 0; }
 
 ol {
   list-style-type: decimal; }
@@ -194,8 +198,8 @@ ul li, ol li {
   max-width: 39rem;
   padding: 0 0 1rem 0.25rem; }
 
-ul + p, ol + p {
-  padding: 0; }
+ul li:last-child, ol li:last-child {
+  padding: 0 0 0 0.25rem; }
 
 dl {
   display: flex;
@@ -289,6 +293,8 @@ main:after {
     padding: 2rem 0 0; }
   .row .column {
     padding: 1rem 0 0; }
+  .row .column:first-of-type {
+    padding: 0; }
   .row h1 + .row,
   .row h2 + .row,
   .row h3 + .row,
@@ -323,32 +329,32 @@ main > .row:first-of-type {
   .row.fifty .column {
     width: 50%; }
   .row.fifty .column:nth-of-type(1n) {
-    padding: 0.5rem 1rem 0 0; }
+    padding: 0 1rem 0 0; }
   .row.fifty .column:nth-of-type(2n) {
-    padding: 0.5rem 0 0 1rem; }
+    padding: 0 0 0 1rem; }
   .row.golden.left .column:nth-of-type(1n) {
     width: 62%;
-    padding: 0.5rem 1rem 0 0; }
+    padding: 0 1rem 0 0; }
   .row.golden.left .column:nth-of-type(2n) {
     width: 38%;
-    padding: 0.5rem 0 0 1rem; }
+    padding: 0 0 0 1rem; }
   .row.golden.right .column:nth-of-type(1n) {
     width: 38%;
-    padding: 0.5rem 1rem 0 0; }
+    padding: 0 1rem 0 0; }
   .row.golden.right .column:nth-of-type(2n) {
     width: 62%;
-    padding: 0.5rem 0 0 1rem; }
+    padding: 0 0 0 1rem; }
   .row.thirds {
     justify-content: space-between; }
     .row.thirds .column {
       width: calc(33% - 1rem);
-      padding: 0.5rem 0 0 0; }
+      padding: 0; }
   .row.fourths .column {
     width: 50%; }
   .row.fourths .column:nth-of-type(1n) {
-    padding: 0.5rem 1rem 0 0; }
+    padding: 0 1rem 0 0; }
   .row.fourths .column:nth-of-type(2n) {
-    padding: 0.5rem 0 0 1rem; }
+    padding: 0 0 0 1rem; }
   .row.fourths .column:nth-of-type(3n) {
     padding: 1rem 1rem 0 0; }
   .row.fourths .column:nth-of-type(4n) {
@@ -363,7 +369,7 @@ main > .row:first-of-type {
     .row.fourths .column:nth-of-type(2n),
     .row.fourths .column:nth-of-type(3n),
     .row.fourths .column:nth-of-type(4n) {
-      padding: 0.5rem 0 0 0; } }
+      padding: 0; } }
 
 button, .button {
   display: inline-flex;
@@ -480,6 +486,65 @@ figure {
   figure figcaption > cite a {
     font-family: "Montserrat", sans-serif;
     font-weight: 700; }
+
+figure:last-child {
+  padding: 1rem 0 0; }
+
+.column > figure, .row > figure {
+  padding: 0 0 1rem; }
+
+.column > figure:last-child, .row > figure:last-child {
+  padding: 0; }
+
+.row > p + figure {
+  padding: 1rem 0; }
+
+.row > p + figure:last-child {
+  padding: 1rem 0 0; }
+
+blockquote {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 36rem;
+  margin: 2rem auto 1rem 0;
+  padding: 1rem;
+  border: 1px solid #eeeeee; }
+  blockquote p {
+    padding: 0 0 0.5rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700; }
+    blockquote p cite {
+      padding: 0.5rem 0 0;
+      font-size: 0.8rem; }
+  blockquote p:last-child {
+    padding: 0; }
+
+blockquote.center {
+  margin: 2rem auto; }
+
+blockquote.right {
+  margin: 2rem 0 2rem auto; }
+
+blockquote:before {
+  display: block;
+  position: absolute;
+  top: -0.75rem;
+  left: calc(50% - 1.5rem);
+  width: 3rem;
+  height: 1.5rem;
+  text-align: center;
+  background-color: #ffffff;
+  content: url("../assets/icons/double-quotes-l.svg");
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  transform: scale(1.5); }
+
+@media (min-width: 64rem) {
+  blockquote {
+    width: 90%; } }
 
 ul.chips {
   display: flex;
@@ -1521,6 +1586,8 @@ nav.open .search {
     .card-group .card .text {
       padding: 1rem;
       width: 100%; }
+  .card-group .card:last-child {
+    margin: 1rem 0 0; }
 
 @media (min-width: 48rem) {
   .card-group {
@@ -1533,55 +1600,13 @@ nav.open .search {
     .card-group .card {
       width: calc(50% - 2rem);
       max-width: 38rem;
+      margin: 1rem; }
+    .card-group .card:last-child {
       margin: 1rem; } }
 
 @media (min-width: 64rem) {
   .card-group .card {
     width: calc(33.3% - 2rem); } }
-
-blockquote {
-  display: block;
-  position: relative;
-  width: 100%;
-  max-width: 36rem;
-  margin: 2rem auto 2rem 0;
-  padding: 1rem;
-  border: 1px solid #eeeeee; }
-  blockquote p {
-    padding: 0 0 0.5rem;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700; }
-    blockquote p cite {
-      padding: 0.5rem 0 0;
-      font-size: 0.8rem; }
-  blockquote p:last-child {
-    padding: 0; }
-
-blockquote.center {
-  margin: 2rem auto; }
-
-blockquote.right {
-  margin: 2rem 0 2rem auto; }
-
-blockquote:before {
-  display: block;
-  position: absolute;
-  top: -0.75rem;
-  left: calc(50% - 1.5rem);
-  width: 3rem;
-  height: 1.5rem;
-  text-align: center;
-  background-color: #ffffff;
-  content: url("../assets/icons/double-quotes-l.svg");
-  -webkit-transform: scale(1.5);
-  -moz-transform: scale(1.5);
-  -ms-transform: scale(1.5);
-  -o-transform: scale(1.5);
-  transform: scale(1.5); }
-
-@media (min-width: 64rem) {
-  blockquote {
-    width: 90%; } }
 
 .media-grid-block {
   display: flex;
@@ -1862,6 +1887,8 @@ footer {
       footer nav ul li {
         padding: 0 0 1rem;
         text-align: center; }
+      footer nav ul li:last-child {
+        padding: 0 0 1rem; }
   footer section.brand-content .logo {
     display: flex;
     flex-direction: column;
@@ -1971,6 +1998,8 @@ nav {
       font-weight: 700; }
     nav ul li a {
       text-decoration: none; }
+    nav ul li:last-child {
+      padding: 1rem 0; }
 
 nav.open {
   height: 100vh; }
@@ -2011,6 +2040,8 @@ nav.open {
       transform: translateX(0); }
       nav ul li {
         width: auto;
+        padding: 0 2rem 0 0; }
+      nav ul li:last-child {
         padding: 0 2rem 0 0; } }
 
 .banner {

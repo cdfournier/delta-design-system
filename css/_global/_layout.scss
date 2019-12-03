@@ -16,6 +16,7 @@ main:after {
   padding: 2rem 2rem 0;
   .row {padding: 2rem 0 0;}
   .column {padding: 1rem 0 0;}
+  .column:first-of-type {padding: 0;}
   h1 + .row,
   h2 + .row,
   h3 + .row,
@@ -47,40 +48,40 @@ main > .row:first-of-type {padding: 6rem 2rem 0;}
   .row.wide {flex-direction: column;}
   .row.fifty {
     .column {width: 50%;}
-    .column:nth-of-type(1n) {padding: 0.5rem 1rem 0 0;}
-    .column:nth-of-type(2n) {padding: 0.5rem 0 0 1rem;}
+    .column:nth-of-type(1n) {padding: 0 1rem 0 0;}
+    .column:nth-of-type(2n) {padding: 0 0 0 1rem;}
   }
   .row.golden.left {
     .column:nth-of-type(1n) {
       width: 62%;
-      padding: 0.5rem 1rem 0 0;
+      padding: 0 1rem 0 0;
     }
     .column:nth-of-type(2n) {
       width: 38%;
-      padding: 0.5rem 0 0 1rem;
+      padding: 0 0 0 1rem;
     }
   }
   .row.golden.right {
     .column:nth-of-type(1n) {
       width: 38%;
-      padding: 0.5rem 1rem 0 0;
+      padding: 0 1rem 0 0;
     }
     .column:nth-of-type(2n) {
       width: 62%;
-      padding: 0.5rem 0 0 1rem;
+      padding: 0 0 0 1rem;
     }
   }
   .row.thirds {
     justify-content: space-between;
     .column {
       width: calc(33% - 1rem);
-      padding: 0.5rem 0 0 0;
+      padding: 0;
     }
   }
   .row.fourths {
     .column {width: 50%;}
-    .column:nth-of-type(1n) {padding: 0.5rem 1rem 0 0;}
-    .column:nth-of-type(2n) {padding: 0.5rem 0 0 1rem;}
+    .column:nth-of-type(1n) {padding: 0 1rem 0 0;}
+    .column:nth-of-type(2n) {padding: 0 0 0 1rem;}
     .column:nth-of-type(3n) {padding: 1rem 1rem 0 0;}
     .column:nth-of-type(4n) {padding: 1rem 0 0 1rem;}
   }
@@ -93,6 +94,6 @@ main > .row:first-of-type {padding: 6rem 2rem 0;}
     .column:nth-of-type(1n),
     .column:nth-of-type(2n),
     .column:nth-of-type(3n),
-    .column:nth-of-type(4n) {padding: 0.5rem 0 0 0;}
+    .column:nth-of-type(4n) {padding: 0;}
   }
 }

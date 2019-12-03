@@ -77,7 +77,9 @@ nav.open .search {
     margin: 0;
     padding: 0.5rem;
     @include transition(all, 0.325s, ease);
-    svg.search-toggle-close {width: 0;}
+    svg.search-toggle-close {
+      width: 0;
+    }
   }
   nav button.search-toggle.open {
     right: 6.5rem;
