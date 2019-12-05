@@ -34,12 +34,6 @@ ul + h1, ul + h2, ul + h3, ul + h4,
 ol + h1, ol + h2, ol + h3, ol + h4,
 dl + h1, dl + h2, dl + h3, dl + h4 {padding: 2rem 0 0;}
 
-/*
-ul + h2, ul + h3, ul + h4,
-ol + h2, ol + h3, ol + h4,
-dl + h2, dl + h3, dl + h4 {padding: 1rem 0 0;}
-*/
-
 p {
   width: 100%;
   max-width: 39rem;
@@ -156,6 +150,7 @@ p.icon a {
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+  line-height: 1.5;
   span {
     display: flex;
     flex-direction: column;

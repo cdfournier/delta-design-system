@@ -34,7 +34,7 @@ An open-source design system that can be used to build responsive sites, apps, a
 - [Typography](https://cdfournier.github.io/delta-design-system/style/typography/typography.html)
 
 ## Downloads
-- Sketch Library coming soon
+- [Sketch](https://cdfournier.github.io/delta-design-system/downloads/downloads.html)
 
 ## Current Dependencies
 - [jQuery](https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js)
