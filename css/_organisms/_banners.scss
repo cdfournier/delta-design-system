@@ -88,5 +88,5 @@
 .bg-photo.right-top {background-position: right top;}
 
 @media (min-width: 48rem) {
-  .bg-photo.fixed {background-attachment: fixed;}
+  .no-touch .bg-photo.fixed {background-attachment: fixed;}
 }

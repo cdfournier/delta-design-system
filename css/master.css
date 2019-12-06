@@ -2186,7 +2186,7 @@ nav.open {
   background-position: right top; }
 
 @media (min-width: 48rem) {
-  .bg-photo.fixed {
+  .no-touch .bg-photo.fixed {
     background-attachment: fixed; } }
 
 .tabs {
