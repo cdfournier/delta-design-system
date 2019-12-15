@@ -510,6 +510,9 @@ figure:last-child {
 .column > figure:last-child, .row > figure:last-child {
   padding: 0; }
 
+.column p + figure:last-child {
+  padding: 1rem 0 0; }
+
 .row > p + figure {
   padding: 1rem 0; }
 
