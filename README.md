@@ -4,10 +4,12 @@ An open-source design system that can be used to build responsive sites, apps, a
 ## Atoms
 - [Badges](https://cdfournier.github.io/delta-design-system/atoms/badges/badges.html)
 - [Blockquotes](https://cdfournier.github.io/delta-design-system/atoms/blockquotes/blockquotes.html)
+- [Breadcrumbs](https://cdfournier.github.io/delta-design-system/atoms/breadcrumbs/breadcrumbs.html)
 - [Buttons](https://cdfournier.github.io/delta-design-system/atoms/buttons/buttons.html)
 - [Chips](https://cdfournier.github.io/delta-design-system/atoms/chips/chips.html)
 - [Feedback](https://cdfournier.github.io/delta-design-system/atoms/feedback/feedback.html)
 - [Images](https://cdfournier.github.io/delta-design-system/atoms/images/images.html)
+- [Pagination](https://cdfournier.github.io/delta-design-system/atoms/pagination/pagination.html)
 
 ## Molecules
 - [Accordions](https://cdfournier.github.io/delta-design-system/molecules/accordions/accordions.html)
@@ -34,7 +36,7 @@ An open-source design system that can be used to build responsive sites, apps, a
 - [Typography](https://cdfournier.github.io/delta-design-system/style/typography/typography.html)
 
 ## Downloads
-- [Sketch](https://cdfournier.github.io/delta-design-system/downloads/downloads.html)
+- [Downloads](https://cdfournier.github.io/delta-design-system/downloads/downloads.html)
 
 ## Current Dependencies
 - [jQuery](https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js)
@@ -45,4 +47,4 @@ An open-source design system that can be used to build responsive sites, apps, a
 - [Animate On Scroll](https://github.com/michalsnik/aos/tree/v2)
 - [Headroom](https://wicky.nillia.ms/headroom.js/)
 
-Version 2.2
+Version 2.3
