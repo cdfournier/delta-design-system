@@ -1,27 +1,32 @@
 // BREADCRUMBS
 nav.breadcrumbs {
-  display: inline-flex;
   padding: 1rem 0;
-  line-height: 1;
   ol {
-    display: inline-block;
-    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
     padding: 0;
-    line-height: 1.2;
+    overflow-x: scroll;
     list-style-type: none;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     li {
-      display: inline-flex;
+      display: flex;
       width: auto;
       padding: 0;
+      white-space: nowrap;
     }
     li a {text-decoration: none;}
     li:after {
       display: block;
-      padding: 0 0.25rem 0 0.5rem;
+      padding: 0 0.25rem;
       content: "/";
     }
-    li:last-of-type:after {display: none;}
+    li:last-child:after {display: none;}
+  }
+}
+
+@media (min-width: 48rem) {
+  nav.breadcrumbs {
+    ol {overflow-x: auto;}
   }
 }

@@ -9,21 +9,27 @@ nav.pagination {
     flex-direction: row;
     justify-content: flex-start;
     height: auto;
-    overflow: scroll;
+    overflow-x: scroll;
     border: 1px solid $lt-gray;
     border-radius: 0.25rem;
     font-size: 1rem;
     @include transform(translateX(0));
     li {
-      min-width: 3rem;
-      padding: 0.5rem 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
       border-right: 1px solid $lt-gray;
       text-align: center;
       @include transition(all, 0.25s, ease);
     }
     li:last-child {
-      padding: 0.5rem 0.75rem;
+      padding: 0;
       border-right: none;
+    }
+    li a {
+      min-width: 3rem;
+      padding: 0.5rem 0.75rem;
     }
     li:hover, li:focus {background-color: $lt-gray;}
     li.current {background-color: $primary;}
@@ -36,7 +42,6 @@ nav.pagination {
       color: $md-gray;
       cursor: inherit;
     }
-    li.first, li.previous, li.next, li.last {min-width: inherit;}
   }
 }
 
