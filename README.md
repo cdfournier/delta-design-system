@@ -4,19 +4,19 @@ An open-source design system that can be used to build responsive sites, apps, a
 ## Atoms
 - [Badges](https://cdfournier.github.io/delta-design-system/atoms/badges/badges.html)
 - [Blockquotes](https://cdfournier.github.io/delta-design-system/atoms/blockquotes/blockquotes.html)
-- [Breadcrumbs](https://cdfournier.github.io/delta-design-system/atoms/breadcrumbs/breadcrumbs.html)
 - [Buttons](https://cdfournier.github.io/delta-design-system/atoms/buttons/buttons.html)
 - [Chips](https://cdfournier.github.io/delta-design-system/atoms/chips/chips.html)
 - [Feedback](https://cdfournier.github.io/delta-design-system/atoms/feedback/feedback.html)
 - [Images](https://cdfournier.github.io/delta-design-system/atoms/images/images.html)
-- [Pagination](https://cdfournier.github.io/delta-design-system/atoms/pagination/pagination.html)
 
 ## Molecules
 - [Accordions](https://cdfournier.github.io/delta-design-system/molecules/accordions/accordions.html)
+- [Breadcrumbs](https://cdfournier.github.io/delta-design-system/molecules/breadcrumbs/breadcrumbs.html)
 - [Cards](https://cdfournier.github.io/delta-design-system/molecules/cards/cards.html)
 - [Forms &amp; Inputs](https://cdfournier.github.io/delta-design-system/molecules/forms/forms.html)
 - [Media Grid Items](https://cdfournier.github.io/delta-design-system/molecules/media-grid-items/media-grid-items.html)
 - [Messages](https://cdfournier.github.io/delta-design-system/molecules/messages/messages.html)
+- [Pagination](https://cdfournier.github.io/delta-design-system/molecules/pagination/pagination.html)
 - [Search](https://cdfournier.github.io/delta-design-system/molecules/search/search.html)
 
 ## Organisms
