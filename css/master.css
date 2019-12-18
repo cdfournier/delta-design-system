@@ -2316,6 +2316,9 @@ nav.open {
       border-radius: 0.25rem;
       opacity: 1; }
 
+.row > .tabs {
+  padding: 0; }
+
 .gallery-grid {
   overflow-x: auto; }
   .gallery-grid ul {
