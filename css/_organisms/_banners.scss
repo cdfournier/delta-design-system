@@ -40,6 +40,8 @@
     border-color: $white;
     color: $white;
   }
+  a {color: $primary;}
+  a:hover, a:focus {color: $white;}
 }
 
 .banner.split {

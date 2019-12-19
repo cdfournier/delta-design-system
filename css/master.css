@@ -2371,6 +2371,10 @@ nav.open {
   .banner.dark button:hover, .banner.dark button:focus {
     border-color: #ffffff;
     color: #ffffff; }
+  .banner.dark a {
+    color: #df3a32; }
+  .banner.dark a:hover, .banner.dark a:focus {
+    color: #ffffff; }
 
 .banner.split {
   padding: 2rem; }
