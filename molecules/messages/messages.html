@@ -123,6 +123,17 @@
   &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot; class=&quot;close&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0-9.414l2.828-2.829 1.415 1.415L13.414 12l2.829 2.828-1.415 1.415L12 13.414l-2.828 2.829-1.415-1.415L10.586 12 7.757 9.172l1.415-1.415L12 10.586z&quot; /&gt;&lt;/svg&gt;
 &lt;/div&gt;</code></pre>
             </figure>
+            <figure>
+              <figcaption>script</figcaption>
+<pre><code>$('.show-error').click( function() {
+  $('.messages .error').addClass('show');
+  setTimeout(function() { 
+    $('.messages .error').removeClass('show') }, 10000);
+});
+$('svg.close').click( function() {
+  $('.messages .error').removeClass('show');
+});</code></pre>
+            </figure>
           </div>
         </div>
         <div class="row fifty border">
@@ -138,6 +149,17 @@
   &lt;p&gt;This is a success alert message&lt;/p&gt;
   &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot; class=&quot;close&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0-9.414l2.828-2.829 1.415 1.415L13.414 12l2.829 2.828-1.415 1.415L12 13.414l-2.828 2.829-1.415-1.415L10.586 12 7.757 9.172l1.415-1.415L12 10.586z&quot; /&gt;&lt;/svg&gt;
 &lt;/div&gt;</code></pre>
+            </figure>
+            <figure>
+              <figcaption>script</figcaption>
+<pre><code>$('.show-success').click( function() {
+  $('.messages .success').addClass('show');
+  setTimeout(function() { 
+    $('.messages .success').removeClass('show') }, 10000);
+});
+$('svg.close').click( function() {
+  $('.messages .success').removeClass('show');
+});</code></pre>
             </figure>
           </div>
         </div>
@@ -159,6 +181,18 @@
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </figure>
+            <figure>
+              <figcaption>script</figcaption>
+<pre><code>$('.show-confirm').click( function() {
+  $('.messages .confirm').addClass('show');
+});
+$('button.no').click( function() {
+  $('.messages .confirm').removeClass('show');
+});
+$('button.yes').click( function() {
+  $('.messages .confirm').removeClass('show');
+});</code></pre>
+            </figure>
           </div>
         </div>
         <div class="row fifty border">
@@ -179,6 +213,15 @@
   &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot; class=&quot;close&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z&quot;/&gt;&lt;/svg&gt;
 &lt;/div&gt;</code></pre>
             </figure>
+            <figure>
+              <figcaption>script</figcaption>
+<pre><code>$('.show-modal').click( function() {
+  $('.messages .modal').addClass('show');
+});
+$('svg.close').click( function() {
+  $('.messages .modal').removeClass('show');
+});</code></pre>
+            </figure>
           </div>
         </div>
         <div class="row fifty border">
@@ -196,6 +239,12 @@
   &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot; class=&quot;close&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z&quot;/&gt;&lt;/svg&gt;
 &lt;/div&gt;</code></pre>
             </figure>
+            <figure>
+              <figcaption>script</figcaption>
+<pre><code>$('.promo svg.close').click( function() {
+  $('.promo').removeClass('show');
+});</code></pre>
+            </figure>
           </div>
         </div>
         <div class="row fifty">
@@ -212,6 +261,17 @@
   &lt;p&gt;Push Down molecules literally push the rest of the page down off the screen once the window is done loading.&lt;/p&gt;
   &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot; class=&quot;close&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z&quot;/&gt;&lt;/svg&gt;
 &lt;/div&gt;</code></pre>
+            </figure>
+            <figure>
+              <figcaption>script</figcaption>
+<pre><code>window.onload = function() {
+  setTimeout(function () {
+    $('aside.message').addClass('show');
+  },2000);
+};
+$('aside.message svg.close').click( function() {
+  $('aside.message').removeClass('show');
+});</code></pre>
             </figure>
           </div>
         </div>

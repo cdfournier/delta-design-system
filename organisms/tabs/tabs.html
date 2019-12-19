@@ -125,6 +125,7 @@
         </div>
       </div>
       <section class="row wide">
+        <h2 class="visuallyhidden">Code Structure</h2>
         <figure>
           <figcaption>html</figcaption>
 <pre><code>&lt;div class=&quot;tabs&quot;&gt;
@@ -156,6 +157,27 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
+        </figure>
+        <figure>
+          <figcaption>script</figcaption>
+<pre><code>$('li.tab-item button#tab-label-1').click(function() {
+  $('li.tab-item button.is-active').removeClass('is-active').attr('aria-selected', false);
+  $('li.tab-item button#tab-label-1').addClass('is-active').attr('aria-selected', true);
+  $('.panels .panel.is-current').removeClass('is-current').attr('aria-hidden', true);
+  $('.panels .panel#tab-panel-1').addClass('is-current').attr('aria-hidden', false);
+});
+$('li.tab-item button#tab-label-2').click(function() {
+  $('li.tab-item button.is-active').removeClass('is-active').attr('aria-selected', false);
+  $('li.tab-item button#tab-label-2').addClass('is-active').attr('aria-selected', true);
+  $('.panels .panel.is-current').removeClass('is-current').attr('aria-hidden', true);
+  $('.panels .panel#tab-panel-2').addClass('is-current').attr('aria-hidden', false);
+});
+$('li.tab-item button#tab-label-3').click(function() {
+  $('li.tab-item button.is-active').removeClass('is-active').attr('aria-selected', false);
+  $('li.tab-item button#tab-label-3').addClass('is-active').attr('aria-selected', true);
+  $('.panels .panel.is-current').removeClass('is-current').attr('aria-hidden', true);
+  $('.panels .panel#tab-panel-3').addClass('is-current').attr('aria-hidden', false);
+});</code></pre>
         </figure>
       </section>
     </main>

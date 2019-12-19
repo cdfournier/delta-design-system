@@ -141,6 +141,12 @@
   &lt;li class=&quot;option-4&quot;&gt;&lt;button&gt;&lt;svg class=&quot;check&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z&quot;/&gt;&lt;/svg&gt;Lizards&lt;/button&gt;&lt;/li&gt;
 &lt;/ul&gt;</code></pre>
             </figure>
+            <figure>
+              <figcaption>script</figcaption>
+<pre><code>$('ul.chips li.option-1').click( function() {
+  $('ul.chips li.option-1 svg.check').toggleClass('show');
+});</code></pre>
+            </figure>
           </div>
         </div>
         <div class="row fifty border">
@@ -165,6 +171,12 @@
   &lt;li class=&quot;dismiss-4&quot;&gt;&lt;span&gt;Text&lt;button&gt;&lt;svg class=&quot;close&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-11.414L9.172 7.757 7.757 9.172 10.586 12l-2.829 2.828 1.415 1.415L12 13.414l2.828 2.829 1.415-1.415L13.414 12l2.829-2.828-1.415-1.415L12 10.586z&quot;/&gt;&lt;/svg&gt;&lt;/button&gt;&lt;/span&gt;&lt;/li&gt;
   &lt;li class=&quot;dismiss-reset&quot;&gt;&lt;button&gt;Reset&lt;/button&gt;&lt;/li&gt;
 &lt;/ul&gt;</code></pre>
+            </figure>
+            <figure>
+              <figcaption>script</figcaption>
+<pre><code>$('ul.chips li.dismiss-1 button').click( function() {
+  $('ul.chips li.dismiss-1').addClass('dismissed');
+});</code></pre>
             </figure>
           </div>
         </div>

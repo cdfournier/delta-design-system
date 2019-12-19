@@ -151,6 +151,7 @@ $('li.tab-item button#tab-label-3').click(function() {
   $('.panels .panel#tab-panel-3').addClass('is-current').attr('aria-hidden', false);
 });
 
+// PROGRESS BAR
 $('button#start-loading').click(function() {
   var val = 0;
   var interval = setInterval(function() {

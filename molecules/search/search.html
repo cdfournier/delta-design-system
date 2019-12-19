@@ -122,6 +122,17 @@
   &lt;button type=&quot;submit&quot;&gt;Search&lt;/button&gt;
 &lt;/form&gt;</code></pre>
         </figure>
+        <figure>
+          <figcaption>script</figcaption>
+<pre><code>$('button.search-toggle svg.search-toggle-open').click(function() {
+  $('nav .search').addClass('open').attr('aria-hidden',false);
+  $('button.search-toggle').addClass('open').attr('aria-expanded',true);
+});
+$('button.search-toggle svg.search-toggle-close').click(function() {
+  $('nav .search').removeClass('open').attr('aria-hidden',true);
+  $('button.search-toggle').removeClass('open').attr('aria-expanded',false);
+});</code></pre>
+        </figure>
       </section>
     </main>
     <footer>

@@ -190,6 +190,18 @@
   &lt;/div&gt;
 &lt;/fieldset&gt;</code></pre>
             </figure>
+            <figure>
+              <figcaption>script</figcaption>
+<pre><code>$(&quot;.show-hide-password&quot;).click(function() {
+  $(this).toggleClass(&quot;show&quot;);
+  var input = $($(this).attr(&quot;id&quot;));
+  if (input.attr(&quot;type&quot;) == &quot;password&quot;) {
+    input.attr(&quot;type&quot;, &quot;text&quot;);
+  } else {
+    input.attr(&quot;type&quot;, &quot;password&quot;);
+  }
+});</code></pre>
+            </figure>
           </div>
         </div>
         <div class="row fifty border">
