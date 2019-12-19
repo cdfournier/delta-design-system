@@ -367,6 +367,36 @@ main > .row:first-of-type {
     .row.fourths .column:nth-of-type(4n) {
       padding: 0; } }
 
+.skip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0; }
+  .skip a {
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: #ffffff;
+    opacity: 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    -webkit-transition: all 0.25s ease 0s;
+    -moz-transition: all 0.25s ease 0s;
+    -ms-transition: all 0.25s ease 0s;
+    -o-transition: all 0.25s ease 0s;
+    transition: all 0.25s ease 0s; }
+  .skip a:focus {
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+    opacity: 1; }
+
 button, .button {
   display: inline-flex;
   align-items: center;
