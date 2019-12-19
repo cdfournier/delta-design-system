@@ -75,7 +75,38 @@
     p {padding: 0 0.5rem 0 0;}
   }
   .confirm p {width: calc(100% - 5.75rem);}
-  .error.show, .success.show, .confirm.show {@include transform(translateY(0));}
+  .modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+    background-color: $white;
+    opacity: 0;
+    @include transform(translateY(-100vh));
+    @include transition(all, 0.5s, ease-in-out);
+    svg {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      width: 2rem;
+      height: 2rem;
+      fill: $primary;
+      cursor: pointer;
+      @include transition(all, 0.25s, ease-in-out);
+    }
+    svg:hover, svg:focus {fill: $secondary;}
+  }
+  .error.show, .success.show, .confirm.show, .modal.show {
+    opacity: 1;
+    @include transform(translateY(0));
+  }
 }
 
 .messages.bottom {
@@ -87,6 +118,77 @@
     @include transform(translateY(100rem));
   }
   .error.show, .success.show, .confirm.show {@include transform(translateY(0));}
+}
+
+.promo {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 0;
+  margin: 0;
+  padding: 2rem;
+  opacity: 0;
+  @include transition(all, 0.5s, ease-in-out);
+  svg.close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 2rem;
+    height: 2rem;
+    fill: $primary;
+    cursor: pointer;
+    @include transition(all, 0.25s, ease-in-out);
+  }
+}
+
+main > .promo.show {margin: 6rem 0 0;}
+
+.promo.show {
+  height: auto;
+  opacity: 1;
+}
+
+.promo.bg-black, .promo.bg-dk-gray, .promo.bg-md-gray, .promo.bg-lt-gray, .promo.bg-dk-blue, .promo.bg-lt-blue,
+.promo.bg-crimson, .promo.bg-primary, .promo.bg-secondary, .promo.bg-error, .promo.bg-valid {
+  color: $white;
+  svg.close {fill: $white;}
+  svg.close:hover, svg.close:focus {fill: $primary;}
+}
+
+aside.message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  top: 0;
+  z-index: 0;
+  width: 100vw;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  background-color: $white;
+  opacity: 0;
+  @include transition(all, 0.5s, ease-in-out);
+  svg.close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 2rem;
+    height: 2rem;
+    fill: $primary;
+    cursor: pointer;
+    @include transition(all, 0.25s, ease-in-out);
+  }
+  svg.close:hover, svg.close:focus {fill: $secondary;}
+}
+
+aside.message.show {
+  z-index: 250;
+  height: 100vh;
+  margin: 0;
+  padding: 2rem;
+  opacity: 1;
 }
 
 @media (min-width: 40rem) {
@@ -117,6 +219,10 @@
     .success p {
       padding: 0 1rem 0 0;
       font-size: 1.25rem;
+    }
+    .modal {
+      padding: 2rem 2rem 6rem;
+      .content {width: 80%;}
     }
   }
 }

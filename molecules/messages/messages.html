@@ -68,6 +68,11 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5W57LD3"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+    <aside class="message">
+      <h1>Push Down Headline</h1>
+      <p>Push Down molecules literally push the rest of the page down off the screen once the window is done loading.</p>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="close"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+    </aside>
     <header>
       <div class="logo">
         <a href="../../index.html">
@@ -90,6 +95,11 @@
       </nav>
     </header>
     <main>
+      <section class="promo show bg-secondary">
+        <h1>Promo Headline</h1>
+        <p>Promo molecules are like other messages, except that these are shown by default on page load (instead of triggered by some user action) and may be dismissed by the user.</p>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="close"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+      </section>
       <section class="row wide">
         <h1 class="title">Messages</h1>
         <p>Messages convey important information related to the state of your app or the device and often request feedback.</p>
@@ -131,7 +141,7 @@
             </figure>
           </div>
         </div>
-        <div class="row fifty">
+        <div class="row fifty border">
           <div class="column">
             <h3>Confirmation Messages</h3>
             <p>A confirmation message provides the user an opportunity to confirm a requested action.</p>
@@ -147,6 +157,60 @@
     &lt;button type=&quot;button&quot; class=&quot;no&quot;&gt;No&lt;/button&gt;
     &lt;button type=&quot;button&quot; class=&quot;yes&quot;&gt;Yes&lt;/button&gt;
   &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </figure>
+          </div>
+        </div>
+        <div class="row fifty border">
+          <div class="column">
+            <h3>Modal Messages</h3>
+            <p>A modal is a dialog box or popup window that is displayed on top of the current page.</p>
+            <button type="button" class="show-modal">Show Modal</button>
+          </div>
+          <div class="column">
+            <figure>
+              <figcaption>html</figcaption>
+<pre><code>&lt;div class=&quot;modal&quot;&gt;
+  &lt;div class=&quot;content&quot;&gt;
+    &lt;h2&gt;Modal Headline&lt;/h2&gt;
+    &lt;p&gt;Any kind of modal content can go here.&lt;/p&gt;
+    &lt;button&gt;Learn More&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot; class=&quot;close&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z&quot;/&gt;&lt;/svg&gt;
+&lt;/div&gt;</code></pre>
+            </figure>
+          </div>
+        </div>
+        <div class="row fifty border">
+          <div class="column">
+            <h3>Promo Messages</h3>
+            <p>A modal is a dialog box or popup window that is displayed on top of the current page.</p>
+            <button type="button" class="show-promo">Show Promo</button>
+          </div>
+          <div class="column">
+            <figure>
+              <figcaption>html</figcaption>
+<pre><code>&lt;div class=&quot;promo show bg-secondary&quot;&gt;
+  &lt;h1&gt;Promo Headline&lt;/h1&gt;
+  &lt;p&gt;Promo molecules are like other messages, except that these are shown by default on page load (instead of triggered by some user action) and may be dismissed by the user.&lt;/p&gt;
+  &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot; class=&quot;close&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z&quot;/&gt;&lt;/svg&gt;
+&lt;/div&gt;</code></pre>
+            </figure>
+          </div>
+        </div>
+        <div class="row fifty">
+          <div class="column">
+            <h3>Push Down Messages</h3>
+            <p>Push Down molecules literally push the rest of the page down off the screen once the window is done loading.</p>
+            <button type="button" class="show-push-down">Show Push Down</button>
+          </div>
+          <div class="column">
+            <figure>
+              <figcaption>html</figcaption>
+<pre><code>&lt;div class=&quot;message&quot;&gt;
+  &lt;h1&gt;Push Down Headline&lt;/h1&gt;
+  &lt;p&gt;Push Down molecules literally push the rest of the page down off the screen once the window is done loading.&lt;/p&gt;
+  &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;24&quot; height=&quot;24&quot; class=&quot;close&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot;/&gt;&lt;path d=&quot;M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z&quot;/&gt;&lt;/svg&gt;
 &lt;/div&gt;</code></pre>
             </figure>
           </div>
@@ -170,6 +234,14 @@
             <button type="button" class="no">No</button>
             <button type="button" class="yes">Yes</button>
           </div>
+        </div>
+        <div class="modal">
+          <div class="content">
+            <h2>Modal Headline</h2>
+            <p>Any kind of modal content can go here.</p>
+            <button>Learn More</button>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="close"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
         </div>
       </section>
     </main>

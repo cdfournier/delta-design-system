@@ -66,6 +66,30 @@ $('button.no').click( function() {
 $('button.yes').click( function() {
   $('.messages .confirm').removeClass('show');
 });
+$('.show-modal').click( function() {
+  $('.messages .modal').addClass('show');
+});
+$('svg.close').click( function() {
+  $('.messages .modal').removeClass('show');
+});
+$('.show-promo').click( function() {
+  $('.promo').addClass('show');
+});
+$('.promo svg.close').click( function() {
+  $('.promo').removeClass('show');
+});
+window.onload = function() {
+  setTimeout(function () {
+    $('aside.message').addClass('show');
+  },2000);
+};
+$('aside.message svg.close').click( function() {
+  $('aside.message').removeClass('show');
+});
+$('.show-push-down').click( function() {
+  $('aside.message').addClass('show');
+});
+
 
 // CHIP CHECK TOGGLES
 $('ul.chips li.option-1').click( function() {
