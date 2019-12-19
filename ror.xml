@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:ror="http://rorweb.com/0.1/" >
+<channel>
+  <title>ROR Sitemap for https://cdfournier.github.io/delta-design-system/index.html</title>
+  <link>https://cdfournier.github.io/delta-design-system/index.html</link>
+
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/index.html</link>
+     <title>The Delta Design System</title>
+     <description>The Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>0</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/about/about.html</link>
+     <title>About | Delta Design System</title>
+     <description>About | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/atoms/atoms.html</link>
+     <title>Atoms | Delta Design System</title>
+     <description>Atoms | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/molecules/molecules.html</link>
+     <title>Molecules | Delta Design System</title>
+     <description>Molecules | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/organisms/organisms.html</link>
+     <title>Organisms | Delta Design System</title>
+     <description>Organisms | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/style/style.html</link>
+     <title>Style | Delta Design System</title>
+     <description>Style | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/downloads/downloads.html</link>
+     <title>Downloads | Delta Design System</title>
+     <description>Downloads | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/atoms/badges/badges.html</link>
+     <title>Badges | Delta Design System</title>
+     <description>Badges | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/atoms/blockquotes/blockquotes.html</link>
+     <title>Blockquotes | Delta Design System</title>
+     <description>Blockquotes | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/atoms/buttons/buttons.html</link>
+     <title>Buttons | Delta Design System</title>
+     <description>Buttons | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/atoms/chips/chips.html</link>
+     <title>Chips | Delta Design System</title>
+     <description>Chips | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/atoms/feedback/feedback.html</link>
+     <title>Feedback | Delta Design System</title>
+     <description>Feedback | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/atoms/images/images.html</link>
+     <title>Images | Delta Design System</title>
+     <description>Images | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/molecules/accordions/accordions.html</link>
+     <title>Accordions | Delta Design System</title>
+     <description>Accordions | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/molecules/breadcrumbs/breadcrumbs.html</link>
+     <title>Breadcrumbs | Delta Design System</title>
+     <description>Breadcrumbs | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/molecules/cards/cards.html</link>
+     <title>Cards | Delta Design System</title>
+     <description>Cards | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/molecules/forms/forms.html</link>
+     <title>Forms | Delta Design System</title>
+     <description>Forms | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/molecules/media-grid-items/media-grid-items.html</link>
+     <title>Media Grid Items | Delta Design System</title>
+     <description>Media Grid Items | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/molecules/messages/messages.html</link>
+     <title>Messages | Delta Design System</title>
+     <description>Messages | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/molecules/pagination/pagination.html</link>
+     <title>Pagination | Delta Design System</title>
+     <description>Pagination | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/molecules/search/search.html</link>
+     <title>Search | Delta Design System</title>
+     <description>Search | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/organisms/banners/banners.html</link>
+     <title>Banners | Delta Design System</title>
+     <description>Banners | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/organisms/card-groups/card-groups.html</link>
+     <title>Card Groups | Delta Design System</title>
+     <description>Card Groups | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/organisms/footers/footers.html</link>
+     <title>Footers | Delta Design System</title>
+     <description>Footers | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/organisms/gallery-grid/gallery-grid.html</link>
+     <title>Gallery Grid | Delta Design System</title>
+     <description>Gallery Grid | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/organisms/headers/headers.html</link>
+     <title>Headers | Delta Design System</title>
+     <description>Headers | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/organisms/media-grid-blocks/media-grid-blocks.html</link>
+     <title>Media Grid Blocks | Delta Design System</title>
+     <description>Media Grid Blocks | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/organisms/navigation/navigation.html</link>
+     <title>Navigation | Delta Design System</title>
+     <description>Navigation | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/organisms/tabs/tabs.html</link>
+     <title>Tabs | Delta Design System</title>
+     <description>Tabs | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/style/colors/colors.html</link>
+     <title>Colors | Delta Design System</title>
+     <description>Colors | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/style/fonts/fonts.html</link>
+     <title>Fonts | Delta Design System</title>
+     <description>Fonts | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/style/layout/layout.html</link>
+     <title>Layout | Delta Design System</title>
+     <description>Layout | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://cdfournier.github.io/delta-design-system/style/typography/typography.html</link>
+     <title>Typography | Delta Design System</title>
+     <description>Typography | Delta Design System</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+</channel>
+</rss>
+  
