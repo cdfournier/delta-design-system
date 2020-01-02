@@ -71,6 +71,8 @@ h1.right, h2.right, h3.right, p.right, strong.right, em.right, small.right {text
 
 .visuallyhidden {display: none;}
 
+h1.visuallyhidden + p, h2.visuallyhidden + p, h3.visuallyhidden + p, h4.visuallyhidden + p {padding: 0;}
+
 @media (min-width: 48rem) {
   h1.title {font-size: 4.209rem;}
   h1.title + p {

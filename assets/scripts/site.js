@@ -1,5 +1,6 @@
 // MOBILE NAVIGATION TOGGLES
 $('button.menu-toggle svg.menu-toggle-open').click(function() {
+  $('header').addClass('open');
   $('nav').addClass('open');
   $('body').addClass('open');
   $('header .logo').addClass('open');
@@ -7,6 +8,7 @@ $('button.menu-toggle svg.menu-toggle-open').click(function() {
   $('nav ul').attr('aria-hidden',false);
 });
 $('button.menu-toggle svg.menu-toggle-close').click(function() {
+  $('header').removeClass('open');
   $('nav').removeClass('open');
   $('body').removeClass('open');
   $('header .logo').removeClass('open');

@@ -24,6 +24,8 @@ header {
   }
 }
 
+header.open {z-index: 1000;}
+
 header .logo.open {
   @include transform(translateX(-10rem));
 }

@@ -38,7 +38,7 @@ nav {
 }
 
 nav.open {
-  height: 100vh;
+  height: calc(100vh - 2rem);
   button.menu-toggle {
     svg.menu-toggle-open {width: 0;}
     svg.menu-toggle-close {width: 2rem;}

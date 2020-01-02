@@ -1,0 +1,50 @@
+header .logo {
+  top: auto; }
+
+footer .brand-content .logo {
+  text-align: center; }
+  footer .brand-content .logo p {
+    padding: 0;
+    font-size: 0.8rem; }
+  footer .brand-content .logo h2 + p {
+    padding: 0.25rem 0 0; }
+
+footer .brand-content .links .social {
+  width: 1.5rem;
+  height: 1.5rem; }
+  footer .brand-content .links .social svg {
+    width: 1.5rem;
+    height: 1.5rem; }
+
+footer .copyright a {
+  margin: 0 0 0 1rem; }
+
+@media (min-width: 48rem) {
+  footer .brand-content .logo {
+    align-items: flex-end;
+    text-align: right; }
+  footer .brand-content .links {
+    justify-content: flex-end; } }
+
+/* LODGE */
+dl.menu dt {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem; }
+  dl.menu dt span {
+    display: inline-flex;
+    position: absolute;
+    right: 0; }
+  dl.menu dt span:before {
+    display: block;
+    padding: 0 0.125rem 0 0;
+    font-size: 0.8rem;
+    content: "$"; }
+
+dl.menu dd {
+  width: 80%;
+  margin: 0 0 1rem;
+  padding: 0;
+  font-size: 0.8rem; }
+
+dl.menu dd:last-child {
+  margin: 0; }

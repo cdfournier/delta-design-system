@@ -4,7 +4,6 @@
   flex-direction: column;
   justify-content: center;
   position: relative;
-  z-index: 500;
   width: 100%;
   height: auto;
   margin: 0;
@@ -30,6 +29,8 @@
   }
 }
 
+.banner:first-of-type {z-index: 500;}
+
 .banner.tall {min-height: 90vh;}
 .banner.short {min-height: 45vh;}
 
@@ -42,12 +43,32 @@
   }
   a {color: $primary;}
   a:hover, a:focus {color: $white;}
+  a:hover span svg, a:focus span svg {fill: $white;}
+  a.button {color: $white;}
+  a.button:hover, a.button:focus {
+    border-color: $white;
+    color: $white;
+  }
 }
 
 .banner.split {
-  padding: 2rem;
+  z-index: 0;
+  padding: 2rem 2rem 0;
   figure {padding: 0;}
   .text {padding: 2rem 0 0;}
+}
+
+.banner.split.border {padding: 2rem;}
+
+.banner.split.border:after {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 4rem);
+  height: 1px;
+  margin: 2rem auto 0;
+  background-color: $lt-gray;
+  content: "";
 }
 
 @media (min-width: 48rem) {
@@ -64,17 +85,21 @@
     flex-direction: row;
     align-items: center;
     figure {padding: 0;}
-    .text {padding: 0 0 0 2rem;}
+    .text {
+      padding: 0;
+      margin: 0 0 0 2rem;
+    }
   }
   .banner.split.reverse {
     flex-direction: row-reverse;
-    .text {padding: 0 2rem 0 0;}
+    .text {margin: 0 2rem 0 0;}
   }
 }
 
 
 // PHOTO BACKGROUNDS
 .bg-photo {
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }

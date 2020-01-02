@@ -157,6 +157,9 @@ h1.right, h2.right, h3.right, p.right, strong.right, em.right, small.right {
 .visuallyhidden {
   display: none; }
 
+h1.visuallyhidden + p, h2.visuallyhidden + p, h3.visuallyhidden + p, h4.visuallyhidden + p {
+  padding: 0; }
+
 @media (min-width: 48rem) {
   h1.title {
     font-size: 4.209rem; }
@@ -1709,14 +1712,14 @@ nav.open .search {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin: 0;
+  margin: -1rem 0 -1rem 0;
   padding: 0; }
   .card-group .card {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin: 1rem 0;
+    margin: 1rem;
     padding: 0;
     border: 1px solid #eeeeee;
     border-radius: 0.25rem;
@@ -1739,8 +1742,6 @@ nav.open .search {
     .card-group .card .text {
       padding: 1rem;
       width: 100%; }
-  .card-group .card:last-child {
-    margin: 1rem 0 0; }
 
 @media (min-width: 48rem) {
   .card-group {
@@ -1749,15 +1750,12 @@ nav.open .search {
     flex-wrap: wrap;
     justify-content: flex-start;
     width: calc(100% + 2rem);
-    margin: 0 0 0 -1rem; }
+    margin: -1rem 0 -1rem -1rem; }
     .card-group .card {
       width: calc(50% - 2rem);
-      max-width: 38rem;
-      margin: 1rem; }
-    .card-group .card:last-child {
-      margin: 1rem; } }
+      max-width: 38rem; } }
 
-@media (min-width: 64rem) {
+@media (min-width: 58.75rem) {
   .card-group .card {
     width: calc(33.3% - 2rem); } }
 
@@ -2108,6 +2106,9 @@ header {
     header .logo a {
       line-height: 0.7; }
 
+header.open {
+  z-index: 1000; }
+
 header .logo.open {
   -webkit-transform: translateX(-10rem);
   -moz-transform: translateX(-10rem);
@@ -2174,44 +2175,46 @@ footer {
         text-align: center; }
       footer nav ul li:last-child {
         padding: 0 0 1rem; }
-  footer section.brand-content .logo {
+  footer .brand-content .logo {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     padding: 1rem 0; }
-    footer section.brand-content .logo svg {
+    footer .brand-content .logo svg {
       width: 6rem; }
-    footer section.brand-content .logo h2 {
+    footer .brand-content .logo h2 {
       display: block;
       padding: 1rem 0 0;
       font-size: 1.5rem; }
-  footer section.brand-content .links {
+  footer .brand-content .links {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center; }
-    footer section.brand-content .links .github, footer section.brand-content .links .slack {
+    footer .brand-content .links .github, footer .brand-content .links .slack, footer .brand-content .links .social {
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       width: 2rem;
       height: 2rem;
       margin: 0 0.25rem; }
-      footer section.brand-content .links .github a, footer section.brand-content .links .slack a {
+      footer .brand-content .links .github a, footer .brand-content .links .slack a, footer .brand-content .links .social a {
         line-height: 0.7; }
-      footer section.brand-content .links .github a svg, footer section.brand-content .links .slack a svg {
+      footer .brand-content .links .github a svg, footer .brand-content .links .slack a svg, footer .brand-content .links .social a svg {
         fill: #df3a32;
         -webkit-transition: all 0.25s ease 0s;
         -moz-transition: all 0.25s ease 0s;
         -ms-transition: all 0.25s ease 0s;
         -o-transition: all 0.25s ease 0s;
         transition: all 0.25s ease 0s; }
-      footer section.brand-content .links .github a:hover svg,
-      footer section.brand-content .links .github a:focus svg, footer section.brand-content .links .slack a:hover svg,
-      footer section.brand-content .links .slack a:focus svg {
+      footer .brand-content .links .github a:hover svg,
+      footer .brand-content .links .github a:focus svg, footer .brand-content .links .slack a:hover svg,
+      footer .brand-content .links .slack a:focus svg, footer .brand-content .links .social a:hover svg,
+      footer .brand-content .links .social a:focus svg {
         fill: #003442; }
-      footer section.brand-content .links .github svg, footer section.brand-content .links .slack svg {
+      footer .brand-content .links .github svg, footer .brand-content .links .slack svg, footer .brand-content .links .social svg {
         width: 2rem;
         height: 2rem; }
   footer .copyright p {
@@ -2229,9 +2232,9 @@ footer {
       width: 50%; }
       footer nav ul li {
         text-align: left; }
-    footer section.brand-content {
+    footer .brand-content {
       width: 50%; }
-      footer section.brand-content .logo {
+      footer .brand-content .logo {
         padding: 0 0 1rem; } }
 
 nav {
@@ -2287,7 +2290,7 @@ nav {
       padding: 1rem 0; }
 
 nav.open {
-  height: 100vh; }
+  height: calc(100vh - 2rem); }
   nav.open button.menu-toggle svg.menu-toggle-open {
     width: 0; }
   nav.open button.menu-toggle svg.menu-toggle-close {
@@ -2334,7 +2337,6 @@ nav.open {
   flex-direction: column;
   justify-content: center;
   position: relative;
-  z-index: 500;
   width: 100%;
   height: auto;
   margin: 0; }
@@ -2357,6 +2359,9 @@ nav.open {
     left: 0;
     background-color: #000000; }
 
+.banner:first-of-type {
+  z-index: 500; }
+
 .banner.tall {
   min-height: 90vh; }
 
@@ -2375,13 +2380,34 @@ nav.open {
     color: #df3a32; }
   .banner.dark a:hover, .banner.dark a:focus {
     color: #ffffff; }
+  .banner.dark a:hover span svg, .banner.dark a:focus span svg {
+    fill: #ffffff; }
+  .banner.dark a.button {
+    color: #ffffff; }
+  .banner.dark a.button:hover, .banner.dark a.button:focus {
+    border-color: #ffffff;
+    color: #ffffff; }
 
 .banner.split {
-  padding: 2rem; }
+  z-index: 0;
+  padding: 2rem 2rem 0; }
   .banner.split figure {
     padding: 0; }
   .banner.split .text {
     padding: 2rem 0 0; }
+
+.banner.split.border {
+  padding: 2rem; }
+
+.banner.split.border:after {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 4rem);
+  height: 1px;
+  margin: 2rem auto 0;
+  background-color: #eeeeee;
+  content: ""; }
 
 @media (min-width: 48rem) {
   .banner .text {
@@ -2398,13 +2424,15 @@ nav.open {
     .banner.split figure {
       padding: 0; }
     .banner.split .text {
-      padding: 0 0 0 2rem; }
+      padding: 0;
+      margin: 0 0 0 2rem; }
   .banner.split.reverse {
     flex-direction: row-reverse; }
     .banner.split.reverse .text {
-      padding: 0 2rem 0 0; } }
+      margin: 0 2rem 0 0; } }
 
 .bg-photo {
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover; }
 
