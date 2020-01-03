@@ -1,30 +1,134 @@
+a {
+  color: #c65069; }
+
+p.icon a span svg {
+  fill: #c65069; }
+
+button, .button, a.button {
+  border-color: #c65069;
+  background-color: #c65069; }
+
+footer .brand-content .links .social a svg {
+  fill: #c65069; }
+
+.bg-celestial {
+  background-color: #98b4cf; }
+
+.bg-elation {
+  background-color: #abd1c9; }
+
+.bg-cream {
+  background-color: #eeefea; }
+
+.bg-night {
+  background-color: #24383f; }
+
+.bg-pink {
+  background-color: #c65069; }
+
+.bg-sea {
+  background-color: #33586d; }
+
+.bg-sky {
+  background-color: #abd1c9; }
+
+::-moz-selection {
+  background: #c65069; }
+
+::selection {
+  background: #c65069; }
+
+header .logo svg .back-pines {
+  fill: #98b4cf; }
+
+header .logo svg .mid-pines {
+  fill: #24383f; }
+
+header .logo svg .front-pines {
+  fill: #ffffff; }
+
+header .logo svg .copy-mark {
+  fill: #ffffff; }
+
+footer .logo svg .back-pines {
+  fill: #98b4cf; }
+
+footer .logo svg .mid-pines {
+  fill: #ffffff; }
+
+footer .logo svg .front-pines {
+  fill: #24383f; }
+
+footer .logo svg .copy-mark {
+  fill: #24383f; }
+
+.text.about .logo svg .back-pines {
+  fill: #ffffff;
+  opacity: 0.5; }
+
+.text.about .logo svg .mid-pines {
+  fill: #ffffff;
+  opacity: 0.75; }
+
+.text.about .logo svg .front-pines {
+  fill: #24383f; }
+
+.text.about .logo svg .copy-mark {
+  fill: #24383f; }
+
 header .logo {
   top: auto; }
 
-footer .brand-content .logo {
-  text-align: center; }
-  footer .brand-content .logo p {
-    padding: 0;
-    font-size: 0.8rem; }
-  footer .brand-content .logo h2 + p {
-    padding: 0.25rem 0 0; }
+main:after {
+  background-color: transparent; }
 
-footer .brand-content .links .social {
-  width: 1.5rem;
-  height: 1.5rem; }
-  footer .brand-content .links .social svg {
+footer {
+  padding: 4rem;
+  background-color: #24383f; }
+  footer nav ul {
+    font-size: 0.8rem;
+    color: #c65069; }
+    footer nav ul li a {
+      color: #ffffff; }
+    footer nav ul li a:hover, footer nav ul li a:focus {
+      color: #c65069; }
+  footer .brand-content .logo {
+    text-align: center; }
+    footer .brand-content .logo h2, footer .brand-content .logo p a {
+      color: #ffffff; }
+    footer .brand-content .logo h2 + p {
+      padding: 0.25rem 0 0; }
+    footer .brand-content .logo p {
+      padding: 0;
+      font-size: 0.8rem; }
+    footer .brand-content .logo p a:hover, footer .brand-content .logo p a:focus {
+      color: #c65069; }
+  footer .brand-content .links .social {
     width: 1.5rem;
     height: 1.5rem; }
-
-footer .copyright a {
-  margin: 0 0 0 1rem; }
+    footer .brand-content .links .social svg {
+      width: 1.5rem;
+      height: 1.5rem; }
+  footer .brand-content .links .social a svg {
+    fill: #ffffff; }
+  footer .brand-content .links .social a:hover svg, footer .brand-content .links .social a:focus svg {
+    fill: #c65069; }
+  footer .copyright p {
+    color: #ffffff; }
+  footer .copyright a {
+    margin: 0 0 0 1rem;
+    color: #ffffff; }
+  footer .copyright a:hover, footer .copyright a:focus {
+    color: #c65069; }
 
 @media (min-width: 48rem) {
-  footer .brand-content .logo {
-    align-items: flex-end;
-    text-align: right; }
-  footer .brand-content .links {
-    justify-content: flex-end; } }
+  footer {
+    align-items: flex-start; }
+    footer .brand-content .logo {
+      align-items: flex-end;
+      text-align: right; }
+    footer .brand-content .links {
+      justify-content: flex-end; } }
 
 /* LODGE */
 dl.menu dt {
