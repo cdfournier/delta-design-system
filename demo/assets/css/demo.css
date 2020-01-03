@@ -8,6 +8,10 @@ button, .button, a.button {
   border-color: #c65069;
   background-color: #c65069; }
 
+button:hover, .button:hover, a.button:hover,
+button:focus, .button:focus, a.button:focus {
+  color: #c65069; }
+
 footer .brand-content .links .social a svg {
   fill: #c65069; }
 
@@ -62,25 +66,57 @@ footer .logo svg .front-pines {
 footer .logo svg .copy-mark {
   fill: #24383f; }
 
-.text.about .logo svg .back-pines {
-  fill: #ffffff;
-  opacity: 0.5; }
+.text .logo {
+  width: 25%;
+  margin: 0 auto 1rem; }
+  .text .logo svg {
+    mix-blend-mode: lighten; }
+    .text .logo svg .back-pines {
+      fill: #ffffff;
+      opacity: 0.5; }
+    .text .logo svg .mid-pines {
+      fill: #ffffff;
+      opacity: 0.75; }
+    .text .logo svg .front-pines {
+      fill: #24383f; }
+    .text .logo svg .copy-mark {
+      fill: #24383f; }
 
-.text.about .logo svg .mid-pines {
-  fill: #ffffff;
-  opacity: 0.75; }
+header {
+  background-color: #24383f; }
+  header .logo {
+    top: auto; }
+  header nav {
+    padding: 0 1rem; }
+    header nav button.menu-toggle svg {
+      fill: #ffffff; }
+    header nav ul li a {
+      color: #ffffff; }
+    header nav ul li, header nav ul li a:hover, header nav ul li a:focus {
+      color: #c65069; }
 
-.text.about .logo svg .front-pines {
-  fill: #24383f; }
-
-.text.about .logo svg .copy-mark {
-  fill: #24383f; }
-
-header .logo {
-  top: auto; }
+@media (min-width: 48rem) {
+  header nav ul {
+    font-size: 0.8rem; }
+    header nav ul li {
+      padding: 0 1rem 0 0; }
+    header nav ul li:last-child {
+      padding: 0; } }
 
 main:after {
   background-color: transparent; }
+
+.banner:first-of-type {
+  z-index: inherit; }
+
+@media (min-width: 48rem) {
+  .banner.amenities .text {
+    max-width: 100%; }
+    .banner.amenities .text h2 {
+      text-align: center; }
+    .banner.amenities .text ul {
+      column-count: 2;
+      column-gap: 4rem; } }
 
 footer {
   padding: 4rem;
@@ -93,11 +129,10 @@ footer {
     footer nav ul li a:hover, footer nav ul li a:focus {
       color: #c65069; }
   footer .brand-content .logo {
+    padding: 1rem 0 0.25rem;
     text-align: center; }
     footer .brand-content .logo h2, footer .brand-content .logo p a {
       color: #ffffff; }
-    footer .brand-content .logo h2 + p {
-      padding: 0.25rem 0 0; }
     footer .brand-content .logo p {
       padding: 0;
       font-size: 0.8rem; }
@@ -124,8 +159,11 @@ footer {
 @media (min-width: 48rem) {
   footer {
     align-items: flex-start; }
+    footer nav ul li {
+      padding: 0 0 0.8rem; }
     footer .brand-content .logo {
       align-items: flex-end;
+      padding: 0 0 0.25rem;
       text-align: right; }
     footer .brand-content .links {
       justify-content: flex-end; } }

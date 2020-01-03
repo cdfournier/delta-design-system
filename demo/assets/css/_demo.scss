@@ -23,6 +23,11 @@ button, .button, a.button {
   background-color: $pink;
 }
 
+button:hover, .button:hover, a.button:hover,
+button:focus, .button:focus, a.button:focus {
+  color: $pink;
+}
+
 footer .brand-content .links .social a svg {fill: $pink;}
 
 .bg-celestial {background-color: $celestial;}
@@ -54,29 +59,68 @@ footer .logo svg {
   .copy-mark {fill: $night;}
 }
 
-.text.about .logo svg {
-  .back-pines {
-    fill: $white;
-    opacity: 0.5;
+.text .logo {
+  width: 25%;
+  margin: 0 auto 1rem;
+  svg {
+    mix-blend-mode: lighten;
+    .back-pines {
+      fill: $white;
+      opacity: 0.5;
+    }
+    .mid-pines {
+      fill: $white;
+      opacity: 0.75;
+    }
+    .front-pines {fill: $night;}
+    .copy-mark {fill: $night;}
   }
-  .mid-pines {
-    fill: $white;
-    opacity: 0.75;
-  }
-  .front-pines {fill: $night;}
-  .copy-mark {fill: $night;}
 }
 
 
 // HEADER
 header {
+  background-color: $night;
   .logo {top: auto;}
+  nav {
+    padding: 0 1rem;
+    button.menu-toggle svg {fill: $white;}
+    ul li a {color: $white;}
+    ul li, ul li a:hover, ul li a:focus {color: $pink;}
+  }
+}
+
+@media (min-width: 48rem) {
+  header {
+    nav {
+      ul {
+        font-size: 0.8rem;
+        li {padding: 0 1rem 0 0;}
+        li:last-child {padding: 0;}
+      }
+    }
+  }
 }
 
 
 // MAIN
 main:after {background-color: transparent;}
 
+.banner:first-of-type {z-index: inherit;}
+
+
+@media (min-width: 48rem) {
+  .banner.amenities {
+    .text {
+      max-width: 100%;
+      h2 {text-align: center;}
+      ul {
+        column-count: 2;
+        column-gap: 4rem;
+      }
+    }
+  }
+}
 
 // FOOTER
 footer {
@@ -90,9 +134,9 @@ footer {
   }
   .brand-content {
     .logo {
+      padding: 1rem 0 0.25rem;
       text-align: center;
       h2, p a {color: $white;}
-      h2 + p {padding: 0.25rem 0 0;}
       p {
         padding: 0;
         font-size: 0.8rem;
@@ -125,9 +169,11 @@ footer {
 @media (min-width: 48rem) {
   footer {
     align-items: flex-start;
+    nav ul li {padding: 0 0 0.8rem;}
     .brand-content {
       .logo {
         align-items: flex-end;
+        padding: 0 0 0.25rem;
         text-align: right;
       }
       .links {justify-content: flex-end;}
