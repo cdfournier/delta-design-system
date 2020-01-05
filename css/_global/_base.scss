@@ -16,6 +16,13 @@ html {
   font-style: normal;
   line-height: 1.5;
   color: $black;
+  scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
 }
 
 body, .body {

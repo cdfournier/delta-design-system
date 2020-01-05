@@ -54,7 +54,12 @@ html {
   font-size: 16px;
   font-style: normal;
   line-height: 1.5;
-  color: #000000; }
+  color: #000000;
+  scroll-behavior: smooth; }
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto; } }
 
 body, .body {
   width: 100%;
@@ -2106,9 +2111,6 @@ header {
     header .logo a {
       line-height: 0.7; }
 
-header.open {
-  z-index: 1000; }
-
 header .logo.open {
   -webkit-transform: translateX(-10rem);
   -moz-transform: translateX(-10rem);
@@ -2339,7 +2341,17 @@ nav.open {
   position: relative;
   width: 100%;
   height: auto;
-  margin: 0; }
+  margin: 0;
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0); }
   .banner .text {
     display: flex;
     flex-direction: column;
@@ -2361,6 +2373,13 @@ nav.open {
 
 .banner:first-of-type {
   z-index: 500; }
+
+.banner.open:first-of-type {
+  -webkit-transform: translateX(100rem);
+  -moz-transform: translateX(100rem);
+  -ms-transform: translateX(100rem);
+  -o-transform: translateX(100rem);
+  transform: translateX(100rem); }
 
 .banner.tall {
   min-height: 90vh; }

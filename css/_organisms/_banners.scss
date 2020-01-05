@@ -7,6 +7,8 @@
   width: 100%;
   height: auto;
   margin: 0;
+  @include transition(all, 0.25s, ease);
+  @include transform(translateX(0));
   .text {
     display: flex;
     flex-direction: column;
@@ -30,6 +32,10 @@
 }
 
 .banner:first-of-type {z-index: 500;}
+
+.banner.open:first-of-type {
+  @include transform(translateX(100rem));
+}
 
 .banner.tall {min-height: 90vh;}
 .banner.short {min-height: 45vh;}
