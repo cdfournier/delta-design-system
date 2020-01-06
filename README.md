@@ -47,4 +47,7 @@ An open-source design system that can be used to build responsive sites, apps, a
 - [Animate On Scroll](https://github.com/michalsnik/aos/tree/v2)
 - [Headroom](https://wicky.nillia.ms/headroom.js/)
 
-Version 2.3
+## Demo
+- [The Pine Tree Motel](https://cdfournier.github.io/delta-design-system/demo/index.html)
+
+Version 2.4.2
