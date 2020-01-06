@@ -34,18 +34,14 @@ button:hover, button:focus, .button:hover, .button:focus {
 
 header .logo {
   display: block;
-  position: inherit;
-  top: auto;
-  width: auto;
-  height: 50%; }
-  header .logo svg .word-mark {
-    fill: #34421e; }
-  header .logo a {
-    display: block;
-    height: 100%;
-    line-height: inherit; }
+  top: 2rem;
+  left: 2rem;
+  width: 6rem;
+  margin: 0; }
   header .logo svg {
     height: 100%; }
+    header .logo svg .word-mark {
+      fill: #34421e; }
 
 header .logo.open {
   display: none; }
@@ -60,6 +56,10 @@ header nav ul li, header nav ul li a:hover, header nav ul li a:focus {
   color: #c19434; }
 
 @media (min-width: 48rem) {
+  header .logo {
+    position: absolute;
+    top: 1rem;
+    width: 8rem; }
   header nav {
     justify-content: flex-end; }
     header nav ul li:last-child {

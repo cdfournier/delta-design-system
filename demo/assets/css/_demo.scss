@@ -30,19 +30,14 @@ button:hover, button:focus, .button:hover, .button:focus {color: $pine;}
 header {
   .logo {
     display: block;
-    position: inherit;
-    top: auto;
-    width: auto;
-    height: 50%;
+    top: 2rem;
+    left: 2rem;
+    width: 6rem;
+    margin: 0;
     svg {
+      height: 100%;
       .word-mark {fill: $pine;}
     }
-    a {
-      display: block;
-      height: 100%;
-      line-height: inherit;
-    }
-    svg {height: 100%;}
   }
   .logo.open {display: none;}
   nav {
@@ -54,6 +49,11 @@ header {
 
 @media (min-width: 48rem) {
   header {
+    .logo {
+      position: absolute;
+      top: 1rem;
+      width: 8rem;
+    }
     nav {
       justify-content: flex-end;
       ul li:last-child {padding: 0;}
