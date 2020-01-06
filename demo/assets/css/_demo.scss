@@ -34,6 +34,9 @@ p a:hover, p a:focus {color: $gold;}
 p.icon a span svg {fill: $pine;}
 p.icon a:hover span svg, p.icon a:focus span svg {fill: $gold;}
 
+.skip a {color: $pine;}
+.skip a:focus {color: $gold;}
+
 
 // BUTTONS
 button, .button {
