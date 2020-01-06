@@ -1,3 +1,21 @@
+// MIXINS
+@mixin transition($property: all, $duration: 0.25s, $timing: ease-in-out, $delay: 0s) {
+  -webkit-transition: $property $duration $timing $delay;
+  -moz-transition: $property $duration $timing $delay;
+  -ms-transition: $property $duration $timing $delay;
+  -o-transition: $property $duration $timing $delay;
+  transition: $property $duration $timing $delay;
+};
+
+@mixin transform($transform: all) {
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  -ms-transform: $transform;
+  -o-transform: $transform;
+  transform: $transform;
+};
+
+
 // DEMO COLORS
 $pine: #34421e;
 $gold: #c19434;
@@ -122,6 +140,19 @@ footer {
       }
     }
   }
+}
+
+
+// CARD IMAGE TRANSFORMATIONS
+.card-group .card a figure {
+  img {
+    @include transition(all, 0.25s, ease);
+    @include transform(scale(1));
+  }
+}
+
+.card-group .card a:hover figure, .card-group .card a:focus figure {
+  img {@include transform(scale(1.1));}
 }
 
 

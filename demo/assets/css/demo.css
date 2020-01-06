@@ -115,6 +115,25 @@ footer {
     footer .brand-content .links .social {
       margin: 0 0 0 1rem; } }
 
+.card-group .card a figure img {
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1); }
+
+.card-group .card a:hover figure img, .card-group .card a:focus figure img {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1); }
+
 /* MENU */
 dl.menu dt {
   font-family: "Montserrat", sans-serif;

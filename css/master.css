@@ -515,6 +515,7 @@ figure {
   display: grid;
   width: 100%;
   max-width: 39rem;
+  overflow: hidden;
   margin: 0;
   padding: 1rem 0; }
   figure pre {
