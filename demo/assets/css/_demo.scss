@@ -86,8 +86,11 @@ header {
 // FOOTER
 footer {
   padding: 4rem;
-  background-image: url(../images/topography.png);
+  background-color: $pine;
+/*
+  background-image: url(../images/topography.svg);
   background-repeat: repeat;
+*/
   nav {
     ul {
       li a {color: white;}

@@ -73,8 +73,11 @@ header nav ul li, header nav ul li a:hover, header nav ul li a:focus {
 
 footer {
   padding: 4rem;
-  background-image: url(../images/topography.png);
-  background-repeat: repeat; }
+  background-color: #34421e;
+  /*
+  background-image: url(../images/topography.svg);
+  background-repeat: repeat;
+*/ }
   footer nav ul li a {
     color: white; }
   footer nav ul li, footer nav ul li a:hover, footer nav ul li a:focus {
