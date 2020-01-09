@@ -1,3 +1,21 @@
+// MIXINS
+@mixin transition($property: all, $duration: 0.25s, $timing: ease-in-out, $delay: 0s) {
+  -webkit-transition: $property $duration $timing $delay;
+  -moz-transition: $property $duration $timing $delay;
+  -ms-transition: $property $duration $timing $delay;
+  -o-transition: $property $duration $timing $delay;
+  transition: $property $duration $timing $delay;
+};
+
+@mixin transform($transform: all) {
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  -ms-transform: $transform;
+  -o-transform: $transform;
+  transform: $transform;
+};
+
+
 // DEMO COLORS
 $pine: #34421e;
 $gold: #c19434;
@@ -15,6 +33,9 @@ p a:hover, p a:focus {color: $gold;}
 
 p.icon a span svg {fill: $pine;}
 p.icon a:hover span svg, p.icon a:focus span svg {fill: $gold;}
+
+.skip a {color: $pine;}
+.skip a:focus {color: $gold;}
 
 
 // BUTTONS
@@ -65,8 +86,11 @@ header {
 // FOOTER
 footer {
   padding: 4rem;
-  background-image: url(../images/topography.png);
+  background-color: $pine;
+/*
+  background-image: url(../images/topography.svg);
   background-repeat: repeat;
+*/
   nav {
     ul {
       li a {color: white;}

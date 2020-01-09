@@ -35,7 +35,7 @@
       }
 
       @media (min-width: 48rem) {
-        .banner.information .text {padding: 4rem;}
+        .banner.information {padding: 4rem;}
       }
     </style>
     <!-- JSON-LD markup -->
@@ -63,6 +63,9 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5W57LD3"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+    <div class="skip">
+      <a href="#content">Skip to Content</a>
+    </div>
     <header>
       <nav aria-labelledby="header-navigation">
         <button class="menu-toggle" aria-expanded="false" aria-controls="header-navigation">
@@ -90,7 +93,7 @@
           <p>Bright and welcoming, each room is a balance of private space and open design, featuring natural materials interpreted with sophisticated style. The Pine Tree Motel is a comfortable space that allows you to focus, relax, and be yourself.</p>
         </div>
       </section>
-      <section class="banner split border">
+      <section id="content" class="banner split border">
         <figure data-aos="fade-right">
           <img src="../assets/images/tgc-room-1x.jpg" srcset="../assets/images/tgc-room-1x 1x, ../assets/images/tgc-room-2x.jpg 2x" alt="A simple and relaxing queen-sized bed">
         </figure>
@@ -127,17 +130,26 @@
           </ul>
         </div>
       </section>
-      <section class="banner bg-gray information" style="align-items: center;" data-aos="fade">
+      <section class="banner bg-gray information" style="align-items: center;" data-aos="fade-up">
         <div class="text">
-          <h2 data-aos="fade-up">Important Information</h2>
-          <div data-aos="fade-up">
+          <h2 data-aos="fade-up" class="aos-init aos-animate">Important Information</h2>
+          <div data-aos="fade-up" class="aos-init aos-animate">
             <h3 style="padding: 1rem 0 0;">Check-In/Check-Out</h3>
             <p>Check-in is at 3:00 pm, check-out is at 11:00 am. There is a 24 hour cancellation policy unless otherwise specified.</p>
           </div>
+          <div style="padding: 2rem 0 0;" data-aos="fade-up" class="aos-init aos-animate">
           <div style="padding: 2rem 0 0;" data-aos="fade-up">
             <h3>Parking</h3>
             <p>On-site parking is free for one vehicle per room. Please contact us for additional parking information.</p>
             <p>We are also pleased to offer two complimentary 80A single-phase Tesla charging stations on the hotel property for use by hotel guests.</p>
+          </div>
+          <div style="padding: 2rem 0 0;" data-aos="fade-up" class="aos-init aos-animate">
+            <h3>Pets</h3>
+            <p>We are happy to offer a limited number of pet-friendly rooms. Please be advised there is a deposit of $100 ($50 non-refundable) per day per pet. Service animals are always allowed free of charge. Please contact us directly to reserve a pet friendly room.</p>
+          </div>
+          <div style="padding: 2rem 0 0;" data-aos="fade-up" class="aos-init aos-animate">
+            <h3>Accessibility</h3>
+            <p>The entire hotel is American Disabilities Act Compliant. ADA rooms are available upon request.</p>
           </div>
           <div style="padding: 2rem 0 0;" data-aos="fade-up">
             <h3>Pets</h3>
@@ -156,9 +168,9 @@
       <section class="row wide">
         <div class="card-group">
           <div class="card" data-aos="fade">
-            <figure>
+            <a href="../eat/index.html"><figure>
               <img src="../assets/images/tour-pizza-1x.jpg" srcset="../assets/images/tour-pizza-1x 1x, ../assets/images/tour-pizza-2x.jpg 2x" alt="Delicious pizza with pepperoni and jalapenos">
-            </figure>
+            </figure></a>
             <div class="text">
               <h2>Eat &amp; Drink</h2>
               <p>Breakfast, lunch, dinner, and everything in between, as well as freshly-brewed beer and coffee available all day long.</p>
@@ -166,23 +178,23 @@
             </div>
           </div>
           <div class="card" data-aos="fade">
-            <figure>
-              <img src="../assets/images/tgc-movies-1x.jpg" srcset="../assets/images/tgc-movies-1x.jpg 1x, ../assets/images/tgc-movies-2x.jpg 2x" alt="Watching movies at night in the yard of The Pine Tree Motel">
-            </figure>
-            <div class="text">
-              <h2>Activities</h2>
-              <p>We offer daily activities including hiking, yoga, kayaking, movies, and more.</p>
-              <p class="icon"><a href="../activities/index.html">Learn more<span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"/></svg></span></a></p>
-            </div>
-          </div>
-          <div class="card" data-aos="fade">
-            <figure>
+            <a href="../gather/index.html"><figure>
               <img src="../assets/images/events-01-1x.jpg" srcset="../assets/images/events-01-1x.jpg 1x, ../assets/images/gather-01-2x.jpg 2x" alt="Lights and linen hanging from the trees over white linen tablecloths outdoors">
-            </figure>
+            </figure></a>
             <div class="text">
               <h2>Gather</h2>
               <p>Let us host your celebration, meeting, retreat, or special occasion.</p>
               <p class="icon"><a href="../gather/index.html">Learn more<span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"/></svg></span></a></p>
+            </div>
+          </div>
+          <div class="card" data-aos="fade">
+            <a href="../activities/index.html"><figure>
+              <img src="../assets/images/tgc-movies-1x.jpg" srcset="../assets/images/tgc-movies-1x.jpg 1x, ../assets/images/tgc-movies-2x.jpg 2x" alt="Watching movies at night in the yard of The Pine Tree Motel">
+            </figure></a>
+            <div class="text">
+              <h2>Activities</h2>
+              <p>We offer daily activities including hiking, yoga, kayaking, movies, and more.</p>
+              <p class="icon"><a href="../activities/index.html">Learn more<span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"/></svg></span></a></p>
             </div>
           </div>
         </div>
