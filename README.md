@@ -50,4 +50,4 @@ An open-source design system that can be used to build responsive sites, apps, a
 ## Demo
 - [The Pine Tree Motel](https://cdfournier.github.io/delta-design-system/demo/index.html)
 
-Version 2.4.4
+Version 2.4.3

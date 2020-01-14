@@ -1843,7 +1843,7 @@ h1 + .card-group, h2 + .card-group {
     .media-grid-block .media-grid-item.reverse .text {
       padding: 0 2rem 0 0; } }
 
-@media (min-width: 90rem) {
+@media (min-width: 72rem) {
   .media-grid-block {
     width: 75%;
     margin: 0; }
