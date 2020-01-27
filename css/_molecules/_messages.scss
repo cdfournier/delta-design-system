@@ -102,6 +102,7 @@
       @include transition(all, 0.25s, ease-in-out);
     }
     svg:hover, svg:focus {fill: $secondary;}
+    .content {width: 100%;}
   }
   .error.show, .success.show, .confirm.show, .modal.show {
     opacity: 1;
@@ -219,10 +220,6 @@ aside.message.show {
     .success p {
       padding: 0 1rem 0 0;
       font-size: 1.25rem;
-    }
-    .modal {
-      padding: 2rem 2rem 6rem;
-      .content {width: 80%;}
     }
   }
 }

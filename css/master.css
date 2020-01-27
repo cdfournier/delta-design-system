@@ -1968,6 +1968,8 @@ h1 + .card-group, h2 + .card-group {
       transition: all 0.25s ease-in-out 0s; }
     .messages .modal svg:hover, .messages .modal svg:focus {
       fill: #003442; }
+    .messages .modal .content {
+      width: 100%; }
   .messages .error.show, .messages .success.show, .messages .confirm.show, .messages .modal.show {
     opacity: 1;
     -webkit-transform: translateY(0);
@@ -2100,11 +2102,7 @@ aside.message.show {
     height: 2.1875rem; }
   .messages .success p {
     padding: 0 1rem 0 0;
-    font-size: 1.25rem; }
-  .messages .modal {
-    padding: 2rem 2rem 6rem; }
-    .messages .modal .content {
-      width: 80%; } }
+    font-size: 1.25rem; } }
 
 header {
   display: flex;
