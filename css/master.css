@@ -820,7 +820,26 @@ ul.chips.dismiss.bg-secondary {
   ul.chips.dismiss.bg-secondary li button:hover, ul.chips.dismiss.bg-secondary li button:focus, ul.chips.dismiss.bg-secondary li.avatar button:hover, ul.chips.dismiss.bg-secondary li.avatar button:focus {
     background-color: transparent; }
 
-span.badge {
+h1 .badge,
+h2 .badge,
+h3 .badge,
+h4 .badge {
+  display: block;
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem; }
+  h1 .badge span,
+  h2 .badge span,
+  h3 .badge span,
+  h4 .badge span {
+    display: inline-flex;
+    align-items: center;
+    height: 1.5rem;
+    padding: 0 0.75rem;
+    border-radius: 1rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700; }
+
+li span.badge {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -835,15 +854,31 @@ span.badge {
   font-size: 0.8rem; }
 
 .accordion label span.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
   right: 1.5rem;
-  height: 100%; }
+  height: 100%;
+  padding: 0 0.75rem;
+  border-radius: 1rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem; }
 
 span.badge.bg-black,
 span.badge.bg-primary,
 span.badge.bg-secondary,
 span.badge.bg-lt-blue,
 span.badge.bg-error,
-span.badge.bg-valid {
+span.badge.bg-valid,
+.badge span.bg-black,
+.badge span.bg-primary,
+.badge span.bg-secondary,
+.badge span.bg-lt-blue,
+.badge span.bg-error,
+.badge span.bg-valid {
   color: #ffffff; }
 
 nav.breadcrumbs {
@@ -2431,7 +2466,8 @@ nav.open {
 
 .banner.split {
   z-index: 0;
-  padding: 2rem 2rem 0; }
+  margin: 2rem 0;
+  padding: 2rem; }
   .banner.split figure {
     padding: 0; }
   .banner.split .text {
