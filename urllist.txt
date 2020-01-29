@@ -5,15 +5,16 @@ https://cdfournier.github.io/delta-design-system/molecules/molecules.html
 https://cdfournier.github.io/delta-design-system/organisms/organisms.html
 https://cdfournier.github.io/delta-design-system/style/style.html
 https://cdfournier.github.io/delta-design-system/downloads/downloads.html
+https://cdfournier.github.io/delta-design-system/demo/index.html
 https://cdfournier.github.io/delta-design-system/atoms/badges/badges.html
 https://cdfournier.github.io/delta-design-system/atoms/blockquotes/blockquotes.html
 https://cdfournier.github.io/delta-design-system/atoms/buttons/buttons.html
 https://cdfournier.github.io/delta-design-system/atoms/chips/chips.html
-https://cdfournier.github.io/delta-design-system/atoms/feedback/feedback.html
 https://cdfournier.github.io/delta-design-system/atoms/images/images.html
 https://cdfournier.github.io/delta-design-system/molecules/accordions/accordions.html
 https://cdfournier.github.io/delta-design-system/molecules/breadcrumbs/breadcrumbs.html
 https://cdfournier.github.io/delta-design-system/molecules/cards/cards.html
+https://cdfournier.github.io/delta-design-system/molecules/feedback/feedback.html
 https://cdfournier.github.io/delta-design-system/molecules/forms/forms.html
 https://cdfournier.github.io/delta-design-system/molecules/media-grid-items/media-grid-items.html
 https://cdfournier.github.io/delta-design-system/molecules/messages/messages.html
@@ -31,3 +32,8 @@ https://cdfournier.github.io/delta-design-system/style/colors/colors.html
 https://cdfournier.github.io/delta-design-system/style/fonts/fonts.html
 https://cdfournier.github.io/delta-design-system/style/layout/layout.html
 https://cdfournier.github.io/delta-design-system/style/typography/typography.html
+https://cdfournier.github.io/delta-design-system/demo/stay/index.html
+https://cdfournier.github.io/delta-design-system/demo/eat/index.html
+https://cdfournier.github.io/delta-design-system/demo/gather/index.html
+https://cdfournier.github.io/delta-design-system/demo/activities/index.html
+https://cdfournier.github.io/delta-design-system/demo/about/index.html
