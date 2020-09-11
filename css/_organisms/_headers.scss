@@ -24,18 +24,6 @@ header {
   }
 }
 
-header .logo.open {
-  @include transform(translateX(-10rem));
-}
-
-.header--fixed {
-  position: fixed;
-  z-index: 10;
-  right: 0;
-  left: 0;
-  top: 0
-}
-
 .headroom {
   @include transition(all, 0.25s, ease);
   will-change: transform
@@ -44,6 +32,25 @@ header .logo.open {
 .headroom--pinned {@include transform(translateY(0));}
 
 .headroom--unpinned {@include transform(translateY(-100%));}
+
+
+// OPEN HEADER
+header.open {
+  nav {
+    height: calc(100vh - 2rem);
+    button.menu-toggle {
+      svg.menu-toggle-open {width: 0;}
+      svg.menu-toggle-close {width: 2rem;}
+    }
+    ul {
+      height: auto;
+      padding: 1rem 0 0;
+      @include transform(translateX(0));
+    }
+  }
+  .logo {@include transform(translateX(-10rem));}
+}
+
 
 @media (min-width: 48rem) {
   header {

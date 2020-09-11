@@ -35,6 +35,10 @@ An open-source design system that can be used to build responsive sites, apps, a
 - [Layout](https://cdfournier.github.io/delta-design-system/style/layout/layout.html)
 - [Typography](https://cdfournier.github.io/delta-design-system/style/typography/typography.html)
 
+## Helpers
+- [Animate on scroll]
+- [Parallax]
+
 ## Downloads
 - [Downloads](https://cdfournier.github.io/delta-design-system/downloads/downloads.html)
 
@@ -50,4 +54,4 @@ An open-source design system that can be used to build responsive sites, apps, a
 ## Demo
 - [The Pine Tree Motel](https://cdfournier.github.io/delta-design-system/demo/index.html)
 
-Version 2.5.1
+Version 2.5.2
