@@ -16,7 +16,7 @@ An open-source design system that can be used to build responsive sites, apps, a
 - [Forms &amp; Inputs](https://cdfournier.github.io/delta-design-system/molecules/forms/forms.html)
 - [Media Grid Items](https://cdfournier.github.io/delta-design-system/molecules/media-grid-items/media-grid-items.html)
 - [Messages](https://cdfournier.github.io/delta-design-system/molecules/messages/messages.html)
-- [Pagination](https://cdfournier.github.io/delta-design-system/molecules/pagination/pagination.html)
+~ [Pagination](https://cdfournier.github.io/delta-design-system/molecules/pagination/pagination.html) ~
 - [Search](https://cdfournier.github.io/delta-design-system/molecules/search/search.html)
 
 ## Organisms
@@ -36,6 +36,7 @@ An open-source design system that can be used to build responsive sites, apps, a
 - [Typography](https://cdfournier.github.io/delta-design-system/style/typography/typography.html)
 
 ## Helpers
+- [Lazy loading]
 - [Animate on scroll]
 - [Parallax]
 
@@ -55,3 +56,8 @@ An open-source design system that can be used to build responsive sites, apps, a
 - [The Pine Tree Motel](https://cdfournier.github.io/delta-design-system/demo/index.html)
 
 Version 2.5.2
+
+### Version History
+Version 2.5.2
+1. Deprecated Pagination molecule
+2. Updated header nav open script

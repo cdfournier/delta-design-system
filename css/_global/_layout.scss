@@ -10,6 +10,7 @@ main:after {
 
 .row {
 	display: flex;
+	align-items: center;
 	flex-direction: column;
 	width: 100%;
 	margin: 0;
@@ -43,6 +44,7 @@ main > .row:first-of-type {padding: 6rem 2rem 0;}
 @media (min-width: 48rem) {
   .row {
     flex-direction: row;
+    align-items: inherit;
     flex-wrap: wrap;
   }
   .row.wide {flex-direction: column;}
