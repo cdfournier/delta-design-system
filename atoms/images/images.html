@@ -92,7 +92,7 @@
     <main>
       <section class="row wide">
         <h1 class="title">Images</h1>
-        <p>Images are an essential part of any design system. There is a plethora of information available elsewhere with regards to image best practices. Here we will focus on the approach we've applied for the Delta Design System.</p>
+        <p>Images are an essential part of any design system. There is a plethora of information available elsewhere with regards to image best practices. Here we will focus on the approach we&rsquo;ve applied for the Delta Design System.</p>
         <h2>Aspect Ratio</h2>
         <p>In keeping with other features of this design system, we believe that images should be sized and cropped according to the <a href="https://en.wikipedia.org/wiki/Golden_ratio" target="_blank">Golden Ratio</a>.</p>
         <figure>
@@ -103,7 +103,7 @@
       <section class="row golden left">
         <div class="column">
           <h2>Responsive Images</h2>
-          <p>Okay&hellip; here's where it gets a little tricky. There are several different ways to render responsive images, and rendering responsive images is the right thing to do. With the Delta Design System, we're currently only using a solution for retina and non-retina displays.</p>
+          <p>Okay&hellip; here&rsquo;s where it gets a little tricky. There are several different ways to render responsive images, and rendering responsive images is the right thing to do. With the Delta Design System, we&rsquo;re currently only using a solution for retina and non-retina displays.</p>
           <p>Adding a <code>srcset</code> attribute to our <code>&lt;img&gt;</code> element enables us to present a high-resolution image only to retina devices and fall back to the low-resolution version for standard screens. The <code>srcset</code> attribute points to a list of alternative image files. The <code>1x</code> tells the browser to display the lower-resolution image on standard-resolution screens. The 2x means that the higher-resolution image is used for retina screens. Older browsers that don’t understand <code>srcset</code> fall back to the src attribute.</p>
           <figure>
             <figcaption>html</figcaption>
@@ -121,8 +121,8 @@
         <h2>Important Guidelines</h2>
         <ul>
           <li>Every <code>&lt;img&gt;</code> you add to your site needs to have an <code>alt</code> attribute. If the image is informational, set the <code>alt</code> equal to a descriptive alternative for that image.</li>
-          <li>If the image is decorative or redundant to adjacent text, set <code>alt=&quot;&quot;</code>, which conveys to assistive technology users that the image isn't necessary for understanding the page.</li>
-          <li>Avoid using generic strings like photo, image, or icon as <code>alt</code> values, as they don't communicate valuable content to the user. Be as descriptive as possible.</li>
+          <li>If the image is decorative or redundant to adjacent text, set <code>alt=&quot;&quot;</code>, which conveys to assistive technology users that the image isn&rsquo;t necessary for understanding the page.</li>
+          <li>Avoid using generic strings like photo, image, or icon as <code>alt</code> values, as they don&rsquo;t communicate valuable content to the user. Be as descriptive as possible.</li>
         </ul>
         <p>We will add more options for images in a later phase of development, including options for <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#Art_direction" target="_blank">art direction</a>.</p>
       </section>
@@ -153,7 +153,7 @@
         </div>
       </section>
       <div class="copyright">
-        <p>&copy; 2020 Delta Design System. Conceived and developed by <a href="https://chris.blackcoffeeshoppe.com" target="_blank">Chris Fournier</a>.</p>
+        <p>&copy; 2021 Delta Design System. Conceived and developed by <a href="https://chris.blackcoffeeshoppe.com" target="_blank">Chris Fournier</a>.</p>
       </div>
     </footer>
     <!-- scripts -->
@@ -166,7 +166,7 @@
       AOS.init({duration: 600});
     </script>
     <script>
-      var myElement = document.querySelector('header');
+      var myElement = document.querySelector("header");
       var headroom  = new Headroom(myElement);
       headroom.init(); 
     </script>
