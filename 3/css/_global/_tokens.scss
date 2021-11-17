@@ -1,0 +1,53 @@
+:root {
+  --primary: #df3a32;
+  --secondary: #003442;
+  --dk-blue: #003442;
+  --lt-blue: #4f7272;
+  --crimson: #df3a32;
+  --dk-gray: #919191;
+  --md-gray: #cccccc;
+  --lt-gray: #eeeeee;
+  --invalid: #c00c00;
+  --valid: #008000;
+  --h1-title: 4.209rem;
+  --h2-title: 3.157rem;
+  --h1: 3.157rem;
+  --h2: 2.369rem;
+  --h3: 1.777rem;
+  --h4: 1.333rem;
+  --p: 1rem;
+  --small: 0.8rem;
+  --xsmall: 0.64rem;
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 0.75rem;
+  --spacing-lg: 1rem;
+  --spacing-xl: 2rem;
+}
+
+
+// VARIABLES
+$primary: var(--primary);
+$secondary: var(--secondary);
+$dk-blue: var(--dk-blue);
+$lt-blue: var(--lt-blue);
+$crimson: var(--crimson);
+$dk-gray: var(--dk-gray);
+$md-gray: var(--md-gray);
+$lt-gray: var(--lt-gray);
+$invalid: var(--invalid);
+$valid: var(--valid);
+$h1-title: var(--h1-title);
+$h2-title: var(--h2-title);
+$h1: var(--h1);
+$h2: var(--h2);
+$h3: var(--h3);
+$h4: var(--h4);
+$p: var(--p);
+$small: var(--small);
+$xsmall: var(--xsmall);
+$spacing-xs: var(--spacing-xs);
+$spacing-sm: var(--spacing-sm);
+$spacing-md: var(--spacing-md);
+$spacing-lg: var(--spacing-lg);
+$spacing-xl: var(--spacing-xl);
