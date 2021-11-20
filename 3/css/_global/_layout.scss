@@ -19,13 +19,28 @@ main:after {
 	flex-wrap: wrap;
 	width: 100%;
 	margin: 0;
-  padding: $spacing-xl $spacing-xl 0;
-  .row {padding: $spacing-xl 0 0;}
+  padding: $spacing-xl $spacing-lg 0;
+  &:first-of-type {
+    padding: 0 $spacing-lg;
+  }
+  .row {
+    width: calc(100% + #{$spacing-xl});
+    margin: 0 calc(#{$spacing-lg} * -1);
+    padding: 0;
+  }
   .column {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: $spacing-xl 0 0;
+    padding: $spacing-lg $spacing-lg 0;
+    &:first-child {
+      padding: 0 $spacing-lg;
+    }
+    .row {
+      .column:first-child {
+        padding: $spacing-lg $spacing-lg 0;
+      }
+    }
   }
 }
 
@@ -43,6 +58,12 @@ main:after {
     .column.span-3 {width: calc((100% / 12) * 3);}
     .column.span-2 {width: calc((100% / 12) * 2);}
     .column.span-1 {width: calc((100% / 12) * 1);}
+    .row {
+/*
+      width: calc(100% + #{$spacing-xl});
+      margin: 0 calc(#{$spacing-lg} * -1);
+*/
+    }
   }
 }
 

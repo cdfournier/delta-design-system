@@ -21,3 +21,7 @@ window.addEventListener('DOMContentLoaded', function(swapHeaderNav) {
     $('header nav ul').attr('aria-hidden',false);
   }
 });
+
+// APPLY HEADER HEIGHT TO MAIN
+var headerHeight = document.querySelector('header').offsetHeight;
+$("main").css("padding-top", headerHeight);

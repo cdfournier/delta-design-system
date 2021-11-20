@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <base href="../../">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Delta Design System</title>
+    <meta name="description" content="">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+    <link rel="shortcut icon" href="assets/icons/favicon.ico">
+    <!-- css -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Ovo&display=swap" rel="stylesheet">
+    <style>
+      /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
+      body {transition: opacity 1.5s ease-in-out !important;}
+      body.hidden {opacity: 0;}
+      body.visible {opacity: 1;}
+    </style>
+    <link rel="stylesheet" href="css/master.css">
+  </head>
+  <body class="hidden">
+    <section class="skip">
+      <h1 class="visuallyhidden">Skip to the main content on this page</h1>
+      <p class="center"><a href="index.html#content">Skip to the main content on this page</a></p>
+    </section>
+    <header>
+      <nav aria-labelledby="header-navigation">
+        <button class="menu-toggle" aria-expanded="false" aria-controls="header-navigation">
+          <svg class="menu-toggle-open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" fill="none"><path d="M3 5h18M3 12h18M3 19h18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="menu-toggle-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+        <ul id="header-navigation">
+          <li><a href="about/about.html">About</a></li>
+          <li><a href="atoms/atoms.html">Atoms</a></li>
+          <li><a href="molecules/molecules.html">Molecules</a></li>
+          <li><a href="organisms/organisms.html">Organisms</a></li>
+          <li><a href="style/style.html">Style</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <article>
+        <section class="row">
+          <div class="column">
+            <h1 class="title">Buttons</h1>
+            <p>The &lt;button&gt; element represents a clickable button, which can be used in forms or anywhere in a document that needs simple, standard button functionality.</p>
+            <p><cite><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button" target="_blank">&lt;button&gt;</a> by <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button$history" target="_blank">Mozilla Contributors</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/2.5/" target="_blank">CC-BY-SA 2.5</a>.</cite></p>
+          </div>
+        </section>
+        <section class="row">
+          <div class="column">
+            <h2>Usage<span class="anchor"><a href="atoms/buttons/buttons.html#usage"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4-4a3.5 3.5 0 0 0-5-5l-.5.5"/><path d="M14 10a3.5 3.5 0 0 0-5 0l-4 4a3.5 3.5 0 0 0 5 5l.5-.5"/></svg></span></a></span></h2>
+            <p>There are three different types of buttons to use:</p>
+            <div class="row cards">
+              <div class="card">
+                <figure>
+                  <button type="button" style="margin-top: 0;">Button</button>
+                </figure>
+                <div class="text">
+                  <h3>Solid</h3>
+                  <p>Solid buttons direct the user&rsquo;s attention to the primary action the application is suggesting that the user take.<!--  Solid button <code>:hover</code> and <code>:focus</code> states look like outline buttons. --></p>
+                </div>
+              </div>
+              <div class="card">
+                <figure>
+                  <button type="button" class="outline" style="margin-top: 0;">Button</button>
+                </figure>
+                <div class="text">
+                  <h3>Outline</h3>
+                  <p>Outline buttons are used to indicate a secondary action or to reduce visual noise when there are many actions of equal importance.</p>
+                </div>
+              </div>
+              <div class="card">
+                <figure>
+                  <button type="button" class="quiet" style="margin-top: 0;">Button</button>
+                </figure>
+                <div class="text">
+                  <h3>Quiet</h3>
+                  <p>Quiet buttons are used in scenarios where more subtle button treatment is required.</p>
+                </div>
+              </div>
+            </div>
+            <h3>Buttons vs. links<span class="anchor"><a href="atoms/buttons/buttons.html#buttons-vs-links"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4-4a3.5 3.5 0 0 0-5-5l-.5.5"/><path d="M14 10a3.5 3.5 0 0 0-5 0l-4 4a3.5 3.5 0 0 0 5 5l.5-.5"/></svg></span></a></span></h3>
+            <p>While buttons and links may use similar visual treatments, it is important that you use a link (or anchor element) for anytime clicking the element will navigate you to a different page. Buttons are for interaction in the current page, such as refreshing the content or submitting a form.</p>
+          </div>
+        </section>
+        <section class="row">
+          <div class="column">
+            <h2>Placement<span class="anchor"><a href="atoms/buttons/buttons.html#placement"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4-4a3.5 3.5 0 0 0-5-5l-.5.5"/><path d="M14 10a3.5 3.5 0 0 0-5 0l-4 4a3.5 3.5 0 0 0 5 5l.5-.5"/></svg></span></a></span></h2>
+            <p>There are two distinct patterns when it comes to the placement of a button:</p>
+            <div class="row cards two">
+              <div class="card">
+                <figure>
+                </figure>
+                <div class="text">
+                  <h3>Z-pattern</h3>
+                  <p>The Z-pattern is a natural way for the user to go through content within a constrained container and when tasks are oriented from the top-left and ending with a primary call to action on the right bottom side of the container. This pattern is reversed for right to left languages.</p>
+                </div>
+              </div>
+              <div class="card">
+                <figure>
+                </figure>
+                <div class="text">
+                  <h3>F-pattern</h3>
+                  <p>The F-pattern is a natural way to go through content in an unconstrained container, such as a form on the page itself. The user will go through the content line-by-line, arriving at a call to action at the end.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="row">
+          <div class="column">
+            <h2>Style<span class="anchor"><a href="atoms/buttons/buttons.html#style"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4-4a3.5 3.5 0 0 0-5-5l-.5.5"/><path d="M14 10a3.5 3.5 0 0 0-5 0l-4 4a3.5 3.5 0 0 0 5 5l.5-.5"/></svg></span></a></span></h2>
+            <p>Consistent button styles make it easier for a user to recognize areas to take action across an application.</p>
+            <div class="row">
+              <div class="column span-8">
+                <h3>Typography<span class="anchor"><a href="atoms/buttons/buttons.html#typography"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4-4a3.5 3.5 0 0 0-5-5l-.5.5"/><path d="M14 10a3.5 3.5 0 0 0-5 0l-4 4a3.5 3.5 0 0 0 5 5l.5-.5"/></svg></span></a></span></h3>
+                <p>Use sentence case for buttons. Never use all-caps for buttons.</p>
+              </div>
+              <div class="column span-3">
+                <figure>
+                  <button type="button" style="margin-top: 0;">Reset your password</button>
+                </figure>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column span-8">
+                <h3>Color<span class="anchor"><a href="atoms/buttons/buttons.html#color"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4-4a3.5 3.5 0 0 0-5-5l-.5.5"/><path d="M14 10a3.5 3.5 0 0 0-5 0l-4 4a3.5 3.5 0 0 0 5 5l.5-.5"/></svg></span></a></span></h3>
+                <p>There are two color options for buttons: <code>$secondary</code> and <code>$primary</code>. These two colors can be used in combination with solid and outline button styles to create a wide variety of button groups.</p>
+              </div>
+              <div class="column span-3">
+                <figure>
+                  <button type="button" class="secondary" style="margin-top: 0;">Cancel</button>
+                  <button type="button" style="margin-top: 0;">Sign up</button>
+                </figure>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column span-8">
+                <h3>Icons<span class="anchor"><a href="atoms/buttons/buttons.html#icons"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4-4a3.5 3.5 0 0 0-5-5l-.5.5"/><path d="M14 10a3.5 3.5 0 0 0-5 0l-4 4a3.5 3.5 0 0 0 5 5l.5-.5"/></svg></span></a></span></h3>
+                <p>Icons can be placed to the left or right of the button text to decorate the call-to-action with a visual indicator. Icons should be used alongside text that clearly indicates what the interaction is expected to do.</p>
+              </div>
+              <div class="column span-3">
+                <figure>
+                  <!--<button type="button" style="margin-top: 0;"><span class="icon pre"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></svg></span>Button</button> -->
+                  <button type="button" style="margin-top: 0;">Button<span class="icon post"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></svg></span></button>
+                </figure>
+              </div>
+          </div>
+            <div class="row">
+              <div class="column span-8">
+                <h3>Badges<span class="anchor"><a href="atoms/buttons/buttons.html#badges"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4-4a3.5 3.5 0 0 0-5-5l-.5.5"/><path d="M14 10a3.5 3.5 0 0 0-5 0l-4 4a3.5 3.5 0 0 0 5 5l.5-.5"/></svg></span></a></span></h3>
+                <p><a href="">Badges</a> can be used inside buttons to indicate a known number of items associated with an action. This can help the user understand the impact or severity of the call-to-action. Badges always appear to the right of the text in left-to-right presentation.</p>
+              </div>
+              <div class="column span-3">
+                <figure>
+                  <button type="button" style="margin-top: 0;">Button<span class="badge">10</span></button>
+                </figure>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column span-8">
+                <h3>Size<span class="anchor"><a href="atoms/buttons/buttons.html#size"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4-4a3.5 3.5 0 0 0-5-5l-.5.5"/><path d="M14 10a3.5 3.5 0 0 0-5 0l-4 4a3.5 3.5 0 0 0 5 5l.5-.5"/></svg></span></a></span></h3>
+                <p>Add a <code>small</code> class to your button to create a small button.</p>
+              </div>
+              <div class="column span-3">
+                <figure>
+                  <button type="button" class="small" style="margin-top: 0;">Button</button>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+    <footer>
+      <nav aria-labelledby="footer-navigation">
+        <ul id="footer-navigation">
+          <li><a href="about/about.html">About</a></li>
+          <li><a href="atoms/atoms.html">Atoms</a></li>
+          <li><a href="molecules/molecules.html">Molecules</a></li>
+          <li><a href="organisms/organisms.html">Organisms</a></li>
+          <li><a href="style/style.html">Style</a></li>
+        </ul>
+      </nav>
+      <section class="brand-content">
+        <div class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 796"><path fill="#01232d" d="M512 796h512L512 0v796z"/><path fill="#013342" d="M0 796h512V0L0 796z"/></svg>
+        </div>
+        <h2 class="center">The Delta Design System</h2>
+        <ul class="social">
+          <li><a href="https://github.com/cdfournier/delta-design-system" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg><span>Github</span></a></li>
+          <li><a href="https://delta-design-system.slack.com" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M12 12V6a2 2 0 0 1 4 0v6m0-2a2 2 0 1 1 2 2h-6M12 12h6a2 2 0 0 1 0 4h-6m2 0a2 2 0 1 1-2 2v-6M12 12v6a2 2 0 0 1-4 0v-6m0 2a2 2 0 1 1-2-2h6M12 12H6a2 2 0 0 1 0-4h6m-2 0a2 2 0 1 1 2-2v6"/></svg><span>Slack</span></a></li>
+        </ul>
+        <small>&copy; 2021 Delta Design System. Conceived and developed by <a href="https://chris.blackcoffeeshoppe.com" target="_blank">Chris Fournier</a>.</small>
+      </section>
+    </footer>
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/scripts/headroom.js"></script>
+    <script src="assets/scripts/site.js"></script>
+    <script>
+      // CHANGE BODY CSS WHEN PAGE LOADS
+      function loaded (callback) {
+        callback();
+      };
+      loaded(function () {
+        document.body.className = "visible";
+      });
+    </script>
+  </body>
+</html>

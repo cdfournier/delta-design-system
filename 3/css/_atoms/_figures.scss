@@ -1,0 +1,32 @@
+// FIGURES
+figure {
+  //display: grid;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0 0 $spacing-lg 0;
+  &.center {
+    text-align: center;
+  }
+  pre {
+    margin: 0;
+    padding: 0 0 $spacing-lg;
+    padding: 0;
+    overflow-x: auto;
+  }
+  figcaption {
+    padding: 0 0 $spacing-xs;
+    @include font-body-bold;
+    font-size: $xsmall;
+    text-transform: uppercase;
+  }
+  figcaption > cite {
+    display: inline-block;
+    padding: $spacing-lg 0 0;
+    @include font-body;
+    font-size: $small;
+  }
+  figcaption > cite a {
+    @include font-body-bold;
+  }
+}

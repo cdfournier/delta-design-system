@@ -1,0 +1,150 @@
+// PRIMARY BUTTONS
+button, .button {
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+  max-width: 100%;
+  max-height: 2.5rem;
+  overflow: hidden;
+  margin: $spacing-lg 0 0;
+  padding: $spacing-md calc(1.25 * #{$spacing-lg});
+  padding: 0 calc(1.25 * #{$spacing-lg});
+  border: 1px solid $primary;
+  border-radius: $border-radius-sm;
+  @include font-body-bold;
+  font-size: $small;
+  line-height: 2.5rem;
+  text-align: center;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  color: white;
+  background-color: $primary;
+  white-space: nowrap;
+  cursor: pointer;
+  @include appearance(none);
+  @include transition(all, 0.25s, ease);
+}
+
+button + button {margin: 0 0 0 $spacing-lg;}
+
+button:hover, button:focus,
+.button:hover, .button:focus {
+  background-color: transparent;
+}
+
+button:hover, button:focus,
+.button:hover, .button:focus {
+  color: $primary;
+}
+
+
+// SECONDARY BUTTONS
+button.secondary, .button.secondary {
+  border: 1px solid $secondary;
+  background-color: $secondary;
+}
+
+button.secondary:hover, button.secondary:focus,
+.button.secondary:hover, .button.secondary:focus {
+  color: $secondary;
+  background-color: white;
+}
+
+
+// OUTLINE BUTTONS
+button.outline, .button.outline {
+  color: $primary;
+  background-color: white;
+}
+
+button.outline:hover, .button.outline:hover,
+button.outline:focus, .button.outline:focus {
+  color: white;
+  background-color: $primary;
+}
+
+button.secondary.outline, .button.secondary.outline {
+  color: $secondary;
+  background-color: white;
+}
+
+button.secondary.outline:hover, .button.secondary.outline:hover,
+button.secondary.outline:focus, .button.secondary.outline:focus {
+  color: white;
+  background-color: $secondary;
+}
+
+
+// QUIET BUTTONS
+button.quiet, .button.quiet {
+  padding: $spacing-md 0;
+  border: none;
+  color: $primary;
+  background: transparent;
+  &:hover, &:focus {
+    color: $secondary;
+  }
+}
+
+
+// SMALL BUTTONS
+button.small, .button.small {
+  margin: $spacing-md 0 0;
+  padding: 0 $spacing-md;
+  font-size: $xsmall;
+  line-height: 1.75rem;
+}
+
+
+// BUTTON ICONS
+button, .button {
+  span.icon {
+    display: inline-flex;
+    align-items: center;
+    width: calc(1.75 * #{$spacing-lg});
+    padding: $spacing-xs;
+    &.pre {
+      margin-left: calc(#{$spacing-sm} * -1);
+    }
+    &.post {
+      margin-right: calc(#{$spacing-sm} * -1);
+    }
+  }
+}
+
+button.small, .button.small {
+  span.icon {
+    width: calc(1.5 * #{$spacing-lg});
+    padding: calc(0.75 * #{$spacing-xs});
+  }
+}
+
+button.quiet, .button.quiet {
+  span.icon {
+    &.pre {
+      margin-left: 0;
+    }
+    &.post {
+      margin-right: 0;
+    }
+  }
+}
+
+
+// DISABLED BUTTONS
+/*
+button:disabled, button.secondary:disabled {
+  border-color: $lt-gray;
+  background-color: $lt-gray;
+  cursor: not-allowed;
+  svg {fill: white;}
+}
+button:hover:disabled, button:focus:disabled,
+button.secondary:hover:disabled, button.secondary:focus:disabled {color: white;}
+button.outline:disabled, button.secondary.outline:disabled {
+  border-color: $lt-gray;
+  color: $lt-gray;
+  background-color: white;
+  svg {fill: white;}
+}
+*/

@@ -1,0 +1,66 @@
+// CARDS
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: $spacing-lg 0 0;
+  padding: $spacing-lg;
+  border: 1px solid $lt-gray;
+  border-radius: $border-radius-sm;
+  background-color: white;
+  figure {
+    padding: 0;
+    img {
+      border-radius: $border-radius-sm $border-radius-sm 0 0;
+    }
+    figcaption > cite {
+      display: inline-block;
+      padding: $spacing-lg $spacing-lg 0;
+      @include font-body;
+      font-size: $small;
+      text-transform: none;
+    }
+    figcaption > cite a {
+      @include font-body-bold;
+    }
+  }
+  .text {
+    padding: $spacing-lg 0 0;
+    width: 100%;
+  }
+}
+
+
+// CARD ROWS
+.cards, .row.cards {
+  width: 100%;
+  margin: 0;
+  //padding: 0 0 $spacing-lg;
+}
+
+@media (min-width: 48rem) {
+  .cards, .row.cards {
+    align-items: stretch;
+    width: calc(100% + #{$spacing-xl});
+    margin: 0 calc(#{$spacing-lg} * -1);
+    .card {
+      width: calc(50% - #{$spacing-xl});
+      margin: $spacing-lg $spacing-lg 0;
+    }
+  }
+  .cards.two, .row.cards.two {
+    max-width: 64rem;
+    .card {
+      width: calc((100% / 2) - #{$spacing-xl});
+    }
+  }
+}
+
+@media (min-width: 64rem) {
+  .cards, .row.cards {
+    .card {
+      width: calc((100% / 3) - #{$spacing-xl});
+    }
+  }
+}

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <!-- <base href="../"> -->
+    <base href="../../">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>The Delta Design System</title>
     <meta name="description" content="">
@@ -43,13 +43,37 @@
     </header>
     <main>
       <article>
-        <section class="row center" id="content">
+        <section class="row">
           <div class="column">
-            <h1>The Delta Design System</h1>
-            <p>An open-source design system that can be used to build responsive sites, apps, and prototypes quickly.</p>
-            <button class="button" href="https://github.com/cdfournier/delta-design-system/archive/master.zip">Download</button>
+            <h1 class="title">Buttons</h1>
+            <p>The &lt;button&gt; element represents a clickable button, which can be used in forms or anywhere in a document that needs simple, standard button functionality.</p>
+            <p><cite><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button" target="_blank">&lt;button&gt;</a> by <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button$history" target="_blank">Mozilla Contributors</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/2.5/" target="_blank">CC-BY-SA 2.5</a>.</cite></p>
+            <h2>Button details</h2>
+            <p>There are lots and lots and lots of rules for buttons, and there are also lots and lots of options for buttons. It’s worth reading up on the dos and don’ts of buttons in order to ensure your buttons will function as expected by all users. Here are some good places to start:</p>
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button" target="_blank">MDN web docs</a></li>
+              <li><a href="https://a11y-style-guide.com/style-guide/section-general.html#kssref-general-buttons" target="_blank">A11Y Style Guide</a></li>
+              <li><a href="https://www.w3schools.com/tags/tag_button.asp" target="_blank">W3 Schools</a></li>
+            </ul>
+            <p>Whenever semantically appropriate, anything that functions as a button should be coded as a <code>&lt;button&gt;</code>. However, the Delta Design System does provide CSS classes to make any <code>&lt;span&gt;</code> or <code>&lt;a href&gt;</code> element look like a button.</p>
+            <p>The Delta Design System’s normal button uses the <code>$primary</code> color application and handles both the default button state, as well as the <code>:hover</code> and <code>:focus</code> states.</p>
           </div>
         </section>
+        <section class="row">
+          <h2>Button samples</h2>
+          <p>There are primarily two button types in this system: primary and secondary. And these two buttons 
+          <div class="column span-7">
+            <h3>Primary and secondary</h3>
+            <p>Buttons in the system  
+            <p>Lorem ipsum dolor sit amet, consectetur adip*isicing elit, sed do eiusmod *tempor incididunt ut labore et dolore magna aliqua.</p>
+            <button type="button">Button</button>
+          </div>
+          <div class="column span-5">
+            <figure>
+              <figcaption>html</figcaption>
+<pre><code>&lt;button type=&quot;button&quot;&gt;Button&lt;/button&gt;</code></pre>
+            </figure>
+          </div>
       </article>
     </main>
     <footer>
