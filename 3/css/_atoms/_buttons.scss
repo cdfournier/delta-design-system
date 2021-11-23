@@ -11,6 +11,7 @@ button, .button {
   padding: 0 calc(1.25 * #{$spacing-lg});
   border: 1px solid $primary;
   border-radius: $border-radius-sm;
+  //border-radius: calc(2 * #{$border-radius-xl});
   @include font-body-bold;
   font-size: $small;
   line-height: 2.5rem;
@@ -29,12 +30,8 @@ button + button {margin: 0 0 0 $spacing-lg;}
 
 button:hover, button:focus,
 .button:hover, .button:focus {
-  background-color: transparent;
-}
-
-button:hover, button:focus,
-.button:hover, .button:focus {
   color: $primary;
+  background-color: white;
 }
 
 
@@ -132,19 +129,31 @@ button.quiet, .button.quiet {
 
 
 // DISABLED BUTTONS
-/*
-button:disabled, button.secondary:disabled {
-  border-color: $lt-gray;
-  background-color: $lt-gray;
+button:disabled, .button:disabled {
+  opacity: 0.4;
   cursor: not-allowed;
-  svg {fill: white;}
+  &:hover:disabled, &:focus:disabled {
+    color: white;
+    background-color: $primary;
+  }
 }
-button:hover:disabled, button:focus:disabled,
-button.secondary:hover:disabled, button.secondary:focus:disabled {color: white;}
-button.outline:disabled, button.secondary.outline:disabled {
-  border-color: $lt-gray;
-  color: $lt-gray;
+
+button.secondary:hover:disabled, .button.secondary:hover:disabled,
+button.secondary:focus:disabled, .button.secondary:focus:disabled {
+  color: white;
+  background-color: $secondary;
+}
+
+button.outline:hover:disabled, .button.outline:hover:disabled,
+button.outline:focus:disabled, .button.outline:focus:disabled {
+  border-color: $primary;
+  color: $primary;
   background-color: white;
-  svg {fill: white;}
 }
-*/
+
+button.secondary.outline:hover:disabled, .button.secondary.outline:hover:disabled,
+button.secondary.outline:focus:disabled, .button.secondary.outline:focus:disabled {
+  border-color: $secondary;
+  color: $secondary;
+  background-color: white;
+}

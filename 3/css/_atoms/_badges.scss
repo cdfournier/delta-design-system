@@ -2,10 +2,10 @@
 .badge {
   display: inline-flex;
   align-items: center;
-  margin: 0 0 0 $spacing-xs;
-  padding: $spacing-xs;
+  margin: 0 0 0 $spacing-sm;
+  padding: $spacing-xs $spacing-sm;
   border: 1px solid;
   border-radius: $border-radius-lg;
-  font-size: 75%;
+  font-size: 70%;
   line-height: 1.25;
 }

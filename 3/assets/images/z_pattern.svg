@@ -1,1 +1,43 @@
-<svg height="257" viewBox="0 0 368 257" width="368" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><rect id="a" height="249" rx="3" width="360"/><filter id="b" height="200%" width="200%" x="-50%" y="-50%"><feMorphology in="SourceAlpha" operator="dilate" radius="1" result="shadowSpreadOuter1"/><feOffset dx="0" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"/><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1"/><feColorMatrix in="shadowBlurOuter1" type="matrix" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0701992754 0"/></filter><rect id="c" height="36" rx="3" width="78"/><mask id="d" fill="#fff" height="36" width="78" x="0" y="0"><use xlink:href="#c"/></mask></defs><g fill="none" fill-rule="evenodd"><g transform="translate(4 2)"><use fill="#000" filter="url(#b)" xlink:href="#a"/><use fill="#fff" fill-rule="evenodd" xlink:href="#a"/></g><rect fill="#0079b8" height="36" rx="3" width="78" x="261" y="192"/><use mask="url(#d)" stroke="#0079b8" stroke-width="2" transform="translate(172 192)" xlink:href="#c"/><g opacity=".05"><path d="m28 24h108v24h-108z" fill="#000"/><path d="m272 204h56v12h-56z" fill="#fff"/><path d="m184 203h56v12h-56z" fill="#0079b8"/><g fill="#565656"><path d="m27 66h312v14h-312z"/><path d="m27 89h294v14h-294z"/><path d="m27 113h221v14h-221z"/></g></g><g transform="translate(22 28)"><g stroke="#853fb3" stroke-linecap="square"><path d="m6.5 7.5h311"/><path d="m10.5 182.5h301"/><path d="m6.5 183.5 311-176"/></g><g fill="#853fb3"><path d="m6.5 7.5h168" stroke="#853fb3" stroke-linecap="square"/><path d="m174.5 7.5-10.8-3v6z" stroke="#853fb3" stroke-linecap="square"/><circle cx="7" cy="7" r="7"/><circle cx="313" cy="7" r="7"/><circle cx="7" cy="183" r="7"/><circle cx="307" cy="182" r="7"/></g></g></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 372 224" style="enable-background:new 0 0 372 224;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#003442;}
+	.st1{fill:#003442;}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#EEEEEE;}
+	.st3{display:none;}
+	.st4{display:inline;fill:#DF3A32;}
+	.st5{display:inline;}
+	.st6{fill:#DF3A32;}
+	.st7{fill-rule:evenodd;clip-rule:evenodd;fill:#DF3A32;}
+</style>
+<g>
+	<path class="st0" d="M281,172h72c1.7,0,3,1.3,3,3v30c0,1.7-1.3,3-3,3h-72c-1.7,0-3-1.3-3-3v-30C278,173.3,279.3,172,281,172z"/>
+	<path transform="translate(172 192)" class="st1" d="M264,208h-72c-2.2,0-4-1.7-4-3.8v-28.4c0-2.1,1.8-3.8,4-3.8h72
+		c2.2,0,4,1.7,4,3.8v28.4C268,206.3,266.2,208,264,208z M192,173.9c-1.1,0-2,0.9-2,1.9v28.4c0,1,0.9,1.9,2,1.9h72c1.1,0,2-0.9,2-1.9
+		v-28.4c0-1-0.9-1.9-2-1.9H192z"/>
+</g>
+<path class="st2" d="M16,16h124v24H16V16z"/>
+<path class="st2" d="M16,64h312v16H16V64z"/>
+<path class="st2" d="M16,88h294v16H16V88z"/>
+<path class="st2" d="M16,112h220v16H16V112z"/>
+<g transform="translate(22 28)" class="st3">
+	<rect x="-27" y="84.9" transform="matrix(0.887 -0.4617 0.4617 0.887 -21.602 82.6515)" class="st4" width="370.2" height="1.1"/>
+	<rect x="-6" y="171.5" class="st4" width="298" height="1"/>
+	<rect x="-6" y="-0.5" class="st4" width="328" height="1"/>
+	<g class="st5">
+		<g>
+			<path class="st6" d="M151.4,3.7v-7.3L164.6,0L151.4,3.7z"/>
+		</g>
+		<circle class="st7" cx="-6" cy="0" r="8"/>
+		<circle class="st7" cx="322" cy="0" r="8"/>
+		<circle class="st7" cx="-6" cy="172" r="8"/>
+		<circle class="st7" cx="291" cy="172" r="8"/>
+	</g>
+</g>
+<circle class="st7" cx="348" cy="28" r="8"/>
+<circle class="st7" cx="16" cy="28" r="8"/>
+<circle class="st7" cx="317" cy="190" r="8"/>
+<circle class="st7" cx="16" cy="190" r="8"/>
+</svg>
