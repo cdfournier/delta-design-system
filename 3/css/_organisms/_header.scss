@@ -52,6 +52,7 @@ header {
       &:last-child {padding: 0;}
       li {
         padding: $spacing-lg $spacing-xl $spacing-lg 0;
+        @include font-body-bold;
         text-align: right;
         a {text-decoration: none;}
       }
