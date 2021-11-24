@@ -7,7 +7,7 @@ footer {
   justify-content: flex-start;
   width: 100%;
   margin: 0;
-  padding: $spacing-xl $spacing-xl $spacing-lg;
+  padding: $spacing-xl;
   nav {
     width: 100%;
     padding: 0;
@@ -67,9 +67,11 @@ footer {
 
 @media (min-width: 48rem) {
   footer {
-    align-items: flex-start;
     nav {
       width: 60%;
+      ul li:last-child {
+        padding: 0;
+      }
     }
     .brand-content {
       width: 40%;
