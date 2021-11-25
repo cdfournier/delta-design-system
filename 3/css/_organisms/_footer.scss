@@ -24,7 +24,13 @@ footer {
       li {
         padding: 0 0 $spacing-md 0;
         @include font-body-bold;
-        a {text-decoration: none;}
+        a {
+          border-bottom: none;
+          text-decoration: none;
+          &:after {
+            display: none;
+          }
+        }
       }
     }
   }
@@ -44,6 +50,13 @@ footer {
         width: auto;
         padding: $spacing-xs;
         text-align: center;
+        a {
+          border-bottom: none;
+          text-decoration: none;
+          &:after {
+            display: none;
+          }
+        }
         span {
           display: none;
         }
@@ -70,8 +83,14 @@ footer {
   footer {
     nav {
       width: 60%;
-      ul li:last-child {
-        padding: 0;
+      ul {
+        font-size: $small;
+        li {
+          padding: 0 0 $spacing-sm;
+          &:last-child {
+            padding: 0;
+          }
+        }
       }
     }
     .brand-content {

@@ -10,7 +10,6 @@
   border-radius: $border-radius-sm;
   background-color: white;
   figure {
-    padding: 0;
     img {
       border-radius: $border-radius-sm $border-radius-sm 0 0;
     }
@@ -26,7 +25,6 @@
     }
   }
   .text {
-    padding: $spacing-lg 0 0;
     width: 100%;
   }
 }
@@ -36,7 +34,7 @@
 .cards, .row.cards {
   width: 100%;
   margin: 0;
-  //padding: 0 0 $spacing-lg;
+  padding: 0;
 }
 
 @media (min-width: 48rem) {
@@ -46,7 +44,8 @@
     margin: 0 calc(#{$spacing-lg} * -1);
     .card {
       width: calc(50% - #{$spacing-xl});
-      margin: $spacing-lg $spacing-lg 0;
+      //margin: $spacing-lg $spacing-lg 0;
+      margin: $spacing-lg;
     }
   }
   .cards.two, .row.cards.two {

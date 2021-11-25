@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <!-- <base href="../"> -->
+    <base href="../">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>The Delta Design System</title>
+    <title>Organisms | The Delta Design System</title>
     <meta name="description" content="">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
@@ -24,7 +24,7 @@
   <body class="hidden">
     <section class="skip">
       <h1 class="visuallyhidden">Skip to the main content on this page</h1>
-      <p class="center"><a href="index.html#content">Skip to the main content on this page</a></p>
+      <p class="center"><a href="organisms/organisms.html#content">Skip to the main content on this page</a></p>
     </section>
     <header>
       <nav aria-labelledby="header-navigation">
@@ -33,22 +33,53 @@
           <svg class="menu-toggle-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M18 6L6 18M6 6l12 12"/></svg>
         </button>
         <ul id="header-navigation">
-          <li class="logo"><span class="visuallyhidden">Home</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 796"><path fill="#01232d" d="M512 796h512L512 0v796z"/><path fill="#013342" d="M0 796h512V0L0 796z"/></svg></li>
+          <li class="logo"><a href="index.html"><span class="visuallyhidden">Home</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 796"><path fill="#01232d" d="M512 796h512L512 0v796z"/><path fill="#013342" d="M0 796h512V0L0 796z"/></svg></a></li>
           <li><a href="about/about.html">About</a></li>
           <li><a href="atoms/atoms.html">Atoms</a></li>
           <li><a href="molecules/molecules.html">Molecules</a></li>
-          <li><a href="organisms/organisms.html">Organisms</a></li>
+          <li>Organisms</li>
           <li><a href="style/style.html">Style</a></li>
         </ul>
       </nav>
     </header>
     <main>
       <article>
-        <section class="row center" id="content">
+        <section class="row" id="content">
           <div class="column">
-            <h1>The Delta Design System</h1>
-            <p>An open-source design system that can be used to build responsive sites, apps, and prototypes quickly.</p>
-            <button class="button" href="https://github.com/cdfournier/delta-design-system/archive/master.zip" disabled>Download</button>
+            <h1 class="title">Organisms</h1>
+            <p>Organisms are complex components composed of groups of molecules and/or atoms and/or other organisms. These organisms form distinct sections of an interface.</p>
+            <p><cite><a href="http://atomicdesign.bradfrost.com/chapter-2/#organisms">Organisms</a> from <a href="http://atomicdesign.bradfrost.com/" target="_blank">Atomic Design</a> by <a href="https://bradfrost.com" target="_blank">Brad Frost</a></cite></p>
+          </div>
+        </section>
+        <section class="row">
+          <div class="column">
+            <h2>Components<span class="anchor"><a href="organisms/organisms.html#components"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4-4a3.5 3.5 0 0 0-5-5l-.5.5"/><path d="M14 10a3.5 3.5 0 0 0-5 0l-4 4a3.5 3.5 0 0 0 5 5l.5-.5"/></svg></span></a></span></h2>
+            <div class="row cards">
+              <div class="card">
+                <div class="text">
+                  <h3>Banners</h3>
+                  <p>Coming soon</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="text">
+                  <h3>Footer</h3>
+                  <p><a href="organisms/footer/footer.html">View footer component</a></p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="text">
+                  <h3>Header</h3>
+                  <p>Coming soon</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="text">
+                  <h3>Tabs</h3>
+                  <p>Coming soon</p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </article>
@@ -59,7 +90,7 @@
           <li><a href="about/about.html">About</a></li>
           <li><a href="atoms/atoms.html">Atoms</a></li>
           <li><a href="molecules/molecules.html">Molecules</a></li>
-          <li><a href="organisms/organisms.html">Organisms</a></li>
+          <li>Organisms</li>
           <li><a href="style/style.html">Style</a></li>
           <li><a href="index/index.html">Index</a></li>
         </ul>

@@ -231,7 +231,9 @@ h1 + ol, h2 + ol, h3 + ol, h4 + ol,
 h1 + ul, h2 + ul, h3 + ul, h4 + ul,
 h1 + dl, h2 + dl, h3 + dl, h4 + dl, {padding-top: $spacing-xs;}
 
-h1 + h2 {padding-top: 0;}
+h1 + h2 {padding-top: $spacing-lg;}
+
+h2 + h3 {padding-top: $spacing-xs;}
 
 h1.visuallyhidden + p, h2.visuallyhidden + p, h3.visuallyhidden + p, h4.visuallyhidden + p {padding: 0;}
 
@@ -253,7 +255,29 @@ a {
 
 h1 a, h2 a, h3 a, h4 a {text-decoration: none;}
 
-p a, small a, li a {@include font-body-bold;}
+p a, small a, li a {
+  position: relative;
+  @include font-body-bold;
+  text-decoration: underline;
+/*
+  &:after {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: $secondary;
+    content: "";
+    @include transition(width, 0.25s, ease);
+  }
+  &:hover, &:focus {
+    &:after {
+      width: 100%;
+    }
+  }
+*/
+}
 
 
 // INLINE ANCHOR LINKS & ICONS

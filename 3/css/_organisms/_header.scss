@@ -54,7 +54,13 @@ header {
         padding: $spacing-lg $spacing-xl $spacing-lg 0;
         @include font-body-bold;
         text-align: right;
-        a {text-decoration: none;}
+        a {
+          border-bottom: none;
+          text-decoration: none;
+          &:after {
+            display: none;
+          }
+        }
       }
       li.logo {
         display: none;
@@ -74,7 +80,6 @@ header {
 @media (min-width: 48rem) {
   header {
     nav {
-      padding: $spacing-xl $spacing-xl $spacing-lg $spacing-xl;
       button.menu-toggle {
         display: none;
       }
@@ -132,4 +137,4 @@ header.open {
 
 .headroom--pinned {@include transform(translateY(0));}
 
-.headroom--unpinned {@include transform(translateY(-10vh));}
+.headroom--unpinned {@include transform(translateY(-50vh));}

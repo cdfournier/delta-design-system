@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <base href="../../">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>The Delta Design System</title>
+    <title>Buttons | The Delta Design System</title>
     <meta name="description" content="">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
@@ -24,7 +24,7 @@
   <body class="hidden">
     <section class="skip">
       <h1 class="visuallyhidden">Skip to the main content on this page</h1>
-      <p class="center"><a href="index.html#content">Skip to the main content on this page</a></p>
+      <p class="center"><a href="atoms/buttons/buttons.html#content">Skip to the main content on this page</a></p>
     </section>
     <header>
       <nav aria-labelledby="header-navigation">
@@ -33,10 +33,7 @@
           <svg class="menu-toggle-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M18 6L6 18M6 6l12 12"/></svg>
         </button>
         <ul id="header-navigation">
-          <li class="logo"><a href="index.html">
-            <span class="visuallyhidden">Home</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 796"><path fill="#01232d" d="M512 796h512L512 0v796z"/><path fill="#013342" d="M0 796h512V0L0 796z"/></svg>
-          </a></li>
+          <li class="logo"><a href="index.html"><span class="visuallyhidden">Home</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 796"><path fill="#01232d" d="M512 796h512L512 0v796z"/><path fill="#013342" d="M0 796h512V0L0 796z"/></svg></a></li>
           <li><a href="about/about.html">About</a></li>
           <li><a href="atoms/atoms.html">Atoms</a></li>
           <li><a href="molecules/molecules.html">Molecules</a></li>
@@ -47,7 +44,7 @@
     </header>
     <main>
       <article>
-        <section class="row">
+        <section class="row" id="content">
           <div class="column">
             <h1 class="title">Buttons</h1>
             <p>The &lt;button&gt; element represents a clickable button, which can be used in forms or anywhere in a document that needs simple, standard button functionality.</p>
@@ -91,7 +88,7 @@
             <h3>Buttons vs. links<span class="anchor"><a href="atoms/buttons/buttons.html#buttons-vs-links"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4-4a3.5 3.5 0 0 0-5-5l-.5.5"/><path d="M14 10a3.5 3.5 0 0 0-5 0l-4 4a3.5 3.5 0 0 0 5 5l.5-.5"/></svg></span></a></span></h3>
             <p>While buttons and links may use similar visual treatments, it is important that you use a link (or anchor element) for anytime clicking the element will navigate you to a different page. Buttons are for interaction in the current page, such as refreshing the content or submitting a form.</p>
             <h3>Placement<span class="anchor"><a href="atoms/buttons/buttons.html#placement"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4-4a3.5 3.5 0 0 0-5-5l-.5.5"/><path d="M14 10a3.5 3.5 0 0 0-5 0l-4 4a3.5 3.5 0 0 0 5 5l.5-.5"/></svg></span></a></span></h3>
-            <p>There are two distinct patterns when it comes to the placement of a button:</p>
+            <p>There are two distinct patterns when it comes to button placement:</p>
             <div class="row cards two">
               <div class="card">
                 <figure>
@@ -108,7 +105,7 @@
                 </figure>
                 <div class="text">
                   <h4>Z-pattern</h4>
-                  <p>The Z-pattern is good for a constrained container or when tasks are oriented from the top-left and ending with a call to action on the right bottom side of the container. Reverse the pattern for right to left languages.</p>
+                  <p>The Z-pattern is good for a constrained container or when tasks are oriented from the top-left and ending with a call to action on the bottom-right side of the container.</p>
                 </div>
               </div>
             </div>
@@ -218,7 +215,7 @@
         <div class="logo">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 796"><path fill="#01232d" d="M512 796h512L512 0v796z"/><path fill="#013342" d="M0 796h512V0L0 796z"/></svg>
         </div>
-        <h2 class="center">The Delta Design System</h2>
+        <h2>The Delta Design System</h2>
         <ul class="social">
           <li><a href="https://github.com/cdfournier/delta-design-system" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg><span>Github</span></a></li>
           <li><a href="https://delta-design-system.slack.com" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M12 12V6a2 2 0 0 1 4 0v6m0-2a2 2 0 1 1 2 2h-6M12 12h6a2 2 0 0 1 0 4h-6m2 0a2 2 0 1 1-2 2v-6M12 12v6a2 2 0 0 1-4 0v-6m0 2a2 2 0 1 1-2-2h6M12 12H6a2 2 0 0 1 0-4h6m-2 0a2 2 0 1 1 2-2v6"/></svg><span>Slack</span></a></li>
