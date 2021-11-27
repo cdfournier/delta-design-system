@@ -286,6 +286,9 @@ span.anchor {
   padding: 0;
   a {
     color: transparent;
+    &:hover, &:focus {
+      color: $secondary;
+    }
   }
   span.icon {
     display: grid;

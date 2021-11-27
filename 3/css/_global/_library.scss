@@ -1,0 +1,18 @@
+// RESPONSIVE GRID
+body.show-grid {
+  background-image: url(../assets/images/responsive-grid-mobile.svg);
+  background-position: center;
+  background-size: contain;
+}
+
+@media (min-width: 48rem) {
+  body.show-grid {
+    background-image: url(../assets/images/responsive-grid-tablet.svg);
+  }
+}
+
+@media (min-width: 90rem) {
+  body.show-grid {
+    background-image: url(../assets/images/responsive-grid-desktop.svg);
+  }
+}

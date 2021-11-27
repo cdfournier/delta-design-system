@@ -7,7 +7,7 @@ footer {
   justify-content: flex-start;
   width: 100%;
   margin: 0;
-  padding: $spacing-xl;
+  padding: $spacing-xl $spacing-lg;
   nav {
     width: 100%;
     padding: 0;
@@ -39,6 +39,7 @@ footer {
     h2 {
       padding: $spacing-md 0 0;
       font-size: $h3;
+      text-align: center;
     }
     ul.social {
       flex-direction: row;
@@ -81,6 +82,7 @@ footer {
 
 @media (min-width: 48rem) {
   footer {
+    padding: $spacing-xl;
     nav {
       width: 60%;
       ul {

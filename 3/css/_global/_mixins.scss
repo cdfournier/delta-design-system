@@ -24,9 +24,9 @@
 };
 
 @mixin appearance($appearance: none) {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;  
+  -webkit-appearance: $appearance;
+  -moz-appearance: $appearance;
+  appearance: $appearance;  
 };
 
 @mixin animation-delay($delay: 1s) {

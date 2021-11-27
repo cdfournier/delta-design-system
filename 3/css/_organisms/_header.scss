@@ -79,6 +79,7 @@ header {
 
 @media (min-width: 48rem) {
   header {
+    padding: 0 $spacing-lg;
     nav {
       button.menu-toggle {
         display: none;
