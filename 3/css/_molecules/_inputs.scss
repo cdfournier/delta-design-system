@@ -12,7 +12,7 @@ FORM ELEMENTS
   button
   show-hide password
   help, invalid, valid messages
-  invalid, valid, read-only, not-allowed
+  invalid, valid, not-allowed, read-only
 */
 
 
@@ -161,10 +161,10 @@ label.checkbox, label.radio {
     &:before {
       display: block;
       position: absolute;
-      top: 22.5%;
-      left: 22.5%;
-      width: 55%;
-      height: 55%;
+      top: calc(0.75 * #{$spacing-xs});
+      left: calc(0.75 * #{$spacing-xs});
+      width: $spacing-md;
+      height: $spacing-md;
       margin: 0;
       border-radius: 100%;
       background-color: black;
@@ -339,47 +339,53 @@ label.switch.valid {
 // NOT-ALLOWED STATES
 input:disabled,
 select:disabled {
-  border-color: $md-gray;
-  color: $md-gray;
+  border-color: $not-allowed;
+  color: $not-allowed;
   & + .input-message .help {
-    color: $md-gray;
+    color: $not-allowed;
   }
 }
 
 label.checkbox.not-allowed,
 label.radio.not-allowed {
-  color: $md-gray;
+  color: $not-allowed;
   input[type="checkbox"] {
     &:checked:before {
-      background-color: $md-gray;
+      background-color: $not-allowed;
     }
   }
   input[type="radio"] {
     &:before {
-      background-color: $md-gray;
+      background-color: $not-allowed;
     }
   }
   & + .input-message .help {
-    color: $md-gray;
+    color: $not-allowed;
   }
 }
 
 label.switch.not-allowed {
-  color: $md-gray;
+  color: $not-allowed;
   input[type="checkbox"] {
     &:before {
-      background-color: $md-gray;
+      background-color: $not-allowed;
     }
   }  
   & + .input-message .help {
-    color: $md-gray;
+    color: $not-allowed;
   }
 }
 
 .input-icon.not-allowed {
-  color: $md-gray;
+  color: $not-allowed;
 }
 
 :disabled, .not-allowed {
   cursor: not-allowed;
+}
+
+
+// NOT-ALLOWED STATES
+input:not(input[type="checkbox"]):not(input[type="radio"])[readonly="readonly"] {
+  border-color: $read-only;
 }

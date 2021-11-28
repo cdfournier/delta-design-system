@@ -28,6 +28,27 @@
       fieldset + fieldset {
         padding: var(--spacing-md) 0 0;
       }
+      .input-message .not-allowed,
+      .input-message .read-only {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        width: 100%;
+        padding: var(--spacing-sm) 0 0;
+        background: white;
+        opacity: 0;
+        -webkit-transition: all 0.25s ease 0s;
+        -moz-transition: all 0.25s ease 0s;
+        -ms-transition: all 0.25s ease 0s;
+        -o-transition: all 0.25s ease 0s;
+        transition: all 0.25s ease 0s;
+      }
+      .input-message .not-allowed.show,
+      .input-message .read-only.show {
+        z-index: 10;
+        opacity: 1;
+      }
     </style>
   </head>
   <body class="hidden show-grid">
@@ -413,7 +434,7 @@
               <h2 id="input-states">Input states</h2>
               <p>Want to see what each <code>&lt;input&gt;</code> state looks like? Use these controls to see the different <code>&lt;input&gt;</code> states.</p>
               <fieldset style="padding: var(--spacing-lg) 0 0;">
-                <label for="input-default" class="radio"><input id="input-default" type="radio" name="input-states" value="input-default">Default</label>
+                <label for="input-default" class="radio"><input id="input-default" type="radio" name="input-states" value="input-default" checked>Default</label>
               </fieldset>
               <fieldset style="padding: var(--spacing-sm) 0 0;">
                 <label for="input-invalid" class="radio"><input id="input-invalid" type="radio" name="input-states" value="input-invalid">Invalid</label>
@@ -428,9 +449,11 @@
                 <label for="input-read-only" class="radio"><input id="input-read-only" type="radio" name="input-states" value="input-read-only">Read-only</label>
               </fieldset>
               <div class="input-message">
-                <span class="help show">Use the controls above to see the different <code>&lt;input&gt;</code> states</span>
+                <span class="help show">This is the default state</span>
                 <span class="invalid">This is the <code style="padding: calc(var(--spacing-xs)/2) var(--spacing-xs); border-radius: var(--border-radius-xs); background-color: var(--lt-gray);">:invalid</code> state</span>
                 <span class="valid">This is the <code style="padding: calc(var(--spacing-xs)/2) var(--spacing-xs); border-radius: var(--border-radius-xs); background-color: var(--lt-gray);">:valid</code> state</span>
+                <span class="not-allowed">This is the <code style="padding: calc(var(--spacing-xs)/2) var(--spacing-xs); border-radius: var(--border-radius-xs); background-color: var(--lt-gray);">:not-allowed</code> state</span>
+                <span class="read-only">This is the <code style="padding: calc(var(--spacing-xs)/2) var(--spacing-xs); border-radius: var(--border-radius-xs); background-color: var(--lt-gray);">:read-only</code> state</span>
               </div>
             </div>
           </div>
@@ -484,6 +507,8 @@
           $('.input-icon').removeClass('not-allowed');
           $('.input-message .valid').removeClass('show');
           $('.input-message .invalid').removeClass('show');
+          $('.input-message .not-allowed').removeClass('show');
+          $('.input-message .read-only').removeClass('show');
           $('.input-message .help').addClass('show');
           $('input').removeAttr('aria-invalid');
           $('input').removeAttr('disabled');
@@ -508,6 +533,8 @@
           $('.input-icon').addClass('invalid');
           $('.input-message .help').removeClass('show');
           $('.input-message .valid').removeClass('show');
+          $('.input-message .not-allowed').removeClass('show');
+          $('.input-message .read-only').removeClass('show');
           $('.input-message .invalid').addClass('show');
           $('input').removeAttr('aria-invalid',false);
           $('input').removeAttr('disabled');
@@ -534,6 +561,8 @@
           $('.input-icon').addClass('valid');
           $('.input-message .help').removeClass('show');
           $('.input-message .invalid').removeClass('show');
+          $('.input-message .not-allowed').removeClass('show');
+          $('.input-message .read-only').removeClass('show');
           $('.input-message .valid').addClass('show');
           $('input').removeAttr('aria-invalid',true);
           $('input').removeAttr('disabled');
@@ -555,12 +584,14 @@
           $('label').removeClass('valid');
           $('label').removeClass('invalid');
           $('label').addClass('not-allowed');
+          $('.input-icon').removeClass('invalid');
           $('.input-icon').removeClass('valid');
-          $('.input-icon').removeClass('not-allowed');
-          $('.input-icon').addClass('invalid');
+          $('.input-icon').addClass('not-allowed');
           $('.input-message .invalid').removeClass('show');
           $('.input-message .valid').removeClass('show');
+          $('.input-message .read-only').removeClass('show');
           $('.input-message .help').addClass('show');
+          $('.input-message .not-allowed').addClass('show');
           $('input').removeAttr('aria-invalid');
           $('input').removeAttr('readonly');
           $('input').val('');
@@ -569,8 +600,10 @@
           $('textarea').removeAttr('readonly');
           $('textarea').val('');
           $('textarea').attr('disabled','disabled');
-          $('select').removeAttr('aria-invalid',false);
-          $('select').attr('aria-invalid',true);
+          $('select').removeAttr('aria-invalid');
+          $('select').attr('disabled','disabled');
+          $('input#input-default').removeAttr('disabled');
+          $('label[for="input-default"]').removeClass('not-allowed');
         }
       });
 
@@ -584,7 +617,9 @@
           $('.input-icon').removeClass('not-allowed');
           $('.input-message .valid').removeClass('show');
           $('.input-message .invalid').removeClass('show');
+          $('.input-message .not-allowed').removeClass('show');
           $('.input-message .help').addClass('show');
+          $('.input-message .read-only').addClass('show');
           $('input').removeAttr('aria-invalid');
           $('input').removeAttr('disabled','disabled');
           $('input').attr('readonly',true);

@@ -9,6 +9,8 @@
   --lt-gray: #eeeeee;
   --invalid: #c00c00;
   --valid: #008000;
+  --not-allowed: #cccccc;
+  --read-only: #919191;
   --h1-title: 4.209rem;
   --h2-title: 3.157rem;
   --h1: 3.157rem;
@@ -18,16 +20,16 @@
   --p: 1rem;
   --small: 0.8rem;
   --xsmall: 0.64rem;
-  --spacing-xs: 0.25rem;
-  --spacing-sm: 0.5rem;
-  --spacing-md: 0.75rem;
-  --spacing-lg: 1rem;
-  --spacing-xl: 2rem;
   --border-radius-xs: 0.125rem;
   --border-radius-sm: 0.25rem;
   --border-radius-md: 0.5rem;
   --border-radius-lg: 0.75rem;
   --border-radius-xl: 1rem;
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 0.75rem;
+  --spacing-lg: 1rem;
+  --spacing-xl: 2rem;
 }
 
 
@@ -42,6 +44,8 @@ $md-gray: var(--md-gray);
 $lt-gray: var(--lt-gray);
 $invalid: var(--invalid);
 $valid: var(--valid);
+$not-allowed: var(--not-allowed);
+$read-only: var(--read-only);
 $h1-title: var(--h1-title);
 $h2-title: var(--h2-title);
 $h1: var(--h1);
@@ -51,13 +55,13 @@ $h4: var(--h4);
 $p: var(--p);
 $small: var(--small);
 $xsmall: var(--xsmall);
-$spacing-xs: var(--spacing-xs);
-$spacing-sm: var(--spacing-sm);
-$spacing-md: var(--spacing-md);
-$spacing-lg: var(--spacing-lg);
-$spacing-xl: var(--spacing-xl);
 $border-radius-xs: var(--border-radius-xs);
 $border-radius-sm: var(--border-radius-sm);
 $border-radius-md: var(--border-radius-md);
 $border-radius-lg: var(--border-radius-lg);
 $border-radius-xl: var(--border-radius-xl);
+$spacing-xs: var(--spacing-xs);
+$spacing-sm: var(--spacing-sm);
+$spacing-md: var(--spacing-md);
+$spacing-lg: var(--spacing-lg);
+$spacing-xl: var(--spacing-xl);
