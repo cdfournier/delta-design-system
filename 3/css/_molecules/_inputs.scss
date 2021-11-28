@@ -161,10 +161,16 @@ label.checkbox, label.radio {
     &:before {
       display: block;
       position: absolute;
+/*
       top: calc(0.75 * #{$spacing-xs});
       left: calc(0.75 * #{$spacing-xs});
       width: $spacing-md;
       height: $spacing-md;
+*/
+      top: calc(0.5 * #{$spacing-xs});
+      left: calc(0.5 * #{$spacing-xs});
+      width: calc(0.875 * #{$spacing-lg});
+      height: calc(0.875 * #{$spacing-lg});
       margin: 0;
       border-radius: 100%;
       background-color: black;
