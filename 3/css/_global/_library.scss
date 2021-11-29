@@ -1,18 +1,68 @@
 // RESPONSIVE GRID
-body.show-grid {
-  background-image: url(../assets/images/responsive-grid-mobile.svg);
-  background-position: center;
-  background-size: contain;
-}
-
-@media (min-width: 48rem) {
-  body.show-grid {
-    background-image: url(../assets/images/responsive-grid-tablet.svg);
+.responsive-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0 $spacing-lg;
+  opacity: 0;
+  @include transition(opacity, 0.25s, ease);
+  .responsive-column {
+    display: grid;
+    width: calc((100% / 4) - #{$spacing-lg});
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #ff10ff;
+  }
+  .responsive-column:nth-of-type(5),
+  .responsive-column:nth-of-type(6),
+  .responsive-column:nth-of-type(7),
+  .responsive-column:nth-of-type(8),
+  .responsive-column:nth-of-type(9),
+  .responsive-column:nth-of-type(10),
+  .responsive-column:nth-of-type(11),
+  .responsive-column:nth-of-type(12) {
+    display: none;
+  }
+  &.show-grid {
+    opacity: 0.1;
   }
 }
 
-@media (min-width: 90rem) {
-  body.show-grid {
-    background-image: url(../assets/images/responsive-grid-desktop.svg);
+@media (min-width: 48rem) {
+  .responsive-grid {
+    padding: 0 $spacing-xl;
+    .responsive-column {
+      width: calc((100% / 8) - #{$spacing-lg});
+    }
+    .responsive-column:nth-of-type(5),
+    .responsive-column:nth-of-type(6),
+    .responsive-column:nth-of-type(7),
+    .responsive-column:nth-of-type(8) {
+      display: grid;
+    }
+  }
+}
+
+@media (min-width: 80rem) {
+  .responsive-grid {
+    .responsive-column {
+      width: calc((100% / 12) - #{$spacing-lg});
+    }
+  .responsive-column:nth-of-type(9),
+  .responsive-column:nth-of-type(10),
+  .responsive-column:nth-of-type(11),
+  .responsive-column:nth-of-type(12) {
+      display: grid;
+    }
   }
 }

@@ -1,7 +1,7 @@
 // SHOW BACKGROUND GRID AND SPACING
 window.addEventListener('DOMContentLoaded', function(showGrid) {
   if(sessionStorage.getItem('showGrid') === 'true') {
-    $('body').addClass('show-grid');
+    $('.responsive-grid').addClass('show-grid');
     $('input#show-grid').prop('checked',true);
   }
   else {
@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', function(showGrid) {
   }
 });
 $('#show-grid').click(function() {
-  $('body').toggleClass('show-grid');
+  $('.responsive-grid').toggleClass('show-grid');
   if(sessionStorage.getItem('showGrid') === 'true') {
     $('input#show-grid').prop('checked',false);
     sessionStorage.setItem('showGrid',false);
