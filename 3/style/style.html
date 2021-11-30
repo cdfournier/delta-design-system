@@ -26,6 +26,20 @@
       <h1 class="visuallyhidden">Skip to the main content on this page</h1>
       <p class="center"><a href="style/style.html#content">Skip to the main content on this page</a></p>
     </section>
+    <div class="responsive-grid">
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+    </div>
     <header>
       <nav aria-labelledby="header-navigation">
         <button class="menu-toggle" aria-expanded="false" aria-controls="header-navigation">
@@ -68,8 +82,8 @@
               </div>
               <div class="card">
                 <div class="text">
-                  <h3>Layout</h3>
-                  <p>Coming soon</p>
+                  <h3>Layouts</h3>
+                  <p><a href="style/layouts/layouts.html">View layout components</a></p>
                 </div>
               </div>
               <div class="card">
@@ -83,6 +97,17 @@
                   <h3>Typography</h3>
                   <p>Coming soon</p>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="row">
+          <div class="column">
+            <div class="row cards">
+              <div class="card">
+                <fieldset style="padding: 0;">
+                  <label for="show-grid" class="switch reverse" style="margin: 0;"><input id="show-grid" type="checkbox" name="show-grid">Show responsive grid</label>
+                </fieldset>
               </div>
             </div>
           </div>
@@ -116,6 +141,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="assets/scripts/headroom.js"></script>
     <script src="assets/scripts/site.js"></script>
+    <script src="assets/scripts/show-grid.js"></script>
     <script>
       // CHANGE BODY CSS WHEN PAGE LOADS
       function loaded (callback) {

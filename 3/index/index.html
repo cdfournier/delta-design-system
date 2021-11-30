@@ -26,6 +26,20 @@
       <h1 class="visuallyhidden">Skip to the main content on this page</h1>
       <p class="center"><a href="index/index.html#content">Skip to the main content on this page</a></p>
     </section>
+    <div class="responsive-grid">
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+    </div>
     <header>
       <nav aria-labelledby="header-navigation">
         <button class="menu-toggle" aria-expanded="false" aria-controls="header-navigation">
@@ -52,6 +66,17 @@
         <section class="row">
           <div class="column">
             <h2>Components<span class="anchor"><a href="index/index.html#components"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4-4a3.5 3.5 0 0 0-5-5l-.5.5"/><path d="M14 10a3.5 3.5 0 0 0-5 0l-4 4a3.5 3.5 0 0 0 5 5l.5-.5"/></svg></span></a></span></h2>
+          </div>
+        </section>
+        <section class="row">
+          <div class="column">
+            <div class="row cards">
+              <div class="card">
+                <fieldset style="padding: 0;">
+                  <label for="show-grid" class="switch reverse" style="margin: 0;"><input id="show-grid" type="checkbox" name="show-grid">Show responsive grid</label>
+                </fieldset>
+              </div>
+            </div>
           </div>
         </section>
       </article>
@@ -83,6 +108,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="assets/scripts/headroom.js"></script>
     <script src="assets/scripts/site.js"></script>
+    <script src="assets/scripts/show-grid.js"></script>
     <script>
       // CHANGE BODY CSS WHEN PAGE LOADS
       function loaded (callback) {

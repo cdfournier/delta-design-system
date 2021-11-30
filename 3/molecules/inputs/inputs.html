@@ -51,11 +51,25 @@
       }
     </style>
   </head>
-  <body class="hidden show-grid">
+  <body class="hidden">
     <section class="skip">
       <h1 class="visuallyhidden">Skip to the main content on this page</h1>
       <p class="center"><a href="molecules/inputs/inputs.html#content">Skip to the main content on this page</a></p>
     </section>
+    <div class="responsive-grid">
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+      <div class="responsive-column"></div>
+    </div>
     <header>
       <nav aria-labelledby="header-navigation">
         <button class="menu-toggle" aria-expanded="false" aria-controls="header-navigation">
@@ -429,7 +443,7 @@
           </div>
         </section>
         <section class="row">
-          <div class="column">
+          <div class="column span-6">
             <div role="group" aria-labelledby="input-states">
               <h2 id="input-states">Input states</h2>
               <p>Want to see what each <code>&lt;input&gt;</code> state looks like? Use these controls to see the different <code>&lt;input&gt;</code> states.</p>
@@ -454,6 +468,17 @@
                 <span class="valid">This is the <code style="padding: calc(var(--spacing-xs)/2) var(--spacing-xs); border-radius: var(--border-radius-xs); background-color: var(--lt-gray);">:valid</code> state</span>
                 <span class="not-allowed">This is the <code style="padding: calc(var(--spacing-xs)/2) var(--spacing-xs); border-radius: var(--border-radius-xs); background-color: var(--lt-gray);">:not-allowed</code> state</span>
                 <span class="read-only">This is the <code style="padding: calc(var(--spacing-xs)/2) var(--spacing-xs); border-radius: var(--border-radius-xs); background-color: var(--lt-gray);">:read-only</code> state</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="row">
+          <div class="column">
+            <div class="row cards">
+              <div class="card">
+                <fieldset style="padding: 0;">
+                  <label for="show-grid" class="switch reverse" style="margin: 0;"><input id="show-grid" type="checkbox" name="show-grid">Show responsive grid</label>
+                </fieldset>
               </div>
             </div>
           </div>
@@ -487,6 +512,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="assets/scripts/headroom.js"></script>
     <script src="assets/scripts/site.js"></script>
+    <script src="assets/scripts/show-grid.js"></script>
     <script>
       // CHANGE BODY CSS WHEN PAGE LOADS
       function loaded (callback) {
@@ -548,6 +574,8 @@
           $('textarea').attr('aria-invalid',true);
           $('select').removeAttr('aria-invalid',false);
           $('select').attr('aria-invalid',true);
+          $('input#show-grid').removeAttr('aria-invalid');
+          $('label[for="show-grid"]').removeClass('invalid');
         }
       });
 
@@ -576,6 +604,8 @@
           $('textarea').attr('aria-invalid',false);
           $('select').removeAttr('aria-invalid',true);
           $('select').attr('aria-invalid',false);
+          $('input#show-grid').removeAttr('aria-invalid');
+          $('label[for="show-grid"]').removeClass('valid');
         }
       });
 
@@ -604,6 +634,8 @@
           $('select').attr('disabled','disabled');
           $('input#input-default').removeAttr('disabled');
           $('label[for="input-default"]').removeClass('not-allowed');
+          $('input#show-grid').removeAttr('disabled');
+          $('label[for="show-grid"]').removeClass('not-allowed');
         }
       });
 
@@ -630,6 +662,8 @@
           $('textarea').val('This is a read-only sample');
           $('select').removeAttr('aria-invalid');
           $('select').removeAttr('disabled');
+          $('input#show-grid').removeAttr('aria-invalid');
+          $('label[for="show-grid"]').removeClass('disabled');
         }
       });
     </script>

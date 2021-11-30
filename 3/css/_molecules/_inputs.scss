@@ -82,6 +82,9 @@ input {
     right: auto;
     left: $spacing-md;
   }
+  svg {
+    width: 100%;
+  }
 }
 
 
@@ -93,6 +96,7 @@ select {
   border: 1px solid black;
   border-radius: $border-radius-sm;
   line-height: 1.5;
+  color: black;
 }
 
 
@@ -264,7 +268,7 @@ label.switch {
 }
 
 
-// INVALID STATES
+// INVALID
 input[aria-invalid="true"],
 select[aria-invalid="true"] {
   border-color: $invalid;
@@ -300,7 +304,7 @@ label.switch.invalid {
 }
 
 
-// VALID STATES
+// VALID
 input[aria-invalid="false"],
 select[aria-invalid="false"] {
   border-color: $valid;
@@ -336,7 +340,7 @@ label.switch.valid {
 }
 
 
-// NOT-ALLOWED STATES
+// NOT-ALLOWED
 input:disabled,
 select:disabled {
   border-color: $not-allowed;
@@ -385,7 +389,7 @@ label.switch.not-allowed {
 }
 
 
-// NOT-ALLOWED STATES
+// READ-ONLY
 input:not(input[type="checkbox"]):not(input[type="radio"])[readonly="readonly"] {
   border-color: $read-only;
 }
