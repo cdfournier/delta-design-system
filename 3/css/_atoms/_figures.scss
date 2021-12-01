@@ -15,7 +15,7 @@ figure {
     overflow-x: auto;
   }
   figcaption {
-    padding: 0 0 $spacing-xs;
+    padding: $spacing-xs 0 0;
     @include font-body-bold;
     font-size: $xsmall;
     text-transform: uppercase;

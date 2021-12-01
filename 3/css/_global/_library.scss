@@ -27,22 +27,51 @@
     &:nth-of-type(4) {
       margin-right: 0;
     }
-  }
-  .responsive-column:nth-of-type(5),
-  .responsive-column:nth-of-type(6),
-  .responsive-column:nth-of-type(7),
-  .responsive-column:nth-of-type(8),
-  .responsive-column:nth-of-type(9),
-  .responsive-column:nth-of-type(10),
-  .responsive-column:nth-of-type(11),
-  .responsive-column:nth-of-type(12) {
-    display: none;
+    &:nth-of-type(5),
+    &:nth-of-type(6),
+    &:nth-of-type(7),
+    &:nth-of-type(8),
+    &:nth-of-type(9),
+    &:nth-of-type(10),
+    &:nth-of-type(11),
+    &:nth-of-type(12) {
+      display: none;
+    }
   }
   &.show-grid {
     opacity: 0.1;
   }
 }
 
+@media (min-width: 48rem) {
+  .responsive-grid {
+    padding: 0 $spacing-xl;
+    .responsive-column {
+      width: calc((100% / 12) - #{$spacing-lg});
+      margin: 0 $spacing-lg;
+      &:nth-of-type(4) {
+        margin-right: $spacing-lg;
+      }
+      &:nth-of-type(12) {
+        margin-right: 0;
+      }
+      &:nth-of-type(5),
+      &:nth-of-type(6),
+      &:nth-of-type(7),
+      &:nth-of-type(8),
+      &:nth-of-type(9),
+      &:nth-of-type(10),
+      &:nth-of-type(11),
+      &:nth-of-type(12) {
+        display: grid;
+      }
+    }
+  }
+}
+
+
+// USE THESE TO GO FROM 4-COL TO 8-COL TO 12-COL
+/*
 @media (min-width: 48rem) {
   .responsive-grid {
     padding: 0 $spacing-xl;
@@ -84,3 +113,4 @@
     }
   }
 }
+*/

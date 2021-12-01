@@ -21,7 +21,7 @@ main:after {
 	width: 100%;
 	margin: 0;
   padding: $spacing-lg $spacing-sm 0;
-  &:first-of-type {
+  &:first-child {
     padding: 0 $spacing-sm;
   }
   &.center-v {
@@ -55,11 +55,28 @@ main:after {
 @media (min-width: 48rem) {
   .row {
     padding: $spacing-xl $spacing-lg 0;
-    &:first-of-type {
+    &:first-child {
       padding: 0 $spacing-lg;
+    }
+    .row {
+      width: calc(100% + #{$spacing-xl});
+      margin: 0 calc(#{$spacing-lg} * -1);
+      padding: $spacing-lg 0 0;
     }
     .column {
       padding: $spacing-lg $spacing-lg 0;
+      &.span-12 {width: calc((100% / 12) * 12);}
+      &.span-11 {width: calc((100% / 12) * 11);}
+      &.span-10 {width: calc((100% / 12) * 10);}
+      &.span-9 {width: calc((100% / 12) * 9);}
+      &.span-8 {width: calc((100% / 12) * 8);}
+      &.span-7 {width: calc((100% / 12) * 7);}
+      &.span-6 {width: calc((100% / 12) * 6);}
+      &.span-5 {width: calc((100% / 12) * 5);}
+      &.span-4 {width: calc((100% / 12) * 4);}
+      &.span-3 {width: calc((100% / 12) * 3);}
+      &.span-2 {width: calc((100% / 12) * 2);}
+      &.span-1 {width: calc((100% / 12) * 1);}
       &:first-child {
         padding: 0 $spacing-lg;
       }
@@ -69,24 +86,68 @@ main:after {
         }
       }
     }
-    .column.span-12 {width: 100%;}
-    .column.span-11 {width: calc((100% / 12) * 11);}
-    .column.span-10 {width: calc((100% / 12) * 10);}
-    .column.span-9 {width: calc((100% / 12) * 9);}
-    .column.span-8 {width: calc((100% / 12) * 8);}
-    .column.span-7 {width: calc((100% / 12) * 7);}
-    .column.span-6 {width: calc((100% / 12) * 6);}
-    .column.span-5 {width: calc((100% / 12) * 5);}
-    .column.span-4 {width: calc((100% / 12) * 4);}
-    .column.span-3 {width: calc((100% / 12) * 3);}
-    .column.span-2 {width: calc((100% / 12) * 2);}
-    .column.span-1 {width: calc((100% / 12) * 1);}
+  }
+}
+
+
+// USE THESE TO GO FROM 4-COL TO 8-COL TO 12-COL
+/*
+@media (min-width: 48rem) {
+  .row {
+    padding: $spacing-xl $spacing-lg 0;
+    &:first-child {
+      padding: 0 $spacing-lg;
+    }
     .row {
-      margin: 0 calc(#{$spacing-md} * -1);
-      padding: $spacing-md 0 0;
+      width: calc(100% + #{$spacing-xl});
+      margin: 0 calc(#{$spacing-lg} * -1);
+      padding: $spacing-lg 0 0;
+    }
+    .column {
+      padding: $spacing-lg $spacing-lg 0;
+      &.span-12 {width: calc((100% / 8) * 8);}
+      &.span-11 {width: calc((100% / 8) * 8);}
+      &.span-10 {width: calc((100% / 8) * 8);}
+      &.span-9 {width: calc((100% / 8) * 8);}
+      &.span-8 {width: calc((100% / 8) * 8);}
+      &.span-7 {width: calc((100% / 8) * 7);}
+      &.span-6 {width: calc((100% / 8) * 6);}
+      &.span-5 {width: calc((100% / 8) * 5);}
+      &.span-4 {width: calc((100% / 8) * 4);}
+      &.span-3 {width: calc((100% / 8) * 3);}
+      &.span-2 {width: calc((100% / 8) * 2);}
+      &.span-1 {width: calc((100% / 8) * 1);}
+      &:first-child {
+        padding: 0 $spacing-lg;
+      }
+      .row {
+        .column:first-child {
+          padding: $spacing-lg $spacing-lg 0;
+        }
+      }
     }
   }
 }
+
+@media (min-width: 80rem) {
+  .row {
+    .column {
+      &.span-12 {width: calc((100% / 12) * 12);}
+      &.span-11 {width: calc((100% / 12) * 11);}
+      &.span-10 {width: calc((100% / 12) * 10);}
+      &.span-9 {width: calc((100% / 12) * 9);}
+      &.span-8 {width: calc((100% / 12) * 8);}
+      &.span-7 {width: calc((100% / 12) * 7);}
+      &.span-6 {width: calc((100% / 12) * 6);}
+      &.span-5 {width: calc((100% / 12) * 5);}
+      &.span-4 {width: calc((100% / 12) * 4);}
+      &.span-3 {width: calc((100% / 12) * 3);}
+      &.span-2 {width: calc((100% / 12) * 2);}
+      &.span-1 {width: calc((100% / 12) * 1);}
+    }
+  }
+}
+*/
 
 
 // BORDERS
