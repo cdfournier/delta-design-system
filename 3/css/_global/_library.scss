@@ -16,9 +16,9 @@
   @include transition(opacity, 0.25s, ease);
   .responsive-column {
     display: grid;
-    width: calc((100% / 4) - #{$spacing-md});
+    width: calc((100% / 4) - #{$spacing-sm});
     height: 100%;
-    margin: 0 $spacing-md;
+    margin: 0 $spacing-sm;
     padding: 0;
     background-color: #ff10ff;
     &:first-of-type {
@@ -47,10 +47,10 @@
   .responsive-grid {
     padding: 0 $spacing-xl;
     .responsive-column {
-      width: calc((100% / 12) - #{$spacing-lg});
-      margin: 0 $spacing-lg;
+      width: calc((100% / 12) - #{$spacing-sm});
+      margin: 0 $spacing-sm;
       &:nth-of-type(4) {
-        margin-right: $spacing-lg;
+        margin-right: $spacing-sm;
       }
       &:nth-of-type(12) {
         margin-right: 0;
