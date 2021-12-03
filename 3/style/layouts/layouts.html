@@ -22,6 +22,7 @@
       .fpo {
         overflow: hidden;
         padding: var(--spacing-sm);
+        padding: 0;
         background: white;
         font-size: var(--small);
         text-overflow: ellipsis;
@@ -67,100 +68,46 @@
     </header>
     <main>
       <article id="content">
-        <h1 class="visuallyhidden">Layouts</h1>
-        <section class="row">
-          <div class="column">
-            <h2 class="title">Layouts</h2>
-            <p>A properly designed layout delivers optimal, consistent user experiences.</p>
-          </div>
-        </section>
+        <div class="row show-spacing">
+          <div class="column  show-spacing span-12"><span class="fpo"><code>span-12</code></span></div>
+          <div class="column  show-spacing span-11"><span class="fpo"><code>span-11</code></span></div>
+          <div class="column  show-spacing span-10"><span class="fpo"><code>span-10</code></span></div>
+          <div class="column  show-spacing span-9"><span class="fpo"><code>span-9</code></span></div>
+          <div class="column  show-spacing span-8"><span class="fpo"><code>span-8</code></span></div>
+          <div class="column  show-spacing span-7"><span class="fpo"><code>span-7</code></span></div>
+          <div class="column  show-spacing span-6"><span class="fpo"><code>span-6</code></span></div>
+          <div class="column  show-spacing span-5"><span class="fpo"><code>span-5</code></span></div>
+          <div class="column  show-spacing span-4"><span class="fpo"><code>span-4</code></span></div>
+          <div class="column  show-spacing span-3"><span class="fpo"><code>span-3</code></span></div>
+          <div class="column  show-spacing span-2"><span class="fpo"><code>span-2</code></span></div>
+          <div class="column  show-spacing span-1"><span class="fpo"><code>span-1</code></span></div>
 <!--
-        <section class="row">
-          <div class="column">
-            <h3>Responsive grid<span class="anchor"><a href="style/layouts.html#responsive-grid"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4-4a3.5 3.5 0 0 0-5-5l-.5.5"/><path d="M14 10a3.5 3.5 0 0 0-5 0l-4 4a3.5 3.5 0 0 0 5 5l.5-.5"/></svg></span></a></span></h3>
-            <p>Layouts sit upon a responsive grid. Our responsive grid adapts dynamically based on the size (and zoom level) and orientation of the user&rsquo;s screen.</p>
-            <div class="row">
-              <div class="column span-6">
-                <figure>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 382 226" style="enable-background:new 0 0 382 226" xml:space="preserve"><path style="fill:#fff" d="M8 0h366v226H8z"/><path d="M31.2 0H8v226h23.2V0m31.1 0H39.2v226h23.2V0m31.1 0H70.3v226h23.2V0m31.2 0h-23.2v226h23.2V0m31.1 0h-23.2v226h23.2V0M187 0h-23.2v226H187V0m31.2 0H195v226h23.2V0m31.1 0h-23.2v226h23.2V0m31.2 0h-23.2v226h23.2V0m31.2 0h-23.2v226h23.2V0m31.1 0h-23.2v226h23.2V0M374 0h-23.2v226H374V0" style="fill:#ffbfff"/><path d="M39.2 0h-8v226h8V0m31.1 0h-8v226h8V0m31.2 0h-8v226h8V0m31.2 0h-8v226h8V0m31.1 0h-8v226h8V0M195 0h-8v226h8V0m31.2 0h-8v226h8V0m31.1 0h-8v226h8V0m31.2 0h-8v226h8V0m31.2 0h-8v226h8V0m31.1 0h-8v226h8V0" style="fill:#bfebfb"/><path d="M8 0H0v226h8V0m374 0h-8v226h8V0" style="fill:#bfffbf"/></svg>
-                  <figcaption>The responsive grid on wider devices is made up of 12 columns</figcaption>
-                </figure>
-              </div>
-              <div class="column span-3">
-                <figure>
-                  <div style="width: 100%; max-width: calc((100vw / 12) * 3);">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 398 226" style="enable-background:new 0 0 398 226" xml:space="preserve"><path style="fill:#fff" d="M16 0h366v226H16z"/><path d="M95.5 0H16v226h79.5V0M191 0h-79.5v226H191V0m95.5 0H207v226h79.5V0M382 0h-79.5v226H382V0" style="fill:#ffbfff"/><path d="M111.5 0h-16v226h16V0M207 0h-16v226h16V0m95.5 0h-16v226h16V0" style="fill:#bfebfb"/><path d="M16 0H0v226h16V0m382 0h-16v226h16V0" style="fill:#bfffbf"/></svg>
-                  </div>
-                  <figcaption>The responsive grid on mobile devices is made up of 4 columns</figcaption>
-                </figure>
-              </div>
-            </div>
-            <h4>Columns<span class="anchor"><a href="style/layouts.html#responsive-grid-columns"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4-4a3.5 3.5 0 0 0-5-5l-.5.5"/><path d="M14 10a3.5 3.5 0 0 0-5 0l-4 4a3.5 3.5 0 0 0 5 5l.5-.5"/></svg></span></a></span></h4>
-            <p>When we build our layout grid, we use columns (the magenta areas in the figures above) to define the areas of the screen that contain content. Columns have a variable width based on a percentage of the available real estate.</p>
-            <p>Note that on screens narrower than <code>48rem</code> there are only 4 columns in the responsive grid. On screens wider than <code>48rem</code> the grid switches to 12 columns.</p>
-            <h4>Gutters<span class="anchor"><a href="style/layouts.html#responsive-grid-gutters"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4-4a3.5 3.5 0 0 0-5-5l-.5.5"/><path d="M14 10a3.5 3.5 0 0 0-5 0l-4 4a3.5 3.5 0 0 0 5 5l.5-.5"/></svg></span></a></span></h4>
-            <p>A gutter (the blue areas in the figures above) is the space between columns that helps separate content. Gutter widths are fixed values.</p>
-            <h4>Margins<span class="anchor"><a href="style/layouts.html#responsive-grid-margins"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4-4a3.5 3.5 0 0 0-5-5l-.5.5"/><path d="M14 10a3.5 3.5 0 0 0-5 0l-4 4a3.5 3.5 0 0 0 5 5l.5-.5"/></svg></span></a></span></h4>
-            <p>Margins (the green areas in the figures above) are the spaces on the left and right edges of the screen. Margins create whitespace around the perimeter of content.</p>
-          </div>
-          <div class="column">
-            <h4>Show grid</h4>
-            <p>Many of the pages in this library feature a switch like the one you see below. You can use this switch to turn the system&lsquo;s responsive grid on and off to see how it works on each page.</p>
-            <div class="row cards">
-              <div class="card">
-                <fieldset style="padding: 0;">
-                  <label for="show-grid-sample" class="switch reverse" style="margin: 0;"><input id="show-grid-sample" type="checkbox" name="show-grid-sample" checked disabled="disabled">Show responsive grid</label>
-                </fieldset>
-              </div>
-            </div>
-          </div>
-        </section>
--->
-
-        <section class="row">
-          <div class="column">
-<!--
-            <h3>Layout grid<span class="anchor"><a href="style/layouts.html#layout-grid"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4-4a3.5 3.5 0 0 0-5-5l-.5.5"/><path d="M14 10a3.5 3.5 0 0 0-5 0l-4 4a3.5 3.5 0 0 0 5 5l.5-.5"/></svg></span></a></span></h3>
-            <p>Our layout grid is designed to maximize flexibility and efficiency. It uses 100% of the screen&rsquo;s width. Rows are filled with columns that span a certain number of our responsive grid columns. </p>
--->
-
-<!--
-            <div class="row">
-              <div class="column span-6">
-                <h4>Rows<span class="anchor"><a href="style/layouts.html#layout-grid-rows"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4-4a3.5 3.5 0 0 0-5-5l-.5.5"/><path d="M14 10a3.5 3.5 0 0 0-5 0l-4 4a3.5 3.5 0 0 0 5 5l.5-.5"/></svg></span></a></span></h4>
-              </div>
-              <div class="column span-4">
-                <figure>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 382 226"><path style="fill:#fff" d="M8 0h366v226H8z"/><path d="M102.17 49H79v226h23.17V49m31.16 0h-23.16v226h23.16V49m31.17 0h-23.17v226h23.17V49m31.17 0H172.5v226h23.17V49m31.16 0h-23.16v226h23.16V49M258 49h-23.17v226H258V49m31.17 0H266v226h23.17V49m31.16 0h-23.16v226h23.16V49m31.17 0h-23.17v226h23.17V49m31.17 0H359.5v226h23.17V49m31.16 0h-23.16v226h23.16V49M445 49h-23.17v226H445V49" transform="translate(-71 -49)" style="fill:#ffbfff"/><path d="M110.17 49h-8v226h8V49m31.16 0h-8v226h8V49m31.17 0h-8v226h8V49m31.17 0h-8v226h8V49m31.16 0h-8v226h8V49M266 49h-8v226h8V49m31.17 0h-8v226h8V49m31.16 0h-8v226h8V49m31.17 0h-8v226h8V49m31.17 0h-8v226h8V49m31.16 0h-8v226h8V49" transform="translate(-71 -49)" style="fill:#bfebfb"/><path d="M79 49h-8v226h8V49m374 0h-8v226h8V49" transform="translate(-71 -49)" style="fill:#bfffbf"/><g style="opacity:.9"><path d="M440.91 49H83.09c-2.26 0-4.09.9-4.09 2v46.5c0 1.1 1.83 2 4.09 2h357.82c2.26 0 4.09-.9 4.09-2V51c0-1.1-1.83-2-4.09-2Z" transform="translate(-71 -49)" style="fill:#fff"/></g><path d="M434.25 74.75a6.52 6.52 0 0 1-6.5 6.5h-156v4.5l-4-2.5-4-2.5 4-2.5 4-2.5v4.5h156a5.5 5.5 0 0 0 0-11h-326a6 6 0 1 1 0-1h326a6.52 6.52 0 0 1 6.5 6.5Z" transform="translate(-71 -49)" style="fill:#df3a32"/></svg>
-                </figure>
-              </div>
-            </div>
-            <div class="row">
-              <div class="column span-6">
-                <figure>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 382 226"><path style="fill:#fff" d="M8 0h366v226H8z"/><path d="M102.17 49H79v226h23.17V49m31.16 0h-23.16v226h23.16V49m31.17 0h-23.17v226h23.17V49m31.17 0H172.5v226h23.17V49m31.16 0h-23.16v226h23.16V49M258 49h-23.17v226H258V49m31.17 0H266v226h23.17V49m31.16 0h-23.16v226h23.16V49m31.17 0h-23.17v226h23.17V49m31.17 0H359.5v226h23.17V49m31.16 0h-23.16v226h23.16V49M445 49h-23.17v226H445V49" transform="translate(-71 -49)" style="fill:#ffbfff"/><path d="M110.17 49h-8v226h8V49m31.16 0h-8v226h8V49m31.17 0h-8v226h8V49m31.17 0h-8v226h8V49m31.16 0h-8v226h8V49M266 49h-8v226h8V49m31.17 0h-8v226h8V49m31.16 0h-8v226h8V49m31.17 0h-8v226h8V49m31.17 0h-8v226h8V49m31.16 0h-8v226h8V49" transform="translate(-71 -49)" style="fill:#bfebfb"/><path d="M79 49h-8v226h8V49m374 0h-8v226h8V49" transform="translate(-71 -49)" style="fill:#bfffbf"/><g style="opacity:.9"><path d="M330.33 274.5a1.5 1.5 0 0 1-1.5-1.5V168a1.5 1.5 0 0 1 1.5-1.5H443a1.5 1.5 0 0 1 1.5 1.5v105a1.5 1.5 0 0 1-1.5 1.5Zm-124.66 0a1.5 1.5 0 0 1-1.5-1.5V168a1.5 1.5 0 0 1 1.5-1.5h112.66a1.5 1.5 0 0 1 1.5 1.5v105a1.5 1.5 0 0 1-1.5 1.5ZM81 274.5a1.5 1.5 0 0 1-1.5-1.5V168a1.5 1.5 0 0 1 1.5-1.5h112.67a1.5 1.5 0 0 1 1.5 1.5v105a1.5 1.5 0 0 1-1.5 1.5Zm187-117a1.5 1.5 0 0 1-1.5-1.5v-46.5a1.5 1.5 0 0 1 1.5-1.5h175a1.5 1.5 0 0 1 1.5 1.5V156a1.5 1.5 0 0 1-1.5 1.5Zm-187 0a1.5 1.5 0 0 1-1.5-1.5V51a1.5 1.5 0 0 1 1.5-1.5h175a1.5 1.5 0 0 1 1.5 1.5v105a1.5 1.5 0 0 1-1.5 1.5ZM268 99a1.5 1.5 0 0 1-1.5-1.5V51a1.5 1.5 0 0 1 1.5-1.5h175a1.5 1.5 0 0 1 1.5 1.5v46.5A1.5 1.5 0 0 1 443 99Z" transform="translate(-71 -49)" style="fill:#fff"/><path d="M443 50a1 1 0 0 1 1 1v46.5a1 1 0 0 1-1 1H268a1 1 0 0 1-1-1V51a1 1 0 0 1 1-1h175m-187 0a1 1 0 0 1 1 1v105a1 1 0 0 1-1 1H81a1 1 0 0 1-1-1V51a1 1 0 0 1 1-1h175m187 58.5a1 1 0 0 1 1 1V156a1 1 0 0 1-1 1H268a1 1 0 0 1-1-1v-46.5a1 1 0 0 1 1-1h175m0 58.5a1 1 0 0 1 1 1v105a1 1 0 0 1-1 1H330.33a1 1 0 0 1-1-1V168a1 1 0 0 1 1-1H443m-124.67 0a1 1 0 0 1 1 1v105a1 1 0 0 1-1 1H205.67a1 1 0 0 1-1-1V168a1 1 0 0 1 1-1h112.66m-124.66 0a1 1 0 0 1 1 1v105a1 1 0 0 1-1 1H81a1 1 0 0 1-1-1V168a1 1 0 0 1 1-1h112.67M443 49H268a2 2 0 0 0-2 2v46.5a2 2 0 0 0 2 2h175a2 2 0 0 0 2-2V51a2 2 0 0 0-2-2Zm-187 0H81a2 2 0 0 0-2 2v105a2 2 0 0 0 2 2h175a2 2 0 0 0 2-2V51a2 2 0 0 0-2-2Zm187 58.5H268a2 2 0 0 0-2 2V156a2 2 0 0 0 2 2h175a2 2 0 0 0 2-2v-46.5a2 2 0 0 0-2-2Zm0 58.5H330.33a2 2 0 0 0-2 2v105a2 2 0 0 0 2 2H443a2 2 0 0 0 2-2V168a2 2 0 0 0-2-2Zm-124.67 0H205.67a2 2 0 0 0-2 2v105a2 2 0 0 0 2 2h112.66a2 2 0 0 0 2-2V168a2 2 0 0 0-2-2Zm-124.66 0H81a2 2 0 0 0-2 2v105a2 2 0 0 0 2 2h112.67a2 2 0 0 0 2-2V168a2 2 0 0 0-2-2Z" transform="translate(-71 -49)" style="fill:#df3a32"/></g></svg>
-                </figure>
-              </div>
-            </div>
--->
-
+          <div class="column  show-spacing span-12">
+            <span class="fpo"><code>span-12</code></span>
             <div class="row show-spacing">
-              <div class="column  show-spacing span-12"><span class="fpo"><code>span-12</code></span></div>
-              <div class="column  show-spacing span-11"><span class="fpo"><code>span-11</code></span></div>
-              <div class="column  show-spacing span-10"><span class="fpo"><code>span-10</code></span></div>
-              <div class="column  show-spacing span-9"><span class="fpo"><code>span-9</code></span></div>
-              <div class="column  show-spacing span-8"><span class="fpo"><code>span-8</code></span></div>
-              <div class="column  show-spacing span-7"><span class="fpo"><code>span-7</code></span></div>
-              <div class="column  show-spacing span-6"><span class="fpo"><code>span-6</code></span></div>
-              <div class="column  show-spacing span-5"><span class="fpo"><code>span-5</code></span></div>
-              <div class="column  show-spacing span-4"><span class="fpo"><code>span-4</code></span></div>
-              <div class="column  show-spacing span-3"><span class="fpo"><code>span-3</code></span></div>
-              <div class="column  show-spacing span-2"><span class="fpo"><code>span-2</code></span></div>
-              <div class="column  show-spacing span-1"><span class="fpo"><code>span-1</code></span></div>
+              <div class="column  show-spacing span-12">
+                <span class="fpo"><code>row &gt; column &gt; row &gt; column</code></span>
+              </div>
             </div>
           </div>
-        </section>
-
+          <div class="column  show-spacing span-11"><span class="fpo"><code>span-11</code></span></div>
+          <div class="column  show-spacing span-10"><span class="fpo"><code>span-10</code></span></div>
+          <div class="column  show-spacing span-9"><span class="fpo"><code>span-9</code></span></div>
+          <div class="column  show-spacing span-8"><span class="fpo"><code>span-8</code></span></div>
+          <div class="column  show-spacing span-7"><span class="fpo"><code>span-7</code></span></div>
+          <div class="column  show-spacing span-6"><span class="fpo"><code>span-6</code></span></div>
+          <div class="column  show-spacing span-5"><span class="fpo"><code>span-5</code></span></div>
+          <div class="column  show-spacing span-4"><span class="fpo"><code>span-4</code></span></div>
+          <div class="column  show-spacing span-3"><span class="fpo"><code>span-3</code></span></div>
+          <div class="column  show-spacing span-2"><span class="fpo"><code>span-2</code></span></div>
+          <div class="column  show-spacing span-1"><span class="fpo"><code>span-1</code></span></div>
+-->
+<!--
+          <div class="row show-spacing">
+            <div class="column  show-spacing span-12"><span class="fpo"><code>row &gt; row &gt; column</code></span></div>
+          </div>
+-->
+        </div>
         <section class="row">
           <div class="column">
             <div class="row cards">

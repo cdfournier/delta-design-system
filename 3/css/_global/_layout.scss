@@ -1,39 +1,19 @@
-// MAIN
-/*
-main:after {
-  display: block;
-  width: calc(100% - calc(4 * #{$spacing-lg}));
-  height: 1px;
-  margin: $spacing-xl auto 0;
-  background-color: $md-gray;
-  content: "";
-}
-*/
-
-
 // ROWS
 .row {
 	display: flex;
-	align-items: flex-start;
 	flex-direction: row;
+	align-items: flex-start;
 	flex-wrap: wrap;
 	position: relative;
 	width: 100%;
 	margin: 0;
   padding: $spacing-lg $spacing-sm 0;
   &:first-child {
-    padding: 0 $spacing-sm;
-  }
-  &.center-v {
-    align-items: center;
-  }
-  &.center-h {
-    justify-content: center;
+    //padding: 0 $spacing-sm;
   }
   .row {
     width: calc(100% + #{$spacing-lg});
     margin: 0 calc(#{$spacing-sm} * -1);
-    padding: $spacing-lg 0 0;
   }
   .column {
     display: flex;
@@ -44,94 +24,21 @@ main:after {
     &:first-child {
       padding: 0 $spacing-sm;
     }
+    &.small {
+      width: 50%;
+    }
     .row {
-      .column:first-child {
-        padding: $spacing-lg $spacing-sm 0;
-      }
+      width: calc(100% + #{$spacing-xl});
+      margin: 0 calc(#{$spacing-lg} * -1);
     }
   }
 }
 
 @media (min-width: 48rem) {
   .row {
-    padding: $spacing-xl $spacing-lg 0;
-    &:first-child {
-      padding: 0 $spacing-lg;
-    }
-    .row {
-      width: calc(100% + #{$spacing-xl});
-      margin: 0 calc(#{$spacing-lg} * -1);
-      padding: $spacing-lg 0 0;
-    }
+    padding: $spacing-xl calc(1.5 * #{$spacing-lg}) 0;
     .column {
-      padding: $spacing-lg $spacing-lg 0;
-      &.span-12 {width: calc((100% / 12) * 12);}
-      &.span-11 {width: calc((100% / 12) * 11);}
-      &.span-10 {width: calc((100% / 12) * 10);}
-      &.span-9 {width: calc((100% / 12) * 9);}
-      &.span-8 {width: calc((100% / 12) * 8);}
-      &.span-7 {width: calc((100% / 12) * 7);}
-      &.span-6 {width: calc((100% / 12) * 6);}
-      &.span-5 {width: calc((100% / 12) * 5);}
-      &.span-4 {width: calc((100% / 12) * 4);}
-      &.span-3 {width: calc((100% / 12) * 3);}
-      &.span-2 {width: calc((100% / 12) * 2);}
-      &.span-1 {width: calc((100% / 12) * 1);}
-      &:first-child {
-        padding: 0 $spacing-lg;
-      }
-      .row {
-        .column:first-child {
-          padding: $spacing-lg $spacing-lg 0;
-        }
-      }
-    }
-  }
-}
-
-
-// USE THESE TO GO FROM 4-COL TO 8-COL TO 12-COL
-/*
-@media (min-width: 48rem) {
-  .row {
-    padding: $spacing-xl $spacing-lg 0;
-    &:first-child {
-      padding: 0 $spacing-lg;
-    }
-    .row {
-      width: calc(100% + #{$spacing-xl});
-      margin: 0 calc(#{$spacing-lg} * -1);
-      padding: $spacing-lg 0 0;
-    }
-    .column {
-      padding: $spacing-lg $spacing-lg 0;
-      &.span-12 {width: calc((100% / 8) * 8);}
-      &.span-11 {width: calc((100% / 8) * 8);}
-      &.span-10 {width: calc((100% / 8) * 8);}
-      &.span-9 {width: calc((100% / 8) * 8);}
-      &.span-8 {width: calc((100% / 8) * 8);}
-      &.span-7 {width: calc((100% / 8) * 7);}
-      &.span-6 {width: calc((100% / 8) * 6);}
-      &.span-5 {width: calc((100% / 8) * 5);}
-      &.span-4 {width: calc((100% / 8) * 4);}
-      &.span-3 {width: calc((100% / 8) * 3);}
-      &.span-2 {width: calc((100% / 8) * 2);}
-      &.span-1 {width: calc((100% / 8) * 1);}
-      &:first-child {
-        padding: 0 $spacing-lg;
-      }
-      .row {
-        .column:first-child {
-          padding: $spacing-lg $spacing-lg 0;
-        }
-      }
-    }
-  }
-}
-
-@media (min-width: 80rem) {
-  .row {
-    .column {
+      padding: $spacing-lg $spacing-sm 0;
       &.span-12 {width: calc((100% / 12) * 12);}
       &.span-11 {width: calc((100% / 12) * 11);}
       &.span-10 {width: calc((100% / 12) * 10);}
@@ -147,7 +54,6 @@ main:after {
     }
   }
 }
-*/
 
 
 // BORDERS

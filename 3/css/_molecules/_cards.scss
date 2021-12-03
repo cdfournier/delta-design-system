@@ -59,7 +59,7 @@
 @media (min-width: 64rem) {
   .cards, .row.cards {
     .card {
-      width: calc((100% / 3) - #{$spacing-xl});
+      width: calc((100% / 12) * 4) - #{$spacing-xl});
     }
   }
 }
