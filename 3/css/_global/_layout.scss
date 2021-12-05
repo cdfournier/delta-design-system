@@ -14,6 +14,7 @@
   .row {
     width: calc(100% + #{$spacing-lg});
     margin: 0 calc(#{$spacing-sm} * -1);
+    padding: 0 $spacing-sm;
   }
   .column {
     display: flex;
@@ -36,7 +37,12 @@
 
 @media (min-width: 48rem) {
   .row {
-    padding: $spacing-xl calc(1.5 * #{$spacing-lg}) 0;
+    padding: $spacing-lg calc(1.5 * #{$spacing-lg}) 0;
+    .row {
+      //margin: calc(#{$spacing-lg} * -1) calc(#{$spacing-sm} * -1) 0;
+      margin: 0 calc(#{$spacing-sm} * -1) 0;
+      padding: 0 $spacing-sm;
+    }
     .column {
       padding: $spacing-lg $spacing-sm 0;
       &.span-12 {width: calc((100% / 12) * 12);}
@@ -51,6 +57,14 @@
       &.span-3 {width: calc((100% / 12) * 3);}
       &.span-2 {width: calc((100% / 12) * 2);}
       &.span-1 {width: calc((100% / 12) * 1);}
+      &:first-child {
+        padding: $spacing-lg $spacing-sm 0;
+      }
+      .row {
+        width: calc(100% + #{$spacing-lg});
+        margin: calc(#{$spacing-lg} * -1) calc(#{$spacing-sm} * -1) 0;
+        padding: 0;
+      }
     }
   }
 }

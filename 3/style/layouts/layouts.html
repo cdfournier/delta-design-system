@@ -68,55 +68,44 @@
     </header>
     <main>
       <article id="content">
-        <div class="row show-spacing">
-          <div class="column  show-spacing span-12"><span class="fpo"><code>span-12</code></span></div>
-          <div class="column  show-spacing span-11"><span class="fpo"><code>span-11</code></span></div>
-          <div class="column  show-spacing span-10"><span class="fpo"><code>span-10</code></span></div>
-          <div class="column  show-spacing span-9"><span class="fpo"><code>span-9</code></span></div>
-          <div class="column  show-spacing span-8"><span class="fpo"><code>span-8</code></span></div>
-          <div class="column  show-spacing span-7"><span class="fpo"><code>span-7</code></span></div>
-          <div class="column  show-spacing span-6"><span class="fpo"><code>span-6</code></span></div>
-          <div class="column  show-spacing span-5"><span class="fpo"><code>span-5</code></span></div>
-          <div class="column  show-spacing span-4"><span class="fpo"><code>span-4</code></span></div>
-          <div class="column  show-spacing span-3"><span class="fpo"><code>span-3</code></span></div>
-          <div class="column  show-spacing span-2"><span class="fpo"><code>span-2</code></span></div>
-          <div class="column  show-spacing span-1"><span class="fpo"><code>span-1</code></span></div>
-<!--
-          <div class="column  show-spacing span-12">
-            <span class="fpo"><code>span-12</code></span>
-            <div class="row show-spacing">
-              <div class="column  show-spacing span-12">
-                <span class="fpo"><code>row &gt; column &gt; row &gt; column</code></span>
-              </div>
-            </div>
-          </div>
-          <div class="column  show-spacing span-11"><span class="fpo"><code>span-11</code></span></div>
-          <div class="column  show-spacing span-10"><span class="fpo"><code>span-10</code></span></div>
-          <div class="column  show-spacing span-9"><span class="fpo"><code>span-9</code></span></div>
-          <div class="column  show-spacing span-8"><span class="fpo"><code>span-8</code></span></div>
-          <div class="column  show-spacing span-7"><span class="fpo"><code>span-7</code></span></div>
-          <div class="column  show-spacing span-6"><span class="fpo"><code>span-6</code></span></div>
-          <div class="column  show-spacing span-5"><span class="fpo"><code>span-5</code></span></div>
-          <div class="column  show-spacing span-4"><span class="fpo"><code>span-4</code></span></div>
-          <div class="column  show-spacing span-3"><span class="fpo"><code>span-3</code></span></div>
-          <div class="column  show-spacing span-2"><span class="fpo"><code>span-2</code></span></div>
-          <div class="column  show-spacing span-1"><span class="fpo"><code>span-1</code></span></div>
--->
-<!--
-          <div class="row show-spacing">
-            <div class="column  show-spacing span-12"><span class="fpo"><code>row &gt; row &gt; column</code></span></div>
-          </div>
--->
-        </div>
+        <h1 class="visuallyhidden">Layouts</h1>
         <section class="row">
-          <div class="column">
-            <div class="row cards">
-              <div class="card">
-                <fieldset style="padding: 0;">
-                  <label for="show-grid" class="switch reverse" style="margin: 0;"><input id="show-grid" type="checkbox" name="show-grid">Show responsive grid</label>
-                </fieldset>
-              </div>
+          <h2 class="title">Layouts</h2>
+          <p>The goal of content is to be discoverable and easy to absorb, and a site&rsquo;s or application&rsquo;s layout should not complicate that process.</p>
+          <p>The Delta Design System is built on a <a href="https://alistapart.com/article/responsive-web-design/" target="_blank">responsive design</a> framework using <a href="https://developer.mozilla.org/en-US/docs/Glossary/Flexbox" target="_blank">flexbox</a>.</p>
+        </section>
+        <div class="row show-spacing">
+          <div class="column show-spacing span-12"><span class="fpo"><code>span-12</code></span></div>
+          <div class="column show-spacing span-11"><span class="fpo"><code>span-11</code></span></div>
+          <div class="column show-spacing span-10"><span class="fpo"><code>span-10</code></span></div>
+          <div class="column show-spacing span-9"><span class="fpo"><code>span-9</code></span></div>
+          <div class="column show-spacing span-8"><span class="fpo"><code>span-8</code></span></div>
+          <div class="column show-spacing span-7"><span class="fpo"><code>span-7</code></span></div>
+          <div class="column show-spacing span-6"><span class="fpo"><code>span-6</code></span></div>
+          <div class="column show-spacing span-5"><span class="fpo"><code>span-5</code></span></div>
+          <div class="column show-spacing span-4"><span class="fpo"><code>span-4</code></span></div>
+          <div class="column show-spacing span-3"><span class="fpo"><code>span-3</code></span></div>
+          <div class="column show-spacing span-2"><span class="fpo"><code>span-2</code></span></div>
+          <div class="column show-spacing span-1"><span class="fpo"><code>span-1</code></span></div>
+        </div>
+        <div class="row show-spacing">
+          <div class="row show-spacing">
+            <div class="column span-6 show-spacing"><span class="fpo"><code>row + row span-6</code></span></div>
+            <div class="column span-6 show-spacing"><span class="fpo"><code>span-6</code></span></div>
+          </div>
+          <div class="column span-12 show-spacing">
+            <div class="row show-spacing">
+              <div class="column span-6 show-spacing"><span class="fpo"><code>row > column > row span-6</code></span></div>
+              <div class="column span-6 show-spacing"><span class="fpo"><code>span-6</code></span></div>
             </div>
+          </div>
+        </div>
+
+        <section class="row cards">
+          <div class="card">
+            <fieldset style="padding: 0;">
+              <label for="show-grid" class="switch reverse" style="margin: 0;"><input id="show-grid" type="checkbox" name="show-grid">Show responsive grid</label>
+            </fieldset>
           </div>
         </section>
       </article>

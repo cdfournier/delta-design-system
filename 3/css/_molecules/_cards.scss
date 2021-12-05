@@ -34,18 +34,16 @@
 .cards, .row.cards {
   width: 100%;
   margin: 0;
-  padding: 0;
+  padding: $spacing-lg $spacing-lg 0;
 }
 
 @media (min-width: 48rem) {
   .cards, .row.cards {
     align-items: stretch;
-    width: calc(100% + #{$spacing-xl});
-    margin: 0 calc(#{$spacing-lg} * -1);
+    padding: $spacing-lg calc(1.5 * #{$spacing-lg});
     .card {
-      width: calc(50% - #{$spacing-xl});
-      //margin: $spacing-lg $spacing-lg 0;
-      margin: $spacing-lg;
+      width: calc(((100% / 12) * 6) - #{$spacing-lg});
+      margin: $spacing-lg $spacing-sm 0;
     }
   }
   .cards.two, .row.cards.two {
@@ -59,7 +57,8 @@
 @media (min-width: 64rem) {
   .cards, .row.cards {
     .card {
-      width: calc((100% / 12) * 4) - #{$spacing-xl});
+      width: calc(((100% / 12) * 4) - #{$spacing-lg});
+      margin: $spacing-lg $spacing-sm;
     }
   }
 }
