@@ -1,0 +1,142 @@
+// HEADER
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background: white;
+
+  nav {
+    ul {
+      li {
+        padding: $p $p $p 0;
+        font-size: $p;
+
+        &:first-child {
+          padding: $p $p $p 0;
+        }
+      }
+    }
+  }
+}
+
+.header--fixed {
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  top: 0
+}
+
+@media (min-width: 48rem) {
+  header {
+    padding: 0 $spacing-lg;
+
+    nav {
+      button.menu-toggle {
+        display: none;
+      }
+
+      ul {
+        flex-direction: row;
+        align-items: center;
+        height: auto;
+        margin: 0;
+        font-size: $small;
+        @include transform(translateX(0));
+
+        li {
+          width: auto;
+          margin: 0 $spacing-lg 0 0;
+          padding: 0;
+          line-height: 2;
+          text-align: left;
+
+          &:first-child {
+            padding: inherit;
+          }
+        }
+
+        li.logo {
+          display: grid;
+          width: 4rem;
+          height: auto;
+          margin-right: $spacing-lg;
+
+          a {
+            display: grid;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// HEADER LOGO
+header .logo {
+  display: flex;
+  position: relative;
+  width: 4rem;
+  padding: $spacing-lg 0 $spacing-lg $spacing-lg;
+  @include transition(all, 0.325s, ease);
+}
+
+// @media (min-width: 48rem) {
+//   header .logo {
+//     position: relative;
+//     top: auto;
+//   }
+// }
+
+
+// OPEN HEADER
+header.open {
+  z-index: 1000;
+
+  .logo {
+    @include transform(translateX(-10rem));
+  }
+
+  nav {
+    height: 100vh;
+
+    button.menu-toggle {
+      svg.menu-toggle-open {
+        width: 0;
+        left: -2rem;
+      }
+
+      svg.menu-toggle-close {
+        width: 2rem;
+      }
+    }
+
+    ul {
+      height: auto;
+      @include transform(translateX(0));
+    }
+  }
+}
+
+
+// HEADROOM
+.headroom {
+  @include transition(all, 0.25s, ease);
+  will-change: transform
+}
+
+.headroom--pinned {
+  @include transform(translateY(0));
+}
+
+.headroom--unpinned {
+  @include transform(translateY(-50vh));
+}

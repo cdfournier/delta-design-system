@@ -1,0 +1,83 @@
+// FONTS
+$serif: ("Ovo", serif);
+$sans: ("Montserrat", sans-serif);
+
+@mixin serif {
+  font-family: $serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@mixin sans-regular {
+  font-family: $sans;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@mixin sans-bold {
+  font-family: $sans;
+  font-style: normal;
+  font-weight: 700;
+}
+
+
+// ROOT STYLES
+:root {
+  --primary: #df3a32;
+  --secondary: #003442;
+  --gray-dark: #919191;
+  --gray-medium: #cccccc;
+  --gray-light: #eeeeee;
+  --input-invalid: #c00c00;
+  --input-valid: #008000;
+  --input-not-allowed: #cccccc;
+  --input-read-only: #919191;
+  --h1-title: 4.209rem;
+  --h2-title: 3.157rem;
+  --h1: 3.157rem;
+  --h2: 2.369rem;
+  --h3: 1.777rem;
+  --h4: 1.333rem;
+  --p: 1rem;
+  --small: 0.8rem;
+  --xsmall: 0.64rem;
+  --border-radius-xs: 0.125rem;
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 0.75rem;
+  --border-radius-xl: 1rem;
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 0.75rem;
+  --spacing-lg: 1rem;
+  --spacing-xl: 2rem;
+}
+
+$primary: var(--primary);
+$secondary: var(--secondary);
+$gray-dark: var(--gray-dark);
+$gray-medium: var(--gray-medium);
+$gray-light: var(--gray-light);
+$input-invalid: var(--input-invalid);
+$input-valid: var(--input-valid);
+$input-not-allowed: var(--input-not-allowed);
+$input-read-only: var(--input-read-only);
+$h1-title: var(--h1-title);
+$h2-title: var(--h2-title);
+$h1: var(--h1);
+$h2: var(--h2);
+$h3: var(--h3);
+$h4: var(--h4);
+$p: var(--p);
+$small: var(--small);
+$xsmall: var(--xsmall);
+$border-radius-xs: var(--border-radius-xs);
+$border-radius-sm: var(--border-radius-sm);
+$border-radius-md: var(--border-radius-md);
+$border-radius-lg: var(--border-radius-lg);
+$border-radius-xl: var(--border-radius-xl);
+$spacing-xs: var(--spacing-xs);
+$spacing-sm: var(--spacing-sm);
+$spacing-md: var(--spacing-md);
+$spacing-lg: var(--spacing-lg);
+$spacing-xl: var(--spacing-xl);

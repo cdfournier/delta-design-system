@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Layouts | The Delta Design System</title>
+    <base href="../">
+    <meta name="description" content="An open-source design system that can be used to build responsive sites, apps, and prototypes quickly.">
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <!-- css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Ovo&display=swap" rel="stylesheet">
+    <style>
+      body {
+        opacity: 0;
+        -webkit-transition: opacity 1.25s ease-in;
+        -moz-transition: opacity 1.25s ease-in;
+        -ms-transition: opacity 1.25s ease-in;
+        -o-transition: opacity 1.25s ease-in;
+        transition: opacity 1.25s ease-in;
+      }
+
+      body.visible {
+        opacity: 1;
+      }
+    </style>
+    <link rel="stylesheet" href="css/master.min.css">
+  </head>
+
+  <body>
+    <div class="skip">
+      <p><a href="components/layout.html#content" class="skip">Skip to the main content on this page</a></p>
+    </div>
+    <header>
+      <div class="logo">
+        <a href="index.html">
+          <svg style="display: grid; width: 100%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 796"><defs><style>.cls-1{fill:#01232d;}.cls-2{fill:#013342;}</style></defs><title>delta-design-system-logo</title><polygon class="cls-1" points="512 796 1024 796 512 0 512 796"></polygon><polygon class="cls-2" points="0 796 512 796 512 0 0 796"></polygon></svg>
+        </a>
+      </div>
+      <nav aria-labelledby="header-navigation">
+        <button class="menu-toggle" aria-expanded="false" aria-controls="header-navigation">
+          <svg class="menu-toggle-open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"></path></svg>
+          <svg class="menu-toggle-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"></path></svg>
+        </button>
+        <ul id="header-navigation">
+          <li><a href="pages/atoms.html">Atoms</a></li>
+          <li><a href="pages/molecules.html">Molecules</a></li>
+          <li><a href="pages/organisms.html">Organisms</a></li>
+          <li><a href="pages/style.html">Style</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="banner short">
+        <div class="text">
+          <h1>Layouts</h1>
+          <p>The goal of content is to be discoverable and easy to absorb, and a site&rsquo;s or application&rsquo;s layout should not complicate that process.</p>
+        </div>
+      </div>
+      <article id="content">
+        <section>
+          <h2>Details</h2>
+          <p>The Delta Design System is built on a <a href="https://alistapart.com/article/responsive-web-design/" target="_blank">responsive design</a> framework using <a href="https://developer.mozilla.org/en-US/docs/Glossary/Flexbox" target="_blank">flexbox</a>.</p>
+          <p>The parent container in the framework is a <code>.row</code>. Each <code>.row</code> can be assigned an additional class that define how its child columns occupy the horizontal space of the row. On screens smaller than 48rem wide, all columns in the <code>.row</code> span the full width of the browser and stack vertically.</p>
+        </section>
+        <section>
+          <h2>Layout Examples</h2>
+          <div class="row wide">
+            <h3>Wide Row</h3>
+            <p>A <code>.wide</code> row occupy 100% of the available width on screens of all widths.</p>
+          </div>
+          <div class="row fifty">
+            <h3>Fifty Fifty Row</h3>
+            <div class="column">
+              <h4>Left Column</h4>
+              <p>Columns in a <code>.fifty</code> row occupy 50% of the available width on screens wider than 48rem.</p>
+            </div>
+            <div class="column">
+              <h4>Right Column</h4>
+              <p>Columns in a <code>.fifty</code> row occupy 50% of the available width on screens wider than 48rem.</p>
+            </div>
+          </div>
+          <div class="row golden-left">
+            <h3>Golden Left Row</h3>
+            <div class="column">
+              <h4>Left Column</h4>
+              <p>The left column in a golden left row occupies 62% of the available width on screens wider than 48rem.</p>
+            </div>
+            <div class="column">
+              <h4>Right Column</h4>
+              <p>The right column in a golden left row occupies 38% of the available width on screens wider than 48rem.</p>
+            </div>
+          </div>
+          <div class="row golden-right">
+            <h3>Golden Right Row</h3>
+            <div class="column">
+              <h4>Left Column</h4>
+              <p>The left column in a golden right row occupies 38% of the available width on screens wider than 48rem.</p>
+            </div>
+            <div class="column">
+              <h4>Right Column</h4>
+              <p>The right column in a golden right row occupies 62% of the available width on screens wider than 48rem.</p>
+            </div>
+          </div>
+          <div class="row thirds">
+            <h3>Thirds Row</h3>
+            <div class="column">
+              <h4>First Column</h4>
+              <p>The first column in a <code>.thirds</code> row occupies 33% of the available width on screens wider than 48rem.</p>
+            </div>
+            <div class="column">
+              <h4>Second Column</h4>
+              <p>The second column in a <code>.thirds</code> row occupies 33% of the available width on screens wider than 48rem.</p>
+            </div>
+            <div class="column">
+              <h4>Third Column</h4>
+              <p>The third column in a <code>.thirds</code> row occupies 33% of the available width on screens wider than 48rem.</p>
+            </div>
+          </div>
+          <div class="row fourths">
+            <h3>Fourths Row</h3>
+            <div class="column">
+              <h4>First Column</h4>
+              <p>The first column in a <code>.fourths</code> row occupies 50% of the available width on screens wider than 48rem and 25% of the available width on screens wider than 64rem.</p>
+            </div>
+            <div class="column">
+              <h4>Second Column</h4>
+              <p>The second column in a <code>.fourths</code> row occupies 50% of the available width on screens wider than 48rem and 25% of the available width on screens wider than 64rem.</p>
+            </div>
+            <div class="column">
+              <h4>Third Column</h4>
+              <p>The third column in a <code>.fourths</code> row occupies 50% of the available width on screens wider than 48rem and 25% of the available width on screens wider than 64rem.</p>
+            </div>
+            <div class="column">
+              <h4>Fourth Column</h4>
+              <p>The fourth column in a <code>.fourths</code> row occupies 50% of the available width on screens wider than 48rem and 25% of the available width on screens wider than 64rem.</p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+    <footer></footer>
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="assets/scripts/headroom.js"></script>
+    <script src="assets/scripts/site.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("body").addClass("visible");
+      });
+    </script>
+  </body>
+
+</html>

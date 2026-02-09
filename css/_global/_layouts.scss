@@ -1,0 +1,134 @@
+// ARTICLES
+article {
+  section {
+    padding: $spacing-xl;
+  }
+}
+
+
+// ROWS
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: $spacing-lg 0;
+
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    padding: $spacing-sm 0;
+
+    &:first-child {
+      padding: 0;
+    }
+
+    &.small {
+      width: 50%;
+    }
+  }
+}
+
+
+// FIFTY-FIFTY ROWS
+@media (min-width: 48rem) {
+  .row.fifty {
+    .column {
+      width: 50%;
+
+      &:nth-of-type(1n) {
+        padding: $spacing-sm $spacing-lg $spacing-sm 0;
+      }
+
+      &:nth-of-type(2n) {
+        padding: $spacing-sm 0 $spacing-sm $spacing-lg;
+      }
+    }
+  }
+}
+
+
+// GOLDEN LEFT ROWS
+@media (min-width: 48rem) {
+  .row.golden-left {
+    .column:nth-of-type(1n) {
+      width: 62%;
+      padding: $spacing-sm $spacing-lg $spacing-sm 0;
+    }
+
+    .column:nth-of-type(2n) {
+      width: 38%;
+      padding: $spacing-sm 0 $spacing-sm $spacing-lg;
+    }
+  }
+}
+
+
+// GOLDEN RIGHT ROWS
+@media (min-width: 48rem) {
+  .row.golden-right {
+    .column:nth-of-type(1n) {
+      width: 38%;
+      padding: $spacing-sm $spacing-lg $spacing-sm 0;
+    }
+
+    .column:nth-of-type(2n) {
+      width: 62%;
+      padding: $spacing-sm 0 $spacing-sm $spacing-lg;
+    }
+  }
+}
+
+
+// THIRDS ROWS
+@media (min-width: 48rem) {
+  .row.thirds {
+    justify-content: space-between;
+
+    .column {
+      width: calc((100% / 3) - $spacing-lg);
+    }
+  }
+}
+
+
+// FOURTHS ROWS
+@media (min-width: 48rem) {
+  .row.fourths {
+    .column {
+      width: 50%;
+
+      &:nth-of-type(1n),
+      &:nth-of-type(3n) {
+        padding: $spacing-sm $spacing-lg $spacing-sm 0;
+      }
+
+      &:nth-of-type(2n),
+      &:nth-of-type(4n) {
+        padding: $spacing-sm 0 $spacing-sm $spacing-lg;
+      }
+    }
+  }
+}
+
+@media (min-width: 72rem) {
+  .row.fourths {
+    justify-content: space-between;
+    .column {
+      width: calc((100% / 4) - $spacing-lg);
+
+      &:nth-of-type(1n),
+      &:nth-of-type(2n),
+      &:nth-of-type(3n),
+      &:nth-of-type(4n) {
+        padding: $spacing-sm 0;
+      }
+    }
+  }
+}

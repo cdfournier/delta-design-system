@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inputs | The Delta Design System</title>
+    <base href="../">
+    <meta name="description" content="An open-source design system that can be used to build responsive sites, apps, and prototypes quickly.">
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <!-- css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Ovo&display=swap" rel="stylesheet">
+    <style>
+      body {
+        opacity: 0;
+        -webkit-transition: opacity 1.25s ease-in;
+        -moz-transition: opacity 1.25s ease-in;
+        -ms-transition: opacity 1.25s ease-in;
+        -o-transition: opacity 1.25s ease-in;
+        transition: opacity 1.25s ease-in;
+      }
+
+      body.visible {
+        opacity: 1;
+      }
+    </style>
+    <link rel="stylesheet" href="css/master.min.css">
+  </head>
+
+  <body>
+    <div class="skip">
+      <p><a href="components/inputs.html#content" class="skip">Skip to the main content on this page</a></p>
+    </div>
+    <header>
+      <div class="logo">
+        <a href="index.html">
+          <svg style="display: grid; width: 100%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 796">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #01232d;
+                }
+
+                .cls-2 {
+                  fill: #013342;
+                }
+              </style>
+            </defs>
+            <title>delta-design-system-logo</title>
+            <polygon class="cls-1" points="512 796 1024 796 512 0 512 796"></polygon>
+            <polygon class="cls-2" points="0 796 512 796 512 0 0 796"></polygon>
+          </svg>
+        </a>
+      </div>
+      <nav aria-labelledby="header-navigation">
+        <button class="menu-toggle" aria-expanded="false" aria-controls="header-navigation">
+          <svg class="menu-toggle-open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+            <path fill="none" d="M0 0h24v24H0z"></path>
+            <path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"></path>
+          </svg>
+          <svg class="menu-toggle-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+            <path fill="none" d="M0 0h24v24H0z"></path>
+            <path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"></path>
+          </svg>
+        </button>
+        <ul id="header-navigation">
+          <li><a href="pages/atoms.html">Atoms</a></li>
+          <li><a href="pages/molecules.html">Molecules</a></li>
+          <li><a href="pages/organisms.html">Organisms</a></li>
+          <li><a href="pages/style.html">Style</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="banner short">
+        <div class="text">
+          <h1 class="title">Inputs</h1>
+          <p>The &lt;input&gt; element is used to create interactive controls for forms in order to accept or retrieve data from/for the user.</p>
+        </div>
+      </div>
+      <article id="content">
+        <section>
+          <h2>Details</h2>
+          <p>The function or value of an <code>&lt;input&gt;</code> depends on the value of its &apos;type attribute&apos;. For more information on <code>&lt;input&gt;</code> values, please see the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input" target="_blank">MDN web docs</a>.</p>
+          <p>As with other elements in the Delta Design System, we try to be as semantic and use the fewest elements as possible to create our forms. We use css transitions to move the <code>&lt;label&gt;</code> out of place and expose the <code>:placeholder</code> when the <code>&lt;input&gt;</code> is in the <code>:focus</code> state.</p>
+          <p>All <code>&lt;input&gt;</code> fields (including <code>&lt;button&gt;</code>) must also include both the <code>&lt;span class="message"&gt;</code> in order to render the vertical spacing for validation messages properly and eliminate <a href="https://en.wiktionary.org/wiki/jank" target="_blank">jank</a>. To show an <code>.errow</code> or <code>.valid</code> message, simply add a <code>.show</code> class to the appropriate message whenever necessary.</p>
+        </section>
+        <section>
+          <h2>Input Examples</h2>
+          <div class="row fifty">
+            <div class="column">
+              <h3>Text Inputs</h3>
+              <fieldset style="padding: var(--spacing-md) 0;">
+                <label for="text-input">Label</label>
+                <input type="text" name="text-input" id="text-input" placeholder="Placeholder" class="invalid">
+                <div class="message">
+                  <span class="help">Help message goes here</span>
+                  <span class="invalid">Error message goes here</span>
+                  <span class="valid">Valid message goes here</span>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+    <footer>
+      <nav aria-labelledby="footer-navigation">
+        <ul id="footer-navigation">
+          <li><a href="pages/atoms.html">Atoms</a></li>
+          <li><a href="pages/molecules.html">Molecules</a></li>
+          <li><a href="pages/organisms.html">Organisms</a></li>
+          <li><a href="pages/style.html">Style</a></li>
+        </ul>
+      </nav>
+      <div class="brand-content">
+        <div class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 796">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #01232d;
+                }
+
+                .cls-2 {
+                  fill: #013342;
+                }
+              </style>
+            </defs>
+            <title>delta-design-system-logo</title>
+            <polygon class="cls-1" points="512 796 1024 796 512 0 512 796"></polygon>
+            <polygon class="cls-2" points="0 796 512 796 512 0 0 796"></polygon>
+          </svg>
+          <h2 class="center">The Delta Design System</h2>
+        </div>
+        <ul class="social">
+          <li class="github">
+            <a href="https://github.com/cdfournier/delta-design-system" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"></path>
+              </svg><span>Github</span></a>
+          </li>
+          <li class="slack">
+            <a href="https://delta-design-system.slack.com" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M14.501 3C15.3294 3 16.001 3.67157 16.001 4.5V9.5C16.001 10.3284 15.3294 11 14.501 11C13.6725 11 13.001 10.3284 13.001 9.5V4.5C13.001 3.67157 13.6725 3 14.501 3ZM4.50098 13H6.00098V14.5C6.00098 15.3284 5.3294 16 4.50098 16C3.67255 16 3.00098 15.3284 3.00098 14.5C3.00098 13.6716 3.67255 13 4.50098 13ZM13.001 18H14.501C15.3294 18 16.001 18.6716 16.001 19.5C16.001 20.3284 15.3294 21 14.501 21C13.6725 21 13.001 20.3284 13.001 19.5V18ZM14.501 13H19.501C20.3294 13 21.001 13.6716 21.001 14.5C21.001 15.3284 20.3294 16 19.501 16H14.501C13.6725 16 13.001 15.3284 13.001 14.5C13.001 13.6716 13.6725 13 14.501 13ZM19.501 8C20.3294 8 21.001 8.67157 21.001 9.5C21.001 10.3284 20.3294 11 19.501 11H18.001V9.5C18.001 8.67157 18.6725 8 19.501 8ZM4.50098 8H9.50098C10.3294 8 11.001 8.67157 11.001 9.5C11.001 10.3284 10.3294 11 9.50098 11H4.50098C3.67255 11 3.00098 10.3284 3.00098 9.5C3.00098 8.67157 3.67255 8 4.50098 8ZM9.50098 3C10.3294 3 11.001 3.67157 11.001 4.5V6H9.50098C8.67255 6 8.00098 5.32843 8.00098 4.5C8.00098 3.67157 8.67255 3 9.50098 3ZM9.50098 13C10.3294 13 11.001 13.6716 11.001 14.5V19.5C11.001 20.3284 10.3294 21 9.50098 21C8.67255 21 8.00098 20.3284 8.00098 19.5V14.5C8.00098 13.6716 8.67255 13 9.50098 13Z"></path>
+              </svg><span>Slack</span></a>
+          </li>
+        </ul>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2023 Delta Design System. Conceived and developed by <a href="https://chris.blackcoffeeshoppe.com" target="_blank">Chris Fournier</a>.</p>
+      </div>
+    </footer>
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="assets/scripts/headroom.js"></script>
+    <script src="assets/scripts/site.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("body").addClass("visible");
+      });
+    </script>
+  </body>
+
+</html>

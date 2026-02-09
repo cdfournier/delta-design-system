@@ -1,0 +1,145 @@
+// INPUT RESETS
+input,
+select {
+  overflow: hidden;
+  font-size: $p;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: transparent;
+  @include appearance(none);
+  @include transition(all, 0.25s, ease);
+}
+
+
+// FIELDSET
+fieldset {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: $spacing-md;
+  border: none;
+}
+
+fieldset.sm {
+  width: 50%;
+}
+
+
+// LABEL
+label {
+  padding: 0 0 $spacing-sm;
+  @include sans-bold;
+  font-size: $small;
+  line-height: 1.5rem;
+}
+
+
+// INPUT
+input {
+  position: relative;
+  padding: $spacing-md;
+  border: 1px solid black;
+  border-radius: $border-radius-sm;
+  line-height: 1.5;
+
+  &.icon-post {
+    padding-right: calc(2.5 * #{$spacing-lg});
+  }
+
+  &.icon-pre {
+    padding-left: calc(2.5 * #{$spacing-lg});
+  }
+}
+
+
+// INPUT ICON
+.input-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: calc(#{$spacing-xl} + #{$spacing-md});
+  right: $spacing-md;
+  width: calc(1.5 * #{$spacing-lg});
+  height: calc(1.5 * #{$spacing-lg});
+  color: $gray-dark;
+
+  &.pre {
+    right: auto;
+    left: $spacing-md;
+  }
+
+  svg {
+    width: 100%;
+  }
+}
+
+
+// FIELDSET MESSAGES
+fieldset {
+  .message {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: $spacing-sm 0 0;
+    font-size: $small;
+    line-height: 1rem;
+
+    .help,
+    .invalid,
+    .valid {
+      top: 0;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      padding: 0;
+      opacity: 0;
+      @include transition(all, 0.25s, ease);
+    }
+
+    .help {
+      position: relative;
+      opacity: 1;
+    }
+
+    .invalid,
+    .valid {
+      position: absolute;
+      padding: $spacing-sm 0 0;
+      @include sans-bold;
+      background: white;
+    }
+
+    .invalid {
+      color: $input-invalid;
+    }
+
+    .valid {
+      color: $input-valid;
+    }
+  }
+}
+
+
+// FIELDSET INVALID MESSAGES
+fieldset:invalid,
+fieldset.invalid {
+  label {
+    color: $input-invalid;
+  }
+
+  input {
+    border-color: $input-invalid;
+    color: $input-invalid;
+  }
+
+  .message {
+    .invalid {
+      z-index: 10;
+      opacity: 1;
+    }
+  }
+}

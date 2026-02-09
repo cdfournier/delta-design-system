@@ -1,0 +1,22 @@
+// TYPOGRAPHY MAX-WIDTHS
+p {
+  max-width: 36rem;
+}
+
+
+// CODE
+pre {
+  margin: 0.4rem 0 0;
+  line-height: 1.2;
+}
+
+p > code, li > code, dd > code {
+  margin: 0;
+  padding: calc(#{$spacing-xs / 2}) $spacing-xs;
+  border-radius: $border-radius-xs;
+  font-family: "Liberation Mono",courier,monospace;
+  white-space: nowrap;
+  background-color: $gray-light;
+}
+
+li > code {padding: calc(#{$spacing-xs} / 5) $spacing-xs;}

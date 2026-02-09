@@ -1,0 +1,226 @@
+// TYPOGRAPHY
+/* 
+  NOTES:  
+  All headline classes are set to a 1.2 minor third type scale
+  Body copy is set to a 1.25 major third type scale
+*/
+h1,
+h2,
+h3,
+h4,
+p,
+small {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @include serif;
+  line-height: 1;
+}
+
+h1 {
+  padding: $h1 0 0;
+  font-size: $h1;
+}
+
+h2 {
+  padding: $h2 0 0;
+  font-size: $h2;
+}
+
+h3 {
+  padding: $h3 0 0;
+  font-size: $h3;
+}
+
+h4 {
+  padding: $h4 0 0;
+  font-size: $h4;
+}
+
+p {
+  padding: $p 0 0;
+  font-size: $p;
+  line-height: 1.5;
+}
+
+strong,
+em,
+b {
+  display: inline;
+  @include sans-bold;
+  color: inherit;
+}
+
+small {
+  padding: $small 0 0;
+  font-size: $small;
+  line-height: 1.5;
+}
+
+.visuallyhidden {
+  display: none;
+}
+
+
+// TEXT ALIGNMENT
+h1.center,
+h2.center,
+h3.center,
+p.center,
+strong.center,
+em.center,
+small.center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1.right,
+h2.right,
+h3.right,
+p.right,
+strong.right,
+em.right,
+small.right {
+  text-align: right;
+}
+
+
+// FIRST CHILD SPACING
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+p:first-child,
+small:first-child,
+ul:first-child,
+ol:first-child,
+dl:first-child {
+  padding: 0;
+}
+
+
+// H > P SPACING
+h1+p,
+h2+p,
+h3+p,
+h4+p,
+h1+ul,
+h2+ul,
+h3+ul,
+h4+ul,
+h1+ol,
+h2+ol,
+h3+ol,
+h4+ol,
+h1+dl,
+h2+dl,
+h3+dl,
+h4+dl {
+  padding-top: calc($p * 0.5);
+}
+
+
+// LISTS
+ul,
+ol,
+dl {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li,
+  dt,
+  dd {
+    display: list-item;
+    width: 100%;
+    margin: 0;
+    padding: $p 0 0;
+    font-size: $p;
+    line-height: 1.5;
+
+    &:first-child {
+      padding: 0;
+    }
+  }
+}
+
+ul {
+  padding: $p 0 0 calc($p * 1.5);
+  list-style: disc;
+
+  &.no-bullets {
+    padding-left: 0;
+    list-style: none;
+  }
+}
+
+ol {
+  padding: $p 0 0;
+  list-style: none;
+  counter-reset: count;
+
+  &:first-child {
+    padding: 0;
+  }
+}
+
+dl {
+  padding: $p 0 0;
+
+  dt {
+    padding: 0;
+    @include sans-bold;
+  }
+
+  dd {
+    padding: 0 0 calc($p * 1.5);
+
+    &:last-of-type {
+      padding: 0;
+    }
+  }
+}
+
+
+// TITLES
+@media (min-width: 34.25rem) {
+  h1.title {
+    max-width: 72rem;
+    margin: 0;
+    font-size: $h1-title;
+
+    &+p {
+      max-width: 48rem;
+      font-size: calc(1.5 * #{$p});
+    }
+  }
+
+  h2.title {
+    max-width: 48rem;
+    margin: 0;
+    font-size: $h2-title;
+
+    &+p {
+      max-width: 40rem;
+      font-size: calc(1.25 * #{$p});
+    }
+
+    &:first-of-type {
+      font-size: $h1-title;
+    }
+  }
+
+  h3.title {
+    font-size: $h2;
+  }
+}

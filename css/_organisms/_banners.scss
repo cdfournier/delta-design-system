@@ -1,0 +1,40 @@
+// BANNERS
+.banner {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+
+  .overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.25;
+  }
+
+  .text {
+    padding: $spacing-xl;
+  }
+
+  &.tall {
+    min-height: 100vh;
+  }
+
+  &.short {
+    min-height: 50vh;
+  }
+}
+
+
+// FIRST MAIN BANNER
+main > .banner.short:first-of-type {
+  margin: 4rem 0 0;
+}
