@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family-body);
+  background: var(--background-page);
+  color: var(--text-default);
+}
+
+a {
+  color: var(--text-link);
+}
+
+a:hover {
+  color: var(--text-hover);
+}

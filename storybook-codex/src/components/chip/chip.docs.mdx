@@ -1,0 +1,143 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/addon-docs/blocks';
+import * as ChipStories from './chip.stories';
+
+<Meta of={ChipStories} title="Symbols/Chips/Documentation" />
+
+# Chips
+
+Chips are compact elements for selections, filters, and removable tags.
+
+## Anatomy
+
+- Container: rounded surface with variant color
+- Label: short descriptive text
+- Leading accessory (optional): avatar or icon
+- Trailing accessory (optional): avatar, check, or dismiss button
+
+<Canvas>
+  <Story of={ChipStories.Default} />
+</Canvas>
+
+## Variants
+
+<Canvas>
+  <Story of={ChipStories.Variants} />
+</Canvas>
+
+## Accessory Types
+
+<Canvas>
+  <Story of={ChipStories.WithAvatars} />
+  <Story of={ChipStories.WithIcons} />
+  <Story of={ChipStories.Dismissible} />
+</Canvas>
+
+## Selectable
+
+<Canvas>
+  <Story of={ChipStories.Selectable} />
+</Canvas>
+
+### Selection states
+
+<Canvas>
+  <Story of={ChipStories.SelectionStates} />
+</Canvas>
+
+## States
+
+<Canvas>
+  <Story of={ChipStories.States} />
+</Canvas>
+
+### Height parity
+
+<Canvas>
+  <Story of={ChipStories.HeightParity} />
+</Canvas>
+
+## Typography
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Font size</td><td>12px / 0.75rem</td><td>24px / 1.5rem</td></tr>
+    <tr><td>Line height</td><td>12px / 0.75rem</td><td>24px / 1.5rem</td></tr>
+  </tbody>
+</table>
+
+<Canvas>
+  <Story of={ChipStories.WidescreenScale} />
+</Canvas>
+
+## Spacing
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Padding (vertical)</td><td>4px / 0.25rem</td><td>12px / 0.75rem</td></tr>
+    <tr><td>Padding (horizontal)</td><td>8px / 0.5rem</td><td>20px / 1.25rem</td></tr>
+    <tr><td>Gap between chips</td><td>8px / 0.5rem</td><td>16px / 1rem</td></tr>
+    <tr><td>Accessory gap</td><td>2px / 0.125rem</td><td>4px / 0.25rem</td></tr>
+    <tr><td>Icon box size</td><td>16px / 1rem</td><td>32px / 2rem</td></tr>
+    <tr><td>Avatar size</td><td>20px / 1.25rem</td><td>32px / 2rem</td></tr>
+    <tr><td>Close button frame</td><td>24px / 1.5rem</td><td>32px / 2rem</td></tr>
+    <tr><td>Border radius</td><td>32px / 2rem</td><td>32px / 2rem</td></tr>
+  </tbody>
+</table>
+
+## Colors
+
+<table>
+  <thead>
+    <tr>
+      <th>Element/State</th>
+      <th>Light mode</th>
+      <th>Dark mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Primary background</td><td>brand/primary (#FF5247)</td><td>global/white (#FFFFFF)</td></tr>
+    <tr><td>Primary hover/focus</td><td>brand/primary-dark (#B22E28)</td><td>global/white (#FFFFFF)</td></tr>
+    <tr><td>Secondary background</td><td>brand/secondary (#003442)</td><td>global/white (#FFFFFF)</td></tr>
+    <tr><td>Secondary hover/focus</td><td>brand/secondary-dark (#01232D)</td><td>global/white (#FFFFFF)</td></tr>
+    <tr><td>Text</td><td>text/inverse -> global/white (#FFFFFF)</td><td>text/inverse -> global/black (#000000)</td></tr>
+  </tbody>
+</table>
+
+## Accessibility
+
+- Use `<button>` for interactive chips; use `<span>` for static chips.
+- For selectable chips only, use `role="checkbox"` with `aria-checked`.
+- Use descriptive `aria-label` text for dismiss buttons.
+- Keep touch targets at least 44x44px in production contexts.
+
+## Usage
+
+### Do
+
+- Keep labels concise and scannable.
+- Group related chips and allow wrapping.
+- Keep variant usage consistent inside a group.
+
+### Don’t
+
+- Do not use chips for primary CTA actions.
+- Do not rely on color alone to convey state.
+- Do not truncate long labels aggressively.
+
+## Controls
+
+<Controls of={ChipStories.Default} />

@@ -1,0 +1,155 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/addon-docs/blocks';
+import * as BlockquoteStories from './blockquote.stories';
+
+<Meta of={BlockquoteStories} title="Symbols/Blockquote/Documentation" />
+
+# Blockquotes
+
+Blockquotes highlight quotations from external sources, adding visual emphasis and proper semantic structure to cited content.
+
+## Anatomy
+
+Blockquotes consist of quoted text and an optional citation.
+
+- Border: `1px` solid `global/gray-medium`
+- Quote text: bold quote content with responsive scaling
+- Citation: attribution text that can include a source URL via `cite`
+- Shape: radius token `border-radius/sm` (`8px / 0.5rem`)
+
+<Canvas>
+  <Story of={BlockquoteStories.Default} />
+</Canvas>
+
+## Variants
+
+Blockquote uses one core style, with contextual background options:
+
+- `page`
+- `section`
+- `transparent`
+
+<Canvas>
+  <Story of={BlockquoteStories.Default} />
+  <Story of={BlockquoteStories.SectionBackground} />
+  <Story of={BlockquoteStories.WithoutCite} />
+</Canvas>
+
+## States
+
+Blockquotes are non-interactive content elements and have no hover/focus/pressed states.
+
+## Typography
+
+Responsive token scale from the Figma component variables:
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Quote text</td>
+      <td>12px / 0.75rem size; 20px / 1.25rem line-height</td>
+      <td>24px / 1.5rem size; 36px / 2.25rem line-height</td>
+    </tr>
+    <tr>
+      <td>Citation</td>
+      <td>10px / 0.625rem size; 18px / 1.125rem line-height</td>
+      <td>20px / 1.25rem size; 30px / 1.875rem line-height</td>
+    </tr>
+  </tbody>
+</table>
+
+<Canvas>
+  <Story of={BlockquoteStories.WidescreenScale} />
+</Canvas>
+
+## Spacing
+
+<table>
+  <thead>
+    <tr>
+      <th>Token/Property</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Padding</td><td>16px / 1rem</td><td>16px / 1rem</td></tr>
+    <tr><td>Quote-to-cite gap</td><td>8px / 0.5rem</td><td>8px / 0.5rem</td></tr>
+    <tr><td>Border width</td><td>1px</td><td>1px</td></tr>
+    <tr><td>Border radius</td><td>4px / 0.25rem</td><td>4px / 0.25rem</td></tr>
+    <tr><td>Icon size</td><td>24px / 1.5rem</td><td>24px / 1.5rem</td></tr>
+  </tbody>
+</table>
+
+## Colors
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Light mode</th>
+      <th>Dark mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Border</td><td>global/gray-medium (#CCCCCC)</td><td>global/gray-medium (#CCCCCC)</td></tr>
+    <tr><td>Quote text</td><td>text/default -> global/black (#000000)</td><td>text/default -> global/white (#FFFFFF)</td></tr>
+    <tr><td>Citation</td><td>text/link -> brand/primary (#FF5247)</td><td>text/link -> global/white (#FFFFFF)</td></tr>
+    <tr><td>Background (page)</td><td>background/page -> global/white (#FFFFFF)</td><td>background/page -> brand/secondary-dark (#01232D)</td></tr>
+    <tr><td>Background (section)</td><td>background/section -> global/gray-light (#EEEEEE)</td><td>background/section -> brand/secondary (#003442)</td></tr>
+    <tr><td>Background (transparent)</td><td>transparent</td><td>transparent</td></tr>
+  </tbody>
+</table>
+
+## Accessibility
+
+### Semantic HTML
+
+Use native `<blockquote>` and `<cite>` for quoted content and attribution.
+
+### Citations
+
+Use the `cite` attribute when source URLs are available.
+
+### Content
+
+Do not use blockquotes for visual indentation of non-quoted text.
+
+## Usage
+
+### When to use
+
+- External quotes and references
+- Testimonials
+- Pull quotes for key passages
+
+### When not to use
+
+- Pure indentation or decoration
+- Headings or non-quoted body content
+- Inline quotes (use `<q>` for short inline quotations)
+
+## Usage Guidelines
+
+### Do
+
+- Use semantic quote markup
+- Preserve quote accuracy
+- Include attribution when possible
+- Place quotes in natural reading flow
+
+### Don't
+
+- Do not misuse blockquote as layout indentation
+- Do not alter source wording without clear ellipsis usage
+- Do not omit source context when attribution is needed
+
+## Controls
+
+<Controls of={BlockquoteStories.Default} />

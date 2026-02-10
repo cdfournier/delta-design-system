@@ -1,0 +1,119 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/addon-docs/blocks';
+import * as TypographyStories from './typography.stories';
+
+<Meta of={TypographyStories} title="Foundations/Typography/Documentation" />
+
+# Typography
+
+Typography expresses hierarchy and enables improved consumption of content.
+
+## Typography Philosophy
+
+Clear, readable typography is fundamental to communication.
+The system uses two typefaces and a consistent scale to establish hierarchy and rhythm.
+
+## The Typography System
+
+<table>
+  <thead>
+    <tr>
+      <th>Role</th>
+      <th>Typeface</th>
+      <th>Use</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Headings</td><td>Ovo</td><td>Display and heading hierarchy</td></tr>
+    <tr><td>Body/UI</td><td>Montserrat</td><td>Paragraphs, labels, interface copy</td></tr>
+    <tr><td>Code</td><td>Courier New</td><td>Code snippets and token references</td></tr>
+  </tbody>
+</table>
+
+### Type scales
+
+- Headlines (`h1` to `h4`): Minor Third direction
+- Body copy: Major Third direction
+
+### Relative units
+
+Implementation uses rem units backed by px source tokens.
+This preserves accessibility when users change browser font size.
+
+## Size Specifications
+
+Use the `typeMode` control to switch between `mobile` and `widescreen` values.
+
+<Canvas>
+  <Story of={TypographyStories.Scale} />
+</Canvas>
+
+## Type Specimens
+
+<Canvas>
+  <Story of={TypographyStories.Specimens} />
+</Canvas>
+
+## Usage
+
+### Semantic HTML
+
+- Never skip heading levels
+- Use headings for structure, not visual size only
+- Use one `h1` per page context
+
+### Contrast and readability
+
+- Body text should meet WCAG AA minimum contrast
+- Maintain readable line length (target 45–75 characters)
+- Use fine/small text sparingly for secondary and tertiary content
+
+### Responsive sizing
+
+Typography scales at widescreen breakpoints while preserving semantic structure.
+Resize with CSS/tokens, not by changing semantic tags.
+
+## Accessibility
+
+### Do
+
+- Follow heading hierarchy
+- Maintain readable line length
+- Use semantic markup (`strong`, `em`) for meaning
+- Test typography at multiple viewport sizes
+
+### Don't
+
+- Do not skip heading levels
+- Do not use headings only for styling
+- Do not arbitrarily override system line heights
+- Do not use fine text for primary body copy
+
+## Design Tokens Reference
+
+Typography tokens in this project follow the same pattern used elsewhere:
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Pattern</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Raw px token</td>
+      <td><code>--typography-*-px</code></td>
+      <td><code>--typography-h2-font-size-px</code></td>
+    </tr>
+    <tr>
+      <td>Computed rem token</td>
+      <td><code>--typography-*</code></td>
+      <td><code>--typography-h2-font-size</code></td>
+    </tr>
+  </tbody>
+</table>
+
+## Controls
+
+<Controls of={TypographyStories.Scale} />

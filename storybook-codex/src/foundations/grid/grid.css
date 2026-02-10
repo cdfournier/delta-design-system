@@ -1,0 +1,117 @@
+.grid-page {
+  display: grid;
+  gap: 1rem;
+  width: min(var(--layout-wide-max-width), 100%);
+}
+
+.grid-mode-note {
+  margin: 0;
+  font-family: var(--font-family-code);
+  font-size: 0.8125rem;
+  color: var(--global-gray-dark);
+}
+
+.grid-card {
+  display: grid;
+  gap: 0.75rem;
+  border: 1px solid var(--global-gray-medium);
+  border-radius: var(--radius-sm);
+  background: var(--background-page);
+  padding: 1rem;
+}
+
+.grid-card h3 {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+
+.grid-card p {
+  margin: 0;
+}
+
+.grid-preview {
+  display: grid;
+  gap: var(--grid-gutter);
+  grid-template-columns: repeat(var(--grid-preview-columns), minmax(0, 1fr));
+}
+
+.grid-col-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  border-radius: var(--radius-xs);
+  background: var(--brand-primary);
+  color: var(--global-white);
+  font-family: var(--font-family-code);
+  font-size: 0.75rem;
+}
+
+.grid-layout-demo {
+  display: grid;
+  gap: var(--grid-gutter);
+  grid-template-columns: repeat(var(--grid-preview-columns), minmax(0, 1fr));
+}
+
+.grid-layout-item {
+  display: grid;
+  place-content: center;
+  min-height: 3.25rem;
+  text-align: center;
+  border-radius: var(--radius-xs);
+  background: var(--brand-primary);
+  color: var(--global-white);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.grid-layout-item small {
+  font-size: 0.6875rem;
+  font-weight: 400;
+}
+
+.grid-pattern-row {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--grid-gutter);
+}
+
+.grid-pattern-item {
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-xs);
+  background: var(--brand-secondary);
+  color: var(--global-white);
+  font-family: var(--font-family-code);
+  font-size: 0.75rem;
+}
+
+.grid-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--global-gray-medium);
+}
+
+.grid-table th,
+.grid-table td {
+  border-bottom: 1px solid var(--global-gray-medium);
+  padding: 0.625rem 0.75rem;
+  text-align: left;
+  font-family: var(--font-family-body);
+  font-size: 0.9375rem;
+}
+
+.grid-table th {
+  background: var(--background-section);
+  font-weight: 700;
+}
+
+@media (max-width: 720px) {
+  .grid-card h3 {
+    font-size: 1.25rem;
+  }
+}

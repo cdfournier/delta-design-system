@@ -1,0 +1,262 @@
+.dds-chip {
+  --dds-chip-bg: var(--brand-primary);
+  --dds-chip-border: var(--brand-primary);
+  --dds-chip-fg: var(--global-white);
+  --dds-chip-bg-hover: var(--brand-primary-dark);
+  --dds-chip-border-hover: var(--brand-primary-dark);
+  --dds-chip-fg-hover: var(--global-white);
+  --dds-chip-close-bg: var(--global-white);
+  --dds-chip-close-fg: var(--brand-primary);
+
+  display: inline-flex;
+  align-items: center;
+  gap: var(--components-chip-padding-gap);
+  margin: 0;
+  border: var(--components-chip-border-width) solid var(--dds-chip-border);
+  border-radius: var(--components-chip-border-radius);
+  background: var(--dds-chip-bg);
+  color: var(--dds-chip-fg);
+  padding: var(--components-chip-padding-t-b) var(--components-chip-padding-l-r);
+  font-family: var(--font-family-body);
+  font-size: var(--components-chip-font-size);
+  line-height: var(--components-chip-line-height);
+  font-weight: 400;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.dds-chip--secondary {
+  --dds-chip-bg: var(--brand-secondary);
+  --dds-chip-border: var(--brand-secondary);
+  --dds-chip-fg: var(--global-white);
+  --dds-chip-bg-hover: var(--brand-secondary-dark);
+  --dds-chip-border-hover: var(--brand-secondary-dark);
+  --dds-chip-fg-hover: var(--global-white);
+  --dds-chip-close-bg: var(--global-white);
+  --dds-chip-close-fg: var(--brand-secondary);
+}
+
+.dds-chip[data-state='hover'],
+.dds-chip[data-state='focus'],
+.dds-chip:hover,
+.dds-chip:focus-visible {
+  background: var(--dds-chip-bg-hover);
+  border-color: var(--dds-chip-border-hover);
+  color: var(--dds-chip-fg-hover);
+}
+
+.dds-chip:disabled,
+.dds-chip[aria-disabled='true'] {
+  background: var(--status-disabled);
+  border-color: var(--status-disabled);
+  color: var(--global-gray-dark);
+  cursor: not-allowed;
+}
+
+.dds-chip--static {
+  cursor: default;
+}
+
+.dds-chip--selected .dds-chip__accessory--trailing .dds-chip__icon-wrap,
+.dds-chip--selected .dds-chip__accessory--leading .dds-chip__icon-wrap {
+  color: inherit;
+}
+
+.dds-chip__label {
+  display: inline-block;
+  line-height: inherit;
+  padding-block: var(--components-chip-label-padding-t-b);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dds-chip__accessory {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  align-self: center;
+}
+
+.dds-chip__icon-wrap {
+  width: var(--components-chip-icon-size);
+  height: var(--components-chip-icon-size);
+  padding: var(--components-chip-icon-padding);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.dds-chip__icon-art {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: block;
+}
+
+.dds-chip__icon-part {
+  position: absolute;
+}
+
+.dds-chip__icon-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.dds-chip__icon-art--arrow .dds-chip__icon-part--arrow-line {
+  left: 20.83%;
+  right: 20.83%;
+  top: 50%;
+  transform: translateY(-47%);
+}
+
+.dds-chip__icon-art--arrow .dds-chip__icon-part--arrow-tip-a {
+  left: 20.83%;
+  right: 54.17%;
+  top: 25%;
+  bottom: 50%;
+}
+
+.dds-chip__icon-art--arrow .dds-chip__icon-part--arrow-tip-b {
+  left: 20.83%;
+  right: 54.17%;
+  top: 50%;
+  bottom: 25%;
+}
+
+.dds-chip__icon-art--check .dds-chip__icon-part--check-line {
+  left: 20.83%;
+  right: 16.67%;
+  top: 29.17%;
+  bottom: 29.17%;
+}
+
+.dds-chip__icon-art--close .dds-chip__icon-part--close-line-a,
+.dds-chip__icon-art--close .dds-chip__icon-part--close-line-b {
+  inset: 25%;
+}
+
+.dds-chip__avatar {
+  width: var(--components-chip-avatar-size);
+  height: var(--components-chip-avatar-size);
+  border-radius: var(--border-radius-round);
+  overflow: hidden;
+  flex: 0 0 auto;
+  display: inline-flex;
+}
+
+.dds-chip__avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.dds-chip__close-btn {
+  appearance: none;
+  border: 0;
+  width: calc(var(--components-chip-close-size) - (var(--components-chip-close-padding-outer) * 2));
+  height: calc(var(--components-chip-close-size) - (var(--components-chip-close-padding-outer) * 2));
+  padding: var(--components-chip-close-padding-inner);
+  border-radius: var(--border-radius-round);
+  background: var(--dds-chip-close-bg);
+  color: var(--dds-chip-close-fg);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dds-chip__accessory--close {
+  width: var(--components-chip-close-size);
+  height: var(--components-chip-close-size);
+  padding: var(--components-chip-close-padding-outer);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dds-chip__close-btn:hover,
+.dds-chip__close-btn:focus-visible {
+  opacity: 0.9;
+}
+
+.dds-chip__close-btn:disabled,
+.dds-chip__close-btn[aria-disabled='true'] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.dds-chip-group {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--components-chip-group-gap);
+  align-items: center;
+}
+
+.dds-chip-group > li {
+  margin: 0;
+  padding: 0;
+}
+
+.dds-chip-grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.dds-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--components-chip-group-gap);
+  align-items: center;
+}
+
+.dds-chip[data-size-mode='mobile'] {
+  --components-chip-font-size-px: 12;
+  --components-chip-line-height-px: 12;
+  --components-chip-padding-t-b-px: 4;
+  --components-chip-padding-l-r-px: 8;
+  --components-chip-padding-gap-px: 2;
+  --components-chip-group-gap-px: 8;
+  --components-chip-label-padding-t-b-px: 0;
+  --components-chip-icon-size-px: 16;
+  --components-chip-icon-padding-px: 2;
+  --components-chip-avatar-size-px: 20;
+  --components-chip-close-size-px: 24;
+  --components-chip-close-padding-outer-px: 4;
+  --components-chip-close-padding-inner-px: 2;
+}
+
+.dds-chip[data-size-mode='widescreen'] {
+  --components-chip-font-size-px: 24;
+  --components-chip-line-height-px: 24;
+  --components-chip-padding-t-b-px: 12;
+  --components-chip-padding-l-r-px: 20;
+  --components-chip-padding-gap-px: 4;
+  --components-chip-group-gap-px: 16;
+  --components-chip-label-padding-t-b-px: 0;
+  --components-chip-icon-size-px: 24;
+  --components-chip-icon-padding-px: 4;
+  --components-chip-avatar-size-px: 32;
+  --components-chip-close-size-px: 24;
+  --components-chip-close-padding-outer-px: 10;
+  --components-chip-close-padding-inner-px: 4;
+}
+
+[data-color-mode='dark'] .dds-chip {
+  --dds-chip-bg: var(--global-white);
+  --dds-chip-border: var(--global-white);
+  --dds-chip-fg: var(--global-black);
+  --dds-chip-bg-hover: var(--global-white);
+  --dds-chip-border-hover: var(--global-white);
+  --dds-chip-fg-hover: var(--global-black);
+  --dds-chip-close-bg: var(--global-black);
+  --dds-chip-close-fg: var(--global-white);
+}

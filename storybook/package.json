@@ -1,0 +1,19 @@
+{
+  "name": "delta-design-system-storybook",
+  "version": "1.0.0",
+  "description": "Storybook for the Delta Design System",
+  "type": "module",
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "storybook": "^10.2.8",
+    "@storybook/html-vite": "^10.2.8",
+    "@storybook/addon-a11y": "^10.2.8",
+    "@storybook/addon-docs": "^10.2.8"
+  }
+}

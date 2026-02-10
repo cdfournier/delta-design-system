@@ -1,0 +1,46 @@
+[12:15:49.408] [INFO] Running addon-a11y-addon-test automigration
+[12:15:49.408] [DEBUG] Extracting storybook data...
+[12:15:49.408] [DEBUG] Getting Storybook info...
+[12:15:49.453] [ERROR] [38;2;241;97;97mSB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook/main.js file.
+
+Original error:
+/.storybook/main.js:17
+export default config;
+^^^^^^
+
+SyntaxError: Unexpected token 'export'
+    at wrapSafe (node:internal/modules/cjs/loader:1662:18)
+    at Module._compile (node:internal/modules/cjs/loader:1704:20)
+    at Object..js (node:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at cjsLoader (node:internal/modules/esm/translators:266:5)
+    at ModuleWrap.<anonymous> (node:internal/modules/esm/translators:200:7)
+    at ModuleJob.run (node:internal/modules/esm/module_job:329:25)[39m
+    at loadMainConfig (file:///Users/chris/.npm/_npx/b8d6390bedbcd544/node_modules/storybook/dist/_node-chunks/chunk-WF46L34H.js:11709:11)
+    at async getStorybookInfo (file:///Users/chris/.npm/_npx/b8d6390bedbcd544/node_modules/storybook/dist/_node-chunks/chunk-WF46L34H.js:11798:59)
+    at async getStorybookData (file:///Users/chris/.npm/_npx/b8d6390bedbcd544/node_modules/@storybook/cli/dist/_node-chunks/chunk-JECGKZSI.js:169:7)
+    at async doAutomigrate (file:///Users/chris/.npm/_npx/b8d6390bedbcd544/node_modules/@storybook/cli/dist/_node-chunks/run-I2PTZ5OH.js:7751:7)
+    at async file:///Users/chris/.npm/_npx/b8d6390bedbcd544/node_modules/@storybook/cli/dist/_node-chunks/run-I2PTZ5OH.js:9718:90
+    at async withTelemetry (file:///Users/chris/.npm/_npx/b8d6390bedbcd544/node_modules/storybook/dist/_node-chunks/chunk-KIOKJLL5.js:218:12)
+[12:15:49.454] [INFO] Storybook collects completely anonymous usage telemetry. We use it to shape Storybook's roadmap and prioritize features. You can learn more, including how to opt out, at https://storybook.js.org/telemetry
+[12:15:49.940] [ERROR] SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook/main.js file.
+
+Original error:
+/.storybook/main.js:17
+export default config;
+^^^^^^
+
+SyntaxError: Unexpected token 'export'
+    at wrapSafe (node:internal/modules/cjs/loader:1662:18)
+    at Module._compile (node:internal/modules/cjs/loader:1704:20)
+    at Object..js (node:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at cjsLoader (node:internal/modules/esm/translators:266:5)
+    at ModuleWrap.<anonymous> (node:internal/modules/esm/translators:200:7)
+    at ModuleJob.run (node:internal/modules/esm/module_job:329:25)

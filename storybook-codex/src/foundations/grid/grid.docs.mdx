@@ -1,0 +1,127 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/addon-docs/blocks';
+import * as GridStories from './grid.stories';
+
+<Meta of={GridStories} title="Foundations/Grid/Documentation" />
+
+# Grid
+
+A responsive grid system provides structure and consistency across layouts.
+
+## Grid Philosophy
+
+The Delta system separates architecture from presentation:
+
+- Architecture: a 12-column model used for layout decisions
+- Presentation: 4, 8, or 12 visible columns by breakpoint
+
+The model stays consistent while the visual presentation adapts.
+
+## The Grid System
+
+### Architecture vs. presentation
+
+<table>
+  <thead>
+    <tr>
+      <th>Breakpoint</th>
+      <th>Visible columns</th>
+      <th>Architecture model</th>
+      <th>Gutter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Mobile</td><td>4</td><td>12-column</td><td>16px / 1rem</td></tr>
+    <tr><td>Tablet</td><td>8</td><td>12-column</td><td>16px / 1rem</td></tr>
+    <tr><td>Widescreen</td><td>12</td><td>12-column</td><td>16px / 1rem</td></tr>
+  </tbody>
+</table>
+
+<Canvas>
+  <Story of={GridStories.VisualColumns} />
+</Canvas>
+
+### Wrapping behavior
+
+A layout using three `4-column` architecture units wraps by visible column count:
+
+<table>
+  <thead>
+    <tr>
+      <th>Breakpoint</th>
+      <th>Outcome for 4 + 4 + 4 content</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Widescreen (12)</td><td>All three items render on one row</td></tr>
+    <tr><td>Tablet (8)</td><td>Two items on row one, third wraps to row two</td></tr>
+    <tr><td>Mobile (4)</td><td>Each item wraps to its own row</td></tr>
+  </tbody>
+</table>
+
+<Canvas>
+  <Story of={GridStories.Wrapping} />
+</Canvas>
+
+### Common layout patterns
+
+<Canvas>
+  <Story of={GridStories.Patterns} />
+</Canvas>
+
+### Breakpoints and token reference
+
+<Canvas>
+  <Story of={GridStories.Reference} />
+</Canvas>
+
+## Accessibility
+
+### Visual hierarchy
+
+Use grid structure to make priority and relationships clear.
+
+### Reading order
+
+- Keep DOM order aligned with visual order
+- Avoid visual reordering that breaks logical reading flow
+- Ensure stacked mobile layouts preserve intended sequence
+
+## Usage
+
+### Mobile-first approach
+
+Start with mobile constraints, then progressively enhance for tablet and widescreen.
+
+### In code
+
+Implement with CSS Grid using a 12-column architecture and tokenized gutter:
+
+```css
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--grid-gutter);
+}
+```
+
+Use architecture-based spans (`3`, `4`, `6`, `8`, `12`) for predictable proportions.
+
+## Usage Guidelines
+
+### Do
+
+- Use the grid consistently across components and pages
+- Keep gutter width tokenized and consistent
+- Center narrower content when readability benefits
+- Validate responsive behavior at each breakpoint
+
+### Don't
+
+- Do not ignore mobile and tablet behavior
+- Do not remove gutters and collapse visual breathing room
+- Do not break reading order with CSS-only rearrangement
+- Do not introduce ad hoc grid math outside the 12-column model
+
+## Controls
+
+<Controls of={GridStories.VisualColumns} />

@@ -1,0 +1,166 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/addon-docs/blocks';
+import * as BadgeStories from './badge.stories';
+
+<Meta of={BadgeStories} title="Symbols/Badge/Documentation" />
+
+# Badges
+
+Badges are small status indicators that draw attention to new, important, or categorized content.
+They provide quick visual feedback about an item's state or classification.
+
+## Anatomy
+
+Badges consist of:
+
+- a container
+- text content
+- rounded corners
+
+They are compact and designed for quick scanning.
+
+<Canvas>
+  <Story of={BadgeStories.Transparent} />
+</Canvas>
+
+## Variants
+
+The Delta Design System provides three badge variants:
+
+- `primary`: emphasis or featured content
+- `secondary`: general information or categorization
+- `transparent`: subtle emphasis or alternative styling
+
+<Canvas>
+  <Story of={BadgeStories.Primary} />
+  <Story of={BadgeStories.Secondary} />
+  <Story of={BadgeStories.Transparent} />
+</Canvas>
+
+## States
+
+Badges are static informational elements.
+They do not have interactive states like hover, focus, or pressed.
+
+## Typography
+
+Badge text uses the badge typography tokens.
+
+<table>
+  <thead>
+    <tr>
+      <th>Mode</th>
+      <th>Font size</th>
+      <th>Line height</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Symbol</td><td>10px / 0.625rem</td><td>11px / 0.6875rem</td></tr>
+    <tr><td>Library example</td><td>20px / 1.25rem</td><td>20px / 1.25rem</td></tr>
+  </tbody>
+</table>
+
+<Canvas>
+  <Story of={BadgeStories.LibraryScale} />
+</Canvas>
+
+## Spacing
+
+Spacing and shape are token-driven.
+
+<table>
+  <thead>
+    <tr>
+      <th>Mode</th>
+      <th>Padding top/bottom</th>
+      <th>Padding left/right</th>
+      <th>Border radius</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Symbol</td><td>2px / 0.125rem</td><td>4px / 0.25rem</td><td>4px / 0.25rem</td></tr>
+    <tr><td>Library example</td><td>8px / 0.5rem</td><td>12px / 0.75rem</td><td>8px / 0.5rem</td></tr>
+  </tbody>
+</table>
+
+## Colors
+
+Badge variants map to these tokens:
+
+<table>
+  <thead>
+    <tr>
+      <th>Variant</th>
+      <th>Background</th>
+      <th>Text</th>
+      <th>Border</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>primary</td><td><code>--brand-primary</code></td><td><code>--global-white</code></td><td>None</td></tr>
+    <tr><td>secondary</td><td><code>--brand-secondary</code></td><td><code>--global-white</code></td><td>None</td></tr>
+    <tr><td>transparent</td><td>Transparent</td><td><code>--text-default</code></td><td><code>--text-default</code></td></tr>
+  </tbody>
+</table>
+
+## Accessibility
+
+### Color and meaning
+
+Do not rely on color alone to convey meaning.
+Badge text should communicate the status/category without needing color.
+
+### Contrast requirements
+
+Badge foreground/background combinations should meet WCAG AA contrast requirements.
+
+### Screen readers
+
+Use descriptive text.
+Avoid vague labels that require visual context to be understood.
+
+## Usage
+
+### When to use
+
+- Status indicators: show item state (active, pending, complete)
+- Categorization: tag content by type or topic
+- Counts: display numerical information (for example unread messages)
+- Highlights: draw attention to new or important items
+
+### When not to use
+
+- Interactive elements: use buttons or chips for clickable behavior
+- Long text: badges should stay short and scannable
+- Primary actions: badges are informational, not calls to action
+
+### Content guidelines
+
+- Keep text short: one to two words or short numbers
+- Use sentence case
+- Use consistent color semantics across the interface
+
+### Placement
+
+- Inline with text when attached to nearby content
+- Near the top-right of cards/items when indicating status
+- In groups when multiple categories/statuses are needed
+
+## Usage Guidelines
+
+### Do
+
+- Keep text concise
+- Use consistent color semantics
+- Provide enough text context for non-visual users
+
+### Don't
+
+- Do not use badges as interactive controls
+- Do not use long phrases in badges
+- Do not rely on color alone
+
+## Controls
+
+Use these controls to test docs examples against Figma variants and token modes.
+
+<Controls of={BadgeStories.Transparent} />

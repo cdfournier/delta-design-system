@@ -1,0 +1,31 @@
+.dds-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--components-badge-border-radius);
+  padding: var(--components-badge-padding-t-b) var(--components-badge-padding-l-r);
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: var(--components-badge-font-size);
+  font-weight: 700;
+  line-height: var(--components-badge-line-height);
+  letter-spacing: 0;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.dds-badge--primary {
+  background: var(--brand-primary);
+  color: var(--global-white);
+}
+
+.dds-badge--secondary {
+  background: var(--brand-secondary);
+  color: var(--global-white);
+}
+
+.dds-badge--transparent {
+  background: transparent;
+  border: var(--components-badge-border-width) solid var(--text-default);
+  color: var(--text-default);
+}

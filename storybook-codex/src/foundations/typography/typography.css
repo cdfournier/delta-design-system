@@ -1,0 +1,142 @@
+.typography-page {
+  display: grid;
+  gap: 2rem;
+  width: min(78rem, 100%);
+}
+
+.typography-intro {
+  max-width: 58ch;
+  margin: 0;
+}
+
+.type-scale-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--background-page);
+  border: 1px solid var(--global-gray-medium);
+}
+
+.type-scale-table th,
+.type-scale-table td {
+  border-bottom: 1px solid var(--global-gray-medium);
+  padding: 0.625rem 0.75rem;
+  text-align: left;
+}
+
+.type-scale-table th {
+  background: var(--background-section);
+}
+
+.type-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.type-card {
+  border: 1px solid var(--global-gray-medium);
+  border-radius: 0.5rem;
+  background: var(--background-section);
+  padding: 1rem;
+}
+
+.type-card-label {
+  margin: 0 0 0.5rem;
+  font-size: 0.875rem;
+  color: var(--global-gray-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.type-card-meta {
+  margin: 0.5rem 0 0;
+  font-size: 0.8125rem;
+  font-family: "Courier New", Courier, monospace;
+  color: var(--global-gray-dark);
+}
+
+.t-h1-title {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-size: var(--typography-h1-title-font-size);
+  line-height: var(--typography-h1-title-line-height);
+  font-weight: 400;
+}
+
+.t-h1-title-plus-p {
+  margin: 0.5rem 0 0;
+  font-family: var(--font-family-body);
+  font-size: var(--typography-h1-title-plus-p-font-size);
+  line-height: var(--typography-h1-title-plus-p-line-height);
+  font-weight: 400;
+}
+
+.t-h1,
+.t-h2,
+.t-h3,
+.t-h4,
+.t-h5 {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-weight: 400;
+}
+
+.t-h1 {
+  font-size: var(--typography-h1-font-size);
+  line-height: var(--typography-h1-line-height);
+}
+
+.t-h2 {
+  font-size: var(--typography-h2-font-size);
+  line-height: var(--typography-h2-line-height);
+}
+
+.t-h3 {
+  font-size: var(--typography-h3-font-size);
+  line-height: var(--typography-h3-line-height);
+}
+
+.t-h4 {
+  font-size: var(--typography-h4-font-size);
+  line-height: var(--typography-h4-line-height);
+}
+
+.t-h5 {
+  font-size: var(--typography-h5-font-size);
+  line-height: var(--typography-h5-line-height);
+}
+
+.t-body,
+.t-list,
+.t-small,
+.t-fine {
+  margin: 0;
+  font-family: var(--font-family-body);
+  font-weight: 400;
+}
+
+.t-body {
+  font-size: var(--typography-body-font-size);
+  line-height: var(--typography-body-line-height);
+}
+
+.t-list {
+  font-size: var(--typography-list-font-size);
+  line-height: var(--typography-list-line-height);
+  padding-left: 1.25rem;
+}
+
+.t-small {
+  font-size: var(--typography-small-font-size);
+  line-height: var(--typography-small-line-height);
+}
+
+.t-fine {
+  font-size: var(--typography-fine-font-size);
+  line-height: var(--typography-fine-line-height);
+}
+
+.type-mode-note {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.8125rem;
+  color: var(--global-gray-dark);
+}

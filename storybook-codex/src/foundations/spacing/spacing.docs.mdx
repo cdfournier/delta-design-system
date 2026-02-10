@@ -1,0 +1,134 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/addon-docs/blocks';
+import * as SpacingStories from './spacing.stories';
+
+<Meta of={SpacingStories} title="Foundations/Spacing/Documentation" />
+
+# Spacing
+
+Consistent spacing creates visual rhythm, improves readability, and establishes clear relationships between elements.
+
+## Spacing Philosophy
+
+The spacing scale adapts responsively.
+Mobile/tablet uses a compact scale and widescreen doubles values to match larger typography and layouts.
+
+## The Spacing System
+
+### Spacing scale
+
+Use `spaceMode` to switch between `mobile` and `widescreen`.
+
+<Canvas>
+  <Story of={SpacingStories.Scale} />
+</Canvas>
+
+### Spacing reference
+
+<Canvas>
+  <Story of={SpacingStories.Reference} />
+</Canvas>
+
+### Border radius scale
+
+<Canvas>
+  <Story of={SpacingStories.Radius} />
+</Canvas>
+
+## Responsive Scaling
+
+<table>
+  <thead>
+    <tr>
+      <th>Mode</th>
+      <th>Spacing range</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Mobile/Tablet</td><td>2px to 32px</td><td>Base compact scale</td></tr>
+    <tr><td>Widescreen</td><td>4px to 64px</td><td>Doubled scale for larger layouts</td></tr>
+  </tbody>
+</table>
+
+Use semantic spacing tokens so values adjust automatically by mode.
+
+## Accessibility
+
+### Touch targets
+
+- Minimum touch target: 44x44px
+- Recommended touch target: 48x48px
+- Minimum spacing between targets: `md` in mobile mode
+
+### Visual separation
+
+- Related elements: `sm` to `md`
+- Distinct sections: `xxxl` to `xxxxxl`
+- Adequate white space reduces cognitive load
+
+## Usage
+
+### When to use each size
+
+<table>
+  <thead>
+    <tr>
+      <th>Token</th>
+      <th>Typical usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>xs</td><td>Micro-adjustments and tightly related elements</td></tr>
+    <tr><td>sm</td><td>Small internal component spacing</td></tr>
+    <tr><td>md</td><td>Default related-element spacing</td></tr>
+    <tr><td>lg</td><td>Moderate section spacing</td></tr>
+    <tr><td>xl</td><td>Standard component and paragraph spacing</td></tr>
+    <tr><td>xxl</td><td>Additional breathing room</td></tr>
+    <tr><td>xxxl</td><td>Major section separation</td></tr>
+    <tr><td>xxxxxl</td><td>Strongest structural separation</td></tr>
+  </tbody>
+</table>
+
+### Vertical rhythm
+
+Use consistent paragraph/list/heading spacing tokens to maintain predictable reading flow.
+
+### Horizontal spacing
+
+Use `md`/`lg` for related gaps, and larger tokens for stronger separation.
+
+## Usage Guidelines
+
+### Do
+
+- Use spacing tokens instead of raw one-off values
+- Let responsive scaling handle mode differences
+- Scale spacing with content density and hierarchy
+
+### Don't
+
+- Do not invent arbitrary values (for example 13px)
+- Do not disable responsive spacing behavior
+- Do not skip existing scale steps
+
+## Design Tokens Reference
+
+Spacing and radius in this project use:
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Pattern</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Raw px tokens</td><td><code>--space-&#42;-px</code>, <code>--radius-&#42;-px</code></td></tr>
+    <tr><td>Computed rem tokens</td><td><code>--space-&#42;</code>, <code>--radius-&#42;</code></td></tr>
+    <tr><td>Figma aliases</td><td><code>--xs</code>, <code>--sm</code>, <code>--md</code>, <code>--lg</code>, <code>--xl</code>, <code>--xxl</code>, <code>--xxxl</code>, <code>--xxxxxl</code></td></tr>
+  </tbody>
+</table>
+
+## Controls
+
+<Controls of={SpacingStories.Scale} />

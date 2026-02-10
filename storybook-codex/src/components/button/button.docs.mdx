@@ -1,0 +1,206 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/addon-docs/blocks';
+import * as ButtonStories from './button.stories';
+
+<Meta of={ButtonStories} title="Symbols/Button" />
+
+# Buttons
+
+Buttons trigger actions and guide users through key interface flows.
+
+## Anatomy
+
+- Label: action-oriented text
+- Container: background, border, and shape
+- Icon (optional): left, right, or icon-only
+- Padding: tokenized clickable area
+
+### Baseline button
+
+<Canvas>
+  <Story of={ButtonStories.Default} />
+</Canvas>
+
+<Canvas>
+  <Story of={ButtonStories.TextButtons} />
+</Canvas>
+
+## Variants
+
+Primary, Secondary, and White communicate hierarchy and context.
+
+<Canvas>
+  <Story of={ButtonStories.Variants} />
+</Canvas>
+
+### Text buttons
+
+<Canvas>
+  <Story of={ButtonStories.TextButtons} />
+</Canvas>
+
+## Styles
+
+Solid and Transparent are available across text-button variants.
+Outline is reserved for icon-only usage.
+
+<Canvas>
+  <Story of={ButtonStories.Styles} />
+</Canvas>
+
+## States
+
+Buttons support default, hover/focus inverse states, and disabled.
+
+<Canvas>
+  <Story of={ButtonStories.States} />
+</Canvas>
+
+## Icon Options
+
+<Canvas>
+  <Story of={ButtonStories.IconOptions} />
+</Canvas>
+
+### Reference subtype
+
+Primary transparent with right icon (explicit parity checkpoint):
+
+<Canvas>
+  <Story of={ButtonStories.PrimaryTransparentIconRight} />
+</Canvas>
+
+### Icon-only states
+
+<Canvas>
+  <Story of={ButtonStories.IconOnlyStates} />
+</Canvas>
+
+<table>
+  <thead>
+    <tr>
+      <th>Icon button mode</th>
+      <th>Availability</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Solid</td><td>Available</td><td>Filled icon action button</td></tr>
+    <tr><td>Transparent</td><td>Available</td><td>Minimal emphasis, bordered by variant color</td></tr>
+    <tr><td>Outline</td><td>Icon-only exclusive</td><td>White background with colored border/icon</td></tr>
+  </tbody>
+</table>
+
+## Typography
+
+<table>
+  <thead>
+    <tr>
+      <th>Breakpoint</th>
+      <th>Font size</th>
+      <th>Line height</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Mobile/Tablet</td><td>12px / 0.75rem</td><td>12px / 0.75rem (1:1)</td></tr>
+    <tr><td>Widescreen</td><td>24px / 1.5rem</td><td>24px / 1.5rem (1:1)</td></tr>
+  </tbody>
+</table>
+
+## Spacing
+
+<table>
+  <thead>
+    <tr>
+      <th>Button type</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Regular padding</td><td>24px/8px (x/y)</td><td>32px/12px (x/y)</td></tr>
+    <tr><td>Icon-only size</td><td>24px with 4px inner padding</td><td>48px with 8px inner padding</td></tr>
+    <tr><td>Inline icon size (text buttons)</td><td>16px</td><td>32px</td></tr>
+    <tr><td>Gap between icon + text</td><td>4px</td><td>8px</td></tr>
+    <tr><td>Border radius</td><td>32px (pill)</td><td>32px (pill)</td></tr>
+  </tbody>
+</table>
+
+## Colors
+
+<table>
+  <thead>
+    <tr>
+      <th>Variant / style</th>
+      <th>Default</th>
+      <th>Hover/Focus</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Primary solid</td><td>brand/primary on global/white</td><td>global/white on brand/primary</td></tr>
+    <tr><td>Primary transparent</td><td>Transparent, brand/primary text+border</td><td>brand/primary on global/white</td></tr>
+    <tr><td>Secondary solid</td><td>global/black fill, global/white text, brand/secondary border</td><td>global/white fill, global/black text, brand/secondary border</td></tr>
+    <tr><td>Secondary transparent</td><td>Transparent, global/black text, brand/secondary border</td><td>global/black fill, global/white text, brand/secondary border</td></tr>
+    <tr><td>White solid</td><td>global/white on brand/primary</td><td>brand/primary on global/white</td></tr>
+    <tr><td>White transparent</td><td>Transparent, global/white text+border</td><td>global/white on brand/primary</td></tr>
+    <tr><td>Disabled (all variants)</td><td>status/disabled background and border, gray-dark text</td><td>No hover/focus color swap</td></tr>
+  </tbody>
+</table>
+
+### Parity checks
+
+<Canvas>
+  <Story of={ButtonStories.VariantStateMatrix} />
+</Canvas>
+
+<Canvas>
+  <Story of={ButtonStories.OnDarkSurface} />
+</Canvas>
+
+<Canvas>
+  <Story of={ButtonStories.DisabledParity} />
+</Canvas>
+
+## Button Groups
+
+<table>
+  <thead>
+    <tr>
+      <th>Context</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Between regular buttons</td><td>8px</td><td>16px</td></tr>
+    <tr><td>Between icon buttons in toolbars</td><td>4px</td><td>8px</td></tr>
+    <tr><td>Primary placement</td><td>Top when stacked</td><td>Right-most in right-aligned groups</td></tr>
+  </tbody>
+</table>
+
+## Accessibility
+
+- Use `<button>` for actions and `<a>` for navigation.
+- Keep touch targets at least 44x44px for mobile.
+- Include `disabled` and `aria-disabled="true"` when unavailable.
+- For icon-only buttons, include hidden text labels for assistive tech.
+- Use recognizable icons for icon-only controls (search, close, menu, settings).
+
+## Usage Guidelines
+
+### Do
+
+- Lead with action verbs.
+- Keep one primary button per local group.
+- Use predictable placement and spacing.
+- Keep labels concise (1-3 words when possible).
+
+### Don't
+
+- Do not use vague labels without context.
+- Do not use buttons for page-to-page navigation.
+- Do not rely on color alone for state meaning.
+- Do not reduce tap/click targets below accessible size.
+
+## Controls
+
+<Controls of={ButtonStories.Default} />
