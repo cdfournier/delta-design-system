@@ -1,0 +1,117 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/addon-docs/blocks';
+import * as TabStories from './tab.stories';
+
+<Meta of={TabStories} title="Organisms/Tabs/Documentation" />
+
+# Tabs
+
+Tabs organize related content into separate panels and allow users to switch views without leaving the page.
+
+## Anatomy
+
+- `tab-button`: Trigger button with default or selected state
+- `tablist`: Container for tab-button items (horizontal or vertical)
+- `tab-panel`: Content panel with optional figure and heading/body content
+- `tabs`: Assembled component containing tablist and tab panels
+
+<Canvas>
+  <Story of={TabStories.Default} />
+</Canvas>
+
+## Variants
+
+<Canvas of={TabStories.VariantShowcase} />
+
+### Tab Button Variants
+
+<Canvas of={TabStories.TabButtonVariants} />
+
+### Tablist Variants
+
+<Canvas of={TabStories.TablistVariants} />
+
+### Tab Panel Variants
+
+<Canvas of={TabStories.TabPanelVariants} />
+
+### Assembled Variants
+
+<Canvas of={TabStories.HorizontalAssembled} />
+
+<Canvas of={TabStories.VerticalAssembled} />
+
+<Canvas of={TabStories.SecondaryStyle} />
+
+<Canvas of={TabStories.WithoutFigure} />
+
+## Typography
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Tab label</td><td>0.625rem / 10px (`components/tab`)</td><td>1rem / 16px</td></tr>
+    <tr><td>Panel heading</td><td>1.75rem / 28px (`h3`)</td><td>3.125rem / 50px (`h3` widescreen)</td></tr>
+    <tr><td>Panel body</td><td>1rem / 16px (`p`)</td><td>1.5rem / 24px</td></tr>
+    <tr><td>Panel body line-height</td><td>1.75rem / 28px</td><td>3.5rem / 56px</td></tr>
+  </tbody>
+</table>
+
+## Spacing
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Tab button padding</td><td>0.25rem 0.5rem / 4px 8px (`sm`, `md`)</td><td>0.5rem 1rem / 8px 16px</td></tr>
+    <tr><td>Tablist padding + gap</td><td>0.5rem / 8px (`md`)</td><td>1rem / 16px</td></tr>
+    <tr><td>Panels wrapper padding + gap</td><td>0.5rem / 8px (`md`)</td><td>1rem / 16px</td></tr>
+    <tr><td>Assembled tab gap</td><td>0.5rem / 8px (`md`)</td><td>1rem / 16px</td></tr>
+    <tr><td>Panel content padding</td><td>1rem / 16px (`xl`)</td><td>2rem / 32px</td></tr>
+    <tr><td>Horizontal panel figure/content gap</td><td>0.5rem / 8px (`md`)</td><td>1rem / 16px</td></tr>
+  </tbody>
+</table>
+
+<Canvas of={TabStories.WidescreenScale} />
+
+## Colors
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Light mode</th>
+      <th>Dark mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Default tab text</td><td>`text/default` (#000000)</td><td>`text/default` (#FFFFFF)</td></tr>
+    <tr><td>Selected primary tab</td><td>`brand/primary` fill + stroke</td><td>`brand/primary` fill + stroke</td></tr>
+    <tr><td>Selected secondary tab</td><td>`brand/secondary` fill + stroke</td><td>`brand/secondary` fill + stroke</td></tr>
+    <tr><td>Selected tab text</td><td>`global/white` (#FFFFFF)</td><td>`global/white` (#FFFFFF)</td></tr>
+    <tr><td>Tablist/panels container</td><td>`page/background` (#FFFFFF)</td><td>`page/background` (`brand/secondary-dark`)</td></tr>
+    <tr><td>Tab panel surface</td><td>`section/background` (#EEEEEE)</td><td>`section/background` (`brand/secondary`)</td></tr>
+  </tbody>
+</table>
+
+## Accessibility
+
+- Uses semantic ARIA tab pattern: `role="tablist"`, `role="tab"`, `role="tabpanel"`
+- Selected tab uses `aria-selected="true"` and `tabindex="0"`
+- Inactive tabs use `aria-selected="false"` and `tabindex="-1"`
+- Tab buttons support keyboard navigation: arrow keys, `Home`, and `End`
+- Panels are hidden with the `hidden` attribute and `aria-hidden`
+
+## Controls
+
+<Controls of={TabStories.Default} />

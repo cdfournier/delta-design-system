@@ -1,0 +1,107 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/addon-docs/blocks';
+import * as FooterStories from './footer.stories';
+
+<Meta of={FooterStories} title="Organisms/Footers/Documentation" />
+
+# Footer
+
+Footers are organism-level containers for global navigation, branding, and utility controls.
+
+## Anatomy
+
+- Outer wrapper (`footer`): spacing shell
+- Group container (`group`): section background and rounded surface
+- Navigation (`nav > ul > li > link`): list of small bold links
+- Brand block: Delta mark + heading
+- Color mode row: sun icon, switch, moon icon
+- Fine text: legal/copyright line
+
+<Canvas>
+  <Story of={FooterStories.Default} />
+</Canvas>
+
+## Variants
+
+### Full set
+
+<Canvas of={FooterStories.VariantShowcase} />
+
+### Mobile
+
+<Canvas of={FooterStories.Mobile} />
+
+### Desktop
+
+<Canvas of={FooterStories.Desktop} />
+
+## Typography
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Nav link (`small/bold`)</td><td>12px / 0.75rem, line-height 20px / 1.25rem</td><td>20px / 1.25rem, line-height 30px / 1.875rem</td></tr>
+    <tr><td>Heading (`h4`)</td><td>24px / 1.5rem, line-height 30px / 1.875rem</td><td>42px / 2.625rem, line-height 52px / 3.25rem</td></tr>
+    <tr><td>Fine text</td><td>10px / 0.625rem, line-height 18px / 1.125rem</td><td>16px / 1rem, line-height 24px / 1.5rem</td></tr>
+    <tr><td>Switch label</td><td>16px / 1rem, line-height 20px / 1.25rem</td><td>24px / 1.5rem, line-height 30px / 1.875rem</td></tr>
+  </tbody>
+</table>
+
+## Spacing
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Outer/footer padding</td><td>16px / 1rem (`xl`)</td><td>32px / 2rem (`xl`)</td></tr>
+    <tr><td>Group padding</td><td>16px / 1rem (`xl`)</td><td>32px / 2rem (`xl`)</td></tr>
+    <tr><td>List item vertical padding</td><td>2px / 0.125rem (`xs`)</td><td>4px / 0.25rem (`xs`)</td></tr>
+    <tr><td>List gap</td><td>8px / 0.5rem (`md`)</td><td>16px / 1rem (`md`)</td></tr>
+    <tr><td>Brand and toggle top padding</td><td>12px / 0.75rem (`lg`)</td><td>24px / 1.5rem (`lg`)</td></tr>
+  </tbody>
+</table>
+
+## Colors
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Light mode</th>
+      <th>Dark mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Group background</td><td>`section/background` -> `global/gray-light` (#EEEEEE)</td><td>`section/background` -> `brand/secondary` (#003442)</td></tr>
+    <tr><td>Nav links/icons</td><td>`text/link` -> `brand/primary` (#FF5247)</td><td>`text/link` -> `global/white` (#FFFFFF)</td></tr>
+    <tr><td>Heading/fine/toggle label</td><td>`text/default` -> `global/black` (#000000)</td><td>`text/default` -> `global/white` (#FFFFFF)</td></tr>
+    <tr><td>Logo mark</td><td>`components/logo/left` + `components/logo/right`</td><td>`components/logo/left` + `components/logo/right`</td></tr>
+  </tbody>
+</table>
+
+## Usage
+
+### Do
+
+- Keep links concise and scannable.
+- Use one consistent heading for the brand block.
+- Reuse existing link/switch/icon atoms for parity.
+
+### Don't
+
+- Do not mix unrelated utility controls into this component.
+- Do not hardcode spacing outside tokenized values.
+
+## Controls
+
+<Controls of={FooterStories.Default} />

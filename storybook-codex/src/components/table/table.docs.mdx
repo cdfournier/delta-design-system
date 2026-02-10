@@ -1,0 +1,105 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/addon-docs/blocks';
+import * as TableStories from './table.stories';
+
+<Meta of={TableStories} title="Molecules/Tables/Documentation" />
+
+# Tables
+
+Tables display structured data in rows and columns for scanning and comparison.
+
+## Anatomy
+
+- `table-cell`: body cell text
+- `table-cell (header)`: header cell text
+- `table-cell (control)`: checkbox control cell
+- `thead`: header row group
+- `tbody`: body row group
+- `table`: assembled component
+
+<Canvas>
+  <Story of={TableStories.Default} />
+</Canvas>
+
+## Variants
+
+<Canvas of={TableStories.VariantShowcase} />
+
+### Header And Body
+
+<Canvas of={TableStories.HeaderAndBody} />
+
+### With Control Cells
+
+<Canvas of={TableStories.WithControlCells} />
+
+### Multiple Rows
+
+<Canvas of={TableStories.MultipleRows} />
+
+### Overflow Scroll
+
+<Canvas of={TableStories.OverflowScroll} />
+
+## Typography
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Font size</th>
+      <th>Line height</th>
+      <th>Weight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Body cell</td><td>1rem / 16px</td><td>1.25rem / 20px</td><td>400</td></tr>
+    <tr><td>Header cell</td><td>1rem / 16px</td><td>1.25rem / 20px</td><td>700</td></tr>
+    <tr><td>Control checkbox label context</td><td>1rem / 16px</td><td>1.25rem / 20px</td><td>400</td></tr>
+  </tbody>
+</table>
+
+## Spacing
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Cell padding</td><td>0.25rem / 4px (`sm`)</td><td>0.25rem / 4px</td></tr>
+    <tr><td>Row gap reference</td><td>0.5rem / 8px (`md`)</td><td>0.5rem / 8px</td></tr>
+    <tr><td>Table minimum width</td><td colspan="2">65rem / 1040px</td></tr>
+  </tbody>
+</table>
+
+## Colors
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Light mode</th>
+      <th>Dark mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Table background</td><td>`page/background`</td><td>`page/background`</td></tr>
+    <tr><td>Header row background</td><td>`section/background`</td><td>`section/background`</td></tr>
+    <tr><td>Row borders</td><td>`global/gray-medium`</td><td>`global/gray-medium`</td></tr>
+    <tr><td>Text</td><td>`text/default`</td><td>`text/default`</td></tr>
+    <tr><td>Control border/fill</td><td>`brand/primary` + `global/white` icon</td><td>`brand/primary` + `global/white` icon</td></tr>
+  </tbody>
+</table>
+
+## Accessibility
+
+- Uses semantic `<table>`, `<thead>`, `<tbody>`, `<th scope="col">`, and `<td>`.
+- Overflow wrapper is keyboard-focusable and horizontally scrollable.
+- Control cells use native checkbox inputs with labels.
+
+## Controls
+
+<Controls of={TableStories.Default} />

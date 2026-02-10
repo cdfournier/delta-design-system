@@ -71,7 +71,7 @@ const preview = {
           const story = normalizeEntry(entry);
           const title = story.title ?? story.kind ?? '';
           const topLevel = title.split('/')[0] ?? '';
-          const order = ['Foundations', 'Atoms', 'Molecules', 'Organisms'];
+          const order = ['Welcome', 'Foundations', 'Atoms', 'Molecules', 'Organisms'];
           const index = order.indexOf(topLevel);
           return index === -1 ? order.length : index;
         };
@@ -82,6 +82,17 @@ const preview = {
           const titleLeaf = title.split('/').pop() ?? '';
           const isDocs = name === 'Docs' || name === 'Documentation' || titleLeaf === 'Documentation';
           return isDocs ? 0 : 1;
+        };
+        const rankWelcomeStories = (entry) => {
+          const story = normalizeEntry(entry);
+          const title = story.title ?? story.kind ?? '';
+          const name = story.name ?? '';
+          if (title !== 'Welcome') {
+            return Number.MAX_SAFE_INTEGER;
+          }
+          const order = ['Cover', 'About'];
+          const index = order.indexOf(name);
+          return index === -1 ? order.length : index;
         };
         const alpha = (left, right) =>
           String(left ?? '')
@@ -96,6 +107,11 @@ const preview = {
         const docsDiff = rankDocs(a) - rankDocs(b);
         if (docsDiff !== 0) {
           return docsDiff;
+        }
+
+        const welcomeDiff = rankWelcomeStories(a) - rankWelcomeStories(b);
+        if (welcomeDiff !== 0) {
+          return welcomeDiff;
         }
 
         const storyA = normalizeEntry(a);

@@ -10,6 +10,8 @@
   --brand-primary-dark: #b22e28;
   --brand-secondary: #003442;
   --brand-secondary-dark: #01232d;
+  --components-logo-left: #003442;
+  --components-logo-right: #01232d;
 
   --status-disabled: #808080;
   --status-invalid: #c00c00;
@@ -443,6 +445,14 @@
   --components-pagination-padding-y-px: 8;
   --components-pagination-border-radius-px: 32;
 
+  /* Table raw values (desktop/widescreen px) */
+  --components-table-font-size-px: 16;
+  --components-table-line-height-px: 20;
+  --components-table-cell-padding-px: 4;
+  --components-table-row-gap-px: 8;
+  --components-table-min-width-px: 1040;
+  --components-table-border-width-px: 1;
+
   /* Feedback computed values */
   --components-feedback-min-width: calc(var(--components-feedback-min-width-px) / 16 * 1rem);
   --components-feedback-width: calc(var(--components-feedback-width-px) / 16 * 1rem);
@@ -481,6 +491,14 @@
   --components-pagination-padding-y: calc(var(--components-pagination-padding-y-px) / 16 * 1rem);
   --components-pagination-border-radius: calc(var(--components-pagination-border-radius-px) / 16 * 1rem);
 
+  /* Table computed values */
+  --components-table-font-size: calc(var(--components-table-font-size-px) / 16 * 1rem);
+  --components-table-line-height: calc(var(--components-table-line-height-px) / 16 * 1rem);
+  --components-table-cell-padding: calc(var(--components-table-cell-padding-px) / 16 * 1rem);
+  --components-table-row-gap: calc(var(--components-table-row-gap-px) / 16 * 1rem);
+  --components-table-min-width: calc(var(--components-table-min-width-px) / 16 * 1rem);
+  --components-table-border-width: calc(var(--components-table-border-width-px) * 1px);
+
   /* Card raw values (mobile/tablet px) */
   --components-card-border-width-px: 1;
   --components-card-border-radius-px: 8;
@@ -511,6 +529,55 @@
   --components-banner-split-image-max-width-px: 336;
   --components-banner-split-image-aspect-ratio: 1.618;
 
+  /* Footer raw values (mobile/tablet px) */
+  --components-footer-outer-padding-px: 16;
+  --components-footer-group-padding-px: 16;
+  --components-footer-mobile-max-width-px: 288;
+  --components-footer-desktop-min-width-px: 736;
+  --components-footer-brand-max-width-px: 256;
+  --components-footer-logo-mark-width-px: 40;
+  --components-footer-logo-mark-height-px: 30;
+  --components-footer-heading-max-width-px: 334;
+  --components-footer-nav-padding-y-px: 8;
+  --components-footer-link-padding-y-px: 2;
+  --components-footer-list-gap-px: 8;
+  --components-footer-mark-gap-px: 8;
+  --components-footer-brand-padding-top-px: 12;
+  --components-footer-toggle-padding-top-px: 12;
+  --components-footer-toggle-gap-px: 8;
+  --components-footer-toggle-icon-size-px: 24;
+
+  /* Header raw values (mobile/tablet px) */
+  --components-header-desktop-width-px: 736;
+  --components-header-mobile-width-px: 288;
+  --components-header-top-height-px: 48;
+  --components-header-top-padding-px: 8;
+  --components-header-gap-px: 16;
+  --components-header-row-gap-px: 8;
+  --components-header-panel-padding-px: 8;
+  --components-header-panel-gap-px: 8;
+  --components-header-mobile-list-gap-px: 8;
+  --components-header-desktop-list-gap-px: 16;
+  --components-header-desktop-list-padding-left-px: 24;
+  --components-header-logo-mark-width-px: 40;
+  --components-header-logo-mark-height-px: 30;
+  --components-header-toggle-gap-px: 8;
+  --components-header-toggle-icon-size-px: 24;
+  --components-header-menu-button-size-px: 24;
+  --components-header-backdrop-blur-px: 15;
+
+  /* Tab raw values (mobile/tablet px) */
+  --components-tab-font-size-px: 10;
+  --components-tab-line-height-px: 10;
+  --components-tab-button-min-width-px: 45;
+  --components-tablist-vertical-width-px: 83;
+  --components-tablist-vertical-height-px: 116;
+  --components-tab-panel-min-width-px: 240;
+  --components-tab-panel-vertical-width-px: 240;
+  --components-tab-panel-horizontal-width-px: 404;
+  --components-tab-panel-min-height-px: 256;
+  --components-tab-assembled-width-px: 324;
+
   /* Card computed values */
   --components-card-border-width: calc(var(--components-card-border-width-px) * 1px);
   --components-card-border-radius: calc(var(--components-card-border-radius-px) / 16 * 1rem);
@@ -538,6 +605,55 @@
   --components-banner-split-horizontal-width: calc(var(--components-banner-split-horizontal-width-px) / 16 * 1rem);
   --components-banner-split-gap: calc(var(--components-banner-split-gap-px) / 16 * 1rem);
   --components-banner-split-image-max-width: calc(var(--components-banner-split-image-max-width-px) / 16 * 1rem);
+
+  /* Footer computed values */
+  --components-footer-outer-padding: calc(var(--components-footer-outer-padding-px) / 16 * 1rem);
+  --components-footer-group-padding: calc(var(--components-footer-group-padding-px) / 16 * 1rem);
+  --components-footer-mobile-max-width: calc(var(--components-footer-mobile-max-width-px) / 16 * 1rem);
+  --components-footer-desktop-min-width: calc(var(--components-footer-desktop-min-width-px) / 16 * 1rem);
+  --components-footer-brand-max-width: calc(var(--components-footer-brand-max-width-px) / 16 * 1rem);
+  --components-footer-logo-mark-width: calc(var(--components-footer-logo-mark-width-px) / 16 * 1rem);
+  --components-footer-logo-mark-height: calc(var(--components-footer-logo-mark-height-px) / 16 * 1rem);
+  --components-footer-heading-max-width: calc(var(--components-footer-heading-max-width-px) / 16 * 1rem);
+  --components-footer-nav-padding-y: calc(var(--components-footer-nav-padding-y-px) / 16 * 1rem);
+  --components-footer-link-padding-y: calc(var(--components-footer-link-padding-y-px) / 16 * 1rem);
+  --components-footer-list-gap: calc(var(--components-footer-list-gap-px) / 16 * 1rem);
+  --components-footer-mark-gap: calc(var(--components-footer-mark-gap-px) / 16 * 1rem);
+  --components-footer-brand-padding-top: calc(var(--components-footer-brand-padding-top-px) / 16 * 1rem);
+  --components-footer-toggle-padding-top: calc(var(--components-footer-toggle-padding-top-px) / 16 * 1rem);
+  --components-footer-toggle-gap: calc(var(--components-footer-toggle-gap-px) / 16 * 1rem);
+  --components-footer-toggle-icon-size: calc(var(--components-footer-toggle-icon-size-px) / 16 * 1rem);
+
+  /* Header computed values */
+  --components-header-desktop-width: calc(var(--components-header-desktop-width-px) / 16 * 1rem);
+  --components-header-mobile-width: calc(var(--components-header-mobile-width-px) / 16 * 1rem);
+  --components-header-top-height: calc(var(--components-header-top-height-px) / 16 * 1rem);
+  --components-header-top-padding: calc(var(--components-header-top-padding-px) / 16 * 1rem);
+  --components-header-gap: calc(var(--components-header-gap-px) / 16 * 1rem);
+  --components-header-row-gap: calc(var(--components-header-row-gap-px) / 16 * 1rem);
+  --components-header-panel-padding: calc(var(--components-header-panel-padding-px) / 16 * 1rem);
+  --components-header-panel-gap: calc(var(--components-header-panel-gap-px) / 16 * 1rem);
+  --components-header-mobile-list-gap: calc(var(--components-header-mobile-list-gap-px) / 16 * 1rem);
+  --components-header-desktop-list-gap: calc(var(--components-header-desktop-list-gap-px) / 16 * 1rem);
+  --components-header-desktop-list-padding-left: calc(var(--components-header-desktop-list-padding-left-px) / 16 * 1rem);
+  --components-header-logo-mark-width: calc(var(--components-header-logo-mark-width-px) / 16 * 1rem);
+  --components-header-logo-mark-height: calc(var(--components-header-logo-mark-height-px) / 16 * 1rem);
+  --components-header-toggle-gap: calc(var(--components-header-toggle-gap-px) / 16 * 1rem);
+  --components-header-toggle-icon-size: calc(var(--components-header-toggle-icon-size-px) / 16 * 1rem);
+  --components-header-menu-button-size: calc(var(--components-header-menu-button-size-px) / 16 * 1rem);
+  --components-header-backdrop-blur: calc(var(--components-header-backdrop-blur-px) * 1px);
+
+  /* Tab computed values */
+  --components-tab-font-size: calc(var(--components-tab-font-size-px) / 16 * 1rem);
+  --components-tab-line-height: calc(var(--components-tab-line-height-px) / 16 * 1rem);
+  --components-tab-button-min-width: calc(var(--components-tab-button-min-width-px) / 16 * 1rem);
+  --components-tablist-vertical-width: calc(var(--components-tablist-vertical-width-px) / 16 * 1rem);
+  --components-tablist-vertical-height: calc(var(--components-tablist-vertical-height-px) / 16 * 1rem);
+  --components-tab-panel-min-width: calc(var(--components-tab-panel-min-width-px) / 16 * 1rem);
+  --components-tab-panel-vertical-width: calc(var(--components-tab-panel-vertical-width-px) / 16 * 1rem);
+  --components-tab-panel-horizontal-width: calc(var(--components-tab-panel-horizontal-width-px) / 16 * 1rem);
+  --components-tab-panel-min-height: calc(var(--components-tab-panel-min-height-px) / 16 * 1rem);
+  --components-tab-assembled-width: calc(var(--components-tab-assembled-width-px) / 16 * 1rem);
 
   /* Grid raw values */
   --grid-columns-architecture: 12;
@@ -701,6 +817,29 @@
 
   --components-banner-content-max-width-px: 1480;
   --components-banner-split-gap-px: 16;
+
+  --components-footer-outer-padding-px: 32;
+  --components-footer-group-padding-px: 32;
+  --components-footer-nav-padding-y-px: 16;
+  --components-footer-link-padding-y-px: 4;
+  --components-footer-list-gap-px: 16;
+  --components-footer-mark-gap-px: 16;
+  --components-footer-brand-padding-top-px: 24;
+  --components-footer-toggle-padding-top-px: 24;
+  --components-footer-toggle-gap-px: 16;
+
+  --components-header-top-padding-px: 16;
+  --components-header-gap-px: 32;
+  --components-header-row-gap-px: 16;
+  --components-header-panel-padding-px: 16;
+  --components-header-panel-gap-px: 16;
+  --components-header-mobile-list-gap-px: 16;
+  --components-header-desktop-list-gap-px: 32;
+  --components-header-desktop-list-padding-left-px: 48;
+  --components-header-toggle-gap-px: 16;
+
+  --components-tab-font-size-px: 16;
+  --components-tab-line-height-px: 16;
 
   --components-message-font-size-px: 20;
   --components-message-line-height-px: 30;

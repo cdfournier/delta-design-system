@@ -4,7 +4,7 @@ const meta = {
   title: 'Organisms/Banners',
   render: (args) => createBanner(args),
   parameters: {
-    layout: 'centered',
+    layout: 'fullscreen',
     docs: {
       description: {
         component:
@@ -21,14 +21,30 @@ const meta = {
     alignment: {
       options: ['left', 'center', 'right'],
       control: { type: 'inline-radio' },
-      description: 'Background-image content alignment.',
+      description: 'Content alignment inside the banner.',
     },
     size: {
       options: ['mobile', 'desktop'],
       control: { type: 'inline-radio' },
       description: 'Background-image size mode.',
     },
-    overlay: { control: 'boolean', description: 'Show dark overlay on background image variant.' },
+    overlay: {
+      control: 'boolean',
+      description: 'Show dark overlay on background image variant.',
+    },
+    height: {
+      options: ['hug', 'half', 'full', 'fixed'],
+      control: { type: 'inline-radio' },
+      description: 'Banner height behavior.',
+    },
+    fixedHeight: {
+      control: { type: 'number', min: 120, max: 1200, step: 4 },
+      description: 'Fixed height in px when height is set to `fixed`.',
+    },
+    maxWidth: {
+      control: 'text',
+      description: 'Optional max-width value (example: `50.25rem`); leave empty for full-width.',
+    },
     orientation: {
       options: ['vertical', 'horizontal'],
       control: { type: 'inline-radio' },
@@ -58,6 +74,9 @@ const meta = {
     alignment: 'left',
     size: 'mobile',
     overlay: true,
+    height: 'hug',
+    fixedHeight: 320,
+    maxWidth: '',
     orientation: 'vertical',
     direction: 'default',
     heading: 'Title Heading',
@@ -91,6 +110,7 @@ export const BackgroundImage = {
       alignment: 'left',
       size: 'desktop',
       overlay: true,
+      maxWidth: '30rem',
       heading: 'Title Heading',
       body: 'Body',
     }),
@@ -102,6 +122,7 @@ export const SplitVertical = {
       variant: 'split',
       orientation: 'vertical',
       direction: 'default',
+      maxWidth: '21rem',
       heading: 'Heading',
       body: 'Body',
     }),
@@ -113,6 +134,7 @@ export const SplitHorizontal = {
       variant: 'split',
       orientation: 'horizontal',
       direction: 'default',
+      maxWidth: '50.25rem',
       heading: 'Heading',
       body: 'Body',
     }),
@@ -124,6 +146,7 @@ export const SplitHorizontalReverse = {
       variant: 'split',
       orientation: 'horizontal',
       direction: 'reverse',
+      maxWidth: '50.25rem',
       heading: 'Heading',
       body: 'Body',
     }),

@@ -1,0 +1,112 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/addon-docs/blocks';
+import * as HeaderStories from './header.stories';
+
+<Meta of={HeaderStories} title="Organisms/Headers/Documentation" />
+
+# Header
+
+Headers provide primary navigation, brand presence, and quick utilities at the top of a layout.
+
+## Anatomy
+
+- `header-top`: frosted surface with logo and controls
+- Desktop nav: inline list of links
+- Mobile menu button: closed/open icon control
+- Mobile dropdown panel: link list + color mode toggle
+- Color mode row: sun icon, switch, moon icon
+
+<Canvas>
+  <Story of={HeaderStories.Default} />
+</Canvas>
+
+## Variants
+
+### Full set
+
+<Canvas of={HeaderStories.VariantShowcase} />
+
+### Desktop
+
+<Canvas of={HeaderStories.Desktop} />
+
+### Mobile (closed)
+
+<Canvas of={HeaderStories.MobileClosed} />
+
+### Mobile (open)
+
+<Canvas of={HeaderStories.MobileOpen} />
+
+### Mobile (interactive click toggle)
+
+<Canvas of={HeaderStories.MobileInteractive} />
+
+## Typography
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Nav links (`p/bold`)</td><td>16px / 1rem, line-height 28px / 1.75rem</td><td>24px / 1.5rem, line-height 36px / 2.25rem</td></tr>
+    <tr><td>Switch label</td><td>16px / 1rem, line-height 20px / 1.25rem</td><td>24px / 1.5rem, line-height 30px / 1.875rem</td></tr>
+  </tbody>
+</table>
+
+## Spacing
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Header top padding</td><td>8px / 0.5rem (`md`)</td><td>16px / 1rem (`md`)</td></tr>
+    <tr><td>Desktop list gap</td><td>16px / 1rem (`xl`)</td><td>32px / 2rem (`xl`)</td></tr>
+    <tr><td>Desktop list left padding</td><td>24px / 1.5rem (`xxxl`)</td><td>48px / 3rem (`xxxl`)</td></tr>
+    <tr><td>Mobile panel gap</td><td>8px / 0.5rem (`md`)</td><td>16px / 1rem (`md`)</td></tr>
+    <tr><td>Mobile top-to-panel gap</td><td>16px / 1rem (`xl`)</td><td>32px / 2rem (`xl`)</td></tr>
+  </tbody>
+</table>
+
+## Colors
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Light mode</th>
+      <th>Dark mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Header surfaces</td><td>`section/background` -> `global/gray-light` (#EEEEEE)</td><td>`section/background` -> `brand/secondary` (#003442)</td></tr>
+    <tr><td>Links/icons</td><td>`text/link` -> `brand/primary` (#FF5247)</td><td>`text/link` -> `global/white` (#FFFFFF)</td></tr>
+    <tr><td>Logo mark</td><td>`components/logo/left` + `components/logo/right`</td><td>`components/logo/left` + `components/logo/right`</td></tr>
+  </tbody>
+</table>
+
+## Usage
+
+### Do
+
+- Use `desktop` for full nav and `mobile` with explicit `closed/open` menu states.
+- Use `mobileState: interactive` in tooling previews when you want click-to-open/click-to-close behavior.
+- Keep nav labels short and consistent.
+- Reuse this header as a structural tool in templates and page compositions.
+
+### Don't
+
+- Do not overload this component with page-specific widgets.
+- Do not break the mobile open/closed state model.
+
+## Controls
+
+<Controls of={HeaderStories.Default} />

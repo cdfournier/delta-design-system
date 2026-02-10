@@ -1,0 +1,119 @@
+.dds-table-scroll {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.dds-table {
+  width: 100%;
+  min-width: var(--components-table-min-width);
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--page-background);
+}
+
+.dds-table__row {
+  background: transparent;
+}
+
+.dds-table__row--head {
+  background: var(--section-background);
+}
+
+.dds-table__cell {
+  padding: var(--components-table-cell-padding);
+  border-bottom: var(--components-table-border-width) solid var(--global-gray-medium);
+  color: var(--text-default);
+  vertical-align: middle;
+  text-align: left;
+}
+
+.dds-table__cell--header {
+  font-family: var(--font-family-body);
+  font-size: var(--components-table-font-size);
+  line-height: var(--components-table-line-height);
+  font-weight: 700;
+}
+
+.dds-table__header-text,
+.dds-table__cell-text {
+  display: inline-block;
+  max-width: calc(624 / 16 * 1rem);
+}
+
+.dds-table__cell-text {
+  font-family: var(--font-family-body);
+  font-size: var(--components-table-font-size);
+  line-height: var(--components-table-line-height);
+  font-weight: 400;
+}
+
+.dds-table__cell--control {
+  width: calc(48 / 16 * 1rem);
+  text-align: center;
+}
+
+.dds-table__cell--control-header {
+  background: var(--section-background);
+}
+
+.dds-table__control {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--components-input-checkbox-size);
+  height: var(--components-input-checkbox-size);
+  cursor: pointer;
+}
+
+.dds-table__control-native {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dds-table__control-visual {
+  width: var(--components-input-checkbox-size);
+  height: var(--components-input-checkbox-size);
+  border: 1px solid var(--brand-primary);
+  border-radius: var(--components-input-checkbox-border-radius);
+  padding: var(--components-input-checkbox-padding);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease 0s;
+  color: var(--global-white);
+}
+
+.dds-table__control-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.25s ease 0s;
+}
+
+.dds-table__control-icon .dds-icon {
+  --dds-icon-size: calc(var(--components-input-checkbox-size) - (var(--components-input-checkbox-padding) * 2));
+  --dds-icon-color: var(--global-white);
+}
+
+.dds-table__control-native:checked + .dds-table__control-visual {
+  background: var(--brand-primary);
+}
+
+.dds-table__control-native:checked + .dds-table__control-visual .dds-table__control-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.dds-table-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}

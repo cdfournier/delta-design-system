@@ -1,0 +1,192 @@
+.dds-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--components-header-gap);
+}
+
+.dds-header--desktop {
+  width: var(--components-header-desktop-width);
+}
+
+.dds-header--mobile {
+  width: var(--components-header-mobile-width);
+  gap: 0;
+}
+
+.dds-header--mobile.dds-header--menu-open {
+  gap: var(--components-header-gap);
+}
+
+.dds-header__top,
+.dds-header__panel {
+  background: var(--section-background);
+  border-radius: var(--border-radius-md);
+  backdrop-filter: blur(var(--components-header-backdrop-blur));
+}
+
+.dds-header__top {
+  height: var(--components-header-top-height);
+  padding: var(--components-header-top-padding);
+}
+
+.dds-header__row {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--components-header-row-gap);
+}
+
+.dds-header__logo-mark {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: var(--components-header-logo-mark-width);
+  height: var(--components-header-logo-mark-height);
+  flex: 0 0 auto;
+}
+
+.dds-header__logo-half {
+  width: 50%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.dds-header__nav {
+  flex: 1 1 auto;
+}
+
+.dds-header__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.dds-header__list--desktop {
+  align-items: center;
+  gap: var(--components-header-desktop-list-gap);
+  padding-left: var(--components-header-desktop-list-padding-left);
+}
+
+.dds-header__list--mobile {
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--components-header-mobile-list-gap);
+}
+
+.dds-header__list-item .dds-link {
+  color: var(--text-link);
+  text-decoration: none;
+}
+
+.dds-header__list-item .dds-link:hover,
+.dds-header__list-item .dds-link:focus-visible {
+  color: var(--text-hover);
+}
+
+.dds-header__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--components-header-toggle-gap);
+  flex: 0 0 auto;
+}
+
+.dds-header__toggle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--components-header-toggle-icon-size);
+  aspect-ratio: 1 / 1;
+  flex: 0 0 auto;
+}
+
+.dds-header__toggle-icon .dds-icon {
+  --dds-icon-size: calc(var(--components-header-toggle-icon-size) * 0.6666666667);
+  --dds-icon-color: var(--text-link);
+}
+
+.dds-header__toggle .dds-input-choice__label {
+  display: none;
+}
+
+.dds-header__menu-button {
+  width: var(--components-header-menu-button-size);
+  height: var(--components-header-menu-button-size);
+  border: 0;
+  border-radius: var(--border-radius-round);
+  background: transparent;
+  color: var(--text-link);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.25s ease 0s;
+}
+
+.dds-header__menu-button .dds-icon {
+  --dds-icon-color: var(--text-link);
+}
+
+.dds-header__menu-button-icon {
+  display: inline-flex;
+}
+
+.dds-header__menu-button-icon--close {
+  display: none;
+}
+
+.dds-header--menu-open .dds-header__menu-button-icon--menu {
+  display: none;
+}
+
+.dds-header--menu-open .dds-header__menu-button-icon--close {
+  display: inline-flex;
+}
+
+.dds-header__menu-button:hover,
+.dds-header__menu-button:focus-visible {
+  color: var(--text-hover);
+}
+
+.dds-header__menu-button:hover .dds-icon,
+.dds-header__menu-button:focus-visible .dds-icon {
+  --dds-icon-color: var(--text-hover);
+}
+
+.dds-header__panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--components-header-panel-gap);
+  padding: var(--components-header-panel-padding);
+}
+
+.dds-header--mobile .dds-header__panel {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transform: translateY(calc(var(--spacing-xs) * -1));
+  transition: all 0.25s ease 0s;
+  visibility: hidden;
+}
+
+.dds-header--mobile.dds-header--menu-open .dds-header__panel {
+  max-height: 100rem;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.dds-header-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}

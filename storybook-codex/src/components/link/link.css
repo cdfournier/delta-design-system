@@ -5,9 +5,7 @@
   display: inline-flex;
   align-items: center;
   width: fit-content;
-  text-decoration: underline;
-  text-decoration-thickness: from-font;
-  text-underline-offset: 0;
+  text-decoration: none;
   font-family: var(--font-family-body);
   font-weight: 700;
   color: var(--text-link);
@@ -56,6 +54,9 @@
 
 .dds-link__label {
   white-space: nowrap;
+  text-decoration: underline;
+  text-decoration-thickness: from-font;
+  text-underline-offset: 0;
 }
 
 .dds-link__icon {

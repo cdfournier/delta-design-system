@@ -7,6 +7,9 @@ function createBannerBackgroundImage({
   alignment = 'left',
   size = 'mobile',
   overlay = true,
+  height = 'hug',
+  fixedHeight = 320,
+  maxWidth = '',
   heading,
   body,
   cta,
@@ -17,8 +20,11 @@ function createBannerBackgroundImage({
   imageSrc,
   imageAlt,
 } = {}) {
+  const maxWidthStyle = maxWidth ? `max-width: ${maxWidth};` : '';
+  const fixedHeightStyle = height === 'fixed' ? `--dds-banner-fixed-height: ${fixedHeight}px;` : '';
+
   return `
-    <section class="dds-banner dds-banner--background-image dds-banner--align-${alignment} dds-banner--size-${size}" aria-label="Banner with background image">
+    <section class="dds-banner dds-banner--background-image dds-banner--align-${alignment} dds-banner--size-${size} dds-banner--height-${height}" style="${maxWidthStyle} ${fixedHeightStyle}" aria-label="Banner with background image">
       <img class="dds-banner__bg-image" src="${imageSrc}" alt="${imageAlt}" loading="lazy" />
       ${overlay ? '<div class="dds-banner__overlay" aria-hidden="true"></div>' : ''}
       <div class="dds-banner__content-shell">
@@ -42,6 +48,9 @@ function createBannerBackgroundImage({
 function createBannerSplit({
   orientation = 'vertical',
   direction = 'default',
+  height = 'hug',
+  fixedHeight = 320,
+  maxWidth = '',
   heading,
   body,
   cta,
@@ -52,6 +61,8 @@ function createBannerSplit({
   imageSrc,
   imageAlt,
 } = {}) {
+  const maxWidthStyle = maxWidth ? `max-width: ${maxWidth};` : '';
+  const fixedHeightStyle = height === 'fixed' ? `--dds-banner-fixed-height: ${fixedHeight}px;` : '';
   const isReversed = direction === 'reverse';
   const figure = `
     <figure class="dds-banner__figure">
@@ -76,7 +87,7 @@ function createBannerSplit({
   `;
 
   return `
-    <section class="dds-banner dds-banner--split dds-banner--split-${orientation} dds-banner--split-${direction}" aria-label="Split banner">
+    <section class="dds-banner dds-banner--split dds-banner--split-${orientation} dds-banner--split-${direction} dds-banner--height-${height}" style="${maxWidthStyle} ${fixedHeightStyle}" aria-label="Split banner">
       ${isReversed ? `${content}${figure}` : `${figure}${content}`}
     </section>
   `;
@@ -88,6 +99,9 @@ function createBannerSplit({
  *  alignment?: 'left'|'center'|'right';
  *  size?: 'mobile'|'desktop';
  *  overlay?: boolean;
+ *  height?: 'hug'|'half'|'full'|'fixed';
+ *  fixedHeight?: number;
+ *  maxWidth?: string;
  *  orientation?: 'vertical'|'horizontal';
  *  direction?: 'default'|'reverse';
  *  heading?: string;
@@ -106,6 +120,9 @@ export function createBanner({
   alignment = 'left',
   size = 'mobile',
   overlay = true,
+  height = 'hug',
+  fixedHeight = 320,
+  maxWidth = '',
   orientation = 'vertical',
   direction = 'default',
   heading,
@@ -122,6 +139,9 @@ export function createBanner({
     return createBannerSplit({
       orientation,
       direction,
+      height,
+      fixedHeight,
+      maxWidth,
       heading: heading ?? 'Heading',
       body,
       eyebrow,
@@ -138,6 +158,9 @@ export function createBanner({
     alignment,
     size,
     overlay,
+    height,
+    fixedHeight,
+    maxWidth,
     heading: heading ?? 'Title Heading',
     body,
     eyebrow,
@@ -154,12 +177,12 @@ export function createBannerVariantShowcase() {
   return `
     <div class="dds-banner-showcase">
       ${createBanner({ variant: 'background-image', alignment: 'left', size: 'mobile', overlay: true })}
-      ${createBanner({ variant: 'background-image', alignment: 'center', size: 'desktop', overlay: true })}
-      ${createBanner({ variant: 'background-image', alignment: 'right', size: 'desktop', overlay: false })}
-      ${createBanner({ variant: 'split', orientation: 'vertical', direction: 'default' })}
-      ${createBanner({ variant: 'split', orientation: 'vertical', direction: 'reverse' })}
-      ${createBanner({ variant: 'split', orientation: 'horizontal', direction: 'default' })}
-      ${createBanner({ variant: 'split', orientation: 'horizontal', direction: 'reverse' })}
+      ${createBanner({ variant: 'background-image', alignment: 'center', size: 'desktop', overlay: true, maxWidth: '30rem' })}
+      ${createBanner({ variant: 'background-image', alignment: 'right', size: 'desktop', overlay: false, maxWidth: '30rem' })}
+      ${createBanner({ variant: 'split', orientation: 'vertical', direction: 'default', maxWidth: '21rem' })}
+      ${createBanner({ variant: 'split', orientation: 'vertical', direction: 'reverse', maxWidth: '21rem' })}
+      ${createBanner({ variant: 'split', orientation: 'horizontal', direction: 'default', maxWidth: '50.25rem' })}
+      ${createBanner({ variant: 'split', orientation: 'horizontal', direction: 'reverse', maxWidth: '50.25rem' })}
     </div>
   `;
 }
