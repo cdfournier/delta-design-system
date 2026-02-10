@@ -1,7 +1,7 @@
 import { createBadge } from './badge';
 
 const meta = {
-  title: 'Symbols/Badge',
+  title: 'Atoms/Badge',
   render: (args) => createBadge(args),
   parameters: {
     layout: 'centered',
@@ -26,7 +26,7 @@ const meta = {
       options: ['symbol', 'library'],
       control: { type: 'inline-radio' },
       description:
-        'Switches between token values found in Symbols node and Library docs examples.',
+        'Switches between token values found in Atoms node and Library docs examples.',
     },
   },
   args: {

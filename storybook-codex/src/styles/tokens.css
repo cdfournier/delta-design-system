@@ -112,6 +112,7 @@
   --xxl: var(--space-xxl);
   --xxxl: var(--space-xxxl);
   --xxxxxl: var(--space-xxxxxl);
+  --spacing-xl: var(--space-xl);
 
   /* Radius raw values (mobile/tablet px) */
   --radius-xs-px: 2;
@@ -236,6 +237,308 @@
   --components-chip-close-padding-outer: calc(var(--components-chip-close-padding-outer-px) / 16 * 1rem);
   --components-chip-close-padding-inner: calc(var(--components-chip-close-padding-inner-px) / 16 * 1rem);
 
+  /* Input raw values (mobile/tablet px) */
+  --components-input-text-font-size-px: 16;
+  --components-input-text-line-height-px: 20;
+  --components-input-text-padding-px: 8;
+  --components-input-text-padding-gap-px: 4;
+  --components-input-text-border-radius-px: 4;
+
+  --components-input-checkbox-font-size-px: 16;
+  --components-input-checkbox-line-height-px: 20;
+  --components-input-checkbox-size-px: 20;
+  --components-input-checkbox-padding-px: 2;
+  --components-input-checkbox-padding-gap-px: 8;
+  --components-input-checkbox-before-padding-px: 8;
+  --components-input-checkbox-border-radius-px: 4;
+
+  --components-input-switch-width-px: 36;
+  --components-input-switch-height-px: 20;
+  --components-input-switch-padding-gap-px: 8;
+  --components-input-switch-border-radius-px: 16;
+  --components-input-switch-thumb-size-px: 12;
+
+  --components-input-label-font-size-px: 12;
+  --components-input-label-line-height-px: 20;
+  --components-input-message-font-size-px: 10;
+  --components-input-message-line-height-px: 18;
+
+  --components-input-option-v-padding-px: 2;
+  --components-input-option-h-padding-px: 8;
+  --components-input-option-list-radius-px: 4;
+  --components-input-option-list-shadow-x-px: 8;
+  --components-input-option-list-shadow-y-px: 8;
+  --components-input-option-list-shadow-blur-px: 8;
+  --components-input-option-list-shadow-spread-px: 2;
+
+  --components-fieldset-width-px: 256;
+  --components-fieldset-min-width-px: 248;
+  --components-fieldset-max-width-px: 420;
+  --components-fieldset-gap-default-px: 4;
+  --components-fieldset-gap-choice-px: 8;
+  --components-fieldset-choices-gap-px: 4;
+  --components-fieldset-legend-padding-bottom-px: 2;
+
+  /* Input computed values */
+  --components-input-text-font-size: calc(var(--components-input-text-font-size-px) / 16 * 1rem);
+  --components-input-text-line-height: calc(var(--components-input-text-line-height-px) / 16 * 1rem);
+  --components-input-text-padding: calc(var(--components-input-text-padding-px) / 16 * 1rem);
+  --components-input-text-padding-gap: calc(var(--components-input-text-padding-gap-px) / 16 * 1rem);
+  --components-input-text-border-radius: calc(var(--components-input-text-border-radius-px) / 16 * 1rem);
+
+  --components-input-checkbox-font-size: calc(var(--components-input-checkbox-font-size-px) / 16 * 1rem);
+  --components-input-checkbox-line-height: calc(var(--components-input-checkbox-line-height-px) / 16 * 1rem);
+  --components-input-checkbox-size: calc(var(--components-input-checkbox-size-px) / 16 * 1rem);
+  --components-input-checkbox-padding: calc(var(--components-input-checkbox-padding-px) / 16 * 1rem);
+  --components-input-checkbox-padding-gap: calc(var(--components-input-checkbox-padding-gap-px) / 16 * 1rem);
+  --components-input-checkbox-before-padding: calc(var(--components-input-checkbox-before-padding-px) / 16 * 1rem);
+  --components-input-checkbox-border-radius: calc(var(--components-input-checkbox-border-radius-px) / 16 * 1rem);
+
+  --components-input-switch-width: calc(var(--components-input-switch-width-px) / 16 * 1rem);
+  --components-input-switch-height: calc(var(--components-input-switch-height-px) / 16 * 1rem);
+  --components-input-switch-padding-gap: calc(var(--components-input-switch-padding-gap-px) / 16 * 1rem);
+  --components-input-switch-border-radius: calc(var(--components-input-switch-border-radius-px) / 16 * 1rem);
+  --components-input-switch-thumb-size: calc(var(--components-input-switch-thumb-size-px) / 16 * 1rem);
+
+  --components-input-label-font-size: calc(var(--components-input-label-font-size-px) / 16 * 1rem);
+  --components-input-label-line-height: calc(var(--components-input-label-line-height-px) / 16 * 1rem);
+  --components-input-message-font-size: calc(var(--components-input-message-font-size-px) / 16 * 1rem);
+  --components-input-message-line-height: calc(var(--components-input-message-line-height-px) / 16 * 1rem);
+
+  --components-input-option-v-padding: calc(var(--components-input-option-v-padding-px) / 16 * 1rem);
+  --components-input-option-h-padding: calc(var(--components-input-option-h-padding-px) / 16 * 1rem);
+  --components-input-option-list-radius: calc(var(--components-input-option-list-radius-px) / 16 * 1rem);
+  --components-input-option-list-shadow-x: calc(var(--components-input-option-list-shadow-x-px) * 1px);
+  --components-input-option-list-shadow-y: calc(var(--components-input-option-list-shadow-y-px) * 1px);
+  --components-input-option-list-shadow-blur: calc(var(--components-input-option-list-shadow-blur-px) * 1px);
+  --components-input-option-list-shadow-spread: calc(var(--components-input-option-list-shadow-spread-px) * 1px);
+
+  --components-fieldset-width: calc(var(--components-fieldset-width-px) / 16 * 1rem);
+  --components-fieldset-min-width: calc(var(--components-fieldset-min-width-px) / 16 * 1rem);
+  --components-fieldset-max-width: calc(var(--components-fieldset-max-width-px) / 16 * 1rem);
+  --components-fieldset-gap-default: calc(var(--components-fieldset-gap-default-px) / 16 * 1rem);
+  --components-fieldset-gap-choice: calc(var(--components-fieldset-gap-choice-px) / 16 * 1rem);
+  --components-fieldset-choices-gap: calc(var(--components-fieldset-choices-gap-px) / 16 * 1rem);
+  --components-fieldset-legend-padding-bottom: calc(var(--components-fieldset-legend-padding-bottom-px) / 16 * 1rem);
+
+  /* Icon raw values */
+  --components-icon-size-px: 24;
+  --components-icon-stroke-width-px: 1;
+
+  /* Icon computed values */
+  --components-icon-size: calc(var(--components-icon-size-px) / 16 * 1rem);
+  --components-icon-stroke-width: calc(var(--components-icon-stroke-width-px) * 1px);
+
+  /* Link raw values (mobile/tablet px) */
+  --components-link-p-height-px: 24;
+  --components-link-small-height-px: 20;
+  --components-link-fine-height-px: 18;
+
+  /* Link computed values */
+  --components-link-p-height: calc(var(--components-link-p-height-px) / 16 * 1rem);
+  --components-link-small-height: calc(var(--components-link-small-height-px) / 16 * 1rem);
+  --components-link-fine-height: calc(var(--components-link-fine-height-px) / 16 * 1rem);
+
+  /* Content raw values (mobile/tablet px) */
+  --components-content-padding-px: 16;
+  --components-content-max-width-px: 672;
+  --components-content-title-font-size-px: 50;
+  --components-content-title-line-height-px: 56;
+  --components-content-heading-font-size-px: 38;
+  --components-content-heading-line-height-px: 42;
+  --components-content-body-font-size-px: 16;
+  --components-content-body-line-height-px: 28;
+  --components-content-eyebrow-font-size-px: 12;
+  --components-content-eyebrow-line-height-px: 20;
+  --components-content-fine-font-size-px: 10;
+  --components-content-fine-line-height-px: 18;
+  --components-content-title-body-gap-px: 4;
+  --components-content-section-gap-px: 16;
+  --components-content-cta-gap-px: 8;
+  --components-content-footer-max-width-px: 334;
+
+  /* Content computed values */
+  --components-content-padding: calc(var(--components-content-padding-px) / 16 * 1rem);
+  --components-content-max-width: calc(var(--components-content-max-width-px) / 16 * 1rem);
+  --components-content-title-font-size: calc(var(--components-content-title-font-size-px) / 16 * 1rem);
+  --components-content-title-line-height: calc(var(--components-content-title-line-height-px) / 16 * 1rem);
+  --components-content-heading-font-size: calc(var(--components-content-heading-font-size-px) / 16 * 1rem);
+  --components-content-heading-line-height: calc(var(--components-content-heading-line-height-px) / 16 * 1rem);
+  --components-content-body-font-size: calc(var(--components-content-body-font-size-px) / 16 * 1rem);
+  --components-content-body-line-height: calc(var(--components-content-body-line-height-px) / 16 * 1rem);
+  --components-content-eyebrow-font-size: calc(var(--components-content-eyebrow-font-size-px) / 16 * 1rem);
+  --components-content-eyebrow-line-height: calc(var(--components-content-eyebrow-line-height-px) / 16 * 1rem);
+  --components-content-fine-font-size: calc(var(--components-content-fine-font-size-px) / 16 * 1rem);
+  --components-content-fine-line-height: calc(var(--components-content-fine-line-height-px) / 16 * 1rem);
+  --components-content-title-body-gap: calc(var(--components-content-title-body-gap-px) / 16 * 1rem);
+  --components-content-section-gap: calc(var(--components-content-section-gap-px) / 16 * 1rem);
+  --components-content-cta-gap: calc(var(--components-content-cta-gap-px) / 16 * 1rem);
+  --components-content-footer-max-width: calc(var(--components-content-footer-max-width-px) / 16 * 1rem);
+
+  /* Details raw values (mobile/tablet px) */
+  --components-details-width-px: 288;
+  --components-details-padding-px: 8;
+  --components-details-border-width-px: 1;
+  --components-details-border-radius-px: 4;
+  --components-details-summary-gap-px: 4;
+  --components-details-body-padding-top-px: 8;
+  --components-details-font-size-px: 16;
+  --components-details-line-height-px: 28;
+  --components-details-icon-container-size-px: 28;
+  --components-details-icon-size-px: 20;
+  --components-details-icon-padding-px: 4;
+  --components-details-icon-stroke-px: 1.5;
+  --components-details-group-gap-px: 8;
+
+  /* Details computed values */
+  --components-details-width: calc(var(--components-details-width-px) / 16 * 1rem);
+  --components-details-padding: calc(var(--components-details-padding-px) / 16 * 1rem);
+  --components-details-border-width: calc(var(--components-details-border-width-px) * 1px);
+  --components-details-border-radius: calc(var(--components-details-border-radius-px) / 16 * 1rem);
+  --components-details-summary-gap: calc(var(--components-details-summary-gap-px) / 16 * 1rem);
+  --components-details-body-padding-top: calc(var(--components-details-body-padding-top-px) / 16 * 1rem);
+  --components-details-font-size: calc(var(--components-details-font-size-px) / 16 * 1rem);
+  --components-details-line-height: calc(var(--components-details-line-height-px) / 16 * 1rem);
+  --components-details-icon-container-size: calc(var(--components-details-icon-container-size-px) / 16 * 1rem);
+  --components-details-icon-size: calc(var(--components-details-icon-size-px) / 16 * 1rem);
+  --components-details-icon-padding: calc(var(--components-details-icon-padding-px) / 16 * 1rem);
+  --components-details-icon-stroke: calc(var(--components-details-icon-stroke-px) * 1px);
+  --components-details-group-gap: calc(var(--components-details-group-gap-px) / 16 * 1rem);
+
+  /* Feedback raw values (mobile/tablet px) */
+  --components-feedback-min-width-px: 256;
+  --components-feedback-width-px: 288;
+  --components-feedback-height-px: 4;
+  --components-feedback-label-font-size-px: 12;
+  --components-feedback-label-line-height-px: 20;
+  --components-feedback-label-padding-bottom-px: 4;
+  --components-feedback-value-font-size-px: 10;
+  --components-feedback-value-line-height-px: 18;
+  --components-feedback-value-padding-top-px: 2;
+  --components-feedback-meter-shell-padding-px: 2;
+  --components-feedback-summary-gap-px: 4;
+
+  /* Message raw values (mobile/tablet px) */
+  --components-message-font-size-px: 12;
+  --components-message-line-height-px: 20;
+  --components-message-modal-min-height-px: 568;
+  --components-message-promo-min-height-px: 284;
+  --components-message-inline-width-px: 280;
+  --components-message-toast-width-px: 288;
+  --components-message-actions-max-width-px: 70;
+  --components-message-close-size-px: 24;
+  --components-message-close-icon-size-px: 16;
+  --components-message-floating-close-offset-px: 16;
+  --components-message-radius-px: 4;
+  --components-message-inline-padding-px: 8;
+  --components-message-inline-gap-px: 8;
+  --components-message-toast-padding-px: 8;
+  --components-message-toast-gap-px: 8;
+
+  /* Pagination raw values (mobile/tablet px) */
+  --components-pagination-dot-size-px: 10;
+  --components-pagination-dot-border-width-px: 2;
+  --components-pagination-gap-px: 8;
+  --components-pagination-padding-x-px: 16;
+  --components-pagination-padding-y-px: 8;
+  --components-pagination-border-radius-px: 32;
+
+  /* Feedback computed values */
+  --components-feedback-min-width: calc(var(--components-feedback-min-width-px) / 16 * 1rem);
+  --components-feedback-width: calc(var(--components-feedback-width-px) / 16 * 1rem);
+  --components-feedback-height: calc(var(--components-feedback-height-px) / 16 * 1rem);
+  --components-feedback-label-font-size: calc(var(--components-feedback-label-font-size-px) / 16 * 1rem);
+  --components-feedback-label-line-height: calc(var(--components-feedback-label-line-height-px) / 16 * 1rem);
+  --components-feedback-label-padding-bottom: calc(var(--components-feedback-label-padding-bottom-px) / 16 * 1rem);
+  --components-feedback-value-font-size: calc(var(--components-feedback-value-font-size-px) / 16 * 1rem);
+  --components-feedback-value-line-height: calc(var(--components-feedback-value-line-height-px) / 16 * 1rem);
+  --components-feedback-value-padding-top: calc(var(--components-feedback-value-padding-top-px) / 16 * 1rem);
+  --components-feedback-meter-shell-padding: calc(var(--components-feedback-meter-shell-padding-px) / 16 * 1rem);
+  --components-feedback-summary-gap: calc(var(--components-feedback-summary-gap-px) / 16 * 1rem);
+
+  /* Message computed values */
+  --components-message-font-size: calc(var(--components-message-font-size-px) / 16 * 1rem);
+  --components-message-line-height: calc(var(--components-message-line-height-px) / 16 * 1rem);
+  --components-message-modal-min-height: calc(var(--components-message-modal-min-height-px) / 16 * 1rem);
+  --components-message-promo-min-height: calc(var(--components-message-promo-min-height-px) / 16 * 1rem);
+  --components-message-inline-width: calc(var(--components-message-inline-width-px) / 16 * 1rem);
+  --components-message-toast-width: calc(var(--components-message-toast-width-px) / 16 * 1rem);
+  --components-message-actions-max-width: calc(var(--components-message-actions-max-width-px) / 16 * 1rem);
+  --components-message-close-size: calc(var(--components-message-close-size-px) / 16 * 1rem);
+  --components-message-close-icon-size: calc(var(--components-message-close-icon-size-px) / 16 * 1rem);
+  --components-message-floating-close-offset: calc(var(--components-message-floating-close-offset-px) / 16 * 1rem);
+  --components-message-radius: calc(var(--components-message-radius-px) / 16 * 1rem);
+  --components-message-inline-padding: calc(var(--components-message-inline-padding-px) / 16 * 1rem);
+  --components-message-inline-gap: calc(var(--components-message-inline-gap-px) / 16 * 1rem);
+  --components-message-toast-padding: calc(var(--components-message-toast-padding-px) / 16 * 1rem);
+  --components-message-toast-gap: calc(var(--components-message-toast-gap-px) / 16 * 1rem);
+
+  /* Pagination computed values */
+  --components-pagination-dot-size: calc(var(--components-pagination-dot-size-px) / 16 * 1rem);
+  --components-pagination-dot-border-width: calc(var(--components-pagination-dot-border-width-px) * 1px);
+  --components-pagination-gap: calc(var(--components-pagination-gap-px) / 16 * 1rem);
+  --components-pagination-padding-x: calc(var(--components-pagination-padding-x-px) / 16 * 1rem);
+  --components-pagination-padding-y: calc(var(--components-pagination-padding-y-px) / 16 * 1rem);
+  --components-pagination-border-radius: calc(var(--components-pagination-border-radius-px) / 16 * 1rem);
+
+  /* Card raw values (mobile/tablet px) */
+  --components-card-border-width-px: 1;
+  --components-card-border-radius-px: 8;
+  --components-card-content-padding-px: 16;
+  --components-card-content-gap-px: 0;
+  --components-card-body-line-height-px: 28;
+  --components-card-figure-min-height-px: 200;
+  --components-card-default-width-px: 480;
+  --components-card-horizontal-width-px: 480;
+  --components-card-vertical-min-width-px: 256;
+  --components-card-horizontal-min-width-px: 480;
+  --components-card-horizontal-min-height-px: 200;
+  --components-card-horizontal-figure-min-width-px: 256;
+  --components-card-horizontal-figure-max-width-px: 256;
+  --components-card-mobile-width-px: 256;
+  --components-card-mobile-max-width-px: 256;
+  --components-card-figure-aspect-ratio: 1.618;
+
+  /* Banner raw values (mobile/tablet px) */
+  --components-banner-border-radius-px: 8;
+  --components-banner-padding-l-r-px: 0;
+  --components-banner-content-max-width-px: 740;
+  --components-banner-short-min-height-px: 284;
+  --components-banner-bg-width-px: 480;
+  --components-banner-split-vertical-width-px: 336;
+  --components-banner-split-horizontal-width-px: 804;
+  --components-banner-split-gap-px: 8;
+  --components-banner-split-image-max-width-px: 336;
+  --components-banner-split-image-aspect-ratio: 1.618;
+
+  /* Card computed values */
+  --components-card-border-width: calc(var(--components-card-border-width-px) * 1px);
+  --components-card-border-radius: calc(var(--components-card-border-radius-px) / 16 * 1rem);
+  --components-card-content-padding: calc(var(--components-card-content-padding-px) / 16 * 1rem);
+  --components-card-content-gap: calc(var(--components-card-content-gap-px) / 16 * 1rem);
+  --components-card-body-line-height: calc(var(--components-card-body-line-height-px) / 16 * 1rem);
+  --components-card-figure-min-height: calc(var(--components-card-figure-min-height-px) / 16 * 1rem);
+  --components-card-default-width: calc(var(--components-card-default-width-px) / 16 * 1rem);
+  --components-card-horizontal-width: calc(var(--components-card-horizontal-width-px) / 16 * 1rem);
+  --components-card-vertical-min-width: calc(var(--components-card-vertical-min-width-px) / 16 * 1rem);
+  --components-card-horizontal-min-width: calc(var(--components-card-horizontal-min-width-px) / 16 * 1rem);
+  --components-card-horizontal-min-height: calc(var(--components-card-horizontal-min-height-px) / 16 * 1rem);
+  --components-card-horizontal-figure-min-width: calc(var(--components-card-horizontal-figure-min-width-px) / 16 * 1rem);
+  --components-card-horizontal-figure-max-width: calc(var(--components-card-horizontal-figure-max-width-px) / 16 * 1rem);
+  --components-card-mobile-width: calc(var(--components-card-mobile-width-px) / 16 * 1rem);
+  --components-card-mobile-max-width: calc(var(--components-card-mobile-max-width-px) / 16 * 1rem);
+
+  /* Banner computed values */
+  --components-banner-border-radius: calc(var(--components-banner-border-radius-px) / 16 * 1rem);
+  --components-banner-padding-l-r: calc(var(--components-banner-padding-l-r-px) / 16 * 1rem);
+  --components-banner-content-max-width: calc(var(--components-banner-content-max-width-px) / 16 * 1rem);
+  --components-banner-short-min-height: calc(var(--components-banner-short-min-height-px) / 16 * 1rem);
+  --components-banner-bg-width: calc(var(--components-banner-bg-width-px) / 16 * 1rem);
+  --components-banner-split-vertical-width: calc(var(--components-banner-split-vertical-width-px) / 16 * 1rem);
+  --components-banner-split-horizontal-width: calc(var(--components-banner-split-horizontal-width-px) / 16 * 1rem);
+  --components-banner-split-gap: calc(var(--components-banner-split-gap-px) / 16 * 1rem);
+  --components-banner-split-image-max-width: calc(var(--components-banner-split-image-max-width-px) / 16 * 1rem);
+
   /* Grid raw values */
   --grid-columns-architecture: 12;
   --grid-columns-mobile: 4;
@@ -334,6 +637,83 @@
   --components-chip-close-size-px: 32;
   --components-chip-close-padding-outer-px: 10;
   --components-chip-close-padding-inner-px: 4;
+
+  --components-input-text-font-size-px: 24;
+  --components-input-text-line-height-px: 30;
+  --components-input-text-padding-px: 12;
+  --components-input-text-padding-gap-px: 8;
+
+  --components-input-checkbox-font-size-px: 24;
+  --components-input-checkbox-line-height-px: 30;
+  --components-input-checkbox-size-px: 32;
+  --components-input-checkbox-padding-px: 4;
+  --components-input-checkbox-padding-gap-px: 16;
+  --components-input-checkbox-before-padding-px: 16;
+
+  --components-input-switch-width-px: 72;
+  --components-input-switch-height-px: 32;
+  --components-input-switch-padding-gap-px: 16;
+  --components-input-switch-border-radius-px: 32;
+  --components-input-switch-thumb-size-px: 20;
+
+  --components-link-p-height-px: 36;
+  --components-link-small-height-px: 30;
+  --components-link-fine-height-px: 24;
+
+  --components-content-padding-px: 32;
+  --components-content-max-width-px: 1480;
+  --components-content-title-font-size-px: 80;
+  --components-content-title-line-height-px: 100;
+  --components-content-heading-font-size-px: 60;
+  --components-content-heading-line-height-px: 74;
+  --components-content-body-font-size-px: 24;
+  --components-content-body-line-height-px: 36;
+  --components-content-eyebrow-font-size-px: 20;
+  --components-content-eyebrow-line-height-px: 30;
+  --components-content-fine-font-size-px: 16;
+  --components-content-fine-line-height-px: 24;
+  --components-content-title-body-gap-px: 8;
+  --components-content-section-gap-px: 32;
+  --components-content-cta-gap-px: 16;
+  --components-content-footer-max-width-px: 668;
+
+  --components-details-padding-px: 16;
+  --components-details-summary-gap-px: 4;
+  --components-details-body-padding-top-px: 8;
+  --components-details-icon-container-size-px: 28;
+  --components-details-icon-size-px: 20;
+  --components-details-icon-padding-px: 4;
+  --components-details-group-gap-px: 8;
+
+  --components-card-content-padding-px: 32;
+  --components-card-content-gap-px: 0;
+  --components-card-body-line-height-px: 36;
+  --components-card-figure-min-height-px: 280;
+  --components-card-default-width-px: 704;
+  --components-card-horizontal-width-px: 704;
+  --components-card-vertical-min-width-px: 344;
+  --components-card-horizontal-min-width-px: 704;
+  --components-card-horizontal-min-height-px: 280;
+  --components-card-horizontal-figure-min-width-px: 344;
+  --components-card-horizontal-figure-max-width-px: 344;
+  --components-card-mobile-width-px: 344;
+  --components-card-mobile-max-width-px: 344;
+
+  --components-banner-content-max-width-px: 1480;
+  --components-banner-split-gap-px: 16;
+
+  --components-message-font-size-px: 20;
+  --components-message-line-height-px: 30;
+  --components-message-floating-close-offset-px: 32;
+  --components-message-radius-px: 8;
+  --components-message-inline-padding-px: 16;
+  --components-message-inline-gap-px: 16;
+  --components-message-toast-padding-px: 16;
+  --components-message-toast-gap-px: 16;
+
+  --components-pagination-gap-px: 16;
+  --components-pagination-padding-x-px: 32;
+  --components-pagination-padding-y-px: 16;
 }
 
 [data-token-mode='library'] {

@@ -24,6 +24,7 @@
   text-align: left;
   white-space: nowrap;
   cursor: pointer;
+  transition: all 0.25s ease 0s;
 }
 
 .dds-chip--secondary {
@@ -169,6 +170,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.25s ease 0s;
 }
 
 .dds-chip__accessory--close {

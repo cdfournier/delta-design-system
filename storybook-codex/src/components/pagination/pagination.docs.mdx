@@ -1,0 +1,89 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/addon-docs/blocks';
+import * as PaginationStories from './pagination.stories';
+
+<Meta of={PaginationStories} title="Molecules/Pagination/Documentation" />
+
+# Pagination
+
+Pagination provides visual navigation for carousels, slideshows, and multi-step flows.
+
+## Anatomy
+
+- Nav container: semantic wrapper with `aria-label`
+- Dot list: rounded pill background with horizontal spacing
+- Dot buttons: circular indicators with selected/unselected states
+
+<Canvas>
+  <Story of={PaginationStories.Default} />
+</Canvas>
+
+## Variants
+
+<Canvas of={PaginationStories.VariantShowcase} />
+
+### Four Dots
+
+<Canvas of={PaginationStories.FourDots} />
+
+### Mid Selection
+
+<Canvas of={PaginationStories.MidSelection} />
+
+### Bare Dots
+
+<Canvas of={PaginationStories.BareDots} />
+
+### Disabled
+
+<Canvas of={PaginationStories.Disabled} />
+
+## Typography
+
+Pagination is icon/shape-only and does not render visible type.
+
+## Spacing
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Container horizontal padding</td><td>16px / 1rem (`xl`)</td><td>32px / 2rem</td></tr>
+    <tr><td>Container vertical padding</td><td>8px / 0.5rem (`md`)</td><td>16px / 1rem</td></tr>
+    <tr><td>Dot gap</td><td>8px / 0.5rem (`md`)</td><td>16px / 1rem</td></tr>
+    <tr><td>Dot size</td><td>10px / 0.625rem</td><td>10px / 0.625rem</td></tr>
+  </tbody>
+</table>
+
+<Canvas of={PaginationStories.WidescreenScale} />
+
+## Colors
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Light mode</th>
+      <th>Dark mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Pill background</td><td>`global/white` (#FFFFFF)</td><td>`global/white` (#FFFFFF)</td></tr>
+    <tr><td>Unselected dot</td><td>Transparent fill + `global/gray-medium` (#CCCCCC) border</td><td>Transparent fill + `global/gray-medium` (#CCCCCC) border</td></tr>
+    <tr><td>Selected dot</td><td>`global/gray-medium` (#CCCCCC) fill + stroke</td><td>`global/gray-medium` (#CCCCCC) fill + stroke</td></tr>
+  </tbody>
+</table>
+
+## Accessibility
+
+- Wrap in `<nav aria-label="Pagination">`.
+- Use `<button>` for each dot and `aria-current="page"` on selected item.
+- Keep keyboard focus visible for interactive dots.
+
+## Controls
+
+<Controls of={PaginationStories.Default} />

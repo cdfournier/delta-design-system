@@ -1,0 +1,120 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/addon-docs/blocks';
+import * as FieldsetStories from './fieldset.stories';
+
+<Meta of={FieldsetStories} title="Molecules/Fieldsets/Documentation" />
+
+# Fieldsets
+
+Fieldsets wrap related input controls into consistent form groups with labels/legends, state styling, and helper messaging.
+
+## Anatomy
+
+- Label or legend: contextual heading for the grouped control(s)
+- Input body: text/password/select control or a 4-item choice list
+- Optional legend label: secondary descriptor in choice groups
+- Optional message: helper/validation copy below the control(s)
+
+<Canvas>
+  <Story of={FieldsetStories.Default} />
+</Canvas>
+
+## Variants
+
+<Canvas of={FieldsetStories.VariantShowcase} />
+
+### Text
+
+<Canvas of={FieldsetStories.TextFieldset} />
+
+### Password
+
+<Canvas of={FieldsetStories.PasswordFieldset} />
+
+### Select
+
+<Canvas of={FieldsetStories.SelectFieldset} />
+
+### Checkbox
+
+<Canvas of={FieldsetStories.CheckboxFieldset} />
+
+### Radio
+
+<Canvas of={FieldsetStories.RadioFieldset} />
+
+### Switch
+
+<Canvas of={FieldsetStories.SwitchFieldset} />
+
+## States
+
+<Canvas of={FieldsetStories.ValidationStates} />
+
+## Typography
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Label/Legend</td><td>12px / 0.75rem, line-height 20px / 1.25rem, 700</td><td>12px / 0.75rem, line-height 20px / 1.25rem, 700</td></tr>
+    <tr><td>Legend label</td><td>10px / 0.625rem, line-height 18px / 1.125rem, 700</td><td>10px / 0.625rem, line-height 18px / 1.125rem, 700</td></tr>
+    <tr><td>Input/choice value</td><td>16px / 1rem, line-height 20px / 1.25rem, 400</td><td>24px / 1.5rem, line-height 30px / 1.875rem, 400</td></tr>
+    <tr><td>Message</td><td>10px / 0.625rem, line-height 18px / 1.125rem, 400</td><td>10px / 0.625rem, line-height 18px / 1.125rem, 400</td></tr>
+  </tbody>
+</table>
+
+## Spacing
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Fieldset width</td><td>256px / 16rem</td><td>256px / 16rem</td></tr>
+    <tr><td>Fieldset min/max width</td><td>248px / 15.5rem min, 420px / 26.25rem max</td><td>248px / 15.5rem min, 420px / 26.25rem max</td></tr>
+    <tr><td>Default vertical gap</td><td>4px / 0.25rem</td><td>4px / 0.25rem</td></tr>
+    <tr><td>Choice group vertical gap</td><td>8px / 0.5rem</td><td>8px / 0.5rem</td></tr>
+    <tr><td>Legend bottom padding</td><td>2px / 0.125rem</td><td>2px / 0.125rem</td></tr>
+  </tbody>
+</table>
+
+<Canvas of={FieldsetStories.WidescreenScale} />
+
+## Colors
+
+<table>
+  <thead>
+    <tr>
+      <th>Element/State</th>
+      <th>Light mode</th>
+      <th>Dark mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Label/legend/message</td><td>`text/default` -> `global/black` (#000000)</td><td>`text/default` -> `global/white` (#FFFFFF)</td></tr>
+    <tr><td>Input border default</td><td>`global/gray-medium` (#CCCCCC)</td><td>`global/gray-medium` (#CCCCCC)</td></tr>
+    <tr><td>Invalid state</td><td>`status/invalid` (#C00C00)</td><td>`status/invalid` (#C00C00)</td></tr>
+    <tr><td>Valid state</td><td>`status/valid` (#007000)</td><td>`status/valid` (#007000)</td></tr>
+    <tr><td>Disabled state</td><td>`status/disabled` (#808080)</td><td>`status/disabled` (#808080)</td></tr>
+    <tr><td>Choice active</td><td>`brand/primary` (#FF5247)</td><td>`brand/primary` (#FF5247)</td></tr>
+  </tbody>
+</table>
+
+## Controls
+
+Use `type` to switch fieldset composition, then configure the embedded input variant controls:
+
+- `state` for text/password/select state coverage
+- `checkboxPattern`, `radioSelection`, `switchPattern`, and `direction` for choice groups
+- `showLegendLabel`, `showMessage`, and `messageState` for structural/content options
+
+<Controls of={FieldsetStories.Default} />

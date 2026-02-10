@@ -1,0 +1,125 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/addon-docs/blocks';
+import * as FeedbackStories from './feedback.stories';
+
+<Meta of={FeedbackStories} title="Molecules/Feedback/Documentation" />
+
+# Feedback
+
+Feedback components visualize progress and measured values through `progress` and `meter` patterns.
+
+## Anatomy
+
+### Progress
+
+- Label: context text above the bar
+- Bar track: full range background
+- Value fill: current progress segment
+- Value text (optional): textual value output
+
+### Meter
+
+- Label: context text above the meter
+- Meter shell: padded wrapper around bar
+- Bar track: range background
+- Value fill: semantic state fill (`optimum`, `low`, `high`)
+- Min/Max labels (optional): range endpoints
+
+<Canvas>
+  <Story of={FeedbackStories.Default} />
+</Canvas>
+
+## Variants
+
+<Canvas of={FeedbackStories.Variants} />
+
+### Progress
+
+<Canvas of={FeedbackStories.Progress} />
+
+### Progress without value
+
+<Canvas of={FeedbackStories.ProgressNoValue} />
+
+### Meter bounds
+
+<Canvas of={FeedbackStories.MeterOptimum} />
+<Canvas of={FeedbackStories.MeterLow} />
+<Canvas of={FeedbackStories.MeterHigh} />
+
+## Typography
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Label</td><td>12px / 0.75rem, line-height 20px / 1.25rem, 700 (bold)</td></tr>
+    <tr><td>Value text</td><td>10px / 0.625rem, line-height 18px / 1.125rem, 700 (bold)</td></tr>
+  </tbody>
+</table>
+
+## Spacing
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Min width</td><td>256px / 16rem</td><td>256px / 16rem</td></tr>
+    <tr><td>Preview width</td><td>288px / 18rem</td><td>288px / 18rem</td></tr>
+    <tr><td>Bar height</td><td>4px / 0.25rem</td><td>4px / 0.25rem</td></tr>
+    <tr><td>Label bottom padding</td><td>4px / 0.25rem (`sm`)</td><td>4px / 0.25rem</td></tr>
+    <tr><td>Value top padding</td><td>2px / 0.125rem (`xs`)</td><td>2px / 0.125rem</td></tr>
+    <tr><td>Meter shell padding</td><td>2px / 0.125rem (`xs`)</td><td>2px / 0.125rem</td></tr>
+  </tbody>
+</table>
+
+## Colors
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Light mode</th>
+      <th>Dark mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Track/Shell</td><td>`global/gray-medium` (#CCCCCC)</td><td>`global/gray-medium` (#CCCCCC)</td></tr>
+    <tr><td>Progress fill</td><td>`brand/primary` (#FF5247)</td><td>`brand/primary` (#FF5247)</td></tr>
+    <tr><td>Meter optimum fill</td><td>`status/valid` (#007000)</td><td>`status/valid` (#007000)</td></tr>
+    <tr><td>Meter low/high fill</td><td>`status/invalid` (#C00C00)</td><td>`status/invalid` (#C00C00)</td></tr>
+    <tr><td>Text</td><td>`text/default` -> `global/black` (#000000)</td><td>`text/default` -> `global/white` (#FFFFFF)</td></tr>
+  </tbody>
+</table>
+
+## Accessibility
+
+- Uses `role="progressbar"` for progress and `role="meter"` for meter track.
+- Includes `aria-valuemin`, `aria-valuemax`, and `aria-valuenow`.
+- Keep labels descriptive for context and assistive interpretation.
+
+## Usage
+
+### Do
+
+- Use progress for completion/loading status.
+- Use meter for bounded value quality/risk interpretation.
+- Keep threshold semantics consistent across the product.
+
+### Don't
+
+- Do not use red/green semantics without textual context.
+- Do not hide min/max meaning when using meter bounds.
+- Do not animate value changes excessively.
+
+## Controls
+
+<Controls of={FeedbackStories.Default} />

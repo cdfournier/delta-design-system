@@ -1,0 +1,140 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/addon-docs/blocks';
+import * as IconStories from './icon.stories';
+
+<Meta of={IconStories} title="Atoms/Icons/Documentation" />
+
+# Icons
+
+Icons are 24x24 visual symbols used to support navigation, actions, and status in the Delta Design System.
+
+## Anatomy
+
+- Stroke: 1px line weight
+- Frame: 24px x 24px (`1.5rem x 1.5rem`)
+- Color: inherits `text/default`
+
+<Canvas>
+  <Story of={IconStories.Default} />
+</Canvas>
+
+## Variants
+
+### Full set
+
+<Canvas>
+  <Story of={IconStories.VariantShowcase} />
+</Canvas>
+
+### Navigation
+
+<Canvas>
+  <Story of={IconStories.Navigation} />
+</Canvas>
+
+### Utility + UI
+
+<Canvas>
+  <Story of={IconStories.UI} />
+</Canvas>
+
+### Social + brand
+
+<Canvas>
+  <Story of={IconStories.Social} />
+</Canvas>
+
+## States
+
+<Canvas>
+  <Story of={IconStories.States} />
+</Canvas>
+
+## Dark Surface
+
+<Canvas>
+  <Story of={IconStories.OnDarkSurface} />
+</Canvas>
+
+## Icon Buttons (Touch Target)
+
+<Canvas>
+  <Story of={IconStories.IconButtons} />
+</Canvas>
+
+## Typography
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Icon frame</td><td>24px / 1.5rem</td><td>24px / 1.5rem</td></tr>
+    <tr><td>Stroke width</td><td>1px</td><td>1px</td></tr>
+  </tbody>
+</table>
+
+## Spacing
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Icon size</td><td>24px x 24px</td><td>24px x 24px</td></tr>
+    <tr><td>Internal icon padding</td><td>0px</td><td>0px</td></tr>
+    <tr><td>Icon-only button target</td><td>44px min target</td><td>44px min target</td></tr>
+  </tbody>
+</table>
+
+## Colors
+
+<table>
+  <thead>
+    <tr>
+      <th>State</th>
+      <th>Light mode</th>
+      <th>Dark mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Default</td><td>`text/default` -> `global/black` (#000000)</td><td>`text/default` -> `global/white` (#FFFFFF)</td></tr>
+    <tr><td>Interactive hover</td><td>`brand/primary` (#FF5247)</td><td>`brand/primary` (#FF5247)</td></tr>
+  </tbody>
+</table>
+
+## Accessibility
+
+- Use `aria-hidden="true"` for decorative icons.
+- Use `role="img"` + `aria-label` when icon meaning is required.
+- Keep icon-only interactive elements at least 44x44px touch target.
+- Do not rely on icon shape alone for critical meaning.
+
+## Usage
+
+### Do
+
+- Use the same icon name for the same action across components.
+- Pair icons with labels/tooltips when meaning is not obvious.
+- Keep stroke and frame consistent.
+
+### Don’t
+
+- Do not mix icon sets with different styles.
+- Do not change stroke width per icon.
+- Do not use icons as the only indicator for errors or warnings.
+
+## Source
+
+The icon set is aligned with [Tabler Icons](https://tabler.io/icons) naming and path style.
+
+## Controls
+
+<Controls of={IconStories.Default} />

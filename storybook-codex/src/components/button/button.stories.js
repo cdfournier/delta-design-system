@@ -1,7 +1,7 @@
 import { createButton, createButtonRow } from './button';
 
 const meta = {
-  title: 'Symbols/Button',
+  title: 'Atoms/Button',
   render: (args) => createButton(args),
   parameters: {
     layout: 'centered',

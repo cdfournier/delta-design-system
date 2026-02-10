@@ -1,0 +1,155 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/addon-docs/blocks';
+import * as InputStories from './input.stories';
+
+<Meta of={InputStories} title="Atoms/Input/Documentation" />
+
+# Inputs
+
+Inputs collect, validate, and communicate form data across text entry, selections, and toggles.
+
+## Anatomy
+
+- Label/legend: context for the field value
+- Control surface: border, padding, and state color
+- Value/placeholder: content text inside text-like controls
+- Helper message: optional supporting guidance
+- Accessory icon: optional leading/trailing indicator
+
+<Canvas>
+  <Story of={InputStories.Default} />
+</Canvas>
+
+## Variants
+
+<Canvas of={InputStories.VariantShowcase} />
+
+### Text
+
+<Canvas of={InputStories.TextFigure} />
+
+### Select
+
+<Canvas of={InputStories.SelectFigure} />
+
+### Checkbox
+
+<Canvas of={InputStories.CheckboxFigure} />
+
+### Radio
+
+<Canvas of={InputStories.RadioFigure} />
+
+### Switch
+
+<Canvas of={InputStories.SwitchFigure} />
+
+### Password
+
+<Canvas of={InputStories.PasswordFigure} />
+
+### Message
+
+<Canvas of={InputStories.Messages} />
+
+### Fieldset
+
+<Canvas of={InputStories.FieldsetTypes} />
+
+### Options List
+
+<Canvas of={InputStories.Options} />
+
+## States
+
+- Text/select/password: `default`, `value`, `disabled`, `invalid`, `read-only`, `valid` (plus `open`/`show` where applicable)
+- Checkbox/radio: `default`, `disabled`, `invalid`, `valid`
+- Switch: `default`, `disabled` with `checked/unchecked` and direction support
+
+## Typography
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Text/select/password value</td><td>16px / 1rem, line-height 20px / 1.25rem</td><td>24px / 1.5rem, line-height 30px / 1.875rem</td></tr>
+    <tr><td>Checkbox/radio/switch label</td><td>16px / 1rem, line-height 20px / 1.25rem</td><td>24px / 1.5rem, line-height 30px / 1.875rem</td></tr>
+    <tr><td>Label/legend</td><td>12px / 0.75rem, line-height 20px / 1.25rem</td><td>12px / 0.75rem, line-height 20px / 1.25rem</td></tr>
+    <tr><td>Helper message</td><td>10px / 0.625rem, line-height 18px / 1.125rem</td><td>10px / 0.625rem, line-height 18px / 1.125rem</td></tr>
+  </tbody>
+</table>
+
+<Canvas of={InputStories.WidescreenScale} />
+
+## Spacing
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Text/select/password padding</td><td>8px / 0.5rem</td><td>12px / 0.75rem</td></tr>
+    <tr><td>Text/select/password icon gap</td><td>4px / 0.25rem</td><td>8px / 0.5rem</td></tr>
+    <tr><td>Checkbox/radio size</td><td>20px / 1.25rem</td><td>32px / 2rem</td></tr>
+    <tr><td>Checkbox/radio label gap</td><td>8px / 0.5rem</td><td>16px / 1rem</td></tr>
+    <tr><td>Switch track</td><td>36px x 20px</td><td>72px x 32px</td></tr>
+    <tr><td>Options row padding</td><td>2px / 0.125rem vertical, 8px / 0.5rem horizontal</td><td>2px / 0.125rem vertical, 8px / 0.5rem horizontal</td></tr>
+    <tr><td>Fieldset min/max width</td><td>248px / 15.5rem min, 420px / 26.25rem max</td><td>248px / 15.5rem min, 420px / 26.25rem max</td></tr>
+  </tbody>
+</table>
+
+## Colors
+
+<table>
+  <thead>
+    <tr>
+      <th>Element/State</th>
+      <th>Light mode</th>
+      <th>Dark mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Default text/border</td><td>text/default + global/gray-medium</td><td>text/default (global/white) + global/gray-medium</td></tr>
+    <tr><td>Placeholder</td><td>global/gray-dark (#919191)</td><td>global/gray-dark (#919191)</td></tr>
+    <tr><td>Disabled</td><td>status/disabled (#808080)</td><td>status/disabled (#808080)</td></tr>
+    <tr><td>Invalid</td><td>status/invalid (#C00C00)</td><td>status/invalid (#C00C00)</td></tr>
+    <tr><td>Read-only</td><td>status/read-only (#333333)</td><td>status/read-only (#333333)</td></tr>
+    <tr><td>Valid</td><td>status/valid (#007000)</td><td>status/valid (#007000)</td></tr>
+    <tr><td>Checkbox/radio/switch active</td><td>brand/primary (#FF5247)</td><td>brand/primary (#FF5247)</td></tr>
+    <tr><td>Options hover row</td><td>global/gray-light (#EEEEEE)</td><td>global/gray-light (#EEEEEE)</td></tr>
+  </tbody>
+</table>
+
+## Accessibility
+
+- Use semantic form controls (`input`, `select`, `fieldset`, `legend`, `label`).
+- Keep clear text labels and link helper text via `aria-describedby` when needed.
+- Use `aria-invalid="true"` when validation fails.
+- Preserve keyboard support for checkbox/radio/switch interactions.
+- Maintain minimum 44x44px clickable target in production layouts.
+
+## Usage
+
+### Do
+
+- Use state colors consistently to communicate validation status.
+- Pair labels and helper text with clear, actionable copy.
+- Keep option list ordering predictable and stable.
+
+### Don’t
+
+- Do not use placeholder text as the only label.
+- Do not rely only on color to communicate errors.
+- Do not mix multiple validation tones in one field unless intentional.
+
+## Controls
+
+<Controls of={InputStories.Default} />

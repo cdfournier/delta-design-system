@@ -1,7 +1,7 @@
 import { createBlockquote } from './blockquote';
 
 const meta = {
-  title: 'Symbols/Blockquote',
+  title: 'Atoms/Blockquote',
   render: (args, context) =>
     createBlockquote({
       ...args,

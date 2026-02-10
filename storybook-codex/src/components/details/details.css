@@ -1,0 +1,103 @@
+.dds-details {
+  width: 100%;
+  max-width: var(--components-details-width);
+  padding: var(--components-details-padding);
+  border: var(--components-details-border-width) solid var(--global-gray-medium);
+  border-radius: var(--components-details-border-radius);
+  background: transparent;
+}
+
+.dds-details--fluid {
+  max-width: none;
+}
+
+.dds-details__summary {
+  display: flex;
+  align-items: center;
+  gap: var(--components-details-summary-gap);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  color: var(--text-default);
+  min-height: var(--components-details-line-height);
+}
+
+.dds-details__summary::-webkit-details-marker {
+  display: none;
+}
+
+.dds-details__summary-text {
+  flex: 1 1 auto;
+  font-family: var(--font-family-body);
+  font-size: var(--components-details-font-size);
+  line-height: var(--components-details-line-height);
+  font-weight: 700;
+}
+
+.dds-details__icon {
+  position: relative;
+  width: var(--components-details-icon-container-size);
+  height: var(--components-details-icon-container-size);
+  aspect-ratio: 1 / 1;
+  padding: var(--components-details-icon-padding);
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+.dds-details__icon-line {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: block;
+  background: currentColor;
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+  transition: all 0.25s ease 0s;
+}
+
+.dds-details__icon-line--horizontal {
+  width: var(--components-details-icon-size);
+  height: var(--components-details-icon-stroke);
+}
+
+.dds-details__icon-line--vertical {
+  width: var(--components-details-icon-stroke);
+  height: var(--components-details-icon-size);
+}
+
+.dds-details[open] .dds-details__icon-line--vertical {
+  opacity: 0;
+  transform: translate(-50%, -50%) scaleY(0.4);
+}
+
+.dds-details__body {
+  display: grid;
+  grid-template-rows: 0fr;
+  padding-top: 0;
+  transition: all 0.25s ease 0s;
+}
+
+.dds-details[open] .dds-details__body {
+  grid-template-rows: 1fr;
+  padding-top: var(--components-details-body-padding-top);
+}
+
+.dds-details__body > * {
+  overflow: hidden;
+}
+
+.dds-details__body-text {
+  margin: 0;
+  font-family: var(--font-family-body);
+  font-size: var(--components-details-font-size);
+  line-height: var(--components-details-line-height);
+  font-weight: 400;
+  color: var(--text-default);
+}
+
+.dds-details-showcase,
+.dds-details-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--components-details-group-gap);
+}

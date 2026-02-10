@@ -3,7 +3,7 @@ import { createChip, createChipGroup } from './chip';
 const groupItem = (chipMarkup) => `<li>${chipMarkup}</li>`;
 
 const meta = {
-  title: 'Symbols/Chips',
+  title: 'Atoms/Chips',
   render: (args, context) =>
     createChip({
       ...args,

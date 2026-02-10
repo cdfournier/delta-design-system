@@ -1,0 +1,119 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/addon-docs/blocks';
+import * as LinkStories from './link.stories';
+
+<Meta of={LinkStories} title="Atoms/Links/Documentation" />
+
+# Links
+
+Links are navigation elements that move users between destinations while preserving clear hierarchy and accessibility.
+
+## Anatomy
+
+- Link text: underlined, descriptive label
+- Arrow icon (optional): trailing directional affordance
+- Color token: `text/link` by default, `text/hover` on hover/focus
+
+<Canvas>
+  <Story of={LinkStories.Default} />
+</Canvas>
+
+## Variants
+
+### With arrow
+
+<Canvas>
+  <Story of={LinkStories.WithArrow} />
+</Canvas>
+
+### Without arrow
+
+<Canvas>
+  <Story of={LinkStories.WithoutArrow} />
+</Canvas>
+
+### Size variants
+
+<Canvas>
+  <Story of={LinkStories.SizeComparison} />
+</Canvas>
+
+## States
+
+<Canvas>
+  <Story of={LinkStories.States} />
+</Canvas>
+
+## Typography
+
+<table>
+  <thead>
+    <tr>
+      <th>Size variant</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Fine</td><td>10px / 0.625rem, line-height 18px / 1.125rem</td><td>16px / 1rem, line-height 24px / 1.5rem</td></tr>
+    <tr><td>Small</td><td>12px / 0.75rem, line-height 20px / 1.25rem</td><td>20px / 1.25rem, line-height 30px / 1.875rem</td></tr>
+    <tr><td>P</td><td>16px / 1rem, line-height 28px / 1.75rem</td><td>24px / 1.5rem, line-height 36px / 2.25rem</td></tr>
+  </tbody>
+</table>
+
+## Spacing
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Gap (default with arrow)</td><td>2px / 0.125rem (`xs`)</td></tr>
+    <tr><td>Gap (hover/focus with arrow)</td><td>4px / 0.25rem (`sm`)</td></tr>
+    <tr><td>Gap (without arrow)</td><td>0px</td></tr>
+    <tr><td>Arrow size</td><td>24px / 1.5rem square (all sizes)</td></tr>
+  </tbody>
+</table>
+
+## Colors
+
+<table>
+  <thead>
+    <tr>
+      <th>Element/State</th>
+      <th>Light mode</th>
+      <th>Dark mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Default</td><td>`text/link` -> `brand/primary` (#FF5247)</td><td>`text/link` -> `global/white` (#FFFFFF)</td></tr>
+    <tr><td>Hover/Focus</td><td>`text/hover` -> `brand/secondary` (#003442)</td><td>`text/hover` -> `brand/primary` (#FF5247)</td></tr>
+  </tbody>
+</table>
+
+## Accessibility
+
+- Use semantic `<a>` elements for navigation destinations.
+- Keep link text descriptive out of context (avoid “click here”).
+- Keep underline visible for recognition and contrast.
+- Keyboard support relies on native browser link behavior (`Tab`, `Enter`).
+
+## Usage
+
+### Do
+
+- Use links for navigation and references.
+- Keep labels concise and destination-oriented.
+- Use optional arrow where directional emphasis helps.
+
+### Don’t
+
+- Do not use links as primary action buttons.
+- Do not remove underlines from inline links.
+- Do not use vague labels without context.
+
+## Controls
+
+<Controls of={LinkStories.Default} />

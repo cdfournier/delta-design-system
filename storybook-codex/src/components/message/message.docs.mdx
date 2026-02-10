@@ -1,0 +1,109 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/addon-docs/blocks';
+import * as MessageStories from './message.stories';
+
+<Meta of={MessageStories} title="Molecules/Messages/Documentation" />
+
+# Messages
+
+Messages provide modal, promo, inline status, confirmation, and toast feedback patterns.
+
+## Anatomy
+
+- Container: variant background + spacing shell
+- Message content: either Content composition or concise status text
+- Actions: confirmation Yes/No buttons where required
+- Dismiss control: close icon button (when enabled)
+
+<Canvas>
+  <Story of={MessageStories.Default} />
+</Canvas>
+
+## Variants
+
+<Canvas of={MessageStories.VariantShowcase} />
+
+### Modal
+
+<Canvas of={MessageStories.Modal} />
+
+### Promo
+
+<Canvas of={MessageStories.Promo} />
+
+### Confirmation
+
+<Canvas of={MessageStories.Confirmation} />
+
+### Error
+
+<Canvas of={MessageStories.Error} />
+
+### Success
+
+<Canvas of={MessageStories.Success} />
+
+### Toast
+
+<Canvas of={MessageStories.Toast} />
+
+## Typography
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Inline/Toast message text</td><td>12px / 0.75rem, line-height 20px / 1.25rem, 700</td><td>20px / 1.25rem, line-height 30px / 1.875rem, 700</td></tr>
+    <tr><td>Modal/Promo heading/body</td><td>Uses Content component tokens</td><td>Uses Content component tokens</td></tr>
+    <tr><td>Confirmation buttons</td><td>Uses Button component tokens</td><td>Uses Button component tokens</td></tr>
+  </tbody>
+</table>
+
+## Spacing
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Modal min-height</td><td>568px / 35.5rem</td><td>568px / 35.5rem</td></tr>
+    <tr><td>Promo min-height</td><td>284px / 17.75rem</td><td>284px / 17.75rem</td></tr>
+    <tr><td>Inline/Error/Success padding + gap</td><td>8px / 0.5rem</td><td>16px / 1rem</td></tr>
+    <tr><td>Toast padding + gap</td><td>8px / 0.5rem</td><td>16px / 1rem</td></tr>
+    <tr><td>Close button floating offset</td><td>16px / 1rem</td><td>32px / 2rem</td></tr>
+    <tr><td>Confirmation action group max width</td><td>70px / 4.375rem</td><td>70px / 4.375rem</td></tr>
+  </tbody>
+</table>
+
+<Canvas of={MessageStories.WidescreenScale} />
+
+## Colors
+
+<table>
+  <thead>
+    <tr>
+      <th>Variant</th>
+      <th>Light mode</th>
+      <th>Dark mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Modal/Promo background + text</td><td>`page/background` + `text/default`</td><td>`page/background` + `text/default`</td></tr>
+    <tr><td>Confirmation</td><td>`status/invalid` + `global/white`</td><td>`status/invalid` + `global/white`</td></tr>
+    <tr><td>Error</td><td>`status/invalid` + `global/white`</td><td>`status/invalid` + `global/white`</td></tr>
+    <tr><td>Success</td><td>`status/valid` + `global/white`</td><td>`status/valid` + `global/white`</td></tr>
+    <tr><td>Toast</td><td>`status/read-only` + `global/white`</td><td>`status/read-only` + `global/white`</td></tr>
+  </tbody>
+</table>
+
+## Controls
+
+<Controls of={MessageStories.Default} />

@@ -1,0 +1,104 @@
+.dds-icon {
+  --dds-icon-size: var(--components-icon-size);
+  --dds-icon-color: var(--text-default);
+
+  width: var(--dds-icon-size);
+  height: var(--dds-icon-size);
+  color: var(--dds-icon-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  transition: all 0.25s ease 0s;
+}
+
+.dds-icon--large {
+  --dds-icon-size: calc(var(--components-icon-size) * 1.3333333333);
+}
+
+.dds-icon > svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.dds-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(calc(120 / 16 * 1rem), 1fr));
+  gap: var(--xl);
+  width: min(calc(768 / 16 * 1rem), 100%);
+}
+
+.dds-icon-grid__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sm);
+  min-height: calc(80 / 16 * 1rem);
+  padding: var(--md);
+  background: var(--background-page);
+  border-radius: var(--border-radius-xs);
+}
+
+.dds-icon-grid__label {
+  font-family: var(--font-family-body);
+  font-size: var(--typography-fine-font-size);
+  line-height: var(--typography-fine-line-height);
+  color: var(--global-gray-dark);
+  text-align: center;
+}
+
+.dds-icon-figure {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--xl);
+  border-radius: var(--border-radius-sm);
+  background: var(--background-section);
+}
+
+.dds-icon-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--xl);
+}
+
+.dds-icon-on-dark {
+  padding: var(--xl);
+  border-radius: var(--border-radius-sm);
+  background: var(--brand-secondary-dark);
+  color: var(--global-white);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--xl);
+}
+
+.dds-icon-button-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--md);
+}
+
+.dds-icon-button {
+  width: calc(44 / 16 * 1rem);
+  height: calc(44 / 16 * 1rem);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sm);
+  border: 1px solid var(--global-gray-medium);
+  border-radius: var(--border-radius-round);
+  background: var(--background-page);
+  color: var(--text-default);
+  cursor: pointer;
+  transition: all 0.25s ease 0s;
+}
+
+.dds-icon-button:hover,
+.dds-icon-button:focus-visible {
+  border-color: var(--brand-primary);
+  color: var(--brand-primary);
+}

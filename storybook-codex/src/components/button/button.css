@@ -22,6 +22,7 @@
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+  transition: all 0.25s ease 0s;
 }
 
 .dds-btn[data-state='hover'],
@@ -31,15 +32,6 @@
   background: var(--dds-btn-hover-bg);
   color: var(--dds-btn-hover-fg);
   border-color: var(--dds-btn-hover-border);
-}
-
-.dds-btn:disabled,
-.dds-btn[aria-disabled='true'] {
-  background: var(--status-disabled);
-  border-color: var(--status-disabled);
-  color: var(--global-gray-dark);
-  opacity: 1;
-  cursor: not-allowed;
 }
 
 .dds-btn--primary.dds-btn--solid {
@@ -251,4 +243,21 @@
   flex-wrap: wrap;
   gap: var(--space-sm);
   align-items: center;
+}
+
+/* Keep disabled visuals consistent across all variants and styles. */
+.dds-btn:disabled,
+.dds-btn[aria-disabled='true'] {
+  --dds-btn-bg: var(--status-disabled);
+  --dds-btn-border: var(--status-disabled);
+  --dds-btn-fg: var(--global-white);
+  --dds-btn-hover-bg: var(--status-disabled);
+  --dds-btn-hover-border: var(--status-disabled);
+  --dds-btn-hover-fg: var(--global-white);
+
+  background: var(--status-disabled);
+  border-color: var(--status-disabled);
+  color: var(--global-white);
+  opacity: 1;
+  cursor: not-allowed;
 }

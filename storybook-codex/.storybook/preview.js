@@ -71,7 +71,7 @@ const preview = {
           const story = normalizeEntry(entry);
           const title = story.title ?? story.kind ?? '';
           const topLevel = title.split('/')[0] ?? '';
-          const order = ['Foundations', 'Symbols'];
+          const order = ['Foundations', 'Atoms', 'Molecules', 'Organisms'];
           const index = order.indexOf(topLevel);
           return index === -1 ? order.length : index;
         };

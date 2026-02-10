@@ -1,0 +1,114 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/addon-docs/blocks';
+import * as CardStories from './card.stories';
+
+<Meta of={CardStories} title="Molecules/Cards/Documentation" />
+
+# Cards
+
+Cards are flexible content containers that group related media and copy into scannable units.
+
+## Anatomy
+
+- Container: border, radius, and clipping surface
+- Figure: optional media region at top or side
+- Content: heading and body copy area
+
+<Canvas>
+  <Story of={CardStories.Default} />
+</Canvas>
+
+## Variants
+
+### Full set
+
+<Canvas of={CardStories.Variants} />
+
+### Vertical
+
+<Canvas of={CardStories.Vertical} />
+
+### Horizontal
+
+<Canvas of={CardStories.Horizontal} />
+
+### Horizontal reversed
+
+<Canvas of={CardStories.HorizontalReversed} />
+
+## Typography
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Heading</td><td>38px / 2.375rem, line-height 42px / 2.625rem (`h2`)</td><td>60px / 3.75rem, line-height 74px / 4.625rem (`h2`)</td></tr>
+    <tr><td>Body</td><td>16px / 1rem, line-height 28px / 1.75rem (`components/card/body/line-height`)</td><td>24px / 1.5rem, line-height 36px / 2.25rem</td></tr>
+  </tbody>
+</table>
+
+## Spacing
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Content padding</td><td>16px / 1rem (`components/card/content/padding`)</td><td>32px / 2rem</td></tr>
+    <tr><td>Content gap</td><td>0px</td><td>0px</td></tr>
+    <tr><td>Vertical min width</td><td>256px / 16rem</td><td>344px / 21.5rem</td></tr>
+    <tr><td>Default/horizontal width</td><td>480px / 30rem</td><td>704px / 44rem</td></tr>
+    <tr><td>Horizontal min height</td><td>200px / 12.5rem</td><td>280px / 17.5rem</td></tr>
+    <tr><td>Horizontal figure width</td><td>256px / 16rem (min/max)</td><td>344px / 21.5rem (min/max)</td></tr>
+    <tr><td>Mobile card width</td><td>256px / 16rem</td><td>344px / 21.5rem</td></tr>
+  </tbody>
+</table>
+
+## Colors
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Light mode</th>
+      <th>Dark mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Card background</td><td>`page/background` -> `global/white` (#FFFFFF)</td><td>`page/background` -> `brand/secondary-dark` (#01232D)</td></tr>
+    <tr><td>Card border</td><td>`global/gray-medium` (#CCCCCC)</td><td>`global/gray-medium` (#CCCCCC)</td></tr>
+    <tr><td>Heading/body</td><td>`text/default` -> `global/black` (#000000)</td><td>`text/default` -> `global/white` (#FFFFFF)</td></tr>
+  </tbody>
+</table>
+
+## Accessibility
+
+- Use semantic `<article>` cards with meaningful heading hierarchy.
+- Keep image `alt` text contextual to the card content intent.
+- Preserve text contrast in both light and dark modes.
+
+## Usage
+
+### Do
+
+- Use vertical cards for grids and galleries.
+- Use horizontal cards for feature rows and list highlights.
+- Keep body copy concise and scannable.
+
+### Don't
+
+- Do not mix multiple heading levels inside one card body without structure.
+- Do not let media aspect ratios distort across variants.
+- Do not remove borders when cards sit on mixed page surfaces.
+
+## Controls
+
+<Controls of={CardStories.Default} />

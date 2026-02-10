@@ -1,0 +1,120 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/addon-docs/blocks';
+import * as ContentStories from './content.stories';
+
+<Meta of={ContentStories} title="Molecules/Content/Documentation" />
+
+# Content
+
+Content is a reusable molecular pattern for structured text blocks used in Cards, Banners, and other composed components.
+
+## Anatomy
+
+- Container: fluid-width wrapper with responsive padding
+- Eyebrow (optional): small context label above heading
+- Heading + body: primary text pair (`title+p` or `h+p`)
+- CTA row (optional): off, link-only, one-button, or two-button action set
+- Footer (optional): supporting fine text
+
+<Canvas>
+  <Story of={ContentStories.Default} />
+</Canvas>
+
+## Variants
+
+### All variants
+
+<Canvas of={ContentStories.Variants} />
+
+### `title+p`
+
+<Canvas of={ContentStories.TitlePlusParagraph} />
+
+### `h+p`
+
+<Canvas of={ContentStories.HeadingPlusParagraph} />
+
+### With optional elements
+
+<Canvas of={ContentStories.OptionalElements} />
+
+### CTA modes
+
+- `off`: CTA hidden
+- `link`: one link
+- `one-button`: one button
+- `two-buttons`: two buttons
+
+<Canvas of={ContentStories.CTAOptions} />
+
+## Typography
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>`title+p` heading</td><td>50px / 3.125rem, line-height 56px / 3.5rem</td><td>80px / 5rem, line-height 100px / 6.25rem</td></tr>
+    <tr><td>`h+p` heading</td><td>38px / 2.375rem, line-height 42px / 2.625rem</td><td>60px / 3.75rem, line-height 74px / 4.625rem</td></tr>
+    <tr><td>Body</td><td>16px / 1rem, line-height 28px / 1.75rem</td><td>24px / 1.5rem, line-height 36px / 2.25rem</td></tr>
+    <tr><td>Eyebrow</td><td>12px / 0.75rem, line-height 20px / 1.25rem</td><td>20px / 1.25rem, line-height 30px / 1.875rem</td></tr>
+    <tr><td>Footer fine</td><td>10px / 0.625rem, line-height 18px / 1.125rem</td><td>16px / 1rem, line-height 24px / 1.5rem</td></tr>
+  </tbody>
+</table>
+
+## Spacing
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Container padding</td><td>16px / 1rem (`xl`)</td><td>32px / 2rem</td></tr>
+    <tr><td>Title to body gap (`title+p`)</td><td>4px / 0.25rem (`sm`)</td><td>8px / 0.5rem</td></tr>
+    <tr><td>Main to CTA/Footer gap</td><td>16px / 1rem (`xl`)</td><td>32px / 2rem</td></tr>
+    <tr><td>CTA item gap</td><td>8px / 0.5rem (`md`)</td><td>16px / 1rem</td></tr>
+    <tr><td>Content max width</td><td>672px / 42rem</td><td>1480px / 92.5rem</td></tr>
+  </tbody>
+</table>
+
+## Colors
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Light mode</th>
+      <th>Dark mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Heading/body/eyebrow/footer</td><td>`text/default` -> `global/black` (#000000)</td><td>`text/default` -> `global/white` (#FFFFFF)</td></tr>
+    <tr><td>CTA link</td><td>`text/link` -> `brand/primary` (#FF5247)</td><td>`text/link` -> `global/white` (#FFFFFF)</td></tr>
+    <tr><td>CTA button accent</td><td>`brand/primary` (#FF5247)</td><td>`brand/primary` (#FF5247)</td></tr>
+  </tbody>
+</table>
+
+## Usage
+
+### Do
+
+- Reuse this component inside larger molecules/organisms for text consistency.
+- Pick `title+p` for hero-like prominence and `h+p` for standard sections.
+- Enable optional slots only when the context needs them.
+
+### Don't
+
+- Do not mix both heading variants in the same content block.
+- Do not add arbitrary spacing outside tokenized gaps.
+- Do not duplicate CTA/footer logic in parent components.
+
+## Controls
+
+<Controls of={ContentStories.Default} />

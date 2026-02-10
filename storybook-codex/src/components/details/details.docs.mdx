@@ -1,0 +1,127 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/addon-docs/blocks';
+import * as DetailsStories from './details.stories';
+
+<Meta of={DetailsStories} title="Molecules/Details/Documentation" />
+
+# Details
+
+Details is an expandable disclosure component for progressive reveal of supplementary content.
+
+## Anatomy
+
+- Container: bordered wrapper with rounded corners
+- Summary: always-visible trigger row
+- Icon: plus when collapsed, minus when expanded
+- Body: hidden content region revealed on expand
+
+<Canvas>
+  <Story of={DetailsStories.Default} />
+</Canvas>
+
+## Variants
+
+Details has no visual variants. It changes only by state and content.
+
+## States
+
+<Canvas of={DetailsStories.States} />
+
+### Collapsed
+
+<Canvas of={DetailsStories.Collapsed} />
+
+### Expanded
+
+<Canvas of={DetailsStories.Expanded} />
+
+## Typography
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Summary text</td><td>16px / 1rem, line-height 28px / 1.75rem, 700 (bold)</td></tr>
+    <tr><td>Body text</td><td>16px / 1rem, line-height 28px / 1.75rem, 400 (regular)</td></tr>
+  </tbody>
+</table>
+
+## Spacing
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Container padding</td><td>8px / 0.5rem (`md`)</td><td>16px / 1rem</td></tr>
+    <tr><td>Summary icon gap</td><td>4px / 0.25rem (`sm`)</td><td>4px / 0.25rem</td></tr>
+    <tr><td>Body top spacing</td><td>8px / 0.5rem (`md`)</td><td>8px / 0.5rem</td></tr>
+    <tr><td>`:marker` size</td><td>28px / 1.75rem (fills summary line-height)</td><td>28px / 1.75rem</td></tr>
+    <tr><td>Icon size (after padding)</td><td>20px / 1.25rem</td><td>20px / 1.25rem</td></tr>
+  </tbody>
+</table>
+
+## Border Radius
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Container</td><td>4px / 0.25rem (`border-radius/sm`)</td></tr>
+  </tbody>
+</table>
+
+## Colors
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Light mode</th>
+      <th>Dark mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Border</td><td>`global/gray-medium` (#CCCCCC)</td><td>`global/gray-medium` (#CCCCCC)</td></tr>
+    <tr><td>Summary/body/icon</td><td>`text/default` -> `global/black` (#000000)</td><td>`text/default` -> `global/white` (#FFFFFF)</td></tr>
+  </tbody>
+</table>
+
+## Accessibility
+
+- Uses native `<details>` and `<summary>` semantics.
+- Supports keyboard interaction by default (`Tab`, `Enter`, `Space`).
+- Open/closed state is announced by assistive technologies.
+
+## Usage
+
+### Do
+
+- Use for supplementary information and FAQ disclosures.
+- Keep summary labels concise and descriptive.
+- Group related disclosures in vertical lists.
+
+### Don't
+
+- Do not hide critical content required for task completion.
+- Do not nest many disclosure levels.
+- Do not replace primary navigation with details disclosures.
+
+## Group Example
+
+<Canvas of={DetailsStories.FAQGroup} />
+
+## Controls
+
+<Controls of={DetailsStories.Default} />

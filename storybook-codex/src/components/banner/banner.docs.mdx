@@ -1,0 +1,117 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/addon-docs/blocks';
+import * as BannerStories from './banner.stories';
+
+<Meta of={BannerStories} title="Organisms/Banners/Documentation" />
+
+# Banner
+
+Banners are high-emphasis organism patterns that combine image surfaces and the Content molecule for hero and promotional layouts.
+
+## Anatomy
+
+- Container: rounded clipping surface for image and content composition
+- Image layer: full background image or split figure panel
+- Overlay (optional): dark tint on background-image variant (`overlay/dark`)
+- Content layer: nested Content molecule (`title+p` or `h+p`)
+
+<Canvas>
+  <Story of={BannerStories.Default} />
+</Canvas>
+
+## Variants
+
+### Full set
+
+<Canvas of={BannerStories.VariantShowcase} />
+
+### Background image
+
+<Canvas of={BannerStories.BackgroundImage} />
+
+### Split vertical
+
+<Canvas of={BannerStories.SplitVertical} />
+
+### Split horizontal
+
+<Canvas of={BannerStories.SplitHorizontal} />
+
+### Split horizontal reverse
+
+<Canvas of={BannerStories.SplitHorizontalReverse} />
+
+## Typography
+
+Banner typography inherits from Content.
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Background heading (`title+p`)</td><td>50px / 3.125rem, line-height 56px / 3.5rem</td><td>80px / 5rem, line-height 100px / 6.25rem</td></tr>
+    <tr><td>Split heading (`h+p`)</td><td>38px / 2.375rem, line-height 42px / 2.625rem</td><td>60px / 3.75rem, line-height 74px / 4.625rem</td></tr>
+    <tr><td>Body</td><td>16px / 1rem, line-height 28px / 1.75rem</td><td>24px / 1.5rem, line-height 36px / 2.25rem</td></tr>
+    <tr><td>Eyebrow</td><td>12px / 0.75rem, line-height 20px / 1.25rem (uppercase, bold)</td><td>20px / 1.25rem, line-height 30px / 1.875rem</td></tr>
+  </tbody>
+</table>
+
+## Spacing
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Content padding</td><td>16px / 1rem (`xl`)</td><td>32px / 2rem</td></tr>
+    <tr><td>Background desktop min height</td><td>284px / 17.75rem</td><td>284px / 17.75rem</td></tr>
+    <tr><td>Background content max width</td><td>740px / 46.25rem</td><td>1480px / 92.5rem</td></tr>
+    <tr><td>Split vertical width</td><td>336px / 21rem</td><td>336px / 21rem</td></tr>
+    <tr><td>Split horizontal width</td><td>804px / 50.25rem</td><td>804px / 50.25rem</td></tr>
+    <tr><td>Split horizontal gap</td><td>8px / 0.5rem (`md`)</td><td>16px / 1rem</td></tr>
+  </tbody>
+</table>
+
+## Colors
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Light mode</th>
+      <th>Dark mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Background overlay</td><td>`overlay/dark` -> rgba(0,0,0,0.5)</td><td>`overlay/dark` -> rgba(0,0,0,0.5)</td></tr>
+    <tr><td>Background-image text</td><td>`global/white` (#FFFFFF)</td><td>`global/white` (#FFFFFF)</td></tr>
+    <tr><td>Split text</td><td>`text/default` -> `global/black` (#000000)</td><td>`text/default` -> `global/white` (#FFFFFF)</td></tr>
+    <tr><td>CTA link/button accents</td><td>`text/link` / `brand/primary` (#FF5247)</td><td>`text/link` / `brand/primary` (#FF5247)</td></tr>
+  </tbody>
+</table>
+
+## Usage
+
+### Do
+
+- Use `background-image` for hero-style moments and high-contrast imagery.
+- Use `split` for editorial layouts where image and copy need equal weight.
+- Reuse Content controls for eyebrow, CTA modes, and footer behavior.
+
+### Don't
+
+- Do not disable overlay on low-contrast photos if body copy remains white.
+- Do not mix `title+p` and `h+p` in one banner instance.
+- Do not hardcode spacing outside tokenized values.
+
+## Controls
+
+<Controls of={BannerStories.Default} />

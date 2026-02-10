@@ -1,0 +1,221 @@
+.dds-message {
+  width: 100%;
+  min-width: 0;
+}
+
+.dds-message .dds-icon {
+  transition: all 0.25s ease 0s;
+}
+
+.dds-message__text {
+  margin: 0;
+  font-family: var(--font-family-body);
+  font-size: var(--components-message-font-size);
+  line-height: var(--components-message-line-height);
+  font-weight: 700;
+}
+
+.dds-message__close {
+  border: 0;
+  background: transparent;
+  border-radius: var(--border-radius-round);
+  width: var(--components-message-close-size);
+  height: var(--components-message-close-size);
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: currentColor;
+  cursor: pointer;
+  transition: all 0.25s ease 0s;
+}
+
+.dds-message__close .dds-icon {
+  --dds-icon-size: var(--components-message-close-icon-size);
+  --dds-icon-color: currentColor;
+}
+
+.dds-message__close:hover,
+.dds-message__close:focus-visible {
+  background: rgb(255 255 255 / 18%);
+}
+
+.dds-message--modal,
+.dds-message--promo {
+  position: relative;
+  background: var(--page-background);
+  color: var(--text-default);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dds-message--modal {
+  min-height: var(--components-message-modal-min-height);
+}
+
+.dds-message--promo {
+  min-height: var(--components-message-promo-min-height);
+}
+
+.dds-message--modal .dds-content,
+.dds-message--promo .dds-content {
+  width: 100%;
+}
+
+.dds-message__close--floating {
+  position: absolute;
+  top: var(--components-message-floating-close-offset);
+  right: var(--components-message-floating-close-offset);
+  color: var(--brand-primary);
+  z-index: 2;
+}
+
+.dds-message--modal .dds-message__close--floating,
+.dds-message--promo .dds-message__close--floating {
+  color: var(--brand-primary);
+}
+
+.dds-message--modal .dds-message__close--floating:hover,
+.dds-message--modal .dds-message__close--floating:focus-visible,
+.dds-message--promo .dds-message__close--floating:hover,
+.dds-message--promo .dds-message__close--floating:focus-visible {
+  background: var(--brand-primary);
+  color: var(--global-white);
+}
+
+.dds-message--confirmation,
+.dds-message--error,
+.dds-message--success {
+  width: var(--components-message-inline-width);
+  border-radius: var(--components-message-radius);
+  color: var(--global-white);
+  padding: var(--components-message-inline-padding);
+  display: flex;
+  align-items: center;
+  gap: var(--components-message-inline-gap);
+}
+
+.dds-message--confirmation {
+  background: var(--status-invalid);
+}
+
+.dds-message--error {
+  background: var(--status-invalid);
+}
+
+.dds-message--success {
+  background: var(--status-valid);
+}
+
+.dds-message--confirmation .dds-message__text,
+.dds-message--error .dds-message__text,
+.dds-message--success .dds-message__text,
+.dds-message--toast .dds-message__text {
+  color: var(--global-white);
+}
+
+.dds-message--error .dds-message__text,
+.dds-message--success .dds-message__text,
+.dds-message--toast .dds-message__text {
+  flex: 1 1 auto;
+}
+
+.dds-message__actions {
+  margin-left: auto;
+  width: var(--components-message-actions-max-width);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.dds-message__confirm-btn {
+  width: 100%;
+  min-height: auto;
+  border: var(--components-button-border-width) solid var(--global-white);
+  border-radius: var(--components-button-border-radius);
+  padding: var(--components-button-padding-t-b) var(--components-button-padding-l-r);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--components-button-padding-gap);
+  font-family: var(--font-family-body);
+  font-size: var(--components-button-font-size);
+  line-height: var(--components-button-line-height);
+  font-weight: 700;
+  transition: all 0.25s ease 0s;
+  cursor: pointer;
+}
+
+.dds-message__confirm-btn--no {
+  background: transparent;
+  color: var(--global-white);
+}
+
+.dds-message__confirm-btn--yes {
+  background: var(--global-white);
+  color: var(--status-invalid);
+}
+
+.dds-message__confirm-btn--no:hover,
+.dds-message__confirm-btn--no:focus-visible {
+  background: var(--global-white);
+  color: var(--status-invalid);
+}
+
+.dds-message__confirm-btn--yes:hover,
+.dds-message__confirm-btn--yes:focus-visible {
+  background: transparent;
+  color: var(--global-white);
+}
+
+.dds-message__confirm-btn-label {
+  white-space: nowrap;
+}
+
+.dds-message__actions .dds-message__confirm-btn {
+  width: 100%;
+  min-height: auto;
+}
+
+.dds-message__close--inline,
+.dds-message__close--toast {
+  margin-left: auto;
+  color: var(--global-white);
+}
+
+.dds-message--confirmation .dds-message__close--inline,
+.dds-message--error .dds-message__close--inline,
+.dds-message--success .dds-message__close--inline,
+.dds-message--toast .dds-message__close--toast {
+  color: var(--global-white);
+}
+
+.dds-message--confirmation .dds-message__close--inline:hover,
+.dds-message--confirmation .dds-message__close--inline:focus-visible,
+.dds-message--error .dds-message__close--inline:hover,
+.dds-message--error .dds-message__close--inline:focus-visible,
+.dds-message--success .dds-message__close--inline:hover,
+.dds-message--success .dds-message__close--inline:focus-visible,
+.dds-message--toast .dds-message__close--toast:hover,
+.dds-message--toast .dds-message__close--toast:focus-visible {
+  background: rgb(255 255 255 / 18%);
+  color: var(--global-white);
+}
+
+.dds-message--toast {
+  width: var(--components-message-toast-width);
+  border-radius: var(--components-message-radius);
+  background: var(--status-read-only);
+  color: var(--global-white);
+  padding: var(--components-message-toast-padding);
+  display: flex;
+  align-items: center;
+  gap: var(--components-message-toast-gap);
+}
+
+.dds-message-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
