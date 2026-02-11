@@ -87,86 +87,44 @@ export const Playground = {};
 
 export const Variants = {
   render: () =>
-    createChipGroup(
-      [
-        groupItem(createChip({ label: 'Primary', variant: 'primary' })),
-        groupItem(createChip({ label: 'Secondary', variant: 'secondary' })),
-      ].join(''),
-    ),
-};
-
-export const WithAvatars = {
-  render: () =>
-    createChipGroup(
-      [
-        groupItem(createChip({ label: 'Primary', variant: 'primary', leading: 'avatar', interactive: false })),
-        groupItem(createChip({ label: 'Secondary', variant: 'secondary', trailing: 'avatar', interactive: false })),
-      ].join(''),
-    ),
-};
-
-export const WithIcons = {
-  render: () =>
-    createChipGroup(
-      [
-        groupItem(createChip({ label: 'Primary', variant: 'primary', leading: 'arrow' })),
-        groupItem(createChip({ label: 'Secondary', variant: 'secondary', leading: 'arrow' })),
-      ].join(''),
-    ),
-};
-
-export const Dismissible = {
-  render: () =>
-    createChipGroup(
-      [
-        groupItem(createChip({ label: 'Primary', variant: 'primary', trailing: 'close', interactive: false })),
-        groupItem(createChip({ label: 'Secondary', variant: 'secondary', trailing: 'close', interactive: false })),
-      ].join(''),
-    ),
-};
-
-export const Selectable = {
-  render: () =>
-    createChipGroup(
-      [
-        groupItem(createChip({ label: 'Unchecked', variant: 'primary', checkable: true, selected: false })),
-        groupItem(createChip({ label: 'Checked', variant: 'primary', checkable: true, selected: true })),
-        groupItem(createChip({ label: 'Unchecked', variant: 'secondary', checkable: true, selected: false })),
-        groupItem(createChip({ label: 'Checked', variant: 'secondary', checkable: true, selected: true })),
-      ].join(''),
-    ),
-};
-
-export const SelectionStates = {
-  render: () =>
-    `<div class="dds-chip-grid">
+    `
+    <div class="dds-chip-grid">
       <div class="dds-chip-row">
-        ${createChip({ label: 'Primary unchecked', variant: 'primary', checkable: true, selected: false })}
-        ${createChip({ label: 'Primary checked', variant: 'primary', checkable: true, selected: true })}
+        ${createChip({ label: 'Primary', variant: 'primary' })}
+        ${createChip({ label: 'Secondary', variant: 'secondary' })}
       </div>
       <div class="dds-chip-row">
-        ${createChip({ label: 'Secondary unchecked', variant: 'secondary', checkable: true, selected: false })}
-        ${createChip({ label: 'Secondary checked', variant: 'secondary', checkable: true, selected: true })}
+        ${createChip({ label: 'Avatar leading', variant: 'primary', leading: 'avatar', interactive: false })}
+        ${createChip({ label: 'Avatar trailing', variant: 'secondary', trailing: 'avatar', interactive: false })}
       </div>
-    </div>`,
+      <div class="dds-chip-row">
+        ${createChip({ label: 'Icon leading', variant: 'primary', leading: 'arrow' })}
+        ${createChip({ label: 'Dismissible', variant: 'secondary', trailing: 'close', interactive: false })}
+      </div>
+      <div class="dds-chip-row">
+        ${createChip({ label: 'Selectable off', variant: 'primary', checkable: true, selected: false })}
+        ${createChip({ label: 'Selectable on', variant: 'primary', checkable: true, selected: true })}
+      </div>
+    </div>
+  `,
 };
 
-export const HeightParity = {
+export const Responsive = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'Responsive scaling parity for chip typography and spacing between mobile and widescreen tokens.',
+      },
+    },
+  },
   render: () =>
-    `<div class="dds-chip-grid">
-      <div class="dds-chip-row">
-        ${createChip({ label: 'Base', variant: 'primary' })}
-        ${createChip({ label: 'Icon', variant: 'primary', leading: 'arrow' })}
-        ${createChip({ label: 'Checked', variant: 'primary', checkable: true, selected: true })}
-        ${createChip({ label: 'Dismiss', variant: 'primary', trailing: 'close', interactive: false })}
-      </div>
-      <div class="dds-chip-row">
-        ${createChip({ label: 'Base', variant: 'secondary' })}
-        ${createChip({ label: 'Icon', variant: 'secondary', leading: 'arrow' })}
-        ${createChip({ label: 'Checked', variant: 'secondary', checkable: true, selected: true })}
-        ${createChip({ label: 'Dismiss', variant: 'secondary', trailing: 'close', interactive: false })}
-      </div>
-    </div>`,
+    createChipGroup(
+      [
+        groupItem(createChip({ label: 'Primary', variant: 'primary', sizeMode: 'widescreen' })),
+        groupItem(createChip({ label: 'Secondary', variant: 'secondary', sizeMode: 'widescreen' })),
+        groupItem(createChip({ label: 'Checked', variant: 'primary', checkable: true, selected: true, sizeMode: 'widescreen' })),
+      ].join(''),
+    ),
 };
 
 export const States = {
@@ -182,16 +140,9 @@ export const States = {
         ${createChip({ label: 'Hover secondary', variant: 'secondary', state: 'hover' })}
         ${createChip({ label: 'Focus secondary', variant: 'secondary', state: 'focus' })}
       </div>
+      <div class="dds-chip-row">
+        ${createChip({ label: 'Selected', variant: 'primary', checkable: true, selected: true })}
+        ${createChip({ label: 'Disabled', variant: 'secondary', disabled: true })}
+      </div>
     </div>`,
-};
-
-export const WidescreenScale = {
-  render: () =>
-    createChipGroup(
-      [
-        groupItem(createChip({ label: 'Primary', variant: 'primary', sizeMode: 'widescreen' })),
-        groupItem(createChip({ label: 'Secondary', variant: 'secondary', sizeMode: 'widescreen' })),
-        groupItem(createChip({ label: 'Checked', variant: 'primary', checkable: true, selected: true, sizeMode: 'widescreen' })),
-      ].join(''),
-    ),
 };

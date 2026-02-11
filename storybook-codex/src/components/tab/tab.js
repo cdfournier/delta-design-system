@@ -2,6 +2,7 @@ import './tab.css';
 
 const TAB_PANEL_IMAGE = 'https://www.figma.com/api/mcp/asset/0959bc14-c6bd-4f09-b7b6-bc0eb2dfd88c';
 let tabsEventsBound = false;
+let tabsInstanceCounter = 0;
 
 function activateTab(root, nextIndex) {
   if (!root) {
@@ -223,7 +224,8 @@ export function createTabs({
 } = {}) {
   const normalizedLabels = normalizeLabels(labels);
   const boundedIndex = Math.max(0, Math.min(Number(activeIndex) || 0, normalizedLabels.length - 1));
-  const idBase = `tabs-${direction}-${panelOrientation}-${tabStyle}`;
+  tabsInstanceCounter += 1;
+  const idBase = `tabs-${direction}-${panelOrientation}-${tabStyle}-${tabsInstanceCounter}`;
   bindTabsEvents();
 
   return breakpointWrap(

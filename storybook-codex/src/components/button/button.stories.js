@@ -1,4 +1,4 @@
-import { createButton, createButtonRow } from './button';
+import { createButton } from './button';
 
 const meta = {
   title: 'Atoms/Button',
@@ -79,30 +79,6 @@ export const Variants = {
   `,
 };
 
-export const TextButtons = {
-  render: () =>
-    `
-    <div class="dds-btn-row">
-      ${createButton({ label: 'Primary solid', variant: 'primary', style: 'solid' })}
-      ${createButton({ label: 'Primary transparent', variant: 'primary', style: 'transparent' })}
-      ${createButton({ label: 'Secondary solid', variant: 'secondary', style: 'solid' })}
-      ${createButton({ label: 'Secondary transparent', variant: 'secondary', style: 'transparent' })}
-    </div>
-  `,
-};
-
-export const Styles = {
-  render: () =>
-    `
-    <div class="dds-btn-row">
-      ${createButton({ label: 'Primary solid', variant: 'primary', style: 'solid' })}
-      ${createButton({ label: 'Primary transparent', variant: 'primary', style: 'transparent' })}
-      ${createButton({ label: 'Secondary solid', variant: 'secondary', style: 'solid' })}
-      ${createButton({ label: 'Secondary transparent', variant: 'secondary', style: 'transparent' })}
-    </div>
-  `,
-};
-
 export const States = {
   render: () =>
     `
@@ -111,77 +87,6 @@ export const States = {
       ${createButton({ label: 'Hover', variant: 'primary', style: 'solid', state: 'hover' })}
       ${createButton({ label: 'Focus', variant: 'primary', style: 'solid', state: 'focus' })}
       ${createButton({ label: 'Disabled', variant: 'primary', style: 'solid', disabled: true })}
-    </div>
-  `,
-};
-
-export const IconOptions = {
-  render: () =>
-    `
-    <div class="dds-btn-row">
-      ${createButton({ label: 'Text only', variant: 'primary', style: 'solid' })}
-      ${createButton({ label: 'Icon left', variant: 'primary', style: 'solid', iconPosition: 'left', icon: 'arrow' })}
-      ${createButton({ label: 'Icon right', variant: 'secondary', style: 'solid', iconPosition: 'right', icon: 'arrow' })}
-      ${createButton({ label: 'Search', variant: 'primary', style: 'solid', iconPosition: 'only', icon: 'search' })}
-      ${createButton({ label: 'Search', variant: 'primary', style: 'outline', iconPosition: 'only', icon: 'search' })}
-    </div>
-  `,
-};
-
-export const PrimaryTransparentIconRight = {
-  args: {
-    label: 'Primary transparent',
-    variant: 'primary',
-    style: 'transparent',
-    iconPosition: 'right',
-    icon: 'arrow',
-    state: 'default',
-    disabled: false,
-  },
-};
-
-export const IconOnlyStates = {
-  render: () =>
-    `
-    <div class="dds-btn-row">
-      ${createButton({ label: 'Search', variant: 'primary', style: 'solid', iconPosition: 'only', icon: 'search', state: 'default' })}
-      ${createButton({ label: 'Search', variant: 'primary', style: 'solid', iconPosition: 'only', icon: 'search', state: 'hover' })}
-      ${createButton({ label: 'Search', variant: 'primary', style: 'outline', iconPosition: 'only', icon: 'search', state: 'default' })}
-      ${createButton({ label: 'Search', variant: 'primary', style: 'outline', iconPosition: 'only', icon: 'search', disabled: true })}
-    </div>
-  `,
-};
-
-export const OnDarkSurface = {
-  render: () =>
-    `
-    <div class="dds-btn-surface-dark">
-      <div class="dds-btn-row">
-        ${createButton({ label: 'White solid', variant: 'white', style: 'solid' })}
-        ${createButton({ label: 'White transparent', variant: 'white', style: 'transparent' })}
-        ${createButton({ label: 'Search', variant: 'white', style: 'outline', iconPosition: 'only', icon: 'search' })}
-      </div>
-    </div>
-  `,
-};
-
-export const DisabledParity = {
-  render: () =>
-    `
-    <div class="dds-btn-matrix">
-      <div class="dds-btn-matrix__row">
-        ${createButton({ label: 'Primary solid', variant: 'primary', style: 'solid', disabled: true })}
-        ${createButton({ label: 'Primary transparent', variant: 'primary', style: 'transparent', disabled: true })}
-        ${createButton({ label: 'Secondary solid', variant: 'secondary', style: 'solid', disabled: true })}
-        ${createButton({ label: 'Secondary transparent', variant: 'secondary', style: 'transparent', disabled: true })}
-      </div>
-      <div class="dds-btn-surface-dark">
-        <div class="dds-btn-row">
-          ${createButton({ label: 'White solid', variant: 'white', style: 'solid', disabled: true })}
-          ${createButton({ label: 'White transparent', variant: 'white', style: 'transparent', disabled: true })}
-          ${createButton({ label: 'Search', variant: 'white', style: 'outline', iconPosition: 'only', icon: 'search', disabled: true })}
-        </div>
-      </div>
     </div>
   `,
 };
@@ -214,18 +119,6 @@ export const VariantStateMatrix = {
         ${createButton({ label: 'Secondary transparent', variant: 'secondary', style: 'transparent', state: 'focus' })}
         ${createButton({ label: 'Secondary transparent', variant: 'secondary', style: 'transparent', disabled: true })}
       </div>
-    </div>
-  `,
-};
-
-export const QuickReference = {
-  render: () =>
-    `
-    <div class="dds-btn-row">
-      ${createButton({ label: 'Primary solid', variant: 'primary', style: 'solid' })}
-      ${createButton({ label: 'Primary transparent', variant: 'primary', style: 'transparent' })}
-      ${createButton({ label: 'Secondary solid', variant: 'secondary', style: 'solid' })}
-      ${createButton({ label: 'Secondary transparent', variant: 'secondary', style: 'transparent' })}
     </div>
   `,
 };

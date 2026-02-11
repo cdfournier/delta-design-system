@@ -5,6 +5,35 @@ import './header.css';
 
 const LOGO_RIGHT_SRC = 'https://www.figma.com/api/mcp/asset/0bbf85fc-fa4b-4d52-a152-84be6b95575d';
 const LOGO_LEFT_SRC = 'https://www.figma.com/api/mcp/asset/2e43662d-f76a-491c-886d-1c60bdaa9ba8';
+let headerEventsBound = false;
+
+function bindHeaderEvents() {
+  if (headerEventsBound || typeof document === 'undefined') {
+    return;
+  }
+
+  document.addEventListener('click', (event) => {
+    const button = event.target.closest('.dds-header__menu-button[data-interactive="true"]');
+    if (!button) {
+      return;
+    }
+
+    const root = button.closest('.dds-header');
+    if (!root) {
+      return;
+    }
+
+    const panel = root.querySelector('.dds-header__panel');
+    const open = root.classList.toggle('dds-header--menu-open');
+    button.setAttribute('aria-expanded', String(open));
+    button.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    if (panel) {
+      panel.setAttribute('aria-hidden', String(!open));
+    }
+  });
+
+  headerEventsBound = true;
+}
 
 function normalizeLinks(links) {
   if (Array.isArray(links) && links.length > 0) {
@@ -73,9 +102,9 @@ function createMobile({ links, mobileState, toggleChecked }) {
         <button
           type="button"
           class="dds-header__menu-button"
+          data-interactive="${isInteractive}"
           aria-expanded="${isOpen}"
           aria-label="${isOpen ? 'Close menu' : 'Open menu'}"
-          ${isInteractive ? `onclick="(function(btn){const root=btn.closest('.dds-header');if(!root){return;}const panel=root.querySelector('.dds-header__panel');const open=root.classList.toggle('dds-header--menu-open');btn.setAttribute('aria-expanded', String(open));btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');if(panel){panel.setAttribute('aria-hidden', String(!open));}})(this)"` : ''}
         >
           <span class="dds-header__menu-button-icon dds-header__menu-button-icon--menu">${createIcon({ type: 'menu-2', decorative: true, strokeWidth: 1.5 })}</span>
           <span class="dds-header__menu-button-icon dds-header__menu-button-icon--close">${createIcon({ type: 'x', decorative: true, strokeWidth: 1.5 })}</span>
@@ -111,6 +140,7 @@ export function createHeader({
   links = ['Link', 'Link', 'Link', 'Link', 'Link'],
   toggleChecked = false,
 } = {}) {
+  bindHeaderEvents();
   const normalizedLinks = normalizeLinks(links);
   const isMobile = size === 'mobile';
   const isMenuOpen = isMobile && mobileState === 'open';

@@ -94,60 +94,14 @@ export const Playground = {
     }),
 };
 
-export const VariantShowcase = {
+export const Variants = {
   render: () => createFieldsetShowcase(),
 };
 
-export const TextFieldset = {
-  render: () => createFieldset({ type: 'text', legendText: 'Label', state: 'default' }),
-};
-
-export const PasswordFieldset = {
-  render: () => createFieldset({ type: 'password', legendText: 'Label', state: 'default' }),
-};
-
-export const SelectFieldset = {
-  render: () => createFieldset({ type: 'select', legendText: 'Label', state: 'default' }),
-};
-
-export const CheckboxFieldset = {
-  render: () =>
-    createFieldset({
-      type: 'checkbox',
-      legendText: 'Legend',
-      showLegendLabel: true,
-      legendLabel: 'Label',
-      checkboxPattern: 'mixed',
-      direction: 'default',
-    }),
-};
-
-export const RadioFieldset = {
-  render: () =>
-    createFieldset({
-      type: 'radio',
-      legendText: 'Legend',
-      showLegendLabel: true,
-      legendLabel: 'Label',
-      radioSelection: 2,
-    }),
-};
-
-export const SwitchFieldset = {
-  render: () =>
-    createFieldset({
-      type: 'switch',
-      legendText: 'Legend',
-      showLegendLabel: true,
-      legendLabel: 'Label',
-      switchPattern: 'alternating',
-      direction: 'default',
-    }),
-};
-
-export const ValidationStates = {
+export const States = {
   render: () => `
     <div class="dds-fieldset-showcase">
+      ${createFieldset({ type: 'text', state: 'default' })}
       ${createFieldset({ type: 'text', state: 'invalid', messageState: 'invalid', messageText: 'Invalid message' })}
       ${createFieldset({ type: 'text', state: 'valid', messageState: 'valid', messageText: 'Valid message' })}
       ${createFieldset({ type: 'checkbox', state: 'invalid', messageState: 'invalid', legendText: 'Legend', checkboxPattern: 'first-checked' })}
@@ -156,7 +110,14 @@ export const ValidationStates = {
   `,
 };
 
-export const WidescreenScale = {
+export const Responsive = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'Responsive scaling parity for fieldset width, type, and spacing between mobile and widescreen token modes.',
+      },
+    },
+  },
   render: () => `
     <div class="dds-fieldset-showcase">
       ${createFieldset({ type: 'text', sizeMode: 'widescreen' })}

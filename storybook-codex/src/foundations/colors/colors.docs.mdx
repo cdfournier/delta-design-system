@@ -1,29 +1,23 @@
-import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Story, Controls } from '@storybook/addon-docs/blocks';
 import * as ColorStories from './colors.stories';
 
 <Meta of={ColorStories} title="Foundations/Colors/Documentation" />
 
 # Colors
 
-The Delta Design System color palette is designed for clarity, accessibility, and consistency across light and dark modes.
+The color system defines brand, semantic meaning, and mode-aware behavior.
 
-## Color Philosophy
+## Philosophy
 
-Colors communicate meaning, establish hierarchy, and reinforce brand identity.
-The system uses semantic naming to ensure colors are applied consistently across components.
+Use semantic tokens in components so color mode can switch without component-level overrides.
 
-## The Palette
-
-The palette includes brand colors, global neutrals, status indicators, and overlay utilities.
+## Palette
 
 <Canvas>
   <Story of={ColorStories.Palette} />
 </Canvas>
 
-## Color Modes
-
-The system supports both light and dark modes.
-Semantic tokens resolve differently by mode while preserving meaning and contrast.
+## Light/Dark Mapping
 
 <table>
   <thead>
@@ -62,70 +56,34 @@ Semantic tokens resolve differently by mode while preserving meaning and contras
   </tbody>
 </table>
 
-Use the Storybook toolbar (`Color mode`) to switch between light and dark.
-
 <Canvas>
   <Story of={ColorStories.SemanticModes} />
 </Canvas>
 
-## Accessibility
+## Token Mapping
 
-All color combinations should meet WCAG 2.1 AA for their intended use.
-
-Contrast requirements:
 <table>
   <thead>
     <tr>
-      <th>Context</th>
-      <th>Minimum contrast</th>
+      <th>Type</th>
+      <th>Token examples</th>
     </tr>
   </thead>
   <tbody>
-    <tr><td>Body text (16px)</td><td>4.5:1</td></tr>
-    <tr><td>Large text (18px+ or 14px+ bold)</td><td>3:1</td></tr>
-    <tr><td>UI components and graphical objects</td><td>3:1</td></tr>
+    <tr><td>Primitive</td><td><code>--global-black</code>, <code>--brand-primary</code></td></tr>
+    <tr><td>Semantic</td><td><code>--background-page</code>, <code>--text-default</code>, <code>--text-link</code></td></tr>
+    <tr><td>Aliases</td><td><code>--page-background</code>, <code>--section-background</code></td></tr>
   </tbody>
 </table>
 
-Color and meaning:
+## Accessibility
 
-- Do not rely on color alone
-- Pair status colors with text and/or iconography
+- Verify text contrast in both modes.
+- Do not rely on color alone for status meaning.
+- Keep state feedback visible beyond color changes.
 
-## Usage
+## Controls
 
-### When to use semantic tokens
+Use the Storybook toolbar (`Color mode`) to switch between light and dark.
 
-Use semantic tokens like `text/default` instead of raw globals like `global/black`.
-This keeps theming behavior correct across modes.
-
-### Testing requirements
-
-Always test in both light and dark modes to verify:
-
-- text contrast remains compliant
-- status colors remain distinguishable
-- interactive states remain visible
-- focus indicators remain clear
-
-## Best Practices
-
-### Do
-
-- Use semantic tokens
-- Maintain consistent contrast in both modes
-- Use status colors only for status meaning
-- Pair color with non-color indicators
-
-### Don't
-
-- Do not hardcode hex values in components
-- Do not rely on color alone for meaning
-- Do not use brand colors as status replacements
-- Do not ignore mode-switch testing
-
-## Resources
-
-- [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)
-- [WCAG 2.1: Contrast (Minimum)](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html)
-- [WCAG 2.1: Use of Color](https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html)
+<Controls of={ColorStories.Palette} />

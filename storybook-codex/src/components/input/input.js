@@ -1,5 +1,37 @@
 import './input.css';
 import { createIcon } from '../icon/icon';
+let inputEventsBound = false;
+let inputIdCounter = 0;
+
+function nextInputId(prefix) {
+  inputIdCounter += 1;
+  return `${prefix}-${inputIdCounter}`;
+}
+
+function bindInputEvents() {
+  if (inputEventsBound || typeof document === 'undefined') {
+    return;
+  }
+
+  document.addEventListener('click', (event) => {
+    const button = event.target.closest('.dds-input-control__toggle[data-password-target]');
+    if (!button) {
+      return;
+    }
+
+    const input = document.getElementById(button.dataset.passwordTarget || '');
+    if (!input) {
+      return;
+    }
+
+    const show = input.type === 'password';
+    input.type = show ? 'text' : 'password';
+    button.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
+    button.classList.toggle('is-active', show);
+  });
+
+  inputEventsBound = true;
+}
 
 function breakpointWrap(content, sizeMode = 'auto') {
   if (sizeMode === 'auto') {
@@ -78,9 +110,10 @@ export function createSelectInput({ state = 'default', label = 'Select', sizeMod
  * }} params
  */
 export function createPasswordInput({ state = 'default', sizeMode = 'auto' } = {}) {
+  bindInputEvents();
   const text = state === 'default' ? '' : state === 'show' ? 'Value' : '••••••••••••••••';
   const type = state === 'show' ? 'text' : 'password';
-  const id = `dds-password-${Math.random().toString(36).slice(2, 9)}`;
+  const id = nextInputId('dds-password');
 
   const content = `
     <div class="${textStateClass(state === 'show' ? 'value' : state)} dds-input-control--password" data-state="${state}">
@@ -95,8 +128,8 @@ export function createPasswordInput({ state = 'default', sizeMode = 'auto' } = {
       <button
         class="dds-input-control__toggle ${state === 'show' ? 'is-active' : ''}"
         type="button"
+        data-password-target="${id}"
         aria-label="${state === 'show' ? 'Hide password' : 'Show password'}"
-        onclick="(function(btn,id){const i=document.getElementById(id);if(!i){return;}const show=i.type==='password';i.type=show?'text':'password';btn.setAttribute('aria-label',show?'Hide password':'Show password');btn.classList.toggle('is-active',show);})(this,'${id}')"
       >
         <span class="dds-input-control__toggle-icon dds-input-control__toggle-icon--eye">${createIcon({
           type: 'eye',
@@ -132,7 +165,7 @@ export function createCheckbox({
   sizeMode = 'auto',
 } = {}) {
   const checked = value !== 'unchecked';
-  const id = `dds-checkbox-${Math.random().toString(36).slice(2, 9)}`;
+  const id = nextInputId('dds-checkbox');
   const stateIcon =
     value === 'indeterminate'
       ? createIcon({ type: 'minus', decorative: true, strokeWidth: 2 })
@@ -171,7 +204,7 @@ export function createRadio({
   label = 'Value',
   sizeMode = 'auto',
 } = {}) {
-  const id = `dds-radio-${Math.random().toString(36).slice(2, 9)}`;
+  const id = nextInputId('dds-radio');
 
   const content = `
     <label class="dds-input-choice dds-input-choice--radio" data-state="${state}" for="${id}">
@@ -208,7 +241,7 @@ export function createSwitch({
   label = 'Value',
   sizeMode = 'auto',
 } = {}) {
-  const id = `dds-switch-${Math.random().toString(36).slice(2, 9)}`;
+  const id = nextInputId('dds-switch');
 
   const content = `
     <label class="dds-input-choice dds-input-choice--switch" data-state="${state}" data-direction="${direction}" for="${id}">
