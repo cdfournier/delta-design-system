@@ -1,0 +1,156 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/addon-docs/blocks';
+import * as ComponentStories from '../../src/components/[component]/[component].stories';
+
+<Meta of={ComponentStories} title="Atoms/[Component]" />
+
+# [Component]
+
+[One sentence: what this component is and why it exists.]
+
+## Anatomy
+
+- [Element 1]: [Short description]
+- [Element 2]: [Short description]
+- [Element 3] (optional): [Short description]
+
+<Canvas>
+  <Story of={ComponentStories.Default} />
+</Canvas>
+
+## Variants
+
+[Explain variant purpose and hierarchy.]
+
+<Canvas>
+  <Story of={ComponentStories.Variants} />
+</Canvas>
+
+## States
+
+[Document default, hover, focus, active, disabled behavior.]
+
+<Canvas>
+  <Story of={ComponentStories.States} />
+</Canvas>
+
+## Typography
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+      <th>Token(s)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Font size</td>
+      <td>[12px / 0.75rem]</td>
+      <td>[24px / 1.5rem]</td>
+      <td><code>[--token-mobile, --token-desktop]</code></td>
+    </tr>
+    <tr>
+      <td>Line height</td>
+      <td>[12px / 0.75rem]</td>
+      <td>[24px / 1.5rem]</td>
+      <td><code>[--token-mobile, --token-desktop]</code></td>
+    </tr>
+    <tr>
+      <td>Weight</td>
+      <td>[400 or 700]</td>
+      <td>[400 or 700]</td>
+      <td><code>[--token-if-applicable]</code></td>
+    </tr>
+  </tbody>
+</table>
+
+## Spacing
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+      <th>Token(s)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Padding</td>
+      <td>[x/y px+rem]</td>
+      <td>[x/y px+rem]</td>
+      <td><code>[--token-mobile, --token-desktop]</code></td>
+    </tr>
+    <tr>
+      <td>Gap</td>
+      <td>[px+rem]</td>
+      <td>[px+rem]</td>
+      <td><code>[--token-mobile, --token-desktop]</code></td>
+    </tr>
+    <tr>
+      <td>Border radius</td>
+      <td>[px+rem]</td>
+      <td>[px+rem]</td>
+      <td><code>[--token-mobile, --token-desktop]</code></td>
+    </tr>
+  </tbody>
+</table>
+
+## Colors
+
+<table>
+  <thead>
+    <tr>
+      <th>Element / State</th>
+      <th>Light mode</th>
+      <th>Dark mode</th>
+      <th>Token(s)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[Container / default]</td>
+      <td>[token + hex]</td>
+      <td>[token + hex]</td>
+      <td><code>[--token-light, --token-dark]</code></td>
+    </tr>
+    <tr>
+      <td>[Label / hover]</td>
+      <td>[token + hex]</td>
+      <td>[token + hex]</td>
+      <td><code>[--token-light, --token-dark]</code></td>
+    </tr>
+  </tbody>
+</table>
+
+## Accessibility
+
+- Keyboard: [Tab/Enter/Space behavior]
+- Focus: [token/ring behavior]
+- Semantics: [required element + ARIA]
+- Touch target: minimum `44x44px`
+
+## Usage
+
+### Do
+
+- [Recommended practice]
+- [Recommended practice]
+
+### Don't
+
+- [Anti-pattern]
+- [Anti-pattern]
+
+## Resources
+
+- [Figma node link]
+- [Component spec link]
+- [External pattern guidance]
+
+## Controls
+
+<Controls of={ComponentStories.Default} />

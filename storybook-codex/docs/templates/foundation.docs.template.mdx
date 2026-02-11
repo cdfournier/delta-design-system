@@ -1,0 +1,105 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/addon-docs/blocks';
+import * as FoundationStories from '../../src/foundations/[foundation]/[foundation].stories';
+
+<Meta of={FoundationStories} title="Foundations/[Foundation]/Documentation" />
+
+# [Foundation]
+
+[One sentence: what this foundation governs and why it matters.]
+
+## Philosophy
+
+[Describe intent, constraints, and system behavior.]
+
+## System Overview
+
+<table>
+  <thead>
+    <tr>
+      <th>Area</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+      <th>Token pattern</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[Area 1]</td>
+      <td>[value]</td>
+      <td>[value]</td>
+      <td><code>[--token-*-px / --token-*]</code></td>
+    </tr>
+    <tr>
+      <td>[Area 2]</td>
+      <td>[value]</td>
+      <td>[value]</td>
+      <td><code>[--token-*-px / --token-*]</code></td>
+    </tr>
+  </tbody>
+</table>
+
+## Foundation Scale / Reference
+
+<Canvas>
+  <Story of={FoundationStories.Scale} />
+</Canvas>
+
+## Modes and Breakpoints
+
+[Explain how toolbar controls affect this foundation: color mode, breakpoint mode, type mode, space mode.]
+
+<Canvas>
+  <Story of={FoundationStories.Reference} />
+</Canvas>
+
+## Token Mapping
+
+<table>
+  <thead>
+    <tr>
+      <th>Raw px token</th>
+      <th>Computed rem token</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>[--token-*-px]</code></td>
+      <td><code>[--token-*]</code></td>
+      <td>[What this controls]</td>
+    </tr>
+    <tr>
+      <td><code>[--token-*-px]</code></td>
+      <td><code>[--token-*]</code></td>
+      <td>[What this controls]</td>
+    </tr>
+  </tbody>
+</table>
+
+## Accessibility
+
+- [Contrast/readability guidance]
+- [Responsive behavior expectations]
+- [Minimum sizing or spacing constraints]
+
+## Usage Guidelines
+
+### Do
+
+- [Recommended practice]
+- [Recommended practice]
+
+### Don't
+
+- [Anti-pattern]
+- [Anti-pattern]
+
+## Resources
+
+- [Figma foundation node link]
+- [Token source in code]
+- [External references]
+
+## Controls
+
+<Controls of={FoundationStories.Scale} />
