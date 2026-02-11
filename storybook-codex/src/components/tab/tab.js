@@ -4,6 +4,25 @@ const TAB_PANEL_IMAGE = 'https://www.figma.com/api/mcp/asset/0959bc14-c6bd-4f09-
 let tabsEventsBound = false;
 let tabsInstanceCounter = 0;
 
+function positionTrack(root, activePanel) {
+  if (!root || !activePanel) {
+    return;
+  }
+
+  const viewport = root.querySelector('.dds-tabs__panels');
+  const track = root.querySelector('.dds-tabs__track');
+  if (!viewport || !track) {
+    return;
+  }
+
+  const isVertical = root.dataset.direction === 'vertical';
+  const offset = isVertical ? activePanel.offsetTop : activePanel.offsetLeft;
+  track.style.transform = isVertical
+    ? `translate3d(0, ${-offset}px, 0)`
+    : `translate3d(${-offset}px, 0, 0)`;
+  viewport.style.height = `${activePanel.offsetHeight}px`;
+}
+
 function activateTab(root, nextIndex) {
   if (!root) {
     return;
@@ -12,6 +31,7 @@ function activateTab(root, nextIndex) {
   const buttons = Array.from(root.querySelectorAll('.dds-tabs__button[role="tab"]'));
   const panels = Array.from(root.querySelectorAll('.dds-tabs__panel[role="tabpanel"]'));
   const bounded = Math.max(0, Math.min(nextIndex, buttons.length - 1));
+  let activePanel = null;
 
   buttons.forEach((button, index) => {
     const selected = index === bounded;
@@ -22,9 +42,15 @@ function activateTab(root, nextIndex) {
 
   panels.forEach((panel, index) => {
     const selected = index === bounded;
-    panel.hidden = !selected;
     panel.setAttribute('aria-hidden', String(!selected));
+    panel.dataset.active = selected ? 'true' : 'false';
+    panel.toggleAttribute('inert', !selected);
+    if (selected) {
+      activePanel = panel;
+    }
   });
+
+  positionTrack(root, activePanel);
 }
 
 function bindTabsEvents() {
@@ -87,6 +113,48 @@ function bindTabsEvents() {
     buttons[target]?.focus();
     activateTab(root, target);
   });
+
+  const syncAllTabs = () => {
+    const roots = Array.from(document.querySelectorAll('.dds-tabs'));
+    roots.forEach((root) => {
+      const buttons = Array.from(root.querySelectorAll('.dds-tabs__button[role="tab"]'));
+      const selectedIndex = buttons.findIndex(
+        (button) => button.getAttribute('aria-selected') === 'true',
+      );
+      activateTab(root, selectedIndex === -1 ? 0 : selectedIndex);
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', syncAllTabs, { once: true });
+  } else {
+    requestAnimationFrame(syncAllTabs);
+  }
+
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      mutation.addedNodes.forEach((node) => {
+        if (!(node instanceof Element)) {
+          return;
+        }
+
+        const roots = node.matches('.dds-tabs')
+          ? [node]
+          : Array.from(node.querySelectorAll('.dds-tabs'));
+
+        roots.forEach((root) => {
+          const buttons = Array.from(
+            root.querySelectorAll('.dds-tabs__button[role="tab"]'),
+          );
+          const selectedIndex = buttons.findIndex(
+            (button) => button.getAttribute('aria-selected') === 'true',
+          );
+          activateTab(root, selectedIndex === -1 ? 0 : selectedIndex);
+        });
+      });
+    });
+  });
+  observer.observe(document.body, { childList: true, subtree: true });
 
   tabsEventsBound = true;
 }
@@ -177,7 +245,8 @@ function createTabPanel({
       id="${panelId}"
       aria-labelledby="${tabId}"
       aria-hidden="${!selected}"
-      ${selected ? '' : 'hidden'}
+      data-active="${selected ? 'true' : 'false'}"
+      ${selected ? '' : 'inert'}
     >
       ${
         figure
@@ -230,7 +299,7 @@ export function createTabs({
 
   return breakpointWrap(
     `
-      <div class="dds-tabs dds-tabs--${direction} dds-tabs--panel-${panelOrientation}" data-interactive="${interactive}">
+      <div class="dds-tabs dds-tabs--${direction} dds-tabs--panel-${panelOrientation}" data-interactive="${interactive}" data-direction="${direction}">
         ${createTablist({
           labels: normalizedLabels,
           activeIndex: boundedIndex,
@@ -240,19 +309,21 @@ export function createTabs({
           idBase,
         })}
         <div class="dds-tabs__panels dds-tabs__panels--${direction}">
-          ${normalizedLabels
-            .map((label, index) =>
-              createTabPanel({
-                heading,
-                body,
-                orientation: panelOrientation,
-                figure: panelFigure,
-                panelId: `${idBase}-panel-${index}`,
-                tabId: `${idBase}-tab-${index}`,
-                selected: index === boundedIndex,
-              }),
-            )
-            .join('')}
+          <div class="dds-tabs__track">
+            ${normalizedLabels
+              .map((label, index) =>
+                createTabPanel({
+                  heading,
+                  body,
+                  orientation: panelOrientation,
+                  figure: panelFigure,
+                  panelId: `${idBase}-panel-${index}`,
+                  tabId: `${idBase}-tab-${index}`,
+                  selected: index === boundedIndex,
+                }),
+              )
+              .join('')}
+          </div>
         </div>
       </div>
     `,

@@ -110,11 +110,12 @@
 }
 
 .dds-tabs__panels {
-  display: flex;
-  gap: var(--md);
+  position: relative;
+  overflow: hidden;
   padding: var(--md);
   background: var(--page-background);
   border-radius: var(--border-radius-md);
+  transition: height 0.25s ease 0s;
 }
 
 .dds-tabs__panels--horizontal {
@@ -126,12 +127,28 @@
   min-width: 0;
 }
 
+.dds-tabs__track {
+  display: flex;
+  width: fit-content;
+  transition: transform 0.25s ease 0s;
+  will-change: transform;
+}
+
+.dds-tabs[data-direction='vertical'] .dds-tabs__track {
+  flex-direction: column;
+}
+
 .dds-tabs__panel {
   background: var(--section-background);
   border-radius: var(--border-radius-md);
   overflow: hidden;
   min-width: var(--components-tab-panel-min-width);
   transition: all 0.25s ease 0s;
+  flex: 0 0 auto;
+}
+
+.dds-tabs__panel[aria-hidden='true'] {
+  pointer-events: none;
 }
 
 .dds-tabs__panel--vertical {

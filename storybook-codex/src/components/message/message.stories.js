@@ -74,35 +74,29 @@ export const Playground = {
     }),
 };
 
-export const VariantShowcase = {
+export const Variants = {
   render: () => createMessageShowcase(),
 };
 
-export const Modal = {
-  render: () => createMessage({ variant: 'modal', heading: 'Heading', body: 'Body', dismissible: true }),
+export const States = {
+  render: () => `
+    <div class="dds-message-showcase">
+      ${createMessage({ variant: 'error', text: 'Error message', dismissible: true })}
+      ${createMessage({ variant: 'success', text: 'Success message', dismissible: true })}
+      ${createMessage({ variant: 'confirmation', text: 'Confirmation message', dismissible: true })}
+      ${createMessage({ variant: 'toast', text: 'Toast message', toastClose: true })}
+    </div>
+  `,
 };
 
-export const Promo = {
-  render: () => createMessage({ variant: 'promo', heading: 'Heading', body: 'Body', dismissible: true }),
-};
-
-export const Confirmation = {
-  render: () => createMessage({ variant: 'confirmation', text: 'Confirmation message' }),
-};
-
-export const Error = {
-  render: () => createMessage({ variant: 'error', text: 'Error message' }),
-};
-
-export const Success = {
-  render: () => createMessage({ variant: 'success', text: 'Success message' }),
-};
-
-export const Toast = {
-  render: () => createMessage({ variant: 'toast', text: 'Toast message' }),
-};
-
-export const WidescreenScale = {
+export const Responsive = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'Responsive scaling parity for inline message and toast typography/spacing between mobile and widescreen token modes.',
+      },
+    },
+  },
   render: () => `
     <div class="dds-message-showcase">
       ${createMessage({ variant: 'error', text: 'Error message', sizeMode: 'widescreen' })}

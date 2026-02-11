@@ -1,8 +1,5 @@
 import {
   createTabs,
-  createTabButtonGroupShowcase,
-  createTablistShowcase,
-  createTabPanelShowcase,
   createTabsShowcase,
 } from './tab';
 
@@ -94,38 +91,55 @@ export const Playground = {
     }),
 };
 
-export const VariantShowcase = {
+export const Variants = {
   render: () => createTabsShowcase(),
 };
 
-export const TabButtonVariants = {
-  render: () => createTabButtonGroupShowcase(),
+export const States = {
+  render: () => `
+    <div class="dds-tabs-showcase">
+      ${createTabs({
+        direction: 'horizontal',
+        tabStyle: 'primary',
+        panelOrientation: 'vertical',
+        panelFigure: true,
+        activeIndex: 0,
+        interactive: false,
+      })}
+      ${createTabs({
+        direction: 'horizontal',
+        tabStyle: 'primary',
+        panelOrientation: 'vertical',
+        panelFigure: true,
+        activeIndex: 1,
+        interactive: false,
+      })}
+      ${createTabs({
+        direction: 'horizontal',
+        tabStyle: 'secondary',
+        panelOrientation: 'vertical',
+        panelFigure: false,
+        activeIndex: 2,
+        interactive: false,
+      })}
+    </div>
+  `,
 };
 
-export const TablistVariants = {
-  render: () => createTablistShowcase(),
-};
-
-export const TabPanelVariants = {
-  render: () => createTabPanelShowcase(),
-};
-
-export const HorizontalAssembled = {
-  render: () => createTabs({ direction: 'horizontal', panelOrientation: 'vertical', panelFigure: true, interactive: false }),
-};
-
-export const VerticalAssembled = {
-  render: () => createTabs({ direction: 'vertical', panelOrientation: 'horizontal', panelFigure: true, interactive: false }),
-};
-
-export const SecondaryStyle = {
-  render: () => createTabs({ direction: 'horizontal', tabStyle: 'secondary', panelOrientation: 'vertical', interactive: false }),
-};
-
-export const WithoutFigure = {
-  render: () => createTabs({ direction: 'horizontal', panelOrientation: 'vertical', panelFigure: false, interactive: false }),
-};
-
-export const WidescreenScale = {
-  render: () => createTabs({ direction: 'horizontal', panelOrientation: 'vertical', panelFigure: true, interactive: false, sizeMode: 'widescreen' }),
+export const Responsive = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'Responsive scaling parity for tab controls and panel typography/spacing between mobile and widescreen token modes.',
+      },
+    },
+  },
+  render: () =>
+    createTabs({
+      direction: 'horizontal',
+      panelOrientation: 'vertical',
+      panelFigure: true,
+      interactive: false,
+      sizeMode: 'widescreen',
+    }),
 };
