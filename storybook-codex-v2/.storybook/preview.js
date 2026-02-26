@@ -106,6 +106,21 @@ const preview = {
           const index = order.indexOf(topLevel);
           return index === -1 ? order.length : index;
         };
+        const rankSecondLevel = (entry) => {
+          const story = normalizeEntry(entry);
+          const title = story.title ?? story.kind ?? '';
+          const [topLevel = '', secondLevel = ''] = title.split('/');
+          const orders = {
+            Foundations: ['Colors', 'Typography', 'Spacing', 'Grid'],
+            Welcome: ['Cover', 'About'],
+          };
+          const order = orders[topLevel];
+          if (!order) {
+            return Number.MAX_SAFE_INTEGER;
+          }
+          const index = order.indexOf(secondLevel);
+          return index === -1 ? order.length : index;
+        };
         const rankDocs = (entry) => {
           const story = normalizeEntry(entry);
           const title = story.title ?? story.kind ?? '';
@@ -133,6 +148,11 @@ const preview = {
         const topLevelDiff = rankTopLevel(a) - rankTopLevel(b);
         if (topLevelDiff !== 0) {
           return topLevelDiff;
+        }
+
+        const secondLevelDiff = rankSecondLevel(a) - rankSecondLevel(b);
+        if (secondLevelDiff !== 0) {
+          return secondLevelDiff;
         }
 
         const docsDiff = rankDocs(a) - rankDocs(b);

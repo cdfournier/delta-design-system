@@ -61,10 +61,17 @@
 
 .dds-spacing-fig code {
   font-family: var(--font-family-code);
-  font-size: 0.9em;
   background: var(--background-section);
-  padding: 0.125rem 0.375rem;
+  padding: 0 0.375rem;
   border-radius: var(--border-radius-xs);
+}
+
+.dds-spacing-fig p code,
+.dds-spacing-fig li code,
+.dds-spacing-fig td code,
+.dds-spacing-fig th code {
+  font-size: var(--typography-body-font-size);
+  line-height: var(--typography-body-line-height);
 }
 
 .dds-spacing-fig__specimen {

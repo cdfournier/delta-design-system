@@ -135,7 +135,16 @@ a:hover {
 .sbdocs-content code {
   background: var(--background-section);
   border-radius: var(--border-radius-xs);
-  padding: 0.125rem 0.375rem;
+  padding: 0 0.375rem;
+}
+
+/* Inline code should read at body-copy size across mobile/widescreen modes. */
+.sbdocs-content p code,
+.sbdocs-content li code,
+.sbdocs-content td code,
+.sbdocs-content th code {
+  font-size: var(--typography-body-font-size);
+  line-height: var(--typography-body-line-height);
 }
 
 .sbdocs-content pre,
