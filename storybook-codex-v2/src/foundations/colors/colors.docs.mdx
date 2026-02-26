@@ -1,7 +1,7 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
 import * as FoundationStories from './colors.stories';
 
-<Meta title="Foundations/Colors/Documentation" />
+<Meta of={FoundationStories} name="Documentation" />
 
 # Colors
 
@@ -19,33 +19,25 @@ The complete color system includes brand colors, global neutrals, status indicat
 
 {/* Figure placeholder: brand colors swatches */}
 
-<Canvas>
-  <Story of={FoundationStories.Scale} args={{ group: 'brand' }} />
-</Canvas>
+<Canvas of={FoundationStories.BrandColorsFigure} />
 
 ### Global colors
 
 {/* Figure placeholder: global colors swatches */}
 
-<Canvas>
-  <Story of={FoundationStories.Scale} args={{ group: 'global' }} />
-</Canvas>
+<Canvas of={FoundationStories.GlobalColorsFigure} />
 
 ### Status colors
 
 {/* Figure placeholder: status colors swatches */}
 
-<Canvas>
-  <Story of={FoundationStories.Scale} args={{ group: 'status' }} />
-</Canvas>
+<Canvas of={FoundationStories.StatusColorsFigure} />
 
 ### Overlay colors
 
 {/* Figure placeholder: overlay colors swatches */}
 
-<Canvas>
-  <Story of={FoundationStories.Scale} args={{ group: 'overlay' }} />
-</Canvas>
+<Canvas of={FoundationStories.OverlayColorsFigure} />
 
 ## Color modes
 
@@ -67,17 +59,13 @@ All color combinations meet WCAG 2.1 Level AA contrast requirements for their in
 
 {/* Table: Color | Hex | Background | Ratio | Level */}
 
-<Canvas>
-  <Story of={FoundationStories.Modes} args={{ mode: 'light' }} />
-</Canvas>
+<Canvas of={FoundationStories.LightContrastFigure} />
 
 ### Dark mode contrast ratios
 
 {/* Table: Color | Hex | Background | Ratio | Level */}
 
-<Canvas>
-  <Story of={FoundationStories.Modes} args={{ mode: 'dark' }} />
-</Canvas>
+<Canvas of={FoundationStories.DarkContrastFigure} />
 
 ### Contrast requirements
 
@@ -118,17 +106,13 @@ Always test designs in both light and dark modes to verify:
 
 ### CSS
 
-<Canvas>
-  <Story of={FoundationStories.CodeReference} args={{ kind: 'css' }} />
-</Canvas>
+<Canvas of={FoundationStories.CssCodeFigure} />
 
 ### Design tokens reference
 
 Use this section to document token groups and semantic mappings as implemented in code. Primitive values and semantic resolutions must be verified against the Figma Variables table and all active modes before publishing.
 
-<Canvas>
-  <Story of={FoundationStories.CodeReference} args={{ kind: 'tokens' }} />
-</Canvas>
+<Canvas of={FoundationStories.TokenCodeFigure} />
 
 ## Resources
 

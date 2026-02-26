@@ -126,3 +126,44 @@ export const CodeReference = {
   },
   render: ({ kind }) => (codeRenderers[kind] || codeRenderers.css)(),
 };
+
+// Explicit docs-facing stories avoid MDX args collisions in attached docs pages.
+export const BrandColorsFigure = {
+  name: 'Brand colors swatches',
+  render: () => swatchRenderers.brand(),
+};
+
+export const GlobalColorsFigure = {
+  name: 'Global colors swatches',
+  render: () => swatchRenderers.global(),
+};
+
+export const StatusColorsFigure = {
+  name: 'Status colors swatches',
+  render: () => swatchRenderers.status(),
+};
+
+export const OverlayColorsFigure = {
+  name: 'Overlay colors swatches',
+  render: () => swatchRenderers.overlay(),
+};
+
+export const LightContrastFigure = {
+  name: 'Light mode contrast table',
+  render: () => contrastRenderers.light(),
+};
+
+export const DarkContrastFigure = {
+  name: 'Dark mode contrast table',
+  render: () => contrastRenderers.dark(),
+};
+
+export const CssCodeFigure = {
+  name: 'CSS code reference',
+  render: () => codeRenderers.css(),
+};
+
+export const TokenCodeFigure = {
+  name: 'Design tokens code reference',
+  render: () => codeRenderers.tokens(),
+};
