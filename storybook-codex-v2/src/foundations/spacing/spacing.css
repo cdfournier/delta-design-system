@@ -3,6 +3,29 @@
   color: var(--text-default);
 }
 
+.dds-spacing-fig__section {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.dds-spacing-fig pre {
+  margin: 0;
+  overflow: auto;
+  padding: var(--space-xl);
+  border: 1px solid var(--global-gray-medium);
+  border-radius: var(--border-radius-sm);
+  background: var(--background-section);
+}
+
+.dds-spacing-fig pre code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  white-space: pre;
+  font-size: var(--typography-small-font-size);
+  line-height: var(--typography-small-line-height);
+}
+
 .dds-spacing-fig__table-wrap {
   width: 100%;
   overflow-x: auto;
