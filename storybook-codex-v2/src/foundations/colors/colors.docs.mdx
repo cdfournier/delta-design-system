@@ -1,4 +1,5 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import * as FoundationStories from './colors.stories';
 
 <Meta title="Foundations/Colors/Documentation" />
 
@@ -6,13 +7,9 @@ import { Meta } from '@storybook/addon-docs/blocks';
 
 The Delta Design System color palette is designed for clarity, accessibility, and consistency across light and dark modes. Every color serves a specific purpose and should be applied through tokens so meaning and contrast remain stable across components.
 
----
-
 ## Color philosophy
 
 Colors communicate meaning, establish hierarchy, and reinforce brand identity. The system uses semantic naming so colors can be applied consistently while preserving their intended meaning across themes and interface contexts.
-
----
 
 ## The color system
 
@@ -20,53 +17,67 @@ The complete color system includes brand colors, global neutrals, status indicat
 
 ### Brand colors
 
-Brand colors define Delta's visual identity and are used for key accents, link treatments, and high-emphasis UI moments. Brand tokens are primitive values and should not be repurposed for semantic status states.
-
 {/* Figure placeholder: brand colors swatches */}
+
+<Canvas>
+  <Story of={FoundationStories.Scale} args={{ group: 'brand' }} />
+</Canvas>
 
 ### Global colors
 
-Global colors are the neutral foundation for text, surfaces, borders, and supporting UI elements. They provide a stable set of primitives that semantic tokens can reference in either mode.
-
 {/* Figure placeholder: global colors swatches */}
+
+<Canvas>
+  <Story of={FoundationStories.Scale} args={{ group: 'global' }} />
+</Canvas>
 
 ### Status colors
 
-Status colors communicate functional meaning such as disabled, invalid, valid, and read-only states. These colors should remain semantically distinct from brand colors and should be paired with text or iconography when conveying meaning.
-
 {/* Figure placeholder: status colors swatches */}
+
+<Canvas>
+  <Story of={FoundationStories.Scale} args={{ group: 'status' }} />
+</Canvas>
 
 ### Overlay colors
 
-Overlay colors are utility tokens used to improve legibility over imagery or layered content. They are defined as opacity-based overlays and should be applied consistently rather than recreated ad hoc.
-
 {/* Figure placeholder: overlay colors swatches */}
 
----
+<Canvas>
+  <Story of={FoundationStories.Scale} args={{ group: 'overlay' }} />
+</Canvas>
 
 ## Color modes
 
-The Delta Design System supports both light and dark color modes. Semantic tokens automatically resolve to the appropriate value for each mode, helping preserve contrast, readability, and consistent behavior across the interface.
+The Delta Design System supports both light and dark color modes. Semantic tokens automatically resolve to the appropriate color for each mode, ensuring consistent contrast and readability.
 
 {/* Table: Token | Light mode | Dark mode */}
 
+<Canvas of={FoundationStories.Reference} />
+
 {/* Figure placeholder: semantic token mapping table and/or mode preview */}
 
-In dark mode, some semantic tokens resolve to different primitive values than they do in light mode to maintain accessibility. For example, link and hover values must be verified against the active background to ensure body-size text still meets contrast requirements.
-
----
+In dark mode, text/link resolves to global/white rather than brand/primary. This is intentional — Primary (#FF5247) achieves only 3.35:1 against the dark page background (#003442), which is insufficient for body-size link text. Verify that focus and hover states account for this contrast difference.
 
 ## Accessibility
 
-All color combinations should meet WCAG 2.1 Level AA contrast requirements for their intended use. The color system prioritizes accessibility without compromising hierarchy, legibility, or brand expression.
+All color combinations meet WCAG 2.1 Level AA contrast requirements for their intended use. The system prioritizes accessibility without compromising visual appeal.
 
 ### Light mode contrast ratios
 
 {/* Table: Color | Hex | Background | Ratio | Level */}
 
+<Canvas>
+  <Story of={FoundationStories.Modes} args={{ mode: 'light' }} />
+</Canvas>
+
 ### Dark mode contrast ratios
 
 {/* Table: Color | Hex | Background | Ratio | Level */}
+
+<Canvas>
+  <Story of={FoundationStories.Modes} args={{ mode: 'dark' }} />
+</Canvas>
 
 ### Contrast requirements
 
@@ -78,19 +89,15 @@ All color combinations should meet WCAG 2.1 Level AA contrast requirements for t
 
 Status colors are never used alone. Error, success, warning, and other functional states must include both color and iconography or text so meaning is conveyed to all users, including users with color vision deficiencies.
 
----
-
 ## Usage
-
-Use the following guidance to apply the color system consistently across products, components, and documentation.
 
 ### When to use semantic tokens
 
-Use semantic tokens (for example `text/default`) instead of primitive or global tokens (for example `global/black`) whenever you are styling component UI. Semantic tokens provide theming support by resolving to the correct value for the active mode.
+Use semantic tokens (like `text/default`) instead of global tokens (like `global/black`) to ensure proper theming support across light and dark modes. Semantic tokens automatically resolve to the appropriate value for each mode.
 
 ### Mode switching
 
-Users should be able to override system preferences and manually select their preferred color mode. Respect user choice and persist that selection across sessions.
+Users should have the ability to override system preferences and manually select their preferred color mode. Respect user choice and maintain their selection across sessions.
 
 ### Testing requirements
 
@@ -103,56 +110,25 @@ Always test designs in both light and dark modes to verify:
 
 ### Best practices
 
-#### Do
-
-- **Use semantic tokens**  
-  Reference `text/default` instead of `global/black` so theming works correctly in light and dark modes.
-- **Maintain consistent contrast**  
-  Verify text meets minimum contrast requirements against its background in both light and dark modes.
-- **Use status colors appropriately**  
-  Use `status/invalid`, `status/valid`, and related tokens for functional states instead of brand colors.
-- **Pair color with other indicators**  
-  Combine status color with icons, labels, or patterns to convey meaning to all users.
-
-#### Don't
-
-- **Don't use hex values directly**  
-  Reference design tokens instead of hard-coded values to preserve consistency and support mode switching.
-- **Don't rely on color alone**  
-  Color by itself is not sufficient for all users; pair color with text or iconography.
-- **Don't use brand colors for status**  
-  Keep brand colors for brand expression and use status colors for functional meaning.
-- **Don't override contrast requirements**  
-  Accessibility is not optional; do not reduce contrast below WCAG minimums.
-
 {/* Figure placeholder: Do/Don't grid */}
 
----
+<Canvas of={FoundationStories.BestPracticesFigure} />
 
 ## Code reference
 
 ### CSS
 
-```css
-/* CSS example placeholder
-   Final code reference should be verified against the Figma Variables table and project token naming. */
-```
+<Canvas>
+  <Story of={FoundationStories.CodeReference} args={{ kind: 'css' }} />
+</Canvas>
 
 ### Design tokens reference
 
 Use this section to document token groups and semantic mappings as implemented in code. Primitive values and semantic resolutions must be verified against the Figma Variables table and all active modes before publishing.
 
-```text
-/* Token reference placeholder
-   Include:
-   - Brand (mode-invariant)
-   - Global (mode-invariant)
-   - Status (mode-invariant)
-   - Overlay (mode-invariant)
-   - Semantic tokens (light + dark mappings) */
-```
-
----
+<Canvas>
+  <Story of={FoundationStories.CodeReference} args={{ kind: 'tokens' }} />
+</Canvas>
 
 ## Resources
 
@@ -161,8 +137,6 @@ Use this section to document token groups and semantic mappings as implemented i
 - [WCAG 2.1: Use of Color](https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html) - Guidance for conveying information without relying on color alone
 - [Accessible Colors](https://accessible-colors.com/) - Tool for exploring accessible color combinations
 - [Interaction Design Foundation: Color Theory](https://www.interaction-design.org/literature/topics/color-theory) - Color fundamentals and design context
-
----
 
 ## Source of truth
 

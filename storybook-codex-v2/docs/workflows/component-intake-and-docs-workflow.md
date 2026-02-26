@@ -55,6 +55,7 @@ Rule: story names are internal implementation labels, not documentation headings
 - Apply documentation standards while writing the MDX skeleton:
   - fixed section names (no synonyms)
   - `Widescreen` terminology (never `Desktop`)
+  - no horizontal rules in docs pages (`<hr>` or markdown `---`)
   - no `h4` inside Do/Don't grids
   - rem / px table value format for numeric specs
 - Prefer fixed composition stories in Docs (`Variants`, `States`) over control-derived output.
