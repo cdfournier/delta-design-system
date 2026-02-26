@@ -47,16 +47,19 @@ const preview = {
   },
   decorators: [
     (story, context) => {
+      const typeMode = context.globals.breakpoint === 'widescreen' ? 'widescreen' : 'mobile';
       const root = document.documentElement;
       root.setAttribute('data-color-mode', context.globals.colorMode);
       root.setAttribute('data-space-mode', context.globals.spaceMode);
       root.setAttribute('data-breakpoint-mode', context.globals.breakpoint);
+      root.setAttribute('data-type-mode', typeMode);
 
       const body = document.body;
       if (body) {
         body.setAttribute('data-color-mode', context.globals.colorMode);
         body.setAttribute('data-space-mode', context.globals.spaceMode);
         body.setAttribute('data-breakpoint-mode', context.globals.breakpoint);
+        body.setAttribute('data-type-mode', typeMode);
         body.classList.add('dds-storybook-body');
 
         const computed = window.getComputedStyle(root);
@@ -73,6 +76,7 @@ const preview = {
         node.setAttribute('data-color-mode', context.globals.colorMode);
         node.setAttribute('data-space-mode', context.globals.spaceMode);
         node.setAttribute('data-breakpoint-mode', context.globals.breakpoint);
+        node.setAttribute('data-type-mode', typeMode);
       });
 
       return story();

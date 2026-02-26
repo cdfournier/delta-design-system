@@ -1,4 +1,4 @@
-import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
 import * as FoundationStories from './colors.stories';
 
 <Meta of={FoundationStories} name="Documentation" />
@@ -17,25 +17,17 @@ The complete color system includes brand colors, global neutrals, status indicat
 
 ### Brand colors
 
-{/* Figure placeholder: brand colors swatches */}
-
 <Canvas of={FoundationStories.BrandColorsFigure} />
 
 ### Global colors
-
-{/* Figure placeholder: global colors swatches */}
 
 <Canvas of={FoundationStories.GlobalColorsFigure} />
 
 ### Status colors
 
-{/* Figure placeholder: status colors swatches */}
-
 <Canvas of={FoundationStories.StatusColorsFigure} />
 
 ### Overlay colors
-
-{/* Figure placeholder: overlay colors swatches */}
 
 <Canvas of={FoundationStories.OverlayColorsFigure} />
 
@@ -43,11 +35,7 @@ The complete color system includes brand colors, global neutrals, status indicat
 
 The Delta Design System supports both light and dark color modes. Semantic tokens automatically resolve to the appropriate color for each mode, ensuring consistent contrast and readability.
 
-{/* Table: Token | Light mode | Dark mode */}
-
-<Canvas of={FoundationStories.Reference} />
-
-{/* Figure placeholder: semantic token mapping table and/or mode preview */}
+<Story of={FoundationStories.Reference} />
 
 In dark mode, text/link resolves to global/white rather than brand/primary. This is intentional — Primary (#FF5247) achieves only 3.35:1 against the dark page background (#003442), which is insufficient for body-size link text. Verify that focus and hover states account for this contrast difference.
 
@@ -57,15 +45,11 @@ All color combinations meet WCAG 2.1 Level AA contrast requirements for their in
 
 ### Light mode contrast ratios
 
-{/* Table: Color | Hex | Background | Ratio | Level */}
-
-<Canvas of={FoundationStories.LightContrastFigure} />
+<Story of={FoundationStories.LightContrastFigure} />
 
 ### Dark mode contrast ratios
 
-{/* Table: Color | Hex | Background | Ratio | Level */}
-
-<Canvas of={FoundationStories.DarkContrastFigure} />
+<Story of={FoundationStories.DarkContrastFigure} />
 
 ### Contrast requirements
 
@@ -97,8 +81,6 @@ Always test designs in both light and dark modes to verify:
 - Focus indicators have sufficient contrast
 
 ### Best practices
-
-{/* Figure placeholder: Do/Don't grid */}
 
 <Canvas of={FoundationStories.BestPracticesFigure} />
 
