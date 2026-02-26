@@ -141,8 +141,15 @@ a:hover {
 .sbdocs-content pre,
 .docblock-source {
   background: var(--background-section) !important;
-  border: 1px solid var(--global-gray-medium) !important;
   border-radius: var(--border-radius-sm);
+}
+
+.sbdocs-content pre {
+  border: 0 !important;
+}
+
+.docblock-source {
+  border: 1px solid var(--global-gray-medium) !important;
 }
 
 .docblock-source,
