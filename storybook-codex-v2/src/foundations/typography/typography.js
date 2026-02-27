@@ -536,3 +536,5 @@ export function createTypographyCodeReferenceFigure() {
     </section>
   `);
 }
+
+export { htmlSnippet, cssSnippet, jsSnippet, tokenSnippet };

@@ -259,3 +259,5 @@ export function createSpacingCssCodeFigure() {
 export function createSpacingTokenCodeFigure() {
   return figureShell(codeFigure(spacingTokenSnippet));
 }
+
+export { spacingCssSnippet, spacingTokenSnippet };

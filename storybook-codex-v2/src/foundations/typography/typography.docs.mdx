@@ -1,5 +1,6 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Canvas, Meta, Source, Story } from '@storybook/addon-docs/blocks';
 import * as FoundationStories from './typography.stories';
+import { cssSnippet, htmlSnippet, jsSnippet, tokenSnippet } from './typography';
 
 <Meta of={FoundationStories} name="Documentation" />
 
@@ -97,19 +98,19 @@ Long lines of text are difficult to read. The ideal range is `45`-`75` character
 
 ### HTML
 
-<Canvas of={FoundationStories.HtmlCodeReference} />
+<Source code={htmlSnippet} language="html" />
 
 ### CSS
 
-<Canvas of={FoundationStories.CssCodeReference} />
+<Source code={cssSnippet} language="css" />
 
 ### JavaScript
 
-<Canvas of={FoundationStories.JavaScriptCodeReference} />
+<Source code={jsSnippet} language="js" />
 
 ### Design tokens reference
 
-<Canvas of={FoundationStories.TokenCodeReference} />
+<Source code={tokenSnippet} language="text" />
 
 ## Resources
 

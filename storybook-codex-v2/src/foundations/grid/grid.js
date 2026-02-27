@@ -233,3 +233,5 @@ export function createGridCssCodeFigure() {
 export function createGridTokenCodeFigure() {
   return figureShell(codeFigure(gridTokenSnippet));
 }
+
+export { gridCssSnippet, gridTokenSnippet };

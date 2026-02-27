@@ -1,5 +1,6 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Canvas, Meta, Source, Story } from '@storybook/addon-docs/blocks';
 import * as FoundationStories from './colors.stories';
+import { cssReferenceSnippet, tokenReferenceSnippet } from './colors';
 
 <Meta of={FoundationStories} name="Documentation" />
 
@@ -88,13 +89,13 @@ Always test designs in both light and dark modes to verify:
 
 ### CSS
 
-<Canvas of={FoundationStories.CssCodeFigure} />
+<Source code={cssReferenceSnippet} language="css" />
 
 ### Design tokens reference
 
 Use this section to document token groups and semantic mappings as implemented in code. Primitive values and semantic resolutions must be verified against the Figma Variables table and all active modes before publishing.
 
-<Canvas of={FoundationStories.TokenCodeFigure} />
+<Source code={tokenReferenceSnippet} language="text" />
 
 ## Resources
 

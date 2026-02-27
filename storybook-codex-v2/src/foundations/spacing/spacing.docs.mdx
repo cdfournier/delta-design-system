@@ -1,5 +1,6 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Canvas, Meta, Source, Story } from '@storybook/addon-docs/blocks';
 import * as FoundationStories from './spacing.stories';
+import { spacingCssSnippet, spacingTokenSnippet } from './spacing';
 
 <Meta of={FoundationStories} name="Documentation" />
 
@@ -124,11 +125,11 @@ Horizontal spacing creates relationships and separations between elements:
 
 ### CSS
 
-<Canvas of={FoundationStories.CssCodeFigure} />
+<Source code={spacingCssSnippet} language="css" />
 
 ### Design tokens reference
 
-<Canvas of={FoundationStories.TokenCodeFigure} />
+<Source code={spacingTokenSnippet} language="text" />
 
 ## Resources
 
