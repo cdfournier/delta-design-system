@@ -1,0 +1,411 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import * as ComponentStories from './chips.stories';
+
+<Meta of={ComponentStories} title="Atoms/Chips/Documentation" />
+
+# Chips
+
+Chips are compact, interactive elements that represent an input, attribute, or action. They allow users to enter information, make selections, filter content, or trigger actions in a space-efficient way.
+
+## Anatomy
+
+Chips consist of:
+
+- **Container:** The pill-shaped background that holds all chip elements, using the component border-radius token.
+- **Label:** Text describing the chip's content or action. Always present.
+- **Avatar (optional):** A circular image representing a person or entity, positioned at the leading or trailing edge of the chip.
+- **Icon (optional):** A small decorative or functional icon, positioned as a leading or trailing element alongside the label.
+- **Toggle (optional):** A checkmark icon that appears when a chip is in the selected state.
+- **Dismiss button (optional):** A close button (`.button-chip`) that allows users to remove the chip. Has its own inner and outer padding tokens.
+
+<Canvas>
+  <Story of={ComponentStories.AnatomySamplePrimary} />
+</Canvas>
+
+## Variants
+
+Chips have two color variants. Within each variant, the type property controls whether an avatar appears and on which side, while boolean properties enable optional leading icons, trailing icons, a dismiss button, and a selected (checked) state.
+
+### Primary
+
+Uses the brand primary color. Use primary chips when chips are the main interactive or filtering element on a surface.
+
+<Canvas of={ComponentStories.PrimaryVariantFigure} />
+
+### Secondary
+
+Uses the brand secondary color. Use secondary chips for less prominent selections, or to create visual hierarchy alongside primary elements.
+
+<Canvas of={ComponentStories.SecondaryVariantFigure} />
+
+### With avatar
+
+The `avatar-left` and `avatar-right` types place a circular avatar image at the leading or trailing edge of the chip. Use for chips that represent a person or named entity. The chip container uses `<span>` for non-interactive avatar chips.
+
+<Canvas of={ComponentStories.WithAvatarVariantFigure} />
+
+### Selectable
+
+When the `checked` property is enabled, a checkmark icon appears inside the chip to indicate a selected state. Use `role="checkbox"` and `aria-checked` for correct accessibility semantics. Toggle the `checked` class and `aria-checked` attribute via JavaScript.
+
+
+### Dismissible
+
+When the `dismissable` property is enabled, a dismiss button (`.button-chip`) appears at the trailing edge of the chip. The chip container should be a `<span>`; the dismiss action uses a nested `<button>`. Use when users need to remove the chip from a set.
+
+
+## States
+
+Interactive chips respond visually to user interaction. Static chips (avatar type, non-interactive) do not have hover or focus states.
+
+### Default
+
+The resting state before any user interaction. Chips display their base background color.
+
+
+### Hover
+
+When the cursor moves over interactive chips, the background darkens to the `-dark` variant of the chip color token. The border color uses the base chip color token.
+
+
+### Focus
+
+Keyboard focus uses the same visual treatment as hover — the background darkens to the `-dark` color token. This provides consistent feedback across pointer and keyboard interactions. The browser default focus ring remains visible for users who rely on it.
+
+### Selected (checked)
+
+For selectable chips with `checked=yes`, a checkmark icon appears at the leading or trailing position depending on the chip type. The background color remains the base chip color (does not darken).
+
+
+## Typography
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Token</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Font size</td>
+      <td><code>components/chip/font-size</code></td>
+      <td>0.75rem / 12px</td>
+      <td>1.5rem / 24px</td>
+    </tr>
+    <tr>
+      <td>Line height</td>
+      <td><code>components/chip/line-height</code></td>
+      <td>0.75rem / 12px</td>
+      <td>1.5rem / 24px</td>
+    </tr>
+  </tbody>
+</table>
+
+## Spacing
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Token</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Padding (top/bottom)</td>
+      <td><code>components/chip/padding-t-b</code></td>
+      <td>0.5rem / 8px</td>
+      <td>0.75rem / 12px</td>
+    </tr>
+    <tr>
+      <td>Padding (left/right)</td>
+      <td><code>components/chip/padding-l-r</code></td>
+      <td>0.5rem / 8px</td>
+      <td>1.25rem / 20px</td>
+    </tr>
+    <tr>
+      <td>Gap (internal elements)</td>
+      <td><code>components/chip/padding-gap</code></td>
+      <td>0.125rem / 2px</td>
+      <td>0.25rem / 4px</td>
+    </tr>
+    <tr>
+      <td>Dismiss button padding (outer)</td>
+      <td><code>components/chip/button/padding-outer</code></td>
+      <td>0.25rem / 4px</td>
+      <td>0.625rem / 10px</td>
+    </tr>
+    <tr>
+      <td>Dismiss button padding (inner)</td>
+      <td><code>components/chip/button/padding-inner</code></td>
+      <td>0.125rem / 2px</td>
+      <td>0.25rem / 4px</td>
+    </tr>
+    <tr>
+      <td>Gap (between chips)</td>
+      <td><code>xs</code></td>
+      <td>0.125rem / 2px</td>
+      <td>0.25rem / 4px</td>
+    </tr>
+  </tbody>
+</table>
+
+## Border-radius
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Token</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Chip container</td>
+      <td><code>components/chip/border-radius</code></td>
+      <td>2rem / 32px (fixed)</td>
+      <td>2rem / 32px (fixed)</td>
+    </tr>
+    <tr>
+      <td>Avatar</td>
+      <td><code>border-radius/round</code></td>
+      <td>6.25rem / 100px (fixed)</td>
+      <td>6.25rem / 100px (fixed)</td>
+    </tr>
+    <tr>
+      <td>Dismiss button</td>
+      <td><code>border-radius/round</code></td>
+      <td>6.25rem / 100px (fixed)</td>
+      <td>6.25rem / 100px (fixed)</td>
+    </tr>
+  </tbody>
+</table>
+
+## Colors
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Token</th>
+      <th>Light mode</th>
+      <th>Dark mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Primary background (default)</td>
+      <td><code>components/chip/primary</code></td>
+      <td>#FF5247</td>
+      <td>#FFFFFF</td>
+    </tr>
+    <tr>
+      <td>Primary background (hover/focus)</td>
+      <td><code>components/chip/primary-dark</code></td>
+      <td>#B22E28</td>
+      <td>#FFFFFF</td>
+    </tr>
+    <tr>
+      <td>Secondary background (default)</td>
+      <td><code>components/chip/secondary</code></td>
+      <td>#003442</td>
+      <td>#FFFFFF</td>
+    </tr>
+    <tr>
+      <td>Secondary background (hover/focus)</td>
+      <td><code>components/chip/secondary-dark</code></td>
+      <td>#01232D</td>
+      <td>#FFFFFF</td>
+    </tr>
+    <tr>
+      <td>Label text</td>
+      <td><code>text/inverse</code></td>
+      <td>#FFFFFF</td>
+      <td>#000000</td>
+    </tr>
+    <tr>
+      <td>Dismiss button background</td>
+      <td><code>components/chip/button/primary</code> / <code>components/chip/button/secondary</code></td>
+      <td>#FFFFFF</td>
+      <td>#FFFFFF</td>
+    </tr>
+  </tbody>
+</table>
+
+**Light/Dark mode behavior:** Chips use an inverted color scheme in dark mode — backgrounds become white while text becomes black. In dark mode, all chip backgrounds resolve to `#FFFFFF` and label text resolves to `#000000` via `text/inverse`, maintaining contrast. Note that in dark mode, primary and secondary chips are visually indistinguishable by background color alone; ensure sufficient surrounding context differentiates them where both variants appear.
+
+## Accessibility
+
+### Keyboard navigation
+
+Chips must be fully keyboard accessible:
+
+- **Tab:** Moves focus to the next chip or interactive element.
+- **Shift + Tab:** Moves focus to the previous chip or interactive element.
+- **Enter or Space:** Activates the chip — toggles selection for selectable chips, or triggers the chip action.
+- **Delete or Backspace:** Removes a dismissible chip when the chip has focus.
+
+### Screen readers
+
+Use semantic HTML elements appropriate to the chips' behavior. Interactive chips use `<button>` elements. Static chips used purely for display (such as avatar chips with no action) use `<span>` elements. Selectable chips use `<button>` with `role="checkbox"` and `aria-checked` to communicate their current state. Dismissible chips use a `<span>` container with a nested `<button>` for the dismiss action.
+
+### ARIA attributes
+
+Key ARIA attributes for chips:
+
+- **aria-label:** Required on dismiss buttons to provide descriptive text identifying which chip will be removed — for example, "Remove Email chip".
+- **aria-checked:** Used with `role="checkbox"` on selectable chips. Set to `"true"` when selected and `"false"` when unselected.
+- **role="checkbox":** Applied to selectable chip buttons to indicate they can be toggled on and off.
+
+### Focus management
+
+Chips use the same darkened background color for both hover and focus states, providing consistent visual feedback for keyboard users. The browser default focus outline remains visible. When a dismissible chip is removed, move focus to the next chip in the group, or to the chip group container if no chips remain.
+
+### Color contrast
+
+Both primary (`#FF5247`) and secondary (`#003442`) chips backgrounds use white text (`#FFFFFF`) via the `text/inverse` token. Secondary chips comfortably meet WCAG 2.1 Level AA contrast requirements. Primary chips should be verified at their specific use context — the red background with white text passes AA at normal text sizes. In dark mode, all chips display black text on white backgrounds, which meets AAA.
+
+## Usage
+
+### When to use
+
+Use chips when you need to:
+
+- Display multiple selections or filters in a compact, scannable space.
+- Represent user input that can be modified or removed (such as tags or applied filters).
+- Allow users to toggle between multiple non-exclusive options.
+- Show selected items from a multi-select interaction.
+- Display contact suggestions or mentions in messaging and search interfaces.
+
+### When not to use
+
+Do not use chips when:
+
+- A primary navigation or critical action is needed — use buttons instead.
+- Only one option can be selected — consider radio buttons for better semantics.
+- Labels are too long to fit compactly — consider a select or checkbox list instead.
+- Communicating status or counts — use badges instead.
+
+### Content guidelines
+
+Guidelines for chips content:
+
+- **Keep labels concise:** Aim for 1-3 words. Chips are designed for compact contexts.
+- **Use clear language:** Labels should be immediately understandable without additional context.
+- **Be consistent:** Use parallel language patterns across chips in the same group.
+- **Avoid truncation:** If a label must be truncated to fit, it is too long for a chip.
+
+### Placement
+
+Group related chips together in a `<ul>` with `<li>` wrappers for proper list semantics and screen reader support. The chips group container uses `display: flex; flex-wrap: wrap` so chips reflow naturally to multiple lines rather than overflowing. Avoid placing chips inside other interactive components such as buttons or links.
+
+### Best practices
+
+#### Do
+
+- **Use the correct semantic element for the chips' role**  
+  Use `<button>` for interactive chips, `<span>` for static or display-only chips, and wrap groups in `<ul>` lists for proper accessibility.
+- **Provide descriptive dismiss button labels**  
+  Include specific `aria-label` values on dismiss buttons, for example "Remove Email chip", so screen reader users know exactly which chip will be removed.
+- **Keep chips groups visually consistent**  
+  Use one variant (primary or secondary) within a chips group. Mix variants only when you need to express deliberate hierarchy.
+- **Allow chips to wrap naturally**  
+  Let chips groups reflow to multiple lines rather than forcing horizontal scrolling or truncating labels.
+
+#### Don't
+
+- **Don't use chips for primary or critical actions**  
+  Chips are for selections and filters, not actions like submit or account deletion.
+- **Don't use overly long labels**  
+  If a label exceeds 3-4 words, reconsider the component.
+- **Don't forget removal feedback for dismissible chips**  
+  When a chip is removed, communicate the change to screen readers and move focus appropriately.
+- **Don't use chips when only one option is valid**  
+  Chips work best for multi-select or filtering scenarios; for single-select, use radio buttons or select.
+
+## Code reference
+
+### HTML
+
+```html
+<!-- Basic interactive chip -->
+<button class="chip chip-primary">Label</button>
+
+<!-- Static chip with avatar (leading) -->
+<span class="chip chip-secondary">
+  <span class="chip-avatar"></span>
+  Jane Smith
+</span>
+
+<!-- Static chip with avatar (trailing) -->
+<span class="chip chip-primary">
+  Jane Smith
+  <span class="chip-avatar"></span>
+</span>
+
+<!-- Selectable chip -->
+<button class="chip chip-secondary" role="checkbox" aria-checked="false">
+  <svg class="check-icon" viewBox="0 0 12 12" fill="none">
+    <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  Option
+</button>
+```
+
+### CSS
+
+```css
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--components/chip/padding-gap, 0.125rem);
+  padding: var(--components/chip/padding-t-b, 0.5rem)
+           var(--components/chip/padding-l-r, 0.5rem);
+  border-radius: var(--components/chip/border-radius, 2rem);
+  font-size: var(--components/chip/font-size, 0.75rem);
+  line-height: var(--components/chip/line-height, 0.75rem);
+  font-weight: 400;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  border: 1px solid transparent;
+}
+```
+
+### JavaScript
+
+```javascript
+document.querySelectorAll('.chip[role="checkbox"]').forEach((chip) => {
+  chip.addEventListener('click', () => {
+    const isChecked = chip.getAttribute('aria-checked') === 'true';
+    chip.setAttribute('aria-checked', String(!isChecked));
+    chip.classList.toggle('checked');
+  });
+});
+```
+
+### Design tokens reference
+
+```text
+--components/chip/font-size      Mobile: 0.75rem / 12px   ->   Widescreen: 1.5rem / 24px
+--components/chip/line-height    Mobile: 0.75rem / 12px   ->   Widescreen: 1.5rem / 24px
+--components/chip/padding-t-b    Mobile: 0.5rem / 8px     ->   Widescreen: 0.75rem / 12px
+--components/chip/padding-l-r    Mobile: 0.5rem / 8px     ->   Widescreen: 1.25rem / 20px
+--components/chip/primary        #FF5247
+--components/chip/secondary      #003442
+```
+
+## Resources
+
+- [ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/) - W3C patterns and widgets
+- [WebAIM](https://webaim.org/) - Web accessibility resources
+- [WCAG 2.1 Quick Reference](https://www.w3.org/WAI/WCAG21/quickref/) - Accessibility guidelines
+- [MDN Web Docs](https://developer.mozilla.org/) - HTML, CSS, JavaScript reference
+- [ARIA Checkbox Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/) - Guidance for checkbox role used in selectable chips

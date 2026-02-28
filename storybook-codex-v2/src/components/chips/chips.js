@@ -202,3 +202,64 @@ export function createChipsAnatomySamplePrimary({ sizeMode = 'mobile' } = {}) {
     </div>
   `);
 }
+
+export function createChipsVariantPrimarySample({ sizeMode = 'mobile' } = {}) {
+  return figureShell(`
+    <div class="dds-chip-row">
+      ${createChip({
+        label: 'Primary',
+        variant: 'primary',
+        interactive: false,
+        sizeMode,
+      })}
+    </div>
+  `);
+}
+
+export function createChipsVariantSecondarySample({ sizeMode = 'mobile' } = {}) {
+  return figureShell(`
+    <div class="dds-chip-row">
+      ${createChip({
+        label: 'Secondary',
+        variant: 'secondary',
+        interactive: false,
+        sizeMode,
+      })}
+    </div>
+  `);
+}
+
+export function createChipsVariantWithAvatarSample({ sizeMode = 'mobile' } = {}) {
+  return figureShell(`
+    <div class="dds-chip-row">
+      ${createChip({
+        label: 'Avatar left',
+        variant: 'primary',
+        leading: 'avatar',
+        interactive: false,
+        sizeMode,
+      })}
+      ${createChip({
+        label: 'Avatar right',
+        variant: 'primary',
+        trailing: 'avatar',
+        interactive: false,
+        sizeMode,
+      })}
+      ${createChip({
+        label: 'Avatar left',
+        variant: 'secondary',
+        leading: 'avatar',
+        interactive: false,
+        sizeMode,
+      })}
+      ${createChip({
+        label: 'Avatar right',
+        variant: 'secondary',
+        trailing: 'avatar',
+        interactive: false,
+        sizeMode,
+      })}
+    </div>
+  `);
+}
