@@ -242,7 +242,7 @@
   /* Input raw values (mobile/tablet px) */
   --components-input-text-font-size-px: 16;
   --components-input-text-line-height-px: 20;
-  --components-input-text-padding-px: 8;
+  --components-input-text-padding-px: 12;
   --components-input-text-padding-gap-px: 4;
   --components-input-text-border-radius-px: 4;
 
@@ -251,11 +251,12 @@
   --components-input-checkbox-size-px: 20;
   --components-input-checkbox-padding-px: 2;
   --components-input-checkbox-padding-gap-px: 8;
-  --components-input-checkbox-before-padding-px: 8;
+  --components-input-checkbox-before-padding-px: 4;
   --components-input-checkbox-border-radius-px: 4;
 
   --components-input-switch-width-px: 36;
   --components-input-switch-height-px: 20;
+  --components-input-switch-padding-px: 4;
   --components-input-switch-padding-gap-px: 8;
   --components-input-switch-border-radius-px: 16;
   --components-input-switch-thumb-size-px: 12;
@@ -298,6 +299,7 @@
 
   --components-input-switch-width: calc(var(--components-input-switch-width-px) / 16 * 1rem);
   --components-input-switch-height: calc(var(--components-input-switch-height-px) / 16 * 1rem);
+  --components-input-switch-padding: calc(var(--components-input-switch-padding-px) / 16 * 1rem);
   --components-input-switch-padding-gap: calc(var(--components-input-switch-padding-gap-px) / 16 * 1rem);
   --components-input-switch-border-radius: calc(var(--components-input-switch-border-radius-px) / 16 * 1rem);
   --components-input-switch-thumb-size: calc(var(--components-input-switch-thumb-size-px) / 16 * 1rem);
@@ -764,10 +766,11 @@
   --components-input-checkbox-size-px: 32;
   --components-input-checkbox-padding-px: 4;
   --components-input-checkbox-padding-gap-px: 16;
-  --components-input-checkbox-before-padding-px: 16;
+  --components-input-checkbox-before-padding-px: 6;
 
   --components-input-switch-width-px: 72;
   --components-input-switch-height-px: 32;
+  --components-input-switch-padding-px: 4;
   --components-input-switch-padding-gap-px: 16;
   --components-input-switch-border-radius-px: 32;
   --components-input-switch-thumb-size-px: 20;

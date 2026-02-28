@@ -1,0 +1,359 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import * as ComponentStories from './inputs.stories';
+
+<Meta of={ComponentStories} title="Atoms/Inputs/Documentation" />
+
+# Inputs
+
+Form inputs allow users to enter information, make selections, and provide data. The Delta Design System provides a comprehensive set of input components that are accessible, consistent, and easy to implement.
+
+## Anatomy
+
+Input components share common structural elements:
+
+- **Input field:** The interactive area where users enter or select data.
+- **Label:** Text that describes what information is expected.
+- **Border:** Visual container that defines the input boundary.
+- **Helper text (optional):** Additional guidance or instructions.
+- **Validation message (optional):** Feedback indicating valid, invalid, or error states.
+- **Icon (optional):** Visual indicator for input type, state, or action.
+
+<Canvas of={ComponentStories.AnatomyFigure} />
+
+## Variants
+
+The Delta Design System includes multiple input types, each designed for specific data entry needs.
+
+### Text input
+
+Single-line text fields for entering short text, email addresses, phone numbers, URLs, and numerical data. Text inputs are the most common input type.
+
+<Canvas of={ComponentStories.VariantTextFigure} />
+
+### Select
+
+Dropdown menus that allow users to choose a single option from a predefined list. Use selects when there are 5 or more options.
+
+<Canvas of={ComponentStories.VariantSelectFigure} />
+
+### Checkbox
+
+Square controls for selecting multiple options from a list or toggling a single option on or off.
+
+<Canvas of={ComponentStories.VariantCheckboxFigure} />
+
+### Radio
+
+Circular controls for selecting exactly one option from a group. Radio buttons should always appear in groups of two or more.
+
+<Canvas of={ComponentStories.VariantRadioFigure} />
+
+### Switch
+
+Toggle controls for turning a setting on or off. Switches provide immediate feedback and are best for settings that take effect instantly.
+
+<Canvas of={ComponentStories.VariantSwitchFigure} />
+
+### Password
+
+Secure text fields that obscure entered characters with bullets or asterisks. Typically include a show/hide toggle for visibility control.
+
+<Canvas of={ComponentStories.VariantPasswordFigure} />
+
+### Messages
+
+Contextual text that provides helper information, validation feedback, or error messages. Messages appear below input fields and use color coding to indicate state.
+
+<Canvas of={ComponentStories.VariantMessagesFigure} />
+
+## States
+
+All input components share common interaction states that provide visual feedback to users.
+
+### Default
+
+The resting state of an input before any user interaction. Borders use `global/gray-medium` (`#CCCCCC`).
+
+<Canvas of={ComponentStories.StateDefaultFigure} />
+
+### Hover
+
+The cursor-over state. No visual border change occurs on hover. The cursor changes to indicate the field is interactive.
+
+### Focus
+
+Applied when an input receives keyboard or pointer focus. The browser default focus outline is used. Never remove focus indicators.
+
+### Disabled
+
+Indicates the input is not currently interactive. Uses `status/disabled` (`#808080`) for both border and text color.
+
+<Canvas of={ComponentStories.StateDisabledFigure} />
+
+### Read-only
+
+Displays data that cannot be edited but can be read and copied. Uses `status/read-only` (`#333333`) for border differentiation.
+
+<Canvas of={ComponentStories.StateReadOnlyFigure} />
+
+### Valid
+
+Indicates successful validation. Uses `status/valid` (`#007000`) for border and validation message.
+
+<Canvas of={ComponentStories.StateValidFigure} />
+
+### Invalid
+
+Indicates validation failure. Uses `status/invalid` (`#C00C00`) for border and error message.
+
+<Canvas of={ComponentStories.StateInvalidFigure} />
+
+## Typography
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Token</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Input text — font size</td><td><code>components/input/text/font-size</code></td><td>1rem / 16px</td><td>1.5rem / 24px</td></tr>
+    <tr><td>Input text — line height</td><td><code>components/input/text/line-height</code></td><td>1.25rem / 20px</td><td>2rem / 32px</td></tr>
+    <tr><td>Checkbox &amp; radio label — font size</td><td><code>components/input/checkbox/font-size</code></td><td>1rem / 16px</td><td>1.5rem / 24px</td></tr>
+    <tr><td>Checkbox &amp; radio label — line height</td><td><code>components/input/checkbox/line-height</code></td><td>1.25rem / 20px</td><td>1.75rem / 28px</td></tr>
+    <tr><td>Message — font size</td><td><code>fine/font-size</code></td><td>0.625rem / 10px</td><td>1rem / 16px</td></tr>
+    <tr><td>Message — line height</td><td><code>fine/line-height</code></td><td>1.125rem / 18px</td><td>1.5rem / 24px</td></tr>
+    <tr><td>Label — font size</td><td><code>small/font-size</code></td><td>0.75rem / 12px</td><td>0.75rem / 12px (fixed)</td></tr>
+    <tr><td>Label — line height</td><td><code>small/line-height</code></td><td>1.25rem / 20px</td><td>1.25rem / 20px (fixed)</td></tr>
+  </tbody>
+</table>
+
+## Spacing
+
+### Text input, Select, and Password
+
+<table>
+  <thead><tr><th>Property</th><th>Token</th><th>Mobile/Tablet</th><th>Widescreen</th></tr></thead>
+  <tbody>
+    <tr><td>Padding</td><td><code>components/input/text/padding</code></td><td>0.5rem / 8px</td><td>0.75rem / 12px</td></tr>
+    <tr><td>Icon gap</td><td><code>components/input/text/padding-gap</code></td><td>0.25rem / 4px</td><td>0.25rem / 4px (fixed)</td></tr>
+  </tbody>
+</table>
+
+### Checkbox and Radio
+
+<table>
+  <thead><tr><th>Property</th><th>Token</th><th>Mobile/Tablet</th><th>Widescreen</th></tr></thead>
+  <tbody>
+    <tr><td>Internal padding</td><td><code>components/input/checkbox/padding</code></td><td>0.125rem / 2px</td><td>0.125rem / 2px (fixed)</td></tr>
+    <tr><td>Label gap</td><td><code>components/input/checkbox/padding-gap</code></td><td>0.5rem / 8px</td><td>0.5rem / 8px (fixed)</td></tr>
+    <tr><td>Radio inner padding</td><td><code>components/input/radio/before/padding</code></td><td>0.25rem / 4px</td><td>0.375rem / 6px</td></tr>
+  </tbody>
+</table>
+
+### Switch
+
+<table>
+  <thead><tr><th>Property</th><th>Token</th><th>Mobile/Tablet</th><th>Widescreen</th></tr></thead>
+  <tbody>
+    <tr><td>Track padding</td><td><code>components/input/switch/padding</code></td><td>0.25rem / 4px</td><td>0.25rem / 4px (fixed)</td></tr>
+    <tr><td>Label gap</td><td><code>components/input/switch/padding-gap</code></td><td>0.5rem / 8px</td><td>0.5rem / 8px (fixed)</td></tr>
+  </tbody>
+</table>
+
+## Border-radius
+
+<table>
+  <thead><tr><th>Element</th><th>Token</th><th>Mobile/Tablet</th><th>Widescreen</th></tr></thead>
+  <tbody>
+    <tr><td>Text input</td><td><code>components/input/text/border-radius</code></td><td>0.25rem / 4px</td><td>0.25rem / 4px (fixed)</td></tr>
+    <tr><td>Select</td><td><code>input/text/border-radius</code></td><td>0.25rem / 4px</td><td>0.25rem / 4px (fixed)</td></tr>
+    <tr><td>Password</td><td><code>input/text/border-radius</code></td><td>0.25rem / 4px</td><td>0.25rem / 4px (fixed)</td></tr>
+    <tr><td>Checkbox</td><td><code>input/checkbox/border-radius</code></td><td>0.25rem / 4px</td><td>0.25rem / 4px (fixed)</td></tr>
+    <tr><td>Radio</td><td><code>border-radius/round</code></td><td>6.25rem / 100px (circular)</td><td>6.25rem / 100px (circular)</td></tr>
+    <tr><td>Switch track</td><td><code>components/input/switch/border-radius</code></td><td>1rem / 16px</td><td>1rem / 16px (fixed)</td></tr>
+    <tr><td>Switch thumb</td><td><code>border-radius/round</code></td><td>6.25rem / 100px (circular)</td><td>6.25rem / 100px (circular)</td></tr>
+  </tbody>
+</table>
+
+## Colors
+
+<table>
+  <thead><tr><th>Element</th><th>Token</th><th>Light mode</th><th>Dark mode</th></tr></thead>
+  <tbody>
+    <tr><td>Default border</td><td><code>global/gray-medium</code></td><td>#CCCCCC</td><td>#CCCCCC</td></tr>
+    <tr><td>Input background</td><td><code>page/background</code></td><td>#FFFFFF</td><td>#01232D</td></tr>
+    <tr><td>Input text</td><td><code>text/default</code></td><td>#000000</td><td>#FFFFFF</td></tr>
+    <tr><td>Placeholder text</td><td><code>global/gray-dark</code></td><td>#919191</td><td>#919191</td></tr>
+    <tr><td>Label text</td><td><code>text/default</code></td><td>#000000</td><td>#FFFFFF</td></tr>
+    <tr><td>Select icon</td><td><code>text/default</code></td><td>#000000</td><td>#FFFFFF</td></tr>
+    <tr><td>Password toggle icon</td><td><code>brand/primary</code></td><td>#FF5247</td><td>#FF5247</td></tr>
+    <tr><td>Checkbox/radio/switch active</td><td><code>brand/primary</code></td><td>#FF5247</td><td>#FF5247</td></tr>
+    <tr><td>Valid state border/text</td><td><code>status/valid</code></td><td>#007000</td><td>#007000</td></tr>
+    <tr><td>Invalid state border/text</td><td><code>status/invalid</code></td><td>#C00C00</td><td>#C00C00</td></tr>
+    <tr><td>Disabled state border/text</td><td><code>status/disabled</code></td><td>#808080</td><td>#808080</td></tr>
+    <tr><td>Read-only state border</td><td><code>status/read-only</code></td><td>#333333</td><td>#333333</td></tr>
+  </tbody>
+</table>
+
+**Light/Dark mode behavior:** Background and text colors invert between light and dark modes for readability. Status colors and brand colors are mode-invariant.
+
+## Accessibility
+
+### Keyboard navigation
+
+All input components must be fully keyboard accessible:
+
+- **Tab:** Moves focus to the next input or interactive element.
+- **Shift + Tab:** Moves focus to the previous input or interactive element.
+- **Space:** Toggles checkboxes, radio buttons, and switches.
+- **Enter:** Submits forms when appropriate.
+- **Arrow keys:** Navigate between radio options in a group.
+
+### Screen readers
+
+Use semantic HTML and proper labeling. Every input must have an associated label. Group related options with `<fieldset>` and `<legend>`.
+
+### ARIA attributes
+
+- `aria-label` when no visible label is present.
+- `aria-labelledby` to associate the input with label text.
+- `aria-describedby` to connect helper/validation messages.
+- `aria-invalid="true"` when validation fails.
+- `aria-required="true"` for required fields.
+- `role="switch"` for switch controls.
+
+### Focus management
+
+Inputs rely on browser default focus indicators. Never remove focus indicators.
+
+### Touch targets
+
+Maintain minimum touch target size of at least `44px` where possible.
+
+### Color contrast
+
+Ensure border/text states meet WCAG contrast requirements in both light and dark modes.
+
+### Error prevention and recovery
+
+Provide descriptive validation feedback and clear recovery actions.
+
+## Usage
+
+### When to use
+
+Use input components when you need to:
+
+- Collect user-entered data in forms.
+- Let users choose one or more options.
+- Capture account credentials and secure values.
+- Provide settings toggles.
+- Display validation feedback close to the field.
+
+### When not to use
+
+Do not use input components when:
+
+- You only need navigation (use links/buttons).
+- Content is static and non-editable.
+- A simpler control communicates intent more clearly.
+
+### Content guidelines
+
+- Write clear, concise labels.
+- Use placeholder text for examples, not as labels.
+- Write actionable error messages.
+- Keep helper text brief.
+- Use sentence case.
+
+### Placement
+
+Stack inputs vertically for most forms. Place labels consistently above fields. Use multi-column layouts only for short, related groups.
+
+### Best practices
+
+<Story of={ComponentStories.BestPracticesFigure} />
+
+## Code reference
+
+### HTML
+
+```html
+<label for="email">Email address</label>
+<input id="email" type="email" class="input-text" aria-describedby="email-help" />
+<p id="email-help" class="message">We'll never share your email.</p>
+
+<label class="input-choice">
+  <input type="checkbox" />
+  <span>I agree to the terms</span>
+</label>
+
+<label class="input-switch">
+  <input type="checkbox" role="switch" />
+  <span>Enable notifications</span>
+</label>
+```
+
+### CSS
+
+```css
+.input-text {
+  font-size: var(--components-input-text-font-size);
+  line-height: var(--components-input-text-line-height);
+  padding: var(--components-input-text-padding);
+  border: 1px solid var(--global-gray-medium);
+  border-radius: var(--components-input-text-border-radius);
+  transition: all 0.25s ease 0s;
+}
+
+.input-text[aria-invalid='true'] {
+  border-color: var(--status-invalid);
+}
+```
+
+### JavaScript
+
+```javascript
+const input = document.querySelector('#email');
+const help = document.querySelector('#email-help');
+
+input.addEventListener('blur', () => {
+  const valid = input.value.includes('@');
+  input.setAttribute('aria-invalid', String(!valid));
+  help.textContent = valid ? 'Email address is valid.' : 'Please enter a valid email address.';
+  help.className = `message ${valid ? 'valid' : 'invalid'}`;
+});
+```
+
+### Design tokens reference
+
+```text
+--components/input/text/font-size          Mobile: 16px -> Widescreen: 24px
+--components/input/text/line-height        Mobile: 20px -> Widescreen: 30px
+--components/input/text/padding            Mobile:  8px -> Widescreen: 12px
+--components/input/text/border-radius      4px fixed
+--components/input/checkbox/size           Mobile: 20px -> Widescreen: 32px
+--components/input/switch/width            Mobile: 36px -> Widescreen: 72px
+--components/input/switch/height           Mobile: 20px -> Widescreen: 32px
+--status/valid                             #007000
+--status/invalid                           #C00C00
+--status/disabled                          #808080
+--status/read-only                         #333333
+```
+
+## Resources
+
+- [ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/)
+- [WebAIM](https://webaim.org/)
+- [WCAG 2.1 Quick Reference](https://www.w3.org/WAI/WCAG21/quickref/)
+- [MDN Web Docs](https://developer.mozilla.org/)
+
+## Source of truth
+
+- [Figma documentation node](https://www.figma.com/design/tHT8Je5cvRTXFN9XQ7XqhA/The-Delta-Design-System?node-id=1080-9444&t=zOydukeqb7ZUIS3O-4)
+- Figma Variables table and modes define all values.
+- HTML export may support copy/structure but must be verified against Figma.
