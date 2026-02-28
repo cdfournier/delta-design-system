@@ -1,6 +1,7 @@
 import {
   createChip,
   createChipsAnatomySamplePrimary,
+  createChipsBestPracticesFigure,
   createChipsStateSelectedSample,
   createChipsStateHoverSample,
   createChipsVariantDismissibleSample,
@@ -126,4 +127,9 @@ export const StateSelectedFigure = {
     createChipsStateSelectedSample({
       sizeMode: context.globals.breakpoint ?? 'mobile',
     }),
+};
+
+export const BestPracticesFigure = {
+  name: 'Best practices Do/Don’t grid',
+  render: () => createChipsBestPracticesFigure(),
 };

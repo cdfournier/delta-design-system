@@ -318,27 +318,7 @@ Group related chips together in a `<ul>` with `<li>` wrappers for proper list se
 
 ### Best practices
 
-#### Do
-
-- **Use the correct semantic element for the chips' role**  
-  Use `<button>` for interactive chips, `<span>` for static or display-only chips, and wrap groups in `<ul>` lists for proper accessibility.
-- **Provide descriptive dismiss button labels**  
-  Include specific `aria-label` values on dismiss buttons, for example "Remove Email chip", so screen reader users know exactly which chip will be removed.
-- **Keep chips groups visually consistent**  
-  Use one variant (primary or secondary) within a chips group. Mix variants only when you need to express deliberate hierarchy.
-- **Allow chips to wrap naturally**  
-  Let chips groups reflow to multiple lines rather than forcing horizontal scrolling or truncating labels.
-
-#### Don't
-
-- **Don't use chips for primary or critical actions**  
-  Chips are for selections and filters, not actions like submit or account deletion.
-- **Don't use overly long labels**  
-  If a label exceeds 3-4 words, reconsider the component.
-- **Don't forget removal feedback for dismissible chips**  
-  When a chip is removed, communicate the change to screen readers and move focus appropriately.
-- **Don't use chips when only one option is valid**  
-  Chips work best for multi-select or filtering scenarios; for single-select, use radio buttons or select.
+<Story of={ComponentStories.BestPracticesFigure} />
 
 ## Code reference
 

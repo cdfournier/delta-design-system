@@ -412,3 +412,34 @@ export function createChipsStateSelectedSample({ sizeMode = 'mobile' } = {}) {
     </div>
   `);
 }
+
+export function createChipsBestPracticesFigure() {
+  return `
+    <section class="dds-chips-fig">
+    <div class="dds-chips-fig__do-dont-grid">
+      <section class="dds-chips-fig__do">
+        <p><strong>Do</strong></p>
+        <p><strong>Use the correct semantic element</strong></p>
+        <p>Use interactive chips as buttons and keep static chips non-interactive.</p>
+        <p><strong>Use clear, compact labels</strong></p>
+        <p>Keep labels short and scannable so chip groups remain readable.</p>
+        <p><strong>Provide specific remove labels</strong></p>
+        <p>Use descriptive dismiss button labels for screen readers.</p>
+        <p><strong>Allow chips to wrap naturally</strong></p>
+        <p>Use wrapping groups instead of forcing horizontal overflow.</p>
+      </section>
+      <section class="dds-chips-fig__dont">
+        <p><strong>Don't</strong></p>
+        <p><strong>Don't use vague text</strong></p>
+        <p>Avoid generic labels that do not describe the chip's meaning.</p>
+        <p><strong>Don't use chips for primary actions</strong></p>
+        <p>Use buttons for primary calls to action and critical flows.</p>
+        <p><strong>Don't rely on color alone</strong></p>
+        <p>State and meaning should also be conveyed by structure and iconography.</p>
+        <p><strong>Don't truncate critical labels</strong></p>
+        <p>If text truncates, choose a different component pattern.</p>
+      </section>
+    </div>
+    </section>
+  `;
+}
