@@ -4,21 +4,10 @@ import avatarImage from './assets/chips-avatar.jpg';
 function iconArrow() {
   return `
     <span class="dds-chip__icon-art dds-chip__icon-art--arrow" aria-hidden="true">
-      <span class="dds-chip__icon-part dds-chip__icon-part--arrow-line">
-        <svg viewBox="0 0 8 1" class="dds-chip__icon-svg" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0.5 0.5H7.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-        </svg>
-      </span>
-      <span class="dds-chip__icon-part dds-chip__icon-part--arrow-tip-a">
-        <svg viewBox="0 0 4 4" class="dds-chip__icon-svg" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0.5 0.5L3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-        </svg>
-      </span>
-      <span class="dds-chip__icon-part dds-chip__icon-part--arrow-tip-b">
-        <svg viewBox="0 0 4 4" class="dds-chip__icon-svg" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0.5 3.5L3.5 0.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-        </svg>
-      </span>
+      <svg viewBox="0 0 24 24" class="dds-chip__icon-svg" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 12H19" fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M11 6L5 12L11 18" fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
     </span>
   `;
 }
@@ -257,6 +246,82 @@ export function createChipsVariantWithAvatarSample({ sizeMode = 'mobile' } = {})
         label: 'Avatar right',
         variant: 'secondary',
         trailing: 'avatar',
+        interactive: false,
+        sizeMode,
+      })}
+    </div>
+  `);
+}
+
+export function createChipsVariantWithIconsSample({ sizeMode = 'mobile' } = {}) {
+  return figureShell(`
+    <div class="dds-chip-row">
+      ${createChip({
+        label: 'Primary',
+        variant: 'primary',
+        leading: 'arrow',
+        interactive: false,
+        sizeMode,
+      })}
+      ${createChip({
+        label: 'Primary',
+        variant: 'primary',
+        trailing: 'arrow',
+        interactive: false,
+        sizeMode,
+      })}
+      ${createChip({
+        label: 'Secondary',
+        variant: 'secondary',
+        leading: 'arrow',
+        interactive: false,
+        sizeMode,
+      })}
+      ${createChip({
+        label: 'Secondary',
+        variant: 'secondary',
+        trailing: 'arrow',
+        interactive: false,
+        sizeMode,
+      })}
+    </div>
+  `);
+}
+
+export function createChipsVariantSelectableSample({ sizeMode = 'mobile' } = {}) {
+  return figureShell(`
+    <div class="dds-chip-row">
+      ${createChip({
+        label: 'Unchecked',
+        variant: 'primary',
+        interactive: false,
+        sizeMode,
+      })}
+      ${createChip({
+        label: 'Checked',
+        variant: 'primary',
+        selected: true,
+        interactive: false,
+        sizeMode,
+      })}
+    </div>
+  `);
+}
+
+export function createChipsVariantDismissibleSample({ sizeMode = 'mobile' } = {}) {
+  return figureShell(`
+    <div class="dds-chip-row">
+      ${createChip({
+        label: 'Primary',
+        variant: 'primary',
+        trailing: 'close',
+        interactive: false,
+        sizeMode,
+      })}
+      ${createChip({
+        label: 'Secondary',
+        variant: 'secondary',
+        trailing: 'close',
         interactive: false,
         sizeMode,
       })}

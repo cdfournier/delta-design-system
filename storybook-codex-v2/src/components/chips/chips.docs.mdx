@@ -44,15 +44,23 @@ The `avatar-left` and `avatar-right` types place a circular avatar image at the 
 
 <Canvas of={ComponentStories.WithAvatarVariantFigure} />
 
+### With icons
+
+Add icons to provide additional context or visual categorization.
+
+<Canvas of={ComponentStories.WithIconsVariantFigure} />
+
 ### Selectable
 
 When the `checked` property is enabled, a checkmark icon appears inside the chip to indicate a selected state. Use `role="checkbox"` and `aria-checked` for correct accessibility semantics. Toggle the `checked` class and `aria-checked` attribute via JavaScript.
 
+<Canvas of={ComponentStories.SelectableVariantFigure} />
 
 ### Dismissible
 
 When the `dismissable` property is enabled, a dismiss button (`.button-chip`) appears at the trailing edge of the chip. The chip container should be a `<span>`; the dismiss action uses a nested `<button>`. Use when users need to remove the chip from a set.
 
+<Canvas of={ComponentStories.DismissibleVariantFigure} />
 
 ## States
 

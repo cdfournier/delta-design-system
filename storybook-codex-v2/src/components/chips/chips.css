@@ -143,6 +143,23 @@
   aspect-ratio: 1 / 1;
 }
 
+.dds-chip__accessory--icon-arrow {
+  width: var(--components-chip-arrow-slot-size);
+  height: var(--components-chip-arrow-slot-size);
+  padding: var(--components-chip-arrow-slot-padding);
+  align-self: stretch;
+  box-sizing: border-box;
+}
+
+.dds-chip__accessory--icon-arrow .dds-chip__icon-wrap {
+  width: var(--components-chip-arrow-icon-size);
+  height: var(--components-chip-arrow-icon-size);
+  max-width: 100%;
+  max-height: 100%;
+  padding: 0;
+  aspect-ratio: 1 / 1;
+}
+
 .dds-chip__accessory--toggle {
   display: flex;
   width: auto;
@@ -204,6 +221,11 @@
 .dds-chip__icon-art--close .dds-chip__icon-part--close-line-a,
 .dds-chip__icon-art--close .dds-chip__icon-part--close-line-b {
   inset: 25%;
+}
+
+.dds-chip__accessory--trailing.dds-chip__accessory--icon-arrow .dds-chip__icon-art--arrow {
+  transform: scaleX(-1);
+  transform-origin: center;
 }
 
 .dds-chip__avatar {
@@ -279,6 +301,9 @@
   --components-chip-mail-slot-size-px: 28;
   --components-chip-mail-slot-padding-px: 2;
   --components-chip-mail-icon-size-px: 24;
+  --components-chip-arrow-slot-size-px: 28;
+  --components-chip-arrow-slot-padding-px: 2;
+  --components-chip-arrow-icon-size-px: 24;
   --components-chip-avatar-size-px: 28;
   --components-chip-close-size-px: 24;
   --components-chip-close-padding-outer-px: 4;
@@ -293,6 +318,9 @@
   --components-chip-mail-slot-size: calc(28 / 16 * 1rem);
   --components-chip-mail-slot-padding: calc(2 / 16 * 1rem);
   --components-chip-mail-icon-size: calc(24 / 16 * 1rem);
+  --components-chip-arrow-slot-size: calc(28 / 16 * 1rem);
+  --components-chip-arrow-slot-padding: calc(2 / 16 * 1rem);
+  --components-chip-arrow-icon-size: calc(24 / 16 * 1rem);
   --components-chip-close-size: calc(24 / 16 * 1rem);
   --components-chip-close-padding-outer: calc(4 / 16 * 1rem);
   --components-chip-close-padding-inner: calc(2 / 16 * 1rem);
@@ -311,6 +339,9 @@
   --components-chip-mail-slot-size-px: 48;
   --components-chip-mail-slot-padding-px: 2;
   --components-chip-mail-icon-size-px: 44;
+  --components-chip-arrow-slot-size-px: 48;
+  --components-chip-arrow-slot-padding-px: 2;
+  --components-chip-arrow-icon-size-px: 44;
   --components-chip-avatar-size-px: 48;
   --components-chip-close-size-px: 24;
   --components-chip-close-padding-outer-px: 10;
@@ -325,6 +356,9 @@
   --components-chip-mail-slot-size: calc(48 / 16 * 1rem);
   --components-chip-mail-slot-padding: calc(2 / 16 * 1rem);
   --components-chip-mail-icon-size: calc(44 / 16 * 1rem);
+  --components-chip-arrow-slot-size: calc(48 / 16 * 1rem);
+  --components-chip-arrow-slot-padding: calc(2 / 16 * 1rem);
+  --components-chip-arrow-icon-size: calc(44 / 16 * 1rem);
   --components-chip-close-size: calc(24 / 16 * 1rem);
   --components-chip-close-padding-outer: calc(10 / 16 * 1rem);
   --components-chip-close-padding-inner: calc(4 / 16 * 1rem);

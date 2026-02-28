@@ -1,6 +1,9 @@
 import {
   createChip,
   createChipsAnatomySamplePrimary,
+  createChipsVariantDismissibleSample,
+  createChipsVariantSelectableSample,
+  createChipsVariantWithIconsSample,
   createChipsVariantSecondarySample,
   createChipsVariantPrimarySample,
   createChipsVariantWithAvatarSample,
@@ -79,6 +82,30 @@ export const WithAvatarVariantFigure = {
   name: 'With Avatar Variant Figure',
   render: (_args, context) =>
     createChipsVariantWithAvatarSample({
+      sizeMode: context.globals.breakpoint ?? 'mobile',
+    }),
+};
+
+export const WithIconsVariantFigure = {
+  name: 'With Icons Variant Figure',
+  render: (_args, context) =>
+    createChipsVariantWithIconsSample({
+      sizeMode: context.globals.breakpoint ?? 'mobile',
+    }),
+};
+
+export const SelectableVariantFigure = {
+  name: 'Selectable Variant Figure',
+  render: (_args, context) =>
+    createChipsVariantSelectableSample({
+      sizeMode: context.globals.breakpoint ?? 'mobile',
+    }),
+};
+
+export const DismissibleVariantFigure = {
+  name: 'Dismissible Variant Figure',
+  render: (_args, context) =>
+    createChipsVariantDismissibleSample({
       sizeMode: context.globals.breakpoint ?? 'mobile',
     }),
 };
