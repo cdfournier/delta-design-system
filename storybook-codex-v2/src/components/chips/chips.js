@@ -162,6 +162,17 @@ function figureShell(content) {
   return `<section class="dds-chips-fig"><div class="dds-chips-fig__card">${content}</div></section>`;
 }
 
+function figureArrow() {
+  return `
+    <span class="dds-chip-hover-fig__arrow" aria-hidden="true">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 12H19" fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M13 6L19 12L13 18" fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </span>
+  `;
+}
+
 export function createChipsAnatomySamplePrimary({ sizeMode = 'mobile' } = {}) {
   return figureShell(`
     <div class="dds-chip-row">
@@ -322,6 +333,79 @@ export function createChipsVariantDismissibleSample({ sizeMode = 'mobile' } = {}
         label: 'Secondary',
         variant: 'secondary',
         trailing: 'close',
+        interactive: false,
+        sizeMode,
+      })}
+    </div>
+  `);
+}
+
+export function createChipsStateHoverSample({ sizeMode = 'mobile' } = {}) {
+  return figureShell(`
+    <div class="dds-chip-hover-fig">
+      <div class="dds-chip-hover-fig__group">
+      ${createChip({
+        label: 'Chip',
+        variant: 'primary',
+        interactive: true,
+        sizeMode,
+      })}
+        ${figureArrow()}
+      ${createChip({
+        label: 'Chip',
+        variant: 'primary',
+        state: 'hover',
+        interactive: true,
+        sizeMode,
+      })}
+      </div>
+      <span class="dds-chip-hover-fig__divider" aria-hidden="true"></span>
+      <div class="dds-chip-hover-fig__group">
+      ${createChip({
+        label: 'Chip',
+        variant: 'secondary',
+        interactive: true,
+        sizeMode,
+      })}
+        ${figureArrow()}
+      ${createChip({
+        label: 'Chip',
+        variant: 'secondary',
+        state: 'hover',
+        interactive: true,
+        sizeMode,
+      })}
+      </div>
+    </div>
+  `);
+}
+
+export function createChipsStateSelectedSample({ sizeMode = 'mobile' } = {}) {
+  return figureShell(`
+    <div class="dds-chip-row">
+      ${createChip({
+        label: 'Unchecked',
+        variant: 'primary',
+        interactive: false,
+        sizeMode,
+      })}
+      ${createChip({
+        label: 'Checked',
+        variant: 'primary',
+        selected: true,
+        interactive: false,
+        sizeMode,
+      })}
+      ${createChip({
+        label: 'Unchecked',
+        variant: 'secondary',
+        interactive: false,
+        sizeMode,
+      })}
+      ${createChip({
+        label: 'Checked',
+        variant: 'secondary',
+        selected: true,
         interactive: false,
         sizeMode,
       })}

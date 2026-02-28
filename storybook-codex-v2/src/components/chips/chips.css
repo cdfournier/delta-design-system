@@ -392,3 +392,37 @@
   align-items: center;
   gap: var(--space-md);
 }
+
+.dds-chip-hover-fig {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.dds-chip-hover-fig__group {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.dds-chip-hover-fig__divider {
+  width: 1px;
+  align-self: stretch;
+  background: var(--global-gray-dark);
+}
+
+.dds-chip-hover-fig__arrow {
+  width: calc(24 / 16 * 1rem);
+  height: calc(24 / 16 * 1rem);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--global-black);
+  flex: 0 0 auto;
+}
+
+.dds-chip-hover-fig__arrow svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}

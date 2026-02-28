@@ -1,6 +1,8 @@
 import {
   createChip,
   createChipsAnatomySamplePrimary,
+  createChipsStateSelectedSample,
+  createChipsStateHoverSample,
   createChipsVariantDismissibleSample,
   createChipsVariantSelectableSample,
   createChipsVariantWithIconsSample,
@@ -106,6 +108,22 @@ export const DismissibleVariantFigure = {
   name: 'Dismissible Variant Figure',
   render: (_args, context) =>
     createChipsVariantDismissibleSample({
+      sizeMode: context.globals.breakpoint ?? 'mobile',
+    }),
+};
+
+export const StateHoverFigure = {
+  name: 'State Figure - Hover',
+  render: (_args, context) =>
+    createChipsStateHoverSample({
+      sizeMode: context.globals.breakpoint ?? 'mobile',
+    }),
+};
+
+export const StateSelectedFigure = {
+  name: 'State Figure - Selected',
+  render: (_args, context) =>
+    createChipsStateSelectedSample({
       sizeMode: context.globals.breakpoint ?? 'mobile',
     }),
 };
