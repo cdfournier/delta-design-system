@@ -156,7 +156,7 @@ export function createContentBestPracticesFigure() {
   return `
     <div class="dds-content-doc__do-dont-grid">
       <section class="dds-content-doc__do">
-        <p><strong>Do</strong></p>
+        <h4>Do</h4>
         <p><strong>Maintain proper heading hierarchy</strong></p>
         <p>Use heading levels sequentially to create clear document structure and enable screen reader navigation.</p>
         <p><strong>Keep content focused and scannable</strong></p>
@@ -168,7 +168,7 @@ export function createContentBestPracticesFigure() {
       </section>
 
       <section class="dds-content-doc__dont">
-        <p><strong>Don't</strong></p>
+        <h4>Don't</h4>
         <p><strong>Don't skip heading levels</strong></p>
         <p>Avoid jumping from h1 to h3 or using heading levels out of sequence. This breaks accessibility.</p>
         <p><strong>Don't overload with optional elements</strong></p>

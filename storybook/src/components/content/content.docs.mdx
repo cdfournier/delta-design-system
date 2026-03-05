@@ -23,13 +23,8 @@ The Content component consists of:
 
 The Content component offers two heading/body combinations. All optional elements (eyebrow, CTA, footer) are disabled by default.
 
-### title+p
-
-Large title-styled heading paired with body text. Ideal for hero sections and prominent content blocks.
-
-### h+p
-
-Standard h2 heading paired with body text. Suitable for section headings and general content areas.
+- **title+p:** Large title-styled heading paired with body text. Ideal for hero sections and prominent content blocks.
+- **h+p:** Standard h2 heading paired with body text. Suitable for section headings and general content areas.
 
 ### Optional elements
 
@@ -51,12 +46,12 @@ Each element can be independently enabled:
     </tr>
   </thead>
   <tbody>
-    <tr><td>Container padding</td><td><code>xl</code></td><td>1rem / 16px</td><td>2rem / 32px</td></tr>
-    <tr><td>Heading to body gap</td><td><code>h1-title+p/padding-top</code></td><td>0.25rem / 4px</td><td>1rem / 16px</td></tr>
-    <tr><td>Eyebrow bottom spacing</td><td><code>xs</code></td><td>0.125rem / 2px</td><td>0.25rem / 4px</td></tr>
-    <tr><td>CTA top spacing</td><td><code>xl</code></td><td>1rem / 16px</td><td>2rem / 32px</td></tr>
-    <tr><td>CTA items gap</td><td><code>md</code></td><td>0.5rem / 8px</td><td>1rem / 16px</td></tr>
-    <tr><td>Footer top spacing</td><td><code>xl</code></td><td>1rem / 16px</td><td>2rem / 32px</td></tr>
+    <tr><td>padding</td><td><code>xl</code></td><td>1rem / 16px</td><td>2rem / 32px</td></tr>
+    <tr><td>p padding-top</td><td><code>sm</code></td><td>0.25rem / 4px</td><td>0.5rem / 8px</td></tr>
+    <tr><td>Eyebrow padding-bottom</td><td><code>xs</code></td><td>0.125rem / 2px</td><td>0.25rem / 4px</td></tr>
+    <tr><td>CTA padding-top</td><td><code>xl</code></td><td>1rem / 16px</td><td>2rem / 32px</td></tr>
+    <tr><td>CTA gap</td><td><code>md</code></td><td>0.5rem / 8px</td><td>1rem / 16px</td></tr>
+    <tr><td>Footer padding-top</td><td><code>xl</code></td><td>1rem / 16px</td><td>2rem / 32px</td></tr>
   </tbody>
 </table>
 
@@ -66,7 +61,7 @@ The Content component is a structural layout pattern with no interactive element
 
 ### Keyboard navigation
 
-The Content component itself has no keyboard behavior. When CTA elements are present, interactive elements (links and buttons) must be reachable by Tab and activated by Enter or Space per their respective component specifications.
+The Content component itself has no keyboard behaviour. When CTA elements are present, interactive elements (links and buttons) must be reachable by Tab and activated by Enter or Space per their respective component specifications.
 
 ### Screen readers
 
@@ -80,7 +75,7 @@ No ARIA attributes are required on the Content container itself. Any CTA links m
 
 ### Focus management
 
-The Content component introduces no custom focus behavior. Ensure all CTA links and buttons display visible focus indicators meeting WCAG 2.1 requirements. Refer to the Button and Link component documentation for focus state specifications.
+The Content component introduces no custom focus behaviour. Ensure all CTA links and buttons display visible focus indicators meeting WCAG 2.1 requirements. Refer to the Button and Link component documentation for focus state specifications.
 
 ### Color contrast
 
@@ -287,3 +282,9 @@ Best practices for Content component usage:
 - [WCAG 2.1 Quick Reference](https://www.w3.org/WAI/WCAG21/quickref/) - Accessibility guidelines
 - [MDN Web Docs](https://developer.mozilla.org/) - HTML, CSS, JavaScript reference
 - [W3C: Headings](https://www.w3.org/WAI/tutorials/page-structure/headings/) - Proper heading structure and hierarchy
+
+## Source of truth
+
+- [Figma documentation node](https://www.figma.com/design/tHT8Je5cvRTXFN9XQ7XqhA/The-Delta-Design-System?node-id=1108-8463&t=OBDhPNDeR3TTWYF7-11)
+- [Figma component node](https://www.figma.com/design/tHT8Je5cvRTXFN9XQ7XqhA/The-Delta-Design-System?node-id=380-1025&t=OBDhPNDeR3TTWYF7-11)
+- Figma Variables table and modes define all values.

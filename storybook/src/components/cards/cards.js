@@ -146,33 +146,33 @@ export function createCardsBestPracticesFigure() {
   return `
     <div class="dds-cards-doc__do-dont-grid">
       <section class="dds-cards-doc__do">
-        <p><strong>Do</strong></p>
+        <h4>Do</h4>
         <p><strong>Group related content together</strong></p>
-        <p>Cards should contain information that naturally belongs together and supports fast scanning.</p>
+        <p>Cards should contain information that naturally belongs together, creating clear mental models for users scanning the page.</p>
 
         <p><strong>Use consistent card variants within a group</strong></p>
-        <p>Within a row or grid, keep orientation and dimensions consistent.</p>
+        <p>Within a single row or grid, cards should share the same orientation and maintain consistent dimensions for visual harmony.</p>
 
-        <p><strong>Balance information density</strong></p>
-        <p>Use similar content length across adjacent cards to improve rhythm and readability.</p>
+        <p><strong>Design cards with similar information density</strong></p>
+        <p>When displaying cards together, keep content amounts roughly balanced so cards feel cohesive and users can scan efficiently.</p>
 
         <p><strong>Optimize images for performance</strong></p>
-        <p>Use properly sized, compressed images and lazy loading where appropriate.</p>
+        <p>Use appropriate image formats, compression, and lazy loading to ensure fast page loads, especially in card-heavy grid layouts.</p>
       </section>
 
       <section class="dds-cards-doc__dont">
-        <p><strong>Don't</strong></p>
+        <h4>Don't</h4>
         <p><strong>Don't overuse cards</strong></p>
-        <p>Too many cards create visual clutter and flatten hierarchy.</p>
+        <p>Too many cards create visual clutter. Use them purposefully to organize meaningful content groups, not as a default wrapper for every piece of content.</p>
 
         <p><strong>Don't nest cards within cards</strong></p>
-        <p>Nested cards create unnecessary complexity and reduce scannability.</p>
+        <p>Nested cards create confusing hierarchy and reduce scannability. Keep card structure flat.</p>
 
         <p><strong>Don't use cards for single data points</strong></p>
-        <p>Simple isolated facts usually do not need a full container pattern.</p>
+        <p>Simple, isolated information doesn't need a card container. Reserve cards for grouped content with more than one element.</p>
 
-        <p><strong>Don't mix orientations randomly</strong></p>
-        <p>Use orientation changes intentionally, not arbitrarily.</p>
+        <p><strong>Don't mix card orientations randomly</strong></p>
+        <p>Use consistent orientations within a section. Only vary strategically, for example alternating reversed cards in a long list, not arbitrarily.</p>
       </section>
     </div>
   `;

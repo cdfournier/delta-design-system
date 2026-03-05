@@ -31,7 +31,6 @@
 .dds-card__figure {
   margin: 0;
   overflow: hidden;
-  border-radius: var(--components-card-border-radius);
   min-height: var(--components-card-figure-min-height);
   background: var(--background-section);
 }
@@ -39,6 +38,7 @@
 .dds-card--vertical .dds-card__figure {
   width: 100%;
   aspect-ratio: var(--components-card-figure-aspect-ratio);
+  border-radius: var(--components-card-border-radius) var(--components-card-border-radius) 0 0;
 }
 
 .dds-card--horizontal .dds-card__figure {
@@ -171,6 +171,16 @@
   line-height: var(--typography-body-line-height);
 }
 
+.dds-cards-doc__do h4,
+.dds-cards-doc__dont h4 {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-weight: 400;
+  font-size: var(--typography-h4-font-size);
+  line-height: var(--typography-h4-line-height);
+  color: var(--text-default);
+}
+
 @media (min-width: 48rem) {
   .dds-card--horizontal {
     flex-direction: row;
@@ -184,6 +194,7 @@
     aspect-ratio: auto;
     align-self: stretch;
     min-width: 0;
+    border-radius: var(--components-card-border-radius) 0 0 var(--components-card-border-radius);
   }
 
   .dds-card--horizontal .dds-card__content {
@@ -194,9 +205,21 @@
   .dds-card--horizontal.dds-card--reverse {
     flex-direction: row-reverse;
   }
+
+  .dds-card--horizontal.dds-card--reverse .dds-card__figure {
+    border-radius: 0 var(--components-card-border-radius) var(--components-card-border-radius) 0;
+  }
 }
 
 @media (max-width: 48rem) {
+  .dds-card--horizontal .dds-card__figure {
+    border-radius: var(--components-card-border-radius) var(--components-card-border-radius) 0 0;
+  }
+
+  .dds-card--horizontal.dds-card--reverse .dds-card__figure {
+    border-radius: 0 0 var(--components-card-border-radius) var(--components-card-border-radius);
+  }
+
   .dds-cards-fig__row--vertical > .dds-card {
     flex: 1 1 100%;
   }
