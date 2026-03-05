@@ -1,0 +1,307 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import * as ComponentStories from './links.stories';
+
+<Meta of={ComponentStories} title="Atoms/Links/Documentation" />
+
+# Links
+
+Links are navigational elements that move users between pages, sections, and resources. They must remain visually distinct from surrounding text and preserve expected browser behavior.
+
+## Anatomy
+
+A link consists of:
+
+- **Link text:** The clickable text label that describes the destination.
+- **Underline:** Persistent visual indicator that text is interactive.
+- **Arrow icon (optional):** A trailing directional icon used when additional directional emphasis is helpful.
+
+<Canvas of={ComponentStories.AnatomyFigure} />
+
+## Variants
+
+Links support three size variants tied to typography tokens.
+
+### P (Paragraph)
+
+Standard size for body copy and primary inline navigation.
+
+<Canvas of={ComponentStories.VariantPFigure} />
+
+### Small
+
+Compact size for support links, dense layouts, and utility contexts.
+
+<Canvas of={ComponentStories.VariantSmallFigure} />
+
+### Fine
+
+Smallest size for tertiary links, legal text contexts, and footnotes.
+
+<Canvas of={ComponentStories.VariantFineFigure} />
+
+## States
+
+### Default
+
+The initial state uses the `text/link` token.
+
+<Canvas of={ComponentStories.StateDefaultFigure} />
+
+### Hover
+
+On hover, color changes to `text/hover`, and when an arrow is present, the text-icon gap increases from `xs` to `sm`.
+
+<Canvas of={ComponentStories.StateHoverFigure} />
+
+### Visited, focus, and active
+
+The Delta Design System does not define custom visited, focus, or active styles for links. Browser defaults are preserved for familiarity and accessibility.
+
+## Typography
+
+All links use Montserrat Bold. Size and line height are token-driven and responsive.
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Token</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>P link font size</td><td><code>p/font-size</code></td><td>1rem / 16px</td><td>1.5rem / 24px</td></tr>
+    <tr><td>P link line height</td><td><code>p/line-height</code></td><td>1.5rem / 24px</td><td>2.25rem / 36px</td></tr>
+    <tr><td>Small link font size</td><td><code>small/font-size</code></td><td>0.75rem / 12px</td><td>1.25rem / 20px</td></tr>
+    <tr><td>Small link line height</td><td><code>small/line-height</code></td><td>1.25rem / 20px</td><td>1.875rem / 30px</td></tr>
+    <tr><td>Fine link font size</td><td><code>fine/font-size</code></td><td>0.625rem / 10px</td><td>1rem / 16px</td></tr>
+    <tr><td>Fine link line height</td><td><code>fine/line-height</code></td><td>1.125rem / 18px</td><td>1.5rem / 24px</td></tr>
+  </tbody>
+</table>
+
+## Spacing
+
+Arrow spacing is token-driven and increases on hover.
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Token</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Gap (default, with arrow)</td><td><code>xs</code></td><td>0.125rem / 2px</td><td>0.25rem / 4px</td></tr>
+    <tr><td>Gap (hover, with arrow)</td><td><code>sm</code></td><td>0.25rem / 4px</td><td>0.5rem / 8px</td></tr>
+  </tbody>
+</table>
+
+## Colors
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Token</th>
+      <th>Light mode</th>
+      <th>Dark mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Link text (default)</td><td><code>text/link</code></td><td>#FF5247 (brand/primary)</td><td>#FFFFFF (global/white)</td></tr>
+    <tr><td>Link text (hover)</td><td><code>text/hover</code></td><td>#003442 (brand/secondary)</td><td>#FF5247 (brand/primary)</td></tr>
+  </tbody>
+</table>
+
+**Light/dark mode behavior:** In light mode, links are brand primary by default and brand secondary on hover. In dark mode, links are white by default and brand primary on hover.
+
+## Accessibility
+
+### Keyboard navigation
+
+Links must be fully keyboard accessible:
+
+- **Tab:** Moves focus to the next link or interactive element.
+- **Shift + Tab:** Moves focus to the previous link or interactive element.
+- **Enter:** Activates the focused link.
+
+### Screen readers
+
+Use semantic `<a>` elements and descriptive link text that makes sense out of context. Avoid generic labels like "click here" without surrounding context.
+
+### ARIA attributes
+
+- **aria-label:** Adds context when visible text is not specific enough.
+- **aria-describedby:** Associates additional explanatory content with the link.
+- **aria-current="page":** Marks current-page links in navigation.
+- **target="_blank" + rel="noopener noreferrer":** Use when opening a new tab/window.
+
+### Focus management
+
+Browser default focus indicators are preserved. Do not remove focus outlines.
+
+### Touch targets
+
+- Minimum target size should be `44px × 44px` on touch devices.
+- Increase clickable area with padding when needed.
+- Maintain spacing between adjacent links to reduce accidental taps.
+
+### Color contrast
+
+Link colors must maintain WCAG AA contrast. Underline is required so links are not conveyed by color alone.
+
+## Usage
+
+### When to use
+
+Use links when you need to:
+
+- Navigate to another page or route.
+- Navigate to external resources.
+- Jump to anchors in the current page.
+- Link to files, email addresses, or phone numbers.
+
+### When not to use
+
+Do not use links when:
+
+- Triggering actions (submit, toggle, open modal) instead of navigation.
+- Changing data or application state.
+- Presenting a primary non-navigational call-to-action.
+
+### Content guidelines
+
+- **Use descriptive text:** Link text should communicate destination clearly.
+- **Keep labels concise:** Use only the words required for clarity.
+- **Keep labels unique:** Adjacent links should be distinguishable.
+- **Use sentence case:** Match surrounding content case conventions.
+- **Use arrow icon intentionally:** Reserve for directional emphasis, not every link.
+
+### Best practices
+
+<Story of={ComponentStories.BestPracticesFigure} />
+
+## Code reference
+
+### HTML
+
+```html
+<!-- Basic link -->
+<a href="/about">About us</a>
+
+<!-- Link with arrow icon -->
+<a href="/learn-more" class="link-with-arrow">
+  Learn more
+  <svg viewBox="0 0 16 16" aria-hidden="true">
+    <path d="M8 0L6.59 1.41 12.17 7H0v2h12.17l-5.58 5.59L8 16l8-8z" />
+  </svg>
+</a>
+
+<!-- External link -->
+<a href="https://example.com" target="_blank" rel="noopener noreferrer">
+  Visit external site
+  <svg viewBox="0 0 16 16" aria-hidden="true">
+    <path d="M8 0L6.59 1.41 12.17 7H0v2h12.17l-5.58 5.59L8 16l8-8z" />
+  </svg>
+</a>
+
+<!-- Anchor link -->
+<a href="#section-id">Jump to section</a>
+
+<!-- Current page indicator -->
+<a href="/products" aria-current="page">Products</a>
+
+<!-- Link with additional context -->
+<a href="/report.pdf" aria-label="Download 2024 Annual Report PDF">
+  Download report
+</a>
+```
+
+### CSS
+
+```css
+/* Base link styles */
+a {
+  color: var(--text/link);
+  text-decoration: underline;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--text/hover);
+}
+
+/* Link with arrow */
+.link-with-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--xs); /* 0.125rem / 2px mobile */
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.link-with-arrow:hover {
+  gap: var(--sm); /* 0.25rem / 4px mobile */
+}
+
+.link-with-arrow svg {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+
+/* Size variants */
+.link-fine {
+  font-size: var(--fine/font-size); /* 0.625rem / 10px mobile */
+  line-height: var(--fine/line-height); /* 1.125rem / 18px mobile */
+}
+
+.link-small {
+  font-size: var(--small/font-size); /* 0.75rem / 12px mobile */
+  line-height: var(--small/line-height); /* 1.25rem / 20px mobile */
+}
+
+.link-p {
+  font-size: var(--p/font-size); /* 1rem / 16px mobile */
+  line-height: var(--p/line-height); /* 1.5rem / 24px mobile */
+}
+
+@media (min-width: 80rem) {
+  .link-with-arrow {
+    gap: var(--xs); /* 0.25rem / 4px widescreen */
+  }
+
+  .link-with-arrow:hover {
+    gap: var(--sm); /* 0.5rem / 8px widescreen */
+  }
+}
+
+/* Focus state */
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+```
+
+### Design tokens reference
+
+```css
+/* Typography */
+--fine/font-size          Mobile: 0.625rem / 10px   →   Widescreen: 1rem / 16px
+--fine/line-height        Mobile: 1.125rem / 18px   →   Widescreen: 1.5rem / 24px
+--small/font-size         Mobile: 0.75rem / 12px    →   Widescreen: 1.25rem / 20px
+--small/line-height       Mobile: 1.25rem / 20px    →   Widescreen: 1.875rem / 30px
+--p/font-size             Mobile: 1rem / 16px       →   Widescreen: 1.5rem / 24px
+--p/line-height           Mobile: 1.5rem / 24px     →   Widescreen: 2.25rem / 36px
+
+/* Spacing */
+--xs                      Mobile: 0.125rem / 2px    →   Widescreen: 0.25rem / 4px
+--sm                      Mobile: 0.25rem / 4px     →   Widescreen: 0.5rem / 8px
+
+/* Colors */
+--text/link               Light: #FF5247   Dark: #FFFFFF
+--text/hover              Light: #003442   Dark: #FF5247
+```

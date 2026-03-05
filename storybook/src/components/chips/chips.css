@@ -1,0 +1,463 @@
+.dds-chip {
+  --dds-chip-bg: var(--brand-primary);
+  --dds-chip-border: var(--brand-primary);
+  --dds-chip-fg: var(--global-white);
+  --dds-chip-bg-hover: var(--brand-primary-dark);
+  --dds-chip-border-hover: var(--brand-primary-dark);
+  --dds-chip-fg-hover: var(--global-white);
+  --dds-chip-close-bg: var(--global-white);
+  --dds-chip-close-fg: var(--brand-primary);
+  --dds-chip-close-bg-hover: var(--brand-primary);
+  --dds-chip-close-fg-hover: var(--global-white);
+
+  display: inline-flex;
+  align-items: center;
+  gap: var(--components-chip-padding-gap);
+  margin: 0;
+  border: 0;
+  box-shadow: inset 0 0 0 var(--components-chip-border-width) var(--dds-chip-border);
+  border-radius: var(--components-chip-border-radius);
+  background: var(--dds-chip-bg);
+  color: var(--dds-chip-fg);
+  padding: 0 var(--components-chip-padding-l-r);
+  font-family: var(--font-family-body);
+  font-size: var(--components-chip-font-size);
+  line-height: var(--components-chip-line-height);
+  font-weight: 400;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.25s ease 0s;
+  box-sizing: border-box;
+  --components-chip-container-size: calc(var(--components-chip-line-height) + (var(--components-chip-padding-t-b) * 2));
+  --components-chip-avatar-size: var(--components-chip-container-size);
+}
+
+.dds-chip--avatar-leading {
+  padding-left: 0;
+}
+
+.dds-chip--avatar-trailing {
+  padding-right: 0;
+}
+
+.dds-chip--secondary {
+  --dds-chip-bg: var(--brand-secondary);
+  --dds-chip-border: var(--brand-secondary);
+  --dds-chip-fg: var(--global-white);
+  --dds-chip-bg-hover: var(--brand-secondary-dark);
+  --dds-chip-border-hover: var(--brand-secondary-dark);
+  --dds-chip-fg-hover: var(--global-white);
+  --dds-chip-close-bg: var(--global-white);
+  --dds-chip-close-fg: var(--brand-secondary);
+  --dds-chip-close-bg-hover: var(--brand-secondary);
+  --dds-chip-close-fg-hover: var(--global-white);
+}
+
+.dds-chip:not(.dds-chip--static)[data-state='hover'],
+.dds-chip:not(.dds-chip--static)[data-state='focus'],
+.dds-chip:not(.dds-chip--static):hover,
+.dds-chip:not(.dds-chip--static):focus-visible {
+  background: var(--dds-chip-bg-hover);
+  box-shadow: inset 0 0 0 var(--components-chip-border-width) var(--dds-chip-border-hover);
+  color: var(--dds-chip-fg-hover);
+}
+
+.dds-chip:disabled,
+.dds-chip[aria-disabled='true'] {
+  background: var(--status-disabled);
+  box-shadow: inset 0 0 0 var(--components-chip-border-width) var(--status-disabled);
+  color: var(--global-gray-dark);
+  cursor: not-allowed;
+}
+
+.dds-chip--static {
+  cursor: default;
+}
+
+.dds-chip--selected .dds-chip__accessory--trailing .dds-chip__icon-wrap,
+.dds-chip--selected .dds-chip__accessory--leading .dds-chip__icon-wrap {
+  color: inherit;
+}
+
+.dds-chip__label {
+  display: inline-flex;
+  align-items: center;
+  line-height: calc(var(--components-chip-line-height-px) / 16 * 1rem);
+  padding-block: var(--components-chip-padding-t-b);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dds-chip__accessory {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  align-self: center;
+}
+
+.dds-chip__accessory--avatar {
+  width: var(--components-chip-avatar-size);
+  height: var(--components-chip-avatar-size);
+  align-self: center;
+}
+
+.dds-chip__accessory--icon,
+.dds-chip__accessory--toggle,
+.dds-chip__accessory--close {
+  align-self: stretch;
+}
+
+.dds-chip__icon-wrap {
+  height: 100%;
+  width: auto;
+  aspect-ratio: 1 / 1;
+  padding: var(--components-chip-icon-padding);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+}
+
+.dds-chip__accessory--icon .dds-chip__icon-wrap {
+  padding: var(--chip-icon-padding, calc(2 / 16 * 1rem));
+}
+
+.dds-chip__accessory--icon-mail {
+  width: var(--components-chip-mail-slot-size);
+  height: var(--components-chip-mail-slot-size);
+  padding: var(--components-chip-mail-slot-padding);
+  align-self: stretch;
+  box-sizing: border-box;
+}
+
+.dds-chip__accessory--icon-mail .dds-chip__icon-wrap {
+  width: var(--components-chip-mail-icon-size);
+  height: var(--components-chip-mail-icon-size);
+  max-width: 100%;
+  max-height: 100%;
+  padding: 0;
+  aspect-ratio: 1 / 1;
+}
+
+.dds-chip__accessory--icon-arrow {
+  width: var(--components-chip-arrow-slot-size);
+  height: var(--components-chip-arrow-slot-size);
+  padding: var(--components-chip-arrow-slot-padding);
+  align-self: stretch;
+  box-sizing: border-box;
+}
+
+.dds-chip__accessory--icon-arrow .dds-chip__icon-wrap {
+  width: var(--components-chip-arrow-icon-size);
+  height: var(--components-chip-arrow-icon-size);
+  max-width: 100%;
+  max-height: 100%;
+  padding: 0;
+  aspect-ratio: 1 / 1;
+}
+
+.dds-chip__accessory--toggle {
+  display: flex;
+  width: auto;
+  padding: var(--xs);
+  align-items: center;
+  align-self: stretch;
+  aspect-ratio: 1 / 1;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.dds-chip__accessory--toggle .dds-chip__icon-wrap {
+  width: calc(24 / 16 * 1rem);
+  height: calc(24 / 16 * 1rem);
+  max-width: 100%;
+  max-height: 100%;
+  aspect-ratio: 1 / 1;
+  padding: 0;
+}
+
+.dds-chip__icon-art {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: block;
+}
+
+.dds-chip__icon-part {
+  position: absolute;
+}
+
+.dds-chip__icon-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.dds-chip__icon-art--arrow .dds-chip__icon-part--arrow-line {
+  left: 20.83%;
+  right: 20.83%;
+  top: 50%;
+  transform: translateY(-47%);
+}
+
+.dds-chip__icon-art--arrow .dds-chip__icon-part--arrow-tip-a {
+  left: 20.83%;
+  right: 54.17%;
+  top: 25%;
+  bottom: 50%;
+}
+
+.dds-chip__icon-art--arrow .dds-chip__icon-part--arrow-tip-b {
+  left: 20.83%;
+  right: 54.17%;
+  top: 50%;
+  bottom: 25%;
+}
+
+.dds-chip__icon-art--close .dds-chip__icon-part--close-line-a,
+.dds-chip__icon-art--close .dds-chip__icon-part--close-line-b {
+  inset: 25%;
+}
+
+.dds-chip__accessory--trailing.dds-chip__accessory--icon-arrow .dds-chip__icon-art--arrow {
+  transform: scaleX(-1);
+  transform-origin: center;
+}
+
+.dds-chip__avatar {
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border: calc(var(--components-chip-border-width) * 2) solid var(--dds-chip-border);
+  border-radius: var(--border-radius-round);
+  overflow: hidden;
+  flex: 0 0 auto;
+  display: inline-flex;
+  box-sizing: border-box;
+}
+
+.dds-chip__avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.dds-chip__close-btn {
+  appearance: none;
+  border: 0;
+  width: 100%;
+  height: 100%;
+  padding: var(--components-chip-close-padding-inner);
+  border-radius: var(--border-radius-round);
+  background: var(--dds-chip-close-bg);
+  color: var(--dds-chip-close-fg);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease 0s;
+  box-sizing: border-box;
+}
+
+.dds-chip__accessory--close {
+  width: var(--components-chip-container-size);
+  height: var(--components-chip-container-size);
+  aspect-ratio: 1 / 1;
+  padding: var(--components-chip-close-padding-outer);
+  display: inline-flex;
+  align-items: stretch;
+  justify-content: center;
+  align-self: center;
+  box-sizing: border-box;
+}
+
+.dds-chip__close-btn:hover,
+.dds-chip__close-btn:focus-visible {
+  background: var(--dds-chip-close-bg-hover);
+  color: var(--dds-chip-close-fg-hover);
+}
+
+.dds-chip__close-btn:disabled,
+.dds-chip__close-btn[aria-disabled='true'] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.dds-chip[data-size-mode='mobile'] {
+  --components-chip-font-size-px: 12;
+  --components-chip-line-height-px: 12;
+  --components-chip-padding-t-b-px: 8;
+  --components-chip-padding-l-r-px: 8;
+  --components-chip-padding-gap-px: 2;
+  --components-chip-group-gap-px: 8;
+  --components-chip-label-padding-t-b-px: 0;
+  --components-chip-icon-size-px: 16;
+  --components-chip-icon-padding-px: 2;
+  --components-chip-mail-slot-size-px: 28;
+  --components-chip-mail-slot-padding-px: 2;
+  --components-chip-mail-icon-size-px: 24;
+  --components-chip-arrow-slot-size-px: 28;
+  --components-chip-arrow-slot-padding-px: 2;
+  --components-chip-arrow-icon-size-px: 24;
+  --components-chip-avatar-size-px: 28;
+  --components-chip-close-size-px: 24;
+  --components-chip-close-padding-outer-px: 4;
+  --components-chip-close-padding-inner-px: 2;
+  --components-chip-font-size: calc(12 / 16 * 1rem);
+  --components-chip-line-height: calc(12 / 16 * 1rem);
+  --components-chip-padding-t-b: calc(8 / 16 * 1rem);
+  --components-chip-padding-l-r: calc(8 / 16 * 1rem);
+  --components-chip-padding-gap: calc(2 / 16 * 1rem);
+  --components-chip-icon-size: calc(16 / 16 * 1rem);
+  --components-chip-icon-padding: calc(2 / 16 * 1rem);
+  --components-chip-mail-slot-size: calc(28 / 16 * 1rem);
+  --components-chip-mail-slot-padding: calc(2 / 16 * 1rem);
+  --components-chip-mail-icon-size: calc(24 / 16 * 1rem);
+  --components-chip-arrow-slot-size: calc(28 / 16 * 1rem);
+  --components-chip-arrow-slot-padding: calc(2 / 16 * 1rem);
+  --components-chip-arrow-icon-size: calc(24 / 16 * 1rem);
+  --components-chip-close-size: calc(24 / 16 * 1rem);
+  --components-chip-close-padding-outer: calc(4 / 16 * 1rem);
+  --components-chip-close-padding-inner: calc(2 / 16 * 1rem);
+}
+
+.dds-chip[data-size-mode='widescreen'] {
+  --components-chip-font-size-px: 24;
+  --components-chip-line-height-px: 24;
+  --components-chip-padding-t-b-px: 12;
+  --components-chip-padding-l-r-px: 20;
+  --components-chip-padding-gap-px: 4;
+  --components-chip-group-gap-px: 16;
+  --components-chip-label-padding-t-b-px: 0;
+  --components-chip-icon-size-px: 16;
+  --components-chip-icon-padding-px: 4;
+  --components-chip-mail-slot-size-px: 48;
+  --components-chip-mail-slot-padding-px: 2;
+  --components-chip-mail-icon-size-px: 44;
+  --components-chip-arrow-slot-size-px: 48;
+  --components-chip-arrow-slot-padding-px: 2;
+  --components-chip-arrow-icon-size-px: 44;
+  --components-chip-avatar-size-px: 48;
+  --components-chip-close-size-px: 24;
+  --components-chip-close-padding-outer-px: 10;
+  --components-chip-close-padding-inner-px: 4;
+  --components-chip-font-size: calc(24 / 16 * 1rem);
+  --components-chip-line-height: calc(24 / 16 * 1rem);
+  --components-chip-padding-t-b: calc(12 / 16 * 1rem);
+  --components-chip-padding-l-r: calc(20 / 16 * 1rem);
+  --components-chip-padding-gap: calc(4 / 16 * 1rem);
+  --components-chip-icon-size: calc(16 / 16 * 1rem);
+  --components-chip-icon-padding: calc(4 / 16 * 1rem);
+  --components-chip-mail-slot-size: calc(48 / 16 * 1rem);
+  --components-chip-mail-slot-padding: calc(2 / 16 * 1rem);
+  --components-chip-mail-icon-size: calc(44 / 16 * 1rem);
+  --components-chip-arrow-slot-size: calc(48 / 16 * 1rem);
+  --components-chip-arrow-slot-padding: calc(2 / 16 * 1rem);
+  --components-chip-arrow-icon-size: calc(44 / 16 * 1rem);
+  --components-chip-close-size: calc(24 / 16 * 1rem);
+  --components-chip-close-padding-outer: calc(10 / 16 * 1rem);
+  --components-chip-close-padding-inner: calc(4 / 16 * 1rem);
+}
+
+[data-color-mode='dark'] .dds-chip {
+  --dds-chip-bg: var(--global-white);
+  --dds-chip-border: var(--global-white);
+  --dds-chip-fg: var(--global-black);
+  --dds-chip-bg-hover: var(--global-white);
+  --dds-chip-border-hover: var(--global-white);
+  --dds-chip-fg-hover: var(--global-black);
+  --dds-chip-close-bg: var(--global-black);
+  --dds-chip-close-fg: var(--global-white);
+}
+
+.dds-chips-fig {
+  width: min(72rem, 100%);
+}
+
+.dds-chips-fig__card {
+  background: var(--background-section);
+  border: 1px solid var(--global-gray-medium);
+  border-radius: var(--border-radius-sm);
+  padding: var(--space-xl);
+}
+
+.dds-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.dds-chip-hover-fig {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.dds-chip-hover-fig__group {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.dds-chip-hover-fig__divider {
+  width: 1px;
+  align-self: stretch;
+  background: var(--global-gray-dark);
+}
+
+.dds-chip-hover-fig__arrow {
+  width: calc(24 / 16 * 1rem);
+  height: calc(24 / 16 * 1rem);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--global-black);
+  flex: 0 0 auto;
+}
+
+.dds-chip-hover-fig__arrow svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.dds-chips-fig__do-dont-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+.dds-chips-fig__do,
+.dds-chips-fig__dont {
+  display: grid;
+  gap: var(--space-sm);
+  padding-left: var(--space-lg);
+  border-left: 4px solid transparent;
+}
+
+.dds-chips-fig__do {
+  border-left-color: var(--status-valid);
+}
+
+.dds-chips-fig__dont {
+  border-left-color: var(--status-invalid);
+}
+
+.dds-chips-fig__do p,
+.dds-chips-fig__dont p {
+  margin: 0;
+  font-size: var(--typography-body-font-size);
+  line-height: var(--typography-body-line-height);
+}
+
+@media (max-width: 48rem) {
+  .dds-chips-fig__do-dont-grid {
+    grid-template-columns: 1fr;
+  }
+}

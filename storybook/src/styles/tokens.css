@@ -1,0 +1,875 @@
+:root {
+  /* Primitive color tokens */
+  --global-black: #000000;
+  --global-white: #ffffff;
+  --global-gray-dark: #919191;
+  --global-gray-medium: #cccccc;
+  --global-gray-light: #eeeeee;
+
+  --brand-primary: #ff5247;
+  --brand-primary-dark: #b22e28;
+  --brand-secondary: #003442;
+  --brand-secondary-dark: #01232d;
+  --components-logo-left: #003442;
+  --components-logo-right: #01232d;
+
+  --status-disabled: #808080;
+  --status-invalid: #c00c00;
+  --status-valid: #007000;
+  --status-read-only: #333333;
+
+  --overlay-dark: rgb(0 0 0 / 50%);
+  --overlay-light: rgb(0 0 0 / 25%);
+
+  /* Font families */
+  --font-family-heading: "Ovo", Georgia, serif;
+  --font-family-body: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family-code: "Courier New", Courier, monospace;
+
+  /* Semantic color tokens (light mode default) */
+  --background-page: var(--global-white);
+  --background-section: var(--global-gray-light);
+  --text-default: var(--global-black);
+  --text-link: var(--brand-primary);
+  --text-hover: var(--brand-secondary);
+
+  /* Figma naming aliases */
+  --page-background: var(--background-page);
+  --section-background: var(--background-section);
+
+  /* Typography raw values (mobile px) */
+  --typography-h1-title-font-size-px: 50;
+  --typography-h1-title-line-height-px: 56;
+  --typography-h1-title-plus-p-font-size-px: 16;
+  --typography-h1-title-plus-p-line-height-px: 28;
+  --typography-h1-font-size-px: 50;
+  --typography-h1-line-height-px: 56;
+  --typography-h2-font-size-px: 38;
+  --typography-h2-line-height-px: 42;
+  --typography-h3-font-size-px: 28;
+  --typography-h3-line-height-px: 32;
+  --typography-h4-font-size-px: 24;
+  --typography-h4-line-height-px: 30;
+  --typography-h5-font-size-px: 20;
+  --typography-h5-line-height-px: 26;
+  --typography-body-font-size-px: 16;
+  --typography-body-line-height-px: 24;
+  --typography-list-font-size-px: 16;
+  --typography-list-line-height-px: 20;
+  --typography-small-font-size-px: 12;
+  --typography-small-line-height-px: 20;
+  --typography-fine-font-size-px: 10;
+  --typography-fine-line-height-px: 18;
+
+  /* Typography computed values (rem) */
+  --typography-h1-title-font-size: calc(var(--typography-h1-title-font-size-px) / 16 * 1rem);
+  --typography-h1-title-line-height: calc(var(--typography-h1-title-line-height-px) / 16 * 1rem);
+  --typography-h1-title-plus-p-font-size: calc(var(--typography-h1-title-plus-p-font-size-px) / 16 * 1rem);
+  --typography-h1-title-plus-p-line-height: calc(var(--typography-h1-title-plus-p-line-height-px) / 16 * 1rem);
+  --typography-h1-font-size: calc(var(--typography-h1-font-size-px) / 16 * 1rem);
+  --typography-h1-line-height: calc(var(--typography-h1-line-height-px) / 16 * 1rem);
+  --typography-h2-font-size: calc(var(--typography-h2-font-size-px) / 16 * 1rem);
+  --typography-h2-line-height: calc(var(--typography-h2-line-height-px) / 16 * 1rem);
+  --typography-h3-font-size: calc(var(--typography-h3-font-size-px) / 16 * 1rem);
+  --typography-h3-line-height: calc(var(--typography-h3-line-height-px) / 16 * 1rem);
+  --typography-h4-font-size: calc(var(--typography-h4-font-size-px) / 16 * 1rem);
+  --typography-h4-line-height: calc(var(--typography-h4-line-height-px) / 16 * 1rem);
+  --typography-h5-font-size: calc(var(--typography-h5-font-size-px) / 16 * 1rem);
+  --typography-h5-line-height: calc(var(--typography-h5-line-height-px) / 16 * 1rem);
+  --typography-body-font-size: calc(var(--typography-body-font-size-px) / 16 * 1rem);
+  --typography-body-line-height: calc(var(--typography-body-line-height-px) / 16 * 1rem);
+  --typography-list-font-size: calc(var(--typography-list-font-size-px) / 16 * 1rem);
+  --typography-list-line-height: calc(var(--typography-list-line-height-px) / 16 * 1rem);
+  --typography-small-font-size: calc(var(--typography-small-font-size-px) / 16 * 1rem);
+  --typography-small-line-height: calc(var(--typography-small-line-height-px) / 16 * 1rem);
+  --typography-fine-font-size: calc(var(--typography-fine-font-size-px) / 16 * 1rem);
+  --typography-fine-line-height: calc(var(--typography-fine-line-height-px) / 16 * 1rem);
+
+  /* Spacing raw values (mobile/tablet px) */
+  --space-xs-px: 2;
+  --space-sm-px: 4;
+  --space-md-px: 8;
+  --space-lg-px: 12;
+  --space-xl-px: 16;
+  --space-xxl-px: 20;
+  --space-xxxl-px: 24;
+  --space-xxxxxl-px: 32;
+
+  /* Spacing computed values (rem) */
+  --space-xs: calc(var(--space-xs-px) / 16 * 1rem);
+  --space-sm: calc(var(--space-sm-px) / 16 * 1rem);
+  --space-md: calc(var(--space-md-px) / 16 * 1rem);
+  --space-lg: calc(var(--space-lg-px) / 16 * 1rem);
+  --space-xl: calc(var(--space-xl-px) / 16 * 1rem);
+  --space-xxl: calc(var(--space-xxl-px) / 16 * 1rem);
+  --space-xxxl: calc(var(--space-xxxl-px) / 16 * 1rem);
+  --space-xxxxxl: calc(var(--space-xxxxxl-px) / 16 * 1rem);
+
+  /* Figma spacing aliases */
+  --xs: var(--space-xs);
+  --sm: var(--space-sm);
+  --md: var(--space-md);
+  --lg: var(--space-lg);
+  --xl: var(--space-xl);
+  --xxl: var(--space-xxl);
+  --xxxl: var(--space-xxxl);
+  --xxxxxl: var(--space-xxxxxl);
+  --spacing-xl: var(--space-xl);
+
+  /* Radius raw values (mobile/tablet px) */
+  --radius-xs-px: 2;
+  --radius-sm-px: 4;
+  --radius-md-px: 8;
+  --radius-lg-px: 16;
+  --radius-xl-px: 24;
+  --radius-xxl-px: 32;
+  --radius-round-px: 100;
+
+  /* Radius computed values (rem) */
+  --radius-xs: calc(var(--radius-xs-px) / 16 * 1rem);
+  --radius-sm: calc(var(--radius-sm-px) / 16 * 1rem);
+  --radius-md: calc(var(--radius-md-px) / 16 * 1rem);
+  --radius-lg: calc(var(--radius-lg-px) / 16 * 1rem);
+  --radius-xl: calc(var(--radius-xl-px) / 16 * 1rem);
+  --radius-xxl: calc(var(--radius-xxl-px) / 16 * 1rem);
+  --radius-round: calc(var(--radius-round-px) / 16 * 1rem);
+
+  /* Figma radius aliases */
+  --border-radius-xs: var(--radius-xs);
+  --border-radius-sm: var(--radius-sm);
+  --border-radius-md: var(--radius-md);
+  --border-radius-lg: var(--radius-lg);
+  --border-radius-xl: var(--radius-xl);
+  --border-radius-xxl: var(--radius-xxl);
+  --border-radius-round: var(--radius-round);
+
+  /* Badge raw values (px) */
+  --components-badge-font-size-px: 10;
+  --components-badge-line-height-px: 11;
+  --components-badge-padding-l-r-px: 4;
+  --components-badge-padding-t-b-px: 2;
+  --components-badge-border-radius-px: 4;
+  --components-badge-border-width-px: 1;
+
+  /* Badge computed values (rem + px border) */
+  --components-badge-font-size: calc(var(--components-badge-font-size-px) / 16 * 1rem);
+  --components-badge-line-height: calc(var(--components-badge-line-height-px) / 16 * 1rem);
+  --components-badge-padding-l-r: calc(var(--components-badge-padding-l-r-px) / 16 * 1rem);
+  --components-badge-padding-t-b: calc(var(--components-badge-padding-t-b-px) / 16 * 1rem);
+  --components-badge-border-radius: calc(var(--components-badge-border-radius-px) / 16 * 1rem);
+  --components-badge-border-width: calc(var(--components-badge-border-width-px) * 1px);
+
+  /* Blockquote raw values (mobile/tablet px) */
+  --components-blockquote-quote-font-size-px: 12;
+  --components-blockquote-quote-line-height-px: 20;
+  --components-blockquote-cite-font-size-px: 10;
+  --components-blockquote-cite-line-height-px: 18;
+  --components-blockquote-padding-px: 16;
+  --components-blockquote-gap-px: 8;
+  --components-blockquote-border-width-px: 1;
+  --components-blockquote-border-radius-px: 4;
+  --components-blockquote-icon-size-px: 24;
+
+  /* Blockquote computed values */
+  --components-blockquote-quote-font-size: calc(var(--components-blockquote-quote-font-size-px) / 16 * 1rem);
+  --components-blockquote-quote-line-height: calc(var(--components-blockquote-quote-line-height-px) / 16 * 1rem);
+  --components-blockquote-cite-font-size: calc(var(--components-blockquote-cite-font-size-px) / 16 * 1rem);
+  --components-blockquote-cite-line-height: calc(var(--components-blockquote-cite-line-height-px) / 16 * 1rem);
+  --components-blockquote-padding: calc(var(--components-blockquote-padding-px) / 16 * 1rem);
+  --components-blockquote-gap: calc(var(--components-blockquote-gap-px) / 16 * 1rem);
+  --components-blockquote-border-width: calc(var(--components-blockquote-border-width-px) * 1px);
+  --components-blockquote-border-radius: calc(var(--components-blockquote-border-radius-px) / 16 * 1rem);
+  --components-blockquote-icon-size: calc(var(--components-blockquote-icon-size-px) / 16 * 1rem);
+
+  /* Button raw values (mobile/tablet px) */
+  --components-button-font-size-px: 12;
+  --components-button-line-height-px: 12;
+  --components-button-padding-gap-px: 4;
+  --components-button-padding-l-r-px: 24;
+  --components-button-padding-t-b-px: 8;
+  --components-button-border-radius-px: 32;
+  --components-button-border-width-px: 1;
+  --components-button-inline-icon-size-px: 16;
+  --components-button-icon-button-size-px: 24;
+  --components-button-icon-button-padding-px: 4;
+
+  /* Button computed values */
+  --components-button-font-size: calc(var(--components-button-font-size-px) / 16 * 1rem);
+  --components-button-line-height: calc(var(--components-button-line-height-px) / 16 * 1rem);
+  --components-button-padding-gap: calc(var(--components-button-padding-gap-px) / 16 * 1rem);
+  --components-button-padding-l-r: calc(var(--components-button-padding-l-r-px) / 16 * 1rem);
+  --components-button-padding-t-b: calc(var(--components-button-padding-t-b-px) / 16 * 1rem);
+  --components-button-border-radius: calc(var(--components-button-border-radius-px) / 16 * 1rem);
+  --components-button-border-width: calc(var(--components-button-border-width-px) * 1px);
+  --components-button-inline-icon-size: calc(var(--components-button-inline-icon-size-px) / 16 * 1rem);
+  --components-button-icon-button-size: calc(var(--components-button-icon-button-size-px) / 16 * 1rem);
+  --components-button-icon-button-padding: calc(var(--components-button-icon-button-padding-px) / 16 * 1rem);
+
+  /* Chip raw values (mobile/tablet px) */
+  --components-chip-font-size-px: 12;
+  --components-chip-line-height-px: 12;
+  --components-chip-padding-gap-px: 2;
+  --components-chip-padding-l-r-px: 8;
+  --components-chip-padding-t-b-px: 4;
+  --components-chip-label-padding-t-b-px: 0;
+  --components-chip-group-gap-px: 8;
+  --components-chip-border-radius-px: 32;
+  --components-chip-border-width-px: 1;
+  --components-chip-icon-size-px: 16;
+  --components-chip-icon-padding-px: 2;
+  --components-chip-avatar-size-px: 20;
+  --components-chip-close-size-px: 24;
+  --components-chip-close-padding-outer-px: 4;
+  --components-chip-close-padding-inner-px: 2;
+
+  /* Chip computed values */
+  --components-chip-font-size: calc(var(--components-chip-font-size-px) / 16 * 1rem);
+  --components-chip-line-height: calc(var(--components-chip-line-height-px) / 16 * 1rem);
+  --components-chip-padding-gap: calc(var(--components-chip-padding-gap-px) / 16 * 1rem);
+  --components-chip-padding-l-r: calc(var(--components-chip-padding-l-r-px) / 16 * 1rem);
+  --components-chip-padding-t-b: calc(var(--components-chip-padding-t-b-px) / 16 * 1rem);
+  --components-chip-label-padding-t-b: calc(var(--components-chip-label-padding-t-b-px) / 16 * 1rem);
+  --components-chip-group-gap: calc(var(--components-chip-group-gap-px) / 16 * 1rem);
+  --components-chip-border-radius: calc(var(--components-chip-border-radius-px) / 16 * 1rem);
+  --components-chip-border-width: calc(var(--components-chip-border-width-px) * 1px);
+  --components-chip-icon-size: calc(var(--components-chip-icon-size-px) / 16 * 1rem);
+  --components-chip-icon-padding: calc(var(--components-chip-icon-padding-px) / 16 * 1rem);
+  --components-chip-avatar-size: calc(var(--components-chip-avatar-size-px) / 16 * 1rem);
+  --components-chip-close-size: calc(var(--components-chip-close-size-px) / 16 * 1rem);
+  --components-chip-close-padding-outer: calc(var(--components-chip-close-padding-outer-px) / 16 * 1rem);
+  --components-chip-close-padding-inner: calc(var(--components-chip-close-padding-inner-px) / 16 * 1rem);
+
+  /* Input raw values (mobile/tablet px) */
+  --components-input-text-font-size-px: 16;
+  --components-input-text-line-height-px: 20;
+  --components-input-text-padding-px: 12;
+  --components-input-text-padding-gap-px: 4;
+  --components-input-text-border-radius-px: 4;
+
+  --components-input-checkbox-font-size-px: 16;
+  --components-input-checkbox-line-height-px: 20;
+  --components-input-checkbox-size-px: 20;
+  --components-input-checkbox-padding-px: 2;
+  --components-input-checkbox-padding-gap-px: 8;
+  --components-input-checkbox-before-padding-px: 4;
+  --components-input-checkbox-border-radius-px: 4;
+
+  --components-input-switch-width-px: 36;
+  --components-input-switch-height-px: 20;
+  --components-input-switch-padding-px: 4;
+  --components-input-switch-padding-gap-px: 8;
+  --components-input-switch-border-radius-px: 16;
+  --components-input-switch-thumb-size-px: 12;
+
+  --components-input-label-font-size-px: 12;
+  --components-input-label-line-height-px: 20;
+  --components-input-message-font-size-px: 10;
+  --components-input-message-line-height-px: 18;
+
+  --components-input-option-v-padding-px: 2;
+  --components-input-option-h-padding-px: 8;
+  --components-input-option-list-radius-px: 4;
+  --components-input-option-list-shadow-x-px: 8;
+  --components-input-option-list-shadow-y-px: 8;
+  --components-input-option-list-shadow-blur-px: 8;
+  --components-input-option-list-shadow-spread-px: 2;
+
+  --components-fieldset-width-px: 256;
+  --components-fieldset-min-width-px: 248;
+  --components-fieldset-max-width-px: 420;
+  --components-fieldset-gap-default-px: 4;
+  --components-fieldset-gap-choice-px: 8;
+  --components-fieldset-choices-gap-px: 4;
+  --components-fieldset-legend-padding-bottom-px: 2;
+
+  /* Input computed values */
+  --components-input-text-font-size: calc(var(--components-input-text-font-size-px) / 16 * 1rem);
+  --components-input-text-line-height: calc(var(--components-input-text-line-height-px) / 16 * 1rem);
+  --components-input-text-padding: calc(var(--components-input-text-padding-px) / 16 * 1rem);
+  --components-input-text-padding-gap: calc(var(--components-input-text-padding-gap-px) / 16 * 1rem);
+  --components-input-text-border-radius: calc(var(--components-input-text-border-radius-px) / 16 * 1rem);
+
+  --components-input-checkbox-font-size: calc(var(--components-input-checkbox-font-size-px) / 16 * 1rem);
+  --components-input-checkbox-line-height: calc(var(--components-input-checkbox-line-height-px) / 16 * 1rem);
+  --components-input-checkbox-size: calc(var(--components-input-checkbox-size-px) / 16 * 1rem);
+  --components-input-checkbox-padding: calc(var(--components-input-checkbox-padding-px) / 16 * 1rem);
+  --components-input-checkbox-padding-gap: calc(var(--components-input-checkbox-padding-gap-px) / 16 * 1rem);
+  --components-input-checkbox-before-padding: calc(var(--components-input-checkbox-before-padding-px) / 16 * 1rem);
+  --components-input-checkbox-border-radius: calc(var(--components-input-checkbox-border-radius-px) / 16 * 1rem);
+
+  --components-input-switch-width: calc(var(--components-input-switch-width-px) / 16 * 1rem);
+  --components-input-switch-height: calc(var(--components-input-switch-height-px) / 16 * 1rem);
+  --components-input-switch-padding: calc(var(--components-input-switch-padding-px) / 16 * 1rem);
+  --components-input-switch-padding-gap: calc(var(--components-input-switch-padding-gap-px) / 16 * 1rem);
+  --components-input-switch-border-radius: calc(var(--components-input-switch-border-radius-px) / 16 * 1rem);
+  --components-input-switch-thumb-size: calc(var(--components-input-switch-thumb-size-px) / 16 * 1rem);
+
+  --components-input-label-font-size: calc(var(--components-input-label-font-size-px) / 16 * 1rem);
+  --components-input-label-line-height: calc(var(--components-input-label-line-height-px) / 16 * 1rem);
+  --components-input-message-font-size: calc(var(--components-input-message-font-size-px) / 16 * 1rem);
+  --components-input-message-line-height: calc(var(--components-input-message-line-height-px) / 16 * 1rem);
+
+  --components-input-option-v-padding: calc(var(--components-input-option-v-padding-px) / 16 * 1rem);
+  --components-input-option-h-padding: calc(var(--components-input-option-h-padding-px) / 16 * 1rem);
+  --components-input-option-list-radius: calc(var(--components-input-option-list-radius-px) / 16 * 1rem);
+  --components-input-option-list-shadow-x: calc(var(--components-input-option-list-shadow-x-px) * 1px);
+  --components-input-option-list-shadow-y: calc(var(--components-input-option-list-shadow-y-px) * 1px);
+  --components-input-option-list-shadow-blur: calc(var(--components-input-option-list-shadow-blur-px) * 1px);
+  --components-input-option-list-shadow-spread: calc(var(--components-input-option-list-shadow-spread-px) * 1px);
+
+  --components-fieldset-width: calc(var(--components-fieldset-width-px) / 16 * 1rem);
+  --components-fieldset-min-width: calc(var(--components-fieldset-min-width-px) / 16 * 1rem);
+  --components-fieldset-max-width: calc(var(--components-fieldset-max-width-px) / 16 * 1rem);
+  --components-fieldset-gap-default: calc(var(--components-fieldset-gap-default-px) / 16 * 1rem);
+  --components-fieldset-gap-choice: calc(var(--components-fieldset-gap-choice-px) / 16 * 1rem);
+  --components-fieldset-choices-gap: calc(var(--components-fieldset-choices-gap-px) / 16 * 1rem);
+  --components-fieldset-legend-padding-bottom: calc(var(--components-fieldset-legend-padding-bottom-px) / 16 * 1rem);
+
+  /* Icon raw values */
+  --components-icon-size-px: 24;
+  --components-icon-stroke-width-px: 1;
+
+  /* Icon computed values */
+  --components-icon-size: calc(var(--components-icon-size-px) / 16 * 1rem);
+  --components-icon-stroke-width: calc(var(--components-icon-stroke-width-px) * 1px);
+
+  /* Link raw values (mobile/tablet px) */
+  --components-link-p-height-px: 24;
+  --components-link-small-height-px: 20;
+  --components-link-fine-height-px: 18;
+
+  /* Link computed values */
+  --components-link-p-height: calc(var(--components-link-p-height-px) / 16 * 1rem);
+  --components-link-small-height: calc(var(--components-link-small-height-px) / 16 * 1rem);
+  --components-link-fine-height: calc(var(--components-link-fine-height-px) / 16 * 1rem);
+
+  /* Content raw values (mobile/tablet px) */
+  --components-content-padding-px: 16;
+  --components-content-max-width-px: 672;
+  --components-content-title-font-size-px: 50;
+  --components-content-title-line-height-px: 56;
+  --components-content-heading-font-size-px: 38;
+  --components-content-heading-line-height-px: 42;
+  --components-content-body-font-size-px: 16;
+  --components-content-body-line-height-px: 28;
+  --components-content-eyebrow-font-size-px: 12;
+  --components-content-eyebrow-line-height-px: 20;
+  --components-content-fine-font-size-px: 10;
+  --components-content-fine-line-height-px: 18;
+  --components-content-title-body-gap-px: 4;
+  --components-content-section-gap-px: 16;
+  --components-content-cta-gap-px: 8;
+  --components-content-footer-max-width-px: 334;
+
+  /* Content computed values */
+  --components-content-padding: calc(var(--components-content-padding-px) / 16 * 1rem);
+  --components-content-max-width: calc(var(--components-content-max-width-px) / 16 * 1rem);
+  --components-content-title-font-size: calc(var(--components-content-title-font-size-px) / 16 * 1rem);
+  --components-content-title-line-height: calc(var(--components-content-title-line-height-px) / 16 * 1rem);
+  --components-content-heading-font-size: calc(var(--components-content-heading-font-size-px) / 16 * 1rem);
+  --components-content-heading-line-height: calc(var(--components-content-heading-line-height-px) / 16 * 1rem);
+  --components-content-body-font-size: calc(var(--components-content-body-font-size-px) / 16 * 1rem);
+  --components-content-body-line-height: calc(var(--components-content-body-line-height-px) / 16 * 1rem);
+  --components-content-eyebrow-font-size: calc(var(--components-content-eyebrow-font-size-px) / 16 * 1rem);
+  --components-content-eyebrow-line-height: calc(var(--components-content-eyebrow-line-height-px) / 16 * 1rem);
+  --components-content-fine-font-size: calc(var(--components-content-fine-font-size-px) / 16 * 1rem);
+  --components-content-fine-line-height: calc(var(--components-content-fine-line-height-px) / 16 * 1rem);
+  --components-content-title-body-gap: calc(var(--components-content-title-body-gap-px) / 16 * 1rem);
+  --components-content-section-gap: calc(var(--components-content-section-gap-px) / 16 * 1rem);
+  --components-content-cta-gap: calc(var(--components-content-cta-gap-px) / 16 * 1rem);
+  --components-content-footer-max-width: calc(var(--components-content-footer-max-width-px) / 16 * 1rem);
+
+  /* Details raw values (mobile/tablet px) */
+  --components-details-width-px: 288;
+  --components-details-padding-px: 8;
+  --components-details-border-width-px: 1;
+  --components-details-border-radius-px: 4;
+  --components-details-summary-gap-px: 4;
+  --components-details-body-padding-top-px: 8;
+  --components-details-font-size-px: 16;
+  --components-details-line-height-px: 28;
+  --components-details-icon-container-size-px: 28;
+  --components-details-icon-size-px: 20;
+  --components-details-icon-padding-px: 4;
+  --components-details-icon-stroke-px: 1.5;
+  --components-details-group-gap-px: 8;
+
+  /* Details computed values */
+  --components-details-width: calc(var(--components-details-width-px) / 16 * 1rem);
+  --components-details-padding: calc(var(--components-details-padding-px) / 16 * 1rem);
+  --components-details-border-width: calc(var(--components-details-border-width-px) * 1px);
+  --components-details-border-radius: calc(var(--components-details-border-radius-px) / 16 * 1rem);
+  --components-details-summary-gap: calc(var(--components-details-summary-gap-px) / 16 * 1rem);
+  --components-details-body-padding-top: calc(var(--components-details-body-padding-top-px) / 16 * 1rem);
+  --components-details-font-size: calc(var(--components-details-font-size-px) / 16 * 1rem);
+  --components-details-line-height: calc(var(--components-details-line-height-px) / 16 * 1rem);
+  --components-details-icon-container-size: calc(var(--components-details-icon-container-size-px) / 16 * 1rem);
+  --components-details-icon-size: calc(var(--components-details-icon-size-px) / 16 * 1rem);
+  --components-details-icon-padding: calc(var(--components-details-icon-padding-px) / 16 * 1rem);
+  --components-details-icon-stroke: calc(var(--components-details-icon-stroke-px) * 1px);
+  --components-details-group-gap: calc(var(--components-details-group-gap-px) / 16 * 1rem);
+
+  /* Feedback raw values (mobile/tablet px) */
+  --components-feedback-min-width-px: 256;
+  --components-feedback-width-px: 288;
+  --components-feedback-height-px: 4;
+  --components-feedback-label-font-size-px: 12;
+  --components-feedback-label-line-height-px: 20;
+  --components-feedback-label-padding-bottom-px: 4;
+  --components-feedback-value-font-size-px: 10;
+  --components-feedback-value-line-height-px: 18;
+  --components-feedback-value-padding-top-px: 2;
+  --components-feedback-meter-shell-padding-px: 2;
+  --components-feedback-summary-gap-px: 4;
+
+  /* Message raw values (mobile/tablet px) */
+  --components-message-font-size-px: 12;
+  --components-message-line-height-px: 20;
+  --components-message-modal-min-height-px: 568;
+  --components-message-promo-min-height-px: 284;
+  --components-message-inline-width-px: 280;
+  --components-message-toast-width-px: 288;
+  --components-message-actions-max-width-px: 70;
+  --components-message-close-size-px: 24;
+  --components-message-close-icon-size-px: 16;
+  --components-message-floating-close-offset-px: 16;
+  --components-message-radius-px: 4;
+  --components-message-inline-padding-px: 8;
+  --components-message-inline-gap-px: 8;
+  --components-message-toast-padding-px: 8;
+  --components-message-toast-gap-px: 8;
+
+  /* Pagination raw values (mobile/tablet px) */
+  --components-pagination-dot-size-px: 10;
+  --components-pagination-dot-border-width-px: 2;
+  --components-pagination-gap-px: 8;
+  --components-pagination-padding-x-px: 16;
+  --components-pagination-padding-y-px: 8;
+  --components-pagination-border-radius-px: 32;
+
+  /* Table raw values (desktop/widescreen px) */
+  --components-table-font-size-px: 16;
+  --components-table-line-height-px: 20;
+  --components-table-cell-padding-px: 4;
+  --components-table-row-gap-px: 8;
+  --components-table-min-width-px: 1040;
+  --components-table-border-width-px: 1;
+
+  /* Feedback computed values */
+  --components-feedback-min-width: calc(var(--components-feedback-min-width-px) / 16 * 1rem);
+  --components-feedback-width: calc(var(--components-feedback-width-px) / 16 * 1rem);
+  --components-feedback-height: calc(var(--components-feedback-height-px) / 16 * 1rem);
+  --components-feedback-label-font-size: calc(var(--components-feedback-label-font-size-px) / 16 * 1rem);
+  --components-feedback-label-line-height: calc(var(--components-feedback-label-line-height-px) / 16 * 1rem);
+  --components-feedback-label-padding-bottom: calc(var(--components-feedback-label-padding-bottom-px) / 16 * 1rem);
+  --components-feedback-value-font-size: calc(var(--components-feedback-value-font-size-px) / 16 * 1rem);
+  --components-feedback-value-line-height: calc(var(--components-feedback-value-line-height-px) / 16 * 1rem);
+  --components-feedback-value-padding-top: calc(var(--components-feedback-value-padding-top-px) / 16 * 1rem);
+  --components-feedback-meter-shell-padding: calc(var(--components-feedback-meter-shell-padding-px) / 16 * 1rem);
+  --components-feedback-summary-gap: calc(var(--components-feedback-summary-gap-px) / 16 * 1rem);
+
+  /* Message computed values */
+  --components-message-font-size: calc(var(--components-message-font-size-px) / 16 * 1rem);
+  --components-message-line-height: calc(var(--components-message-line-height-px) / 16 * 1rem);
+  --components-message-modal-min-height: calc(var(--components-message-modal-min-height-px) / 16 * 1rem);
+  --components-message-promo-min-height: calc(var(--components-message-promo-min-height-px) / 16 * 1rem);
+  --components-message-inline-width: calc(var(--components-message-inline-width-px) / 16 * 1rem);
+  --components-message-toast-width: calc(var(--components-message-toast-width-px) / 16 * 1rem);
+  --components-message-actions-max-width: calc(var(--components-message-actions-max-width-px) / 16 * 1rem);
+  --components-message-close-size: calc(var(--components-message-close-size-px) / 16 * 1rem);
+  --components-message-close-icon-size: calc(var(--components-message-close-icon-size-px) / 16 * 1rem);
+  --components-message-floating-close-offset: calc(var(--components-message-floating-close-offset-px) / 16 * 1rem);
+  --components-message-radius: calc(var(--components-message-radius-px) / 16 * 1rem);
+  --components-message-inline-padding: calc(var(--components-message-inline-padding-px) / 16 * 1rem);
+  --components-message-inline-gap: calc(var(--components-message-inline-gap-px) / 16 * 1rem);
+  --components-message-toast-padding: calc(var(--components-message-toast-padding-px) / 16 * 1rem);
+  --components-message-toast-gap: calc(var(--components-message-toast-gap-px) / 16 * 1rem);
+
+  /* Pagination computed values */
+  --components-pagination-dot-size: calc(var(--components-pagination-dot-size-px) / 16 * 1rem);
+  --components-pagination-dot-border-width: calc(var(--components-pagination-dot-border-width-px) * 1px);
+  --components-pagination-gap: calc(var(--components-pagination-gap-px) / 16 * 1rem);
+  --components-pagination-padding-x: calc(var(--components-pagination-padding-x-px) / 16 * 1rem);
+  --components-pagination-padding-y: calc(var(--components-pagination-padding-y-px) / 16 * 1rem);
+  --components-pagination-border-radius: calc(var(--components-pagination-border-radius-px) / 16 * 1rem);
+
+  /* Table computed values */
+  --components-table-font-size: calc(var(--components-table-font-size-px) / 16 * 1rem);
+  --components-table-line-height: calc(var(--components-table-line-height-px) / 16 * 1rem);
+  --components-table-cell-padding: calc(var(--components-table-cell-padding-px) / 16 * 1rem);
+  --components-table-row-gap: calc(var(--components-table-row-gap-px) / 16 * 1rem);
+  --components-table-min-width: calc(var(--components-table-min-width-px) / 16 * 1rem);
+  --components-table-border-width: calc(var(--components-table-border-width-px) * 1px);
+
+  /* Card raw values (mobile/tablet px) */
+  --components-card-border-width-px: 1;
+  --components-card-border-radius-px: 8;
+  --components-card-content-padding-px: 16;
+  --components-card-content-gap-px: 0;
+  --components-card-body-line-height-px: 28;
+  --components-card-figure-min-height-px: 200;
+  --components-card-default-width-px: 480;
+  --components-card-horizontal-width-px: 480;
+  --components-card-vertical-min-width-px: 256;
+  --components-card-horizontal-min-width-px: 480;
+  --components-card-horizontal-min-height-px: 200;
+  --components-card-horizontal-figure-min-width-px: 256;
+  --components-card-horizontal-figure-max-width-px: 256;
+  --components-card-mobile-width-px: 256;
+  --components-card-mobile-max-width-px: 256;
+  --components-card-figure-aspect-ratio: 1.618;
+
+  /* Banner raw values (mobile/tablet px) */
+  --components-banner-border-radius-px: 8;
+  --components-banner-padding-l-r-px: 0;
+  --components-banner-content-max-width-px: 740;
+  --components-banner-short-min-height-px: 284;
+  --components-banner-bg-width-px: 480;
+  --components-banner-split-vertical-width-px: 336;
+  --components-banner-split-horizontal-width-px: 804;
+  --components-banner-split-gap-px: 8;
+  --components-banner-split-image-max-width-px: 336;
+  --components-banner-split-image-aspect-ratio: 1.618;
+
+  /* Footer raw values (mobile/tablet px) */
+  --components-footer-outer-padding-px: 16;
+  --components-footer-group-padding-px: 16;
+  --components-footer-mobile-max-width-px: 288;
+  --components-footer-desktop-min-width-px: 736;
+  --components-footer-brand-max-width-px: 256;
+  --components-footer-logo-mark-width-px: 40;
+  --components-footer-logo-mark-height-px: 30;
+  --components-footer-heading-max-width-px: 334;
+  --components-footer-nav-padding-y-px: 8;
+  --components-footer-link-padding-y-px: 2;
+  --components-footer-list-gap-px: 8;
+  --components-footer-mark-gap-px: 8;
+  --components-footer-brand-padding-top-px: 12;
+  --components-footer-toggle-padding-top-px: 12;
+  --components-footer-toggle-gap-px: 8;
+  --components-footer-toggle-icon-size-px: 24;
+
+  /* Header raw values (mobile/tablet px) */
+  --components-header-desktop-width-px: 736;
+  --components-header-mobile-width-px: 288;
+  --components-header-top-height-px: 48;
+  --components-header-top-padding-px: 8;
+  --components-header-gap-px: 16;
+  --components-header-row-gap-px: 8;
+  --components-header-panel-padding-px: 8;
+  --components-header-panel-gap-px: 8;
+  --components-header-mobile-list-gap-px: 8;
+  --components-header-desktop-list-gap-px: 16;
+  --components-header-desktop-list-padding-left-px: 24;
+  --components-header-logo-mark-width-px: 40;
+  --components-header-logo-mark-height-px: 30;
+  --components-header-toggle-gap-px: 8;
+  --components-header-toggle-icon-size-px: 24;
+  --components-header-menu-button-size-px: 24;
+  --components-header-backdrop-blur-px: 15;
+
+  /* Tab raw values (mobile/tablet px) */
+  --components-tab-font-size-px: 10;
+  --components-tab-line-height-px: 10;
+  --components-tab-button-min-width-px: 45;
+  --components-tablist-vertical-width-px: 83;
+  --components-tablist-vertical-height-px: 116;
+  --components-tab-panel-min-width-px: 240;
+  --components-tab-panel-vertical-width-px: 240;
+  --components-tab-panel-horizontal-width-px: 404;
+  --components-tab-panel-min-height-px: 256;
+  --components-tab-assembled-width-px: 324;
+
+  /* Card computed values */
+  --components-card-border-width: calc(var(--components-card-border-width-px) * 1px);
+  --components-card-border-radius: calc(var(--components-card-border-radius-px) / 16 * 1rem);
+  --components-card-content-padding: calc(var(--components-card-content-padding-px) / 16 * 1rem);
+  --components-card-content-gap: calc(var(--components-card-content-gap-px) / 16 * 1rem);
+  --components-card-body-line-height: calc(var(--components-card-body-line-height-px) / 16 * 1rem);
+  --components-card-figure-min-height: calc(var(--components-card-figure-min-height-px) / 16 * 1rem);
+  --components-card-default-width: calc(var(--components-card-default-width-px) / 16 * 1rem);
+  --components-card-horizontal-width: calc(var(--components-card-horizontal-width-px) / 16 * 1rem);
+  --components-card-vertical-min-width: calc(var(--components-card-vertical-min-width-px) / 16 * 1rem);
+  --components-card-horizontal-min-width: calc(var(--components-card-horizontal-min-width-px) / 16 * 1rem);
+  --components-card-horizontal-min-height: calc(var(--components-card-horizontal-min-height-px) / 16 * 1rem);
+  --components-card-horizontal-figure-min-width: calc(var(--components-card-horizontal-figure-min-width-px) / 16 * 1rem);
+  --components-card-horizontal-figure-max-width: calc(var(--components-card-horizontal-figure-max-width-px) / 16 * 1rem);
+  --components-card-mobile-width: calc(var(--components-card-mobile-width-px) / 16 * 1rem);
+  --components-card-mobile-max-width: calc(var(--components-card-mobile-max-width-px) / 16 * 1rem);
+
+  /* Banner computed values */
+  --components-banner-border-radius: calc(var(--components-banner-border-radius-px) / 16 * 1rem);
+  --components-banner-padding-l-r: calc(var(--components-banner-padding-l-r-px) / 16 * 1rem);
+  --components-banner-content-max-width: calc(var(--components-banner-content-max-width-px) / 16 * 1rem);
+  --components-banner-short-min-height: calc(var(--components-banner-short-min-height-px) / 16 * 1rem);
+  --components-banner-bg-width: calc(var(--components-banner-bg-width-px) / 16 * 1rem);
+  --components-banner-split-vertical-width: calc(var(--components-banner-split-vertical-width-px) / 16 * 1rem);
+  --components-banner-split-horizontal-width: calc(var(--components-banner-split-horizontal-width-px) / 16 * 1rem);
+  --components-banner-split-gap: calc(var(--components-banner-split-gap-px) / 16 * 1rem);
+  --components-banner-split-image-max-width: calc(var(--components-banner-split-image-max-width-px) / 16 * 1rem);
+
+  /* Footer computed values */
+  --components-footer-outer-padding: calc(var(--components-footer-outer-padding-px) / 16 * 1rem);
+  --components-footer-group-padding: calc(var(--components-footer-group-padding-px) / 16 * 1rem);
+  --components-footer-mobile-max-width: calc(var(--components-footer-mobile-max-width-px) / 16 * 1rem);
+  --components-footer-desktop-min-width: calc(var(--components-footer-desktop-min-width-px) / 16 * 1rem);
+  --components-footer-brand-max-width: calc(var(--components-footer-brand-max-width-px) / 16 * 1rem);
+  --components-footer-logo-mark-width: calc(var(--components-footer-logo-mark-width-px) / 16 * 1rem);
+  --components-footer-logo-mark-height: calc(var(--components-footer-logo-mark-height-px) / 16 * 1rem);
+  --components-footer-heading-max-width: calc(var(--components-footer-heading-max-width-px) / 16 * 1rem);
+  --components-footer-nav-padding-y: calc(var(--components-footer-nav-padding-y-px) / 16 * 1rem);
+  --components-footer-link-padding-y: calc(var(--components-footer-link-padding-y-px) / 16 * 1rem);
+  --components-footer-list-gap: calc(var(--components-footer-list-gap-px) / 16 * 1rem);
+  --components-footer-mark-gap: calc(var(--components-footer-mark-gap-px) / 16 * 1rem);
+  --components-footer-brand-padding-top: calc(var(--components-footer-brand-padding-top-px) / 16 * 1rem);
+  --components-footer-toggle-padding-top: calc(var(--components-footer-toggle-padding-top-px) / 16 * 1rem);
+  --components-footer-toggle-gap: calc(var(--components-footer-toggle-gap-px) / 16 * 1rem);
+  --components-footer-toggle-icon-size: calc(var(--components-footer-toggle-icon-size-px) / 16 * 1rem);
+
+  /* Header computed values */
+  --components-header-desktop-width: calc(var(--components-header-desktop-width-px) / 16 * 1rem);
+  --components-header-mobile-width: calc(var(--components-header-mobile-width-px) / 16 * 1rem);
+  --components-header-top-height: calc(var(--components-header-top-height-px) / 16 * 1rem);
+  --components-header-top-padding: calc(var(--components-header-top-padding-px) / 16 * 1rem);
+  --components-header-gap: calc(var(--components-header-gap-px) / 16 * 1rem);
+  --components-header-row-gap: calc(var(--components-header-row-gap-px) / 16 * 1rem);
+  --components-header-panel-padding: calc(var(--components-header-panel-padding-px) / 16 * 1rem);
+  --components-header-panel-gap: calc(var(--components-header-panel-gap-px) / 16 * 1rem);
+  --components-header-mobile-list-gap: calc(var(--components-header-mobile-list-gap-px) / 16 * 1rem);
+  --components-header-desktop-list-gap: calc(var(--components-header-desktop-list-gap-px) / 16 * 1rem);
+  --components-header-desktop-list-padding-left: calc(var(--components-header-desktop-list-padding-left-px) / 16 * 1rem);
+  --components-header-logo-mark-width: calc(var(--components-header-logo-mark-width-px) / 16 * 1rem);
+  --components-header-logo-mark-height: calc(var(--components-header-logo-mark-height-px) / 16 * 1rem);
+  --components-header-toggle-gap: calc(var(--components-header-toggle-gap-px) / 16 * 1rem);
+  --components-header-toggle-icon-size: calc(var(--components-header-toggle-icon-size-px) / 16 * 1rem);
+  --components-header-menu-button-size: calc(var(--components-header-menu-button-size-px) / 16 * 1rem);
+  --components-header-backdrop-blur: calc(var(--components-header-backdrop-blur-px) * 1px);
+
+  /* Tab computed values */
+  --components-tab-font-size: calc(var(--components-tab-font-size-px) / 16 * 1rem);
+  --components-tab-line-height: calc(var(--components-tab-line-height-px) / 16 * 1rem);
+  --components-tab-button-min-width: calc(var(--components-tab-button-min-width-px) / 16 * 1rem);
+  --components-tablist-vertical-width: calc(var(--components-tablist-vertical-width-px) / 16 * 1rem);
+  --components-tablist-vertical-height: calc(var(--components-tablist-vertical-height-px) / 16 * 1rem);
+  --components-tab-panel-min-width: calc(var(--components-tab-panel-min-width-px) / 16 * 1rem);
+  --components-tab-panel-vertical-width: calc(var(--components-tab-panel-vertical-width-px) / 16 * 1rem);
+  --components-tab-panel-horizontal-width: calc(var(--components-tab-panel-horizontal-width-px) / 16 * 1rem);
+  --components-tab-panel-min-height: calc(var(--components-tab-panel-min-height-px) / 16 * 1rem);
+  --components-tab-assembled-width: calc(var(--components-tab-assembled-width-px) / 16 * 1rem);
+
+  /* Grid raw values */
+  --grid-columns-architecture: 12;
+  --grid-columns-mobile: 4;
+  --grid-columns-tablet: 8;
+  --grid-columns-widescreen: 12;
+  --grid-gutter-px: 16;
+  --breakpoint-tablet-px: 768;
+  --breakpoint-widescreen-px: 1280;
+  --layout-wide-max-width-px: 1312;
+  --layout-golden-wide-max-width-px: 813.44;
+
+  /* Grid computed values */
+  --grid-gutter: calc(var(--grid-gutter-px) / 16 * 1rem);
+  --breakpoint-tablet: calc(var(--breakpoint-tablet-px) / 16 * 1rem);
+  --breakpoint-widescreen: calc(var(--breakpoint-widescreen-px) / 16 * 1rem);
+  --layout-wide-max-width: calc(var(--layout-wide-max-width-px) / 16 * 1rem);
+  --layout-golden-wide-max-width: calc(var(--layout-golden-wide-max-width-px) / 16 * 1rem);
+}
+
+[data-color-mode='dark'] {
+  --background-page: var(--brand-secondary-dark);
+  --background-section: var(--brand-secondary);
+  --text-default: var(--global-white);
+  --text-link: var(--global-white);
+  --text-hover: var(--brand-primary);
+}
+
+[data-type-mode='widescreen'] {
+  --typography-h1-title-font-size-px: 80;
+  --typography-h1-title-line-height-px: 100;
+  --typography-h1-title-plus-p-font-size-px: 32;
+  --typography-h1-title-plus-p-line-height-px: 56;
+  --typography-h1-font-size-px: 72;
+  --typography-h1-line-height-px: 90;
+  --typography-h2-font-size-px: 60;
+  --typography-h2-line-height-px: 74;
+  --typography-h3-font-size-px: 50;
+  --typography-h3-line-height-px: 62;
+  --typography-h4-font-size-px: 42;
+  --typography-h4-line-height-px: 52;
+  --typography-h5-font-size-px: 32;
+  --typography-h5-line-height-px: 40;
+  --typography-body-font-size-px: 24;
+  --typography-body-line-height-px: 36;
+  --typography-list-font-size-px: 24;
+  --typography-list-line-height-px: 30;
+  --typography-small-font-size-px: 20;
+  --typography-small-line-height-px: 30;
+  --typography-fine-font-size-px: 16;
+  --typography-fine-line-height-px: 24;
+}
+
+[data-space-mode='widescreen'] {
+  --space-xs-px: 4;
+  --space-sm-px: 8;
+  --space-md-px: 16;
+  --space-lg-px: 24;
+  --space-xl-px: 32;
+  --space-xxl-px: 40;
+  --space-xxxl-px: 48;
+  --space-xxxxxl-px: 64;
+
+  --radius-xs-px: 4;
+  --radius-sm-px: 8;
+  --radius-md-px: 16;
+  --radius-lg-px: 32;
+  --radius-xl-px: 48;
+  --radius-xxl-px: 64;
+}
+
+[data-breakpoint-mode='widescreen'] {
+  --components-blockquote-quote-font-size-px: 24;
+  --components-blockquote-quote-line-height-px: 36;
+  --components-blockquote-cite-font-size-px: 20;
+  --components-blockquote-cite-line-height-px: 30;
+
+  --components-button-font-size-px: 24;
+  --components-button-line-height-px: 24;
+  --components-button-padding-gap-px: 8;
+  --components-button-padding-l-r-px: 32;
+  --components-button-padding-t-b-px: 12;
+  --components-button-inline-icon-size-px: 32;
+  --components-button-icon-button-size-px: 48;
+  --components-button-icon-button-padding-px: 8;
+
+  --components-chip-font-size-px: 24;
+  --components-chip-line-height-px: 24;
+  --components-chip-padding-gap-px: 4;
+  --components-chip-padding-l-r-px: 20;
+  --components-chip-padding-t-b-px: 12;
+  --components-chip-label-padding-t-b-px: 0;
+  --components-chip-group-gap-px: 16;
+  --components-chip-icon-size-px: 32;
+  --components-chip-icon-padding-px: 4;
+  --components-chip-avatar-size-px: 32;
+  --components-chip-close-size-px: 32;
+  --components-chip-close-padding-outer-px: 10;
+  --components-chip-close-padding-inner-px: 4;
+
+  --components-input-text-font-size-px: 24;
+  --components-input-text-line-height-px: 30;
+  --components-input-text-padding-px: 12;
+  --components-input-text-padding-gap-px: 8;
+
+  --components-input-checkbox-font-size-px: 24;
+  --components-input-checkbox-line-height-px: 30;
+  --components-input-checkbox-size-px: 32;
+  --components-input-checkbox-padding-px: 4;
+  --components-input-checkbox-padding-gap-px: 16;
+  --components-input-checkbox-before-padding-px: 6;
+
+  --components-input-switch-width-px: 72;
+  --components-input-switch-height-px: 32;
+  --components-input-switch-padding-px: 4;
+  --components-input-switch-padding-gap-px: 16;
+  --components-input-switch-border-radius-px: 32;
+  --components-input-switch-thumb-size-px: 20;
+
+  --components-link-p-height-px: 36;
+  --components-link-small-height-px: 30;
+  --components-link-fine-height-px: 24;
+
+  --components-content-padding-px: 32;
+  --components-content-max-width-px: 1480;
+  --components-content-title-font-size-px: 80;
+  --components-content-title-line-height-px: 100;
+  --components-content-heading-font-size-px: 60;
+  --components-content-heading-line-height-px: 74;
+  --components-content-body-font-size-px: 24;
+  --components-content-body-line-height-px: 36;
+  --components-content-eyebrow-font-size-px: 20;
+  --components-content-eyebrow-line-height-px: 30;
+  --components-content-fine-font-size-px: 16;
+  --components-content-fine-line-height-px: 24;
+  --components-content-title-body-gap-px: 8;
+  --components-content-section-gap-px: 32;
+  --components-content-cta-gap-px: 16;
+  --components-content-footer-max-width-px: 668;
+
+  --components-details-padding-px: 16;
+  --components-details-summary-gap-px: 4;
+  --components-details-body-padding-top-px: 8;
+  --components-details-icon-container-size-px: 28;
+  --components-details-icon-size-px: 20;
+  --components-details-icon-padding-px: 4;
+  --components-details-group-gap-px: 8;
+
+  --components-card-content-padding-px: 32;
+  --components-card-content-gap-px: 0;
+  --components-card-body-line-height-px: 36;
+  --components-card-figure-min-height-px: 280;
+  --components-card-default-width-px: 704;
+  --components-card-horizontal-width-px: 704;
+  --components-card-vertical-min-width-px: 344;
+  --components-card-horizontal-min-width-px: 704;
+  --components-card-horizontal-min-height-px: 280;
+  --components-card-horizontal-figure-min-width-px: 344;
+  --components-card-horizontal-figure-max-width-px: 344;
+  --components-card-mobile-width-px: 344;
+  --components-card-mobile-max-width-px: 344;
+
+  --components-banner-content-max-width-px: 1480;
+  --components-banner-split-gap-px: 16;
+
+  --components-footer-outer-padding-px: 32;
+  --components-footer-group-padding-px: 32;
+  --components-footer-nav-padding-y-px: 16;
+  --components-footer-link-padding-y-px: 4;
+  --components-footer-list-gap-px: 16;
+  --components-footer-mark-gap-px: 16;
+  --components-footer-brand-padding-top-px: 24;
+  --components-footer-toggle-padding-top-px: 24;
+  --components-footer-toggle-gap-px: 16;
+
+  --components-header-top-padding-px: 16;
+  --components-header-gap-px: 32;
+  --components-header-row-gap-px: 16;
+  --components-header-panel-padding-px: 16;
+  --components-header-panel-gap-px: 16;
+  --components-header-mobile-list-gap-px: 16;
+  --components-header-desktop-list-gap-px: 32;
+  --components-header-desktop-list-padding-left-px: 48;
+  --components-header-toggle-gap-px: 16;
+
+  --components-tab-font-size-px: 16;
+  --components-tab-line-height-px: 16;
+
+  --components-message-font-size-px: 20;
+  --components-message-line-height-px: 30;
+  --components-message-floating-close-offset-px: 32;
+  --components-message-radius-px: 8;
+  --components-message-inline-padding-px: 16;
+  --components-message-inline-gap-px: 16;
+  --components-message-toast-padding-px: 16;
+  --components-message-toast-gap-px: 16;
+
+  --components-pagination-gap-px: 16;
+  --components-pagination-padding-x-px: 32;
+  --components-pagination-padding-y-px: 16;
+}
+
+[data-token-mode='library'] {
+  --components-badge-font-size-px: 20;
+  --components-badge-line-height-px: 20;
+  --components-badge-padding-l-r-px: 12;
+  --components-badge-padding-t-b-px: 8;
+  --components-badge-border-radius-px: 8;
+}
+
+[data-token-mode='symbol'] {
+  --components-badge-font-size-px: 10;
+  --components-badge-line-height-px: 11;
+  --components-badge-padding-l-r-px: 4;
+  --components-badge-padding-t-b-px: 2;
+  --components-badge-border-radius-px: 4;
+}
