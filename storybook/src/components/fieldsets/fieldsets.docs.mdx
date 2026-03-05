@@ -1,0 +1,320 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import * as ComponentStories from './fieldsets.stories';
+
+<Meta of={ComponentStories} title="Molecules/Fieldsets/Documentation" />
+
+# Fieldsets
+
+Fieldsets provide consistent structure for form inputs with labels, validation states, and helper messages. They adapt layout and spacing based on input type, ensuring accessible and predictable form patterns.
+
+## Anatomy
+
+A fieldset consists of:
+
+- **Label or legend:** Descriptive text that identifies the input or group. Single inputs use a `<label>`; choice input groups use a `<legend>` inside a `<fieldset>`.
+- **Legend label (optional):** Fine-print text alongside the legend for supplementary context such as `(Optional)`; applies to checkbox, radio, and switch groups.
+- **Input:** The interactive control: text field, password field, select, checkbox, radio, or switch.
+- **Message (optional):** Helper text or validation feedback below the input.
+
+<Canvas of={ComponentStories.AnatomyFigure} />
+
+## Variants
+
+Fieldsets vary by input type. The type determines anatomy, layout, and interaction behavior.
+
+- **Text:** Single-line text entry with optional left and right icon slots.
+- **Password:** Text input with a show/hide toggle button.
+- **Select:** Dropdown menu with a chevron indicator.
+- **Checkbox:** Group of independent selection controls under a shared legend.
+- **Radio:** Group of mutually exclusive selection controls under a shared legend.
+- **Switch:** Group of binary toggle controls under a shared legend.
+
+## States
+
+- **Default:** Initial unfocused state.
+- **Focus:** 2px primary-colored outline with 2px offset.
+- **Disabled:** Non-interactive, reduced opacity and `not-allowed` cursor.
+- **Read-only:** Non-editable text/select value that remains readable and submittable.
+- **Invalid:** Border switches to invalid state color and error message is linked via `aria-describedby`.
+- **Valid:** Border switches to valid state color where positive confirmation is useful.
+- **Checkbox values:** `unchecked`, `checked`, and `indeterminate`.
+- **Password visibility:** Hidden/shown via toggle control with updated label and icon.
+- **Select open/closed:** Closed state shows value; activated state expands options.
+
+## Typography
+
+Fieldsets define typography for labels, legends, and message text. Input field typography is defined by individual input components.
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Token</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Label, Legend font-size</td><td><code>small/font-size</code></td><td>0.75rem / 12px</td><td>1.25rem / 20px</td></tr>
+    <tr><td>Label, Legend line-height</td><td><code>small/line-height</code></td><td>1.25rem / 20px</td><td>1.875rem / 30px</td></tr>
+    <tr><td>Legend label, Message font-size</td><td><code>fine/font-size</code></td><td>0.625rem / 10px</td><td>1rem / 16px</td></tr>
+    <tr><td>Legend label, Message line-height</td><td><code>fine/line-height</code></td><td>1.125rem / 18px</td><td>1.5rem / 24px</td></tr>
+  </tbody>
+</table>
+
+**Input typography:** Text input, password input, select dropdown, and choice input label typography are defined by their respective input components. See Inputs documentation for complete specifications.
+
+## Spacing
+
+Fieldsets define spacing between label/legend, input, and message elements. Internal input spacing is defined by individual input components.
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Token</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Text, password, select gap</td><td><code>sm</code></td><td>0.25rem / 4px</td><td>0.5rem / 8px</td></tr>
+    <tr><td>Checkbox, radio, switch gap</td><td><code>md</code></td><td>0.5rem / 8px</td><td>1rem / 16px</td></tr>
+    <tr><td>Legend padding-bottom</td><td><code>xs</code></td><td>0.125rem / 2px</td><td>0.25rem / 4px</td></tr>
+  </tbody>
+</table>
+
+**Input spacing:** Padding, internal gaps, and marker spacing are documented in Inputs.
+
+## Colors
+
+Fieldsets define colors for labels, legends, and message text. Input fills, borders, and control states are defined by individual input components.
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Token</th>
+      <th>Light mode</th>
+      <th>Dark mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Label, Legend</td><td><code>text/default</code></td><td>#000000 (global/black)</td><td>#FFFFFF (global/white)</td></tr>
+    <tr><td>Message — default</td><td><code>text/default</code></td><td>#000000 (global/black)</td><td>#FFFFFF (global/white)</td></tr>
+    <tr><td>Message — invalid</td><td><code>status/invalid</code></td><td>#C00C00</td><td>#C00C00</td></tr>
+    <tr><td>Message — valid</td><td><code>status/valid</code></td><td>#007000</td><td>#007000</td></tr>
+    <tr><td>Message — disabled</td><td><code>status/disabled</code></td><td>#808080</td><td>#808080</td></tr>
+    <tr><td>Message — read-only</td><td><code>status/read-only</code></td><td>#333333</td><td>#333333</td></tr>
+  </tbody>
+</table>
+
+**Input colors:** Inputs define their own background, border, and control colors.
+
+**Light/dark mode behavior:** Label and message text adapt through `text/default`. In dark mode, differentiate message and label by placement and structure, not color alone.
+
+## Accessibility
+
+### Keyboard navigation
+
+All fieldset inputs must be fully keyboard accessible:
+
+- **Tab:** Moves focus between controls in reading order.
+- **Shift + Tab:** Moves focus backward.
+- **Space:** Toggles checkboxes and switches; opens a closed select.
+- **Enter:** Submits the form and activates inline controls (for example, show/hide password).
+- **Arrow keys:** Navigate between radio buttons within a group.
+
+### Screen readers
+
+Use semantic HTML so assistive technology can parse form structure correctly. Use `<fieldset>` to group related controls and `<legend>` for group naming. For text/password/select, use explicit `for` and `id` associations.
+
+### ARIA attributes
+
+- **aria-invalid="true":** Applied to invalid inputs.
+- **aria-required="true":** Marks required fields.
+- **aria-describedby:** Links helper/error text to its input.
+- **aria-disabled="true":** For controls where native `disabled` cannot be used.
+- **role="switch":** Applied to switch-style checkbox controls.
+- **role="alert":** Applied to error messages that should be announced immediately.
+
+### Focus management
+
+Interactive controls require a visible focus indicator. Keep logical tab order and do not suppress focus outlines.
+
+### Color contrast
+
+Label and input text satisfy WCAG AA thresholds in both light and dark modes. Placeholder text must never be the only source of required guidance.
+
+## Usage
+
+### When to use
+
+Use Fieldsets when you need to:
+
+- Collect user input with consistent labeling and structure.
+- Group related checkbox/radio/switch controls under a shared label.
+- Provide inline helper and validation feedback.
+- Maintain accessible form semantics for keyboard and assistive tech users.
+
+### When not to use
+
+Do not use Fieldsets when:
+
+- Building search inputs with dedicated search semantics.
+- Creating filter/toolbar controls better represented by other patterns.
+- You think a field does not need a visible label; use accessible labeling instead of removing labels.
+
+### Content guidelines
+
+- **Write concise labels:** 1-3 words that clearly describe the expected value.
+- **Use placeholders for examples:** Use format hints, not duplicate labels.
+- **Write proactive helper text:** Set expectations before errors occur.
+- **Keep legends brief:** Group labels should add context without repetition.
+- **Write actionable errors:** Explain what failed and how to fix it.
+
+### Input type selection
+
+<table>
+  <thead>
+    <tr>
+      <th>Input type</th>
+      <th>Use for</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Text</td><td>Short, single-line text entry</td></tr>
+    <tr><td>Password</td><td>Sensitive text masked by default</td></tr>
+    <tr><td>Select</td><td>One choice from a predefined list</td></tr>
+    <tr><td>Checkbox</td><td>Multiple independent choices</td></tr>
+    <tr><td>Radio</td><td>Single choice from mutually exclusive options</td></tr>
+    <tr><td>Switch</td><td>Binary on/off settings with immediate effect</td></tr>
+  </tbody>
+</table>
+
+### Placement
+
+Fieldsets stack vertically with consistent spacing and shared alignment. Preferred width behavior is fluid between component min/max constraints.
+
+### Best practices
+
+<Story of={ComponentStories.BestPracticesFigure} />
+
+## Code reference
+
+### HTML
+
+```html
+<!-- Text input fieldset -->
+<fieldset class="fieldset">
+  <label for="email">Email address</label>
+  <input type="email" id="email" placeholder="[email protected]" aria-describedby="email-message" />
+  <div id="email-message" class="message">We'll never share your email with anyone else.</div>
+</fieldset>
+
+<!-- Checkbox group fieldset -->
+<fieldset class="fieldset fieldset--choice">
+  <legend>Interests <span class="legend-label">(Optional)</span></legend>
+  <label><input type="checkbox" value="design" /> Design</label>
+  <label><input type="checkbox" value="development" /> Development</label>
+  <label><input type="checkbox" value="marketing" /> Marketing</label>
+  <div class="message">Select all that apply.</div>
+</fieldset>
+```
+
+### CSS
+
+```css
+.fieldset {
+  min-width: 15.5rem;
+  max-width: 26.25rem;
+  width: 100%;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.fieldset--choice {
+  gap: 0.5rem;
+}
+
+.fieldset label,
+.fieldset legend {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+
+.message {
+  font-size: 0.625rem;
+  line-height: 1.125rem;
+}
+```
+
+### JavaScript
+
+```js
+export function createFieldset({ type = 'text', state = 'default', showMessage = true, legendLabel = false } = {}) {
+  if (type === 'checkbox' || type === 'radio' || type === 'switch') {
+    return choiceFieldset({ type, state, showMessage, legendLabel });
+  }
+
+  return textLikeFieldset({ type, state, showMessage });
+}
+```
+
+### Design tokens reference
+
+```txt
+/* Typography */
+--small/font-size
+--small/line-height
+--fine/font-size
+--fine/line-height
+--components/input/text/font-size
+--components/input/text/line-height
+--components/input/checkbox/font-size
+--components/input/checkbox/line-height
+
+/* Spacing */
+--xs
+--sm
+--md
+--components/input/text/padding
+--components/input/text/padding-gap
+--components/input/checkbox/padding
+--components/input/checkbox/padding-gap
+--components/input/switch/padding
+--components/input/switch/padding-gap
+
+/* Border-radius */
+--components/input/text/border-radius
+--input/checkbox/border-radius
+--components/input/switch/border-radius
+
+/* Colors */
+--text/default
+--page/background
+--global/gray-dark
+--global/gray-medium
+--brand/primary
+--status/invalid
+--status/valid
+
+/* Size constraints */
+--components/input/min-width
+--components/input/max-width
+```
+
+## Resources
+
+- [W3C: Accessible Forms Tutorial](https://www.w3.org/WAI/tutorials/forms/) - Patterns and best practices for accessible form markup.
+- [MDN: `<fieldset>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset) - Native HTML fieldset documentation.
+- [MDN: `<legend>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/legend) - Native HTML legend documentation.
+- [ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/) - W3C interaction patterns.
+- [WebAIM: Creating Accessible Forms](https://webaim.org/techniques/forms/) - Form accessibility guidance.
+- [WCAG 2.1 Quick Reference](https://www.w3.org/WAI/WCAG21/quickref/) - Accessibility guidelines.
+- [MDN Web Docs](https://developer.mozilla.org/) - HTML, CSS, and JavaScript references.
