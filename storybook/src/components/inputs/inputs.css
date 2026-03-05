@@ -141,6 +141,16 @@ p.dds-input-message {
   color: var(--status-invalid);
 }
 
+.dds-inputs-fig .dds-input-message.dds-input-message--valid,
+.sbdocs-content p.dds-input-message.dds-input-message--valid {
+  color: var(--status-valid);
+}
+
+.dds-inputs-fig .dds-input-message.dds-input-message--invalid,
+.sbdocs-content p.dds-input-message.dds-input-message--invalid {
+  color: var(--status-invalid);
+}
+
 .dds-input-message--disabled {
   color: var(--status-disabled);
 }
@@ -407,6 +417,15 @@ p.dds-input-message {
 
 .dds-inputs-fig__dont {
   border-left-color: var(--status-invalid);
+}
+
+.dds-inputs-fig__do h4,
+.dds-inputs-fig__dont h4 {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-size: var(--typography-h4-font-size);
+  line-height: var(--typography-h4-line-height);
+  font-weight: 400;
 }
 
 .dds-inputs-fig__do p,
