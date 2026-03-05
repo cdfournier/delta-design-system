@@ -101,11 +101,11 @@
 .dds-grid-fig__sample-col {
   display: grid;
   place-items: center;
-  min-height: 5rem;
+  min-height: 3rem;
+  padding: var(--space-lg) var(--space-md);
   border-radius: var(--border-radius-xs);
-  background: color-mix(in srgb, var(--brand-primary) 18%, var(--background-page));
-  border: 1px solid color-mix(in srgb, var(--brand-primary) 45%, var(--global-gray-medium));
-  color: var(--text-default);
+  background: var(--brand-primary);
+  color: var(--global-white);
   font-family: var(--font-family-code);
   font-size: var(--typography-small-font-size);
   line-height: var(--typography-small-line-height);
@@ -114,12 +114,11 @@
 .dds-grid-fig__pattern-item {
   display: grid;
   place-items: center;
-  min-height: 5rem;
+  min-height: 3rem;
   padding: var(--space-md);
   border-radius: var(--border-radius-xs);
-  background: color-mix(in srgb, var(--brand-secondary) 12%, var(--background-page));
-  border: 1px solid color-mix(in srgb, var(--brand-secondary) 40%, var(--global-gray-medium));
-  color: var(--text-default);
+  background: var(--brand-primary);
+  color: var(--global-white);
   text-align: center;
   font-family: var(--font-family-code);
   font-size: var(--typography-small-font-size);
@@ -155,16 +154,12 @@
   line-height: var(--typography-body-line-height);
 }
 
-@supports not (background: color-mix(in srgb, red 50%, white)) {
-  .dds-grid-fig__sample-col {
-    background: var(--global-gray-light);
-    border-color: var(--global-gray-medium);
-  }
-
-  .dds-grid-fig__pattern-item {
-    background: var(--global-gray-light);
-    border-color: var(--global-gray-medium);
-  }
+.dds-grid-fig__column-title {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-size: var(--typography-h5-font-size);
+  line-height: var(--typography-h5-line-height);
+  font-weight: 400;
 }
 
 @media (max-width: 48rem) {
