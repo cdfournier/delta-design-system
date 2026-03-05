@@ -199,7 +199,7 @@ function bestPracticesGrid() {
   return `
     <div class="dds-spacing-fig__do-dont-grid">
       <section class="dds-spacing-fig__do">
-        <p><strong>Do</strong></p>
+        <h4 class="dds-spacing-fig__column-title">Do</h4>
         <p><strong>Use spacing tokens</strong></p>
         <p>Reference tokens like <code>--spacing-xl</code> instead of arbitrary pixel values. Tokens ensure spacing scales automatically at the widescreen breakpoint.</p>
         <p><strong>Let spacing scale responsively</strong></p>
@@ -210,7 +210,7 @@ function bestPracticesGrid() {
         <p>Larger elements typically need proportionally larger spacing around them to maintain visual balance.</p>
       </section>
       <section class="dds-spacing-fig__dont">
-        <p><strong>Don't</strong></p>
+        <h4 class="dds-spacing-fig__column-title">Don't</h4>
         <p><strong>Don't use arbitrary values</strong></p>
         <p>Avoid one-off spacing like 13px or 27px. If you need something between two steps, use the closer token and do not invent a new value.</p>
         <p><strong>Don't override responsive scaling</strong></p>
