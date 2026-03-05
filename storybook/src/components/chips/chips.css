@@ -449,6 +449,15 @@
   border-left-color: var(--status-invalid);
 }
 
+.dds-chips-fig__do h3,
+.dds-chips-fig__dont h3 {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-size: var(--typography-h4-font-size);
+  line-height: var(--typography-h4-line-height);
+  font-weight: 400;
+}
+
 .dds-chips-fig__do p,
 .dds-chips-fig__dont p {
   margin: 0;

@@ -70,7 +70,6 @@ Interactive chips respond visually to user interaction. Static chips (avatar typ
 
 The resting state before any user interaction. Chips display their base background color.
 
-
 ### Hover
 
 When the cursor moves over interactive chips, the background darkens to the `-dark` variant of the chip color token. The border color uses the base chip color token.
@@ -100,13 +99,13 @@ For selectable chips with `checked=yes`, a checkmark icon appears at the leading
   </thead>
   <tbody>
     <tr>
-      <td>Font size</td>
+      <td>font-size</td>
       <td><code>components/chip/font-size</code></td>
       <td>0.75rem / 12px</td>
       <td>1.5rem / 24px</td>
     </tr>
     <tr>
-      <td>Line height</td>
+      <td>line-height</td>
       <td><code>components/chip/line-height</code></td>
       <td>0.75rem / 12px</td>
       <td>1.5rem / 24px</td>
@@ -127,37 +126,37 @@ For selectable chips with `checked=yes`, a checkmark icon appears at the leading
   </thead>
   <tbody>
     <tr>
-      <td>Padding (top/bottom)</td>
+      <td>padding-top, padding-bottom</td>
       <td><code>components/chip/padding-t-b</code></td>
       <td>0.5rem / 8px</td>
       <td>0.75rem / 12px</td>
     </tr>
     <tr>
-      <td>Padding (left/right)</td>
+      <td>padding-left, padding-right</td>
       <td><code>components/chip/padding-l-r</code></td>
       <td>0.5rem / 8px</td>
       <td>1.25rem / 20px</td>
     </tr>
     <tr>
-      <td>Gap (internal elements)</td>
+      <td>gap</td>
       <td><code>components/chip/padding-gap</code></td>
       <td>0.125rem / 2px</td>
       <td>0.25rem / 4px</td>
     </tr>
     <tr>
-      <td>Dismiss button padding (outer)</td>
+      <td>Dismiss button padding-outer</td>
       <td><code>components/chip/button/padding-outer</code></td>
       <td>0.25rem / 4px</td>
       <td>0.625rem / 10px</td>
     </tr>
     <tr>
-      <td>Dismiss button padding (inner)</td>
+      <td>Dismiss button padding-inner</td>
       <td><code>components/chip/button/padding-inner</code></td>
       <td>0.125rem / 2px</td>
       <td>0.25rem / 4px</td>
     </tr>
     <tr>
-      <td>Gap (between chips)</td>
+      <td>Chip group gap</td>
       <td><code>xs</code></td>
       <td>0.125rem / 2px</td>
       <td>0.25rem / 4px</td>
@@ -213,38 +212,38 @@ For selectable chips with `checked=yes`, a checkmark icon appears at the leading
     <tr>
       <td>Primary background (default)</td>
       <td><code>components/chip/primary</code></td>
-      <td>#FF5247</td>
-      <td>#FFFFFF</td>
+      <td>#FF5247 (brand/primary)</td>
+      <td>#FFFFFF (global/white)</td>
     </tr>
     <tr>
       <td>Primary background (hover/focus)</td>
       <td><code>components/chip/primary-dark</code></td>
-      <td>#B22E28</td>
-      <td>#FFFFFF</td>
+      <td>#B22E28 (brand/primary-dark)</td>
+      <td>#FFFFFF (global/white)</td>
     </tr>
     <tr>
       <td>Secondary background (default)</td>
       <td><code>components/chip/secondary</code></td>
-      <td>#003442</td>
-      <td>#FFFFFF</td>
+      <td>#003442 (brand/secondary)</td>
+      <td>#FFFFFF (global/white)</td>
     </tr>
     <tr>
       <td>Secondary background (hover/focus)</td>
       <td><code>components/chip/secondary-dark</code></td>
-      <td>#01232D</td>
-      <td>#FFFFFF</td>
+      <td>#01232D (brand/secondary-dark)</td>
+      <td>#FFFFFF (global/white)</td>
     </tr>
     <tr>
       <td>Label text</td>
       <td><code>text/inverse</code></td>
-      <td>#FFFFFF</td>
-      <td>#000000</td>
+      <td>#FFFFFF (global/white)</td>
+      <td>#000000 (global/black)</td>
     </tr>
     <tr>
       <td>Dismiss button background</td>
       <td><code>components/chip/button/primary</code> / <code>components/chip/button/secondary</code></td>
-      <td>#FFFFFF</td>
-      <td>#FFFFFF</td>
+      <td>#FFFFFF (global/white)</td>
+      <td>#FFFFFF (global/white)</td>
     </tr>
   </tbody>
 </table>
@@ -309,8 +308,8 @@ Guidelines for chips content:
 
 - **Keep labels concise:** Aim for 1-3 words. Chips are designed for compact contexts.
 - **Use clear language:** Labels should be immediately understandable without additional context.
-- **Be consistent:** Use parallel language patterns across chips in the same group.
-- **Avoid truncation:** If a label must be truncated to fit, it is too long for a chip.
+- **Be consistent:** Use parallel language patterns across chips in the same group, for example, all nouns or all adjectives.
+- **Avoid truncation:** If a label must be truncated to fit, it is too long for a chip. Use a different component or shorter phrasing.
 
 ### Placement
 
@@ -348,24 +347,139 @@ Group related chips together in a `<ul>` with `<li>` wrappers for proper list se
   </svg>
   Option
 </button>
+
+<!-- Dismissible chip -->
+<span class="chip chip-primary">
+  Label
+  <button class="chip-close button-chip" aria-label="Remove Label chip">
+    <svg viewBox="0 0 12 12" fill="none">
+      <path d="M9 3L3 9M3 3L9 9" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round"/>
+    </svg>
+  </button>
+</span>
+
+<!-- Chip group (list structure) -->
+<ul class="chip-group">
+  <li><button class="chip chip-primary">Design</button></li>
+  <li><button class="chip chip-primary">Development</button></li>
+  <li><button class="chip chip-primary">Research</button></li>
+</ul>
 ```
 
 ### CSS
 
 ```css
+/* Chip base */
 .chip {
   display: inline-flex;
   align-items: center;
-  gap: var(--components/chip/padding-gap, 0.125rem);
+  gap: var(--components/chip/padding-gap, 0.125rem); /* 2px */
   padding: var(--components/chip/padding-t-b, 0.5rem)
-           var(--components/chip/padding-l-r, 0.5rem);
-  border-radius: var(--components/chip/border-radius, 2rem);
-  font-size: var(--components/chip/font-size, 0.75rem);
-  line-height: var(--components/chip/line-height, 0.75rem);
+           var(--components/chip/padding-l-r, 0.5rem); /* 8px */
+  border-radius: var(--components/chip/border-radius, 2rem); /* 32px fixed */
+  font-size: var(--components/chip/font-size, 0.75rem); /* 12px */
+  line-height: var(--components/chip/line-height, 0.75rem); /* 12px */
   font-weight: 400;
   cursor: pointer;
   transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
   border: 1px solid transparent;
+}
+
+/* Widescreen */
+@media (min-width: 80rem) {
+  .chip {
+    gap: var(--components/chip/padding-gap, 0.25rem); /* 4px */
+    padding: var(--components/chip/padding-t-b, 0.75rem)
+             var(--components/chip/padding-l-r, 1.25rem); /* 12px 20px */
+    font-size: var(--components/chip/font-size, 1.5rem); /* 24px */
+    line-height: var(--components/chip/line-height, 1.5rem); /* 24px */
+  }
+}
+
+/* Primary variant */
+.chip-primary {
+  background-color: var(--components/chip/primary, #FF5247);
+  color: var(--text/inverse, #FFFFFF);
+  border-color: var(--components/chip/primary, #FF5247);
+}
+.chip-primary:hover,
+.chip-primary:focus {
+  background-color: var(--components/chip/primary-dark, #B22E28);
+  border-color: var(--components/chip/primary, #FF5247);
+}
+
+/* Secondary variant */
+.chip-secondary {
+  background-color: var(--components/chip/secondary, #003442);
+  color: var(--text/inverse, #FFFFFF);
+  border-color: var(--components/chip/secondary, #003442);
+}
+.chip-secondary:hover,
+.chip-secondary:focus {
+  background-color: var(--components/chip/secondary-dark, #01232D);
+  border-color: var(--components/chip/secondary, #003442);
+}
+
+/* Checkmark toggle (hidden by default, shown when checked) */
+.chip .check-icon {
+  display: none;
+  width: 0.75rem; /* 12px */
+  height: 0.75rem; /* 12px */
+}
+.chip.checked .check-icon {
+  display: block;
+}
+
+/* Avatar */
+.chip-avatar {
+  border-radius: var(--border-radius/round, 6.25rem); /* 100px fixed */
+  overflow: hidden;
+}
+
+/* Dismiss button */
+.button-chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--components/chip/button/padding-outer, 0.25rem); /* 4px */
+}
+.button-chip button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--components/chip/button/padding-inner, 0.125rem); /* 2px */
+  border-radius: var(--border-radius/round, 6.25rem); /* 100px fixed */
+  background-color: var(--components/chip/button/primary, #FFFFFF);
+  border: none;
+  cursor: pointer;
+}
+
+/* Widescreen dismiss button */
+@media (min-width: 80rem) {
+  .button-chip {
+    padding: var(--components/chip/button/padding-outer, 0.625rem); /* 10px */
+  }
+  .button-chip button {
+    padding: var(--components/chip/button/padding-inner, 0.25rem); /* 4px */
+  }
+}
+
+/* Chip group container */
+.chip-group {
+  display: flex;
+  gap: var(--xs, 0.125rem); /* 2px mobile */
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 80rem) {
+  .chip-group {
+    gap: var(--xs, 0.25rem); /* 4px widescreen */
+  }
 }
 ```
 
@@ -379,17 +493,75 @@ document.querySelectorAll('.chip[role="checkbox"]').forEach((chip) => {
     chip.classList.toggle('checked');
   });
 });
+
+// Handle chip removal
+document.querySelectorAll('.button-chip button').forEach((button) => {
+  button.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const chip = button.closest('.chip');
+    const listItem = chip.closest('li');
+    const group = chip.closest('.chip-group');
+
+    // Move focus before removing
+    const chips = [...(group ? group.querySelectorAll('.chip') : [])];
+    const currentIndex = chips.indexOf(chip);
+    const nextFocus = chips[currentIndex + 1] || chips[currentIndex - 1];
+
+    if (listItem) {
+      listItem.remove();
+    } else {
+      chip.remove();
+    }
+
+    if (nextFocus) nextFocus.focus();
+    else if (group) group.focus();
+
+    // Fire custom event for state management
+    document.dispatchEvent(new CustomEvent('chipRemoved', {
+      detail: { chipText: chip.textContent.trim() }
+    }));
+  });
+});
+
+// Keyboard deletion support (Delete/Backspace on focused chip)
+document.querySelectorAll('.chip').forEach((chip) => {
+  chip.addEventListener('keydown', (e) => {
+    const dismissBtn = chip.querySelector('.button-chip button');
+    if ((e.key === 'Delete' || e.key === 'Backspace') && dismissBtn) {
+      e.preventDefault();
+      dismissBtn.click();
+    }
+  });
+});
 ```
 
 ### Design tokens reference
 
 ```text
+/* Typography */
 --components/chip/font-size      Mobile: 0.75rem / 12px   ->   Widescreen: 1.5rem / 24px
 --components/chip/line-height    Mobile: 0.75rem / 12px   ->   Widescreen: 1.5rem / 24px
---components/chip/padding-t-b    Mobile: 0.5rem / 8px     ->   Widescreen: 0.75rem / 12px
---components/chip/padding-l-r    Mobile: 0.5rem / 8px     ->   Widescreen: 1.25rem / 20px
---components/chip/primary        #FF5247
---components/chip/secondary      #003442
+
+/* Spacing */
+--components/chip/padding-t-b           Mobile: 0.5rem / 8px     ->   Widescreen: 0.75rem / 12px
+--components/chip/padding-l-r           Mobile: 0.5rem / 8px     ->   Widescreen: 1.25rem / 20px
+--components/chip/padding-gap           Mobile: 0.125rem / 2px   ->   Widescreen: 0.25rem / 4px
+--components/chip/button/padding-outer  Mobile: 0.25rem / 4px    ->   Widescreen: 0.625rem / 10px
+--components/chip/button/padding-inner  Mobile: 0.125rem / 2px   ->   Widescreen: 0.25rem / 4px
+--xs (chip group gap)                   Mobile: 0.125rem / 2px   ->   Widescreen: 0.25rem / 4px
+
+/* Border-radius (fixed — does not scale) */
+--components/chip/border-radius  2rem / 32px
+--border-radius/round            6.25rem / 100px
+
+/* Colors */
+--components/chip/primary         #FF5247
+--components/chip/primary-dark    #B22E28
+--components/chip/secondary       #003442
+--components/chip/secondary-dark  #01232D
+--components/chip/button/primary  #FFFFFF
+--components/chip/button/secondary #FFFFFF
+--text/inverse                    Light: #FFFFFF   ->   Dark: #000000
 ```
 
 ## Resources
@@ -399,3 +571,4 @@ document.querySelectorAll('.chip[role="checkbox"]').forEach((chip) => {
 - [WCAG 2.1 Quick Reference](https://www.w3.org/WAI/WCAG21/quickref/) - Accessibility guidelines
 - [MDN Web Docs](https://developer.mozilla.org/) - HTML, CSS, JavaScript reference
 - [ARIA Checkbox Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/) - Guidance for checkbox role used in selectable chips
+- [MDN: ARIA checkbox role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/checkbox_role) - Attributes and usage for `role="checkbox"`
