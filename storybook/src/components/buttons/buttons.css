@@ -224,6 +224,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-xl);
+  flex-wrap: wrap;
 }
 
 .dds-buttons-fig__icon-only-row {
@@ -277,6 +278,15 @@
 
 .dds-buttons-fig__dont {
   border-left-color: var(--status-invalid);
+}
+
+.dds-buttons-fig__do h4,
+.dds-buttons-fig__dont h4 {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-size: var(--typography-h4-font-size);
+  line-height: var(--typography-h4-line-height);
+  font-weight: 400;
 }
 
 .dds-buttons-fig__do p,
