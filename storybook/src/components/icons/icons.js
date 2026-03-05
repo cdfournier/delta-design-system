@@ -163,33 +163,33 @@ export function createIconsBestPracticesFigure() {
   return `
     <div class="dds-icons-doc__do-dont-grid">
       <section class="dds-icons-doc__do">
-        <p><strong>Do</strong></p>
+        <h4>Do</h4>
         <p><strong>Pair icons with text labels</strong></p>
-        <p>Icons paired with text provide the clearest communication and strongest accessibility.</p>
+        <p>Icons paired with text provide the clearest communication and the best accessibility, especially for less familiar icons.</p>
 
         <p><strong>Use aria-hidden for decorative icons</strong></p>
-        <p>When adjacent text already conveys meaning, mark icons <code>aria-hidden=\"true\"</code>.</p>
+        <p>When adjacent text already conveys the meaning, mark the icon <code>aria-hidden="true"</code> to keep screen reader output concise.</p>
 
         <p><strong>Maintain consistent size and stroke</strong></p>
-        <p>Use 24×24px icons with 1px stroke weight consistently.</p>
+        <p>Visual harmony comes from consistency. The design system uses 24x24px icons with 1px stroke weight throughout.</p>
 
         <p><strong>Center-align icons with text</strong></p>
-        <p>Use <code>align-items: center</code> so icon and label align correctly.</p>
+        <p>Use <code>align-items: center</code> on the flex container so the icon and label share a common baseline.</p>
       </section>
 
       <section class="dds-icons-doc__dont">
-        <p><strong>Don't</strong></p>
+        <h4>Don't</h4>
         <p><strong>Don't use icons without labels or tooltips</strong></p>
-        <p>Icon-only interfaces are harder to learn and less accessible.</p>
+        <p>Icon-only interfaces are harder to learn and create barriers for users unfamiliar with the conventions.</p>
 
         <p><strong>Don't vary stroke weight between icons</strong></p>
-        <p>Inconsistent stroke weight makes the icon set feel mismatched.</p>
+        <p>Inconsistent stroke weights make icons feel mismatched. If you need a different weight, apply it uniformly across all icons in your project.</p>
 
-        <p><strong>Don't mix icon styles in one interface</strong></p>
-        <p>Stick to one icon family and weight for consistency.</p>
+        <p><strong>Don't mix icon styles within the same interface</strong></p>
+        <p>Combining icons with different stroke weights or visual styles creates inconsistency. Stick to one icon set and weight throughout a project.</p>
 
         <p><strong>Don't rely on color alone</strong></p>
-        <p>Meaning should come from shape and context first, color second.</p>
+        <p>Icons must be recognizable in monochrome. Shape and form should communicate meaning; color is secondary.</p>
       </section>
     </div>
   `;
