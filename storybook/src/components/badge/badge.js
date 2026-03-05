@@ -24,7 +24,7 @@ function bestPracticesFigure() {
   return `
     <div class="dds-badge-fig__do-dont-grid">
       <section class="dds-badge-fig__do">
-        <p><strong>Do</strong></p>
+        <h4 class="dds-badge-fig__column-title">Do</h4>
         <p><strong>Keep labels to one or two words</strong></p>
         <p>Short, focused labels read instantly. "Active", "New", and "12" communicate clearly without requiring extra space.</p>
         <p><strong>Use color consistently for the same meaning</strong></p>
@@ -35,7 +35,7 @@ function bestPracticesFigure() {
         <p>Place badges immediately adjacent to the element they describe, in the same list item, heading row, or table cell, so the association is visually clear.</p>
       </section>
       <section class="dds-badge-fig__dont">
-        <p><strong>Don't</strong></p>
+        <h4 class="dds-badge-fig__column-title">Don't</h4>
         <p><strong>Don't make badges interactive</strong></p>
         <p>Badges are informational only. If the label needs to trigger an action or filter content, use a Chip or Button instead.</p>
         <p><strong>Don't use badges for long text</strong></p>
