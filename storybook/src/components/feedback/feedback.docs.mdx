@@ -403,6 +403,24 @@ Feedback components are typically placed close to the content or process they de
   </div>
 </div>
 
+<!-- Progress (custom) -->
+<div class="feedback progress">
+  <div class="feedback-label" id="progress-label">Loading...</div>
+  <div class="feedback-bar"
+       role="progressbar"
+       aria-labelledby="progress-label"
+       aria-valuenow="60"
+       aria-valuemin="0"
+       aria-valuemax="100"
+       aria-valuetext="60 percent">
+    <div class="feedback-value" style="width: 60%"></div>
+  </div>
+  <div class="feedback-text">
+    <span></span>
+    <span>60%</span>
+  </div>
+</div>
+
 <!-- Meter (native) -->
 <div class="feedback meter">
   <label for="meter-1">Disk usage</label>
@@ -412,48 +430,136 @@ Feedback components are typically placed close to the content or process they de
     <span>100 GB</span>
   </div>
 </div>
+
+<!-- Meter - Optimum (custom) -->
+<div class="feedback meter">
+  <div class="feedback-label" id="meter-label">Battery level</div>
+  <div class="meter-bar">
+    <div class="feedback-bar"
+         role="meter"
+         aria-labelledby="meter-label"
+         aria-valuenow="60"
+         aria-valuemin="0"
+         aria-valuemax="100"
+         aria-valuetext="60 percent, optimal">
+      <div class="feedback-value optimum" style="width: 60%"></div>
+    </div>
+  </div>
+  <div class="feedback-text">
+    <span>0%</span>
+    <span>100%</span>
+  </div>
+</div>
+
+<!-- Meter - Low state -->
+<div class="feedback meter">
+  <div class="feedback-label">Storage available</div>
+  <div class="meter-bar">
+    <div class="feedback-bar">
+      <div class="feedback-value low"
+           style="width: 15%"
+           aria-valuetext="15 percent, critically low"></div>
+    </div>
+  </div>
+  <div class="feedback-text">
+    <span>0 GB</span>
+    <span>500 GB</span>
+  </div>
+</div>
 ```
 
 ### CSS
 
 ```css
+/* Feedback base */
 .feedback {
   width: 100%;
-  min-width: 16rem;
+  min-width: 16rem; /* 256px - feedback/max-width */
 }
 
+/* Label */
 .feedback-label {
-  font-size: 0.75rem;
-  line-height: 1.25rem;
+  font-size: 0.75rem; /* 12px - small */
+  line-height: 1.25rem; /* 20px */
   font-weight: 700;
-  padding-bottom: 0.25rem;
+  padding-bottom: 0.25rem; /* 4px - sm */
 }
 
+/* Bar (track) */
 .feedback-bar {
   width: 100%;
-  height: 0.25rem;
-  background-color: var(--global/gray-medium);
-  border-radius: 0.25rem;
+  height: 0.25rem; /* 4px - feedback/height */
+  background-color: var(--color-gray-medium);
+  border-radius: 0.25rem; /* 4px - sm */
   overflow: hidden;
   position: relative;
 }
 
+/* Value (fill) */
 .feedback-value {
   height: 100%;
-  border-radius: 0.25rem;
+  border-radius: 0.25rem; /* 4px - sm */
+  transition: width 0.3s ease;
 }
 
+/* Progress colors */
 .progress .feedback-value {
-  background-color: var(--brand/primary);
+  background-color: var(--color-primary);
 }
 
+/* Meter colors */
 .meter .feedback-value.optimum {
-  background-color: var(--status/valid);
+  background-color: var(--color-valid);
 }
 
 .meter .feedback-value.low,
 .meter .feedback-value.high {
-  background-color: var(--status/invalid);
+  background-color: var(--color-invalid);
+}
+
+/* Meter bar padding wrapper */
+.meter-bar {
+  padding: 0.125rem; /* 2px - xs */
+  background-color: var(--color-gray-medium);
+  border-radius: 0.25rem; /* 4px - sm */
+}
+
+/* Value/Min/Max text */
+.feedback-text {
+  font-size: 0.625rem; /* 10px - fine */
+  line-height: 1.125rem; /* 18px */
+  font-weight: 700;
+  padding-top: 0.25rem; /* 4px - sm */
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Native element styling */
+progress,
+meter {
+  width: 100%;
+  height: 0.25rem;
+  appearance: none;
+  border: none;
+}
+
+progress::-webkit-progress-bar,
+meter::-webkit-meter-bar {
+  background-color: var(--color-gray-medium);
+  border-radius: 0.25rem;
+}
+
+progress::-webkit-progress-value {
+  background-color: var(--color-primary);
+  border-radius: 0.25rem;
+}
+
+meter::-webkit-meter-optimum-value {
+  background-color: var(--color-valid);
+}
+
+meter::-webkit-meter-suboptimum-value {
+  background-color: var(--color-invalid);
 }
 ```
 

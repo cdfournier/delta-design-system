@@ -212,57 +212,260 @@ Fieldsets stack vertically with consistent spacing and shared alignment. Preferr
   <div id="email-message" class="message">We'll never share your email with anyone else.</div>
 </fieldset>
 
+<!-- Password input fieldset -->
+<fieldset class="fieldset">
+  <label for="password">Password</label>
+  <div class="input-wrapper">
+    <input type="password"
+           id="password"
+           placeholder="Enter password"
+           aria-describedby="password-message" />
+    <button type="button" aria-label="Show password">
+      <!-- Eye icon -->
+    </button>
+  </div>
+  <div id="password-message" class="message">
+    Must be at least 8 characters.
+  </div>
+</fieldset>
+
+<!-- Select fieldset -->
+<fieldset class="fieldset">
+  <label for="country">Country</label>
+  <select id="country" aria-describedby="country-message">
+    <option>Select a country</option>
+    <option value="us">United States</option>
+    <option value="uk">United Kingdom</option>
+  </select>
+  <div id="country-message" class="message">
+    Choose your country of residence.
+  </div>
+</fieldset>
+
 <!-- Checkbox group fieldset -->
-<fieldset class="fieldset fieldset--choice">
+<fieldset class="fieldset">
   <legend>Interests <span class="legend-label">(Optional)</span></legend>
-  <label><input type="checkbox" value="design" /> Design</label>
-  <label><input type="checkbox" value="development" /> Development</label>
-  <label><input type="checkbox" value="marketing" /> Marketing</label>
+  <div class="checkbox-group">
+    <label><input type="checkbox" value="design" /> Design</label>
+    <label><input type="checkbox" value="development" /> Development</label>
+    <label><input type="checkbox" value="marketing" /> Marketing</label>
+  </div>
   <div class="message">Select all that apply.</div>
+</fieldset>
+
+<!-- Radio group fieldset -->
+<fieldset class="fieldset">
+  <legend>Notification preference</legend>
+  <div class="radio-group">
+    <label>
+      <input type="radio" name="notifications" value="all" checked />
+      All notifications
+    </label>
+    <label>
+      <input type="radio" name="notifications" value="important" />
+      Important only
+    </label>
+    <label>
+      <input type="radio" name="notifications" value="none" />
+      None
+    </label>
+  </div>
+  <div class="message">Choose how you want to receive notifications.</div>
+</fieldset>
+
+<!-- Switch group fieldset -->
+<fieldset class="fieldset">
+  <legend>Privacy settings</legend>
+  <div class="switch-group">
+    <label class="switch-label">
+      <input type="checkbox" role="switch" checked />
+      <span class="switch-track"></span>
+      Profile visibility
+    </label>
+    <label class="switch-label">
+      <input type="checkbox" role="switch" />
+      <span class="switch-track"></span>
+      Activity status
+    </label>
+  </div>
+  <div class="message">Control what others can see.</div>
+</fieldset>
+
+<!-- Invalid state -->
+<fieldset class="fieldset">
+  <label for="username">Username</label>
+  <input type="text"
+         id="username"
+         value="ab"
+         aria-invalid="true"
+         aria-describedby="username-error" />
+  <div id="username-error" class="message error" role="alert">
+    Username must be at least 3 characters.
+  </div>
 </fieldset>
 ```
 
 ### CSS
 
 ```css
+/* Fieldset base */
 .fieldset {
-  min-width: 15.5rem;
-  max-width: 26.25rem;
+  min-width: 15.5rem; /* 248px — components/input/min-width */
+  max-width: 26.25rem; /* 420px — components/input/max-width */
   width: 100%;
   border: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.25rem; /* 4px — sm */
 }
 
 .fieldset--choice {
-  gap: 0.5rem;
+  gap: 0.5rem; /* 8px — md */
 }
 
+/* Label */
 .fieldset label,
 .fieldset legend {
-  font-size: 0.75rem;
-  line-height: 1.25rem;
+  display: block;
+  font-size: 0.75rem; /* 12px — small/font-size */
+  line-height: 1.25rem; /* 20px — small/line-height */
   font-weight: 700;
 }
 
-.message {
-  font-size: 0.625rem;
-  line-height: 1.125rem;
+/* Legend bottom padding */
+.fieldset legend {
+  padding-bottom: 0.125rem; /* 2px — xs */
+  width: 100%;
 }
-```
 
-### JavaScript
+/* Legend label (fine print) */
+.legend-label {
+  font-size: 0.625rem; /* 10px — fine/font-size */
+  line-height: 1.125rem; /* 18px — fine/line-height */
+  font-weight: 700;
+  margin-left: 0.5rem; /* 8px — md */
+}
 
-```js
-export function createFieldset({ type = 'text', state = 'default', showMessage = true, legendLabel = false } = {}) {
-  if (type === 'checkbox' || type === 'radio' || type === 'switch') {
-    return choiceFieldset({ type, state, showMessage, legendLabel });
+/* Text, password, select inputs */
+.fieldset input[type='text'],
+.fieldset input[type='email'],
+.fieldset input[type='password'],
+.fieldset select {
+  width: 100%;
+  padding: 0.5rem; /* 8px — components/input/text/padding */
+  border: 1px solid #CCCCCC; /* global/gray-medium */
+  border-radius: 0.25rem; /* 4px — components/input/text/border-radius */
+  font-size: 1rem; /* 16px — components/input/text/font-size */
+  line-height: 1.25rem; /* 20px — components/input/text/line-height */
+  background-color: #FFFFFF; /* page/background */
+  color: #000000; /* text/default */
+}
+
+.fieldset input::placeholder {
+  color: #919191; /* global/gray-dark */
+}
+
+/* Input icons */
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem; /* 4px — components/input/text/padding-gap */
+}
+
+/* Input states */
+.fieldset input:disabled,
+.fieldset select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.fieldset input[aria-invalid='true'],
+.fieldset select[aria-invalid='true'] {
+  border-color: #C00C00; /* status/invalid */
+}
+
+.fieldset input.valid,
+.fieldset select.valid {
+  border-color: #007000; /* status/valid */
+}
+
+/* Checkbox and radio groups */
+.checkbox-group,
+.radio-group,
+.switch-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* 8px — components/input/checkbox/padding-gap */
+}
+
+.checkbox-group label,
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* 8px — components/input/checkbox/padding-gap */
+  font-size: 1rem; /* 16px — components/input/checkbox/font-size */
+  line-height: 1.25rem; /* 20px — components/input/checkbox/line-height */
+}
+
+/* Message text */
+.message {
+  font-size: 0.625rem; /* 10px — fine/font-size */
+  line-height: 1.125rem; /* 18px — fine/line-height */
+  color: #000000; /* text/default */
+}
+
+.message.error {
+  color: #C00C00; /* status/invalid */
+}
+
+/* Focus states */
+.fieldset input:focus,
+.fieldset select:focus {
+  outline: 2px solid #FF5247; /* brand/primary */
+  outline-offset: 2px;
+}
+
+/* Responsive — widescreen */
+@media (min-width: 80rem) {
+  .fieldset {
+    gap: 0.5rem; /* 8px — sm at widescreen */
   }
 
-  return textLikeFieldset({ type, state, showMessage });
+  .fieldset--choice {
+    gap: 1rem; /* 16px — md at widescreen */
+  }
+
+  .fieldset legend {
+    padding-bottom: 0.25rem; /* 4px — xs at widescreen */
+  }
+
+  .fieldset label,
+  .fieldset legend {
+    font-size: 1.25rem; /* 20px — small/font-size widescreen */
+    line-height: 1.875rem; /* 30px — small/line-height widescreen */
+  }
+
+  .legend-label {
+    font-size: 1rem; /* 16px — fine/font-size widescreen */
+    line-height: 1.5rem; /* 24px — fine/line-height widescreen */
+  }
+
+  .fieldset input[type='text'],
+  .fieldset input[type='email'],
+  .fieldset input[type='password'],
+  .fieldset select {
+    padding: 0.75rem; /* 12px — components/input/text/padding widescreen */
+    font-size: 1.5rem; /* 24px — components/input/text/font-size widescreen */
+    line-height: 2rem; /* 32px — components/input/text/line-height widescreen */
+  }
+
+  .message {
+    font-size: 1rem; /* 16px — fine/font-size widescreen */
+    line-height: 1.5rem; /* 24px — fine/line-height widescreen */
+  }
 }
 ```
 
@@ -270,43 +473,43 @@ export function createFieldset({ type = 'text', state = 'default', showMessage =
 
 ```txt
 /* Typography */
---small/font-size
---small/line-height
---fine/font-size
---fine/line-height
---components/input/text/font-size
---components/input/text/line-height
---components/input/checkbox/font-size
---components/input/checkbox/line-height
+--small/font-size                     Mobile: 0.75rem / 12px   ->   Widescreen: 1.25rem / 20px
+--small/line-height                   Mobile: 1.25rem / 20px   ->   Widescreen: 1.875rem / 30px
+--fine/font-size                      Mobile: 0.625rem / 10px  ->   Widescreen: 1rem / 16px
+--fine/line-height                    Mobile: 1.125rem / 18px  ->   Widescreen: 1.5rem / 24px
+--components/input/text/font-size     Mobile: 1rem / 16px      ->   Widescreen: 1.5rem / 24px
+--components/input/text/line-height   Mobile: 1.25rem / 20px   ->   Widescreen: 2rem / 32px
+--components/input/checkbox/font-size     Mobile: 1rem / 16px (fixed)
+--components/input/checkbox/line-height   Mobile: 1.25rem / 20px (fixed)
 
 /* Spacing */
---xs
---sm
---md
---components/input/text/padding
---components/input/text/padding-gap
---components/input/checkbox/padding
---components/input/checkbox/padding-gap
---components/input/switch/padding
---components/input/switch/padding-gap
+--xs                                      Mobile: 0.125rem / 2px   ->   Widescreen: 0.25rem / 4px
+--sm                                      Mobile: 0.25rem / 4px    ->   Widescreen: 0.5rem / 8px
+--md                                      Mobile: 0.5rem / 8px     ->   Widescreen: 1rem / 16px
+--components/input/text/padding           Mobile: 0.5rem / 8px     ->   Widescreen: 0.75rem / 12px
+--components/input/text/padding-gap       Mobile: 0.25rem / 4px (fixed)
+--components/input/checkbox/padding       Mobile: 0.125rem / 2px (fixed)
+--components/input/checkbox/padding-gap   Mobile: 0.5rem / 8px (fixed)
+--components/input/switch/padding         Mobile: 0.25rem / 4px (fixed)
+--components/input/switch/padding-gap     Mobile: 0.5rem / 8px (fixed)
 
 /* Border-radius */
---components/input/text/border-radius
---input/checkbox/border-radius
---components/input/switch/border-radius
+--components/input/text/border-radius     Mobile: 0.25rem / 4px (fixed)
+--input/checkbox/border-radius            Mobile: 0.25rem / 4px (fixed)
+--components/input/switch/border-radius   Mobile: 1rem / 16px (fixed)
 
 /* Colors */
---text/default
---page/background
---global/gray-dark
---global/gray-medium
---brand/primary
---status/invalid
---status/valid
+--text/default            Light: #000000 (global/black)   Dark: #FFFFFF (global/white)
+--page/background         Light: #FFFFFF (global/white)   Dark: #01232D (brand/secondary-dark)
+--global/gray-dark        #919191 (mode-invariant)
+--global/gray-medium      #CCCCCC (mode-invariant)
+--brand/primary           #FF5247 (mode-invariant)
+--status/invalid          #C00C00 (mode-invariant)
+--status/valid            #007000 (mode-invariant)
 
 /* Size constraints */
---components/input/min-width
---components/input/max-width
+--components/input/min-width    248px mobile, 416px widescreen
+--components/input/max-width    420px mobile, 416px widescreen
 ```
 
 ## Resources

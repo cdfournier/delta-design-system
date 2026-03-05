@@ -159,55 +159,81 @@ Vertical cards are best suited to 2-4 column grid layouts - product galleries, a
 ### HTML
 
 ```html
-<!-- Vertical card -->
+<!-- Vertical card (hug height) -->
 <article class="card card--vertical">
   <figure class="card__figure">
     <img src="image.jpg" alt="Descriptive alt text" />
   </figure>
   <div class="card__content">
     <h3>Card heading</h3>
-    <p>Supporting body text.</p>
+    <p>Supporting body text that provides context and information.</p>
   </div>
 </article>
 
-<!-- Horizontal card -->
+<!-- Horizontal card (figure left) -->
 <article class="card card--horizontal">
   <figure class="card__figure">
     <img src="image.jpg" alt="Descriptive alt text" />
   </figure>
   <div class="card__content">
     <h3>Card heading</h3>
-    <p>Supporting body text.</p>
+    <p>Supporting body text that provides context and information.</p>
   </div>
 </article>
 
-<!-- Reversed horizontal card -->
+<!-- Horizontal card (figure right / reversed) -->
 <article class="card card--horizontal card--reversed">
   <figure class="card__figure">
     <img src="image.jpg" alt="Descriptive alt text" />
   </figure>
   <div class="card__content">
     <h3>Card heading</h3>
-    <p>Supporting body text.</p>
+    <p>Supporting body text that provides context and information.</p>
   </div>
 </article>
+
+<!-- Clickable card -->
+<a href="/details" class="card-link" aria-label="Read more about [topic]">
+  <article class="card card--vertical">
+    <figure class="card__figure">
+      <img src="image.jpg" alt="Descriptive alt text" />
+    </figure>
+    <div class="card__content">
+      <h3>Card heading</h3>
+      <p>Supporting body text that provides context.</p>
+    </div>
+  </article>
+</a>
 ```
 
 ### CSS
 
 ```css
+/* Base card */
 .card {
   background-color: var(--page/background);
   border: 1px solid var(--global/gray-medium);
-  border-radius: var(--border-radius/md);
+  border-radius: var(--border-radius/md); /* 0.5rem / 8px */
   overflow: hidden;
 }
 
+/* Vertical card */
 .card--vertical {
   display: flex;
   flex-direction: column;
+  min-width: var(--components/card/vertical/min-width); /* 256px */
+  max-width: var(--layout/fifty/max-width); /* 336px */
 }
 
+@media (min-width: 80rem) {
+  .card--vertical {
+    min-width: 26rem; /* 416px */
+    max-width: 40rem; /* 640px */
+    border-radius: var(--border-radius/md); /* 1rem / 16px */
+  }
+}
+
+/* Horizontal card */
 .card--horizontal {
   display: flex;
   flex-direction: column;
@@ -216,15 +242,106 @@ Vertical cards are best suited to 2-4 column grid layouts - product galleries, a
 @media (min-width: 48rem) {
   .card--horizontal {
     flex-direction: row;
-  }
-
-  .card--horizontal.card--reversed {
-    flex-direction: row-reverse;
+    min-height: var(--components/card/horizontal/min-height); /* 200px */
   }
 }
 
+@media (min-width: 80rem) {
+  .card--horizontal.card--reversed {
+    min-height: 26.25rem; /* 420px */
+    border-radius: var(--border-radius/md); /* 1rem / 16px */
+  }
+}
+
+/* Reversed horizontal card */
+.card--reversed {
+  flex-direction: row-reverse;
+}
+
+/* Figure */
+.card__figure {
+  overflow: hidden;
+  border-radius: var(--border-radius/md);
+  flex-shrink: 0;
+}
+
+.card--horizontal .card__figure {
+  max-width: var(--components/card/horizontal/figure/max-width); /* 256px */
+}
+
+@media (min-width: 80rem) {
+  .card--horizontal .card__figure {
+    max-width: 33rem; /* 528px */
+  }
+}
+
+.card__figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Content area */
 .card__content {
-  padding: var(--xl);
+  padding: var(--xl); /* 1rem / 16px */
+  display: flex;
+  flex-direction: column;
+  gap: var(--xl);
+  flex: 1;
+}
+
+@media (min-width: 80rem) {
+  .card__content {
+    padding: var(--xl); /* 2rem / 32px */
+  }
+}
+
+/* Card typography */
+.card h3 {
+  font-family: var(--font-family-heading);
+  font-size: var(--h3/font-size); /* 1.75rem / 28px */
+  line-height: var(--h3/line-height); /* 2rem / 32px */
+  color: var(--text/default);
+  margin: 0;
+}
+
+@media (min-width: 80rem) {
+  .card h3 {
+    font-size: var(--h3/font-size); /* 3.125rem / 50px */
+    line-height: var(--h3/line-height); /* 3.875rem / 62px */
+  }
+}
+
+.card p {
+  font-size: var(--p/font-size); /* 1rem / 16px */
+  line-height: var(--h1-title+p/line-height); /* 1.75rem / 28px */
+  color: var(--text/default);
+  margin: 0;
+}
+
+@media (min-width: 80rem) {
+  .card p {
+    font-size: var(--p/font-size); /* 1.5rem / 24px */
+    line-height: var(--h1-title+p/line-height); /* 3.5rem / 56px */
+  }
+}
+
+/* Clickable card wrapper */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card-link:hover .card {
+  border-color: var(--brand/primary);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-link:focus {
+  outline: 2px solid var(--brand/primary);
+  outline-offset: 2px;
 }
 ```
 
