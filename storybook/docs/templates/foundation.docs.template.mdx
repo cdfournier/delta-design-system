@@ -1,0 +1,144 @@
+import { Meta, Canvas, Story, Controls } from '@storybook/addon-docs/blocks';
+import * as FoundationStories from '../../src/foundations/[foundation]/[foundation].stories';
+
+<Meta of={FoundationStories} title="Foundations/[Foundation]/Documentation" />
+
+# [Foundation Name]
+
+[Brief 1–2 sentence description of this foundation and its role in the design system.]
+
+<!--
+OUTLINE-FIRST RULE
+- This MDX file should mirror the Figma documentation page outline exactly.
+- Story names (Scale / Reference / Modes) are internal implementation labels only.
+- Do not rename or collapse Figma headings to fit story labels.
+- Build and approve the MDX skeleton first, then wire stories into the correct sections.
+- Use fixed Delta terminology: Mobile / Tablet / Widescreen (never Desktop).
+-->
+
+## [Overview / Philosophy section]
+
+[Explain the principles and thinking behind this foundation. What problems does it solve? What decisions does it encode?]
+
+### [Subsection]
+
+[Content.]
+
+<!-- Optional figure/demo: include only when it adds real value. -->
+<Canvas>
+  <Story of={FoundationStories.[FigureStory]} />
+</Canvas>
+
+## [System / Palette / Scale section]
+
+[Introduce the system: what it contains, how it is organized, and how to use it.]
+
+<!--
+Tables in foundation documents typically show token name, value(s), and notes/usage context.
+Use rem / px format for all numeric values.
+Column structure varies by foundation.
+-->
+
+<table>
+  <thead>
+    <tr>
+      <th>[Token / Name]</th>
+      <th>[Value / Mobile]</th>
+      <th>[Widescreen]</th>
+      <th>[Notes / Usage]</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>[token/name]</code></td>
+      <td>[Xrem / Xpx]</td>
+      <td>[Xrem / Xpx]</td>
+      <td>[Notes]</td>
+    </tr>
+  </tbody>
+</table>
+
+### [Subsection — e.g. Global tokens, Semantic tokens, Component tokens]
+
+[Content.]
+
+<!-- Optional figure/table preview if this section needs a rendered demo -->
+<Canvas>
+  <Story of={FoundationStories.[FigureStory]} />
+</Canvas>
+
+## Accessibility
+
+[Explain the accessibility implications of this foundation (contrast ratios, legibility, motion, responsive behavior, etc.).]
+
+### [Relevant subsection — e.g. Color contrast, Legibility, Responsive behaviour]
+
+[Content.]
+
+## Usage
+
+[Introduce usage guidance for this foundation.]
+
+### When to use
+
+[Guidance on applying this foundation correctly.]
+
+- [Guidance point]
+- [Guidance point]
+
+### When not to use
+
+[Guidance on what to avoid.]
+
+- [Avoid case — explain what to do instead]
+- [Avoid case — explain what to do instead]
+
+### [Additional usage subsection — e.g. Combining values, Responsive behaviour]
+
+[Content.]
+
+## Best practices
+
+<!-- Foundation rule: Best practices is a standalone h2 (not nested inside Usage) -->
+<!-- Prefer a dedicated figure story for Do/Don't when parity matters -->
+<Canvas>
+  <Story of={FoundationStories.[BestPracticesStory]} />
+</Canvas>
+
+## Design tokens reference
+
+[Brief intro: what tokens this foundation defines and how they are structured.]
+
+<!-- Use a code block (not a table) for token listings. -->
+
+<pre><code>{`/* [Token group name] */
+--token/name    Mobile: Xrem / Xpx   →   Widescreen: Xrem / Xpx
+--token/name    Mobile: Xrem / Xpx   →   Widescreen: Xrem / Xpx
+
+/* [Token group name] */
+--token/name    [value] (mode-invariant)
+--token/name    Light: #HEXVAL   Dark: #HEXVAL`}</code></pre>
+
+## Resources
+
+- [ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/) - W3C patterns and widgets
+- [WebAIM](https://webaim.org/) - Web accessibility resources
+- [WCAG 2.1 Quick Reference](https://www.w3.org/WAI/WCAG21/quickref/) - Accessibility guidelines
+- [MDN Web Docs](https://developer.mozilla.org/) - HTML, CSS, JavaScript reference
+- [Add foundation-specific resources]
+
+## Source of truth
+
+- [Figma documentation node link]
+- [Figma variables table / modes note]
+- [Token source in code]
+
+## Controls
+
+<Controls of={FoundationStories.Scale} />
+
+<!-- Template checks
+- Section names are fixed by the Figma doc outline; do not invent synonyms.
+- Use rem / px for numeric table values.
+- Do not use h4 inside Do/Don't content blocks; use paragraph + strong labels.
+-->

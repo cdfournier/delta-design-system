@@ -1,8 +1,13 @@
 {
-  "name": "delta-design-system-storybook",
+  "name": "storybook-codex-v2",
   "version": "1.0.0",
-  "description": "Storybook for the Delta Design System",
-  "type": "module",
+  "description": "Delta Design System Storybook (HTML/CSS)",
+  "devDependencies": {
+    "@storybook/addon-a11y": "^10.2.8",
+    "@storybook/addon-docs": "^10.2.8",
+    "@storybook/html-vite": "^10.2.8",
+    "storybook": "^10.2.8"
+  },
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -10,10 +15,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "storybook": "^10.2.8",
-    "@storybook/html-vite": "^10.2.8",
-    "@storybook/addon-a11y": "^10.2.8",
-    "@storybook/addon-docs": "^10.2.8"
-  }
+  "type": "module"
 }

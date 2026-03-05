@@ -1,0 +1,340 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import * as ComponentStories from './blockquotes.stories';
+
+<Meta of={ComponentStories} title="Atoms/Blockquotes/Documentation" />
+
+# Blockquotes
+
+Blockquotes render a styled quotation with a prominent accent border, quote text, and a cite attribution link. They support three orientation variants that control the position of the accent border and text alignment.
+
+## Anatomy
+
+Blockquotes consist of:
+
+- **Container:** A flex column that holds the quote and cite elements, with padding and a gap between them.
+- **Accent border:** A `4px` solid border in `brand/primary` positioned according to the orientation variant.
+- **Quote text:** The quoted content, rendered in bold using the `components/blockquote/quote` composite token.
+- **Cite text:** An attribution link rendered in bold and underlined, using the `components/blockquote/cite` composite token.
+
+<Canvas of={ComponentStories.AnatomyFigure} />
+
+## Variants
+
+Blockquotes have one property, `orientation`, with three values that control where the accent border appears and how the text aligns.
+
+- **Left (default):** `4px` accent border on the left edge, text left-aligned. Use for standard inline quotations within flowing content.
+- **Center:** `4px` accent border on the top and bottom edges, text center-aligned. Use for pull quotes or featured testimonials that deserve visual prominence.
+- **Right:** `4px` accent border on the right edge, text right-aligned. Use when compositional balance in the layout calls for a mirrored treatment.
+
+<Canvas of={ComponentStories.VariantsFigure} />
+
+## States
+
+Blockquotes are static display components. The quote text has no interactive states. The cite element is an interactive link and inherits standard link states.
+
+## Typography
+
+Both the quote and cite text use Montserrat Bold (`700`). Typography tokens are scoped under `components/blockquote/...` and scale responsively by aliasing to global typography tokens.
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Token</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Quote font size</td>
+      <td><code>components/blockquote/quote/font-size</code></td>
+      <td>0.75rem / 12px (small)</td>
+      <td>1.5rem / 24px (p)</td>
+    </tr>
+    <tr>
+      <td>Quote line height</td>
+      <td><code>components/blockquote/quote/line-height</code></td>
+      <td>1.25rem / 20px</td>
+      <td>2.25rem / 36px</td>
+    </tr>
+    <tr>
+      <td>Cite font size</td>
+      <td><code>components/blockquote/cite/font-size</code></td>
+      <td>0.625rem / 10px (fine)</td>
+      <td>1.25rem / 20px (small)</td>
+    </tr>
+    <tr>
+      <td>Cite line height</td>
+      <td><code>components/blockquote/cite/line-height</code></td>
+      <td>1.125rem / 18px</td>
+      <td>1.875rem / 30px</td>
+    </tr>
+  </tbody>
+</table>
+
+## Spacing
+
+Padding and gap use global spacing tokens and scale responsively between mobile/tablet and widescreen.
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Token</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Padding (all sides)</td>
+      <td><code>xl</code></td>
+      <td>1rem / 16px</td>
+      <td>2rem / 32px</td>
+    </tr>
+    <tr>
+      <td>Gap (quote to cite)</td>
+      <td><code>md</code></td>
+      <td>0.5rem / 8px</td>
+      <td>1rem / 16px</td>
+    </tr>
+    <tr>
+      <td>Accent border width</td>
+      <td>-</td>
+      <td>0.25rem / 4px</td>
+      <td>0.25rem / 4px</td>
+    </tr>
+  </tbody>
+</table>
+
+## Colors
+
+Blockquotes use semantic color tokens so they respond correctly to light and dark mode. The accent border color is the one exception: it uses `brand/primary` and does not change between modes.
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Token</th>
+      <th>Light mode</th>
+      <th>Dark mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Accent border</td>
+      <td><code>brand/primary</code></td>
+      <td>#FF5247</td>
+      <td>#FF5247</td>
+    </tr>
+    <tr>
+      <td>Quote text</td>
+      <td><code>text/default</code></td>
+      <td>#000000 (global/black)</td>
+      <td>#FFFFFF (global/white)</td>
+    </tr>
+    <tr>
+      <td>Cite text</td>
+      <td><code>text/link</code></td>
+      <td>#FF5247 (brand/primary)</td>
+      <td>#FFFFFF (global/white)</td>
+    </tr>
+    <tr>
+      <td>Background</td>
+      <td><code>page/background</code></td>
+      <td>#FFFFFF (global/white)</td>
+      <td>#01232D (brand/secondary-dark)</td>
+    </tr>
+  </tbody>
+</table>
+
+**Dark mode note:** In dark mode, both quote text and cite text resolve to `global/white` (`#FFFFFF`), so the underline decoration on the cite element becomes the primary visual differentiator.
+
+## Accessibility
+
+Always use the `<blockquote>` element for quoted content. Never apply blockquote styling to non-quoted text. The cite attribution should be rendered as an `<a>` element when a source URL is available, wrapped inside a `<cite>` element.
+
+### Keyboard navigation
+
+The cite link must be keyboard accessible:
+
+- **Tab:** Moves focus to the cite link.
+- **Shift + Tab:** Moves focus back to the previous focusable element.
+- **Enter:** Activates the cite link.
+
+### Screen readers
+
+Screen readers do not consistently announce the `<blockquote>` element, but semantic HTML still provides correct document structure. Cite link text should describe the source clearly enough to be understood out of context.
+
+### ARIA attributes
+
+Blockquotes rely on native HTML semantics and do not require additional ARIA attributes in standard usage. If the blockquote is part of a more complex interactive pattern, consider:
+
+- **aria-label:** Use on the cite link if the visible text alone does not clearly identify the source out of context.
+- **aria-describedby:** May be used to associate introductory text with the blockquote when surrounding context is not conveyed by DOM order alone.
+
+### Focus management
+
+The blockquote container itself is not focusable. Focus applies only to the cite link when present. The cite link must have a visible focus indicator. Do not suppress outline or replace it with a color-only indicator.
+
+### Color contrast
+
+In dark mode, cite link color changes from `brand/primary` to `global/white` to maintain sufficient contrast against the dark background. The underline decoration provides an additional non-color differentiator for users who cannot distinguish colors.
+
+## Usage
+
+### When to use
+
+- **External quotes:** Citing content from other sources or authors.
+- **Testimonials:** Highlighting customer or user feedback.
+- **Pull quotes:** Emphasizing key passages from your own content.
+
+### When not to use
+
+- **Indentation only:** Do not use blockquotes just to indent text; use margin or padding.
+- **Visual styling only:** Do not use blockquotes for decorative purposes without actual quoted content.
+- **Short inline quotes:** Use the `<q>` element for short inline quotations within a paragraph.
+
+### Content guidelines
+
+- **Attribute all external quotes:** Always provide a cite attribution when quoting another person or source.
+- **Keep quotes intact:** Do not modify quoted text; use ellipses (`...`) to indicate omitted content.
+- **Write meaningful cite text:** Cite link should identify author and source clearly, not just "Source" or "Read more".
+- **Provide surrounding context:** Introduce quotes with adjacent text that explains relevance.
+
+### Placement
+
+Use **left** as the default for most contexts; it integrates naturally into flowing content. Use **center** when the quote deserves featured prominence, such as a hero testimonial or section break. Use **right** sparingly, and only when surrounding layout benefits from a mirrored composition.
+
+### Best practices
+
+<Story of={ComponentStories.BestPracticesFigure} />
+
+## Code reference
+
+### HTML
+
+```html
+<!-- Left orientation (default) -->
+<blockquote class="blockquote blockquote--left">
+  <p>We should embrace the fact that the web doesn't have the same constraints, and design for this flexibility.</p>
+  <cite><a href="https://alistapart.com/article/dao/">John Allsopp, A Dao of Web Design</a></cite>
+</blockquote>
+
+<!-- Center orientation -->
+<blockquote class="blockquote blockquote--center">
+  <p>Now more than ever, we're designing work meant to be viewed along a gradient of different experiences.</p>
+  <cite><a href="https://alistapart.com/article/responsive-web-design/">Ethan Marcotte, Responsive Web Design</a></cite>
+</blockquote>
+
+<!-- Right orientation -->
+<blockquote class="blockquote blockquote--right">
+  <p>Now more than ever, we're designing work meant to be viewed along a gradient of different experiences.</p>
+  <cite><a href="https://alistapart.com/article/responsive-web-design/">Ethan Marcotte, Responsive Web Design</a></cite>
+</blockquote>
+```
+
+### CSS
+
+```css
+/* Base blockquote styles - Mobile/Tablet */
+.blockquote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--md); /* 8px */
+  padding: var(--xl); /* 16px */
+  background-color: var(--page-background);
+}
+
+.blockquote p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: var(--components-blockquote-quote-font-size); /* 12px */
+  line-height: var(--components-blockquote-quote-line-height); /* 20px */
+  font-weight: 700;
+  color: var(--text-default);
+  margin: 0;
+}
+
+.blockquote cite a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: var(--components-blockquote-cite-font-size); /* 10px */
+  line-height: var(--components-blockquote-cite-line-height); /* 18px */
+  font-weight: 700;
+  color: var(--text-link);
+  text-decoration: underline;
+  text-decoration-style: solid;
+}
+
+/* Orientation variants */
+.blockquote--left {
+  border-left: 4px solid var(--brand-primary);
+  text-align: left;
+  align-items: flex-start;
+}
+
+.blockquote--center {
+  border-top: 4px solid var(--brand-primary);
+  border-bottom: 4px solid var(--brand-primary);
+  text-align: center;
+  align-items: center;
+}
+
+.blockquote--right {
+  border-right: 4px solid var(--brand-primary);
+  text-align: right;
+  align-items: flex-end;
+}
+
+/* Widescreen */
+@media (min-width: 80rem) {
+  .blockquote {
+    gap: var(--md); /* 16px at widescreen */
+    padding: var(--xl); /* 32px at widescreen */
+  }
+
+  .blockquote p {
+    font-size: var(--components-blockquote-quote-font-size); /* 24px */
+    line-height: var(--components-blockquote-quote-line-height); /* 36px */
+  }
+
+  .blockquote cite a {
+    font-size: var(--components-blockquote-cite-font-size); /* 20px */
+    line-height: var(--components-blockquote-cite-line-height); /* 30px */
+  }
+}
+```
+
+### Design tokens reference
+
+```text
+/* Component-scoped typography tokens */
+--components/blockquote/quote/font-size   Mobile: 12px  ->  Widescreen: 24px  (aliases small -> p)
+--components/blockquote/quote/line-height Mobile: 20px  ->  Widescreen: 36px
+--components/blockquote/cite/font-size    Mobile: 10px  ->  Widescreen: 20px  (aliases fine -> small)
+--components/blockquote/cite/line-height  Mobile: 18px  ->  Widescreen: 30px
+
+/* Global spacing tokens (used by this component) */
+--xl   Mobile/Tablet: 16px  ->  Widescreen: 32px  (padding)
+--md   Mobile/Tablet:  8px  ->  Widescreen: 16px  (gap)
+
+/* Semantic color tokens */
+--brand/primary    #FF5247   (accent border - same in both modes)
+--text/default     Light: #000000 (global/black)        Dark: #FFFFFF (global/white)
+--text/link        Light: #FF5247 (brand/primary)       Dark: #FFFFFF (global/white)
+--page/background  Light: #FFFFFF (global/white)        Dark: #01232D (brand/secondary-dark)
+```
+
+## Resources
+
+- [MDN: blockquote element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote) - Official HTML blockquote documentation.
+- [MDN: cite element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/cite) - Official HTML cite documentation.
+- [WCAG 2.1: Use of Color](https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html) - Accessibility requirements for color-only distinctions.
+- [WCAG 2.1: Meaningful Sequence](https://www.w3.org/WAI/WCAG21/Understanding/meaningful-sequence.html) - Semantic structure for accessibility.
+
+## Source of truth
+
+- [Figma documentation node](https://www.figma.com/design/tHT8Je5cvRTXFN9XQ7XqhA/The-Delta-Design-System?node-id=1071-3007&m=dev)
+- Figma Variables table and modes define all values.
+- HTML export may support copy/structure but must be verified against Figma.

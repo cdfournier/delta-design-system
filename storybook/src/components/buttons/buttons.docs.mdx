@@ -1,0 +1,399 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import * as ComponentStories from './buttons.stories';
+
+<Meta of={ComponentStories} title="Atoms/Buttons/Documentation" />
+
+# Buttons
+
+Buttons trigger actions or navigate users through interfaces. They communicate interactive affordance through visual weight, color, and feedback states.
+
+## Anatomy
+
+Buttons consist of:
+
+- **Label:** Action-oriented text describing what the button does.
+- **Container:** Background and border that define the clickable area and communicate variant/style.
+- **Icon (optional):** Visual reinforcement placed before (left) or after (right) the label.
+
+<Canvas of={ComponentStories.AnatomyFigure} />
+
+## Variants
+
+Buttons have two axes of variation: **variant** (color palette) and **style** (visual treatment).
+
+### Variant
+
+- **Primary (default):** Brand red palette for the most important action.
+- **Secondary:** Brand teal palette for supporting actions.
+- **White:** White foreground treatment for dark/colored backgrounds.
+
+<Canvas of={ComponentStories.VariantsFigure} />
+
+### Style
+
+Regular text buttons support two styles:
+
+- **Solid (default):** Filled background for strongest emphasis.
+- **Transparent:** No fill or border for low-emphasis actions.
+
+<Canvas of={ComponentStories.StyleFigure} />
+
+### Icon-only buttons
+
+Icon-only buttons support all three variants and all three styles (`solid`, `outline`, `transparent`).
+
+- Outline style is used for icon-only buttons to provide middle visual weight.
+- Icon-only buttons require accessible labeling (`aria-label` or visually hidden text).
+
+<Canvas of={ComponentStories.IconOnlyFigure} />
+
+## States
+
+Button states provide feedback about interaction and availability.
+
+### Default
+
+Resting state before user interaction.
+
+### Hover
+
+Regular buttons invert appearance on hover. Transparent styles deepen tone. Icon-only outline styles invert between outline and fill.
+
+<Canvas of={ComponentStories.HoverFigure} />
+
+### Focus
+
+Focus uses browser default focus ring. Do not suppress default focus behavior.
+
+### Disabled
+
+Disabled buttons use `status/disabled` (`#808080`) for background and border with white label text. Transparent disabled buttons use `status/disabled` text with no fill/border.
+
+<Canvas of={ComponentStories.DisabledFigure} />
+
+## Typography
+
+Button text uses Montserrat Bold at a fixed size with a 1:1 line-height ratio.
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Token</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Font size</td>
+      <td><code>components/button/font-size</code></td>
+      <td>0.75rem / 12px</td>
+      <td>1.5rem / 24px</td>
+    </tr>
+    <tr>
+      <td>Line height</td>
+      <td><code>components/button/line-height</code></td>
+      <td>0.75rem / 12px</td>
+      <td>1.5rem / 24px</td>
+    </tr>
+  </tbody>
+</table>
+
+## Spacing
+
+Button padding scales responsively using global spacing tokens. At widescreen, horizontal padding doubles to maintain visual balance with larger layouts.
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Token</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Padding top/bottom</td>
+      <td><code>components/button/padding-t-b</code> → <code>md</code></td>
+      <td>0.5rem / 8px</td>
+      <td>1rem / 16px</td>
+    </tr>
+    <tr>
+      <td>Padding left/right</td>
+      <td><code>components/button/padding-l-r</code> → <code>xl</code></td>
+      <td>1.5rem / 24px</td>
+      <td>3rem / 48px</td>
+    </tr>
+    <tr>
+      <td>Gap (label to icon)</td>
+      <td><code>components/button/padding-gap</code> → <code>sm</code></td>
+      <td>0.25rem / 4px</td>
+      <td>0.5rem / 8px</td>
+    </tr>
+    <tr>
+      <td>Icon-only padding (all sides)</td>
+      <td><code>sm</code></td>
+      <td>0.25rem / 4px</td>
+      <td>0.5rem / 8px</td>
+    </tr>
+  </tbody>
+</table>
+
+For spacing between buttons in a group, see the Placement subsection under Usage.
+
+## Border-radius
+
+Buttons use a fixed border-radius token that does not scale responsively. The full-round shape is defined by the `button/border-radius` token.
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Token</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Button container</td>
+      <td><code>components/button/border-radius</code> → <code>button/border-radius</code></td>
+      <td>2rem / 32px (fixed)</td>
+      <td>2rem / 32px (fixed)</td>
+    </tr>
+    <tr>
+      <td>Icon-only button</td>
+      <td><code>border-radius/round</code></td>
+      <td>6.25rem / 100px (fixed)</td>
+      <td>6.25rem / 100px (fixed)</td>
+    </tr>
+  </tbody>
+</table>
+
+## Colors
+
+Button colors vary by variant and state. The disabled state uses a shared token across all variants and styles. Buttons are mode-invariant; the same color values are used in both light and dark mode.
+
+<table>
+  <thead>
+    <tr>
+      <th>Element / State</th>
+      <th>Token</th>
+      <th>Light mode</th>
+      <th>Dark mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Primary background (default)</td>
+      <td><code>brand/primary</code></td>
+      <td>#FF5247</td>
+      <td>#FF5247</td>
+    </tr>
+    <tr>
+      <td>Primary background (hover)</td>
+      <td><code>global/white</code></td>
+      <td>#FFFFFF</td>
+      <td>#FFFFFF</td>
+    </tr>
+    <tr>
+      <td>Primary text / border</td>
+      <td><code>brand/primary</code></td>
+      <td>#FF5247</td>
+      <td>#FF5247</td>
+    </tr>
+    <tr>
+      <td>Secondary background (default)</td>
+      <td><code>brand/secondary</code></td>
+      <td>#003442</td>
+      <td>#003442</td>
+    </tr>
+    <tr>
+      <td>Secondary background (hover)</td>
+      <td><code>global/white</code></td>
+      <td>#FFFFFF</td>
+      <td>#FFFFFF</td>
+    </tr>
+    <tr>
+      <td>Secondary text / border</td>
+      <td><code>brand/secondary</code></td>
+      <td>#003442</td>
+      <td>#003442</td>
+    </tr>
+    <tr>
+      <td>White background (default)</td>
+      <td><code>global/white</code></td>
+      <td>#FFFFFF</td>
+      <td>#FFFFFF</td>
+    </tr>
+    <tr>
+      <td>White text / border</td>
+      <td><code>global/white</code></td>
+      <td>#FFFFFF</td>
+      <td>#FFFFFF</td>
+    </tr>
+    <tr>
+      <td>White hover background</td>
+      <td><code>brand/primary</code></td>
+      <td>#FF5247</td>
+      <td>#FF5247</td>
+    </tr>
+    <tr>
+      <td>Disabled background / border</td>
+      <td><code>status/disabled</code></td>
+      <td>#808080</td>
+      <td>#808080</td>
+    </tr>
+    <tr>
+      <td>Disabled text (transparent style)</td>
+      <td><code>status/disabled</code></td>
+      <td>#808080</td>
+      <td>#808080</td>
+    </tr>
+    <tr>
+      <td>Label text on filled backgrounds</td>
+      <td><code>global/white</code></td>
+      <td>#FFFFFF</td>
+      <td>#FFFFFF</td>
+    </tr>
+  </tbody>
+</table>
+
+**Light/Dark mode behavior:** Button colors are mode-invariant. All variant and state colors resolve to the same values in both light and dark mode.
+
+## Accessibility
+
+### Keyboard navigation
+
+- **Tab:** Moves focus to next button.
+- **Shift + Tab:** Moves focus to previous button.
+- **Enter:** Activates focused button.
+- **Space:** Activates focused native `<button>`.
+
+### Screen readers
+
+Use semantic `<button>` for actions and `<a>` for navigation.
+
+For icon-only buttons, prefer a visually hidden `<span>` label; `aria-label` is fallback.
+
+### ARIA attributes
+
+- `aria-disabled="true"` with `disabled` for disabled controls.
+- `aria-label` only when no visible/hidden text label exists.
+- `aria-pressed` for toggles.
+- `aria-expanded` for disclosure controls.
+
+### Focus management
+
+Do not suppress default focus ring unless replaced with an accessible equivalent.
+
+### Color contrast
+
+Filled and outline states target WCAG AA contrast. Disabled components are intentionally reduced contrast as non-interactive controls.
+
+## Usage
+
+### When to use
+
+- Primary actions (save, confirm, create)
+- Secondary/supporting actions
+- Form submission
+- UI triggers (open modal, expand region, switch view)
+
+### When not to use
+
+- Page navigation (use links)
+- Non-interactive decoration
+- Inline text emphasis
+
+### Content guidelines
+
+- Lead with action verbs.
+- Be specific.
+- Keep labels short.
+- Use sentence case.
+
+### Placement
+
+- In right-aligned action groups, place primary action on the right.
+- In left-aligned content contexts, place primary action on the left.
+- Stack full-width on mobile when needed.
+- Use `md` spacing between grouped buttons.
+- Separate destructive actions clearly.
+
+### Best practices
+
+<Story of={ComponentStories.BestPracticesFigure} />
+
+## Code reference
+
+### HTML
+
+```html
+<button type="button" class="btn btn-primary-solid">Save changes</button>
+<a href="/page" class="btn btn-secondary-solid">View details</a>
+<button type="button" class="btn btn-secondary-transparent">Learn more</button>
+<button type="button" class="btn btn-primary-solid" disabled aria-disabled="true">Submit</button>
+
+<button type="button" class="btn btn-primary-solid btn-icon" aria-label="Settings">
+  <svg aria-hidden="true" focusable="false" width="16" height="16">...</svg>
+</button>
+```
+
+### CSS
+
+```css
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--components-button-padding-gap);
+  padding: var(--components-button-padding-t-b) var(--components-button-padding-l-r);
+  border-radius: var(--components-button-border-radius);
+  font-size: var(--components-button-font-size);
+  line-height: var(--components-button-line-height);
+  font-weight: 700;
+  border: var(--components-button-border-width) solid transparent;
+  transition: all 0.25s ease 0s;
+}
+
+.btn:disabled,
+.btn[aria-disabled='true'] {
+  background: var(--status-disabled);
+  border-color: var(--status-disabled);
+  color: var(--global-white);
+}
+```
+
+### Design tokens reference
+
+```text
+--components/button/font-size      12px fixed  (0.75rem)
+--components/button/line-height    12px fixed  (0.75rem)
+--components/button/padding-t-b    Mobile: 8px   -> Widescreen: 16px
+--components/button/padding-l-r    Mobile: 24px  -> Widescreen: 48px
+--components/button/padding-gap    Mobile: 4px   -> Widescreen: 8px
+--components/button/border-radius  32px fixed
+--border-radius/round              100px fixed
+--brand/primary                    #FF5247
+--brand/secondary                  #003442
+--global/white                     #FFFFFF
+--status/disabled                  #808080
+```
+
+## Resources
+
+- [ARIA Authoring Practices: Button Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/button/)
+- [WebAIM](https://webaim.org/)
+- [WCAG 2.1 Quick Reference](https://www.w3.org/WAI/WCAG21/quickref/)
+- [MDN: button element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)
+- [WCAG 2.1: Understanding Target Size](https://www.w3.org/WAI/WCAG21/Understanding/target-size.html)
+- [Nielsen Norman Group: Button States](https://www.nngroup.com/articles/button-states-communicate-interaction/)
+
+## Source of truth
+
+- [Figma documentation node](https://www.figma.com/design/tHT8Je5cvRTXFN9XQ7XqhA/The-Delta-Design-System?node-id=1073-3066&m=dev)
+- Figma Variables table and modes define all values.
+- HTML export may support copy/structure but must be verified against Figma.
