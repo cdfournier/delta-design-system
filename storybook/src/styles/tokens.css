@@ -856,6 +856,11 @@
   --components-pagination-gap-px: 16;
   --components-pagination-padding-x-px: 32;
   --components-pagination-padding-y-px: 16;
+
+  --components-table-font-size-px: 24;
+  --components-table-line-height-px: 30;
+  --components-table-cell-padding-px: 8;
+  --components-table-row-gap-px: 16;
 }
 
 [data-token-mode='library'] {
