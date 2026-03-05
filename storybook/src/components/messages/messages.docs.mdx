@@ -234,41 +234,181 @@ Modal and Promo overlay the page. Inline variants appear near related content. T
 ### HTML
 
 ```html
-<div class="message message-error" role="alert">
-  <span class="message-text">An error occurred. Please try again.</span>
-  <button class="message-close" aria-label="Dismiss error">...</button>
+<!-- Modal message -->
+<dialog class="message message-modal" aria-labelledby="modal-heading" aria-modal="true">
+  <button class="message-close" aria-label="Close">
+    <svg viewBox="0 0 24 24"><!-- X icon --></svg>
+  </button>
+  <div class="message-content">
+    <h2 id="modal-heading">Modal Title</h2>
+    <p>Modal content goes here.</p>
+    <div class="content-cta">
+      <button>Primary Action</button>
+    </div>
+  </div>
+</dialog>
+
+<!-- Promo message -->
+<div class="message message-promo" role="dialog" aria-labelledby="promo-heading">
+  <button class="message-close" aria-label="Close">
+    <svg viewBox="0 0 24 24"><!-- X icon --></svg>
+  </button>
+  <div class="message-content">
+    <h2 id="promo-heading">Promo Title</h2>
+    <p>Promotional content.</p>
+  </div>
 </div>
 
+<!-- Confirmation message -->
+<div class="message message-confirmation" role="alertdialog" aria-labelledby="confirm-msg">
+  <span id="confirm-msg" class="message-text">Delete this item?</span>
+  <div class="message-actions">
+    <button class="button-transparent">No</button>
+    <button class="button-solid">Yes</button>
+  </div>
+</div>
+
+<!-- Error message -->
+<div class="message message-error" role="alert">
+  <span class="message-text">An error occurred. Please try again.</span>
+  <button class="message-close" aria-label="Dismiss error">
+    <svg viewBox="0 0 24 24"><!-- X icon --></svg>
+  </button>
+</div>
+
+<!-- Success message -->
+<div class="message message-success" role="status">
+  <span class="message-text">Changes saved successfully.</span>
+  <button class="message-close" aria-label="Dismiss notification">
+    <svg viewBox="0 0 24 24"><!-- X icon --></svg>
+  </button>
+</div>
+
+<!-- Toast message -->
 <div class="toast" role="status" aria-live="polite">
   <span class="toast-message">Item added to cart</span>
-  <button class="toast-close" aria-label="Dismiss">...</button>
+  <button class="toast-close" aria-label="Dismiss">
+    <svg viewBox="0 0 24 24"><!-- X icon --></svg>
+  </button>
 </div>
 ```
 
 ### CSS
 
 ```css
+/* Modal message */
+.message-modal {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--page-background, #ffffff);
+  padding: 1rem; /* xl */
+  position: relative;
+}
+
+/* Promo message */
+.message-promo {
+  width: 100%;
+  min-height: 50vh;
+  background-color: var(--page-background, #ffffff);
+  padding: 1rem; /* xl */
+  position: relative;
+}
+
+/* Close button (Modal/Promo) */
+.message-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 6.25rem; /* round */
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Inline messages (Error, Success, Confirmation) */
 .message-error,
 .message-success,
 .message-confirmation {
-  padding: 0.5rem;
-  border-radius: 0.25rem;
+  width: 100%;
+  padding: 0.5rem; /* md */
+  border-radius: 0.25rem; /* border-radius/sm */
   display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.5rem; /* md */
 }
 
 .message-text,
 .toast-message {
-  font-size: 0.75rem;
-  line-height: 1.25rem;
+  font-size: 0.75rem; /* components/messages/font-size */
+  line-height: 1.25rem; /* components/messages/line-height */
   font-weight: 700;
+  color: #fff;
+}
+
+.message-error,
+.message-confirmation {
+  background-color: #c00c00; /* status/invalid */
+}
+
+.message-success {
+  background-color: #007000; /* status/valid */
+}
+
+/* Toast */
+.toast {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem; /* md */
+  padding: 0.5rem; /* md */
+  background-color: #333333; /* status/read-only */
+  border-radius: 0.25rem; /* border-radius/sm */
+  width: max-content;
 }
 ```
 
 ### JavaScript
 
 ```js
+function openModal(dialogEl, triggerEl) {
+  dialogEl.setAttribute('open', '');
+  dialogEl.removeAttribute('hidden');
+  const focusable = dialogEl.querySelectorAll(
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+  );
+  if (focusable.length) focusable[0].focus();
+  dialogEl._trigger = triggerEl;
+}
+
+function closeModal(dialogEl) {
+  dialogEl.removeAttribute('open');
+  dialogEl.setAttribute('hidden', '');
+  if (dialogEl._trigger) dialogEl._trigger.focus();
+}
+
+function trapFocus(dialogEl, event) {
+  const focusable = Array.from(dialogEl.querySelectorAll(
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+  ));
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+
+  if (event.key === 'Tab') {
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  }
+
+  if (event.key === 'Escape') closeModal(dialogEl);
+}
+
 function showToast(toastEl, duration = 5000) {
   toastEl.removeAttribute('hidden');
   setTimeout(() => {
@@ -280,17 +420,26 @@ function showToast(toastEl, duration = 5000) {
 ### Design tokens reference
 
 ```txt
+/* Typography */
 --fine/font-size
 --fine/line-height
+
+/* Spacing */
 --md
 --xl
+
+/* Border-radius */
 --border-radius/sm
 --border-radius/round
 --components/button/border-radius
+
+/* Colors (mode-invariant) */
 --status/invalid
 --status/valid
 --status/read-only
 --global/white
+
+/* Colors (mode-adaptive) */
 --page/background
 --text/default
 --text/link
