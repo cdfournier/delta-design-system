@@ -134,7 +134,7 @@ export function createLinksBestPracticesFigure() {
   return `
     <div class="dds-links-doc__do-dont-grid">
       <section class="dds-links-doc__do">
-        <p><strong>Do</strong></p>
+        <h4>Do</h4>
         <p><strong>Always underline links</strong></p>
         <p>Underlines are required to distinguish links from regular text for all users, especially those with color blindness.</p>
 
@@ -149,7 +149,7 @@ export function createLinksBestPracticesFigure() {
       </section>
 
       <section class="dds-links-doc__dont">
-        <p><strong>Don't</strong></p>
+        <h4>Don't</h4>
         <p><strong>Don't remove underlines</strong></p>
         <p>Links without underlines are hard to distinguish from regular text, creating accessibility barriers.</p>
 

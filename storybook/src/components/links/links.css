@@ -162,6 +162,15 @@
   border-left-color: var(--status-invalid);
 }
 
+.dds-links-doc__do h4,
+.dds-links-doc__dont h4 {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-size: var(--typography-h4-font-size);
+  line-height: var(--typography-h4-line-height);
+  font-weight: 400;
+}
+
 .dds-links-doc__do p,
 .dds-links-doc__dont p {
   margin: 0;
