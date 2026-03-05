@@ -1,0 +1,112 @@
+import { Canvas, Meta, Source, Story } from '@storybook/addon-docs/blocks';
+import * as FoundationStories from './colors.stories';
+import { cssReferenceSnippet, tokenReferenceSnippet } from './colors';
+
+<Meta of={FoundationStories} name="Documentation" />
+
+# Colors
+
+The Delta Design System color palette is designed for clarity, accessibility, and consistency across light and dark modes. Every color serves a specific purpose and should be applied through tokens so meaning and contrast remain stable across components.
+
+## Color philosophy
+
+Colors communicate meaning, establish hierarchy, and reinforce brand identity. The system uses semantic naming so colors can be applied consistently while preserving their intended meaning across themes and interface contexts.
+
+## The color system
+
+The complete color system includes brand colors, global neutrals, status indicators, and overlay utilities. All colors are available as design tokens, and semantic tokens resolve those values appropriately across light and dark modes.
+
+### Brand colors
+
+<Canvas of={FoundationStories.BrandColorsFigure} />
+
+### Global colors
+
+<Canvas of={FoundationStories.GlobalColorsFigure} />
+
+### Status colors
+
+<Canvas of={FoundationStories.StatusColorsFigure} />
+
+### Overlay colors
+
+<Canvas of={FoundationStories.OverlayColorsFigure} />
+
+## Color modes
+
+The Delta Design System supports both light and dark color modes. Semantic tokens automatically resolve to the appropriate color for each mode, ensuring consistent contrast and readability.
+
+<Story of={FoundationStories.Reference} />
+
+In dark mode, text/link resolves to global/white rather than brand/primary. This is intentional — Primary (#FF5247) achieves only 3.35:1 against the dark page background (#003442), which is insufficient for body-size link text. Verify that focus and hover states account for this contrast difference.
+
+## Accessibility
+
+All color combinations meet WCAG 2.1 Level AA contrast requirements for their intended use. The system prioritizes accessibility without compromising visual appeal.
+
+### Light mode contrast ratios
+
+<Story of={FoundationStories.LightContrastFigure} />
+
+### Dark mode contrast ratios
+
+<Story of={FoundationStories.DarkContrastFigure} />
+
+### Contrast requirements
+
+- **Body text (16px):** Minimum `4.5:1` contrast ratio (WCAG AA)
+- **Large text (18px+ or 14px+ bold):** Minimum `3:1` contrast ratio (WCAG AA)
+- **UI components:** Minimum `3:1` contrast ratio (WCAG AA)
+
+### Color and meaning
+
+Status colors are never used alone. Error, success, warning, and other functional states must include both color and iconography or text so meaning is conveyed to all users, including users with color vision deficiencies.
+
+## Usage
+
+### When to use semantic tokens
+
+Use semantic tokens (like `text/default`) instead of global tokens (like `global/black`) to ensure proper theming support across light and dark modes. Semantic tokens automatically resolve to the appropriate value for each mode.
+
+### Mode switching
+
+Users should have the ability to override system preferences and manually select their preferred color mode. Respect user choice and maintain their selection across sessions.
+
+### Testing requirements
+
+Always test designs in both light and dark modes to verify:
+
+- All text meets minimum contrast requirements
+- Status colors remain distinguishable
+- Interactive elements are clearly visible
+- Focus indicators have sufficient contrast
+
+### Best practices
+
+<Story of={FoundationStories.BestPracticesFigure} />
+
+## Code reference
+
+### CSS
+
+<Source code={cssReferenceSnippet} language="css" />
+
+### Design tokens reference
+
+Use this section to document token groups and semantic mappings as implemented in code. Primitive values and semantic resolutions must be verified against the Figma Variables table and all active modes before publishing.
+
+<Source code={tokenReferenceSnippet} language="text" />
+
+## Resources
+
+- [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) - Test color contrast ratios for WCAG compliance
+- [WCAG 2.1: Understanding Contrast (Minimum)](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html) - Official WCAG guidance for contrast requirements
+- [WCAG 2.1: Use of Color](https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html) - Guidance for conveying information without relying on color alone
+- [Accessible Colors](https://accessible-colors.com/) - Tool for exploring accessible color combinations
+- [Interaction Design Foundation: Color Theory](https://www.interaction-design.org/literature/topics/color-theory) - Color fundamentals and design context
+
+## Source of truth
+
+- [Figma documentation node](https://www.figma.com/design/tHT8Je5cvRTXFN9XQ7XqhA/The-Delta-Design-System?node-id=1061-13447&m=dev)
+- Figma Variables table and modes define all color values and semantic mappings.
+- HTML export may support copy/structure but must be verified against Figma.

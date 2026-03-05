@@ -1,0 +1,190 @@
+import { Canvas, Meta, Source, Story } from '@storybook/addon-docs/blocks';
+import * as FoundationStories from './grid.stories';
+import { gridCssSnippet, gridTokenSnippet } from './grid';
+
+<Meta of={FoundationStories} name="Documentation" />
+
+# Grid
+
+A responsive grid system provides structure and consistency across layouts, helping designers and developers create balanced, organized interfaces.
+
+## Grid philosophy
+
+The Delta Design System uses a flexible, fluid grid that adapts to different screen sizes. The grid separates architecture from presentation; content is structured using a 12-column system, while the visual display adapts to show 4, 8, or 12 columns based on viewport width.
+
+## The grid system
+
+The grid consists of an architectural layer (12-column structure) and a presentation layer (responsive visual columns).
+
+### Architecture vs. presentation
+
+**Architecture layer (12-column system):** The underlying structural foundation that remains constant across all breakpoints. Content is architected using 12-column proportions. A 6-column span represents 50% width whether on mobile, tablet, or widescreen.
+
+**Presentation layer (4/8/12 visual columns):** How the architecture renders visually at each breakpoint. Mobile displays 4 visible columns, tablet displays 8, widescreen displays all 12. Content automatically wraps to new rows when it exceeds the visible grid.
+
+The grid always thinks in terms of 12 columns, but displays different numbers of visual columns at each breakpoint. When content exceeds the available visual columns, it wraps to the next row:
+
+- **Mobile:** 4 visual columns. Content wraps after column 4.
+- **Tablet:** 8 visual columns. Content wraps after column 8.
+- **Widescreen:** 12 visual columns. Full 12-column structure visible.
+
+A layout with three 4-column items fits perfectly on widescreen (`4 + 4 + 4 = 12`). On tablet, the first two items display (`4 + 4 = 8`), and the third wraps to a new row. On mobile, each item wraps to its own row since each spans all 4 visible columns.
+
+### Grid structure
+
+The responsive column structure:
+
+- **Mobile:** 4 columns (visual presentation)
+- **Tablet:** 8 columns (visual presentation)
+- **Widescreen:** 12 columns (visual presentation)
+
+**Gutters:** `1rem / 16px` between columns, consistent across all breakpoints.
+
+**Margins:** Variable based on implementation needs; no prescribed container max-widths.
+
+### Breakpoints
+
+<Story of={FoundationStories.BreakpointsTableFigure} />
+
+### Visual grid samples
+
+**Mobile (4 columns):**
+
+<Canvas of={FoundationStories.VisualGridMobileFigure} />
+
+**Tablet (8 columns):**
+
+<Canvas of={FoundationStories.VisualGridTabletFigure} />
+
+**Widescreen (12 columns):**
+
+<Canvas of={FoundationStories.VisualGridWidescreenFigure} />
+
+### Fluid grid dynamics
+
+The Delta grid system is fluid. Column widths are percentage-based rather than fixed pixels. The 12-column architecture uses proportional widths that scale with the container.
+
+In the 12-column system, each column represents `1/12` (approximately `8.33%`) of the total width. When content spans multiple columns, those proportions combine:
+
+- **3 columns:** `25%` width (`3 ÷ 12 = 0.25`)
+- **6 columns:** `50%` width (`6 ÷ 12 = 0.50`)
+- **8 columns:** `66.67%` width (`8 ÷ 12 ≈ 0.667`)
+- **12 columns:** `100%` width (`12 ÷ 12 = 1.00`)
+
+Columns in a row typically add up to 12, representing `100%` of the available width: two equal columns (`6 + 6`), a sidebar layout (`8 + 4`), three equal columns (`4 + 4 + 4`), or an asymmetric split (`7 + 5`). Columns do not have to add up to 12. Content can span fewer columns and be centered within the grid, but understanding this math helps create balanced, intentional layouts.
+
+### Column spanning
+
+Content spans columns using the 12-column architecture. The same column span maintains its proportional width across all breakpoints, but may wrap to new rows based on the visible grid.
+
+{/* Figure placeholder: column spanning reference table (Span | Proportion | Common use) */}
+<Story of={FoundationStories.ColumnSpanningTableFigure} />
+
+These proportions remain constant. A 6-column element is always `50%` width, whether the viewport displays 4, 8, or 12 visual columns.
+
+### Common layout patterns
+
+**Fifty (50/50 split):**
+
+<Canvas of={FoundationStories.PatternFiftyFigure} />
+
+**Thirds (33/33/33 split):**
+
+<Canvas of={FoundationStories.PatternThirdsFigure} />
+
+**Fourths (25/25/25/25 split):**
+
+<Canvas of={FoundationStories.PatternFourthsFigure} />
+
+**Sidebar (66/33 split):**
+
+<Canvas of={FoundationStories.PatternSidebarFigure} />
+
+**Golden ratio (58/42 split):**
+
+<Canvas of={FoundationStories.PatternGoldenRatioFigure} />
+
+**Centered content (8 columns centered):**
+
+<Canvas of={FoundationStories.PatternCenteredContentFigure} />
+
+## Accessibility
+
+### Visual hierarchy
+
+Use the grid to create clear visual hierarchy. Important content should be prominent and easy to locate. The grid helps organize information so users can quickly scan and understand page structure.
+
+### Reading order
+
+Maintain logical reading order in your grid layouts. Screen readers follow DOM order, not visual order. Ensure your HTML structure matches the expected reading sequence.
+
+- **Top to bottom:** Content should flow naturally from top to bottom.
+- **Left to right:** In left-to-right languages, content flows left to right.
+- **Avoid reordering:** Do not use CSS to visually reorder content in ways that break logical flow.
+
+### Responsive considerations
+
+As layouts reflow at different breakpoints, ensure content remains in a logical order. A multi-column widescreen layout that stacks on mobile should stack in an order that makes sense for screen reader users.
+
+## Usage
+
+### Mobile-first approach
+
+Design for mobile first, then enhance for larger screens. Starting with the most constrained viewport forces you to prioritize content, simplify architecture, and make deliberate design decisions.
+
+Benefits of mobile-first design:
+
+- **Content optimization:** Limited space forces focus on essential content.
+- **Performance:** Mobile constraints encourage lean, efficient designs.
+- **Progressive enhancement:** Larger screens provide space for better organization and readability, not additional features that break responsive design.
+- **Future-proof:** Mobile traffic continues to grow globally.
+
+### Responsive behavior
+
+Content reflows naturally at each breakpoint based on column spans. A widescreen layout with three 4-column items displays all three side-by-side. On tablet's 8-column grid, the first two items fit (`4 + 4 = 8`), and the third wraps to a new row. On mobile's 4-column grid, each item wraps to its own row.
+
+Example, three-column layout at each breakpoint:
+
+- **Widescreen (12 columns):** Three items side-by-side, each spanning 4 columns (`4 + 4 + 4 = 12`).
+- **Tablet (8 columns):** First two items on row 1 (`4 + 4 = 8`), third item wraps to row 2.
+- **Mobile (4 columns):** Each item on its own row (each spans all 4 columns).
+
+### Grid in Figma
+
+Layout Grid styles are included in the Figma file for each breakpoint. Apply them to your frames to instantly set up the grid system:
+
+- **Type:** Columns
+- **Count:** 4 (mobile), 8 (tablet), 12 (widescreen)
+- **Gutter:** `16px`
+- **Margin:** As needed for your layout
+
+### Best practices
+
+<Story of={FoundationStories.BestPracticesFigure} />
+
+## Code reference
+
+### CSS
+
+<Source code={gridCssSnippet} language="css" />
+
+### Design tokens reference
+
+<Source code={gridTokenSnippet} language="text" />
+
+## Resources
+
+- [ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/) - W3C patterns and widgets
+- [WebAIM](https://webaim.org/) - Web accessibility resources
+- [WCAG 2.1 Quick Reference](https://www.w3.org/WAI/WCAG21/quickref/) - Accessibility guidelines
+- [MDN Web Docs](https://developer.mozilla.org/) - HTML, CSS, JavaScript reference
+- [MDN: CSS Grid Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout) - Official CSS Grid documentation
+- [CSS-Tricks: Complete Guide to CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) - Comprehensive CSS Grid reference
+- [web.dev: Layout Patterns](https://web.dev/patterns/layout/) - Responsive layout patterns and techniques
+- [IxDF: The Grid System](https://www.interaction-design.org/literature/article/the-grid-system-building-a-solid-design-layout) - Grid fundamentals in design
+
+## Source of truth
+
+- [Figma documentation node](https://www.figma.com/design/tHT8Je5cvRTXFN9XQ7XqhA/The-Delta-Design-System?node-id=1065-19496&m=dev)
+- Figma Variables table and modes define grid and breakpoint values.
+- HTML export may support copy/structure but must be verified against Figma.

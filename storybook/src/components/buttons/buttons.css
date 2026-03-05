@@ -1,0 +1,293 @@
+.dds-buttons-fig {
+  width: min(72rem, 100%);
+  color: var(--text-default);
+}
+
+.dds-buttons-fig__card {
+  background: var(--background-section);
+  border: 1px solid var(--global-gray-medium);
+  border-radius: var(--border-radius-sm);
+  padding: var(--space-xl);
+}
+
+.dds-buttons-fig__card--dark {
+  background: var(--brand-secondary);
+}
+
+.dds-buttons-fig__stack {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+.dds-buttons-fig__label {
+  margin: 0;
+  font-family: var(--font-family-body);
+  font-size: var(--typography-small-font-size);
+  line-height: var(--typography-small-line-height);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.dds-button-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.dds-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--components-button-padding-gap);
+  padding: var(--components-button-padding-t-b) var(--components-button-padding-l-r);
+  border-radius: var(--components-button-border-radius);
+  border: var(--components-button-border-width) solid transparent;
+  font-family: var(--font-family-body);
+  font-size: var(--components-button-font-size);
+  line-height: var(--components-button-line-height);
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease 0s;
+}
+
+.dds-button:focus-visible {
+  outline: auto;
+  outline-offset: 2px;
+}
+
+.dds-button--primary-solid {
+  background: var(--brand-primary);
+  color: var(--global-white);
+  border-color: var(--brand-primary);
+}
+
+.dds-button--primary-solid:hover,
+.dds-button--primary-solid:focus-visible {
+  background: var(--global-white);
+  color: var(--brand-primary);
+  border-color: var(--brand-primary);
+}
+
+.dds-button--primary-transparent {
+  background: transparent;
+  color: var(--brand-primary);
+  border-color: transparent;
+}
+
+.dds-button--primary-transparent:hover,
+.dds-button--primary-transparent:focus-visible {
+  color: var(--brand-primary-dark);
+}
+
+.dds-button--secondary-solid {
+  background: var(--brand-secondary);
+  color: var(--global-white);
+  border-color: var(--brand-secondary);
+}
+
+.dds-button--secondary-solid:hover,
+.dds-button--secondary-solid:focus-visible {
+  background: var(--global-white);
+  color: var(--brand-secondary);
+  border-color: var(--brand-secondary);
+}
+
+.dds-button--secondary-transparent {
+  background: transparent;
+  color: var(--brand-secondary);
+  border-color: transparent;
+}
+
+.dds-button--secondary-transparent:hover,
+.dds-button--secondary-transparent:focus-visible {
+  color: var(--brand-secondary-dark);
+}
+
+.dds-button--white-solid {
+  background: var(--global-white);
+  color: var(--brand-primary);
+  border-color: var(--global-white);
+}
+
+.dds-button--white-solid:hover,
+.dds-button--white-solid:focus-visible {
+  background: var(--brand-primary);
+  color: var(--global-white);
+  border-color: var(--global-white);
+}
+
+.dds-button--white-hover {
+  background: var(--brand-primary);
+  color: var(--global-white);
+  border-color: var(--global-white);
+}
+
+.dds-button--white-transparent {
+  background: transparent;
+  color: var(--global-white);
+  border-color: transparent;
+}
+
+.dds-button--white-transparent:hover,
+.dds-button--white-transparent:focus-visible {
+  color: var(--global-gray-medium);
+}
+
+.dds-button--outline-primary,
+.dds-button--outline-secondary,
+.dds-button--outline-white {
+  background: transparent;
+}
+
+.dds-button--outline-primary {
+  color: var(--brand-primary);
+  border-color: var(--brand-primary);
+}
+
+.dds-button--outline-primary:hover,
+.dds-button--outline-primary:focus-visible {
+  background: var(--brand-primary);
+  color: var(--global-white);
+}
+
+.dds-button--outline-secondary {
+  color: var(--brand-secondary);
+  border-color: var(--brand-secondary);
+}
+
+.dds-button--outline-secondary:hover,
+.dds-button--outline-secondary:focus-visible {
+  background: var(--brand-secondary);
+  color: var(--global-white);
+}
+
+.dds-button--outline-white {
+  color: var(--global-white);
+  border-color: var(--global-white);
+}
+
+.dds-button--outline-white:hover,
+.dds-button--outline-white:focus-visible {
+  background: var(--global-white);
+  color: var(--brand-primary);
+}
+
+.dds-button--icon {
+  width: var(--components-button-icon-button-size);
+  height: var(--components-button-icon-button-size);
+  padding: var(--components-button-icon-button-padding);
+  border-radius: var(--border-radius-round);
+}
+
+.dds-button--disabled,
+.dds-button:disabled,
+.dds-button[aria-disabled='true'] {
+  background: var(--status-disabled);
+  color: var(--global-white);
+  border-color: var(--status-disabled);
+  cursor: not-allowed;
+}
+
+.dds-button--transparent-disabled {
+  background: transparent;
+  color: var(--status-disabled);
+  border-color: transparent;
+}
+
+.dds-button--outline-disabled {
+  background: transparent;
+  color: var(--status-disabled);
+  border-color: var(--status-disabled);
+}
+
+.dds-button--outline-disabled:disabled,
+.dds-button--outline-disabled[aria-disabled='true'] {
+  background: transparent;
+  color: var(--status-disabled);
+  border-color: var(--status-disabled);
+}
+
+.dds-button__icon {
+  width: var(--components-button-inline-icon-size);
+  height: var(--components-button-inline-icon-size);
+  display: inline-flex;
+}
+
+.dds-button__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.dds-buttons-fig__icon-only-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.dds-buttons-fig__icon-only-row {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.dds-buttons-fig__icon-divider {
+  width: 1px;
+  align-self: stretch;
+  background: var(--global-gray-dark);
+}
+
+.dds-buttons-fig__hover-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.dds-buttons-fig__hover-group {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.dds-buttons-fig__hover-arrow {
+  font-family: var(--font-family-body);
+  font-size: var(--typography-body-font-size);
+  line-height: 1;
+  color: var(--text-default);
+}
+
+.dds-buttons-fig__do-dont-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+.dds-buttons-fig__do,
+.dds-buttons-fig__dont {
+  display: grid;
+  gap: var(--space-sm);
+  padding-left: var(--space-lg);
+  border-left: 4px solid transparent;
+}
+
+.dds-buttons-fig__do {
+  border-left-color: var(--status-valid);
+}
+
+.dds-buttons-fig__dont {
+  border-left-color: var(--status-invalid);
+}
+
+.dds-buttons-fig__do p,
+.dds-buttons-fig__dont p {
+  margin: 0;
+  font-size: var(--typography-body-font-size);
+  line-height: var(--typography-body-line-height);
+}
+
+@media (max-width: 48rem) {
+  .dds-buttons-fig__do-dont-grid {
+    grid-template-columns: 1fr;
+  }
+}
