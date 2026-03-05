@@ -1,0 +1,307 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import * as ComponentStories from './messages.stories';
+
+<Meta of={ComponentStories} title="Molecules/Messages/Documentation" />
+
+# Messages
+
+Messages provide user notifications, alerts, and feedback in various contexts. This includes modal dialogs for detailed content, inline notifications for status updates, and toast messages for brief, non-intrusive information.
+
+## Anatomy
+
+### Message component
+
+Message variants consist of:
+
+- **Container:** Background wrapper with optional border-radius.
+- **Content (Modal/Promo):** Content block with heading and body.
+- **Message text (Error/Success/Confirmation):** Bold text label.
+- **Close button:** Dismissal control (X icon).
+- **Action buttons (Confirmation only):** Yes/No decision buttons.
+
+<Canvas of={ComponentStories.AnatomyMessageFigure} />
+
+### Toast component
+
+Toast consists of:
+
+- **Container:** Dark background wrapper.
+- **Message text:** Brief notification content.
+- **Close button (optional):** Dismissal control.
+
+<Canvas of={ComponentStories.AnatomyToastFigure} />
+
+## Variants
+
+Messages come in six variants covering full-screen dialogs, inline status notifications, and transient toasts.
+
+### Modal
+
+Full-viewport dialog for detailed content, forms, or multi-step workflows.
+
+<Canvas of={ComponentStories.VariantModalFigure} />
+
+### Promo
+
+Half-viewport promotional banner for announcements, offers, or feature highlights.
+
+<Canvas of={ComponentStories.VariantPromoFigure} />
+
+### Confirmation
+
+Red inline alert with Yes/No action buttons for critical decisions requiring explicit user confirmation.
+
+<Canvas of={ComponentStories.VariantConfirmationFigure} />
+
+### Error
+
+Red inline notification bar for error messages and failure states.
+
+<Canvas of={ComponentStories.VariantErrorFigure} />
+
+### Success
+
+Green inline notification bar for success confirmations and completion states.
+
+<Canvas of={ComponentStories.VariantSuccessFigure} />
+
+### Toast
+
+Simple, non-intrusive notification for brief informational messages that do not require immediate action.
+
+<Canvas of={ComponentStories.VariantToastFigure} />
+
+## States
+
+Messages support these interaction states:
+
+- **Open:** Message is visible and interactive.
+- **Closed:** Message is dismissed and hidden.
+- **Hover:** Close buttons and confirmation actions show hover treatment.
+- **Focus:** Interactive controls expose visible focus indicators.
+
+## Typography
+
+Modal and Promo variants delegate main typography to Content. Error, Success, Confirmation, and Toast use bold message text.
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Token</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Message text font-size</td><td><code>components/messages/font-size</code></td><td>0.75rem / 12px</td><td>1.5rem / 24px</td></tr>
+    <tr><td>Message text line-height</td><td><code>components/messages/line-height</code></td><td>1.25rem / 20px</td><td>2.25rem / 36px</td></tr>
+    <tr><td>Confirmation button labels</td><td>—</td><td colSpan="2">See Button component documentation</td></tr>
+  </tbody>
+</table>
+
+## Spacing
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Token</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Modal, Promo padding</td><td><code>xl</code></td><td>1rem / 16px</td><td>2rem / 32px</td></tr>
+    <tr><td>Error, Success, Confirmation, Toast padding</td><td><code>md</code></td><td>0.5rem / 8px</td><td>1rem / 16px</td></tr>
+    <tr><td>Error, Success, Confirmation, Toast gap</td><td><code>md</code></td><td>0.5rem / 8px</td><td>1rem / 16px</td></tr>
+    <tr><td>Confirmation buttons</td><td>—</td><td colSpan="2">See Button component documentation</td></tr>
+  </tbody>
+</table>
+
+## Border-radius
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Token</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Inline messages (Error, Success, Confirmation)</td><td><code>border-radius/sm</code></td><td>0.25rem / 4px</td><td>0.5rem / 8px</td></tr>
+    <tr><td>Toast container</td><td><code>border-radius/sm</code></td><td>0.25rem / 4px</td><td>0.5rem / 8px</td></tr>
+    <tr><td>Close button</td><td><code>border-radius/round</code></td><td>6.25rem / 100px (fixed)</td><td>6.25rem / 100px (fixed)</td></tr>
+    <tr><td>Confirmation buttons</td><td><code>components/button/border-radius</code></td><td>2rem / 32px (fixed)</td><td>2rem / 32px (fixed)</td></tr>
+  </tbody>
+</table>
+
+## Colors
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Token</th>
+      <th>Light mode</th>
+      <th>Dark mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Modal/Promo — Background</td><td><code>page/background</code></td><td>#FFFFFF (global/white)</td><td>#01232D (brand/secondary-dark)</td></tr>
+    <tr><td>Modal/Promo — Text</td><td><code>text/default</code></td><td>#000000 (global/black)</td><td>#FFFFFF (global/white)</td></tr>
+    <tr><td>Modal/Promo — Close button icon</td><td><code>text/link</code></td><td>#FF5247 (brand/primary)</td><td>#FFFFFF (global/white)</td></tr>
+    <tr><td>Confirmation/Error — Background</td><td><code>status/invalid</code></td><td>#C00C00</td><td>#C00C00</td></tr>
+    <tr><td>Success — Background</td><td><code>status/valid</code></td><td>#007000</td><td>#007000</td></tr>
+    <tr><td>Toast — Background</td><td><code>status/read-only</code></td><td>#333333</td><td>#333333</td></tr>
+    <tr><td>Inline/Toast text and close icons</td><td><code>global/white</code></td><td>#FFFFFF</td><td>#FFFFFF</td></tr>
+  </tbody>
+</table>
+
+**Light/Dark mode behavior:** Modal and Promo adapt through `page/background`, `text/default`, and `text/link`. Status and Toast variants use fixed semantic colors.
+
+## Accessibility
+
+### Keyboard navigation
+
+All message components must be fully keyboard accessible:
+
+- **Tab / Shift+Tab:** Move focus through interactive controls.
+- **Enter / Space:** Activate close and action buttons.
+- **Escape:** Close dismissible messages and dialogs.
+
+### Screen readers
+
+Use `role="alert"` for Error/Confirmation, and `role="status"` with polite live regions for Success/Toast. Modal and Promo should use `<dialog>` or `role="dialog"` patterns.
+
+### ARIA attributes
+
+- **aria-labelledby:** Links to the message heading/text.
+- **aria-describedby:** Links supplemental text.
+- **aria-live:** `polite` for toast, `assertive` for critical alerts.
+- **aria-modal:** `true` for blocking modal dialogs.
+- **aria-label:** Required for icon-only close controls.
+
+### Focus management
+
+When a dialog opens, focus moves into it; when it closes, focus returns to the trigger.
+
+### Color contrast
+
+White text on Error, Success, and Toast backgrounds meets WCAG AA requirements.
+
+## Usage
+
+### When to use
+
+Use Messages when:
+
+- You need a modal for complex workflows.
+- You want to announce promotional or instructional content.
+- A destructive action needs explicit confirmation.
+- An error or success result needs immediate feedback.
+- A brief, low-priority notification is appropriate (toast).
+
+### When not to use
+
+Do not use Messages when:
+
+- A simple inline confirmation is enough instead of a modal.
+- Information is warning-level but not error-level.
+- Message requires guaranteed user action but is presented as toast.
+- You need to stack multiple modals.
+
+### Content guidelines
+
+- **Be concise:** Make copy easy to scan.
+- **Be specific:** Explain what happened and what to do next.
+- **Be actionable:** Include clear recovery or next-step language.
+- **Use plain language:** Avoid jargon.
+- **Match tone to severity:** Error content should feel more serious.
+
+### Placement
+
+Modal and Promo overlay the page. Inline variants appear near related content. Toast is fixed and non-obstructive.
+
+### Best practices
+
+<Story of={ComponentStories.BestPracticesFigure} />
+
+## Code reference
+
+### HTML
+
+```html
+<div class="message message-error" role="alert">
+  <span class="message-text">An error occurred. Please try again.</span>
+  <button class="message-close" aria-label="Dismiss error">...</button>
+</div>
+
+<div class="toast" role="status" aria-live="polite">
+  <span class="toast-message">Item added to cart</span>
+  <button class="toast-close" aria-label="Dismiss">...</button>
+</div>
+```
+
+### CSS
+
+```css
+.message-error,
+.message-success,
+.message-confirmation {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.message-text,
+.toast-message {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+```
+
+### JavaScript
+
+```js
+function showToast(toastEl, duration = 5000) {
+  toastEl.removeAttribute('hidden');
+  setTimeout(() => {
+    toastEl.setAttribute('hidden', '');
+  }, duration);
+}
+```
+
+### Design tokens reference
+
+```txt
+--fine/font-size
+--fine/line-height
+--md
+--xl
+--border-radius/sm
+--border-radius/round
+--components/button/border-radius
+--status/invalid
+--status/valid
+--status/read-only
+--global/white
+--page/background
+--text/default
+--text/link
+```
+
+## Resources
+
+- [ARIA: Dialog (Modal) Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/) - W3C modal dialog guidance.
+- [ARIA: Alert Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/alert/) - Accessible alert messages.
+- [ARIA: Alert Dialog Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/alertdialog/) - Accessible confirmation dialogs.
+- [MDN: dialog element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog) - Native HTML dialog documentation.
+- [WCAG 2.1 Quick Reference](https://www.w3.org/WAI/WCAG21/quickref/) - Accessibility guidelines.
+- [WebAIM](https://webaim.org/) - Web accessibility resources.
+- [Nielsen Norman Group: Modal Dialogs](https://www.nngroup.com/articles/modal-nonmodal-dialog/) - UX best practices.
