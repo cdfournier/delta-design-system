@@ -59,7 +59,7 @@
   --typography-small-font-size-px: 12;
   --typography-small-line-height-px: 20;
   --typography-fine-font-size-px: 10;
-  --typography-fine-line-height-px: 18;
+  --typography-fine-line-height-px: 16;
 
   /* Typography computed values (rem) */
   --typography-h1-title-font-size: calc(var(--typography-h1-title-font-size-px) / 16 * 1rem);
@@ -163,7 +163,7 @@
   --components-blockquote-quote-font-size-px: 12;
   --components-blockquote-quote-line-height-px: 20;
   --components-blockquote-cite-font-size-px: 10;
-  --components-blockquote-cite-line-height-px: 18;
+  --components-blockquote-cite-line-height-px: 16;
   --components-blockquote-padding-px: 16;
   --components-blockquote-gap-px: 8;
   --components-blockquote-border-width-px: 1;

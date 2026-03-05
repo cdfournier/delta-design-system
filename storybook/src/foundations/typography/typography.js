@@ -22,7 +22,7 @@ const scaleRows = [
   ['small font-size', 'small/font-size', 12, 20],
   ['small line-height', 'small/line-height', 20, 30],
   ['fine font-size', 'fine/font-size', 10, 16],
-  ['fine line-height', 'fine/line-height', 18, 24],
+  ['fine line-height', 'fine/line-height', 16, 24],
 ];
 
 const fontFamilies = [
@@ -100,7 +100,7 @@ const specimens = [
   {
     label: 'Fine',
     sampleHtml: '<p class="dds-typography-role dds-typography-role--fine">The quick brown fox jumps over the lazy dog. Typography expresses hierarchy and enables improved consumption of content.</p>',
-    detail: 'Montserrat Regular · Mobile: 10px / 18px lh · Widescreen: 16px / 24px lh',
+    detail: 'Montserrat Regular · Mobile: 10px / 16px lh · Widescreen: 16px / 24px lh',
   },
 ];
 
@@ -193,7 +193,7 @@ p {
 
 .fine {
   font-size: 0.625rem; /* 10px */
-  line-height: 1.125rem; /* 18px */
+  line-height: 1rem; /* 16px */
 }
 
 /* Heading link pattern */
@@ -313,7 +313,7 @@ const tokenSnippet = `/* Headings */
 --small/font-size        Mobile: 0.75rem / 12px    ->   Widescreen: 1.25rem / 20px
 --small/line-height      Mobile: 1.25rem / 20px    ->   Widescreen: 1.875rem / 30px
 --fine/font-size         Mobile: 0.625rem / 10px   ->   Widescreen: 1rem / 16px
---fine/line-height       Mobile: 1.125rem / 18px   ->   Widescreen: 1.5rem / 24px`;
+--fine/line-height       Mobile: 1rem / 16px       ->   Widescreen: 1.5rem / 24px`;
 
 function esc(value) {
   return String(value)

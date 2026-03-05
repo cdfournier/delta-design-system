@@ -29,7 +29,7 @@
   --typography-small-font-size-px: 12;
   --typography-small-line-height-px: 20;
   --typography-fine-font-size-px: 10;
-  --typography-fine-line-height-px: 18;
+  --typography-fine-line-height-px: 16;
 
   /* Figure-local computed typography values (do not rely on root/type-mode cascade in Storybook docs). */
   --typography-h1-title-font-size: calc(var(--typography-h1-title-font-size-px) / 16 * 1rem);
