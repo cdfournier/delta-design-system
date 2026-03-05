@@ -225,7 +225,29 @@
   color: var(--text-default);
 }
 
+.dds-typography-fig__font-line {
+  margin: 0;
+}
+
+.dds-typography-fig__font-line + .dds-typography-fig__font-line {
+  margin-top: var(--space-sm);
+}
+
+.dds-typography-fig__font-line--regular {
+  font-weight: 400;
+}
+
+.dds-typography-fig__font-line--bold {
+  font-weight: 700;
+}
+
 .dds-typography-fig__sample--ovo {
+  font-family: var(--font-family-heading);
+  font-size: var(--typography-h3-font-size);
+  line-height: var(--typography-h3-line-height);
+}
+
+.dds-typography-fig__sample--ovo .dds-typography-fig__font-line {
   font-family: var(--font-family-heading);
   font-size: var(--typography-h3-font-size);
   line-height: var(--typography-h3-line-height);
@@ -402,6 +424,14 @@
   margin: 0;
   font-size: var(--typography-body-font-size);
   line-height: var(--typography-body-line-height);
+}
+
+.dds-typography-fig__column-title {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-size: var(--typography-h5-font-size);
+  line-height: var(--typography-h5-line-height);
+  font-weight: 400;
 }
 
 @media (max-width: 64rem) {

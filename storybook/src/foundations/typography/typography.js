@@ -1,42 +1,45 @@
 import './typography.css';
 
 const scaleRows = [
-  ['h1 title — font size', 'h1-title/font-size', 50, 80],
-  ['h1 title — line height', 'h1-title/line-height', 56, 100],
-  ['h1 title + p — font size', 'h1-title+p/font-size', 16, 32],
-  ['h1 title + p — line height', 'h1-title+p/line-height', 28, 56],
-  ['h1 — font size', 'h1/font-size', 50, 72],
-  ['h1 — line height', 'h1/line-height', 56, 90],
-  ['h2 — font size', 'h2/font-size', 38, 60],
-  ['h2 — line height', 'h2/line-height', 42, 74],
-  ['h3 — font size', 'h3/font-size', 28, 50],
-  ['h3 — line height', 'h3/line-height', 32, 62],
-  ['h4 — font size', 'h4/font-size', 24, 42],
-  ['h4 — line height', 'h4/line-height', 30, 52],
-  ['h5 — font size', 'h5/font-size', 20, 32],
-  ['h5 — line height', 'h5/line-height', 26, 40],
-  ['p — font size', 'p/font-size', 16, 24],
-  ['p — line height', 'p/line-height', 24, 36],
-  ['list — font size', 'list/font-size', 16, 24],
-  ['list — line height', 'list/line-height', 20, 34],
-  ['small — font size', 'small/font-size', 12, 20],
-  ['small — line height', 'small/line-height', 20, 30],
-  ['fine — font size', 'fine/font-size', 10, 16],
-  ['fine — line height', 'fine/line-height', 18, 24],
+  ['h1 title font-size', 'h1-title/font-size', 50, 80],
+  ['h1 title line-height', 'h1-title/line-height', 56, 100],
+  ['h1 title + p font-size', 'h1-title+p/font-size', 16, 32],
+  ['h1 title + p line-height', 'h1-title+p/line-height', 28, 56],
+  ['h1 font-size', 'h1/font-size', 50, 72],
+  ['h1 line-height', 'h1/line-height', 56, 90],
+  ['h2 font-size', 'h2/font-size', 38, 60],
+  ['h2 line-height', 'h2/line-height', 42, 74],
+  ['h3 font-size', 'h3/font-size', 28, 50],
+  ['h3 line-height', 'h3/line-height', 32, 62],
+  ['h4 font-size', 'h4/font-size', 24, 42],
+  ['h4 line-height', 'h4/line-height', 30, 52],
+  ['h5 font-size', 'h5/font-size', 20, 32],
+  ['h5 line-height', 'h5/line-height', 26, 40],
+  ['p font-size', 'p/font-size', 16, 24],
+  ['p line-height', 'p/line-height', 24, 56],
+  ['list font-size', 'list/font-size', 16, 24],
+  ['list line-height', 'list/line-height', 20, 34],
+  ['small font-size', 'small/font-size', 12, 20],
+  ['small line-height', 'small/line-height', 20, 30],
+  ['fine font-size', 'fine/font-size', 10, 16],
+  ['fine line-height', 'fine/line-height', 18, 24],
 ];
 
 const fontFamilies = [
   {
     label: 'Ovo — Headlines',
     sampleClass: 'dds-typography-fig__sample--ovo',
-    sample: 'The quick brown fox jumps over the lazy dog',
-    details: ['Family: Ovo', 'Weights: 400', 'Use: h1-title, h1-h5'],
+    sampleHtml: '<p class="dds-typography-fig__font-line">The quick brown fox jumps over the lazy dog</p>',
+    details: ['Font: Ovo (serif)', 'Weight: Regular (400)', 'Use: All headings (h1-h5)'],
   },
   {
     label: 'Montserrat — Body & Interface',
     sampleClass: 'dds-typography-fig__sample--montserrat',
-    sample: 'Typography expresses hierarchy and enables improved consumption of content.',
-    details: ['Family: Montserrat', 'Weights: 400, 700', 'Use: p, list, small, fine, UI copy'],
+    sampleHtml: `
+      <p class="dds-typography-fig__font-line dds-typography-fig__font-line--regular">The quick brown fox jumps over the lazy dog - Regular</p>
+      <p class="dds-typography-fig__font-line dds-typography-fig__font-line--bold">The quick brown fox jumps over the lazy dog - Bold</p>
+    `,
+    details: ['Font: Montserrat (sans-serif)', 'Weights: Regular (400), Bold (700)', 'Use: Body copy, lists, interface elements, all components'],
   },
 ];
 
@@ -44,60 +47,60 @@ const specimens = [
   {
     label: 'H1 Title',
     sampleHtml: '<div class="dds-typography-role dds-typography-role--h1-title">The quick brown fox</div>',
-    detail: 'Ovo / var(--typography-h1-title-font-size) / var(--typography-h1-title-line-height)',
+    detail: 'Ovo Regular · Mobile: 50px / 56px lh · Widescreen: 80px / 100px lh',
   },
   {
     label: 'H1 Title + P',
     sampleHtml: `
       <div class="dds-typography-role dds-typography-role--h1-title">The quick brown fox</div>
-      <p class="dds-typography-role dds-typography-role--h1-title-plus-p">The first paragraph following a title can be emphasized for hierarchy and rhythm.</p>
+      <p class="dds-typography-role dds-typography-role--h1-title-plus-p">The first paragraph after an h1 title receives special styling with increased font size for emphasis and improved visual hierarchy.</p>
     `,
-    detail: 'Montserrat / h1-title+p tokens on first paragraph after .title h1',
+    detail: 'Montserrat Regular · Mobile: 16px / 28px lh · Widescreen: 32px / 56px lh',
   },
   {
     label: 'H1',
     sampleHtml: '<div class="dds-typography-role dds-typography-role--h1">The quick brown fox</div>',
-    detail: 'Ovo / h1 tokens',
+    detail: 'Ovo Regular · Mobile: 50px / 56px lh · Widescreen: 72px / 90px lh',
   },
   {
     label: 'H2',
     sampleHtml: '<div class="dds-typography-role dds-typography-role--h2">The quick brown fox</div>',
-    detail: 'Ovo / h2 tokens',
+    detail: 'Ovo Regular · Mobile: 38px / 42px lh · Widescreen: 60px / 74px lh',
   },
   {
     label: 'H3',
     sampleHtml: '<div class="dds-typography-role dds-typography-role--h3">The quick brown fox</div>',
-    detail: 'Ovo / h3 tokens',
+    detail: 'Ovo Regular · Mobile: 28px / 32px lh · Widescreen: 50px / 62px lh',
   },
   {
     label: 'H4',
     sampleHtml: '<div class="dds-typography-role dds-typography-role--h4">The quick brown fox</div>',
-    detail: 'Ovo / h4 tokens',
+    detail: 'Ovo Regular · Mobile: 24px / 30px lh · Widescreen: 42px / 52px lh',
   },
   {
     label: 'H5',
     sampleHtml: '<div class="dds-typography-role dds-typography-role--h5">The quick brown fox</div>',
-    detail: 'Ovo / h5 tokens',
+    detail: 'Ovo Regular · Mobile: 20px / 26px lh · Widescreen: 32px / 40px lh',
   },
   {
     label: 'Body (p)',
     sampleHtml: '<p class="dds-typography-role dds-typography-role--body">Typography expresses hierarchy and enables improved consumption of content.</p>',
-    detail: 'Montserrat / p tokens',
+    detail: 'Montserrat Regular · Mobile: 16px / 24px lh · Widescreen: 24px / 56px lh',
   },
   {
     label: 'List',
     sampleHtml: '<ul class="dds-typography-role dds-typography-role--list"><li>The quick brown fox jumps over the lazy dog</li><li>Typography expresses hierarchy and enables improved consumption of content</li><li>Good typography helps content fulfill its purpose</li></ul>',
-    detail: 'Montserrat / list tokens',
+    detail: 'Montserrat Regular · Mobile: 16px / 20px lh · Widescreen: 24px / 34px lh',
   },
   {
     label: 'Small',
-    sampleHtml: '<p class="dds-typography-role dds-typography-role--small">Secondary content, captions, and helper text.</p>',
-    detail: 'Montserrat / small tokens',
+    sampleHtml: '<p class="dds-typography-role dds-typography-role--small">The quick brown fox jumps over the lazy dog. Typography expresses hierarchy and enables improved consumption of content.</p>',
+    detail: 'Montserrat Regular · Mobile: 12px / 20px lh · Widescreen: 20px / 30px lh',
   },
   {
     label: 'Fine',
-    sampleHtml: '<p class="dds-typography-role dds-typography-role--fine">Tertiary content, legal text, and micro-copy.</p>',
-    detail: 'Montserrat / fine tokens',
+    sampleHtml: '<p class="dds-typography-role dds-typography-role--fine">The quick brown fox jumps over the lazy dog. Typography expresses hierarchy and enables improved consumption of content.</p>',
+    detail: 'Montserrat Regular · Mobile: 10px / 18px lh · Widescreen: 16px / 24px lh',
   },
 ];
 
@@ -367,7 +370,7 @@ function fontFamilyCards() {
           (item) => `
             <article class="dds-typography-fig__card">
               <div class="dds-typography-fig__card-label">${item.label}</div>
-              <div class="dds-typography-fig__sample ${item.sampleClass}">${item.sample}</div>
+              <div class="dds-typography-fig__sample ${item.sampleClass}">${item.sampleHtml}</div>
               <div class="dds-typography-fig__meta">${item.details.join(' · ')}</div>
             </article>
           `,
@@ -465,7 +468,7 @@ export function createTypographyBestPracticesFigure() {
   return figureShell(`
     <div class="dds-typography-fig__do-dont-grid">
       <section class="dds-typography-fig__do">
-        <p><strong>Do</strong></p>
+        <h4 class="dds-typography-fig__column-title">Do</h4>
         <p><strong>Follow heading hierarchy</strong></p>
         <p>Use h1 through h5 in order without skipping levels.</p>
         <p><strong>Use rem units in code</strong></p>
@@ -476,7 +479,7 @@ export function createTypographyBestPracticesFigure() {
         <p>Maintain 45-75 characters per line for body copy.</p>
       </section>
       <section class="dds-typography-fig__dont">
-        <p><strong>Don't</strong></p>
+        <h4 class="dds-typography-fig__column-title">Don't</h4>
         <p><strong>Don't skip heading levels</strong></p>
         <p>Jumping from h2 to h4 breaks document structure and assistive navigation.</p>
         <p><strong>Don't use headings for visual sizing</strong></p>
