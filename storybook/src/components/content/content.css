@@ -140,6 +140,16 @@
   line-height: var(--typography-body-line-height);
 }
 
+.dds-content-doc__do h4,
+.dds-content-doc__dont h4 {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-weight: 400;
+  font-size: var(--typography-h4-font-size);
+  line-height: var(--typography-h4-line-height);
+  color: var(--text-default);
+}
+
 @media (max-width: 48rem) {
   .dds-content-doc__do-dont-grid {
     grid-template-columns: 1fr;

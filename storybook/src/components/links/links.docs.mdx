@@ -5,37 +5,37 @@ import * as ComponentStories from './links.stories';
 
 # Links
 
-Links are navigational elements that move users between pages, sections, and resources. They must remain visually distinct from surrounding text and preserve expected browser behavior.
+Links are navigational elements that allow users to move between pages, sections, or external resources. They are fundamental to web navigation and must be clearly distinguishable from regular text.
 
 ## Anatomy
 
 A link consists of:
 
-- **Link text:** The clickable text label that describes the destination.
-- **Underline:** Persistent visual indicator that text is interactive.
-- **Arrow icon (optional):** A trailing directional icon used when additional directional emphasis is helpful.
+- **Link text:** The clickable text that describes the destination.
+- **Underline:** Visual indicator that text is interactive (always present).
+- **Arrow icon (optional):** Directional indicator that appears to the right of the text.
 
 <Canvas of={ComponentStories.AnatomyFigure} />
 
 ## Variants
 
-Links support three size variants tied to typography tokens.
+Links are available in three sizes that correspond to typography scales, ensuring proper visual hierarchy and readability in different contexts.
 
 ### P (Paragraph)
 
-Standard size for body copy and primary inline navigation.
+Standard link size for body text and primary navigation. This is the most commonly used size.
 
 <Canvas of={ComponentStories.VariantPFigure} />
 
 ### Small
 
-Compact size for support links, dense layouts, and utility contexts.
+Compact link size suitable for navigation menus, lists, or supplementary content.
 
 <Canvas of={ComponentStories.VariantSmallFigure} />
 
 ### Fine
 
-Smallest size for tertiary links, legal text contexts, and footnotes.
+The smallest link size, used for secondary actions, footnotes, or dense layouts where space is limited.
 
 <Canvas of={ComponentStories.VariantFineFigure} />
 
@@ -43,46 +43,46 @@ Smallest size for tertiary links, legal text contexts, and footnotes.
 
 ### Default
 
-The initial state uses the `text/link` token.
+The initial appearance of a link, using `text/link` color token.
 
 <Canvas of={ComponentStories.StateDefaultFigure} />
 
 ### Hover
 
-On hover, color changes to `text/hover`, and when an arrow is present, the text-icon gap increases from `xs` to `sm`.
+When the user hovers over a link, the gap between text and arrow increases from 2px to 4px, and the color changes to `text/hover`.
 
 <Canvas of={ComponentStories.StateHoverFigure} />
 
 ### Visited, focus, and active
 
-The Delta Design System does not define custom visited, focus, or active styles for links. Browser defaults are preserved for familiarity and accessibility.
+The Delta Design System does not define custom visited, focus, or active states. These states are handled by browser defaults to ensure consistency with user expectations and accessibility standards.
 
 ## Typography
 
-All links use Montserrat Bold. Size and line height are token-driven and responsive.
+Font size and line height scale with the typographic system across breakpoints.
 
 <table>
   <thead>
     <tr>
-      <th>Element</th>
-      <th>Token</th>
+      <th>Variant</th>
+      <th>Property</th>
       <th>Mobile/Tablet</th>
       <th>Widescreen</th>
     </tr>
   </thead>
   <tbody>
-    <tr><td>P link font size</td><td><code>p/font-size</code></td><td>1rem / 16px</td><td>1.5rem / 24px</td></tr>
-    <tr><td>P link line height</td><td><code>p/line-height</code></td><td>1.5rem / 24px</td><td>2.25rem / 36px</td></tr>
-    <tr><td>Small link font size</td><td><code>small/font-size</code></td><td>0.75rem / 12px</td><td>1.25rem / 20px</td></tr>
-    <tr><td>Small link line height</td><td><code>small/line-height</code></td><td>1.25rem / 20px</td><td>1.875rem / 30px</td></tr>
-    <tr><td>Fine link font size</td><td><code>fine/font-size</code></td><td>0.625rem / 10px</td><td>1rem / 16px</td></tr>
-    <tr><td>Fine link line height</td><td><code>fine/line-height</code></td><td>1.125rem / 18px</td><td>1.5rem / 24px</td></tr>
+    <tr><td>p</td><td>font-size</td><td>1rem / 16px</td><td>1.5rem / 24px</td></tr>
+    <tr><td>p</td><td>line-height</td><td>1.5rem / 24px</td><td>2.25rem / 36px</td></tr>
+    <tr><td>small</td><td>font-size</td><td>0.75rem / 12px</td><td>1.25rem / 20px</td></tr>
+    <tr><td>small</td><td>line-height</td><td>1.25rem / 20px</td><td>1.875rem / 30px</td></tr>
+    <tr><td>fine</td><td>font-size</td><td>0.625rem / 10px</td><td>1rem / 16px</td></tr>
+    <tr><td>fine</td><td>line-height</td><td>1.125rem / 18px</td><td>1.5rem / 24px</td></tr>
   </tbody>
 </table>
 
 ## Spacing
 
-Arrow spacing is token-driven and increases on hover.
+The gap between link text and the arrow icon changes on hover, using the `xs` and `sm` spacing tokens.
 
 <table>
   <thead>
@@ -94,8 +94,8 @@ Arrow spacing is token-driven and increases on hover.
     </tr>
   </thead>
   <tbody>
-    <tr><td>Gap (default, with arrow)</td><td><code>xs</code></td><td>0.125rem / 2px</td><td>0.25rem / 4px</td></tr>
-    <tr><td>Gap (hover, with arrow)</td><td><code>sm</code></td><td>0.25rem / 4px</td><td>0.5rem / 8px</td></tr>
+    <tr><td>Gap (default)</td><td><code>xs</code></td><td>0.125rem / 2px</td><td>0.25rem / 4px</td></tr>
+    <tr><td>Gap (hover)</td><td><code>sm</code></td><td>0.25rem / 4px</td><td>0.5rem / 8px</td></tr>
   </tbody>
 </table>
 
@@ -116,7 +116,7 @@ Arrow spacing is token-driven and increases on hover.
   </tbody>
 </table>
 
-**Light/dark mode behavior:** In light mode, links are brand primary by default and brand secondary on hover. In dark mode, links are white by default and brand primary on hover.
+**Light/dark mode behavior:** In light mode, links use the primary brand color and change to secondary on hover. In dark mode, links are white at rest and change to primary on hover for visibility against dark backgrounds.
 
 ## Accessibility
 
@@ -126,32 +126,28 @@ Links must be fully keyboard accessible:
 
 - **Tab:** Moves focus to the next link or interactive element.
 - **Shift + Tab:** Moves focus to the previous link or interactive element.
-- **Enter:** Activates the focused link.
+- **Enter:** Activates the link and navigates to the destination.
 
 ### Screen readers
 
-Use semantic `<a>` elements and descriptive link text that makes sense out of context. Avoid generic labels like "click here" without surrounding context.
+Use semantic HTML `<a>` elements for all links. Provide descriptive link text that makes sense out of context. Avoid generic phrases like "click here" or "read more" without additional context.
 
 ### ARIA attributes
 
-- **aria-label:** Adds context when visible text is not specific enough.
-- **aria-describedby:** Associates additional explanatory content with the link.
-- **aria-current="page":** Marks current-page links in navigation.
-- **target="_blank" + rel="noopener noreferrer":** Use when opening a new tab/window.
+- **aria-label:** Provides additional context when link text alone is insufficient.
+- **aria-describedby:** Links to additional descriptive content about the destination.
+- **aria-current:** Indicates the current page in navigation (set to `"page"`).
+- **target="_blank":** When opening in new tab, inform users with text or icon, and include <code>rel="noopener noreferrer"</code>.
 
 ### Focus management
 
-Browser default focus indicators are preserved. Do not remove focus outlines.
-
-### Touch targets
-
-- Minimum target size should be `44px × 44px` on touch devices.
-- Increase clickable area with padding when needed.
-- Maintain spacing between adjacent links to reduce accidental taps.
+Links rely on browser default focus indicators, which meet WCAG 2.1 Level AA requirements. Never remove focus indicators with CSS. The visible focus state is critical for keyboard navigation. On mobile, ensure links meet the minimum `44×44px` touch target size. Use padding to extend the clickable area beyond visible text when necessary.
 
 ### Color contrast
 
-Link colors must maintain WCAG AA contrast. Underline is required so links are not conveyed by color alone.
+Link colors meet WCAG 2.1 Level AA contrast requirements. The primary brand color provides at least 4.5:1 contrast ratio against white backgrounds. In dark mode, white links provide sufficient contrast against dark backgrounds.
+
+Links must always be underlined to distinguish them from regular text. Never rely solely on color to indicate a link, as this creates barriers for colorblind users. The underline is a required visual indicator.
 
 ## Usage
 
@@ -159,26 +155,31 @@ Link colors must maintain WCAG AA contrast. Underline is required so links are n
 
 Use links when you need to:
 
-- Navigate to another page or route.
-- Navigate to external resources.
-- Jump to anchors in the current page.
-- Link to files, email addresses, or phone numbers.
+- Navigate to another page or view within your application.
+- Navigate to an external website or resource.
+- Jump to a specific section within the current page (anchor links).
+- Provide access to downloadable files or documents.
+- Direct users to email addresses or phone numbers (`mailto:` and `tel:` links).
 
 ### When not to use
 
 Do not use links when:
 
-- Triggering actions (submit, toggle, open modal) instead of navigation.
-- Changing data or application state.
-- Presenting a primary non-navigational call-to-action.
+- Triggering actions like submitting forms, opening modals, or toggling UI elements. Use buttons instead.
+- Performing operations that change data or state. Use buttons instead.
+- Primary calls-to-action that do not navigate to a new destination. Use buttons instead.
+
+Remember: links navigate, buttons act. If clicking performs an action rather than navigation, use a button.
 
 ### Content guidelines
 
-- **Use descriptive text:** Link text should communicate destination clearly.
-- **Keep labels concise:** Use only the words required for clarity.
-- **Keep labels unique:** Adjacent links should be distinguishable.
-- **Use sentence case:** Match surrounding content case conventions.
-- **Use arrow icon intentionally:** Reserve for directional emphasis, not every link.
+- **Write descriptive link text:** Link text should clearly describe the destination. Avoid generic phrases like "click here."
+- **Keep links concise:** Use the minimum words necessary to describe the destination clearly.
+- **Make link text unique:** When multiple links appear together, ensure each has distinct, descriptive text.
+- **Indicate external links:** When linking to external sites, consider adding visual indication (arrow icon or text).
+- **Use sentence case:** Link text should use sentence case, matching the surrounding content.
+
+The arrow icon is optional and should be used strategically. Use it for external links, forward navigation or "next step" actions, calls-to-action within prose, or to emphasize important links. Do not use it on every link; reserve it for cases where direction needs emphasis.
 
 ### Best practices
 
@@ -288,7 +289,7 @@ a:focus-visible {
 
 ### Design tokens reference
 
-```css
+```text
 /* Typography */
 --fine/font-size          Mobile: 0.625rem / 10px   →   Widescreen: 1rem / 16px
 --fine/line-height        Mobile: 1.125rem / 18px   →   Widescreen: 1.5rem / 24px
@@ -305,3 +306,18 @@ a:focus-visible {
 --text/link               Light: #FF5247   Dark: #FFFFFF
 --text/hover              Light: #003442   Dark: #FF5247
 ```
+
+## Resources
+
+- [ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/) - W3C patterns and widgets
+- [WebAIM](https://webaim.org/) - Web accessibility resources
+- [WCAG 2.1 Quick Reference](https://www.w3.org/WAI/WCAG21/quickref/) - Accessibility guidelines
+- [MDN Web Docs](https://developer.mozilla.org/) - HTML, CSS, JavaScript reference
+- [Nielsen Norman Group: Writing Hyperlinks](https://www.nngroup.com/articles/writing-links/) - Best practices for link text
+- [WebAIM: Links and Hypertext](https://webaim.org/techniques/hypertext/) - Accessible link design
+
+## Source of truth
+
+- [Figma documentation node](https://www.figma.com/design/tHT8Je5cvRTXFN9XQ7XqhA/The-Delta-Design-System?node-id=1090-7169&t=OBDhPNDeR3TTWYF7-11)
+- [Figma component node](https://www.figma.com/design/tHT8Je5cvRTXFN9XQ7XqhA/The-Delta-Design-System?node-id=516-1916&t=OBDhPNDeR3TTWYF7-4)
+- Figma Variables table and modes define all values.

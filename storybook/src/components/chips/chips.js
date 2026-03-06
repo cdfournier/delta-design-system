@@ -418,7 +418,7 @@ export function createChipsBestPracticesFigure() {
     <section class="dds-chips-fig">
     <div class="dds-chips-fig__do-dont-grid">
       <section class="dds-chips-fig__do">
-        <p><strong>Do</strong></p>
+        <h3>Do</h3>
         <p><strong>Use the correct semantic element</strong></p>
         <p>Use interactive chips as buttons and keep static chips non-interactive.</p>
         <p><strong>Use clear, compact labels</strong></p>
@@ -429,7 +429,7 @@ export function createChipsBestPracticesFigure() {
         <p>Use wrapping groups instead of forcing horizontal overflow.</p>
       </section>
       <section class="dds-chips-fig__dont">
-        <p><strong>Don't</strong></p>
+        <h3>Don't</h3>
         <p><strong>Don't use vague text</strong></p>
         <p>Avoid generic labels that do not describe the chip's meaning.</p>
         <p><strong>Don't use chips for primary actions</strong></p>

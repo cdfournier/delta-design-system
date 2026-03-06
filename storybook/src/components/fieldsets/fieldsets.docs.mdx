@@ -1,0 +1,523 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import * as ComponentStories from './fieldsets.stories';
+
+<Meta of={ComponentStories} title="Molecules/Fieldsets/Documentation" />
+
+# Fieldsets
+
+Fieldsets provide consistent structure for form inputs with labels, validation states, and helper messages. They adapt layout and spacing based on input type, ensuring accessible and predictable form patterns.
+
+## Anatomy
+
+A fieldset consists of:
+
+- **Label or legend:** Descriptive text that identifies the input or group. Single inputs use a `<label>`; choice input groups use a `<legend>` inside a `<fieldset>`.
+- **Legend label (optional):** Fine-print text alongside the legend for supplementary context such as `(Optional)`; applies to checkbox, radio, and switch groups.
+- **Input:** The interactive control: text field, password field, select, checkbox, radio, or switch.
+- **Message (optional):** Helper text or validation feedback below the input.
+
+<Canvas of={ComponentStories.AnatomyFigure} />
+
+## Variants
+
+Fieldsets vary by input type. The type determines anatomy, layout, and interaction behavior.
+
+- **Text:** Single-line text entry with optional left and right icon slots.
+- **Password:** Text input with a show/hide toggle button.
+- **Select:** Dropdown menu with a chevron indicator.
+- **Checkbox:** Group of independent selection controls under a shared legend.
+- **Radio:** Group of mutually exclusive selection controls under a shared legend.
+- **Switch:** Group of binary toggle controls under a shared legend.
+
+## States
+
+- **Default:** Initial unfocused state.
+- **Focus:** 2px primary-colored outline with 2px offset.
+- **Disabled:** Non-interactive, reduced opacity and `not-allowed` cursor.
+- **Read-only:** Non-editable text/select value that remains readable and submittable.
+- **Invalid:** Border switches to invalid state color and error message is linked via `aria-describedby`.
+- **Valid:** Border switches to valid state color where positive confirmation is useful.
+- **Checkbox values:** `unchecked`, `checked`, and `indeterminate`.
+- **Password visibility:** Hidden/shown via toggle control with updated label and icon.
+- **Select open/closed:** Closed state shows value; activated state expands options.
+
+## Typography
+
+Fieldsets define typography for labels, legends, and message text. Input field typography is defined by individual input components.
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Token</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Label, Legend font-size</td><td><code>small/font-size</code></td><td>0.75rem / 12px</td><td>1.25rem / 20px</td></tr>
+    <tr><td>Label, Legend line-height</td><td><code>small/line-height</code></td><td>1.25rem / 20px</td><td>1.875rem / 30px</td></tr>
+    <tr><td>Legend label, Message font-size</td><td><code>fine/font-size</code></td><td>0.625rem / 10px</td><td>1rem / 16px</td></tr>
+    <tr><td>Legend label, Message line-height</td><td><code>fine/line-height</code></td><td>1.125rem / 18px</td><td>1.5rem / 24px</td></tr>
+  </tbody>
+</table>
+
+**Input typography:** Text input, password input, select dropdown, and choice input label typography are defined by their respective input components. See Inputs documentation for complete specifications.
+
+## Spacing
+
+Fieldsets define spacing between label/legend, input, and message elements. Internal input spacing is defined by individual input components.
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Token</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Text, password, select gap</td><td><code>sm</code></td><td>0.25rem / 4px</td><td>0.5rem / 8px</td></tr>
+    <tr><td>Checkbox, radio, switch gap</td><td><code>md</code></td><td>0.5rem / 8px</td><td>1rem / 16px</td></tr>
+    <tr><td>Legend padding-bottom</td><td><code>xs</code></td><td>0.125rem / 2px</td><td>0.25rem / 4px</td></tr>
+  </tbody>
+</table>
+
+**Input spacing:** Padding, internal gaps, and marker spacing are documented in Inputs.
+
+## Colors
+
+Fieldsets define colors for labels, legends, and message text. Input fills, borders, and control states are defined by individual input components.
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Token</th>
+      <th>Light mode</th>
+      <th>Dark mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Label, Legend</td><td><code>text/default</code></td><td>#000000 (global/black)</td><td>#FFFFFF (global/white)</td></tr>
+    <tr><td>Message — default</td><td><code>text/default</code></td><td>#000000 (global/black)</td><td>#FFFFFF (global/white)</td></tr>
+    <tr><td>Message — invalid</td><td><code>status/invalid</code></td><td>#C00C00</td><td>#C00C00</td></tr>
+    <tr><td>Message — valid</td><td><code>status/valid</code></td><td>#007000</td><td>#007000</td></tr>
+    <tr><td>Message — disabled</td><td><code>status/disabled</code></td><td>#808080</td><td>#808080</td></tr>
+    <tr><td>Message — read-only</td><td><code>status/read-only</code></td><td>#333333</td><td>#333333</td></tr>
+  </tbody>
+</table>
+
+**Input colors:** Inputs define their own background, border, and control colors.
+
+**Light/dark mode behavior:** Label and message text adapt through `text/default`. In dark mode, differentiate message and label by placement and structure, not color alone.
+
+## Accessibility
+
+### Keyboard navigation
+
+All fieldset inputs must be fully keyboard accessible:
+
+- **Tab:** Moves focus between controls in reading order.
+- **Shift + Tab:** Moves focus backward.
+- **Space:** Toggles checkboxes and switches; opens a closed select.
+- **Enter:** Submits the form and activates inline controls (for example, show/hide password).
+- **Arrow keys:** Navigate between radio buttons within a group.
+
+### Screen readers
+
+Use semantic HTML so assistive technology can parse form structure correctly. Use `<fieldset>` to group related controls and `<legend>` for group naming. For text/password/select, use explicit `for` and `id` associations.
+
+### ARIA attributes
+
+- **aria-invalid="true":** Applied to invalid inputs.
+- **aria-required="true":** Marks required fields.
+- **aria-describedby:** Links helper/error text to its input.
+- **aria-disabled="true":** For controls where native `disabled` cannot be used.
+- **role="switch":** Applied to switch-style checkbox controls.
+- **role="alert":** Applied to error messages that should be announced immediately.
+
+### Focus management
+
+Interactive controls require a visible focus indicator. Keep logical tab order and do not suppress focus outlines.
+
+### Color contrast
+
+Label and input text satisfy WCAG AA thresholds in both light and dark modes. Placeholder text must never be the only source of required guidance.
+
+## Usage
+
+### When to use
+
+Use Fieldsets when you need to:
+
+- Collect user input with consistent labeling and structure.
+- Group related checkbox/radio/switch controls under a shared label.
+- Provide inline helper and validation feedback.
+- Maintain accessible form semantics for keyboard and assistive tech users.
+
+### When not to use
+
+Do not use Fieldsets when:
+
+- Building search inputs with dedicated search semantics.
+- Creating filter/toolbar controls better represented by other patterns.
+- You think a field does not need a visible label; use accessible labeling instead of removing labels.
+
+### Content guidelines
+
+- **Write concise labels:** 1-3 words that clearly describe the expected value.
+- **Use placeholders for examples:** Use format hints, not duplicate labels.
+- **Write proactive helper text:** Set expectations before errors occur.
+- **Keep legends brief:** Group labels should add context without repetition.
+- **Write actionable errors:** Explain what failed and how to fix it.
+
+### Input type selection
+
+<table>
+  <thead>
+    <tr>
+      <th>Input type</th>
+      <th>Use for</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Text</td><td>Short, single-line text entry</td></tr>
+    <tr><td>Password</td><td>Sensitive text masked by default</td></tr>
+    <tr><td>Select</td><td>One choice from a predefined list</td></tr>
+    <tr><td>Checkbox</td><td>Multiple independent choices</td></tr>
+    <tr><td>Radio</td><td>Single choice from mutually exclusive options</td></tr>
+    <tr><td>Switch</td><td>Binary on/off settings with immediate effect</td></tr>
+  </tbody>
+</table>
+
+### Placement
+
+Fieldsets stack vertically with consistent spacing and shared alignment. Preferred width behavior is fluid between component min/max constraints.
+
+### Best practices
+
+<Story of={ComponentStories.BestPracticesFigure} />
+
+## Code reference
+
+### HTML
+
+```html
+<!-- Text input fieldset -->
+<fieldset class="fieldset">
+  <label for="email">Email address</label>
+  <input type="email" id="email" placeholder="[email protected]" aria-describedby="email-message" />
+  <div id="email-message" class="message">We'll never share your email with anyone else.</div>
+</fieldset>
+
+<!-- Password input fieldset -->
+<fieldset class="fieldset">
+  <label for="password">Password</label>
+  <div class="input-wrapper">
+    <input type="password"
+           id="password"
+           placeholder="Enter password"
+           aria-describedby="password-message" />
+    <button type="button" aria-label="Show password">
+      <!-- Eye icon -->
+    </button>
+  </div>
+  <div id="password-message" class="message">
+    Must be at least 8 characters.
+  </div>
+</fieldset>
+
+<!-- Select fieldset -->
+<fieldset class="fieldset">
+  <label for="country">Country</label>
+  <select id="country" aria-describedby="country-message">
+    <option>Select a country</option>
+    <option value="us">United States</option>
+    <option value="uk">United Kingdom</option>
+  </select>
+  <div id="country-message" class="message">
+    Choose your country of residence.
+  </div>
+</fieldset>
+
+<!-- Checkbox group fieldset -->
+<fieldset class="fieldset">
+  <legend>Interests <span class="legend-label">(Optional)</span></legend>
+  <div class="checkbox-group">
+    <label><input type="checkbox" value="design" /> Design</label>
+    <label><input type="checkbox" value="development" /> Development</label>
+    <label><input type="checkbox" value="marketing" /> Marketing</label>
+  </div>
+  <div class="message">Select all that apply.</div>
+</fieldset>
+
+<!-- Radio group fieldset -->
+<fieldset class="fieldset">
+  <legend>Notification preference</legend>
+  <div class="radio-group">
+    <label>
+      <input type="radio" name="notifications" value="all" checked />
+      All notifications
+    </label>
+    <label>
+      <input type="radio" name="notifications" value="important" />
+      Important only
+    </label>
+    <label>
+      <input type="radio" name="notifications" value="none" />
+      None
+    </label>
+  </div>
+  <div class="message">Choose how you want to receive notifications.</div>
+</fieldset>
+
+<!-- Switch group fieldset -->
+<fieldset class="fieldset">
+  <legend>Privacy settings</legend>
+  <div class="switch-group">
+    <label class="switch-label">
+      <input type="checkbox" role="switch" checked />
+      <span class="switch-track"></span>
+      Profile visibility
+    </label>
+    <label class="switch-label">
+      <input type="checkbox" role="switch" />
+      <span class="switch-track"></span>
+      Activity status
+    </label>
+  </div>
+  <div class="message">Control what others can see.</div>
+</fieldset>
+
+<!-- Invalid state -->
+<fieldset class="fieldset">
+  <label for="username">Username</label>
+  <input type="text"
+         id="username"
+         value="ab"
+         aria-invalid="true"
+         aria-describedby="username-error" />
+  <div id="username-error" class="message error" role="alert">
+    Username must be at least 3 characters.
+  </div>
+</fieldset>
+```
+
+### CSS
+
+```css
+/* Fieldset base */
+.fieldset {
+  min-width: 15.5rem; /* 248px — components/input/min-width */
+  max-width: 26.25rem; /* 420px — components/input/max-width */
+  width: 100%;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem; /* 4px — sm */
+}
+
+.fieldset--choice {
+  gap: 0.5rem; /* 8px — md */
+}
+
+/* Label */
+.fieldset label,
+.fieldset legend {
+  display: block;
+  font-size: 0.75rem; /* 12px — small/font-size */
+  line-height: 1.25rem; /* 20px — small/line-height */
+  font-weight: 700;
+}
+
+/* Legend bottom padding */
+.fieldset legend {
+  padding-bottom: 0.125rem; /* 2px — xs */
+  width: 100%;
+}
+
+/* Legend label (fine print) */
+.legend-label {
+  font-size: 0.625rem; /* 10px — fine/font-size */
+  line-height: 1.125rem; /* 18px — fine/line-height */
+  font-weight: 700;
+  margin-left: 0.5rem; /* 8px — md */
+}
+
+/* Text, password, select inputs */
+.fieldset input[type='text'],
+.fieldset input[type='email'],
+.fieldset input[type='password'],
+.fieldset select {
+  width: 100%;
+  padding: 0.5rem; /* 8px — components/input/text/padding */
+  border: 1px solid #CCCCCC; /* global/gray-medium */
+  border-radius: 0.25rem; /* 4px — components/input/text/border-radius */
+  font-size: 1rem; /* 16px — components/input/text/font-size */
+  line-height: 1.25rem; /* 20px — components/input/text/line-height */
+  background-color: #FFFFFF; /* page/background */
+  color: #000000; /* text/default */
+}
+
+.fieldset input::placeholder {
+  color: #919191; /* global/gray-dark */
+}
+
+/* Input icons */
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem; /* 4px — components/input/text/padding-gap */
+}
+
+/* Input states */
+.fieldset input:disabled,
+.fieldset select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.fieldset input[aria-invalid='true'],
+.fieldset select[aria-invalid='true'] {
+  border-color: #C00C00; /* status/invalid */
+}
+
+.fieldset input.valid,
+.fieldset select.valid {
+  border-color: #007000; /* status/valid */
+}
+
+/* Checkbox and radio groups */
+.checkbox-group,
+.radio-group,
+.switch-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* 8px — components/input/checkbox/padding-gap */
+}
+
+.checkbox-group label,
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* 8px — components/input/checkbox/padding-gap */
+  font-size: 1rem; /* 16px — components/input/checkbox/font-size */
+  line-height: 1.25rem; /* 20px — components/input/checkbox/line-height */
+}
+
+/* Message text */
+.message {
+  font-size: 0.625rem; /* 10px — fine/font-size */
+  line-height: 1.125rem; /* 18px — fine/line-height */
+  color: #000000; /* text/default */
+}
+
+.message.error {
+  color: #C00C00; /* status/invalid */
+}
+
+/* Focus states */
+.fieldset input:focus,
+.fieldset select:focus {
+  outline: 2px solid #FF5247; /* brand/primary */
+  outline-offset: 2px;
+}
+
+/* Responsive — widescreen */
+@media (min-width: 80rem) {
+  .fieldset {
+    gap: 0.5rem; /* 8px — sm at widescreen */
+  }
+
+  .fieldset--choice {
+    gap: 1rem; /* 16px — md at widescreen */
+  }
+
+  .fieldset legend {
+    padding-bottom: 0.25rem; /* 4px — xs at widescreen */
+  }
+
+  .fieldset label,
+  .fieldset legend {
+    font-size: 1.25rem; /* 20px — small/font-size widescreen */
+    line-height: 1.875rem; /* 30px — small/line-height widescreen */
+  }
+
+  .legend-label {
+    font-size: 1rem; /* 16px — fine/font-size widescreen */
+    line-height: 1.5rem; /* 24px — fine/line-height widescreen */
+  }
+
+  .fieldset input[type='text'],
+  .fieldset input[type='email'],
+  .fieldset input[type='password'],
+  .fieldset select {
+    padding: 0.75rem; /* 12px — components/input/text/padding widescreen */
+    font-size: 1.5rem; /* 24px — components/input/text/font-size widescreen */
+    line-height: 2rem; /* 32px — components/input/text/line-height widescreen */
+  }
+
+  .message {
+    font-size: 1rem; /* 16px — fine/font-size widescreen */
+    line-height: 1.5rem; /* 24px — fine/line-height widescreen */
+  }
+}
+```
+
+### Design tokens reference
+
+```txt
+/* Typography */
+--small/font-size                     Mobile: 0.75rem / 12px   ->   Widescreen: 1.25rem / 20px
+--small/line-height                   Mobile: 1.25rem / 20px   ->   Widescreen: 1.875rem / 30px
+--fine/font-size                      Mobile: 0.625rem / 10px  ->   Widescreen: 1rem / 16px
+--fine/line-height                    Mobile: 1.125rem / 18px  ->   Widescreen: 1.5rem / 24px
+--components/input/text/font-size     Mobile: 1rem / 16px      ->   Widescreen: 1.5rem / 24px
+--components/input/text/line-height   Mobile: 1.25rem / 20px   ->   Widescreen: 2rem / 32px
+--components/input/checkbox/font-size     Mobile: 1rem / 16px (fixed)
+--components/input/checkbox/line-height   Mobile: 1.25rem / 20px (fixed)
+
+/* Spacing */
+--xs                                      Mobile: 0.125rem / 2px   ->   Widescreen: 0.25rem / 4px
+--sm                                      Mobile: 0.25rem / 4px    ->   Widescreen: 0.5rem / 8px
+--md                                      Mobile: 0.5rem / 8px     ->   Widescreen: 1rem / 16px
+--components/input/text/padding           Mobile: 0.5rem / 8px     ->   Widescreen: 0.75rem / 12px
+--components/input/text/padding-gap       Mobile: 0.25rem / 4px (fixed)
+--components/input/checkbox/padding       Mobile: 0.125rem / 2px (fixed)
+--components/input/checkbox/padding-gap   Mobile: 0.5rem / 8px (fixed)
+--components/input/switch/padding         Mobile: 0.25rem / 4px (fixed)
+--components/input/switch/padding-gap     Mobile: 0.5rem / 8px (fixed)
+
+/* Border-radius */
+--components/input/text/border-radius     Mobile: 0.25rem / 4px (fixed)
+--input/checkbox/border-radius            Mobile: 0.25rem / 4px (fixed)
+--components/input/switch/border-radius   Mobile: 1rem / 16px (fixed)
+
+/* Colors */
+--text/default            Light: #000000 (global/black)   Dark: #FFFFFF (global/white)
+--page/background         Light: #FFFFFF (global/white)   Dark: #01232D (brand/secondary-dark)
+--global/gray-dark        #919191 (mode-invariant)
+--global/gray-medium      #CCCCCC (mode-invariant)
+--brand/primary           #FF5247 (mode-invariant)
+--status/invalid          #C00C00 (mode-invariant)
+--status/valid            #007000 (mode-invariant)
+
+/* Size constraints */
+--components/input/min-width    248px mobile, 416px widescreen
+--components/input/max-width    420px mobile, 416px widescreen
+```
+
+## Resources
+
+- [W3C: Accessible Forms Tutorial](https://www.w3.org/WAI/tutorials/forms/) - Patterns and best practices for accessible form markup.
+- [MDN: `<fieldset>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset) - Native HTML fieldset documentation.
+- [MDN: `<legend>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/legend) - Native HTML legend documentation.
+- [ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/) - W3C interaction patterns.
+- [WebAIM: Creating Accessible Forms](https://webaim.org/techniques/forms/) - Form accessibility guidance.
+- [WCAG 2.1 Quick Reference](https://www.w3.org/WAI/WCAG21/quickref/) - Accessibility guidelines.
+- [MDN Web Docs](https://developer.mozilla.org/) - HTML, CSS, and JavaScript references.

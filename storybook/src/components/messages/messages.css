@@ -1,0 +1,264 @@
+.dds-messages-fig {
+  width: min(86rem, 100%);
+}
+
+.dds-messages-fig__card {
+  width: 100%;
+  background: var(--background-section);
+  border: 1px solid var(--global-gray-medium);
+  border-radius: var(--border-radius-md);
+  padding: var(--space-xl);
+}
+
+.dds-message {
+  position: relative;
+  width: 100%;
+}
+
+.dds-message--modal,
+.dds-message--promo {
+  border: 0;
+  margin: 0;
+  background: var(--background-page);
+  color: var(--text-default);
+  padding: var(--space-xl);
+  display: grid;
+  align-content: center;
+}
+
+.dds-message--modal {
+  min-height: var(--components-message-modal-min-height);
+}
+
+.dds-message--promo {
+  min-height: var(--components-message-promo-min-height);
+}
+
+.dds-message__content {
+  width: min(100%, var(--components-content-max-width));
+}
+
+.dds-message__content h2,
+.dds-message__content p {
+  margin: 0;
+  color: var(--text-default);
+}
+
+.dds-message__content h2 {
+  font-family: var(--font-family-heading);
+  font-size: var(--typography-h2-font-size);
+  line-height: var(--typography-h2-line-height);
+  font-weight: 400;
+  border-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.dds-message__content p {
+  padding-top: var(--sm);
+  font-family: var(--font-family-body);
+  font-size: var(--typography-body-font-size);
+  line-height: var(--typography-body-line-height);
+  font-weight: 400;
+}
+
+.dds-message__close {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  width: var(--components-message-close-size);
+  height: var(--components-message-close-size);
+  border-radius: var(--border-radius-round);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: all 0.25s ease 0s;
+}
+
+.dds-message__close svg {
+  width: var(--components-message-close-icon-size);
+  height: var(--components-message-close-icon-size);
+}
+
+.dds-message__close--floating {
+  position: absolute;
+  right: var(--components-message-floating-close-offset);
+  top: var(--components-message-floating-close-offset);
+  color: var(--text-link);
+}
+
+.dds-message__close--inline,
+.dds-message__close--toast {
+  color: var(--global-white);
+}
+
+.dds-message__close:hover,
+.dds-message__close:focus-visible {
+  opacity: 0.8;
+}
+
+.dds-message__close:focus-visible,
+.dds-message__action:focus-visible {
+  outline: calc(2 / 16 * 1rem) solid var(--brand-primary);
+  outline-offset: calc(2 / 16 * 1rem);
+}
+
+.dds-message--confirmation,
+.dds-message--error,
+.dds-message--success {
+  max-width: var(--components-message-inline-width);
+  padding: var(--components-message-inline-padding);
+  border-radius: var(--components-message-radius);
+  display: flex;
+  align-items: center;
+  gap: var(--components-message-inline-gap);
+}
+
+.dds-message--confirmation,
+.dds-message--error {
+  background: var(--status-invalid);
+}
+
+.dds-message--success {
+  background: var(--status-valid);
+}
+
+.dds-message--confirmation .dds-message__text,
+.dds-message--error .dds-message__text,
+.dds-message--success .dds-message__text,
+.dds-toast .dds-toast__message,
+.dds-message--confirmation .dds-message__close,
+.dds-message--error .dds-message__close,
+.dds-message--success .dds-message__close,
+.dds-toast .dds-message__close {
+  color: var(--global-white);
+}
+
+.dds-message__text,
+.dds-toast__message {
+  margin: 0;
+  font-family: var(--font-family-body);
+  font-size: var(--components-message-font-size);
+  line-height: var(--components-message-line-height);
+  font-weight: 700;
+  color: var(--global-white);
+}
+
+.dds-message__text {
+  flex: 1 0 0;
+}
+
+.dds-message__actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--components-message-inline-gap);
+  max-width: none;
+  margin-left: auto;
+}
+
+.dds-message__action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--components-button-padding-gap);
+  padding: var(--components-button-padding-t-b) var(--components-button-padding-l-r);
+  min-height: calc(var(--components-button-line-height) + (var(--components-button-padding-t-b) * 2));
+  border-radius: var(--components-button-border-radius);
+  border: 1px solid var(--global-white);
+  font-family: var(--font-family-body);
+  font-size: var(--components-button-font-size);
+  line-height: var(--components-button-line-height);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease 0s;
+}
+
+.dds-message__action--no {
+  background: transparent;
+  color: var(--global-white);
+}
+
+.dds-message__action--yes {
+  background: var(--global-white);
+  color: var(--status-invalid);
+}
+
+.dds-message--confirmation {
+  max-width: min(100%, calc(640 / 16 * 1rem));
+}
+
+.dds-toast {
+  width: var(--components-message-toast-width);
+  max-width: 100%;
+  padding: var(--components-message-toast-padding);
+  border-radius: var(--components-message-radius);
+  background: var(--status-read-only);
+  display: flex;
+  align-items: center;
+  gap: var(--components-message-toast-gap);
+}
+
+.dds-toast__message {
+  flex: 1 0 0;
+}
+
+.dds-message-state-closed {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(64 / 16 * 1rem);
+  width: 100%;
+  border: 1px dashed var(--global-gray-medium);
+  border-radius: var(--border-radius-sm);
+  color: var(--text-default);
+  font-family: var(--font-family-body);
+  font-size: var(--typography-small-font-size);
+  line-height: var(--typography-small-line-height);
+}
+
+.dds-messages-doc__do-dont-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+.dds-messages-doc__do,
+.dds-messages-doc__dont {
+  display: grid;
+  gap: var(--space-sm);
+  padding-left: var(--space-lg);
+  border-left: 4px solid transparent;
+}
+
+.dds-messages-doc__do {
+  border-left-color: var(--status-valid);
+}
+
+.dds-messages-doc__dont {
+  border-left-color: var(--status-invalid);
+}
+
+.dds-messages-doc__do h4,
+.dds-messages-doc__dont h4 {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-weight: 400;
+  font-size: var(--typography-h4-font-size);
+  line-height: var(--typography-h4-line-height);
+  color: var(--text-default);
+}
+
+.dds-messages-doc__do p,
+.dds-messages-doc__dont p {
+  margin: 0;
+  font-size: var(--typography-body-font-size);
+  line-height: var(--typography-body-line-height);
+}
+
+@media (max-width: 48rem) {
+  .dds-messages-doc__do-dont-grid {
+    grid-template-columns: 1fr;
+  }
+}

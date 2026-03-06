@@ -5,7 +5,7 @@ import * as ComponentStories from './icons.stories';
 
 # Icons
 
-Icons are visual symbols that enhance understanding, support navigation, and reinforce meaning throughout the interface. The Delta Design System uses a curated set from [Tabler Icons](https://tabler.io/icons).
+Icons are visual symbols that enhance understanding, support navigation, and reinforce meaning throughout the interface. The Delta Design System uses a curated set of icons from [Tabler Icons](https://tabler.io/icons) for visual consistency across all components.
 
 ## Anatomy
 
@@ -15,9 +15,13 @@ Icons consist of:
 - **Stroke paths:** Vector paths using `1px` stroke width with round caps and joins.
 - **Color:** Inherits from surrounding text via `currentColor`, driven by the `text/default` token.
 
+<Canvas of={ComponentStories.AnatomyFigure} />
+
 ## Variants
 
 Icons are identified by a `type` value matching the icon name in the Figma component. All icons share `24 × 24px` dimensions and `1px` stroke width; path geometry is the only variant difference.
+
+The following icons are available in the design system:
 
 <Canvas of={ComponentStories.VariantsFigure} />
 
@@ -25,17 +29,9 @@ Icons are identified by a `type` value matching the icon name in the Figma compo
 
 Icons themselves are stateless. They do not have hover, focus, active, or disabled states of their own. State changes are managed by the parent element (a button, link, or other interactive container). The icon inherits whatever color change the parent applies on interaction.
 
-### Default
-
-Icons render at their natural size and inherit `text/default` - black in light mode, white in dark mode.
-
-### Interactive (inherited)
-
-When an icon is inside an interactive element such as a button or link, it automatically inherits that element's state styles. No additional icon-specific styles are required.
-
-### Disabled (inherited)
-
-When the parent element is disabled, the icon inherits the reduced-opacity color of the disabled state. Apply disabled styles to the container, not the icon directly.
+- **Default:** Icons render at their natural size and inherit `text/default`, black in light mode and white in dark mode.
+- **Interactive (inherited):** When an icon is inside an interactive element such as a button or link, it automatically inherits that element's state styles. No additional icon-specific styles are required.
+- **Disabled (inherited):** When the parent element is disabled, the icon inherits the reduced-opacity color of the disabled state. Apply disabled styles to the container, not the icon directly.
 
 ## Accessibility
 
@@ -54,11 +50,11 @@ The correct ARIA pattern depends on how the icon is used:
 
 ### Focus management
 
-Icons are not focusable on their own. Focus is managed by the parent interactive element. Ensure buttons and links containing icons have a visible focus indicator that meets WCAG 2.1 Level AA requirements (`3:1` minimum contrast ratio for the focus indicator against adjacent colors).
+Icons are not focusable on their own. Focus is managed by the parent interactive element. Ensure buttons and links containing icons have a visible focus indicator that meets WCAG 2.1 Level AA requirements (3:1 minimum contrast ratio for the focus indicator against adjacent colors).
 
 ### Color contrast
 
-Icons inheriting `text/default` on a white background meet WCAG 2.1 Level AA (`4.5:1` minimum for text-sized elements). In dark mode, white icons on dark backgrounds also meet this threshold. When icons appear in contexts with non-standard backgrounds, verify contrast independently.
+Icons inheriting `text/default` on a white background meet WCAG 2.1 Level AA (4.5:1 minimum for text-sized elements). In dark mode, white icons on dark backgrounds also meet this threshold. When icons appear in contexts with non-standard backgrounds, verify contrast independently.
 
 ## Usage
 
@@ -112,7 +108,7 @@ Icons should be vertically center-aligned with adjacent text using `align-items:
   Next
 </button>
 
-<!-- Icon-only button -->
+<!-- Icon-only button -- label on the container element -->
 <button aria-label="Search">
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
        stroke="currentColor" stroke-width="1"
@@ -123,7 +119,7 @@ Icons should be vertically center-aligned with adjacent text using `align-items:
   </svg>
 </button>
 
-<!-- Standalone informational icon -->
+<!-- Standalone informational icon (not inside an interactive element) -->
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
      stroke="currentColor" stroke-width="1"
      stroke-linecap="round" stroke-linejoin="round"
@@ -154,35 +150,57 @@ Icons should be vertically center-aligned with adjacent text using `align-items:
   gap: var(--xs); /* 0.125rem / 2px mobile, 0.25rem / 4px widescreen */
 }
 
-/* Icon in a button */
+/* Icon in a button (defers to button component gap token) */
 .btn {
   display: inline-flex;
   align-items: center;
   gap: var(--sm); /* 0.25rem / 4px mobile, 0.5rem / 8px widescreen */
 }
 
-/* Icon-only button */
+/* Icon-only button -- touch target sized on the container */
 .btn-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.625rem; /* 10px */
+  padding: 0.625rem; /* 10px, gives 44px touch target around 24px icon */
+}
+
+/* Responsive gap */
+@media (min-width: 80rem) {
+  .icon-label {
+    gap: var(--xs); /* resolves to 0.25rem / 4px at widescreen */
+  }
 }
 ```
 
 ### Design tokens reference
 
-```css
+```text
 /* Color */
 --text/default    Light mode: #000000 (global/black)
                   Dark mode:  #FFFFFF (global/white)
 
-/* Spacing */
+/* Spacing -- gap between icon and adjacent label */
 --xs              Mobile/Tablet: 0.125rem / 2px   →   Widescreen: 0.25rem / 4px
 --sm              Mobile/Tablet: 0.25rem / 4px    →   Widescreen: 0.5rem / 8px
 
-/* Icon dimensions */
+/* Icon dimensions -- fixed, not token-driven */
 SVG width/height: 24px
 SVG viewBox:      0 0 24 24
 Stroke-width:     1px (fixed)
 ```
+
+## Resources
+
+- [Tabler Icons](https://tabler.io/icons) - Source library for all Delta Design System icons
+- [ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/) - W3C patterns and widgets
+- [WebAIM](https://webaim.org/) - Web accessibility resources
+- [WCAG 2.1 Quick Reference](https://www.w3.org/WAI/WCAG21/quickref/) - Accessibility guidelines
+- [MDN Web Docs: SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) - SVG element reference
+- [Sara Soueidan: Accessible Icon Buttons](https://www.sarasoueidan.com/blog/accessible-icon-buttons/) - Patterns for icon button accessibility
+
+## Source of truth
+
+- [Figma documentation node](https://www.figma.com/design/tHT8Je5cvRTXFN9XQ7XqhA/The-Delta-Design-System?node-id=1095-6317&t=OBDhPNDeR3TTWYF7-4)
+- [Figma component node](https://www.figma.com/design/tHT8Je5cvRTXFN9XQ7XqhA/The-Delta-Design-System?node-id=9-83&t=OBDhPNDeR3TTWYF7-4)
+- Figma Variables table and modes define all values.

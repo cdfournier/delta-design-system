@@ -181,6 +181,14 @@
   line-height: var(--typography-body-line-height);
 }
 
+.dds-spacing-fig__column-title {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-size: var(--typography-h5-font-size);
+  line-height: var(--typography-h5-line-height);
+  font-weight: 400;
+}
+
 @media (max-width: 48rem) {
   .dds-spacing-fig__row {
     grid-template-columns: 2.25rem auto;

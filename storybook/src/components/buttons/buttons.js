@@ -53,17 +53,27 @@ export function createButtonsStyleFigure() {
 export function createButtonsIconOnlyFigure() {
   return figureShell(`
     <div class="dds-buttons-fig__card">
-      <div class="dds-buttons-fig__icon-only-wrap">
-        <div class="dds-buttons-fig__icon-only-row">
-          <button class="dds-button dds-button--icon dds-button--primary-solid" type="button" aria-label="Search">${iconSearch()}</button>
-          <button class="dds-button dds-button--icon dds-button--outline-primary" type="button" aria-label="Search">${iconSearch()}</button>
-          <button class="dds-button dds-button--icon dds-button--primary-transparent" type="button" aria-label="Search">${iconSearch()}</button>
+      <div class="dds-buttons-fig__stack">
+        <div class="dds-buttons-fig__icon-only-wrap">
+          <div class="dds-buttons-fig__icon-only-row">
+            <button class="dds-button dds-button--icon dds-button--primary-solid" type="button" aria-label="Search">${iconSearch()}</button>
+            <button class="dds-button dds-button--icon dds-button--outline-primary" type="button" aria-label="Search">${iconSearch()}</button>
+            <button class="dds-button dds-button--icon dds-button--primary-transparent" type="button" aria-label="Search">${iconSearch()}</button>
+          </div>
+          <span class="dds-buttons-fig__icon-divider" aria-hidden="true"></span>
+          <div class="dds-buttons-fig__icon-only-row">
+            <button class="dds-button dds-button--icon dds-button--secondary-solid" type="button" aria-label="Search">${iconSearch()}</button>
+            <button class="dds-button dds-button--icon dds-button--outline-secondary" type="button" aria-label="Search">${iconSearch()}</button>
+            <button class="dds-button dds-button--icon dds-button--secondary-transparent" type="button" aria-label="Search">${iconSearch()}</button>
+          </div>
         </div>
-        <span class="dds-buttons-fig__icon-divider" aria-hidden="true"></span>
-        <div class="dds-buttons-fig__icon-only-row">
-          <button class="dds-button dds-button--icon dds-button--secondary-solid" type="button" aria-label="Search">${iconSearch()}</button>
-          <button class="dds-button dds-button--icon dds-button--outline-secondary" type="button" aria-label="Search">${iconSearch()}</button>
-          <button class="dds-button dds-button--icon dds-button--secondary-transparent" type="button" aria-label="Search">${iconSearch()}</button>
+
+        <div class="dds-buttons-fig__card dds-buttons-fig__card--dark">
+          <div class="dds-buttons-fig__icon-only-row">
+            <button class="dds-button dds-button--icon dds-button--white-solid" type="button" aria-label="Search">${iconSearch()}</button>
+            <button class="dds-button dds-button--icon dds-button--outline-white" type="button" aria-label="Search">${iconSearch()}</button>
+            <button class="dds-button dds-button--icon dds-button--white-transparent" type="button" aria-label="Search">${iconSearch()}</button>
+          </div>
         </div>
       </div>
     </div>
@@ -111,7 +121,7 @@ export function createButtonsBestPracticesFigure() {
   return figureShell(`
     <div class="dds-buttons-fig__do-dont-grid">
       <section class="dds-buttons-fig__do">
-        <p><strong>Do</strong></p>
+        <h4>Do</h4>
         <p><strong>Lead with action verbs</strong></p>
         <p>Start button labels with clear verbs such as "Save changes" or "Create account".</p>
         <p><strong>Limit primary buttons per section</strong></p>
@@ -122,7 +132,7 @@ export function createButtonsBestPracticesFigure() {
         <p>Keep default focus behavior so keyboard users can track active controls.</p>
       </section>
       <section class="dds-buttons-fig__dont">
-        <p><strong>Don't</strong></p>
+        <h4>Don't</h4>
         <p><strong>Don't use vague labels</strong></p>
         <p>Avoid generic text like "Click here" or "OK" without context.</p>
         <p><strong>Don't rely on color alone</strong></p>

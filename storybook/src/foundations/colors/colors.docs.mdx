@@ -6,31 +6,31 @@ import { cssReferenceSnippet, tokenReferenceSnippet } from './colors';
 
 # Colors
 
-The Delta Design System color palette is designed for clarity, accessibility, and consistency across light and dark modes. Every color serves a specific purpose and should be applied through tokens so meaning and contrast remain stable across components.
+The Delta Design System color palette is designed for clarity, accessibility, and consistency across light and dark modes. Every color serves a specific purpose and meets WCAG 2.1 AA contrast requirements.
 
 ## Color philosophy
 
-Colors communicate meaning, establish hierarchy, and reinforce brand identity. The system uses semantic naming so colors can be applied consistently while preserving their intended meaning across themes and interface contexts.
+Colors communicate meaning, establish hierarchy, and reinforce brand identity. The system uses semantic naming to ensure colors are applied consistently and maintain their intended meaning across all components.
 
 ## The color system
 
-The complete color system includes brand colors, global neutrals, status indicators, and overlay utilities. All colors are available as design tokens, and semantic tokens resolve those values appropriately across light and dark modes.
+The complete color system includes brand colors, global neutrals, status indicators, and overlay utilities. All colors are available as design tokens and work across both light and dark modes.
 
 ### Brand colors
 
-<Canvas of={FoundationStories.BrandColorsFigure} />
+<Story of={FoundationStories.BrandColorsFigure} />
 
 ### Global colors
 
-<Canvas of={FoundationStories.GlobalColorsFigure} />
+<Story of={FoundationStories.GlobalColorsFigure} />
 
 ### Status colors
 
-<Canvas of={FoundationStories.StatusColorsFigure} />
+<Story of={FoundationStories.StatusColorsFigure} />
 
 ### Overlay colors
 
-<Canvas of={FoundationStories.OverlayColorsFigure} />
+<Story of={FoundationStories.OverlayColorsFigure} />
 
 ## Color modes
 
@@ -60,7 +60,7 @@ All color combinations meet WCAG 2.1 Level AA contrast requirements for their in
 
 ### Color and meaning
 
-Status colors are never used alone. Error, success, warning, and other functional states must include both color and iconography or text so meaning is conveyed to all users, including users with color vision deficiencies.
+Status colors are never used alone. Error, success, and warning states must include both color and iconography or text to ensure meaning is conveyed to all users, including those with color vision deficiencies.
 
 ## Usage
 

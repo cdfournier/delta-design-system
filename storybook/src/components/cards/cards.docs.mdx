@@ -39,7 +39,7 @@ Card typography is determined by the Content component. Users can select heading
 
 ## Spacing
 
-The content area padding is the primary spacing token for cards.
+The content area padding is the primary spacing token for cards. Width and height constraints are not documented here as they fall outside the token system.
 
 <table>
   <thead>
@@ -51,7 +51,7 @@ The content area padding is the primary spacing token for cards.
     </tr>
   </thead>
   <tbody>
-    <tr><td>Content area padding</td><td><code>xl</code></td><td>1rem / 16px</td><td>2rem / 32px</td></tr>
+    <tr><td>padding</td><td><code>xl</code></td><td>1rem / 16px</td><td>2rem / 32px</td></tr>
   </tbody>
 </table>
 
@@ -68,7 +68,7 @@ The content area padding is the primary spacing token for cards.
   </thead>
   <tbody>
     <tr><td>Card container</td><td><code>border-radius/md</code></td><td>0.5rem / 8px</td><td>1rem / 16px</td></tr>
-    <tr><td>Figure</td><td><code>border-radius/md</code></td><td>0.5rem / 8px</td><td>1rem / 16px</td></tr>
+    <tr><td>Figure (outer corners only)</td><td><code>border-radius/md</code></td><td>0.5rem / 8px</td><td>1rem / 16px</td></tr>
   </tbody>
 </table>
 
@@ -84,14 +84,13 @@ The content area padding is the primary spacing token for cards.
     </tr>
   </thead>
   <tbody>
-    <tr><td>Card background</td><td><code>page/background</code></td><td>#FFFFFF (white)</td><td>#01232D (secondary-dark)</td></tr>
-    <tr><td>Card border</td><td><code>global/gray-medium</code></td><td>#CCCCCC</td><td>#CCCCCC</td></tr>
-    <tr><td>Heading text</td><td><code>text/default</code></td><td>#000000 (black)</td><td>#FFFFFF (white)</td></tr>
-    <tr><td>Body text</td><td><code>text/default</code></td><td>#000000 (black)</td><td>#FFFFFF (white)</td></tr>
+    <tr><td>Background</td><td><code>page/background</code></td><td>#FFFFFF (global/white)</td><td>#01232D (brand/secondary-dark)</td></tr>
+    <tr><td>Border</td><td><code>global/gray-medium</code></td><td>#CCCCCC (global/gray-medium)</td><td>#CCCCCC (global/gray-medium)</td></tr>
+    <tr><td>Text</td><td><code>text/default</code></td><td>#000000 (global/black)</td><td>#FFFFFF (global/white)</td></tr>
   </tbody>
 </table>
 
-**Light/Dark mode behavior:** Cards adapt through `page/background` for surface and `text/default` for content. Border color is mode-invariant.
+**Light/Dark mode behavior:** Cards adapt to light and dark modes through the `page/background` token for the card surface and `text/default` for content, ensuring readability in both contexts. The border color is mode-invariant. In dark mode, the card background resolves to `#01232D` (secondary-dark), which is distinct from the page background. Verify contrast against your specific page surface in dark mode.
 
 ## Accessibility
 
@@ -111,13 +110,7 @@ Use semantic `<article>` elements for cards - each card should represent a self-
 
 ### Focus management
 
-When a card contains interactive elements, ensure proper focus order proceeds logically from top to bottom. Focus should move naturally through the card's content without creating focus traps or unexpected jumps.
-
-### Touch targets
-
-- Minimum `44x44px` touch target for all interactive elements within a card.
-- When the entire card is interactive, the full card surface acts as the touch target - no minimum size constraint applies beyond the card's natural dimensions.
-- Maintain adequate spacing between cards in a grid to prevent accidental activation of adjacent cards.
+When a card contains interactive elements, ensure proper focus order proceeds logically from top to bottom. Focus should move naturally through the card's content without creating focus traps or unexpected jumps. All interactive elements must meet the minimum `44x44px` touch target size; when the entire card is interactive, the full card surface serves as the touch target.
 
 ### Color contrast
 
@@ -166,55 +159,81 @@ Vertical cards are best suited to 2-4 column grid layouts - product galleries, a
 ### HTML
 
 ```html
-<!-- Vertical card -->
+<!-- Vertical card (hug height) -->
 <article class="card card--vertical">
   <figure class="card__figure">
     <img src="image.jpg" alt="Descriptive alt text" />
   </figure>
   <div class="card__content">
     <h3>Card heading</h3>
-    <p>Supporting body text.</p>
+    <p>Supporting body text that provides context and information.</p>
   </div>
 </article>
 
-<!-- Horizontal card -->
+<!-- Horizontal card (figure left) -->
 <article class="card card--horizontal">
   <figure class="card__figure">
     <img src="image.jpg" alt="Descriptive alt text" />
   </figure>
   <div class="card__content">
     <h3>Card heading</h3>
-    <p>Supporting body text.</p>
+    <p>Supporting body text that provides context and information.</p>
   </div>
 </article>
 
-<!-- Reversed horizontal card -->
+<!-- Horizontal card (figure right / reversed) -->
 <article class="card card--horizontal card--reversed">
   <figure class="card__figure">
     <img src="image.jpg" alt="Descriptive alt text" />
   </figure>
   <div class="card__content">
     <h3>Card heading</h3>
-    <p>Supporting body text.</p>
+    <p>Supporting body text that provides context and information.</p>
   </div>
 </article>
+
+<!-- Clickable card -->
+<a href="/details" class="card-link" aria-label="Read more about [topic]">
+  <article class="card card--vertical">
+    <figure class="card__figure">
+      <img src="image.jpg" alt="Descriptive alt text" />
+    </figure>
+    <div class="card__content">
+      <h3>Card heading</h3>
+      <p>Supporting body text that provides context.</p>
+    </div>
+  </article>
+</a>
 ```
 
 ### CSS
 
 ```css
+/* Base card */
 .card {
   background-color: var(--page/background);
   border: 1px solid var(--global/gray-medium);
-  border-radius: var(--border-radius/md);
+  border-radius: var(--border-radius/md); /* 0.5rem / 8px */
   overflow: hidden;
 }
 
+/* Vertical card */
 .card--vertical {
   display: flex;
   flex-direction: column;
+  min-width: var(--components/card/vertical/min-width); /* 256px */
+  max-width: var(--layout/fifty/max-width); /* 336px */
 }
 
+@media (min-width: 80rem) {
+  .card--vertical {
+    min-width: 26rem; /* 416px */
+    max-width: 40rem; /* 640px */
+    border-radius: var(--border-radius/md); /* 1rem / 16px */
+  }
+}
+
+/* Horizontal card */
 .card--horizontal {
   display: flex;
   flex-direction: column;
@@ -223,21 +242,112 @@ Vertical cards are best suited to 2-4 column grid layouts - product galleries, a
 @media (min-width: 48rem) {
   .card--horizontal {
     flex-direction: row;
-  }
-
-  .card--horizontal.card--reversed {
-    flex-direction: row-reverse;
+    min-height: var(--components/card/horizontal/min-height); /* 200px */
   }
 }
 
+@media (min-width: 80rem) {
+  .card--horizontal.card--reversed {
+    min-height: 26.25rem; /* 420px */
+    border-radius: var(--border-radius/md); /* 1rem / 16px */
+  }
+}
+
+/* Reversed horizontal card */
+.card--reversed {
+  flex-direction: row-reverse;
+}
+
+/* Figure */
+.card__figure {
+  overflow: hidden;
+  border-radius: var(--border-radius/md);
+  flex-shrink: 0;
+}
+
+.card--horizontal .card__figure {
+  max-width: var(--components/card/horizontal/figure/max-width); /* 256px */
+}
+
+@media (min-width: 80rem) {
+  .card--horizontal .card__figure {
+    max-width: 33rem; /* 528px */
+  }
+}
+
+.card__figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Content area */
 .card__content {
-  padding: var(--xl);
+  padding: var(--xl); /* 1rem / 16px */
+  display: flex;
+  flex-direction: column;
+  gap: var(--xl);
+  flex: 1;
+}
+
+@media (min-width: 80rem) {
+  .card__content {
+    padding: var(--xl); /* 2rem / 32px */
+  }
+}
+
+/* Card typography */
+.card h3 {
+  font-family: var(--font-family-heading);
+  font-size: var(--h3/font-size); /* 1.75rem / 28px */
+  line-height: var(--h3/line-height); /* 2rem / 32px */
+  color: var(--text/default);
+  margin: 0;
+}
+
+@media (min-width: 80rem) {
+  .card h3 {
+    font-size: var(--h3/font-size); /* 3.125rem / 50px */
+    line-height: var(--h3/line-height); /* 3.875rem / 62px */
+  }
+}
+
+.card p {
+  font-size: var(--p/font-size); /* 1rem / 16px */
+  line-height: var(--h1-title+p/line-height); /* 1.75rem / 28px */
+  color: var(--text/default);
+  margin: 0;
+}
+
+@media (min-width: 80rem) {
+  .card p {
+    font-size: var(--p/font-size); /* 1.5rem / 24px */
+    line-height: var(--h1-title+p/line-height); /* 3.5rem / 56px */
+  }
+}
+
+/* Clickable card wrapper */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card-link:hover .card {
+  border-color: var(--brand/primary);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-link:focus {
+  outline: 2px solid var(--brand/primary);
+  outline-offset: 2px;
 }
 ```
 
 ### Design tokens reference
 
-```css
+```text
 /* Spacing */
 --xl                                     Mobile: 1rem / 16px    -> Widescreen: 2rem / 32px
 
@@ -256,8 +366,25 @@ Vertical cards are best suited to 2-4 column grid layouts - product galleries, a
 --text/default                           Light: #000000         -> Dark: #FFFFFF
 --brand/primary                          #FF5247 (mode-invariant)
 
-/* Card-specific */
---components-card-vertical-min-width     Mobile: 256px          -> Widescreen: 344px
---components-card-horizontal-min-height  Mobile: 200px          -> Widescreen: 280px
---components-card-horizontal-figure-max-width  Mobile: 256px    -> Widescreen: 344px
+/* Card-specific size tokens (not responsive - verify in Figma) */
+--components/card/vertical/min-width     Mobile: 256px          -> Widescreen: 416px
+--layout/fifty/max-width                 Mobile: 336px          -> Widescreen: 640px
+--components/card/horizontal/min-height  Mobile: 200px          -> Widescreen: 420px
+--components/card/horizontal/min-width   Mobile: 256px          -> Widescreen: 1312px
+--components/card/horizontal/figure/max-width  Mobile: 256px    -> Widescreen: 528px
 ```
+
+## Resources
+
+- [ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/) - W3C patterns and widgets
+- [WebAIM](https://webaim.org/) - Web accessibility resources
+- [WCAG 2.1 Quick Reference](https://www.w3.org/WAI/WCAG21/quickref/) - Accessibility guidelines
+- [MDN Web Docs](https://developer.mozilla.org/) - HTML, CSS, JavaScript reference
+- [MDN: `<article>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article) - Semantic HTML for self-contained content
+- [Nielsen Norman Group: Cards](https://www.nngroup.com/articles/cards-component/) - UX best practices for card components
+
+## Source of truth
+
+- [Figma documentation node](https://www.figma.com/design/tHT8Je5cvRTXFN9XQ7XqhA/The-Delta-Design-System?node-id=1099-6772&t=OBDhPNDeR3TTWYF7-4)
+- [Figma component node](https://www.figma.com/design/tHT8Je5cvRTXFN9XQ7XqhA/The-Delta-Design-System?node-id=554-2079&t=OBDhPNDeR3TTWYF7-4)
+- Figma Variables table and modes define all values.

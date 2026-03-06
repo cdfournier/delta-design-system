@@ -1,0 +1,603 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import * as ComponentStories from './feedback.stories';
+
+<Meta of={ComponentStories} title="Molecules/Feedback/Documentation" />
+
+# Feedback
+
+Feedback components provide visual indicators of progress and value states. Progress shows task completion or loading states, while Meter displays values within a known range with semantic color coding.
+
+## Anatomy
+
+Feedback components consist of two related sub-components: Progress and Meter.
+
+### Progress
+
+Progress components consist of:
+
+- **Label:** Text describing what is progressing
+- **Bar (track):** Background container showing full range
+- **Value (fill):** Filled portion indicating current progress
+- **Value text (optional):** Numeric or percentage display
+
+<Canvas of={ComponentStories.AnatomyProgressFigure} />
+
+### Meter
+
+Meter components consist of:
+
+- **Label:** Text describing what is being measured
+- **Bar container:** Padded wrapper for the meter bar
+- **Bar (track):** Background showing full range
+- **Value (fill):** Filled portion with semantic color (green for optimum, red for low/high)
+- **Min/Max labels (optional):** Range indicators
+
+<Canvas of={ComponentStories.AnatomyMeterFigure} />
+
+## Variants
+
+### Progress
+
+Progress has one variant controlling value text visibility:
+
+- **With value (default):** Shows numeric or percentage text alongside the bar
+- **Without value:** Displays only the visual bar, no text
+
+### Meter
+
+Meter has two variant dimensions: bounds state and value display.
+
+#### Bounds variants
+
+- **Optimum:** Green fill indicates value is within the optimal range
+- **Low:** Red fill indicates value is below the acceptable threshold
+- **High:** Red fill indicates value exceeds the acceptable threshold
+
+<Canvas of={ComponentStories.MeterBoundsFigure} />
+
+#### Value display variants
+
+- **With min/max (default):** Shows range labels below the bar
+- **Without min/max:** Displays only the visual meter, no range labels
+
+<Canvas of={ComponentStories.MeterValueDisplayFigure} />
+
+## States
+
+### Progress states
+
+- **Indeterminate:** When duration is unknown (typically animated)
+- **Determinate:** Shows specific progress percentage
+- **Complete:** Value reaches 100%
+
+### Meter states
+
+- **Optimum:** Value within desired range (green)
+- **Low:** Value below threshold (red)
+- **High:** Value above threshold (red)
+
+## Typography
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Token</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Label font-size</td>
+      <td><code>small/font-size</code></td>
+      <td>0.75rem / 12px</td>
+      <td>1.25rem / 20px</td>
+    </tr>
+    <tr>
+      <td>Label line-height</td>
+      <td><code>small/line-height</code></td>
+      <td>1.25rem / 20px</td>
+      <td>1.875rem / 30px</td>
+    </tr>
+    <tr>
+      <td>Value, Min, Max font-size</td>
+      <td><code>fine/font-size</code></td>
+      <td>0.625rem / 10px</td>
+      <td>1rem / 16px</td>
+    </tr>
+    <tr>
+      <td>Value, Min, Max line-height</td>
+      <td><code>fine/line-height</code></td>
+      <td>1.125rem / 18px</td>
+      <td>1.5rem / 24px</td>
+    </tr>
+  </tbody>
+</table>
+
+## Spacing
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Token</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Bar height</td>
+      <td><code>components/feedback/height</code></td>
+      <td>0.25rem / 4px</td>
+      <td>0.75rem / 12px</td>
+    </tr>
+    <tr>
+      <td>Label bottom spacing</td>
+      <td><code>sm</code></td>
+      <td>0.25rem / 4px</td>
+      <td>0.5rem / 8px</td>
+    </tr>
+    <tr>
+      <td>Value top spacing</td>
+      <td><code>sm</code></td>
+      <td>0.25rem / 4px</td>
+      <td>0.5rem / 8px</td>
+    </tr>
+    <tr>
+      <td>Meter bar padding</td>
+      <td><code>xs</code></td>
+      <td>0.125rem / 2px</td>
+      <td>0.25rem / 4px</td>
+    </tr>
+  </tbody>
+</table>
+
+## Border-radius
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Token</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Bar (track)</td>
+      <td><code>border-radius/sm</code></td>
+      <td>0.25rem / 4px</td>
+      <td>0.5rem / 8px</td>
+    </tr>
+    <tr>
+      <td>Value (fill)</td>
+      <td><code>border-radius/sm</code></td>
+      <td>0.25rem / 4px</td>
+      <td>0.5rem / 8px</td>
+    </tr>
+  </tbody>
+</table>
+
+## Colors
+
+### Progress
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Token</th>
+      <th>Light mode</th>
+      <th>Dark mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Label text</td>
+      <td><code>text/default</code></td>
+      <td>#000000 (global/black)</td>
+      <td>#FFFFFF (global/white)</td>
+    </tr>
+    <tr>
+      <td>Value text</td>
+      <td><code>text/default</code></td>
+      <td>#000000 (global/black)</td>
+      <td>#FFFFFF (global/white)</td>
+    </tr>
+    <tr>
+      <td>Bar (track)</td>
+      <td><code>global/gray-medium</code></td>
+      <td>#CCCCCC</td>
+      <td>#CCCCCC</td>
+    </tr>
+    <tr>
+      <td>Value (fill)</td>
+      <td><code>brand/primary</code></td>
+      <td>#FF5247</td>
+      <td>#FF5247</td>
+    </tr>
+  </tbody>
+</table>
+
+### Meter
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Token</th>
+      <th>Light mode</th>
+      <th>Dark mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Label text</td>
+      <td><code>text/default</code></td>
+      <td>#000000 (global/black)</td>
+      <td>#FFFFFF (global/white)</td>
+    </tr>
+    <tr>
+      <td>Min/Max text</td>
+      <td><code>text/default</code></td>
+      <td>#000000 (global/black)</td>
+      <td>#FFFFFF (global/white)</td>
+    </tr>
+    <tr>
+      <td>Bar (track)</td>
+      <td><code>global/gray-medium</code></td>
+      <td>#CCCCCC</td>
+      <td>#CCCCCC</td>
+    </tr>
+    <tr>
+      <td>Value - Optimum</td>
+      <td><code>status/valid</code></td>
+      <td>#007000</td>
+      <td>#007000</td>
+    </tr>
+    <tr>
+      <td>Value - Low/High</td>
+      <td><code>status/invalid</code></td>
+      <td>#C00C00</td>
+      <td>#C00C00</td>
+    </tr>
+  </tbody>
+</table>
+
+**Light/Dark mode behavior:** Text colors adapt through `text/default` (black in light mode, white in dark mode). Bar track and fill colors are mode-invariant and stay consistent across modes.
+
+## Accessibility
+
+### Keyboard navigation
+
+Progress and Meter are display-only components with no interactive states. They do not receive keyboard focus and require no keyboard navigation support.
+
+### Screen readers
+
+Use native HTML elements whenever possible. They provide built-in semantics and accessibility support with no additional ARIA required:
+
+- **Progress:** Use `<progress>` with `value` and `max` attributes.
+- **Meter:** Use `<meter>` with `value`, `min`, `max`, `low`, `high`, and `optimum` attributes.
+
+For dynamic progress updates, add `aria-live="polite"` to the wrapper so assistive technology can announce value changes without interrupting the user.
+
+### ARIA attributes
+
+When custom implementations are required, apply these ARIA attributes:
+
+- **role="progressbar":** For custom progress indicators
+- **role="meter":** For custom meter indicators
+- **aria-valuenow:** Current numeric value
+- **aria-valuemin:** Minimum value of the range
+- **aria-valuemax:** Maximum value of the range
+- **aria-valuetext:** Human-readable value description (for example, "60 percent, optimal")
+- **aria-labelledby:** Associates the component with its visible label
+
+### Focus management
+
+Progress and Meter are non-interactive and should not be included in the tab order. Do not add `tabindex` to these components.
+
+### Color contrast
+
+Meter states use color to communicate meaning (green for optimum, red for low/high). Color alone must not be the only means of conveying this information:
+
+- Include visible Min/Max labels for range context
+- Add supplementary text indicators when bounds state is critical
+- Use `aria-valuetext` to describe state for screen reader users
+- Status colors (`#007000`, `#C00C00`) meet WCAG AA contrast requirements against white backgrounds
+
+## Usage
+
+### When to use
+
+Use Progress when you need to:
+
+- Show task completion percentage
+- Display loading states or file uploads
+- Indicate steps completed in a multi-step process
+- Visualize time remaining for time-based operations
+
+Use Meter when you need to:
+
+- Show a value within a known range (for example, disk usage or battery level)
+- Display measurements with optimal or suboptimal thresholds
+- Indicate capacity, quota usage, or resource consumption
+- Visualize ratings or scores with defined ranges
+
+### When not to use
+
+Do not use Progress when:
+
+- The value is static and does not move toward completion (use Meter)
+- You need bounded range semantics (use Meter)
+
+Do not use Meter when:
+
+- You are showing a task progressing toward completion (use Progress)
+- There is no defined range or threshold
+
+### Choosing between Progress and Meter
+
+<table>
+  <thead>
+    <tr>
+      <th>Aspect</th>
+      <th>Progress</th>
+      <th>Meter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Purpose</td>
+      <td>Task completion / loading</td>
+      <td>Value within a range</td>
+    </tr>
+    <tr>
+      <td>Color</td>
+      <td>Always brand primary</td>
+      <td>Semantic (green/red based on bounds)</td>
+    </tr>
+    <tr>
+      <td>Direction</td>
+      <td>Always moves toward 100%</td>
+      <td>Can be anywhere in range</td>
+    </tr>
+    <tr>
+      <td>Labels</td>
+      <td>Single value or percentage</td>
+      <td>Min and max range indicators</td>
+    </tr>
+  </tbody>
+</table>
+
+### Content guidelines
+
+- **Write clear labels:** Describe what is being measured or progressed
+- **Show meaningful values:** Include units (`%`, `MB`, `GB`) when displaying numeric values
+- **Provide range context:** For Meter, include min/max labels
+- **Handle indeterminate states:** Use indeterminate Progress when duration is unknown
+
+### Placement
+
+Feedback components are typically placed close to the content or process they describe. Progress bars fit upload dialogs, onboarding flows, and multi-step forms. Meter fits settings panels, dashboards, and data visualizations where capacity or usage is relevant. Both span full width by default and should have sufficient horizontal space. Minimum width is `16rem / 256px`.
+
+### Best practices
+
+<Story of={ComponentStories.BestPracticesFigure} />
+
+## Code reference
+
+### HTML
+
+```html
+<!-- Progress (native) -->
+<div class="feedback progress">
+  <label for="progress-1">Label</label>
+  <progress id="progress-1" value="60" max="100">60%</progress>
+  <div class="feedback-text">
+    <span></span>
+    <span>60%</span>
+  </div>
+</div>
+
+<!-- Progress (custom) -->
+<div class="feedback progress">
+  <div class="feedback-label" id="progress-label">Loading...</div>
+  <div class="feedback-bar"
+       role="progressbar"
+       aria-labelledby="progress-label"
+       aria-valuenow="60"
+       aria-valuemin="0"
+       aria-valuemax="100"
+       aria-valuetext="60 percent">
+    <div class="feedback-value" style="width: 60%"></div>
+  </div>
+  <div class="feedback-text">
+    <span></span>
+    <span>60%</span>
+  </div>
+</div>
+
+<!-- Meter (native) -->
+<div class="feedback meter">
+  <label for="meter-1">Disk usage</label>
+  <meter id="meter-1" value="60" min="0" max="100" low="33" high="66" optimum="50">60%</meter>
+  <div class="feedback-text">
+    <span>0 GB</span>
+    <span>100 GB</span>
+  </div>
+</div>
+
+<!-- Meter - Optimum (custom) -->
+<div class="feedback meter">
+  <div class="feedback-label" id="meter-label">Battery level</div>
+  <div class="meter-bar">
+    <div class="feedback-bar"
+         role="meter"
+         aria-labelledby="meter-label"
+         aria-valuenow="60"
+         aria-valuemin="0"
+         aria-valuemax="100"
+         aria-valuetext="60 percent, optimal">
+      <div class="feedback-value optimum" style="width: 60%"></div>
+    </div>
+  </div>
+  <div class="feedback-text">
+    <span>0%</span>
+    <span>100%</span>
+  </div>
+</div>
+
+<!-- Meter - Low state -->
+<div class="feedback meter">
+  <div class="feedback-label">Storage available</div>
+  <div class="meter-bar">
+    <div class="feedback-bar">
+      <div class="feedback-value low"
+           style="width: 15%"
+           aria-valuetext="15 percent, critically low"></div>
+    </div>
+  </div>
+  <div class="feedback-text">
+    <span>0 GB</span>
+    <span>500 GB</span>
+  </div>
+</div>
+```
+
+### CSS
+
+```css
+/* Feedback base */
+.feedback {
+  width: 100%;
+  min-width: 16rem; /* 256px - feedback/max-width */
+}
+
+/* Label */
+.feedback-label {
+  font-size: 0.75rem; /* 12px - small */
+  line-height: 1.25rem; /* 20px */
+  font-weight: 700;
+  padding-bottom: 0.25rem; /* 4px - sm */
+}
+
+/* Bar (track) */
+.feedback-bar {
+  width: 100%;
+  height: 0.25rem; /* 4px - feedback/height */
+  background-color: var(--color-gray-medium);
+  border-radius: 0.25rem; /* 4px - sm */
+  overflow: hidden;
+  position: relative;
+}
+
+/* Value (fill) */
+.feedback-value {
+  height: 100%;
+  border-radius: 0.25rem; /* 4px - sm */
+  transition: width 0.3s ease;
+}
+
+/* Progress colors */
+.progress .feedback-value {
+  background-color: var(--color-primary);
+}
+
+/* Meter colors */
+.meter .feedback-value.optimum {
+  background-color: var(--color-valid);
+}
+
+.meter .feedback-value.low,
+.meter .feedback-value.high {
+  background-color: var(--color-invalid);
+}
+
+/* Meter bar padding wrapper */
+.meter-bar {
+  padding: 0.125rem; /* 2px - xs */
+  background-color: var(--color-gray-medium);
+  border-radius: 0.25rem; /* 4px - sm */
+}
+
+/* Value/Min/Max text */
+.feedback-text {
+  font-size: 0.625rem; /* 10px - fine */
+  line-height: 1.125rem; /* 18px */
+  font-weight: 700;
+  padding-top: 0.25rem; /* 4px - sm */
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Native element styling */
+progress,
+meter {
+  width: 100%;
+  height: 0.25rem;
+  appearance: none;
+  border: none;
+}
+
+progress::-webkit-progress-bar,
+meter::-webkit-meter-bar {
+  background-color: var(--color-gray-medium);
+  border-radius: 0.25rem;
+}
+
+progress::-webkit-progress-value {
+  background-color: var(--color-primary);
+  border-radius: 0.25rem;
+}
+
+meter::-webkit-meter-optimum-value {
+  background-color: var(--color-valid);
+}
+
+meter::-webkit-meter-suboptimum-value {
+  background-color: var(--color-invalid);
+}
+```
+
+### Design tokens reference
+
+```text
+/* Typography */
+--small/font-size      Mobile: 0.75rem / 12px    ->   Widescreen: 1.25rem / 20px
+--small/line-height    Mobile: 1.25rem / 20px    ->   Widescreen: 1.875rem / 30px
+--fine/font-size       Mobile: 0.625rem / 10px   ->   Widescreen: 1rem / 16px
+--fine/line-height     Mobile: 1.125rem / 18px   ->   Widescreen: 1.5rem / 24px
+
+/* Spacing */
+--components/feedback/height    Mobile: 0.25rem / 4px     ->   Widescreen: 0.75rem / 12px
+--sm                            Mobile: 0.25rem / 4px     ->   Widescreen: 0.5rem / 8px
+--xs                            Mobile: 0.125rem / 2px    ->   Widescreen: 0.25rem / 4px
+
+/* Border-radius */
+--border-radius/sm              Mobile: 0.25rem / 4px     ->   Widescreen: 0.5rem / 8px
+
+/* Colors */
+--text/default                  Light: #000000   Dark: #FFFFFF
+--global/gray-medium            #CCCCCC (mode-invariant)
+--brand/primary                 #FF5247 (mode-invariant)
+--status/valid                  #007000 (mode-invariant)
+--status/invalid                #C00C00 (mode-invariant)
+```
+
+## Resources
+
+- [MDN: progress element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress) - Native HTML progress documentation
+- [MDN: meter element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meter) - Native HTML meter documentation
+- [ARIA: Meter Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/meter/) - W3C meter accessibility guidance
+- [WCAG 2.1 Quick Reference](https://www.w3.org/WAI/WCAG21/quickref/) - Accessibility guidelines
+- [Nielsen Norman Group: Progress Indicators](https://www.nngroup.com/articles/progress-indicators/) - UX best practices
+
+## Source of truth
+
+- [Figma documentation node](https://www.figma.com/design/tHT8Je5cvRTXFN9XQ7XqhA/The-Delta-Design-System?node-id=1113-23112&t=OBDhPNDeR3TTWYF7-11)
+- [Figma component group node](https://www.figma.com/design/tHT8Je5cvRTXFN9XQ7XqhA/The-Delta-Design-System?node-id=280-1734&t=OBDhPNDeR3TTWYF7-11)
+- Figma Variables table and modes define all values.

@@ -20,13 +20,11 @@ Blockquotes consist of:
 
 ## Variants
 
-Blockquotes have one property, `orientation`, with three values that control where the accent border appears and how the text aligns.
+Blockquotes have one property — `orientation` — with three values that control where the accent border appears and how the text aligns.
 
 - **Left (default):** `4px` accent border on the left edge, text left-aligned. Use for standard inline quotations within flowing content.
 - **Center:** `4px` accent border on the top and bottom edges, text center-aligned. Use for pull quotes or featured testimonials that deserve visual prominence.
 - **Right:** `4px` accent border on the right edge, text right-aligned. Use when compositional balance in the layout calls for a mirrored treatment.
-
-<Canvas of={ComponentStories.VariantsFigure} />
 
 ## States
 
@@ -47,27 +45,27 @@ Both the quote and cite text use Montserrat Bold (`700`). Typography tokens are 
   </thead>
   <tbody>
     <tr>
-      <td>Quote font size</td>
+      <td>Quote font-size</td>
       <td><code>components/blockquote/quote/font-size</code></td>
       <td>0.75rem / 12px (small)</td>
       <td>1.5rem / 24px (p)</td>
     </tr>
     <tr>
-      <td>Quote line height</td>
+      <td>Quote line-height</td>
       <td><code>components/blockquote/quote/line-height</code></td>
       <td>1.25rem / 20px</td>
       <td>2.25rem / 36px</td>
     </tr>
     <tr>
-      <td>Cite font size</td>
+      <td>Cite font-size</td>
       <td><code>components/blockquote/cite/font-size</code></td>
       <td>0.625rem / 10px (fine)</td>
       <td>1.25rem / 20px (small)</td>
     </tr>
     <tr>
-      <td>Cite line height</td>
+      <td>Cite line-height</td>
       <td><code>components/blockquote/cite/line-height</code></td>
-      <td>1.125rem / 18px</td>
+      <td>1rem / 16px</td>
       <td>1.875rem / 30px</td>
     </tr>
   </tbody>
@@ -88,22 +86,16 @@ Padding and gap use global spacing tokens and scale responsively between mobile/
   </thead>
   <tbody>
     <tr>
-      <td>Padding (all sides)</td>
+      <td>padding</td>
       <td><code>xl</code></td>
       <td>1rem / 16px</td>
       <td>2rem / 32px</td>
     </tr>
     <tr>
-      <td>Gap (quote to cite)</td>
+      <td>gap</td>
       <td><code>md</code></td>
       <td>0.5rem / 8px</td>
       <td>1rem / 16px</td>
-    </tr>
-    <tr>
-      <td>Accent border width</td>
-      <td>-</td>
-      <td>0.25rem / 4px</td>
-      <td>0.25rem / 4px</td>
     </tr>
   </tbody>
 </table>
@@ -149,7 +141,7 @@ Blockquotes use semantic color tokens so they respond correctly to light and dar
   </tbody>
 </table>
 
-**Dark mode note:** In dark mode, both quote text and cite text resolve to `global/white` (`#FFFFFF`), so the underline decoration on the cite element becomes the primary visual differentiator.
+**Dark mode note:** In dark mode, both the quote text and cite text resolve to `global/white` (`#FFFFFF`), meaning the cite link loses its color distinction from the quote text. The solid underline decoration on the cite element becomes the primary visual differentiator.
 
 ## Accessibility
 
@@ -260,7 +252,7 @@ Use **left** as the default for most contexts; it integrates naturally into flow
 .blockquote cite a {
   font-family: 'Montserrat', sans-serif;
   font-size: var(--components-blockquote-cite-font-size); /* 10px */
-  line-height: var(--components-blockquote-cite-line-height); /* 18px */
+  line-height: var(--components-blockquote-cite-line-height); /* 16px */
   font-weight: 700;
   color: var(--text-link);
   text-decoration: underline;
@@ -313,7 +305,7 @@ Use **left** as the default for most contexts; it integrates naturally into flow
 --components/blockquote/quote/font-size   Mobile: 12px  ->  Widescreen: 24px  (aliases small -> p)
 --components/blockquote/quote/line-height Mobile: 20px  ->  Widescreen: 36px
 --components/blockquote/cite/font-size    Mobile: 10px  ->  Widescreen: 20px  (aliases fine -> small)
---components/blockquote/cite/line-height  Mobile: 18px  ->  Widescreen: 30px
+--components/blockquote/cite/line-height  Mobile: 16px  ->  Widescreen: 30px
 
 /* Global spacing tokens (used by this component) */
 --xl   Mobile/Tablet: 16px  ->  Widescreen: 32px  (padding)

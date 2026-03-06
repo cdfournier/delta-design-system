@@ -52,7 +52,14 @@
   font-weight: 700;
 }
 
+.dds-blockquote cite {
+  display: block;
+  margin: 0;
+  font-style: normal;
+}
+
 .dds-blockquote__cite {
+  display: inline-block;
   color: var(--text-link);
   font-size: var(--components-blockquote-cite-font-size);
   line-height: var(--components-blockquote-cite-line-height);
@@ -96,6 +103,14 @@
   margin: 0;
   font-size: var(--typography-body-font-size);
   line-height: var(--typography-body-line-height);
+}
+
+.dds-blockquotes-fig__column-title {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-size: var(--typography-h5-font-size);
+  line-height: var(--typography-h5-line-height);
+  font-weight: 400;
 }
 
 @media (max-width: 64rem) {

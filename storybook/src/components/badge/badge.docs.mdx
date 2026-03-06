@@ -12,7 +12,7 @@ A badge is a small, non-interactive label used to convey status, category, or co
 Badges consist of:
 
 - **Container:** A small pill or rounded rectangle that frames the label. Background color and border vary by variant.
-- **Label:** A short text string, typically one word or a number, that communicates the badge's meaning.
+- **Label:** A short text string — typically one word or a number — that communicates the badge's meaning.
 
 {/* Figure placeholder: anatomy demo */}
 <Canvas of={ComponentStories.AnatomyFigure} />
@@ -21,7 +21,7 @@ Badges consist of:
 
 Badges have three style variants, distinguished by their background and border treatment.
 
-- **Primary:** Red background with white text. Use to draw strong attention, featured items, new content, or high-priority status.
+- **Primary:** Red background with white text. Use to draw strong attention — featured items, new content, or high-priority status.
 - **Secondary:** Dark teal background with white text. Use for general categorization, neutral status, or supporting information.
 - **Transparent:** No background, black border and text. Use for subtle labeling where a filled badge would compete visually with surrounding content.
 
@@ -46,13 +46,13 @@ Badges use bold, small text designed to be legible at compact sizes without comp
   </thead>
   <tbody>
     <tr>
-      <td>Font size</td>
+      <td>font-size</td>
       <td><code>components/badge/font-size</code></td>
       <td>0.625rem / 10px</td>
       <td>1.25rem / 20px</td>
     </tr>
     <tr>
-      <td>Line height</td>
+      <td>line-height</td>
       <td><code>components/badge/line-height</code></td>
       <td>0.6875rem / 11px</td>
       <td>1.25rem / 20px</td>
@@ -75,13 +75,13 @@ Badges use compact padding that scales up at widescreen to maintain proportional
   </thead>
   <tbody>
     <tr>
-      <td>Padding top/bottom</td>
+      <td>padding-top, padding-bottom</td>
       <td><code>components/badge/padding-t-b</code></td>
       <td>0.125rem / 2px</td>
       <td>0.5rem / 8px</td>
     </tr>
     <tr>
-      <td>Padding left/right</td>
+      <td>padding-left, padding-right</td>
       <td><code>components/badge/padding-l-r</code></td>
       <td>0.25rem / 4px</td>
       <td>0.75rem / 12px</td>
@@ -102,7 +102,7 @@ Badges use compact padding that scales up at widescreen to maintain proportional
   </thead>
   <tbody>
     <tr>
-      <td>Border radius</td>
+      <td>border-radius</td>
       <td><code>components/badge/border-radius</code></td>
       <td>0.25rem / 4px</td>
       <td>0.5rem / 8px</td>
@@ -125,26 +125,26 @@ Badges use compact padding that scales up at widescreen to maintain proportional
     <tr>
       <td>Primary background</td>
       <td><code>brand/primary</code></td>
-      <td>#FF5247 (red)</td>
-      <td>#FF5247 (red)</td>
+      <td>#FF5247</td>
+      <td>#FF5247</td>
     </tr>
     <tr>
       <td>Primary text</td>
       <td><code>global/white</code></td>
-      <td>#FFFFFF (white)</td>
-      <td>#FFFFFF (white)</td>
+      <td>#FFFFFF</td>
+      <td>#FFFFFF</td>
     </tr>
     <tr>
       <td>Secondary background</td>
       <td><code>brand/secondary</code></td>
-      <td>#003442 (dark teal)</td>
-      <td>#003442 (dark teal)</td>
+      <td>#003442</td>
+      <td>#003442</td>
     </tr>
     <tr>
       <td>Secondary text</td>
       <td><code>global/white</code></td>
-      <td>#FFFFFF (white)</td>
-      <td>#FFFFFF (white)</td>
+      <td>#FFFFFF</td>
+      <td>#FFFFFF</td>
     </tr>
     <tr>
       <td>Transparent background</td>
@@ -155,35 +155,35 @@ Badges use compact padding that scales up at widescreen to maintain proportional
     <tr>
       <td>Transparent border</td>
       <td><code>text/default</code></td>
-      <td>#000000 (black)</td>
-      <td>#000000 (black)</td>
+      <td>#000000 (global/black)</td>
+      <td>#000000 (global/black)</td>
     </tr>
     <tr>
       <td>Transparent text</td>
       <td><code>text/default</code></td>
-      <td>#000000 (black)</td>
-      <td>#000000 (black)</td>
+      <td>#000000 (global/black)</td>
+      <td>#000000 (global/black)</td>
     </tr>
   </tbody>
 </table>
 
-**Light/dark mode behavior:** All badge colors are mode-invariant, values do not change between light and dark mode. The <code>text/default</code> token resolves to `#000000` in both modes.
+**Light/dark mode behavior:** All badge colors are mode-invariant — values do not change between light and dark mode. The <code>text/default</code> token resolves to #000000 in both modes.
 
 ## Accessibility
 
 ### Keyboard navigation
 
-Badges are non-interactive display elements and are not keyboard-focusable. They require no keyboard interaction. If a badge must be placed inside a focusable element (for example, a button or link), keyboard behavior is governed by that parent element.
+Badges are non-interactive display elements and are not keyboard-focusable. They require no keyboard interaction. If a badge must be placed inside a focusable element (e.g. a button or link), keyboard behavior is governed by that parent element.
 
 ### Screen readers
 
-Badges use a <code>&lt;span&gt;</code> element, which is read inline as part of surrounding content. Because badges are inline and non-interactive, they do not require a role. Ensure that badge text labels are meaningful on their own, do not use symbols or single characters without additional context.
+Badges use a <code>&lt;span&gt;</code> element, which is read inline as part of surrounding content. Because badges are inline and non-interactive, they do not require a role. Ensure that badge text labels are meaningful on their own — do not use symbols or single characters without additional context.
 
 ### ARIA attributes
 
 In most cases, no ARIA attributes are required. Use the following where needed:
 
-- **aria-label:** Use when the badge text alone is insufficient, for example, a count badge (`3`) that needs context: <code>aria-label="3 unread messages"</code>.
+- **aria-label:** Use when the badge text alone is insufficient — for example, a count badge (`3`) that needs context: <code>aria-label="3 unread messages"</code>.
 - **aria-hidden="true":** Use when the badge is purely decorative and the surrounding content already conveys its meaning fully.
 
 ### Focus management
@@ -192,11 +192,11 @@ Badges do not receive focus. No focus management is needed. Do not add <code>tab
 
 ### Color contrast
 
-All badge variants meet WCAG AA contrast requirements (`4.5:1` minimum for text):
+All badge variants meet WCAG AA contrast requirements (4.5:1 minimum for text):
 
-- **Primary:** White (`#FFFFFF`) on red (`#FF5247`) - `3.0:1`. Badge text is small and bold; verify against your specific context. Consider AA Large (`3:1`) compliance at the bold weight.
-- **Secondary:** White (`#FFFFFF`) on dark teal (`#003442`) - `12.6:1`. Exceeds AAA.
-- **Transparent:** Black (`#000000`) on white (`#FFFFFF`) - `21:1`. Exceeds AAA.
+- **Primary:** White (`#FFFFFF`) on red (`#FF5247`) — `3.0:1`. Badge text is small and bold; verify against your specific context. Consider AA Large (`3:1`) compliance at the bold weight.
+- **Secondary:** White (`#FFFFFF`) on dark teal (`#003442`) — `12.6:1`. Exceeds AAA.
+- **Transparent:** Black (`#000000`) on white (`#FFFFFF`) — `21:1`. Exceeds AAA.
 
 Do not rely on color alone to convey meaning. Always include descriptive text in the badge label so users with color vision deficiencies can understand its purpose.
 
@@ -206,30 +206,30 @@ Do not rely on color alone to convey meaning. Always include descriptive text in
 
 Use badges when you need to:
 
-- Communicate status at a glance: active, pending, complete, draft
+- Communicate status at a glance — active, pending, complete, draft
 - Categorize or tag content by type, topic, or attribute
-- Display a count: unread messages, notification totals, item quantities
+- Display a count — unread messages, notification totals, item quantities
 - Highlight new or recently updated content inline with a heading or list item
 
 ### When not to use
 
 Do not use badges when:
 
-- The label needs to be clickable; use a Chip instead
-- The label is longer than two or three words; badges are for short labels only
-- You need to communicate a complex status with supporting description; use a Feedback component instead
-- The element is a primary call to action; use a Button
+- The label needs to be clickable — use a Chip instead
+- The label is longer than two or three words — badges are for short labels only
+- You need to communicate a complex status with supporting description — use a Feedback component instead
+- The element is a primary call to action — use a Button
 
 ### Content guidelines
 
 - **Keep labels short:** One to two words or a number. If you need more, the badge is not the right component.
-- **Use sentence case:** Capitalize the first letter only, `New`, not `NEW`.
-- **Be specific:** `Active` and `Pending` communicate more than `Yes` and `No`. Avoid vague single-character labels.
+- **Use sentence case:** Capitalize the first letter only — "New", not "NEW".
+- **Be specific:** "Active" and "Pending" communicate more than "Yes" and "No". Avoid vague single-character labels.
 - **Be consistent:** Use the same badge color to mean the same thing throughout your interface. Do not reuse a color for different concepts.
 
 ### Placement
 
-Badges are inline elements and should be placed close to the content they describe. Common placements include: following a heading or list item label, inside a table cell alongside other metadata, or grouped in a row when multiple categories apply. Avoid placing badges in isolation, they always need an anchoring content element to give them meaning.
+Badges are inline elements and should be placed close to the content they describe. Common placements include: following a heading or list item label, inside a table cell alongside other metadata, or grouped in a row when multiple categories apply. Avoid placing badges in isolation — they always need an anchoring content element to give them meaning.
 
 ### Best practices
 

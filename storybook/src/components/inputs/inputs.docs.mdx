@@ -120,14 +120,14 @@ Indicates validation failure. Uses `status/invalid` (`#C00C00`) for border and e
     </tr>
   </thead>
   <tbody>
-    <tr><td>Input text — font size</td><td><code>components/input/text/font-size</code></td><td>1rem / 16px</td><td>1.5rem / 24px</td></tr>
-    <tr><td>Input text — line height</td><td><code>components/input/text/line-height</code></td><td>1.25rem / 20px</td><td>2rem / 32px</td></tr>
-    <tr><td>Checkbox &amp; radio label — font size</td><td><code>components/input/checkbox/font-size</code></td><td>1rem / 16px</td><td>1.5rem / 24px</td></tr>
-    <tr><td>Checkbox &amp; radio label — line height</td><td><code>components/input/checkbox/line-height</code></td><td>1.25rem / 20px</td><td>1.75rem / 28px</td></tr>
-    <tr><td>Message — font size</td><td><code>fine/font-size</code></td><td>0.625rem / 10px</td><td>1rem / 16px</td></tr>
-    <tr><td>Message — line height</td><td><code>fine/line-height</code></td><td>1.125rem / 18px</td><td>1.5rem / 24px</td></tr>
-    <tr><td>Label — font size</td><td><code>small/font-size</code></td><td>0.75rem / 12px</td><td>0.75rem / 12px (fixed)</td></tr>
-    <tr><td>Label — line height</td><td><code>small/line-height</code></td><td>1.25rem / 20px</td><td>1.25rem / 20px (fixed)</td></tr>
+    <tr><td>Input text font-size</td><td><code>components/input/text/font-size</code></td><td>1rem / 16px</td><td>1.5rem / 24px</td></tr>
+    <tr><td>Input text line-height</td><td><code>components/input/text/line-height</code></td><td>1.25rem / 20px</td><td>2rem / 32px</td></tr>
+    <tr><td>Checkbox &amp; radio label font-size</td><td><code>components/input/checkbox/font-size</code></td><td>1rem / 16px</td><td>1.5rem / 24px</td></tr>
+    <tr><td>Checkbox &amp; radio label line-height</td><td><code>components/input/checkbox/line-height</code></td><td>1.25rem / 20px</td><td>1.75rem / 28px</td></tr>
+    <tr><td>Message font-size</td><td><code>fine/font-size</code></td><td>0.625rem / 10px</td><td>1rem / 16px</td></tr>
+    <tr><td>Message line-height</td><td><code>fine/line-height</code></td><td>1.125rem / 18px</td><td>1.5rem / 24px</td></tr>
+    <tr><td>Label font-size</td><td><code>small/font-size</code></td><td>0.75rem / 12px</td><td>1.25rem / 20px</td></tr>
+    <tr><td>Label line-height</td><td><code>small/line-height</code></td><td>1.25rem / 20px</td><td>1.875rem / 30px</td></tr>
   </tbody>
 </table>
 
@@ -170,9 +170,9 @@ Indicates validation failure. Uses `status/invalid` (`#C00C00`) for border and e
   <thead><tr><th>Element</th><th>Token</th><th>Mobile/Tablet</th><th>Widescreen</th></tr></thead>
   <tbody>
     <tr><td>Text input</td><td><code>components/input/text/border-radius</code></td><td>0.25rem / 4px</td><td>0.25rem / 4px (fixed)</td></tr>
-    <tr><td>Select</td><td><code>input/text/border-radius</code></td><td>0.25rem / 4px</td><td>0.25rem / 4px (fixed)</td></tr>
-    <tr><td>Password</td><td><code>input/text/border-radius</code></td><td>0.25rem / 4px</td><td>0.25rem / 4px (fixed)</td></tr>
-    <tr><td>Checkbox</td><td><code>input/checkbox/border-radius</code></td><td>0.25rem / 4px</td><td>0.25rem / 4px (fixed)</td></tr>
+    <tr><td>Select</td><td><code>components/input/text/border-radius</code></td><td>0.25rem / 4px</td><td>0.25rem / 4px (fixed)</td></tr>
+    <tr><td>Password</td><td><code>components/input/text/border-radius</code></td><td>0.25rem / 4px</td><td>0.25rem / 4px (fixed)</td></tr>
+    <tr><td>Checkbox</td><td><code>components/input/checkbox/border-radius</code></td><td>0.25rem / 4px</td><td>0.25rem / 4px (fixed)</td></tr>
     <tr><td>Radio</td><td><code>border-radius/round</code></td><td>6.25rem / 100px (circular)</td><td>6.25rem / 100px (circular)</td></tr>
     <tr><td>Switch track</td><td><code>components/input/switch/border-radius</code></td><td>1rem / 16px</td><td>1rem / 16px (fixed)</td></tr>
     <tr><td>Switch thumb</td><td><code>border-radius/round</code></td><td>6.25rem / 100px (circular)</td><td>6.25rem / 100px (circular)</td></tr>
@@ -185,21 +185,22 @@ Indicates validation failure. Uses `status/invalid` (`#C00C00`) for border and e
   <thead><tr><th>Element</th><th>Token</th><th>Light mode</th><th>Dark mode</th></tr></thead>
   <tbody>
     <tr><td>Default border</td><td><code>global/gray-medium</code></td><td>#CCCCCC</td><td>#CCCCCC</td></tr>
-    <tr><td>Input background</td><td><code>page/background</code></td><td>#FFFFFF</td><td>#01232D</td></tr>
-    <tr><td>Input text</td><td><code>text/default</code></td><td>#000000</td><td>#FFFFFF</td></tr>
+    <tr><td>Background</td><td><code>page/background</code></td><td>#FFFFFF (global/white)</td><td>#01232D (brand/secondary-dark)</td></tr>
+    <tr><td>Input text</td><td><code>text/default</code></td><td>#000000 (global/black)</td><td>#FFFFFF (global/white)</td></tr>
     <tr><td>Placeholder text</td><td><code>global/gray-dark</code></td><td>#919191</td><td>#919191</td></tr>
-    <tr><td>Label text</td><td><code>text/default</code></td><td>#000000</td><td>#FFFFFF</td></tr>
-    <tr><td>Select icon</td><td><code>text/default</code></td><td>#000000</td><td>#FFFFFF</td></tr>
-    <tr><td>Password toggle icon</td><td><code>brand/primary</code></td><td>#FF5247</td><td>#FF5247</td></tr>
-    <tr><td>Checkbox/radio/switch active</td><td><code>brand/primary</code></td><td>#FF5247</td><td>#FF5247</td></tr>
-    <tr><td>Valid state border/text</td><td><code>status/valid</code></td><td>#007000</td><td>#007000</td></tr>
-    <tr><td>Invalid state border/text</td><td><code>status/invalid</code></td><td>#C00C00</td><td>#C00C00</td></tr>
-    <tr><td>Disabled state border/text</td><td><code>status/disabled</code></td><td>#808080</td><td>#808080</td></tr>
-    <tr><td>Read-only state border</td><td><code>status/read-only</code></td><td>#333333</td><td>#333333</td></tr>
+    <tr><td>Disabled border</td><td><code>status/disabled</code></td><td>#808080</td><td>#808080</td></tr>
+    <tr><td>Disabled text</td><td><code>status/disabled</code></td><td>#808080</td><td>#808080</td></tr>
+    <tr><td>Read-only border</td><td><code>status/read-only</code></td><td>#333333</td><td>#333333</td></tr>
+    <tr><td>Valid border</td><td><code>status/valid</code></td><td>#007000</td><td>#007000</td></tr>
+    <tr><td>Valid message</td><td><code>status/valid</code></td><td>#007000</td><td>#007000</td></tr>
+    <tr><td>Invalid border</td><td><code>status/invalid</code></td><td>#C00C00</td><td>#C00C00</td></tr>
+    <tr><td>Invalid message</td><td><code>status/invalid</code></td><td>#C00C00</td><td>#C00C00</td></tr>
+    <tr><td>Checkbox border (checked)</td><td><code>brand/primary</code></td><td>#FF5247</td><td>#FF5247</td></tr>
+    <tr><td>Option list hover</td><td><code>components/option/hover</code></td><td>#EEEEEE (global/gray-light)</td><td>#EEEEEE (global/gray-light)</td></tr>
   </tbody>
 </table>
 
-**Light/Dark mode behavior:** Background and text colors invert between light and dark modes for readability. Status colors and brand colors are mode-invariant.
+**Light/Dark mode behavior:** Background and text colors invert between light and dark modes for readability. Status colors (valid, invalid, disabled, read-only) and brand colors are mode-invariant. In dark mode, note that disabled text (`#808080`) and placeholder text (`#919191`) are visually similar against the dark background, so check contrast in implementation.
 
 ## Accessibility
 
@@ -210,37 +211,29 @@ All input components must be fully keyboard accessible:
 - **Tab:** Moves focus to the next input or interactive element.
 - **Shift + Tab:** Moves focus to the previous input or interactive element.
 - **Space:** Toggles checkboxes, radio buttons, and switches.
-- **Enter:** Submits forms when appropriate.
-- **Arrow keys:** Navigate between radio options in a group.
+- **Enter:** Submits forms (when focus is on an input).
+- **Arrow keys:** Navigates between radio button options in a group.
 
 ### Screen readers
 
-Use semantic HTML and proper labeling. Every input must have an associated label. Group related options with `<fieldset>` and `<legend>`.
+Use semantic HTML and proper labeling to ensure inputs are announced correctly. Every input must have an associated label using either the `for` attribute or by wrapping the input. Group related inputs (radio buttons, checkboxes) using `<fieldset>` and `<legend>` elements.
 
 ### ARIA attributes
 
-- `aria-label` when no visible label is present.
-- `aria-labelledby` to associate the input with label text.
-- `aria-describedby` to connect helper/validation messages.
-- `aria-invalid="true"` when validation fails.
-- `aria-required="true"` for required fields.
-- `role="switch"` for switch controls.
+- `aria-label`: Provides a label when a visible label is not present.
+- `aria-labelledby`: Associates the input with a label element.
+- `aria-describedby`: Links helper text or validation messages to the input.
+- `aria-invalid`: Set to `"true"` when input validation fails.
+- `aria-required`: Indicates required fields.
+- `role="switch"`: Use for toggle switches to differentiate from checkboxes.
 
 ### Focus management
 
-Inputs rely on browser default focus indicators. Never remove focus indicators.
-
-### Touch targets
-
-Maintain minimum touch target size of at least `44px` where possible.
+Inputs rely on browser default focus indicators, which meet WCAG 2.1 Level AA requirements. Maintain sufficient contrast between focus states and backgrounds. Never remove focus indicators with CSS. On mobile, ensure interactive elements meet the minimum `44×44px` target size, including checkbox and radio label hit areas.
 
 ### Color contrast
 
-Ensure border/text states meet WCAG contrast requirements in both light and dark modes.
-
-### Error prevention and recovery
-
-Provide descriptive validation feedback and clear recovery actions.
+All input states meet WCAG 2.1 Level AA contrast requirements. Border colors provide at least 3:1 contrast against backgrounds. Text colors provide at least 4.5:1 contrast for normal text and 3:1 for large text.
 
 ## Usage
 
@@ -248,31 +241,50 @@ Provide descriptive validation feedback and clear recovery actions.
 
 Use input components when you need to:
 
-- Collect user-entered data in forms.
-- Let users choose one or more options.
-- Capture account credentials and secure values.
-- Provide settings toggles.
-- Display validation feedback close to the field.
+- Collect information from users through forms.
+- Allow users to make selections or configure settings.
+- Enable data entry for search, filtering, or creating content.
+- Provide authentication fields for login or registration.
+- Gather feedback through surveys or questionnaires.
 
 ### When not to use
 
 Do not use input components when:
 
-- You only need navigation (use links/buttons).
-- Content is static and non-editable.
-- A simpler control communicates intent more clearly.
+- Displaying read-only information, use text or labels instead.
+- Triggering actions, use buttons instead.
+- Providing navigation, use links or navigation components.
+- Showing status or counts, use badges or indicators instead.
 
 ### Content guidelines
 
-- Write clear, concise labels.
-- Use placeholder text for examples, not as labels.
-- Write actionable error messages.
-- Keep helper text brief.
-- Use sentence case.
+- **Write clear labels:** Use concise, descriptive labels that clearly indicate what information is expected. Avoid ambiguous terms.
+- **Provide helpful placeholder text:** Use placeholders to show examples or format requirements, not as a replacement for labels.
+- **Write actionable error messages:** Tell users what went wrong and how to fix it. Be specific and constructive.
+- **Keep helper text brief:** Provide just enough context without overwhelming users with information.
+- **Use sentence case:** Labels and helper text should use sentence case, not title case or all caps.
 
 ### Placement
 
-Stack inputs vertically for most forms. Place labels consistently above fields. Use multi-column layouts only for short, related groups.
+Position input components within forms and layouts according to their relationship to surrounding content. Stack inputs vertically in a single column for most forms to improve readability and reduce errors. Use multi-column layouts only for short, closely related fields such as city, state, and postal code. Place labels consistently above inputs, aligned to the left edge of each field. Match the input type to the data being collected:
+
+<table>
+  <thead>
+    <tr>
+      <th>Input type</th>
+      <th>Best for</th>
+      <th>Not suitable for</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Text input</td><td>Short, free-form text entry (names, emails, search)</td><td>Long text (use textarea), selecting from options (use select)</td></tr>
+    <tr><td>Select</td><td>Choosing from 5+ predefined options</td><td>2–4 options (use radio), multiple selections (use checkboxes)</td></tr>
+    <tr><td>Checkbox</td><td>Multiple selections, single toggles (terms acceptance)</td><td>Mutually exclusive options (use radio)</td></tr>
+    <tr><td>Radio</td><td>Selecting exactly one from 2–5 visible options</td><td>Multiple selections (use checkbox), 6+ options (use select)</td></tr>
+    <tr><td>Switch</td><td>Settings that take effect immediately</td><td>Form submissions requiring an explicit save action</td></tr>
+    <tr><td>Password</td><td>Secure authentication credentials</td><td>Non-sensitive information (use text input)</td></tr>
+  </tbody>
+</table>
 
 ### Best practices
 
@@ -536,8 +548,8 @@ toggleButton.addEventListener('click', () => {
 --components/input/checkbox/line-height    Mobile: 1.25rem / 20px  →  Widescreen: 1.75rem / 28px
 --fine/font-size                           Mobile: 0.625rem / 10px →  Widescreen: 1rem / 16px
 --fine/line-height                         Mobile: 1.125rem / 18px →  Widescreen: 1.5rem / 24px
---small/font-size                          Mobile: 0.75rem / 12px  →  Widescreen: 0.75rem / 12px (fixed)
---small/line-height                        Mobile: 1.25rem / 20px  →  Widescreen: 1.25rem / 20px (fixed)
+--small/font-size                          Mobile: 0.75rem / 12px  →  Widescreen: 1.25rem / 20px
+--small/line-height                        Mobile: 1.25rem / 20px  →  Widescreen: 1.875rem / 30px
 
 /* Spacing */
 --components/input/text/padding            Mobile: 0.5rem / 8px    →  Widescreen: 0.75rem / 12px
@@ -550,8 +562,7 @@ toggleButton.addEventListener('click', () => {
 
 /* Border-radius */
 --components/input/text/border-radius      0.25rem / 4px (fixed)
---input/text/border-radius                 0.25rem / 4px (fixed)
---input/checkbox/border-radius             0.25rem / 4px (fixed)
+--components/input/checkbox/border-radius 0.25rem / 4px (fixed)
 --components/input/switch/border-radius    1rem / 16px (fixed)
 --border-radius/round                      6.25rem / 100px (fixed)
 
@@ -574,6 +585,8 @@ toggleButton.addEventListener('click', () => {
 - [WebAIM](https://webaim.org/)
 - [WCAG 2.1 Quick Reference](https://www.w3.org/WAI/WCAG21/quickref/)
 - [MDN Web Docs](https://developer.mozilla.org/)
+- [W3C Form Tutorials](https://www.w3.org/WAI/tutorials/forms/)
+- [Nielsen Norman Group: Form Design](https://www.nngroup.com/articles/form-design-placeholders/)
 
 ## Source of truth
 

@@ -1,0 +1,425 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import * as ComponentStories from './details.stories';
+
+<Meta of={ComponentStories} title="Molecules/Details/Documentation" />
+
+# Details
+
+An expandable disclosure component that reveals and hides content. Details provide progressive disclosure, allowing users to access additional information on demand while keeping interfaces clean and focused.
+
+## Anatomy
+
+The Details component consists of:
+
+- **Container:** Bordered wrapper with rounded corners
+- **Summary:** Always-visible header with text and icon that triggers expansion
+- **Icon:** Plus (+) when collapsed, minus (-) when expanded
+- **Body:** Expandable content area, hidden when collapsed
+
+<Canvas of={ComponentStories.AnatomyFigure} />
+
+## Variants
+
+The Details component has no visual variants. Its appearance changes based solely on its state (collapsed or expanded).
+
+## States
+
+- **Collapsed (default):** Shows only the summary with a plus (+) icon. Body content is hidden.
+- **Expanded:** The icon changes to minus (-) and body content becomes visible below the summary.
+
+<Canvas of={ComponentStories.StatesFigure} />
+
+## Typography
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Token</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>font-size</td>
+      <td><code>p/font-size</code></td>
+      <td>1rem / 16px</td>
+      <td>1.5rem / 24px</td>
+    </tr>
+    <tr>
+      <td>line-height</td>
+      <td><code>p/line-height</code></td>
+      <td>1.5rem / 24px</td>
+      <td>2.25rem / 36px</td>
+    </tr>
+  </tbody>
+</table>
+
+## Spacing
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Token</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Container padding</td>
+      <td><code>md</code></td>
+      <td>0.5rem / 8px</td>
+      <td>1rem / 16px</td>
+    </tr>
+    <tr>
+      <td>Summary gap</td>
+      <td><code>sm</code></td>
+      <td>0.25rem / 4px</td>
+      <td>0.5rem / 8px</td>
+    </tr>
+    <tr>
+      <td>Icon padding</td>
+      <td><code>sm</code></td>
+      <td>0.25rem / 4px</td>
+      <td>0.5rem / 8px</td>
+    </tr>
+    <tr>
+      <td>Body top spacing</td>
+      <td><code>md</code></td>
+      <td>0.5rem / 8px</td>
+      <td>0.5rem / 8px</td>
+    </tr>
+  </tbody>
+</table>
+
+## Border-radius
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Token</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Container</td>
+      <td><code>border-radius/sm</code></td>
+      <td>0.25rem / 4px</td>
+      <td>0.5rem / 8px</td>
+    </tr>
+  </tbody>
+</table>
+
+## Colors
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Token</th>
+      <th>Light mode</th>
+      <th>Dark mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Container border</td>
+      <td><code>global/gray-medium</code></td>
+      <td>#CCCCCC</td>
+      <td>#CCCCCC</td>
+    </tr>
+    <tr>
+      <td>Summary text</td>
+      <td><code>text/default</code></td>
+      <td>#000000 (global/black)</td>
+      <td>#FFFFFF (global/white)</td>
+    </tr>
+    <tr>
+      <td>Body text</td>
+      <td><code>text/default</code></td>
+      <td>#000000 (global/black)</td>
+      <td>#FFFFFF (global/white)</td>
+    </tr>
+    <tr>
+      <td>Icon</td>
+      <td><code>text/default</code></td>
+      <td>#000000 (global/black)</td>
+      <td>#FFFFFF (global/white)</td>
+    </tr>
+    <tr>
+      <td>Background</td>
+      <td>-</td>
+      <td colSpan="2">Inherits from parent</td>
+    </tr>
+  </tbody>
+</table>
+
+**Light/Dark mode behavior:** Details components adapt to light and dark modes through `text/default`. Border color remains consistent across modes for visual definition.
+
+## Accessibility
+
+Use native HTML `<details>` and `<summary>` elements whenever possible. They provide built-in keyboard accessibility, screen reader support, and progressive disclosure without JavaScript. Custom implementations must replicate this behavior using ARIA attributes. Progressive disclosure benefits all users, particularly those using assistive technology, by keeping interfaces simpler by default and revealing complexity only when needed.
+
+### Keyboard navigation
+
+Details components must be fully keyboard accessible:
+
+- **Tab:** Moves focus to the summary (trigger)
+- **Enter or Space:** Toggles expanded/collapsed state
+- **Tab:** When expanded, allows navigation into body content
+
+### Screen readers
+
+Native `<details>` elements are announced with their current state. Custom implementations require proper ARIA attributes:
+
+- **role="button":** On the summary/trigger element
+- **aria-expanded:** `"true"` when expanded, `"false"` when collapsed
+- **aria-controls:** Links trigger to the content region
+
+### Focus management
+
+The summary element must display a clear focus indicator. Content within the expanded body should be keyboard accessible and properly announced by screen readers.
+
+### Touch targets
+
+All interactive elements must meet minimum touch target requirements:
+
+- Minimum `44x44px` touch target for the summary trigger
+- The icon container (`28x28px`) is supplementary. The full summary row is the interactive target.
+
+### Color contrast
+
+Text and icon colors use the `text/default` token, which resolves to `#000000` on light backgrounds and `#FFFFFF` on dark. Both meet WCAG AA contrast requirements against their respective background colors. The border color (`global/gray-medium`, `#CCCCCC`) is decorative and not subject to contrast requirements.
+
+## Usage
+
+### When to use
+
+Use Details components when you need to:
+
+- Progressively disclose secondary or supplementary information
+- Build FAQ sections or help documentation
+- Create expandable lists or nested navigation
+- Hide advanced options or settings until needed
+- Reduce visual clutter while keeping information accessible
+
+### When not to use
+
+Do not use Details when:
+
+- Information is critical and must be immediately visible
+- Users need to scan multiple items quickly (use visible lists instead)
+- Content should be searchable or indexable (hidden content may not be indexed)
+- Building primary navigation (use appropriate navigation components)
+
+### Content guidelines
+
+Best practices for Details content:
+
+- **Write clear summaries:** Summary text should accurately describe the hidden content
+- **Keep summaries concise:** Use 3-8 words that clearly indicate what's inside
+- **Structure body content clearly:** Use headings, lists, and paragraphs for scannable content
+- **Consider default state:** Important content shouldn't be hidden by default
+- **Avoid nesting deeply:** More than 2 levels of nested Details becomes difficult to navigate
+
+### Placement
+
+Details components can appear anywhere secondary or supplementary content needs to be progressively disclosed: inline within body copy, stacked as a list for FAQ sections, or grouped in a sidebar. When stacking multiple Details in a list, use consistent spacing between items (`md`). Avoid placing Details inside constrained containers where expanded content may create layout issues.
+
+### Best practices
+
+<Story of={ComponentStories.BestPracticesFigure} />
+
+## Code reference
+
+### HTML
+
+```html
+<!-- Native HTML implementation (recommended) -->
+<details class="details">
+  <summary class="details-summary">
+    <span>Summary</span>
+    <span class="details-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 5v14M5 12h14"/>
+      </svg>
+    </span>
+  </summary>
+  <div class="details-body">
+    <p>Body content revealed when expanded.</p>
+  </div>
+</details>
+
+<!-- Multiple Details (accordion pattern) -->
+<div class="details-group">
+  <details class="details">
+    <summary class="details-summary">
+      <span>Question 1</span>
+      <span class="details-icon" aria-hidden="true">+</span>
+    </summary>
+    <div class="details-body">
+      <p>Answer to question 1.</p>
+    </div>
+  </details>
+
+  <details class="details">
+    <summary class="details-summary">
+      <span>Question 2</span>
+      <span class="details-icon" aria-hidden="true">+</span>
+    </summary>
+    <div class="details-body">
+      <p>Answer to question 2.</p>
+    </div>
+  </details>
+</div>
+
+<!-- Custom implementation with ARIA -->
+<div class="details">
+  <button class="details-summary"
+          aria-expanded="false"
+          aria-controls="content-1">
+    <span>Summary</span>
+    <span class="details-icon" aria-hidden="true">+</span>
+  </button>
+  <div id="content-1" class="details-body" hidden>
+    <p>Body content.</p>
+  </div>
+</div>
+```
+
+### CSS
+
+```css
+/* Details container */
+.details {
+  width: 100%;
+  padding: 0.5rem; /* 8px mobile - md */
+  border: 1px solid var(--global/gray-medium);
+  border-radius: 0.25rem; /* 4px - sm */
+  background-color: inherit;
+}
+
+@media (min-width: 80rem) {
+  .details {
+    padding: 1rem; /* 16px widescreen */
+  }
+}
+
+/* Summary */
+.details-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem; /* 4px - sm */
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem; /* 16px - p */
+  line-height: 1.5rem; /* 24px */
+  list-style: none;
+  user-select: none;
+}
+
+/* Remove default marker */
+.details-summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Icon container */
+.details-icon {
+  width: 1.75rem; /* 28px */
+  height: 1.75rem; /* 28px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.details-icon svg {
+  width: 1.25rem; /* 20px */
+  height: 1.25rem; /* 20px */
+  stroke: currentColor;
+}
+
+/* Body content */
+.details-body {
+  margin-top: 0.5rem; /* 8px */
+  font-weight: 400;
+  font-size: 1rem; /* 16px - p */
+  line-height: 1.5rem; /* 24px */
+}
+
+/* Icon change on open (native details) */
+details[open] .details-icon svg path:last-child {
+  display: none; /* Hide vertical line of plus to show minus */
+}
+
+/* Focus state */
+.details-summary:focus {
+  outline: 2px solid var(--brand/primary);
+  outline-offset: 2px;
+}
+
+/* Details group (accordion) */
+.details-group .details + .details {
+  margin-top: 0.5rem; /* 8px spacing between items */
+}
+```
+
+### JavaScript
+
+Native `<details>` requires no JavaScript. For custom implementations:
+
+```javascript
+// Custom details toggle
+const detailsTrigger = document.querySelector('.details-summary');
+const detailsContent = document.querySelector('.details-body');
+
+detailsTrigger.addEventListener('click', () => {
+  const isExpanded = detailsTrigger.getAttribute('aria-expanded') === 'true';
+
+  detailsTrigger.setAttribute('aria-expanded', !isExpanded);
+  detailsContent.hidden = isExpanded;
+
+  // Update icon
+  const icon = detailsTrigger.querySelector('.details-icon');
+  icon.textContent = isExpanded ? '+' : '-';
+});
+```
+
+### Design tokens reference
+
+```text
+/* Spacing */
+--md    Mobile: 0.5rem / 8px    ->    Widescreen: 1rem / 16px
+--sm    Mobile: 0.25rem / 4px   ->    Widescreen: 0.5rem / 8px
+
+/* Border-radius */
+--border-radius/sm    Mobile: 0.25rem / 4px    ->    Widescreen: 0.5rem / 8px
+
+/* Typography */
+--p/font-size         Mobile: 1rem / 16px      ->    Widescreen: 1.5rem / 24px
+--p/line-height       Mobile: 1.5rem / 24px    ->    Widescreen: 2.25rem / 36px
+
+/* Colors */
+--text/default        Light: #000000   Dark: #FFFFFF
+--global/gray-medium  #CCCCCC (mode-invariant)
+```
+
+## Resources
+
+- [ARIA: Disclosure Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/) - W3C guidance for expandable sections
+- [MDN: details element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) - Native HTML details documentation
+- [WCAG 2.1 Quick Reference](https://www.w3.org/WAI/WCAG21/quickref/) - Accessibility guidelines
+- [Inclusive Components: Collapsible Sections](https://inclusive-components.design/collapsible-sections/) - Accessible accordion patterns
+
+## Source of truth
+
+- [Figma documentation node](https://www.figma.com/design/tHT8Je5cvRTXFN9XQ7XqhA/The-Delta-Design-System?node-id=1108-9821&t=OBDhPNDeR3TTWYF7-11)
+- [Figma component node](https://www.figma.com/design/tHT8Je5cvRTXFN9XQ7XqhA/The-Delta-Design-System?node-id=255-1552&t=OBDhPNDeR3TTWYF7-4)
+- Figma Variables table and modes define all values.

@@ -127,6 +127,15 @@
   border-left-color: var(--status-invalid);
 }
 
+.dds-icons-doc__do h4,
+.dds-icons-doc__dont h4 {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-size: var(--typography-h4-font-size);
+  line-height: var(--typography-h4-line-height);
+  font-weight: 400;
+}
+
 .dds-icons-doc__do p,
 .dds-icons-doc__dont p {
   margin: 0;

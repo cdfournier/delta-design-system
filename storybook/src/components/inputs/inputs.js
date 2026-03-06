@@ -242,22 +242,30 @@ export function createInputsBestPracticesFigure() {
   return figureShell(`
     <div class="dds-inputs-fig__do-dont-grid">
       <section class="dds-inputs-fig__do">
-        <p><strong>Do</strong></p>
+        <h4>Do</h4>
         <p><strong>Label every input</strong></p>
-        <p>Always provide visible labels and keep them close to their fields.</p>
+        <p>Always provide visible labels for inputs. Labels should be positioned above or to the left of the input field for clarity.</p>
         <p><strong>Validate inline when possible</strong></p>
-        <p>Provide immediate, actionable feedback as users complete fields.</p>
+        <p>Provide real-time validation feedback as users complete fields to help them correct errors immediately.</p>
         <p><strong>Group related inputs</strong></p>
         <p>Use fieldsets and legends to organize connected choices.</p>
+        <p><strong>Indicate required fields clearly</strong></p>
+        <p>Mark required fields with an asterisk (*) and include a legend explaining the notation at the form start.</p>
+        <p><strong>Use appropriate input types</strong></p>
+        <p>Choose the HTML input type that matches the data being collected for better mobile keyboards and validation.</p>
       </section>
       <section class="dds-inputs-fig__dont">
-        <p><strong>Don’t</strong></p>
+        <h4>Don't</h4>
         <p><strong>Don’t use placeholder as label</strong></p>
         <p>Placeholders disappear and should not replace persistent labels.</p>
-        <p><strong>Don’t rely on color alone</strong></p>
-        <p>Pair color with text and iconography for state communication.</p>
-        <p><strong>Don’t use vague errors</strong></p>
-        <p>Replace generic messages with specific recovery guidance.</p>
+        <p><strong>Don’t disable copy/paste</strong></p>
+        <p>Allow users to copy and paste in all fields. Disabling this functionality frustrates users and harms accessibility.</p>
+        <p><strong>Don’t make forms unnecessarily long</strong></p>
+        <p>Only ask for information you actually need. Long forms increase abandonment and user frustration.</p>
+        <p><strong>Don’t use unclear validation messages</strong></p>
+        <p>Avoid generic errors like "Invalid input." Explain specifically what's wrong and how to fix it.</p>
+        <p><strong>Don’t rely solely on color</strong></p>
+        <p>Use icons, text, and other visual indicators alongside color to communicate state for colorblind users.</p>
       </section>
     </div>
   `);

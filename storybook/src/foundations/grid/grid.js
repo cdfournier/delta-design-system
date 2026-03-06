@@ -189,7 +189,7 @@ function bestPracticesGrid() {
   return `
     <div class="dds-grid-fig__do-dont-grid">
       <section class="dds-grid-fig__do">
-        <p><strong>Do</strong></p>
+        <h4 class="dds-grid-fig__column-title">Do</h4>
         <p><strong>Use the grid consistently</strong></p>
         <p>Align content to the 12-column architecture to maintain visual consistency across your layouts.</p>
         <p><strong>Design mobile-first</strong></p>
@@ -200,7 +200,7 @@ function bestPracticesGrid() {
         <p>Use fewer columns and center the content area for better readability when text or content doesn't need full width.</p>
       </section>
       <section class="dds-grid-fig__dont">
-        <p><strong>Don't</strong></p>
+        <h4 class="dds-grid-fig__column-title">Don't</h4>
         <p><strong>Ignore breakpoints</strong></p>
         <p>Failing to plan for mobile and tablet creates poor experiences on those devices.</p>
         <p><strong>Eliminate gutters</strong></p>
