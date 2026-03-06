@@ -35,9 +35,14 @@
   position: absolute;
   inset: 0;
   margin: 0;
-  background:
-    radial-gradient(circle at 22% 18%, rgb(255 255 255 / 24%) 0%, rgb(255 255 255 / 0%) 45%),
-    linear-gradient(130deg, var(--brand-secondary) 0%, var(--brand-secondary-dark) 100%);
+}
+
+.dds-banner__background img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
 }
 
 .dds-banner__overlay {
@@ -58,16 +63,42 @@
   align-content: center;
 }
 
-.dds-banner__content h3 {
+.dds-banner__heading {
+  margin: 0;
+}
+
+.dds-banner__heading--bg {
   color: var(--global-white);
   font-family: var(--font-family-heading);
-  font-size: var(--typography-h3-font-size);
-  line-height: var(--typography-h3-line-height);
+  font-size: var(--typography-h1-title-font-size);
+  line-height: var(--typography-h1-title-line-height);
   font-weight: 400;
 }
 
-.dds-banner__content p {
+.dds-banner__body {
+  margin: 0;
+}
+
+.dds-banner__body--bg {
   color: var(--global-white);
+  font-family: var(--font-family-body);
+  font-size: var(--typography-h1-title-plus-p-font-size);
+  line-height: var(--typography-h1-title-plus-p-line-height);
+  font-weight: 400;
+  width: 20.875rem;
+  max-width: 100%;
+}
+
+.dds-banner__heading--split {
+  color: var(--text-default);
+  font-family: var(--font-family-heading);
+  font-size: var(--typography-h2-font-size);
+  line-height: var(--typography-h2-line-height);
+  font-weight: 400;
+}
+
+.dds-banner__body--split {
+  color: var(--text-default);
   font-family: var(--font-family-body);
   font-size: var(--typography-body-font-size);
   line-height: var(--typography-body-line-height);
@@ -128,7 +159,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--components-banner-split-gap);
-  background: var(--background-page);
+  background: var(--page-background);
   color: var(--text-default);
 }
 
@@ -148,18 +179,24 @@
 .dds-banner__image-panel {
   margin: 0;
   min-height: calc(14 / 16 * 1rem);
-  background:
-    radial-gradient(circle at 30% 30%, rgb(255 255 255 / 24%) 0%, rgb(255 255 255 / 0%) 46%),
-    linear-gradient(145deg, var(--brand-secondary) 0%, var(--brand-secondary-dark) 100%);
+  overflow: hidden;
+  border-radius: var(--components-banner-border-radius);
+}
+
+.dds-banner__image-panel img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .dds-banner--split .dds-banner__content {
   max-width: none;
-  background: var(--background-section);
+  background: transparent;
 }
 
-.dds-banner--split .dds-banner__content h3,
-.dds-banner--split .dds-banner__content p,
+.dds-banner--split .dds-banner__heading,
+.dds-banner--split .dds-banner__body,
 .dds-banner--split .dds-banner__link {
   color: var(--text-default);
 }
@@ -183,6 +220,109 @@
   border: 1px solid var(--global-gray-medium);
   border-radius: var(--border-radius-sm);
   padding: var(--xl);
+}
+
+.dds-banners-fig__card--component {
+  background: var(--global-gray-light);
+  border: 0;
+  border-radius: var(--border-radius-md);
+}
+
+.dds-banner--anatomy-figure {
+  height: 64rem;
+  min-height: 64rem;
+}
+
+.dds-banner__background--anatomy {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+}
+
+.dds-banner__content--anatomy-bg {
+  margin-right: auto;
+  margin-left: 0;
+  justify-content: flex-start;
+  align-content: center;
+  text-align: left;
+}
+
+.dds-banner--anatomy-figure .dds-banner__title-anatomy {
+  margin: 0;
+  color: var(--global-white) !important;
+  font-family: var(--font-family-heading);
+  font-size: var(--typography-h1-title-font-size);
+  line-height: var(--typography-h1-title-line-height);
+  font-weight: 400;
+}
+
+.dds-banner--anatomy-figure .dds-banner__body-anatomy {
+  margin: 0;
+  width: 20.875rem;
+  max-width: 100%;
+  color: var(--global-white) !important;
+  font-family: var(--font-family-body);
+  font-size: var(--typography-h1-title-plus-p-font-size);
+  line-height: var(--typography-h1-title-plus-p-line-height);
+  font-weight: 400;
+  padding-top: var(--sm);
+}
+
+.dds-banner--anatomy-split {
+  height: 32rem;
+  min-height: 32rem;
+  max-height: 32rem;
+  border-radius: 0;
+  overflow: visible;
+  background: transparent;
+  gap: var(--md);
+  align-items: stretch;
+}
+
+.dds-banner__image-panel--anatomy {
+  height: 100%;
+  min-height: 100%;
+  width: 50%;
+  flex: 1 0 0;
+  overflow: hidden;
+  border-radius: var(--components-banner-border-radius);
+  background: transparent;
+}
+
+.dds-banner__image-panel--anatomy img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dds-banner__content--anatomy-split {
+  width: 50%;
+  max-width: none;
+  flex: 1 0 0;
+  background: var(--global-gray-light);
+  justify-content: flex-start;
+  align-content: center;
+  text-align: left;
+}
+
+.dds-banner__heading-anatomy {
+  margin: 0;
+  color: var(--text-default);
+  font-family: var(--font-family-heading);
+  font-size: var(--typography-h2-font-size);
+  line-height: var(--typography-h2-line-height);
+  font-weight: 400;
+}
+
+.dds-banner__copy-anatomy {
+  margin: 0;
+  color: var(--text-default);
+  font-family: var(--font-family-body);
+  font-size: var(--typography-body-font-size);
+  line-height: var(--typography-body-line-height);
+  font-weight: 400;
+  padding-top: var(--sm);
 }
 
 .dds-banners-doc__do-dont-grid {

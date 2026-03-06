@@ -5,61 +5,67 @@ import * as ComponentStories from './banners.stories';
 
 # Banners
 
-Banners are prominent content blocks for hero sections, promotional areas, and feature highlights. They combine imagery with structured text and optional actions.
+Banners are prominent content blocks for hero sections, promotional areas, and feature highlights. They combine imagery with the Content component to create engaging layouts with multiple alignment and orientation options.
 
 ## Anatomy
 
+Banners consist of two distinct sub-components, each with their own structure:
+
 ### Background image
+
+Full-bleed image banner with overlaid content:
 
 - **Container:** Outer wrapper with border-radius and overflow clipping.
 - **Background image:** Full-cover image layer filling the container.
-- **Overlay (optional):** Semi-transparent dark layer for text readability.
-- **Content:** Heading, body text, and optional CTA.
+- **Overlay (optional):** Semi-transparent dark layer over the image to improve text readability.
+- **Content:** Content component instance with heading, body text, and optional CTAs.
 
 <Canvas of={ComponentStories.AnatomyFigure} />
 
 ### Split
 
-- **Container:** Flex wrapper managing orientation and direction.
-- **Image panel:** Dedicated visual panel.
-- **Content panel:** Structured text panel with optional CTA.
+Two-panel banner with separate image and content regions:
+
+- **Container:** Flex wrapper managing panel layout and orientation.
+- **Image panel:** Figure element containing the image with border-radius.
+- **Content panel:** Content component instance with background color and padding.
 
 <Canvas of={ComponentStories.AnatomySplitFigure} />
 
 ## Variants
 
+Banners have two sub-components, each with their own set of variants.
+
 ### Background image
 
-- **Alignment:** Left, center, right.
-- **Overlay:** On/off.
-- **Size:** Mobile or desktop minimum height behavior.
+Background image supports three configurable properties:
+
+- **Alignment — Left (default):** Content aligned to the left edge with left-aligned text. Use for most hero sections.
+- **Alignment — Center:** Content centered horizontally with center-aligned text. Use for campaign or announcement heroes.
+- **Alignment — Right:** Content aligned to the right edge with left-aligned text. Use when the image subject occupies the left.
+- **Overlay — With overlay:** A 50% black overlay darkens the image to improve text readability. Recommended when image tones are light or variable.
+- **Overlay — Without overlay:** Image shown without darkening. Only use when the image provides sufficient contrast for all text.
+- **Size — Mobile:** Height determined by content; no minimum height constraint.
+- **Size — Widescreen:** Enforces a minimum height of 17.75rem / 284px for visual impact on larger viewports.
 
 ### Split
 
-- **Orientation:** Vertical or horizontal.
-- **Direction:** Default or reverse.
+Split supports two configurable properties:
+
+- **Orientation — Vertical:** Image and content stacked, constrained to a maximum width matching the `layout/fifty` token.
+- **Orientation — Horizontal:** Image and content side-by-side at equal flex proportions. Enforces a minimum height for visual balance.
+- **Direction — Default:** Image panel first, content panel second.
+- **Direction — Reverse:** Content panel first, image panel second. Useful when alternating split banners in a series.
 
 ## Typography
 
-Banners use the system heading/body text tokens:
-
-<table>
-  <thead>
-    <tr>
-      <th>Element</th>
-      <th>Token</th>
-      <th>Mobile/Tablet</th>
-      <th>Widescreen</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>Heading</td><td><code>h3</code></td><td>1.75rem / 28px</td><td>3.125rem / 50px</td></tr>
-    <tr><td>Body</td><td><code>p</code></td><td>1rem / 16px</td><td>1.5rem / 24px</td></tr>
-    <tr><td>CTA link</td><td><code>small</code></td><td>0.75rem / 12px</td><td>1.25rem / 20px</td></tr>
-  </tbody>
-</table>
+Banners use the Content component for all typography. The table below documents the text styles applied within banner content at each breakpoint. See the [Content documentation](#) for complete specifications including eyebrow and footer/fine styles.
 
 ## Spacing
+
+Spacing values scale with the global token system. The tables below cover padding and gap only; dimension properties (min-height, max-width) are design intent values visible in Figma and are not documented here.
+
+### Background image
 
 <table>
   <thead>
@@ -71,9 +77,45 @@ Banners use the system heading/body text tokens:
     </tr>
   </thead>
   <tbody>
-    <tr><td>Content padding</td><td><code>xl</code></td><td>1rem / 16px</td><td>2rem / 32px</td></tr>
-    <tr><td>Content gap</td><td><code>md</code></td><td>0.5rem / 8px</td><td>1rem / 16px</td></tr>
-    <tr><td>Split gap</td><td><code>components/banner/split/gap</code></td><td>0.5rem / 8px</td><td>1rem / 16px</td></tr>
+    <tr>
+      <td>Content padding</td>
+      <td><code>xl</code></td>
+      <td>1rem / 16px</td>
+      <td>2rem / 32px</td>
+    </tr>
+  </tbody>
+</table>
+
+### Split
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Token</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>padding-top, padding-bottom</td>
+      <td><code>xl</code></td>
+      <td>1rem / 16px</td>
+      <td>2rem / 32px</td>
+    </tr>
+    <tr>
+      <td>gap</td>
+      <td><code>md</code></td>
+      <td>0.5rem / 8px</td>
+      <td>1rem / 16px</td>
+    </tr>
+    <tr>
+      <td>padding</td>
+      <td><code>xl</code></td>
+      <td>1rem / 16px</td>
+      <td>2rem / 32px</td>
+    </tr>
   </tbody>
 </table>
 
@@ -89,12 +131,30 @@ Banners use the system heading/body text tokens:
     </tr>
   </thead>
   <tbody>
-    <tr><td>Banner container</td><td><code>components/banner/border-radius</code></td><td>0.5rem / 8px</td><td>1rem / 16px</td></tr>
-    <tr><td>Split image panel</td><td><code>components/banner/border-radius</code></td><td>0.5rem / 8px</td><td>1rem / 16px</td></tr>
+    <tr>
+      <td>Background image container border-radius</td>
+      <td><code>border-radius/md</code></td>
+      <td>0.5rem / 8px</td>
+      <td>1rem / 16px</td>
+    </tr>
+    <tr>
+      <td>Background image figure border-radius</td>
+      <td><code>border-radius/md</code></td>
+      <td>0.5rem / 8px</td>
+      <td>1rem / 16px</td>
+    </tr>
+    <tr>
+      <td>Split image panel border-radius</td>
+      <td><code>border-radius/md</code></td>
+      <td>0.5rem / 8px</td>
+      <td>1rem / 16px</td>
+    </tr>
   </tbody>
 </table>
 
 ## Colors
+
+### Background image
 
 <table>
   <thead>
@@ -106,34 +166,293 @@ Banners use the system heading/body text tokens:
     </tr>
   </thead>
   <tbody>
-    <tr><td>Background image overlay</td><td><code>overlay/dark</code></td><td>#00000080</td><td>#00000080</td></tr>
-    <tr><td>Split panel background</td><td><code>section/background</code></td><td>#EEEEEE (global/gray-light)</td><td>#003442 (brand/secondary)</td></tr>
-    <tr><td>Split panel text</td><td><code>text/default</code></td><td>#000000 (global/black)</td><td>#FFFFFF (global/white)</td></tr>
-    <tr><td>Primary button</td><td><code>brand/primary + global/white</code></td><td>#FF5247 / #FFFFFF</td><td>#FF5247 / #FFFFFF</td></tr>
+    <tr>
+      <td>Background image</td>
+      <td>—</td>
+      <td colSpan="2">User-provided image</td>
+    </tr>
+    <tr>
+      <td>Overlay</td>
+      <td><code>overlay/dark</code></td>
+      <td>rgba(0, 0, 0, 0.5)</td>
+      <td>rgba(0, 0, 0, 0.5)</td>
+    </tr>
+    <tr>
+      <td>Content text</td>
+      <td><code>global/white</code></td>
+      <td>#FFFFFF</td>
+      <td>#FFFFFF</td>
+    </tr>
+    <tr>
+      <td>Links</td>
+      <td><code>text/link</code></td>
+      <td>#FF5247</td>
+      <td>#FFFFFF</td>
+    </tr>
   </tbody>
 </table>
 
+### Split
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Token</th>
+      <th>Light mode</th>
+      <th>Dark mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Image panel</td>
+      <td>—</td>
+      <td colSpan="2">User-provided image</td>
+    </tr>
+    <tr>
+      <td>Content panel background</td>
+      <td><code>page/background</code></td>
+      <td>#FFFFFF (global/white)</td>
+      <td>#01232D (brand/secondary-dark)</td>
+    </tr>
+    <tr>
+      <td>Content text</td>
+      <td><code>text/default</code></td>
+      <td>#000000 (global/black)</td>
+      <td>#FFFFFF (global/white)</td>
+    </tr>
+    <tr>
+      <td>Links</td>
+      <td><code>text/link</code></td>
+      <td>#FF5247</td>
+      <td>#FFFFFF</td>
+    </tr>
+  </tbody>
+</table>
+
+**Light/Dark mode behavior:** Background image always uses white text over the overlay. Split adapts its content panel background and text to match the active theme.
+
 ## Accessibility
 
-- Ensure foreground text remains readable against image backgrounds.
-- Use overlay when contrast is insufficient.
-- Keep heading structure meaningful for screen readers.
-- Do not encode critical meaning in imagery alone.
+### Keyboard navigation
+
+Banners themselves are not interactive, but they contain interactive elements through the Content component. All interactive children must be keyboard accessible:
+
+- **Tab:** Moves focus to the next interactive element (button, link) within the banner.
+- **Shift + Tab:** Moves focus to the previous interactive element.
+- **Enter / Space:** Activates the focused button or link.
+
+### Screen readers
+
+Use semantic HTML to ensure banner content is read in a logical order. For Background image, when the background is applied as a CSS property rather than an `<img>` element, the image is decorative and requires no alt text. When using an `<img>` element for the background, set `alt=""` if the image is decorative and the text content conveys the full message. For Split, provide descriptive alt text on the image.
+
+### ARIA attributes
+
+- **`role="region"` + `aria-label`:** Consider wrapping the banner in a `<section>` with an `aria-label` (for example, “Hero” or “Feature highlight”) to give screen reader users a landmark.
+- **`aria-hidden="true"`:** Apply to purely decorative images so screen readers skip them.
+- **`aria-label` on CTAs:** If button or link text is generic (for example, “Learn more”), add an `aria-label` that includes the topic.
+
+### Focus management
+
+Focus indicators must remain visible on all interactive elements within banners. Do not suppress the browser default focus ring. When a banner contains a primary CTA, ensure it is the first focusable element in the banner tab order.
+
+### Color contrast
+
+Text over imagery must meet a minimum 4.5:1 contrast ratio (WCAG AA). The 50% black overlay (`overlay/dark`) typically achieves this for white text on mid-tone images, but always verify with real imagery. For Split, `text/default` resolves to black on white in light mode and white on `brand/secondary-dark` in dark mode.
 
 ## Usage
 
 ### When to use
 
-- Hero and feature sections.
-- Campaign messaging.
-- High-priority promotional placements.
+Use banners when you need to:
+
+- Create a hero section at the top of a page with strong visual impact.
+- Highlight a feature or promotion with supporting imagery.
+- Build storytelling sections that pair image and copy at equal visual weight.
+- Anchor a campaign or landing page with a compelling full-bleed image.
 
 ### When not to use
 
-- Dense informational layouts.
-- Long-form text sections where readability is primary.
+Do not use banners when:
+
+- No imagery is available, use a Content component directly instead.
+- The content requires more than a heading, short body, and one or two CTAs, use a full page layout rather than a banner.
+- The section is one of many repeated items, use a Card component instead.
+- Imagery is purely illustrative with no connection to the message, decorative images reduce credibility in this context.
+
+### Content guidelines
+
+Banners content should be concise and action-oriented:
+
+- **Keep headlines concise:** 5–10 words maximum for scanability; use the h1-title style for primary heroes, h2 for secondary banners.
+- **Lead with value:** Headlines and body text should communicate benefit to the user, not internal feature names.
+- **Limit body text:** 2–3 sentences maximum; longer copy belongs in the page body below the banner.
+- **Write clear CTAs:** Use action verbs (for example, "Get Started", "View Plans") rather than generic labels like "Click here".
+- **Choose images carefully:** Images should reinforce the message, not distract from it; for Background image, confirm readability with real imagery before finalizing.
+
+### Placement
+
+Background image is designed for full-width hero placement at the top of a page, directly below the site header. Split works well both as a hero alternative and as a mid-page feature section. When using multiple Split components in sequence, alternate direction (`default` / `reverse`) to create visual rhythm.
 
 ### Best practices
 
 <Story of={ComponentStories.BestPracticesFigure} />
 
+## Code reference
+
+### HTML
+
+```html
+<!-- Background image - Left aligned with overlay -->
+<div class="banner-background">
+  <img src="hero.jpg" alt="">
+  <div class="banner-overlay"></div>
+  <div class="banner-content banner-content-left">
+    <h1>Hero Headline</h1>
+    <p>Supporting text that explains the value proposition.</p>
+    <div class="content-cta">
+      <button class="button-filled">Get Started</button>
+      <a href="#">Learn more</a>
+    </div>
+  </div>
+</div>
+
+<!-- Background image - Center aligned, no overlay -->
+<div class="banner-background">
+  <img src="hero.jpg" alt="">
+  <div class="banner-content banner-content-center">
+    <h2>Centered Headline</h2>
+    <p>Centered body text.</p>
+  </div>
+</div>
+
+<!-- Split - Vertical, default direction -->
+<div class="banner-split banner-split-vertical">
+  <figure class="banner-image">
+    <img src="feature.jpg" alt="Description of the feature">
+  </figure>
+  <div class="banner-content">
+    <h2>Feature Headline</h2>
+    <p>Description of the feature.</p>
+  </div>
+</div>
+
+<!-- Split - Horizontal, reverse direction -->
+<div class="banner-split banner-split-horizontal banner-split-reverse">
+  <div class="banner-content">
+    <h2>Feature Headline</h2>
+    <p>Description of the feature.</p>
+    <div class="content-cta">
+      <button class="button-outline">Learn More</button>
+    </div>
+  </div>
+  <figure class="banner-image">
+    <img src="feature.jpg" alt="Description of the feature">
+  </figure>
+</div>
+```
+
+### CSS
+
+```css
+/* Background image */
+.banner-background {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--border-radius-md, 0.5rem); /* 8px mobile */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 80rem) {
+  .banner-background {
+    border-radius: var(--border-radius-md, 1rem); /* 16px widescreen */
+    min-height: 17.75rem; /* 284px */
+  }
+}
+
+.banner-background img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+/* Overlay */
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--overlay-dark, rgba(0, 0, 0, 0.5));
+  border-radius: inherit;
+}
+
+/* Content */
+.banner-content {
+  position: relative;
+  z-index: 1;
+  padding: var(--xl, 1rem); /* 16px mobile */
+  color: var(--global-white, #FFFFFF);
+}
+
+@media (min-width: 80rem) {
+  .banner-content {
+    padding: var(--xl, 2rem); /* 32px widescreen */
+    max-width: 46.25rem; /* 740px */
+  }
+}
+
+/* Alignment variants */
+.banner-content-left {
+  text-align: left;
+}
+
+.banner-content-center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.banner-content-right {
+  margin-left: auto;
+  text-align: left;
+}
+
+/* Split */
+.banner-split {
+  width: 100%;
+  display: flex;
+  background-color: var(--page-background, #FFFFFF);
+}
+
+@media (prefers-color-scheme: dark) {
+  .banner-split {
+    background-color: var(--brand-secondary-dark, #01232D);
+  }
+}
+```
+
+### Design tokens reference
+
+```text
+--xl               Mobile: 1rem / 16px    -> Widescreen: 2rem / 32px
+--md               Mobile: 0.5rem / 8px   -> Widescreen: 1rem / 16px
+--border-radius/md Mobile: 0.5rem / 8px   -> Widescreen: 1rem / 16px
+--overlay/dark     rgba(0, 0, 0, 0.5)
+--global/white     #FFFFFF
+--text/default     #000000 (light) / #FFFFFF (dark)
+--text/link        #FF5247 (light) / #FFFFFF (dark)
+--page/background  #FFFFFF (light) / #01232D (dark)
+```
+
+## Resources
+
+- [W3C: Images Tutorial](https://www.w3.org/WAI/tutorials/images/)
+- [MDN: Responsive Images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
+- [ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/)
+- [WebAIM](https://webaim.org/)
+- [WCAG 2.1 Quick Reference](https://www.w3.org/WAI/WCAG21/quickref/)
+- [MDN Web Docs](https://developer.mozilla.org/)
+- [Nielsen Norman Group: Hero Images](https://www.nngroup.com/articles/hero-image/)
