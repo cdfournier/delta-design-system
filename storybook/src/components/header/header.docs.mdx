@@ -1,0 +1,194 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import * as ComponentStories from './header.stories';
+
+<Meta of={ComponentStories} title="Organisms/Header/Documentation" />
+
+# Header
+
+The Header provides primary site navigation, branding, and utility controls at the top of every page. It adapts between a compact mobile layout with a collapsible menu and a full widescreen layout with inline navigation and a color mode toggle.
+
+## Anatomy
+
+The Header has two layouts depending on viewport size. Both share a top bar with backdrop blur, a logo, and the color mode toggle, though the toggle moves to the mobile dropdown when open.
+
+- **Top bar:** Container with backdrop blur effect, present in all variants.
+- **Logo:** Brand mark, links to home.
+- **Navigation (widescreen):** Horizontal list of text links displayed inline.
+- **Color mode toggle (widescreen):** Sun icon, switch, and moon icon, visible inline in the top bar.
+- **Menu button (mobile):** Hamburger icon when closed, close (X) icon when open.
+- **Navigation dropdown (mobile open):** Vertical list of links with trailing arrow icons, plus the color mode toggle.
+
+<Canvas of={ComponentStories.AnatomyFigure} />
+
+## Variants
+
+The Header has two layout variants determined by viewport size, and a state variant for the mobile menu:
+
+- **Widescreen:** Single horizontal top bar with all navigation visible inline; links have no trailing icons; color mode toggle sits at the right of the navigation row; no menu toggle button.
+- **Mobile, closed:** Compact top bar showing only the logo and hamburger menu button; navigation and color mode toggle are hidden.
+- **Mobile, open:** Top bar remains visible with the logo and a close button; navigation dropdown appears below with links and the color mode toggle at the bottom.
+
+<Canvas of={ComponentStories.MobileVariantsFigure} />
+
+## States
+
+The Header's primary interactive state is the mobile menu open/closed toggle. Individual links follow the standard Link states.
+
+- **Default (closed):** Mobile shows logo + hamburger only.
+- **Open (mobile only):** Dropdown appears; hamburger changes to close (X).
+- **Focus:** Logo, links, menu toggle, and color mode toggle should have visible focus.
+
+## Typography
+
+### Mobile
+
+<table>
+  <thead>
+    <tr><th>Element</th><th>Token</th><th>Mobile/Tablet</th><th>Widescreen</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Navigation links font-size</td><td><code>small/font-size</code></td><td>0.75rem / 12px</td><td>—</td></tr>
+    <tr><td>Navigation links line-height</td><td><code>small/line-height</code></td><td>1.25rem / 20px</td><td>—</td></tr>
+  </tbody>
+</table>
+
+### Widescreen
+
+<table>
+  <thead>
+    <tr><th>Element</th><th>Token</th><th>Mobile/Tablet</th><th>Widescreen</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Navigation links font-size</td><td><code>p/font-size</code></td><td>—</td><td>1.5rem / 24px</td></tr>
+    <tr><td>Navigation links line-height</td><td><code>p/line-height</code></td><td>—</td><td>2.25rem / 36px</td></tr>
+  </tbody>
+</table>
+
+## Spacing
+
+### Shared
+
+<table>
+  <thead>
+    <tr><th>Property</th><th>Token</th><th>Mobile/Tablet</th><th>Widescreen</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Top bar padding</td><td><code>md</code></td><td>0.5rem / 8px</td><td>1rem / 16px</td></tr>
+    <tr><td>Link item padding-top, padding-bottom</td><td><code>xs</code></td><td>0.125rem / 2px</td><td>0.25rem / 4px</td></tr>
+    <tr><td>Color mode toggle gap</td><td><code>md</code></td><td>0.5rem / 8px</td><td>1rem / 16px</td></tr>
+  </tbody>
+</table>
+
+### Mobile
+
+<table>
+  <thead>
+    <tr><th>Property</th><th>Token</th><th>Mobile/Tablet</th><th>Widescreen</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Navigation dropdown padding</td><td><code>md</code></td><td>0.5rem / 8px</td><td>—</td></tr>
+    <tr><td>Top bar to dropdown gap</td><td><code>xl</code></td><td>1rem / 16px</td><td>—</td></tr>
+    <tr><td>Navigation links gap</td><td><code>md</code></td><td>0.5rem / 8px</td><td>—</td></tr>
+    <tr><td>Dropdown internal gap</td><td><code>md</code></td><td>0.5rem / 8px</td><td>—</td></tr>
+    <tr><td>Color mode toggle padding-top</td><td><code>lg</code></td><td>0.75rem / 12px</td><td>—</td></tr>
+  </tbody>
+</table>
+
+### Widescreen
+
+<table>
+  <thead>
+    <tr><th>Property</th><th>Token</th><th>Mobile/Tablet</th><th>Widescreen</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Navigation padding-left</td><td><code>xxxl</code></td><td>—</td><td>3rem / 48px</td></tr>
+    <tr><td>Navigation links gap</td><td><code>xl</code></td><td>—</td><td>2rem / 32px</td></tr>
+  </tbody>
+</table>
+
+## Border-radius
+
+<table>
+  <thead>
+    <tr><th>Element</th><th>Token</th><th>Mobile/Tablet</th><th>Widescreen</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Top bar</td><td><code>border-radius/md</code></td><td>0.5rem / 8px</td><td>1rem / 16px</td></tr>
+    <tr><td>Navigation dropdown (mobile)</td><td><code>border-radius/md</code></td><td>0.5rem / 8px</td><td>1rem / 16px</td></tr>
+  </tbody>
+</table>
+
+## Colors
+
+<table>
+  <thead>
+    <tr><th>Element</th><th>Token</th><th>Light mode</th><th>Dark mode</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Top bar background</td><td><code>section/background</code></td><td>#EEEEEE</td><td>#003442</td></tr>
+    <tr><td>Dropdown background (mobile)</td><td><code>section/background</code></td><td>#EEEEEE</td><td>#003442</td></tr>
+    <tr><td>Navigation links</td><td><code>text/link</code></td><td>#FF5247</td><td>#FFFFFF</td></tr>
+  </tbody>
+</table>
+
+## Accessibility
+
+### Keyboard navigation
+
+- **Tab:** Moves focus through logo link, navigation links, menu toggle, and color mode toggle.
+- **Shift + Tab:** Reverses focus order.
+- **Enter / Space:** Activates links and buttons, toggles mobile menu and color mode switch.
+- **Escape:** Closes the mobile menu when open and returns focus to the menu button.
+
+### Screen readers
+
+Use `<header>` and wrap navigation in `<nav aria-label="Primary navigation">`. Use semantic `<ul>/<li>` structure for links. The menu toggle should always be a `<button>`.
+
+### ARIA attributes
+
+- `aria-label="Primary navigation"` on nav.
+- `aria-label="Open menu"` / `aria-label="Close menu"` on menu toggle.
+- `aria-expanded` on menu toggle.
+- `aria-label="Toggle dark mode"` on the switch input.
+- `aria-label="Home"` on logo link.
+
+## Usage
+
+### When to use
+
+- Provide primary site navigation at the top of every page.
+- Display brand identity consistently.
+- Give quick access to top-level destinations.
+- Include a persistent utility control such as color mode toggle.
+
+### When not to use
+
+- For secondary/contextual navigation.
+- In focused modal or single-task flows where primary nav distracts.
+- In embedded/iframe contexts where parent app already provides navigation.
+
+### Content guidelines
+
+- **Limit links:** 5–7 primary links maximum.
+- **Use concise labels:** 1–2 words.
+- **Prioritize by importance:** Most important first.
+- **Maintain consistency:** Keep nav labels/order consistent across pages.
+
+### Placement
+
+The Header is always positioned at the top of the viewport and can be sticky or fixed.
+
+### Best practices
+
+<Story of={ComponentStories.BestPracticesFigure} />
+
+## Resources
+
+- [ARIA: Disclosure Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/)
+- [ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/)
+- [WebAIM](https://webaim.org/)
+- [WCAG 2.1 Quick Reference](https://www.w3.org/WAI/WCAG21/quickref/)
+- [MDN: `<header>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header)
+- [MDN Web Docs](https://developer.mozilla.org/en-US/)
+- [Nielsen Norman Group: Hamburger Menus](https://www.nngroup.com/articles/hamburger-menus/)
+- [MDN: backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter)
