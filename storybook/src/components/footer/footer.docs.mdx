@@ -1,0 +1,244 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import * as ComponentStories from './footer.stories';
+
+<Meta of={ComponentStories} title="Organisms/Footer/Documentation" />
+
+# Footer
+
+The Footer provides site-wide navigation, branding, and utility controls at the bottom of every page. It adapts between stacked and horizontal layouts across breakpoints, and includes an integrated color mode toggle.
+
+## Anatomy
+
+The Footer consists of:
+
+- **Outer container:** Full-width wrapper that provides outer padding and establishes the page-level background.
+- **Group container:** Inner container with a distinct background color and border-radius that visually groups all footer content.
+- **Navigation section:** A labeled `<nav>` containing an unordered list of text links.
+- **Brand section:** Logo mark and site heading, center-aligned. On desktop, this is constrained to a maximum width and pushed to the right.
+- **Color mode toggle:** A Switch component flanked by sun and moon icons for toggling light and dark mode.
+- **Fine print:** Copyright or legal text, rendered below the group container in fine/small type.
+
+<Canvas of={ComponentStories.AnatomyFigure} />
+
+## Variants
+
+The Footer has two layout variants driven by the `data-size` attribute, corresponding to the mobile and widescreen breakpoints.
+
+- **Mobile:** A vertically stacked layout for narrow viewports. Navigation links are center-aligned. The brand section sits below the nav, also center-aligned. Use this layout below the tablet breakpoint (768px).
+- **Widescreen:** A horizontal layout for wider viewports. Navigation links align to the left; the brand section is pushed to the right with `margin-left: auto`. Use this layout at the tablet breakpoint and above (768px+).
+
+## States
+
+- **Default:** The footer renders with a light gray group container background, black text for the heading and fine print, and red link text.
+- **Hover:** Navigation links follow the standard link hover behavior.
+- **Focus:** All interactive elements, navigation links and the color mode toggle, display visible focus indicators.
+
+## Typography
+
+Navigation links use the `small` type token with bold weight. The heading uses the `h2` type token. Fine print uses the `fine` token. All text tokens scale responsively between mobile and widescreen breakpoints.
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Token</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Navigation links font-size</td><td><code>small/font-size</code></td><td>0.75rem / 12px</td><td>1.25rem / 20px</td></tr>
+    <tr><td>Navigation links line-height</td><td><code>small/line-height</code></td><td>1.25rem / 20px</td><td>1.875rem / 30px</td></tr>
+    <tr><td>Heading font-size</td><td><code>h2/font-size</code></td><td>2.375rem / 38px</td><td>3.75rem / 60px</td></tr>
+    <tr><td>Heading line-height</td><td><code>h2/line-height</code></td><td>2.625rem / 42px</td><td>4.625rem / 74px</td></tr>
+    <tr><td>Fine print font-size</td><td><code>fine/font-size</code></td><td>0.625rem / 10px</td><td>1rem / 16px</td></tr>
+    <tr><td>Fine print line-height</td><td><code>fine/line-height</code></td><td>1.125rem / 18px</td><td>1.5rem / 24px</td></tr>
+  </tbody>
+</table>
+
+## Spacing
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Token</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Outer container padding</td><td><code>xl</code></td><td>1rem / 16px</td><td>2rem / 32px</td></tr>
+    <tr><td>Group container padding</td><td><code>xl</code></td><td>1rem / 16px</td><td>2rem / 32px</td></tr>
+    <tr><td>Navigation section padding-top, padding-bottom</td><td><code>md</code></td><td>0.5rem / 8px</td><td>1rem / 16px</td></tr>
+    <tr><td>Navigation link list gap</td><td><code>md</code></td><td>0.5rem / 8px</td><td>1rem / 16px</td></tr>
+    <tr><td>Navigation link item padding-top, padding-bottom</td><td><code>xs</code></td><td>0.125rem / 2px</td><td>0.25rem / 4px</td></tr>
+    <tr><td>Brand mark padding-top</td><td><code>lg</code></td><td>0.75rem / 12px</td><td>1.5rem / 24px</td></tr>
+    <tr><td>Brand mark gap</td><td><code>md</code></td><td>0.5rem / 8px</td><td>0.5rem / 8px</td></tr>
+    <tr><td>Color mode toggle padding-top</td><td><code>lg</code></td><td>0.75rem / 12px</td><td>1.5rem / 24px</td></tr>
+    <tr><td>Color mode toggle gap</td><td><code>md</code></td><td>0.5rem / 8px</td><td>1rem / 16px</td></tr>
+  </tbody>
+</table>
+
+## Border-radius
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Token</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Group container</td><td><code>border-radius/lg</code></td><td>1rem / 16px</td><td>2rem / 32px</td></tr>
+  </tbody>
+</table>
+
+## Colors
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Token</th>
+      <th>Light mode</th>
+      <th>Dark mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Group container background</td><td><code>section/background</code></td><td>#EEEEEE (global/gray-light)</td><td>#003442 (brand/secondary)</td></tr>
+    <tr><td>Page background</td><td><code>page/background</code></td><td>#FFFFFF (global/white)</td><td>#01232D (brand/secondary-dark)</td></tr>
+    <tr><td>Navigation links</td><td><code>text/link</code></td><td>#FF5247 (brand/primary)</td><td>#FFFFFF (global/white)</td></tr>
+    <tr><td>Heading text</td><td><code>text/default</code></td><td>#000000 (global/black)</td><td>#FFFFFF (global/white)</td></tr>
+    <tr><td>Fine print text</td><td><code>text/default</code></td><td>#000000 (global/black)</td><td>#FFFFFF (global/white)</td></tr>
+    <tr><td>Switch thumb (active)</td><td><code>components/background/primary</code></td><td>#FF5247 (brand/primary)</td><td>#FFFFFF (global/white)</td></tr>
+  </tbody>
+</table>
+
+## Accessibility
+
+### Keyboard navigation
+
+The Footer must be fully keyboard accessible:
+
+- **Tab:** Moves focus through navigation links in order, then to the color mode toggle.
+- **Shift + Tab:** Moves focus in reverse order.
+- **Enter:** Activates the focused navigation link or toggle.
+- **Space:** Toggles the color mode switch when focused.
+
+### Screen readers
+
+Use semantic HTML to ensure correct landmark and list behavior. The `<footer>` element is announced as a contentinfo landmark. Navigation should be wrapped in `<nav aria-label="Footer navigation">` to distinguish it from other navigation landmarks on the page.
+
+### ARIA attributes
+
+- **`aria-label` on `<nav>`:** Always provide `aria-label="Footer navigation"`.
+- **`aria-label` on toggle:** The color mode switch input must have `aria-label="Toggle dark mode"` or equivalent.
+- **`aria-checked` on switch:** Use `aria-checked` to communicate current toggle state.
+- **`aria-hidden` on decorative icons:** Sun and moon icons are decorative and should use `aria-hidden="true"`.
+
+### Focus management
+
+All interactive elements must display a visible focus indicator. The footer does not trap focus or manage focus programmatically; standard tab order applies.
+
+### Color contrast
+
+Navigation link text (#FF5247) against the light mode group container (#EEEEEE) must meet 4.5:1 for normal text. In dark mode, white text on #003442 meets the 4.5:1 requirement.
+
+## Usage
+
+### When to use
+
+Use the Footer when you need to:
+
+- Provide secondary site-wide navigation at the bottom of a page.
+- Display copyright, legal notices, or persistent utility controls.
+- Offer a color mode toggle accessible from any page.
+- Reinforce brand identity with the logo and system name.
+
+### When not to use
+
+Do not use the Footer when:
+
+- You need primary navigation, use the Header component instead.
+- You are building an embedded or widget context where a full-page footer is inappropriate.
+- The page already has the Footer, there should only ever be one Footer per page.
+
+### Content guidelines
+
+- **Limit navigation links:** 4–6 links is ideal for scanability.
+- **Prioritize utility links:** About, Contact, Privacy, and Terms are common footer links.
+- **Keep fine print concise:** Copyright year and essential legal text only.
+- **Keep the copyright year current:** Update annually.
+- **Label the toggle:** Always include a visible or screen-reader-accessible label.
+
+### Placement
+
+The Footer sits at the very bottom of the page, outside the main content area. It spans the full viewport width.
+
+### Best practices
+
+<Story of={ComponentStories.BestPracticesFigure} />
+
+## Code reference
+
+### HTML
+
+```html
+<footer class="footer" data-size="mobile">
+  <div class="footer-group">
+    <div class="footer-row">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <ul class="footer-links">
+          <li class="footer-link-item"><a href="/about" class="footer-link">About</a></li>
+          <li class="footer-link-item"><a href="/contact" class="footer-link">Contact</a></li>
+          <li class="footer-link-item"><a href="/privacy" class="footer-link">Privacy</a></li>
+          <li class="footer-link-item"><a href="/terms" class="footer-link">Terms</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-brand">
+        <div class="footer-logo-mark">
+          <svg class="footer-logo" viewBox="0 0 40 40" aria-hidden="true"></svg>
+          <p class="footer-heading">The Delta Design System</p>
+        </div>
+
+        <div class="footer-toggle">
+          <svg class="footer-toggle-icon" viewBox="0 0 24 24" aria-hidden="true"></svg>
+          <label class="footer-toggle-label">
+            <input type="checkbox" class="footer-toggle-input" role="switch" aria-checked="false" aria-label="Toggle dark mode">
+            <span class="footer-toggle-text">Dark mode</span>
+          </label>
+          <svg class="footer-toggle-icon" viewBox="0 0 24 24" aria-hidden="true"></svg>
+        </div>
+      </div>
+    </div>
+
+    <p class="footer-fine">&copy; 2026 The Delta Design System. All rights reserved.</p>
+  </div>
+</footer>
+```
+
+### JavaScript
+
+```js
+const toggle = document.querySelector('.footer-toggle-input');
+
+toggle.addEventListener('change', () => {
+  const isDark = toggle.checked;
+  toggle.setAttribute('aria-checked', String(isDark));
+  document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+});
+```
+
+## Resources
+
+- [ARIA: Contentinfo Landmark](https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/examples/contentinfo.html)
+- [MDN: `<footer>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer)
+- [ARIA APG: Switch Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/switch/)
+- [WebAIM](https://webaim.org/)
+- [WCAG 2.1 Quick Reference](https://www.w3.org/WAI/WCAG21/quickref/)
+- [MDN Web Docs](https://developer.mozilla.org/)
+- [Nielsen Norman Group: Website Footers](https://www.nngroup.com/articles/footers/)
