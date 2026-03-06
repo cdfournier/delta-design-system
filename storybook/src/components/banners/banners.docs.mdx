@@ -1,0 +1,139 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import * as ComponentStories from './banners.stories';
+
+<Meta of={ComponentStories} title="Organisms/Banners/Documentation" />
+
+# Banners
+
+Banners are prominent content blocks for hero sections, promotional areas, and feature highlights. They combine imagery with structured text and optional actions.
+
+## Anatomy
+
+### Background image
+
+- **Container:** Outer wrapper with border-radius and overflow clipping.
+- **Background image:** Full-cover image layer filling the container.
+- **Overlay (optional):** Semi-transparent dark layer for text readability.
+- **Content:** Heading, body text, and optional CTA.
+
+<Canvas of={ComponentStories.AnatomyFigure} />
+
+### Split
+
+- **Container:** Flex wrapper managing orientation and direction.
+- **Image panel:** Dedicated visual panel.
+- **Content panel:** Structured text panel with optional CTA.
+
+<Canvas of={ComponentStories.AnatomySplitFigure} />
+
+## Variants
+
+### Background image
+
+- **Alignment:** Left, center, right.
+- **Overlay:** On/off.
+- **Size:** Mobile or desktop minimum height behavior.
+
+### Split
+
+- **Orientation:** Vertical or horizontal.
+- **Direction:** Default or reverse.
+
+## Typography
+
+Banners use the system heading/body text tokens:
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Token</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Heading</td><td><code>h3</code></td><td>1.75rem / 28px</td><td>3.125rem / 50px</td></tr>
+    <tr><td>Body</td><td><code>p</code></td><td>1rem / 16px</td><td>1.5rem / 24px</td></tr>
+    <tr><td>CTA link</td><td><code>small</code></td><td>0.75rem / 12px</td><td>1.25rem / 20px</td></tr>
+  </tbody>
+</table>
+
+## Spacing
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Token</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Content padding</td><td><code>xl</code></td><td>1rem / 16px</td><td>2rem / 32px</td></tr>
+    <tr><td>Content gap</td><td><code>md</code></td><td>0.5rem / 8px</td><td>1rem / 16px</td></tr>
+    <tr><td>Split gap</td><td><code>components/banner/split/gap</code></td><td>0.5rem / 8px</td><td>1rem / 16px</td></tr>
+  </tbody>
+</table>
+
+## Border-radius
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Token</th>
+      <th>Mobile/Tablet</th>
+      <th>Widescreen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Banner container</td><td><code>components/banner/border-radius</code></td><td>0.5rem / 8px</td><td>1rem / 16px</td></tr>
+    <tr><td>Split image panel</td><td><code>components/banner/border-radius</code></td><td>0.5rem / 8px</td><td>1rem / 16px</td></tr>
+  </tbody>
+</table>
+
+## Colors
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Token</th>
+      <th>Light mode</th>
+      <th>Dark mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Background image overlay</td><td><code>overlay/dark</code></td><td>#00000080</td><td>#00000080</td></tr>
+    <tr><td>Split panel background</td><td><code>section/background</code></td><td>#EEEEEE (global/gray-light)</td><td>#003442 (brand/secondary)</td></tr>
+    <tr><td>Split panel text</td><td><code>text/default</code></td><td>#000000 (global/black)</td><td>#FFFFFF (global/white)</td></tr>
+    <tr><td>Primary button</td><td><code>brand/primary + global/white</code></td><td>#FF5247 / #FFFFFF</td><td>#FF5247 / #FFFFFF</td></tr>
+  </tbody>
+</table>
+
+## Accessibility
+
+- Ensure foreground text remains readable against image backgrounds.
+- Use overlay when contrast is insufficient.
+- Keep heading structure meaningful for screen readers.
+- Do not encode critical meaning in imagery alone.
+
+## Usage
+
+### When to use
+
+- Hero and feature sections.
+- Campaign messaging.
+- High-priority promotional placements.
+
+### When not to use
+
+- Dense informational layouts.
+- Long-form text sections where readability is primary.
+
+### Best practices
+
+<Story of={ComponentStories.BestPracticesFigure} />
+
