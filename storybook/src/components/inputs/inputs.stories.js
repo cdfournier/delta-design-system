@@ -1,5 +1,302 @@
 function createInputsDocumentation() {
   return `
+    <style>
+      .delta-docs .input-specimen-stack {
+        display: grid;
+        gap: var(--components-input-demo-stack-gap);
+      }
+
+      .delta-docs .input-specimen-row {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--components-input-demo-gap);
+        flex-wrap: wrap;
+      }
+
+      .delta-docs .input-specimen-choice-group {
+        display: grid;
+        gap: var(--components-input-demo-stack-gap);
+      }
+
+      .delta-docs .input-specimen__label {
+        color: var(--text-default);
+        font-size: var(--small-font-size);
+        line-height: var(--small-line-height);
+        font-weight: var(--font-weight-bold);
+      }
+
+      .delta-docs .input-specimen {
+        display: flex;
+        align-items: center;
+        gap: var(--components-input-text-padding-gap);
+        width: 100%;
+        min-width: 0;
+        padding: var(--components-input-text-padding);
+        border: var(--docs-rule-width) solid var(--surface-border);
+        border-radius: var(--components-input-text-border-radius);
+        background: var(--page-background);
+        color: var(--text-default);
+        font-family: var(--font-family-body);
+        font-size: var(--components-input-text-font-size);
+        line-height: var(--components-input-text-line-height);
+      }
+
+      .delta-docs .input-specimen__value {
+        flex: 1 1 auto;
+        min-width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .delta-docs .input-specimen__field,
+      .delta-docs .input-specimen__select {
+        flex: 1 1 auto;
+        min-width: 0;
+        border: 0;
+        padding: 0;
+        background: transparent;
+        color: inherit;
+        font: inherit;
+        line-height: inherit;
+        outline: 0;
+      }
+
+      .delta-docs .input-specimen__field::placeholder {
+        color: var(--components-input-placeholder);
+        opacity: 1;
+      }
+
+      .delta-docs .input-specimen__field:disabled,
+      .delta-docs .input-specimen__field[readonly] {
+        background: transparent;
+        color: inherit;
+      }
+
+      .delta-docs .input-specimen__select {
+        appearance: none;
+        -webkit-appearance: none;
+        cursor: pointer;
+      }
+
+      .delta-docs .input-specimen__value--placeholder {
+        color: var(--components-input-placeholder);
+      }
+
+      .delta-docs .input-specimen__value--disabled {
+        color: var(--status-disabled);
+      }
+
+      .delta-docs .input-specimen__value--valid {
+        color: var(--status-valid);
+      }
+
+      .delta-docs .input-specimen__value--invalid {
+        color: var(--status-invalid);
+      }
+
+      .delta-docs .input-specimen__value--read-only {
+        color: var(--status-read-only);
+      }
+
+      .delta-docs .input-specimen--disabled {
+        border-color: var(--status-disabled);
+        pointer-events: none;
+      }
+
+      .delta-docs .input-specimen--valid {
+        border-color: var(--status-valid);
+      }
+
+      .delta-docs .input-specimen--invalid {
+        border-color: var(--status-invalid);
+      }
+
+      .delta-docs .input-specimen--read-only {
+        border-color: var(--status-read-only);
+      }
+
+      .delta-docs .input-specimen__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--components-input-icon-size);
+        height: var(--components-input-icon-size);
+        flex: 0 0 auto;
+        color: var(--brand-primary);
+      }
+
+      .delta-docs .input-specimen__icon svg {
+        width: 100%;
+        height: 100%;
+        stroke: currentColor;
+        stroke-width: var(--components-input-icon-stroke-width);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+        vector-effect: non-scaling-stroke;
+      }
+
+      .delta-docs .input-specimen__toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--components-input-icon-size);
+        height: var(--components-input-icon-size);
+        padding: 0;
+        border: 0;
+        background: transparent;
+        color: var(--brand-primary);
+        cursor: pointer;
+        flex: 0 0 auto;
+      }
+
+      .delta-docs .input-specimen__toggle svg {
+        width: 100%;
+        height: 100%;
+        stroke: currentColor;
+        stroke-width: var(--components-input-icon-stroke-width);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+        vector-effect: non-scaling-stroke;
+      }
+
+      .delta-docs .input-specimen__icon--chevron {
+        color: var(--text-default);
+      }
+
+      .delta-docs .input-specimen__message {
+        max-width: var(--components-input-demo-message-max-width);
+        color: var(--text-default);
+        font-size: var(--fine-font-size);
+        line-height: var(--fine-line-height);
+      }
+
+      .delta-docs .input-choice {
+        display: inline-flex;
+        align-items: flex-start;
+        gap: var(--components-input-checkbox-padding-gap);
+        color: var(--components-option-label);
+        font-family: var(--font-family-body);
+        font-size: var(--components-input-checkbox-font-size);
+        line-height: var(--components-input-checkbox-line-height);
+      }
+
+      .delta-docs .input-choice__label {
+        min-width: 0;
+      }
+
+      .delta-docs .input-choice__control {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--components-input-checkbox-control-size);
+        height: var(--components-input-checkbox-control-size);
+        flex: 0 0 auto;
+      }
+
+      .delta-docs .input-choice__control-wrap {
+        position: relative;
+        width: var(--components-input-checkbox-control-size);
+        height: var(--components-input-checkbox-control-size);
+        flex: 0 0 auto;
+      }
+
+      .delta-docs .input-choice__native {
+        position: absolute;
+        inset: 0;
+        margin: 0;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      .delta-docs .input-choice__control-wrap--switch {
+        width: var(--components-input-switch-width);
+        height: var(--components-input-switch-height);
+      }
+
+      .delta-docs .input-choice__control--checkbox {
+        border: var(--docs-rule-width) solid var(--brand-primary);
+        border-radius: var(--components-input-checkbox-border-radius);
+        padding: var(--components-input-checkbox-padding);
+        background: var(--page-background);
+      }
+
+      .delta-docs .input-choice__check {
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        color: var(--global-white);
+      }
+
+      .delta-docs .input-choice__check svg {
+        width: 100%;
+        height: 100%;
+        stroke: currentColor;
+        stroke-width: 1;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+        vector-effect: non-scaling-stroke;
+      }
+
+      .delta-docs .input-choice__control--radio {
+        border: var(--docs-rule-width) solid var(--brand-primary);
+        border-radius: var(--border-radius-round);
+        padding: var(--components-input-radio-before-padding);
+        background: var(--page-background);
+      }
+
+      .delta-docs .input-choice__control--radio::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: var(--border-radius-round);
+        background: transparent;
+      }
+
+      .delta-docs .input-choice__control--switch {
+        justify-content: flex-start;
+        width: var(--components-input-switch-width);
+        height: var(--components-input-switch-height);
+        padding: var(--components-input-switch-padding);
+        border: var(--docs-rule-width) solid var(--brand-primary);
+        border-radius: var(--border-radius-round);
+        background: transparent;
+      }
+
+      .delta-docs .input-choice__control--switch::after {
+        content: '';
+        display: block;
+        width: var(--components-input-switch-thumb-size);
+        height: var(--components-input-switch-thumb-size);
+        border-radius: var(--border-radius-round);
+        background: var(--brand-primary);
+      }
+
+      .delta-docs .input-choice__native--checkbox:checked + .input-choice__control--checkbox {
+        background: var(--brand-primary);
+      }
+
+      .delta-docs .input-choice__native--checkbox:checked + .input-choice__control--checkbox .input-choice__check {
+        opacity: 1;
+      }
+
+      .delta-docs .input-choice__native--radio:checked + .input-choice__control--radio::after {
+        background: var(--brand-primary);
+      }
+
+      .delta-docs .input-choice__native--switch:checked + .input-choice__control--switch {
+        background: var(--brand-primary);
+      }
+
+      .delta-docs .input-choice__native--switch:checked + .input-choice__control--switch::after {
+        background: var(--global-white);
+        transform: translateX(calc(var(--components-input-switch-width) - (var(--components-input-switch-padding) * 2) - var(--components-input-switch-thumb-size)));
+      }
+    </style>
     <article class="delta-docs">
       <h1>Inputs</h1>
       <p>Form inputs allow users to enter information, make selections, and provide data. The Delta Design System provides a comprehensive set of input components that are accessible, consistent, and easy to implement.</p>
@@ -17,9 +314,14 @@ function createInputsDocumentation() {
         <li><strong>Icon (optional):</strong> Visual indicator for input type, state, or action</li>
       </ul>
 
-      <div class="delta-docs__placeholder" aria-label="Inputs anatomy placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 Placeholder</span>
-        <p>Live anatomy specimen will be added here.</p>
+      <div class="delta-docs__demo" aria-label="Inputs anatomy specimen">
+        <div class="input-specimen-stack">
+          <span class="input-specimen__label">Email address</span>
+          <div class="input-specimen">
+            <input class="input-specimen__field" type="email" placeholder="Enter your email" />
+          </div>
+          <p class="input-specimen__message">We'll never share your email with anyone else.</p>
+        </div>
       </div>
 
       <hr />
@@ -30,57 +332,110 @@ function createInputsDocumentation() {
       <h3>Text input</h3>
       <p>Single-line text fields for entering short text, email addresses, phone numbers, URLs, and numerical data. Text inputs are the most common input type.</p>
 
-      <div class="delta-docs__placeholder" aria-label="Text input placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 Placeholder</span>
-        <p>Live text input specimen will be added here.</p>
+      <div class="delta-docs__demo" aria-label="Text input specimen">
+        <div class="input-specimen">
+          <input class="input-specimen__field" type="text" value="Value" />
+        </div>
       </div>
 
       <h3>Select</h3>
       <p>Dropdown menus that allow users to choose a single option from a predefined list. Use selects when there are 5 or more options.</p>
 
-      <div class="delta-docs__placeholder" aria-label="Select placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 Placeholder</span>
-        <p>Live select specimen will be added here.</p>
+      <div class="delta-docs__demo" aria-label="Select specimen">
+        <div class="input-specimen">
+          <select class="input-specimen__select">
+            <option selected>Select</option>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+          </select>
+          <span class="input-specimen__icon input-specimen__icon--chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+              <path d="M6 9L12 15L18 9"></path>
+            </svg>
+          </span>
+        </div>
       </div>
 
       <h3>Checkbox</h3>
       <p>Square controls for selecting multiple options from a list or toggling a single option on or off.</p>
 
-      <div class="delta-docs__placeholder" aria-label="Checkbox placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 Placeholder</span>
-        <p>Live checkbox specimen will be added here.</p>
+      <div class="delta-docs__demo" aria-label="Checkbox specimen">
+        <label class="input-choice">
+          <span class="input-choice__control-wrap">
+            <input class="input-choice__native input-choice__native--checkbox" type="checkbox" />
+            <span class="input-choice__control input-choice__control--checkbox" aria-hidden="true">
+              <span class="input-choice__check">
+                <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                  <path d="M5 12l5 5L20 7"></path>
+                </svg>
+              </span>
+            </span>
+          </span>
+          <span class="input-choice__label">Value</span>
+        </label>
       </div>
 
       <h3>Radio</h3>
       <p>Circular controls for selecting exactly one option from a group. Radio buttons should always appear in groups of two or more.</p>
 
-      <div class="delta-docs__placeholder" aria-label="Radio placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 Placeholder</span>
-        <p>Live radio specimen will be added here.</p>
+      <div class="delta-docs__demo" aria-label="Radio specimen">
+        <div class="input-specimen-choice-group">
+          <label class="input-choice">
+            <span class="input-choice__control-wrap">
+              <input class="input-choice__native input-choice__native--radio" type="radio" name="input-specimen-radio" />
+              <span class="input-choice__control input-choice__control--radio" aria-hidden="true"></span>
+            </span>
+            <span class="input-choice__label">Value</span>
+          </label>
+          <label class="input-choice">
+            <span class="input-choice__control-wrap">
+              <input class="input-choice__native input-choice__native--radio" type="radio" name="input-specimen-radio" />
+              <span class="input-choice__control input-choice__control--radio" aria-hidden="true"></span>
+            </span>
+            <span class="input-choice__label">Value</span>
+          </label>
+        </div>
       </div>
 
       <h3>Switch</h3>
       <p>Toggle controls for turning a setting on or off. Switches provide immediate feedback and are best for settings that take effect instantly.</p>
 
-      <div class="delta-docs__placeholder" aria-label="Switch placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 Placeholder</span>
-        <p>Live switch specimen will be added here.</p>
+      <div class="delta-docs__demo" aria-label="Switch specimen">
+        <label class="input-choice">
+          <span class="input-choice__control-wrap input-choice__control-wrap--switch">
+            <input class="input-choice__native input-choice__native--switch" type="checkbox" role="switch" />
+            <span class="input-choice__control input-choice__control--switch" aria-hidden="true"></span>
+          </span>
+          <span class="input-choice__label">Value</span>
+        </label>
       </div>
 
       <h3>Password</h3>
       <p>Secure text fields that obscure entered characters with bullets or asterisks. Typically include a show/hide toggle for visibility control.</p>
 
-      <div class="delta-docs__placeholder" aria-label="Password placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 Placeholder</span>
-        <p>Live password specimen will be added here.</p>
+      <div class="delta-docs__demo" aria-label="Password specimen">
+        <div class="input-specimen">
+          <input class="input-specimen__field" id="input-specimen-password" type="password" value="PasswordPassword" />
+          <button
+            class="input-specimen__toggle"
+            type="button"
+            aria-label="Show password"
+            onclick="(function(button){var field=button.parentElement.querySelector('.input-specimen__field');var nextType=field.type==='password'?'text':'password';field.type=nextType;button.setAttribute('aria-label', nextType==='password' ? 'Show password' : 'Hide password');})(this)"
+          >
+            <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+              <path d="M2 12C4.4 7.8 7.73 5.7 12 5.7C16.27 5.7 19.6 7.8 22 12C19.6 16.2 16.27 18.3 12 18.3C7.73 18.3 4.4 16.2 2 12Z"></path>
+              <circle cx="12" cy="12" r="3.2"></circle>
+            </svg>
+          </button>
+        </div>
       </div>
 
       <h3>Messages</h3>
       <p>Contextual text that provides helper information, validation feedback, or error messages. Messages appear below input fields and use color coding to indicate state.</p>
 
-      <div class="delta-docs__placeholder" aria-label="Messages placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 Placeholder</span>
-        <p>Live message specimens will be added here.</p>
+      <div class="delta-docs__demo" aria-label="Message specimen">
+        <p class="input-specimen__message">Helper text provides additional guidance.</p>
       </div>
 
       <hr />
@@ -91,9 +446,10 @@ function createInputsDocumentation() {
       <h3>Default</h3>
       <p>The resting state of an input before any user interaction. Borders use <code>global/gray-medium</code> (#CCCCCC).</p>
 
-      <div class="delta-docs__placeholder" aria-label="Default input state placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 Placeholder</span>
-        <p>Live default-state specimen will be added here.</p>
+      <div class="delta-docs__demo" aria-label="Default input state specimen">
+        <div class="input-specimen">
+          <input class="input-specimen__field" type="text" placeholder="Placeholder" />
+        </div>
       </div>
 
       <h3>Hover</h3>
@@ -105,33 +461,37 @@ function createInputsDocumentation() {
       <h3>Disabled</h3>
       <p>Indicates the input is not currently interactive. Uses <code>status/disabled</code> (#808080) for both border and text color to signal unavailability.</p>
 
-      <div class="delta-docs__placeholder" aria-label="Disabled input state placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 Placeholder</span>
-        <p>Live disabled-state specimen will be added here.</p>
+      <div class="delta-docs__demo" aria-label="Disabled input state specimen">
+        <div class="input-specimen input-specimen--disabled">
+          <input class="input-specimen__field" type="text" value="Disabled" disabled />
+        </div>
       </div>
 
       <h3>Read-only</h3>
       <p>Displays data that cannot be edited but can be read and copied. Uses <code>status/read-only</code> (#333333) for the border to differentiate from disabled.</p>
 
-      <div class="delta-docs__placeholder" aria-label="Read-only input state placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 Placeholder</span>
-        <p>Live read-only-state specimen will be added here.</p>
+      <div class="delta-docs__demo" aria-label="Read-only input state specimen">
+        <div class="input-specimen input-specimen--read-only">
+          <input class="input-specimen__field input-specimen__value--read-only" type="text" value="Read-only" readonly />
+        </div>
       </div>
 
       <h3>Valid</h3>
       <p>Indicates successful validation. Uses <code>status/valid</code> (#007000) for both the border and validation message to confirm correct input.</p>
 
-      <div class="delta-docs__placeholder" aria-label="Valid input state placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 Placeholder</span>
-        <p>Live valid-state specimen will be added here.</p>
+      <div class="delta-docs__demo" aria-label="Valid input state specimen">
+        <div class="input-specimen input-specimen--valid">
+          <input class="input-specimen__field input-specimen__value--valid" type="text" value="Valid" />
+        </div>
       </div>
 
       <h3>Invalid</h3>
       <p>Indicates validation failure. Uses <code>status/invalid</code> (#C00C00) for both the border and error message to highlight the issue.</p>
 
-      <div class="delta-docs__placeholder" aria-label="Invalid input state placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 Placeholder</span>
-        <p>Live invalid-state specimen will be added here.</p>
+      <div class="delta-docs__demo" aria-label="Invalid input state specimen">
+        <div class="input-specimen input-specimen--invalid">
+          <input class="input-specimen__field input-specimen__value--invalid" type="text" value="Invalid" />
+        </div>
       </div>
 
       <hr />

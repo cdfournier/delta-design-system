@@ -176,6 +176,31 @@
   --components-blockquote-demo-left-width: 43.875rem;
   --components-blockquote-demo-center-width: 33.8125rem;
   --components-blockquote-demo-right-width: 43.4375rem;
+  --components-input-text-font-size: 1rem;
+  --components-input-text-line-height: 1.25rem;
+  --components-input-checkbox-font-size: 1rem;
+  --components-input-checkbox-line-height: 1.25rem;
+  --components-input-text-padding: 0.5rem;
+  --components-input-text-padding-gap: 0.25rem;
+  --components-input-text-border-radius: 0.25rem;
+  --components-input-checkbox-padding: 0.125rem;
+  --components-input-checkbox-padding-gap: 0.5rem;
+  --components-input-checkbox-control-size: 1.25rem;
+  --components-input-checkbox-border-radius: 0.25rem;
+  --components-input-radio-before-padding: 0.25rem;
+  --components-input-switch-padding: 0.25rem;
+  --components-input-switch-padding-gap: 0.5rem;
+  --components-input-switch-width: 2.25rem;
+  --components-input-switch-height: 1.25rem;
+  --components-input-switch-thumb-size: calc(var(--components-input-switch-height) - (var(--components-input-switch-padding) * 2));
+  --components-input-icon-size: 1rem;
+  --components-input-icon-stroke-width: 0.09375rem;
+  --components-input-placeholder: var(--neutral-gray-dark);
+  --components-option-label: var(--text-default);
+  --components-option-hover: var(--neutral-gray-light);
+  --components-input-demo-gap: var(--spacing-md);
+  --components-input-demo-stack-gap: var(--spacing-sm);
+  --components-input-demo-message-max-width: 39rem;
 
   --docs-font-size-body: 1rem;
   --docs-line-height-body: 1.75;
@@ -271,6 +296,15 @@
     --components-blockquote-quote-line-height: 2.25rem;
     --components-blockquote-cite-font-size: 1.25rem;
     --components-blockquote-cite-line-height: 1.875rem;
+    --components-input-text-font-size: 1.5rem;
+    --components-input-text-line-height: 2rem;
+    --components-input-checkbox-font-size: 1.5rem;
+    --components-input-checkbox-line-height: 1.75rem;
+    --components-input-text-padding: 0.75rem;
+    --components-input-radio-before-padding: 0.375rem;
+    --components-input-switch-width: 3.5rem;
+    --components-input-switch-height: 2rem;
+    --components-input-icon-size: 1.5rem;
 
     --h1-title-font-size: 5rem;
     --h1-title-line-height: 6.25rem;
@@ -303,6 +337,7 @@
   --text-link: var(--global-white);
   --text-hover: var(--brand-primary);
   --text-muted: var(--neutral-gray-medium);
+  --components-option-label: var(--global-white);
   --page-background: var(--brand-secondary-dark);
   --section-background: var(--brand-secondary);
   --surface-subtle: var(--brand-secondary);
