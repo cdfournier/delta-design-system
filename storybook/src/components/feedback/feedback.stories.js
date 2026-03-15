@@ -1,5 +1,120 @@
 function createFeedbackDocumentation() {
   return `
+    <style>
+      .delta-docs .feedback-specimen-shell {
+        border-radius: var(--components-feedback-shell-radius);
+        background: var(--components-feedback-shell-background);
+      }
+
+      .delta-docs .feedback-specimen {
+        width: min(100%, var(--components-feedback-max-width));
+      }
+
+      .delta-docs .feedback-specimen--progress {
+        width: min(100%, var(--components-feedback-progress-width));
+      }
+
+      .delta-docs .feedback-specimen--meter {
+        width: min(100%, var(--components-feedback-meter-width));
+      }
+
+      .delta-docs .feedback-specimen--variant {
+        width: min(100%, var(--components-feedback-variant-width));
+      }
+
+      .delta-docs .feedback-specimen--value-display {
+        width: min(100%, var(--components-feedback-value-display-width));
+      }
+
+      .delta-docs .feedback-specimen-stack {
+        display: grid;
+        gap: var(--components-feedback-stack-gap);
+      }
+
+      .delta-docs .feedback-specimen-grid {
+        display: grid;
+        gap: var(--components-feedback-demo-gap);
+      }
+
+      .delta-docs .feedback-specimen__label {
+        margin: 0;
+        padding-bottom: var(--components-feedback-label-padding-bottom);
+        color: var(--text-default);
+        font-family: var(--font-family-body);
+        font-size: var(--small-font-size);
+        line-height: var(--small-line-height);
+        font-weight: var(--font-weight-bold);
+      }
+
+      .delta-docs .feedback-specimen__meter-wrap {
+        padding: var(--components-feedback-meter-padding);
+        border-radius: var(--border-radius-sm);
+        background: var(--neutral-gray-medium);
+      }
+
+      .delta-docs .feedback-specimen__bar {
+        width: 100%;
+        height: var(--components-feedback-height);
+        overflow: hidden;
+        border-radius: var(--border-radius-sm);
+        background: var(--neutral-gray-medium);
+      }
+
+      .delta-docs .feedback-specimen__bar--meter {
+        background: transparent;
+      }
+
+      .delta-docs .feedback-specimen__fill {
+        display: block;
+        height: 100%;
+        border-radius: var(--border-radius-sm);
+      }
+
+      .delta-docs .feedback-specimen__fill--progress {
+        width: var(--components-feedback-progress-value-width);
+        background: var(--brand-primary);
+      }
+
+      .delta-docs .feedback-specimen__fill--optimum {
+        width: var(--components-feedback-meter-optimum-width);
+        background: var(--status-valid);
+      }
+
+      .delta-docs .feedback-specimen__fill--low {
+        width: var(--components-feedback-meter-low-width);
+        background: var(--status-invalid);
+      }
+
+      .delta-docs .feedback-specimen__fill--high {
+        width: var(--components-feedback-meter-high-width);
+        background: var(--status-invalid);
+      }
+
+      .delta-docs .feedback-specimen__text-row {
+        display: flex;
+        justify-content: space-between;
+        padding-top: var(--components-feedback-text-padding-top);
+        color: var(--text-default);
+        font-family: var(--font-family-body);
+        font-size: var(--fine-font-size);
+        line-height: var(--fine-line-height);
+        font-weight: var(--font-weight-bold);
+      }
+
+      .delta-docs .feedback-specimen__text-row--right {
+        justify-content: flex-end;
+      }
+
+      @media (min-width: 48rem) {
+        .delta-docs .feedback-specimen-grid--three {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .delta-docs .feedback-specimen-grid--two {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+    </style>
     <article class="delta-docs">
       <h1>Feedback</h1>
       <p>Feedback components provide visual indicators of progress and value states. Progress shows task completion or loading states, while Meter displays values within a known range with semantic color coding.</p>
@@ -18,9 +133,16 @@ function createFeedbackDocumentation() {
         <li><strong>Value text (optional):</strong> Numeric or percentage display</li>
       </ul>
 
-      <div class="delta-docs__placeholder" aria-label="Feedback progress anatomy specimen placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 placeholder</span>
-        <p>Live Progress anatomy specimen goes here.</p>
+      <div class="delta-docs__demo feedback-specimen-shell" aria-label="Feedback progress anatomy specimen">
+        <div class="feedback-specimen feedback-specimen--progress">
+          <p class="feedback-specimen__label">Label</p>
+          <div class="feedback-specimen__bar">
+            <span class="feedback-specimen__fill feedback-specimen__fill--progress"></span>
+          </div>
+          <div class="feedback-specimen__text-row feedback-specimen__text-row--right">
+            <span>Value</span>
+          </div>
+        </div>
       </div>
 
       <h3>Meter</h3>
@@ -33,9 +155,19 @@ function createFeedbackDocumentation() {
         <li><strong>Min/Max labels (optional):</strong> Range indicators</li>
       </ul>
 
-      <div class="delta-docs__placeholder" aria-label="Feedback meter anatomy specimen placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 placeholder</span>
-        <p>Live Meter anatomy specimen goes here.</p>
+      <div class="delta-docs__demo feedback-specimen-shell" aria-label="Feedback meter anatomy specimen">
+        <div class="feedback-specimen feedback-specimen--meter">
+          <p class="feedback-specimen__label">Label</p>
+          <div class="feedback-specimen__meter-wrap">
+            <div class="feedback-specimen__bar feedback-specimen__bar--meter">
+              <span class="feedback-specimen__fill feedback-specimen__fill--optimum"></span>
+            </div>
+          </div>
+          <div class="feedback-specimen__text-row">
+            <span>Min</span>
+            <span>Max</span>
+          </div>
+        </div>
       </div>
 
       <hr />
@@ -59,9 +191,33 @@ function createFeedbackDocumentation() {
         <li><strong>High:</strong> Red fill indicates value exceeds the acceptable threshold</li>
       </ul>
 
-      <div class="delta-docs__placeholder" aria-label="Feedback meter bounds variants placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 placeholder</span>
-        <p>Live Meter bounds variant specimens go here.</p>
+      <div class="delta-docs__demo feedback-specimen-shell" aria-label="Feedback meter bounds variants">
+        <div class="feedback-specimen-grid feedback-specimen-grid--three">
+          <div class="feedback-specimen feedback-specimen--variant">
+            <p class="feedback-specimen__label">Label</p>
+            <div class="feedback-specimen__meter-wrap">
+              <div class="feedback-specimen__bar feedback-specimen__bar--meter">
+                <span class="feedback-specimen__fill feedback-specimen__fill--optimum"></span>
+              </div>
+            </div>
+          </div>
+          <div class="feedback-specimen feedback-specimen--variant">
+            <p class="feedback-specimen__label">Label</p>
+            <div class="feedback-specimen__meter-wrap">
+              <div class="feedback-specimen__bar feedback-specimen__bar--meter">
+                <span class="feedback-specimen__fill feedback-specimen__fill--low"></span>
+              </div>
+            </div>
+          </div>
+          <div class="feedback-specimen feedback-specimen--variant">
+            <p class="feedback-specimen__label">Label</p>
+            <div class="feedback-specimen__meter-wrap">
+              <div class="feedback-specimen__bar feedback-specimen__bar--meter">
+                <span class="feedback-specimen__fill feedback-specimen__fill--high"></span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <p><strong>Value display variants</strong></p>
@@ -69,6 +225,31 @@ function createFeedbackDocumentation() {
         <li><strong>With min/max (default):</strong> Shows range labels below the bar</li>
         <li><strong>Without min/max:</strong> Displays only the visual meter, no range labels</li>
       </ul>
+
+      <div class="delta-docs__demo feedback-specimen-shell" aria-label="Feedback meter value display variants">
+        <div class="feedback-specimen-grid feedback-specimen-grid--two">
+          <div class="feedback-specimen feedback-specimen--value-display">
+            <p class="feedback-specimen__label">Label</p>
+            <div class="feedback-specimen__meter-wrap">
+              <div class="feedback-specimen__bar feedback-specimen__bar--meter">
+                <span class="feedback-specimen__fill feedback-specimen__fill--optimum"></span>
+              </div>
+            </div>
+            <div class="feedback-specimen__text-row">
+              <span>Min</span>
+              <span>Max</span>
+            </div>
+          </div>
+          <div class="feedback-specimen feedback-specimen--value-display">
+            <p class="feedback-specimen__label">Label</p>
+            <div class="feedback-specimen__meter-wrap">
+              <div class="feedback-specimen__bar feedback-specimen__bar--meter">
+                <span class="feedback-specimen__fill feedback-specimen__fill--optimum"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <hr />
 

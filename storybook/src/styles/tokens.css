@@ -250,6 +250,24 @@
   --components-details-icon-box-size: 1.75rem;
   --components-details-icon-size: 1.5rem;
   --components-details-icon-stroke-width: 1px;
+  --components-feedback-max-width: 33rem;
+  --components-feedback-height: 0.25rem;
+  --components-feedback-shell-background: var(--section-background);
+  --components-feedback-shell-radius: var(--border-radius-md);
+  --components-feedback-shell-padding: var(--spacing-xl);
+  --components-feedback-demo-gap: var(--spacing-xl);
+  --components-feedback-stack-gap: var(--spacing-xl);
+  --components-feedback-label-padding-bottom: var(--spacing-sm);
+  --components-feedback-text-padding-top: var(--spacing-sm);
+  --components-feedback-meter-padding: var(--spacing-xs);
+  --components-feedback-progress-width: 33rem;
+  --components-feedback-meter-width: 33rem;
+  --components-feedback-variant-width: 26.6667rem;
+  --components-feedback-value-display-width: 40.5rem;
+  --components-feedback-progress-value-width: 27.2727%;
+  --components-feedback-meter-optimum-width: 27.2727%;
+  --components-feedback-meter-low-width: 11.25%;
+  --components-feedback-meter-high-width: 58.5938%;
 
   --docs-font-size-body: 1rem;
   --docs-line-height-body: 1.75;
@@ -363,6 +381,7 @@
     --components-link-p-icon-size: 1.5rem;
     --components-link-small-icon-size: 1.25rem;
     --components-link-fine-icon-size: 1rem;
+    --components-feedback-height: 0.75rem;
 
     --h1-title-font-size: 5rem;
     --h1-title-line-height: 6.25rem;
