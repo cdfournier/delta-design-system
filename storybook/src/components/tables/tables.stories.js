@@ -1,5 +1,46 @@
 function createTablesDocumentation() {
   return `
+    <style>
+      .delta-docs .table-specimen-shell {
+        overflow-x: auto;
+      }
+
+      .delta-docs .table-specimen {
+        display: grid;
+        width: min(100%, var(--components-table-specimen-width));
+        min-width: var(--components-table-specimen-min-width);
+        background: var(--page-background);
+      }
+
+      .delta-docs .table-specimen__row {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: var(--spacing-md);
+        padding: var(--spacing-sm);
+        border-bottom: var(--docs-rule-width) solid var(--neutral-gray-medium);
+      }
+
+      .delta-docs .table-specimen__row--header {
+        align-items: center;
+        background: var(--section-background);
+      }
+
+      .delta-docs .table-specimen__cell {
+        display: flex;
+        align-items: center;
+        min-width: 0;
+        padding: var(--spacing-sm);
+        color: var(--text-default);
+        font-family: var(--font-family-body);
+        font-size: var(--components-table-font-size);
+        line-height: var(--components-table-line-height);
+        white-space: nowrap;
+      }
+
+      .delta-docs .table-specimen__cell--header {
+        font-weight: var(--font-weight-bold);
+      }
+    </style>
     <article class="delta-docs">
       <h1>Tables</h1>
       <p>Tables display structured data in rows and columns, making it easy to scan, compare, and understand relationships between data points. Tables are composed of a header row, body rows, and three cell variants.</p>
@@ -17,9 +58,23 @@ function createTablesDocumentation() {
         <li><strong>Table (assembled):</strong> The complete component combining thead and tbody within a scroll wrapper</li>
       </ul>
 
-      <div class="delta-docs__placeholder" aria-label="Tables anatomy specimen placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 placeholder</span>
-        <p>Live Tables anatomy specimen goes here.</p>
+      <div class="delta-docs__demo table-specimen-shell" aria-label="Tables anatomy specimen">
+        <div class="table-specimen">
+          <div class="table-specimen__row table-specimen__row--header">
+            <div class="table-specimen__cell table-specimen__cell--header">Table header</div>
+            <div class="table-specimen__cell table-specimen__cell--header">Table header</div>
+            <div class="table-specimen__cell table-specimen__cell--header">Table header</div>
+            <div class="table-specimen__cell table-specimen__cell--header">Table header</div>
+            <div class="table-specimen__cell table-specimen__cell--header">Table header</div>
+          </div>
+          <div class="table-specimen__row">
+            <div class="table-specimen__cell">Table cell</div>
+            <div class="table-specimen__cell">Table cell</div>
+            <div class="table-specimen__cell">Table cell</div>
+            <div class="table-specimen__cell">Table cell</div>
+            <div class="table-specimen__cell">Table cell</div>
+          </div>
+        </div>
       </div>
 
       <hr />

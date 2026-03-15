@@ -302,6 +302,10 @@
   --components-messages-background-toast: var(--status-read-only);
   --components-pagination-dot-size: 0.625rem;
   --components-pagination-dot-border-width: 0.125rem;
+  --components-table-font-size: 1rem;
+  --components-table-line-height: 1.25rem;
+  --components-table-specimen-width: 100%;
+  --components-table-specimen-min-width: 65rem;
 
   --docs-font-size-body: 1rem;
   --docs-line-height-body: 1.75;
@@ -419,6 +423,8 @@
     --components-messages-font-size: 1.5rem;
     --components-messages-line-height: 2.25rem;
     --components-messages-action-height: 3rem;
+    --components-table-font-size: 1.5rem;
+    --components-table-line-height: 1.875rem;
 
     --h1-title-font-size: 5rem;
     --h1-title-line-height: 6.25rem;
