@@ -117,6 +117,32 @@
   margin: 0;
 }
 
+.delta-docs .messages-specimen__close:hover,
+.delta-docs .messages-specimen__close:focus-visible,
+.delta-docs .messages-specimen-promo__close:hover,
+.delta-docs .messages-specimen-promo__close:focus-visible {
+  color: var(--text-hover);
+}
+
+.delta-docs .messages-specimen__action:hover,
+.delta-docs .messages-specimen__action:focus-visible {
+  background: var(--global-white);
+  color: var(--status-invalid);
+}
+
+.delta-docs .messages-specimen__action--solid:hover,
+.delta-docs .messages-specimen__action--solid:focus-visible {
+  background: transparent;
+  color: var(--global-white);
+}
+
+.delta-docs .messages-specimen__close:focus-visible,
+.delta-docs .messages-specimen-promo__close:focus-visible,
+.delta-docs .messages-specimen__action:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
 .delta-docs :where(code, pre) {
   font-family: var(--font-family-mono);
   font-size: var(--docs-font-size-code);
