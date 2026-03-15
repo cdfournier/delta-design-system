@@ -115,6 +115,16 @@
   --components-button-demo-shell-padding: var(--spacing-xl);
   --components-button-demo-shell-radius: var(--border-radius-md);
   --components-button-demo-icon-button-size: 3rem;
+  --components-icons-shell-background: var(--neutral-gray-light);
+  --components-icons-shell-padding: var(--spacing-xl);
+  --components-icons-shell-radius: var(--border-radius-md);
+  --components-icons-grid-gap: var(--spacing-md);
+  --components-icons-item-width: 11.25rem;
+  --components-icons-item-min-height: 7.375rem;
+  --components-icons-item-padding: var(--spacing-md);
+  --components-icons-item-gap: var(--spacing-sm);
+  --components-icons-item-radius: var(--border-radius-md);
+  --components-icons-specimen-size: 3rem;
   --components-chip-font-size: 0.75rem;
   --components-chip-line-height: 0.75rem;
   --components-chip-padding-t-b: 0.5rem;
