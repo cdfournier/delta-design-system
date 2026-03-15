@@ -21,17 +21,25 @@
   --global-white: #ffffff;
   --global-black: #000000;
   --brand-primary: #ff5247;
+  --brand-primary-dark: #b22e28;
   --brand-secondary: #003442;
   --brand-secondary-dark: #01232d;
   --neutral-gray-light: #eeeeee;
   --neutral-gray-medium: #cccccc;
   --neutral-gray-dark: #919191;
+  --status-disabled: #808080;
+  --status-invalid: #c00c00;
+  --status-valid: #007000;
+  --status-read-only: #333333;
   --positive-default: #007000;
   --negative-default: #c00c00;
+  --overlay-dark: rgb(0 0 0 / 50%);
+  --overlay-light: rgb(0 0 0 / 25%);
 
   --text-default: var(--global-black);
   --text-inverse: var(--global-white);
   --text-link: var(--brand-primary);
+  --text-hover: var(--brand-secondary);
   --text-muted: var(--neutral-gray-dark);
   --page-background: var(--global-white);
   --section-background: var(--neutral-gray-light);
@@ -100,6 +108,7 @@
   --text-default: var(--global-white);
   --text-inverse: var(--global-black);
   --text-link: var(--global-white);
+  --text-hover: var(--brand-primary);
   --text-muted: var(--neutral-gray-medium);
   --page-background: var(--brand-secondary-dark);
   --section-background: var(--brand-secondary);
