@@ -319,6 +319,59 @@
   margin-top: var(--type-specimen-family-body-gap);
 }
 
+.delta-docs .spacing-specimen {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  border-radius: var(--docs-code-radius);
+  background-color: var(--section-background);
+}
+
+.delta-docs .spacing-visual {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0.625rem 0;
+}
+
+.delta-docs .spacing-bar {
+  height: 1.5rem;
+  flex-shrink: 0;
+  border-radius: var(--border-radius-xs);
+  background-color: var(--brand-primary);
+}
+
+.delta-docs .spacing-label,
+.delta-docs .spacing-value,
+.delta-docs .radius-label {
+  color: var(--text-muted);
+  font-family: var(--font-family-mono);
+  font-size: 0.8125rem;
+  line-height: 1rem;
+}
+
+.delta-docs .spacing-label {
+  min-width: 3.25rem;
+}
+
+.delta-docs .radius-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.delta-docs .radius-item {
+  text-align: center;
+}
+
+.delta-docs .radius-specimen {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 0.5rem;
+  background-color: var(--brand-primary);
+}
+
 .delta-docs .specimen-h1-title {
   color: var(--text-default);
   font-family: var(--font-family-heading);

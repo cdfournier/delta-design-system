@@ -13,8 +13,12 @@
   --spacing-xxl: 1.5rem;
   --spacing-xxxl: 2rem;
 
+  --border-radius-xs: 0.125rem;
   --border-radius-sm: 0.25rem;
   --border-radius-md: 0.5rem;
+  --border-radius-lg: 1rem;
+  --border-radius-xl: 1.5rem;
+  --border-radius-xxl: 2rem;
   --border-radius-round: 6.25rem;
   --button-border-radius: 2rem;
 
@@ -120,8 +124,12 @@
     --spacing-xxl: 3rem;
     --spacing-xxxl: 4rem;
 
+    --border-radius-xs: 0.25rem;
     --border-radius-sm: 0.5rem;
     --border-radius-md: 1rem;
+    --border-radius-lg: 2rem;
+    --border-radius-xl: 3rem;
+    --border-radius-xxl: 4rem;
 
     --docs-page-padding-inline: var(--spacing-xl);
     --docs-page-padding-block: var(--spacing-xxl);
