@@ -1,5 +1,82 @@
 function createBlockquotesDocumentation() {
   return `
+    <style>
+      .delta-docs .blockquote-specimen {
+        display: flex;
+        flex-direction: column;
+        gap: var(--components-blockquote-demo-gap);
+        max-width: var(--components-blockquote-demo-max-width);
+      }
+
+      .delta-docs .blockquote {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: var(--components-blockquote-gap);
+        padding: var(--components-blockquote-padding);
+        border-left: 0;
+        border-right: 0;
+        background: var(--page-background);
+      }
+
+      .delta-docs .blockquote__quote {
+        margin: 0;
+        color: var(--text-default);
+        font-family: var(--font-family-body);
+        font-size: var(--components-blockquote-quote-font-size);
+        line-height: var(--components-blockquote-quote-line-height);
+        font-weight: var(--font-weight-bold);
+      }
+
+      .delta-docs .blockquote__cite,
+      .delta-docs .blockquote__cite-link {
+        color: var(--text-link);
+        font-family: var(--font-family-body);
+        font-size: var(--components-blockquote-cite-font-size);
+        line-height: var(--components-blockquote-cite-line-height);
+        font-weight: var(--font-weight-bold);
+        font-style: normal;
+      }
+
+      .delta-docs .blockquote__cite {
+        margin: 0;
+      }
+
+      .delta-docs .blockquote__cite-link {
+        text-decoration: underline;
+        text-decoration-style: solid;
+      }
+
+      .delta-docs .blockquote__cite-link:hover,
+      .delta-docs .blockquote__cite-link:focus-visible {
+        color: var(--text-hover);
+      }
+
+      .delta-docs .blockquote--left {
+        width: 100%;
+        max-width: var(--components-blockquote-demo-left-width);
+        border-left: var(--components-blockquote-accent-width) solid var(--brand-primary);
+        text-align: left;
+        align-items: flex-start;
+      }
+
+      .delta-docs .blockquote--center {
+        width: 100%;
+        max-width: var(--components-blockquote-demo-center-width);
+        border-top: var(--components-blockquote-accent-width) solid var(--brand-primary);
+        border-bottom: var(--components-blockquote-accent-width) solid var(--brand-primary);
+        text-align: center;
+        align-items: center;
+      }
+
+      .delta-docs .blockquote--right {
+        width: 100%;
+        max-width: var(--components-blockquote-demo-right-width);
+        border-right: var(--components-blockquote-accent-width) solid var(--brand-primary);
+        text-align: right;
+        align-items: flex-end;
+      }
+    </style>
     <article class="delta-docs">
       <h1>Blockquotes</h1>
       <p>Blockquotes render a styled quotation with a prominent accent border, quote text, and a cite attribution link. They support three orientation variants that control the position of the accent border and text alignment.</p>
@@ -15,9 +92,21 @@ function createBlockquotesDocumentation() {
         <li><strong>Cite text:</strong> An attribution link rendered in bold and underlined, using the <code>components/blockquote/cite</code> composite token</li>
       </ul>
 
-      <div class="delta-docs__placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 live specimen placeholder</span>
-        <p>Render the blockquote anatomy specimen exactly as shown in the verified reference documentation.</p>
+      <div class="blockquote-specimen" aria-label="Blockquote variants specimen">
+        <blockquote class="blockquote blockquote--left">
+          <p class="blockquote__quote">We should embrace the fact that the web doesn&apos;t have the same constraints, and design for this flexibility.</p>
+          <cite class="blockquote__cite"><a class="blockquote__cite-link" href="https://alistapart.com/article/dao/">John Allsopp, A Dao of Web Design</a></cite>
+        </blockquote>
+
+        <blockquote class="blockquote blockquote--center">
+          <p class="blockquote__quote">If you wish to make an apple pie from scratch, you must first invent the universe.</p>
+          <cite class="blockquote__cite"><a class="blockquote__cite-link" href="https://www.goodreads.com/quotes/11339-if-you-wish-to-make-an-apple-pie-from-scratch">Carl Sagan, Cosmos</a></cite>
+        </blockquote>
+
+        <blockquote class="blockquote blockquote--right">
+          <p class="blockquote__quote">Now more than ever, we&apos;re designing work meant to be viewed along a gradient of different experiences.</p>
+          <cite class="blockquote__cite"><a class="blockquote__cite-link" href="https://alistapart.com/article/responsive-web-design/">Ethan Marcotte, Responsive Web Design</a></cite>
+        </blockquote>
       </div>
 
       <hr />

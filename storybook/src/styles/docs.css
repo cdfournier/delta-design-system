@@ -58,7 +58,7 @@
 }
 
 .delta-docs :where(a:hover, a:focus-visible) {
-  color: var(--surface-strong);
+  color: var(--text-hover);
 }
 
 .delta-docs :where(code, pre) {

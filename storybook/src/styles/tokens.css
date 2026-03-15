@@ -101,6 +101,18 @@
   --components-badge-border-radius: 0.25rem;
   --components-badge-border-width: 0.0625rem;
   --components-badge-gap: var(--spacing-md);
+  --components-blockquote-quote-font-size: 0.75rem;
+  --components-blockquote-quote-line-height: 1.25rem;
+  --components-blockquote-cite-font-size: 0.625rem;
+  --components-blockquote-cite-line-height: 1rem;
+  --components-blockquote-gap: var(--spacing-md);
+  --components-blockquote-padding: var(--spacing-xl);
+  --components-blockquote-accent-width: 0.25rem;
+  --components-blockquote-demo-gap: var(--spacing-xl);
+  --components-blockquote-demo-max-width: 50.84rem;
+  --components-blockquote-demo-left-width: 43.875rem;
+  --components-blockquote-demo-center-width: 33.8125rem;
+  --components-blockquote-demo-right-width: 43.4375rem;
 
   --docs-font-size-body: 1rem;
   --docs-line-height-body: 1.75;
@@ -180,6 +192,10 @@
     --components-badge-padding-t-b: 0.5rem;
     --components-badge-padding-l-r: 0.75rem;
     --components-badge-border-radius: 0.5rem;
+    --components-blockquote-quote-font-size: 1.5rem;
+    --components-blockquote-quote-line-height: 2.25rem;
+    --components-blockquote-cite-font-size: 1.25rem;
+    --components-blockquote-cite-line-height: 1.875rem;
 
     --h1-title-font-size: 5rem;
     --h1-title-line-height: 6.25rem;
