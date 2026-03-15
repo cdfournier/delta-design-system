@@ -22,21 +22,28 @@
 .delta-docs :where(h1) {
   font-size: var(--docs-font-size-h1);
   line-height: var(--docs-line-height-h1);
+  margin-bottom: 1rem;
 }
 
 .delta-docs :where(h2) {
   font-size: var(--docs-font-size-h2);
   line-height: var(--docs-line-height-h2);
+  margin-top: 3rem;
+  margin-bottom: 1rem;
 }
 
 .delta-docs :where(h3) {
   font-size: var(--docs-font-size-h3);
   line-height: var(--docs-line-height-h3);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
 }
 
 .delta-docs :where(h4) {
   font-size: var(--docs-font-size-h4);
   line-height: var(--docs-line-height-h4);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .delta-docs :where(p, li, th, td) {
@@ -79,6 +86,7 @@
 }
 
 .delta-docs :where(ul, ol) {
+  margin-bottom: 1rem;
   padding-left: var(--spacing-xxl);
 }
 
@@ -87,6 +95,7 @@
 }
 
 .delta-docs :where(hr) {
+  margin: 3rem 0;
   border: 0;
   border-top: var(--docs-rule-width) solid var(--surface-border);
 }
@@ -94,6 +103,7 @@
 .delta-docs :where(table) {
   width: 100%;
   border-collapse: collapse;
+  margin-bottom: 1.5rem;
 }
 
 .delta-docs :where(th, td) {
@@ -111,6 +121,14 @@
 .delta-docs :where(blockquote) {
   padding-left: var(--spacing-xl);
   border-left: var(--docs-accent-width) solid var(--surface-strong);
+}
+
+.delta-docs :where(p) {
+  margin-bottom: 1rem;
+}
+
+.delta-docs :where(pre) {
+  margin-bottom: 1.5rem;
 }
 
 .delta-docs__stack {
@@ -192,6 +210,171 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing-md);
+}
+
+.delta-docs .color-swatch {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+.delta-docs .color-box {
+  width: 7.5rem;
+  height: 7.5rem;
+  flex-shrink: 0;
+  border: var(--swatch-border-width, 0) solid var(--swatch-border-color, transparent);
+  border-radius: var(--docs-code-radius);
+  background: var(--swatch-background, var(--surface-subtle));
+}
+
+.delta-docs .color-box--overlay-dark {
+  background: linear-gradient(
+    to bottom,
+    rgb(0 0 0 / 0%) 0%,
+    var(--overlay-dark) 50%,
+    var(--overlay-dark) 100%
+  );
+}
+
+.delta-docs .color-box--overlay-light {
+  background: linear-gradient(
+    to bottom,
+    rgb(0 0 0 / 0%) 0%,
+    var(--overlay-light) 50%,
+    var(--overlay-light) 100%
+  );
+}
+
+.delta-docs .color-info {
+  flex: 1;
+}
+
+.delta-docs .color-name {
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--docs-font-size-body);
+  line-height: var(--docs-line-height-body);
+  font-weight: var(--font-weight-bold);
+}
+
+.delta-docs .color-token {
+  display: inline-block;
+  padding: 0 var(--spacing-sm);
+  border-radius: var(--docs-code-radius);
+  background: var(--surface-subtle);
+  font-family: var(--font-family-mono);
+  font-size: var(--docs-font-size-code);
+  line-height: var(--docs-line-height-code);
+}
+
+.delta-docs .do-dont-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.delta-docs .do-section {
+  border-left: 0.25rem solid var(--positive-default);
+  padding-left: 1rem;
+}
+
+.delta-docs .dont-section {
+  border-left: 0.25rem solid var(--negative-default);
+  padding-left: 1rem;
+}
+
+.delta-docs .do-section h3,
+.delta-docs .dont-section h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.delta-docs .do-section p strong,
+.delta-docs .dont-section p strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.delta-docs__swatch-grid {
+  display: grid;
+  gap: var(--docs-grid-gap);
+}
+
+.delta-docs__swatch-card {
+  display: grid;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-xl);
+  border: var(--docs-rule-width) solid var(--surface-border);
+  border-radius: var(--docs-surface-radius);
+  background: var(--page-background);
+}
+
+.delta-docs__swatch-preview {
+  min-height: 7.5rem;
+  border: var(--docs-rule-width) solid var(--surface-border);
+  border-radius: var(--docs-surface-radius);
+  background: var(--swatch-color, var(--surface-subtle));
+  box-shadow: inset 0 0 0 var(--swatch-inset-width, 0) var(--swatch-inset-color, transparent);
+}
+
+.delta-docs__swatch-preview--overlay-dark {
+  background:
+    linear-gradient(
+      to bottom,
+      rgb(0 0 0 / 0%) 0%,
+      var(--overlay-dark) 50%,
+      var(--overlay-dark) 100%
+    ),
+    linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+}
+
+.delta-docs__swatch-preview--overlay-light {
+  background:
+    linear-gradient(
+      to bottom,
+      rgb(0 0 0 / 0%) 0%,
+      var(--overlay-light) 50%,
+      var(--overlay-light) 100%
+    ),
+    linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+}
+
+.delta-docs__swatch-meta {
+  display: grid;
+  gap: var(--spacing-sm);
+}
+
+.delta-docs__swatch-title {
+  font-size: var(--docs-font-size-body);
+  line-height: var(--docs-line-height-body);
+  font-weight: var(--font-weight-bold);
+}
+
+.delta-docs__swatch-token {
+  color: var(--text-default);
+  font-weight: var(--font-weight-bold);
+}
+
+.delta-docs__swatch-values {
+  display: grid;
+  gap: var(--spacing-xs);
+}
+
+@media (min-width: 48rem) {
+  .delta-docs .do-dont-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .delta-docs__swatch-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 48rem) {
+  .delta-docs .do-dont-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (min-width: 48rem) {

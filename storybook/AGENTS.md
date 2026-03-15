@@ -44,16 +44,51 @@ delta-design-system/
 1. Read `storybook-brief.md` in full — it contains all architectural decisions, CSS strategy, token system, build sequence, and per-story workflow
 2. Read `delta-standards.md` — it is the authoritative reference for naming, table formats, section structure, and terminology
 3. Read `component_template.html` and `foundation_template.html` — these are the authoritative structural templates for all story pages
-4. For story content, read the corresponding HTML file from `../docs/` before writing anything
+4. For story content, read the corresponding HTML file from `../docs/` as the verified proxy for what Figma specifies — this is what Storybook must match
 
 ---
 
+## Content fidelity — the most important rule
+
+**Figma is the source of truth. Storybook must match Figma.**
+
+The HTML reference files in `../docs/` are verified snapshots of the Figma documentation — they exist as a practical convenience because Codex can read them directly. They are a proxy for Figma, not a source of truth in their own right. The goal is parity between Figma and Storybook. The HTML files are the means to that end.
+
+This has two implications:
+
+**Do not add anything not in Figma.** No additional sections, labels, metadata, UI elements, annotations, table columns, or any other content regardless of whether it seems helpful or informative. If it is not in Figma, it does not exist in Storybook.
+
+**Do not trust the HTML files blindly.** If something in an HTML file seems inconsistent or wrong, flag it rather than building from it. The HTML files have been carefully audited against Figma but they are not infallible. When in doubt, Figma wins.
+
+---
+
+## Visual specimens
+
+When building live rendered samples — color swatches, type specimens, spacing examples, component renders — match what Figma shows exactly. No additional metadata, no extra labels, no embellishments, no UI patterns that aren't in the Figma documentation.
+
+A color swatch is what Figma shows it to be. A component sample renders the component as Figma specifies it. Nothing more.
+
+---
+
+
+
 ## Non-negotiable rules
+
+### Semantic HTML
+- Never use heading tags (`h1`–`h4`) for non-heading content — labels, token names, card titles, and UI text are not headings
+- Use `p` with bold styling for emphasized labels and names within specimens and samples
+- The heading hierarchy of every page must match the HTML reference file exactly — do not introduce additional headings or change existing ones
 
 ### CSS isolation
 - All documentation page styles are scoped under `.delta-docs` — no bare element selectors anywhere in `docs.css`
 - Component styles are scoped to their own class names — no global element selectors
 - Never style `body`, `html`, or any element globally in story CSS
+
+### docs.css — styles must match the HTML reference files
+- All styles in `docs.css` must be built around the actual elements and classes used in the HTML reference files — never invent wrapper classes or helper classes that the reference files don't use
+- Element-level spacing (`h1`–`h4`, `p`, `ul`, `ol`, `table`, `pre`, `hr`) must be declared directly on those elements under `.delta-docs` — do not zero out element margins and rely on wrapper classes to restore spacing
+- The Do/Don't grid uses `.do-dont-grid`, `.do-section`, and `.dont-section` — never rename or replace these with alternative class names
+- When adding new styles for specimens or samples, check that existing spacing and layout rules are not overridden or removed
 
 ### Token system
 - Every color, spacing, typography, and border-radius value must reference a CSS custom property — no hardcoded values anywhere
@@ -89,7 +124,7 @@ When a step or phase is complete and ready for review, say so clearly and stop. 
 
 ---
 
-
+## Per-story build sequence
 
 Every story is built in two steps. Do not combine them.
 
@@ -140,4 +175,4 @@ American English throughout: color, behavior, not colour, behaviour.
 | `delta-standards.md` | Authoritative standards — naming, tables, sections, terminology |
 | `component_template.html` | Authoritative structure template for all component story pages |
 | `foundation_template.html` | Authoritative structure template for all foundation story pages |
-| `../docs/[name]_documentation.html` | Per-story content reference — read before building each story |
+| `../docs/[name]_documentation.html` | Verified proxy for Figma documentation — what Storybook must match |
