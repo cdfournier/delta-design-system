@@ -72,6 +72,18 @@ When building a story, if a value in the HTML reference file seems inconsistent 
 
 **Figma always wins over the HTML files.**
 
+### Step 2 — standard Figma query workflow
+
+Every Step 2 begins with two Figma queries before any code is written:
+
+1. **Search for the component by name** using the Figma MCP tools and the file key above. Find the component set parent node — not an individual variant. The component set contains all variants (e.g. Primary, Secondary, Transparent) and is the only reliable way to see the full variant matrix. Query it to verify token values, visual specs, and all variant appearances.
+
+2. **Query the documentation page node** provided in the Step 2 prompt. This shows how the components are arranged and presented in the Figma documentation samples — what variants are shown, in what order, with what content.
+
+Use the HTML reference file `../docs/[name]_documentation.html` as a secondary reference only. Where HTML and Figma disagree, Figma wins. Flag any discrepancy before building.
+
+The Step 2 prompt will provide the documentation page node ID. You are responsible for finding the component set node yourself via Figma search.
+
 ---
 
 ## Visual specimens
@@ -142,7 +154,7 @@ Every story is built in two steps. Do not combine them.
 Build the complete documentation page: all sections, all prose, all tables, all code reference blocks. Use clearly labeled placeholder containers where live component samples will go. Stop when Step 1 is complete and wait for review and approval.
 
 **Step 2 — Figures and samples**
-Replace placeholders with live rendered component examples. Verify each sample at mobile and widescreen viewports, and in light and dark modes. Stop when Step 2 is complete and wait for review and approval.
+Before writing any code, complete the standard Figma query workflow (see Figma MCP access section above). Replace placeholders with live rendered component examples that match Figma exactly. Verify each sample at mobile and widescreen viewports, and in light and dark modes. Stop when Step 2 is complete and wait for review and approval.
 
 Do not proceed from Step 1 to Step 2 without explicit approval. Do not proceed to the next story without explicit approval of Step 2.
 
