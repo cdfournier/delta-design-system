@@ -77,6 +77,37 @@
   --docs-line-height-code: 1.6;
   --docs-letter-spacing-placeholder: 0.02em;
   --docs-letter-spacing-eyebrow: 0.04em;
+  --type-specimen-header-font-size: 0.75rem;
+  --type-specimen-header-line-height: 1rem;
+  --type-specimen-header-letter-spacing: 0.03125rem;
+  --type-specimen-family-heading-font-size: 2.25rem;
+  --type-specimen-family-heading-line-height: 1.2;
+  --type-specimen-family-body-font-size: 1rem;
+  --type-specimen-family-body-line-height: 1.5;
+  --type-specimen-family-body-gap: 0.5rem;
+
+  --h1-title-font-size: 3.125rem;
+  --h1-title-line-height: 3.5rem;
+  --h1-title-plus-p-font-size: 1rem;
+  --h1-title-plus-p-line-height: 1.75rem;
+  --h1-font-size: 3.125rem;
+  --h1-line-height: 3.5rem;
+  --h2-font-size: 2.375rem;
+  --h2-line-height: 2.625rem;
+  --h3-font-size: 1.75rem;
+  --h3-line-height: 2rem;
+  --h4-font-size: 1.5rem;
+  --h4-line-height: 1.875rem;
+  --h5-font-size: 1.25rem;
+  --h5-line-height: 1.625rem;
+  --p-font-size: 1rem;
+  --p-line-height: 1.5rem;
+  --list-font-size: 1rem;
+  --list-line-height: 1.25rem;
+  --small-font-size: 0.75rem;
+  --small-line-height: 1.25rem;
+  --fine-font-size: 0.625rem;
+  --fine-line-height: 1rem;
 }
 
 @media (min-width: 80rem) {
@@ -101,6 +132,29 @@
     --docs-table-cell-padding-inline: var(--spacing-md);
     --docs-table-cell-padding-block: var(--spacing-md);
     --docs-demo-padding: var(--spacing-xxl);
+
+    --h1-title-font-size: 5rem;
+    --h1-title-line-height: 6.25rem;
+    --h1-title-plus-p-font-size: 2rem;
+    --h1-title-plus-p-line-height: 3.5rem;
+    --h1-font-size: 4.5rem;
+    --h1-line-height: 5.625rem;
+    --h2-font-size: 3.75rem;
+    --h2-line-height: 4.625rem;
+    --h3-font-size: 3.125rem;
+    --h3-line-height: 3.875rem;
+    --h4-font-size: 2.625rem;
+    --h4-line-height: 3.25rem;
+    --h5-font-size: 2rem;
+    --h5-line-height: 2.5rem;
+    --p-font-size: 1.5rem;
+    --p-line-height: 3.5rem;
+    --list-font-size: 1.5rem;
+    --list-line-height: 2.125rem;
+    --small-font-size: 1.25rem;
+    --small-line-height: 1.875rem;
+    --fine-font-size: 1rem;
+    --fine-line-height: 1.5rem;
   }
 }
 

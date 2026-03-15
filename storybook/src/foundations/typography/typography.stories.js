@@ -16,14 +16,21 @@ function createTypographyDocumentation() {
 
       <h3>Font families</h3>
 
-      <div class="delta-docs__placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 live specimen placeholder</span>
-        <p>Render the Ovo headline specimen with header, example text, and details exactly as shown in the reference documentation.</p>
+      <div class="type-specimen">
+        <div class="type-specimen-header">Ovo &mdash; Headlines</div>
+        <div class="type-specimen-example">
+          <p class="type-family-heading-sample">The quick brown fox jumps over the lazy dog</p>
+        </div>
+        <div class="type-details">Font: Ovo (serif) &nbsp;&bull;&nbsp; Weight: Regular (400) &nbsp;&bull;&nbsp; Use: All headings (h1&ndash;h5) &nbsp;&bull;&nbsp; Source: <a href="https://fonts.google.com/specimen/Ovo" target="_blank">Google Fonts</a></div>
       </div>
 
-      <div class="delta-docs__placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 live specimen placeholder</span>
-        <p>Render the Montserrat body and interface specimen with regular and bold examples and details exactly as shown in the reference documentation.</p>
+      <div class="type-specimen">
+        <div class="type-specimen-header">Montserrat &mdash; Body &amp; Interface</div>
+        <div class="type-specimen-example">
+          <p class="type-family-body-sample">The quick brown fox jumps over the lazy dog &mdash; Regular</p>
+          <p class="type-family-body-sample"><strong>The quick brown fox jumps over the lazy dog &mdash; Bold</strong></p>
+        </div>
+        <div class="type-details">Font: Montserrat (sans-serif) &nbsp;&bull;&nbsp; Weights: Regular (400), Bold (700) &nbsp;&bull;&nbsp; Use: Body copy, lists, interface elements, all components &nbsp;&bull;&nbsp; Source: <a href="https://fonts.google.com/specimen/Montserrat" target="_blank">Google Fonts</a></div>
       </div>
 
       <h3>Type scales</h3>
@@ -181,59 +188,97 @@ function createTypographyDocumentation() {
       <h3>Size specifications</h3>
       <p>Specimens below show mobile sizes. Typography scales at the 80rem (1280px) breakpoint &mdash; see the type scale table for all values.</p>
 
-      <div class="delta-docs__placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 live specimen placeholder</span>
-        <p>Render the H1 Title specimen exactly as shown in the reference documentation.</p>
+      <div class="type-specimen">
+        <div class="type-specimen-header">H1 Title</div>
+        <div class="type-specimen-example">
+          <p class="specimen-h1-title">The quick brown fox</p>
+        </div>
+        <div class="type-details">Ovo Regular &nbsp;&bull;&nbsp; Mobile: 50px / 56px lh &nbsp;&bull;&nbsp; Widescreen: 80px / 100px lh</div>
       </div>
 
-      <div class="delta-docs__placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 live specimen placeholder</span>
-        <p>Render the H1 Title + P specimen exactly as shown in the reference documentation.</p>
+      <div class="type-specimen">
+        <div class="type-specimen-header">H1 Title + P</div>
+        <div class="type-specimen-example">
+          <p class="specimen-h1-title">The quick brown fox</p>
+          <p class="specimen-h1-title-plus-p">The first paragraph after an h1 title receives special styling with increased font size for emphasis and improved visual hierarchy.</p>
+        </div>
+        <div class="type-details">Montserrat Regular &nbsp;&bull;&nbsp; Mobile: 16px / 28px lh &nbsp;&bull;&nbsp; Widescreen: 32px / 56px lh</div>
       </div>
 
-      <div class="delta-docs__placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 live specimen placeholder</span>
-        <p>Render the H1 specimen exactly as shown in the reference documentation.</p>
+      <div class="type-specimen">
+        <div class="type-specimen-header">H1</div>
+        <div class="type-specimen-example">
+          <p class="specimen-h1">The quick brown fox</p>
+        </div>
+        <div class="type-details">Ovo Regular &nbsp;&bull;&nbsp; Mobile: 50px / 56px lh &nbsp;&bull;&nbsp; Widescreen: 72px / 90px lh</div>
       </div>
 
-      <div class="delta-docs__placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 live specimen placeholder</span>
-        <p>Render the H2 specimen exactly as shown in the reference documentation.</p>
+      <div class="type-specimen">
+        <div class="type-specimen-header">H2</div>
+        <div class="type-specimen-example">
+          <p class="specimen-h2">The quick brown fox</p>
+        </div>
+        <div class="type-details">Ovo Regular &nbsp;&bull;&nbsp; Mobile: 38px / 42px lh &nbsp;&bull;&nbsp; Widescreen: 60px / 74px lh</div>
       </div>
 
-      <div class="delta-docs__placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 live specimen placeholder</span>
-        <p>Render the H3 specimen exactly as shown in the reference documentation.</p>
+      <div class="type-specimen">
+        <div class="type-specimen-header">H3</div>
+        <div class="type-specimen-example">
+          <p class="specimen-h3">The quick brown fox</p>
+        </div>
+        <div class="type-details">Ovo Regular &nbsp;&bull;&nbsp; Mobile: 28px / 32px lh &nbsp;&bull;&nbsp; Widescreen: 50px / 62px lh</div>
       </div>
 
-      <div class="delta-docs__placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 live specimen placeholder</span>
-        <p>Render the H4 specimen exactly as shown in the reference documentation.</p>
+      <div class="type-specimen">
+        <div class="type-specimen-header">H4</div>
+        <div class="type-specimen-example">
+          <p class="specimen-h4">The quick brown fox</p>
+        </div>
+        <div class="type-details">Ovo Regular &nbsp;&bull;&nbsp; Mobile: 24px / 30px lh &nbsp;&bull;&nbsp; Widescreen: 42px / 52px lh</div>
       </div>
 
-      <div class="delta-docs__placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 live specimen placeholder</span>
-        <p>Render the H5 specimen exactly as shown in the reference documentation.</p>
+      <div class="type-specimen">
+        <div class="type-specimen-header">H5</div>
+        <div class="type-specimen-example">
+          <p class="specimen-h5">The quick brown fox</p>
+        </div>
+        <div class="type-details">Ovo Regular &nbsp;&bull;&nbsp; Mobile: 20px / 26px lh &nbsp;&bull;&nbsp; Widescreen: 32px / 40px lh</div>
       </div>
 
-      <div class="delta-docs__placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 live specimen placeholder</span>
-        <p>Render the Body (p) specimen exactly as shown in the reference documentation.</p>
+      <div class="type-specimen">
+        <div class="type-specimen-header">Body (p)</div>
+        <div class="type-specimen-example">
+          <p class="specimen-p">The quick brown fox jumps over the lazy dog. Typography expresses hierarchy and enables improved consumption of content.</p>
+        </div>
+        <div class="type-details">Montserrat Regular &nbsp;&bull;&nbsp; Mobile: 16px / 24px lh &nbsp;&bull;&nbsp; Widescreen: 24px / 56px lh</div>
       </div>
 
-      <div class="delta-docs__placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 live specimen placeholder</span>
-        <p>Render the List specimen exactly as shown in the reference documentation.</p>
+      <div class="type-specimen">
+        <div class="type-specimen-header">List</div>
+        <div class="type-specimen-example">
+          <ul class="specimen-list">
+            <li>The quick brown fox jumps over the lazy dog</li>
+            <li>Typography expresses hierarchy and enables improved consumption of content</li>
+            <li>Good typography helps content fulfill its purpose</li>
+          </ul>
+        </div>
+        <div class="type-details">Montserrat Regular &nbsp;&bull;&nbsp; Mobile: 16px / 20px lh &nbsp;&bull;&nbsp; Widescreen: 24px / 34px lh</div>
       </div>
 
-      <div class="delta-docs__placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 live specimen placeholder</span>
-        <p>Render the Small specimen exactly as shown in the reference documentation.</p>
+      <div class="type-specimen">
+        <div class="type-specimen-header">Small</div>
+        <div class="type-specimen-example">
+          <p class="specimen-small">The quick brown fox jumps over the lazy dog. Typography expresses hierarchy and enables improved consumption of content.</p>
+        </div>
+        <div class="type-details">Montserrat Regular &nbsp;&bull;&nbsp; Mobile: 12px / 20px lh &nbsp;&bull;&nbsp; Widescreen: 20px / 30px lh</div>
       </div>
 
-      <div class="delta-docs__placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 live specimen placeholder</span>
-        <p>Render the Fine specimen exactly as shown in the reference documentation.</p>
+      <div class="type-specimen">
+        <div class="type-specimen-header">Fine</div>
+        <div class="type-specimen-example">
+          <p class="specimen-fine">The quick brown fox jumps over the lazy dog. Typography expresses hierarchy and enables improved consumption of content.</p>
+        </div>
+        <div class="type-details">Montserrat Regular &nbsp;&bull;&nbsp; Mobile: 10px / 16px lh &nbsp;&bull;&nbsp; Widescreen: 16px / 24px lh</div>
       </div>
 
       <hr />

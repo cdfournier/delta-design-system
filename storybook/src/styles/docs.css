@@ -267,6 +267,146 @@
   line-height: var(--docs-line-height-code);
 }
 
+.delta-docs .type-specimen {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border-radius: var(--docs-code-radius);
+  background-color: var(--section-background);
+}
+
+.delta-docs .type-specimen-header {
+  margin-bottom: 1rem;
+  color: var(--text-muted);
+  font-size: var(--type-specimen-header-font-size);
+  line-height: var(--type-specimen-header-line-height);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--type-specimen-header-letter-spacing);
+}
+
+.delta-docs .type-specimen-example {
+  margin-bottom: 1rem;
+}
+
+.delta-docs .type-details {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: var(--docs-rule-width) solid var(--surface-border);
+  color: var(--text-muted);
+  font-family: var(--font-family-mono);
+  font-size: var(--type-specimen-header-font-size);
+  line-height: var(--type-specimen-header-line-height);
+}
+
+.delta-docs .type-family-heading-sample {
+  margin: 0;
+  color: var(--text-default);
+  font-family: var(--font-family-heading);
+  font-size: var(--type-specimen-family-heading-font-size);
+  line-height: var(--type-specimen-family-heading-line-height);
+  font-weight: var(--font-weight-regular);
+}
+
+.delta-docs .type-family-body-sample {
+  margin: 0;
+  color: var(--text-default);
+  font-family: var(--font-family-body);
+  font-size: var(--type-specimen-family-body-font-size);
+  line-height: var(--type-specimen-family-body-line-height);
+}
+
+.delta-docs .type-family-body-sample + .type-family-body-sample {
+  margin-top: var(--type-specimen-family-body-gap);
+}
+
+.delta-docs .specimen-h1-title {
+  color: var(--text-default);
+  font-family: var(--font-family-heading);
+  font-size: var(--h1-title-font-size);
+  line-height: var(--h1-title-line-height);
+  font-weight: var(--font-weight-regular);
+}
+
+.delta-docs .specimen-h1 {
+  color: var(--text-default);
+  font-family: var(--font-family-heading);
+  font-size: var(--h1-font-size);
+  line-height: var(--h1-line-height);
+  font-weight: var(--font-weight-regular);
+}
+
+.delta-docs .specimen-h1-title-plus-p {
+  color: var(--text-default);
+  font-family: var(--font-family-body);
+  font-size: var(--h1-title-plus-p-font-size);
+  line-height: var(--h1-title-plus-p-line-height);
+  font-weight: var(--font-weight-regular);
+}
+
+.delta-docs .specimen-h2 {
+  color: var(--text-default);
+  font-family: var(--font-family-heading);
+  font-size: var(--h2-font-size);
+  line-height: var(--h2-line-height);
+  font-weight: var(--font-weight-regular);
+}
+
+.delta-docs .specimen-h3 {
+  color: var(--text-default);
+  font-family: var(--font-family-heading);
+  font-size: var(--h3-font-size);
+  line-height: var(--h3-line-height);
+  font-weight: var(--font-weight-regular);
+}
+
+.delta-docs .specimen-h4 {
+  color: var(--text-default);
+  font-family: var(--font-family-heading);
+  font-size: var(--h4-font-size);
+  line-height: var(--h4-line-height);
+  font-weight: var(--font-weight-regular);
+}
+
+.delta-docs .specimen-h5 {
+  color: var(--text-default);
+  font-family: var(--font-family-heading);
+  font-size: var(--h5-font-size);
+  line-height: var(--h5-line-height);
+  font-weight: var(--font-weight-regular);
+}
+
+.delta-docs .specimen-p {
+  color: var(--text-default);
+  font-family: var(--font-family-body);
+  font-size: var(--p-font-size);
+  line-height: var(--p-line-height);
+  font-weight: var(--font-weight-regular);
+}
+
+.delta-docs .specimen-list {
+  color: var(--text-default);
+  font-family: var(--font-family-body);
+  font-size: var(--list-font-size);
+  line-height: var(--list-line-height);
+  font-weight: var(--font-weight-regular);
+}
+
+.delta-docs .specimen-small {
+  color: var(--text-default);
+  font-family: var(--font-family-body);
+  font-size: var(--small-font-size);
+  line-height: var(--small-line-height);
+  font-weight: var(--font-weight-regular);
+}
+
+.delta-docs .specimen-fine {
+  color: var(--text-default);
+  font-family: var(--font-family-body);
+  font-size: var(--fine-font-size);
+  line-height: var(--fine-line-height);
+  font-weight: var(--font-weight-regular);
+}
+
 .delta-docs .do-dont-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
