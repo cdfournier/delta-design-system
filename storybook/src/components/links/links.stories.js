@@ -1,5 +1,83 @@
 function createLinksDocumentation() {
   return `
+    <style>
+      .delta-docs .link-specimen {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--components-link-gap-default);
+        color: var(--text-link);
+        font-family: var(--font-family-body);
+        font-weight: var(--font-weight-bold);
+        text-decoration: underline;
+        text-decoration-thickness: from-font;
+        text-underline-offset: var(--spacing-xs);
+        transition: gap 0.2s ease, color 0.2s ease;
+      }
+
+      .delta-docs .link-specimen--hover {
+        gap: var(--components-link-gap-hover);
+        color: var(--text-hover);
+      }
+
+      .delta-docs .link-specimen--p {
+        font-size: var(--components-link-p-font-size);
+        line-height: var(--components-link-p-line-height);
+      }
+
+      .delta-docs .link-specimen--small {
+        font-size: var(--components-link-small-font-size);
+        line-height: var(--components-link-small-line-height);
+      }
+
+      .delta-docs .link-specimen--fine {
+        font-size: var(--components-link-fine-font-size);
+        line-height: var(--components-link-fine-line-height);
+      }
+
+      .delta-docs .link-specimen-row {
+        display: inline-flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--components-link-demo-gap);
+      }
+
+      .delta-docs .link-specimen__label {
+        white-space: nowrap;
+      }
+
+      .delta-docs .link-specimen__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+      }
+
+      .delta-docs .link-specimen--p .link-specimen__icon {
+        width: var(--components-link-p-icon-size);
+        height: var(--components-link-p-icon-size);
+      }
+
+      .delta-docs .link-specimen--small .link-specimen__icon {
+        width: var(--components-link-small-icon-size);
+        height: var(--components-link-small-icon-size);
+      }
+
+      .delta-docs .link-specimen--fine .link-specimen__icon {
+        width: var(--components-link-fine-icon-size);
+        height: var(--components-link-fine-icon-size);
+      }
+
+      .delta-docs .link-specimen__icon svg {
+        width: 100%;
+        height: 100%;
+        stroke: currentColor;
+        stroke-width: 1;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+        vector-effect: non-scaling-stroke;
+      }
+    </style>
     <article class="delta-docs">
       <h1>Links</h1>
       <p>Links are navigational elements that allow users to move between pages, sections, or external resources. They are fundamental to web navigation and must be clearly distinguishable from regular text.</p>
@@ -14,9 +92,16 @@ function createLinksDocumentation() {
         <li><strong>Arrow icon (optional):</strong> Directional indicator that appears to the right of the text</li>
       </ul>
 
-      <div class="delta-docs__placeholder" aria-label="Links anatomy placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 Placeholder</span>
-        <p>Live anatomy specimen will be added here.</p>
+      <div class="delta-docs__demo" aria-label="Links anatomy specimen">
+        <a class="link-specimen link-specimen--p" href="/link">
+          <span class="link-specimen__label">Link</span>
+          <span class="link-specimen__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+              <path d="M5 12H19"></path>
+              <path d="M13 6L19 12L13 18"></path>
+            </svg>
+          </span>
+        </a>
       </div>
 
       <hr />
@@ -27,25 +112,46 @@ function createLinksDocumentation() {
       <h3>P (Paragraph)</h3>
       <p>Standard link size for body text and primary navigation. This is the most commonly used size.</p>
 
-      <div class="delta-docs__placeholder" aria-label="Paragraph link placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 Placeholder</span>
-        <p>Live paragraph-size link specimen will be added here.</p>
+      <div class="delta-docs__demo" aria-label="Paragraph link specimen">
+        <a class="link-specimen link-specimen--p" href="/paragraph-size">
+          <span class="link-specimen__label">Paragraph size</span>
+          <span class="link-specimen__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+              <path d="M5 12H19"></path>
+              <path d="M13 6L19 12L13 18"></path>
+            </svg>
+          </span>
+        </a>
       </div>
 
       <h3>Small</h3>
       <p>Compact link size suitable for navigation menus, lists, or supplementary content.</p>
 
-      <div class="delta-docs__placeholder" aria-label="Small link placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 Placeholder</span>
-        <p>Live small-size link specimen will be added here.</p>
+      <div class="delta-docs__demo" aria-label="Small link specimen">
+        <a class="link-specimen link-specimen--small" href="/small-size">
+          <span class="link-specimen__label">Small size</span>
+          <span class="link-specimen__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+              <path d="M5 12H19"></path>
+              <path d="M13 6L19 12L13 18"></path>
+            </svg>
+          </span>
+        </a>
       </div>
 
       <h3>Fine</h3>
       <p>The smallest link size, used for secondary actions, footnotes, or dense layouts where space is limited.</p>
 
-      <div class="delta-docs__placeholder" aria-label="Fine link placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 Placeholder</span>
-        <p>Live fine-size link specimen will be added here.</p>
+      <div class="delta-docs__demo" aria-label="Fine link specimen">
+        <a class="link-specimen link-specimen--fine" href="/fine-size">
+          <span class="link-specimen__label">Fine size</span>
+          <span class="link-specimen__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+              <path d="M5 12H19"></path>
+              <path d="M13 6L19 12L13 18"></path>
+            </svg>
+          </span>
+        </a>
       </div>
 
       <hr />
@@ -55,17 +161,31 @@ function createLinksDocumentation() {
       <h3>Default</h3>
       <p>The initial appearance of a link, using text/link color token.</p>
 
-      <div class="delta-docs__placeholder" aria-label="Default link state placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 Placeholder</span>
-        <p>Live default-state link specimen will be added here.</p>
+      <div class="delta-docs__demo" aria-label="Default link state specimen">
+        <a class="link-specimen link-specimen--p" href="/default-link">
+          <span class="link-specimen__label">Link</span>
+          <span class="link-specimen__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+              <path d="M5 12H19"></path>
+              <path d="M13 6L19 12L13 18"></path>
+            </svg>
+          </span>
+        </a>
       </div>
 
       <h3>Hover</h3>
       <p>When the user hovers over a link, the gap between text and arrow increases from 2px to 4px, and the color changes to text/hover.</p>
 
-      <div class="delta-docs__placeholder" aria-label="Hover link state placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 Placeholder</span>
-        <p>Live hover-state link specimen will be added here.</p>
+      <div class="delta-docs__demo" aria-label="Hover link state specimen">
+        <a class="link-specimen link-specimen--p link-specimen--hover" href="/hover-link">
+          <span class="link-specimen__label">Link</span>
+          <span class="link-specimen__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+              <path d="M5 12H19"></path>
+              <path d="M13 6L19 12L13 18"></path>
+            </svg>
+          </span>
+        </a>
       </div>
 
       <h3>Visited, focus, and active</h3>

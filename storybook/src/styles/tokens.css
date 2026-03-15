@@ -201,6 +201,18 @@
   --components-input-demo-gap: var(--spacing-md);
   --components-input-demo-stack-gap: var(--spacing-sm);
   --components-input-demo-message-max-width: 39rem;
+  --components-link-p-font-size: 1rem;
+  --components-link-p-line-height: 1.5rem;
+  --components-link-small-font-size: 0.75rem;
+  --components-link-small-line-height: 1.25rem;
+  --components-link-fine-font-size: 0.625rem;
+  --components-link-fine-line-height: 1rem;
+  --components-link-p-icon-size: 1rem;
+  --components-link-small-icon-size: 0.75rem;
+  --components-link-fine-icon-size: 0.625rem;
+  --components-link-gap-default: var(--spacing-xs);
+  --components-link-gap-hover: var(--spacing-sm);
+  --components-link-demo-gap: var(--spacing-md);
 
   --docs-font-size-body: 1rem;
   --docs-line-height-body: 1.75;
@@ -305,6 +317,15 @@
     --components-input-switch-width: 3.5rem;
     --components-input-switch-height: 2rem;
     --components-input-icon-size: 1.5rem;
+    --components-link-p-font-size: 1.5rem;
+    --components-link-p-line-height: 2.25rem;
+    --components-link-small-font-size: 1.25rem;
+    --components-link-small-line-height: 1.875rem;
+    --components-link-fine-font-size: 1rem;
+    --components-link-fine-line-height: 1.5rem;
+    --components-link-p-icon-size: 1.5rem;
+    --components-link-small-icon-size: 1.25rem;
+    --components-link-fine-icon-size: 1rem;
 
     --h1-title-font-size: 5rem;
     --h1-title-line-height: 6.25rem;

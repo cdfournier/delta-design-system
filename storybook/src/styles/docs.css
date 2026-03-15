@@ -61,6 +61,18 @@
   color: var(--text-hover);
 }
 
+.delta-docs .link-specimen:hover,
+.delta-docs .link-specimen:focus-visible {
+  color: var(--text-hover);
+  gap: var(--components-link-gap-hover);
+}
+
+[data-color-mode='dark'] .delta-docs .link-specimen:hover,
+[data-color-mode='dark'] .delta-docs .link-specimen:focus-visible {
+  color: var(--text-hover);
+  gap: var(--components-link-gap-hover);
+}
+
 .delta-docs .chip__dismiss:hover .chip__dismiss-inner,
 .delta-docs .chip__dismiss:focus-visible .chip__dismiss-inner {
   background: var(--components-chip-primary);
