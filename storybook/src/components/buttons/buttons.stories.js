@@ -1,5 +1,218 @@
 function createButtonsDocumentation() {
   return `
+    <style>
+      .delta-docs .button-specimen-card {
+        display: inline-flex;
+        align-items: center;
+        background: var(--surface-subtle);
+        border-radius: var(--components-button-demo-shell-radius);
+        padding: var(--components-button-demo-shell-padding);
+      }
+
+      .delta-docs .button-specimen-row {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--components-button-demo-gap);
+      }
+
+      .delta-docs .button-specimen-row--icon {
+        gap: var(--components-button-demo-section-gap);
+      }
+
+      .delta-docs .button-specimen-group {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--components-button-demo-gap);
+      }
+
+      .delta-docs .button-specimen-divider {
+        width: var(--docs-rule-width);
+        align-self: stretch;
+        background: var(--surface-border);
+      }
+
+      .delta-docs .button-specimen {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--components-button-padding-gap);
+        padding: var(--components-button-padding-t-b) var(--components-button-padding-l-r);
+        border: var(--docs-rule-width) solid transparent;
+        border-radius: var(--components-button-border-radius);
+        background: transparent;
+        color: var(--text-default);
+        font-family: var(--font-family-body);
+        font-size: var(--components-button-font-size);
+        line-height: var(--components-button-line-height);
+        font-weight: var(--font-weight-bold);
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        min-width: 0;
+      }
+
+      .delta-docs .button-specimen__label {
+        min-width: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .delta-docs .button-specimen--primary {
+        background: var(--brand-primary);
+        border-color: var(--brand-primary);
+        color: var(--global-white);
+      }
+
+      .delta-docs .button-specimen--secondary {
+        background: var(--brand-secondary);
+        border-color: var(--brand-secondary);
+        color: var(--global-white);
+      }
+
+      .delta-docs .button-specimen--white {
+        background: var(--global-white);
+        border-color: var(--global-white);
+        color: var(--brand-primary);
+      }
+
+      .delta-docs .button-specimen--transparent-primary {
+        background: transparent;
+        border-color: var(--brand-primary);
+        color: var(--brand-primary);
+      }
+
+      .delta-docs .button-specimen--transparent-secondary {
+        background: transparent;
+        border-color: var(--brand-secondary);
+        color: var(--brand-secondary);
+      }
+
+      .delta-docs .button-specimen--disabled {
+        background: var(--status-disabled);
+        border-color: var(--status-disabled);
+        color: var(--global-white);
+      }
+
+      .delta-docs .button-specimen--disabled-transparent {
+        background: transparent;
+        border-color: var(--status-disabled);
+        color: var(--status-disabled);
+      }
+
+      .delta-docs .button-specimen__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--components-button-icon-size);
+        height: var(--components-button-icon-size);
+        flex: 0 0 auto;
+      }
+
+      .delta-docs .button-specimen__icon svg {
+        width: 100%;
+        height: 100%;
+        stroke: currentColor;
+        stroke-width: var(--components-button-icon-stroke-width);
+        fill: none;
+        vector-effect: non-scaling-stroke;
+      }
+
+      .delta-docs .button-specimen--icon-only {
+        width: var(--components-button-demo-icon-button-size);
+        height: var(--components-button-demo-icon-button-size);
+        padding: var(--components-button-icon-padding);
+        border-radius: var(--border-radius-round);
+      }
+
+      .delta-docs .button-specimen--outline-primary {
+        background: transparent;
+        border-color: var(--brand-primary);
+        color: var(--brand-primary);
+      }
+
+      .delta-docs .button-specimen--outline-secondary {
+        background: transparent;
+        border-color: var(--brand-secondary);
+        color: var(--brand-secondary);
+      }
+
+      .delta-docs .button-specimen--icon-transparent-primary {
+        background: transparent;
+        border-color: transparent;
+        color: var(--brand-primary);
+      }
+
+      .delta-docs .button-specimen--icon-transparent-secondary {
+        background: transparent;
+        border-color: transparent;
+        color: var(--brand-secondary);
+      }
+
+      .delta-docs .button-specimen--primary:hover,
+      .delta-docs .button-specimen--primary:focus-visible,
+      .delta-docs .button-specimen--secondary:hover,
+      .delta-docs .button-specimen--secondary:focus-visible,
+      .delta-docs .button-specimen--outline-primary:hover,
+      .delta-docs .button-specimen--outline-primary:focus-visible,
+      .delta-docs .button-specimen--outline-secondary:hover,
+      .delta-docs .button-specimen--outline-secondary:focus-visible,
+      .delta-docs .button-specimen--icon-transparent-primary:hover,
+      .delta-docs .button-specimen--icon-transparent-primary:focus-visible,
+      .delta-docs .button-specimen--icon-transparent-secondary:hover,
+      .delta-docs .button-specimen--icon-transparent-secondary:focus-visible,
+      .delta-docs .button-specimen--transparent-primary:hover,
+      .delta-docs .button-specimen--transparent-primary:focus-visible,
+      .delta-docs .button-specimen--transparent-secondary:hover,
+      .delta-docs .button-specimen--transparent-secondary:focus-visible,
+      .delta-docs .button-specimen--white:hover,
+      .delta-docs .button-specimen--white:focus-visible {
+        outline-offset: var(--spacing-xs);
+      }
+
+      .delta-docs .button-specimen--primary:hover,
+      .delta-docs .button-specimen--primary:focus-visible {
+        background: var(--global-white);
+        border-color: var(--brand-primary);
+        color: var(--brand-primary);
+      }
+
+      .delta-docs .button-specimen--secondary:hover,
+      .delta-docs .button-specimen--secondary:focus-visible {
+        background: var(--global-white);
+        border-color: var(--brand-secondary);
+        color: var(--brand-secondary);
+      }
+
+      .delta-docs .button-specimen--white:hover,
+      .delta-docs .button-specimen--white:focus-visible {
+        background: var(--brand-primary);
+        border-color: var(--global-white);
+        color: var(--global-white);
+      }
+
+      .delta-docs .button-specimen--transparent-primary:hover,
+      .delta-docs .button-specimen--transparent-primary:focus-visible,
+      .delta-docs .button-specimen--outline-primary:hover,
+      .delta-docs .button-specimen--outline-primary:focus-visible,
+      .delta-docs .button-specimen--icon-transparent-primary:hover,
+      .delta-docs .button-specimen--icon-transparent-primary:focus-visible {
+        background: var(--brand-primary);
+        border-color: var(--brand-primary);
+        color: var(--global-white);
+      }
+
+      .delta-docs .button-specimen--transparent-secondary:hover,
+      .delta-docs .button-specimen--transparent-secondary:focus-visible,
+      .delta-docs .button-specimen--outline-secondary:hover,
+      .delta-docs .button-specimen--outline-secondary:focus-visible,
+      .delta-docs .button-specimen--icon-transparent-secondary:hover,
+      .delta-docs .button-specimen--icon-transparent-secondary:focus-visible {
+        background: var(--brand-secondary);
+        border-color: var(--brand-secondary);
+        color: var(--global-white);
+      }
+    </style>
     <article class="delta-docs">
       <h1>Buttons</h1>
       <p>Buttons trigger actions or navigate users through interfaces. They communicate interactive affordance through visual weight, color, and feedback states.</p>
@@ -14,9 +227,19 @@ function createButtonsDocumentation() {
         <li><strong>Icon (optional):</strong> Visual reinforcement placed before (left) or after (right) the label</li>
       </ul>
 
-      <div class="delta-docs__placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 live specimen placeholder</span>
-        <p>Render the buttons anatomy specimen exactly as shown in the verified reference documentation.</p>
+      <div class="button-specimen-card" aria-label="Button anatomy specimen">
+        <div class="button-specimen-row">
+          <button class="button-specimen button-specimen--primary" type="button"><span class="button-specimen__label">Label</span></button>
+          <button class="button-specimen button-specimen--secondary" type="button">
+            <span class="button-specimen__label">Label</span>
+            <span class="button-specimen__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 5v14" />
+                <path d="M5 12h14" />
+              </svg>
+            </span>
+          </button>
+        </div>
       </div>
 
       <hr />
@@ -39,9 +262,19 @@ function createButtonsDocumentation() {
         <li><strong>Transparent:</strong> Transparent background with a transparent border in the default state. On hover, the background becomes solid and the border becomes visible in the variant color — the inverse of the solid style. The lowest visual weight. Use for low-emphasis actions, inline controls, or contexts where minimal visual presence is required.</li>
       </ul>
 
-      <div class="delta-docs__placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 live specimen placeholder</span>
-        <p>Render the button variant and style specimens exactly as shown in the verified reference documentation.</p>
+      <div class="button-specimen-card" aria-label="Button variants specimen">
+        <div class="button-specimen-row">
+          <button class="button-specimen button-specimen--primary" type="button"><span class="button-specimen__label">Primary</span></button>
+          <button class="button-specimen button-specimen--secondary" type="button"><span class="button-specimen__label">Secondary</span></button>
+          <button class="button-specimen button-specimen--white" type="button"><span class="button-specimen__label">White</span></button>
+        </div>
+      </div>
+
+      <div class="button-specimen-card" aria-label="Button style specimen">
+        <div class="button-specimen-row">
+          <button class="button-specimen button-specimen--primary" type="button"><span class="button-specimen__label">Solid</span></button>
+          <button class="button-specimen button-specimen--transparent-primary" type="button"><span class="button-specimen__label">Transparent</span></button>
+        </div>
       </div>
 
       <h3>Icon-only buttons</h3>
@@ -49,9 +282,62 @@ function createButtonsDocumentation() {
       <p>Icon buttons use a circular border-radius (<code>border-radius/round</code>) and uniform padding on all sides. Because there is no visible label, icon-only buttons require accessible labeling — use either a visually hidden <code>&lt;span&gt;</code> element or the <code>aria-label</code> attribute to provide screen readers with a descriptive label.</p>
       <p>The outline style is available only for icon-only buttons — it provides a middle weight between solid and transparent, useful when you need more visual presence than transparent offers but don&apos;t want the full weight of a solid fill.</p>
 
-      <div class="delta-docs__placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 live specimen placeholder</span>
-        <p>Render the icon-only button specimens exactly as shown in the verified reference documentation.</p>
+      <div class="button-specimen-card" aria-label="Icon-only button specimens">
+        <div class="button-specimen-row button-specimen-row--icon">
+          <div class="button-specimen-group" aria-label="Primary icon-only buttons">
+            <button class="button-specimen button-specimen--icon-only button-specimen--primary" type="button" aria-label="Primary solid search">
+              <span class="button-specimen__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <circle cx="10.5" cy="10.5" r="6.5" />
+                  <path d="M15.5 15.5L20 20" />
+                </svg>
+              </span>
+            </button>
+            <button class="button-specimen button-specimen--icon-only button-specimen--outline-primary" type="button" aria-label="Primary outline search">
+              <span class="button-specimen__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <circle cx="10.5" cy="10.5" r="6.5" />
+                  <path d="M15.5 15.5L20 20" />
+                </svg>
+              </span>
+            </button>
+            <button class="button-specimen button-specimen--icon-only button-specimen--icon-transparent-primary" type="button" aria-label="Primary transparent search">
+              <span class="button-specimen__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <circle cx="10.5" cy="10.5" r="6.5" />
+                  <path d="M15.5 15.5L20 20" />
+                </svg>
+              </span>
+            </button>
+          </div>
+          <span class="button-specimen-divider" aria-hidden="true"></span>
+          <div class="button-specimen-group" aria-label="Secondary icon-only buttons">
+            <button class="button-specimen button-specimen--icon-only button-specimen--secondary" type="button" aria-label="Secondary solid search">
+              <span class="button-specimen__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <circle cx="10.5" cy="10.5" r="6.5" />
+                  <path d="M15.5 15.5L20 20" />
+                </svg>
+              </span>
+            </button>
+            <button class="button-specimen button-specimen--icon-only button-specimen--outline-secondary" type="button" aria-label="Secondary outline search">
+              <span class="button-specimen__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <circle cx="10.5" cy="10.5" r="6.5" />
+                  <path d="M15.5 15.5L20 20" />
+                </svg>
+              </span>
+            </button>
+            <button class="button-specimen button-specimen--icon-only button-specimen--icon-transparent-secondary" type="button" aria-label="Secondary transparent search">
+              <span class="button-specimen__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <circle cx="10.5" cy="10.5" r="6.5" />
+                  <path d="M15.5 15.5L20 20" />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
       </div>
 
       <hr />
@@ -71,9 +357,11 @@ function createButtonsDocumentation() {
       <h3>Disabled</h3>
       <p>Disabled buttons use the <code>status/disabled</code> token (#808080) for both background and border, with white text. Transparent style buttons use #808080 for text only, with no fill or border. Include both the <code>disabled</code> HTML attribute and <code>aria-disabled=&quot;true&quot;</code> to ensure proper accessibility behavior.</p>
 
-      <div class="delta-docs__placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 live specimen placeholder</span>
-        <p>Render the disabled button state specimens exactly as shown in the verified reference documentation.</p>
+      <div class="button-specimen-card" aria-label="Disabled button specimens">
+        <div class="button-specimen-row">
+          <button class="button-specimen button-specimen--disabled" type="button" disabled aria-disabled="true"><span class="button-specimen__label">Primary disabled</span></button>
+          <button class="button-specimen button-specimen--disabled-transparent" type="button" disabled aria-disabled="true"><span class="button-specimen__label">Secondary transparent disabled</span></button>
+        </div>
       </div>
 
       <hr />
