@@ -213,6 +213,15 @@
   --components-link-gap-default: var(--spacing-xs);
   --components-link-gap-hover: var(--spacing-sm);
   --components-link-demo-gap: var(--spacing-md);
+  --components-card-padding: var(--spacing-xl);
+  --components-card-content-gap: var(--spacing-sm);
+  --components-card-border-radius: var(--border-radius-md);
+  --components-card-border-width: var(--docs-rule-width);
+  --components-card-border-color: var(--neutral-gray-medium);
+  --components-card-vertical-width: 21rem;
+  --components-card-horizontal-figure-width: 16rem;
+  --components-card-horizontal-min-height: 12.5rem;
+  --components-card-demo-gap: var(--spacing-xl);
 
   --docs-font-size-body: 1rem;
   --docs-line-height-body: 1.75;

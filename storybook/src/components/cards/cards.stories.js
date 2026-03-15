@@ -1,5 +1,96 @@
 function createCardsDocumentation() {
   return `
+    <style>
+      .delta-docs .card-specimen-stack {
+        display: grid;
+        gap: var(--components-card-demo-gap);
+      }
+
+      .delta-docs .card-specimen {
+        display: flex;
+        overflow: hidden;
+        border: var(--components-card-border-width) solid var(--components-card-border-color);
+        border-radius: var(--components-card-border-radius);
+        background: var(--page-background);
+        color: var(--text-default);
+      }
+
+      .delta-docs .card-specimen--vertical {
+        flex-direction: column;
+        width: 100%;
+        max-width: var(--components-card-vertical-width);
+      }
+
+      .delta-docs .card-specimen--horizontal {
+        flex-direction: column;
+        width: 100%;
+        min-height: var(--components-card-horizontal-min-height);
+      }
+
+      .delta-docs .card-specimen--horizontal-reverse {
+        flex-direction: column-reverse;
+      }
+
+      .delta-docs .card-specimen__figure {
+        overflow: hidden;
+        flex: 0 0 auto;
+      }
+
+      .delta-docs .card-specimen--vertical .card-specimen__figure {
+        aspect-ratio: 354 / 218.80569458007812;
+        width: 100%;
+      }
+
+      .delta-docs .card-specimen--horizontal .card-specimen__figure {
+        width: 100%;
+      }
+
+      .delta-docs .card-specimen__image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .delta-docs .card-specimen__content {
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        gap: var(--components-card-content-gap);
+        padding: var(--components-card-padding);
+      }
+
+      .delta-docs .card-specimen__heading {
+        margin: 0;
+        color: var(--text-default);
+        font-family: var(--font-family-heading);
+        font-size: var(--h3-font-size);
+        line-height: var(--h3-line-height);
+        font-weight: var(--font-weight-regular);
+      }
+
+      .delta-docs .card-specimen__body {
+        margin: 0;
+        color: var(--text-default);
+        font-family: var(--font-family-body);
+        font-size: var(--p-font-size);
+        line-height: var(--p-line-height);
+      }
+
+      @media (min-width: 48rem) {
+        .delta-docs .card-specimen--horizontal {
+          flex-direction: row;
+        }
+
+        .delta-docs .card-specimen--horizontal-reverse {
+          flex-direction: row-reverse;
+        }
+
+        .delta-docs .card-specimen--horizontal .card-specimen__figure {
+          width: min(100%, var(--components-card-horizontal-figure-width));
+        }
+      }
+    </style>
     <article class="delta-docs">
       <h1>Cards</h1>
       <p>Cards are flexible containers that group related content and actions. They provide a visual framework for organizing information in digestible, scannable sections across the interface.</p>
@@ -16,11 +107,6 @@ function createCardsDocumentation() {
 
       <p><strong>Note:</strong> Cards use the Content component for their text content area. See the Content component documentation for detailed specifications on headings, body text, and optional elements such as eyebrow, CTA, and footer.</p>
 
-      <div class="delta-docs__placeholder" aria-label="Cards anatomy placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 Placeholder</span>
-        <p>Live card anatomy specimens will be added here.</p>
-      </div>
-
       <hr />
 
       <h2>Variants</h2>
@@ -29,17 +115,42 @@ function createCardsDocumentation() {
       <h3>Vertical</h3>
       <p>The default card orientation with the figure on top and content below. Vertical cards support two height behaviors: <strong>Hug</strong> (height wraps the content) and <strong>Fill</strong> (card stretches to fill its container). They are suited to grid layouts, content galleries, and product listings.</p>
 
-      <div class="delta-docs__placeholder" aria-label="Vertical card placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 Placeholder</span>
-        <p>Live vertical card specimens will be added here.</p>
+      <div class="delta-docs__demo" aria-label="Vertical card specimen">
+        <article class="card-specimen card-specimen--vertical">
+          <figure class="card-specimen__figure">
+            <img class="card-specimen__image" src="https://www.figma.com/api/mcp/asset/ee240006-66b3-49de-8fda-1531d4d4e218" alt="" />
+          </figure>
+          <div class="card-specimen__content">
+            <h3 class="card-specimen__heading">Heading</h3>
+            <p class="card-specimen__body">Body</p>
+          </div>
+        </article>
       </div>
 
       <h3>Horizontal</h3>
       <p>Figure and content displayed side by side. The default places the figure on the left; the reversed sub-variant places it on the right. Horizontal cards work well for list layouts and featured content sections. On mobile, horizontal cards stack vertically, preserving the reading order of the horizontal layout: default cards (figure left) stack with the figure on top, while reversed cards (figure right) stack with content on top.</p>
 
-      <div class="delta-docs__placeholder" aria-label="Horizontal card placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 Placeholder</span>
-        <p>Live horizontal card specimens will be added here.</p>
+      <div class="delta-docs__demo" aria-label="Horizontal card specimens">
+        <div class="card-specimen-stack">
+          <article class="card-specimen card-specimen--horizontal">
+            <figure class="card-specimen__figure">
+              <img class="card-specimen__image" src="https://www.figma.com/api/mcp/asset/a9cffecd-b709-44d0-aac7-e9d835b760b3" alt="" />
+            </figure>
+            <div class="card-specimen__content">
+              <h3 class="card-specimen__heading">Heading</h3>
+              <p class="card-specimen__body">Body</p>
+            </div>
+          </article>
+          <article class="card-specimen card-specimen--horizontal card-specimen--horizontal-reverse">
+            <figure class="card-specimen__figure">
+              <img class="card-specimen__image" src="https://www.figma.com/api/mcp/asset/90153d2a-5e55-46ed-a176-454a68abfb55" alt="" />
+            </figure>
+            <div class="card-specimen__content">
+              <h3 class="card-specimen__heading">Heading</h3>
+              <p class="card-specimen__body">Body</p>
+            </div>
+          </article>
+        </div>
       </div>
 
       <hr />

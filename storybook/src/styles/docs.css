@@ -101,6 +101,10 @@
   display: flex;
 }
 
+.delta-docs .card-specimen__figure {
+  margin: 0;
+}
+
 .delta-docs :where(code, pre) {
   font-family: var(--font-family-mono);
   font-size: var(--docs-font-size-code);
@@ -613,5 +617,9 @@
 @media (min-width: 48rem) {
   .delta-docs__do-dont-grid {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .delta-docs .card-specimen__content {
+    justify-content: center;
   }
 }
