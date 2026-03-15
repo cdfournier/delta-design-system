@@ -1,0 +1,23 @@
+.delta-story-root,
+.delta-story-root * ,
+.delta-story-root *::before,
+.delta-story-root *::after {
+  box-sizing: border-box;
+}
+
+.delta-story-root {
+  min-height: 100vh;
+  padding: 0;
+  background: var(--page-background);
+  color: var(--text-default);
+  font-family: var(--font-family-body);
+}
+
+.delta-story-root:focus-within {
+  outline: none;
+}
+
+.delta-story-canvas {
+  min-height: 100vh;
+  padding: 0;
+}

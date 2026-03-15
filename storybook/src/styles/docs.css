@@ -1,0 +1,201 @@
+.delta-docs {
+  max-width: var(--docs-max-width);
+  margin: 0 auto;
+  padding: var(--docs-page-padding-block) var(--docs-page-padding-inline);
+  background: var(--page-background);
+  color: var(--text-default);
+  font-family: var(--font-family-body);
+  font-size: var(--docs-font-size-body);
+  line-height: var(--docs-line-height-body);
+}
+
+.delta-docs :where(h1, h2, h3, h4, p, ul, ol, table, pre, hr, blockquote) {
+  margin: 0;
+}
+
+.delta-docs :where(h1, h2, h3, h4) {
+  color: var(--text-default);
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-regular);
+}
+
+.delta-docs :where(h1) {
+  font-size: var(--docs-font-size-h1);
+  line-height: var(--docs-line-height-h1);
+}
+
+.delta-docs :where(h2) {
+  font-size: var(--docs-font-size-h2);
+  line-height: var(--docs-line-height-h2);
+}
+
+.delta-docs :where(h3) {
+  font-size: var(--docs-font-size-h3);
+  line-height: var(--docs-line-height-h3);
+}
+
+.delta-docs :where(h4) {
+  font-size: var(--docs-font-size-h4);
+  line-height: var(--docs-line-height-h4);
+}
+
+.delta-docs :where(p, li, th, td) {
+  font-size: var(--docs-font-size-body);
+  line-height: var(--docs-line-height-body);
+}
+
+.delta-docs :where(a) {
+  color: var(--text-link);
+  text-decoration: underline;
+  text-underline-offset: var(--spacing-xs);
+}
+
+.delta-docs :where(a:hover, a:focus-visible) {
+  color: var(--surface-strong);
+}
+
+.delta-docs :where(code, pre) {
+  font-family: var(--font-family-mono);
+  font-size: var(--docs-font-size-code);
+  line-height: var(--docs-line-height-code);
+}
+
+.delta-docs :where(code) {
+  display: inline-block;
+  padding: 0 var(--spacing-sm);
+  border-radius: var(--docs-code-radius);
+  background: var(--surface-subtle);
+}
+
+.delta-docs :where(pre) {
+  overflow-x: auto;
+  padding: var(--spacing-xl);
+  border-radius: var(--docs-surface-radius);
+  background: var(--surface-subtle);
+}
+
+.delta-docs :where(strong) {
+  font-weight: var(--font-weight-bold);
+}
+
+.delta-docs :where(ul, ol) {
+  padding-left: var(--spacing-xxl);
+}
+
+.delta-docs :where(li + li) {
+  margin-top: var(--spacing-sm);
+}
+
+.delta-docs :where(hr) {
+  border: 0;
+  border-top: var(--docs-rule-width) solid var(--surface-border);
+}
+
+.delta-docs :where(table) {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.delta-docs :where(th, td) {
+  padding: var(--docs-table-cell-padding-block) var(--docs-table-cell-padding-inline);
+  border-bottom: var(--docs-rule-width) solid var(--surface-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.delta-docs :where(th) {
+  background: var(--section-background);
+  font-weight: var(--font-weight-bold);
+}
+
+.delta-docs :where(blockquote) {
+  padding-left: var(--spacing-xl);
+  border-left: var(--docs-accent-width) solid var(--surface-strong);
+}
+
+.delta-docs__stack {
+  display: grid;
+  gap: var(--docs-stack-gap);
+}
+
+.delta-docs__section {
+  display: grid;
+  gap: var(--docs-stack-gap);
+}
+
+.delta-docs__section--tight {
+  gap: var(--spacing-lg);
+}
+
+.delta-docs__demo,
+.delta-docs__placeholder {
+  padding: var(--docs-demo-padding);
+  border: var(--docs-rule-width) solid var(--surface-border);
+  border-radius: var(--docs-surface-radius);
+  background: var(--section-background);
+}
+
+.delta-docs__placeholder {
+  display: grid;
+  gap: var(--spacing-sm);
+}
+
+.delta-docs__placeholder-label {
+  color: var(--text-muted);
+  font-size: var(--docs-font-size-code);
+  letter-spacing: var(--docs-letter-spacing-placeholder);
+  text-transform: uppercase;
+}
+
+.delta-docs__do-dont-grid {
+  display: grid;
+  gap: var(--docs-grid-gap);
+}
+
+.delta-docs__practice {
+  display: grid;
+  gap: var(--spacing-sm);
+  padding-left: var(--spacing-lg);
+  border-left: var(--docs-accent-width) solid var(--surface-border);
+}
+
+.delta-docs__practice--do {
+  border-left-color: var(--positive-default);
+}
+
+.delta-docs__practice--dont {
+  border-left-color: var(--negative-default);
+}
+
+.delta-docs__eyebrow {
+  color: var(--text-muted);
+  font-size: var(--docs-font-size-code);
+  letter-spacing: var(--docs-letter-spacing-eyebrow);
+  text-transform: uppercase;
+}
+
+.delta-docs__sample-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  min-width: 8rem;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border: var(--docs-rule-width) solid var(--surface-border);
+  border-radius: var(--button-border-radius);
+  background: var(--page-background);
+  color: var(--text-default);
+  font-weight: var(--font-weight-bold);
+}
+
+.delta-docs__inline-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+@media (min-width: 48rem) {
+  .delta-docs__do-dont-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+}

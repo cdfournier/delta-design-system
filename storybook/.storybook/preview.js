@@ -1,12 +1,93 @@
 import '../src/styles/tokens.css';
-import '../src/styles/global.css';
+import '../src/styles/reset.css';
+import '../src/styles/docs.css';
+
+const viewportOptions = {
+  mobile: {
+    name: 'Mobile',
+    styles: {
+      width: '375px',
+      height: '812px',
+    },
+  },
+  tablet: {
+    name: 'Tablet',
+    styles: {
+      width: '768px',
+      height: '1024px',
+    },
+  },
+  widescreen: {
+    name: 'Widescreen',
+    styles: {
+      width: '1280px',
+      height: '900px',
+    },
+  },
+};
+
+function ensurePreviewFonts(doc) {
+  if (doc.head.querySelector('[data-delta-fonts="true"]')) {
+    return;
+  }
+
+  const preconnectGoogle = doc.createElement('link');
+  preconnectGoogle.rel = 'preconnect';
+  preconnectGoogle.href = 'https://fonts.googleapis.com';
+  preconnectGoogle.setAttribute('data-delta-fonts', 'true');
+
+  const preconnectStatic = doc.createElement('link');
+  preconnectStatic.rel = 'preconnect';
+  preconnectStatic.href = 'https://fonts.gstatic.com';
+  preconnectStatic.crossOrigin = 'anonymous';
+  preconnectStatic.setAttribute('data-delta-fonts', 'true');
+
+  const stylesheet = doc.createElement('link');
+  stylesheet.rel = 'stylesheet';
+  stylesheet.href =
+    'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Ovo&display=swap';
+  stylesheet.setAttribute('data-delta-fonts', 'true');
+
+  doc.head.append(preconnectGoogle, preconnectStatic, stylesheet);
+}
+
+function resetPreviewDocument(doc, colorMode) {
+  const root = doc.documentElement;
+  const body = doc.body;
+
+  if (!body) {
+    return;
+  }
+
+  root.style.background = 'transparent';
+  body.style.margin = '0';
+  body.style.padding = '0';
+  body.style.background = 'transparent';
+  body.style.colorScheme = colorMode === 'dark' ? 'dark' : 'light';
+}
+
+function normalizeStoryResult(result) {
+  if (typeof result === 'string') {
+    return result;
+  }
+
+  if (result == null) {
+    return '';
+  }
+
+  if (typeof result === 'object' && 'outerHTML' in result && typeof result.outerHTML === 'string') {
+    return result.outerHTML;
+  }
+
+  return String(result);
+}
 
 /** @type { import('@storybook/html').Preview } */
 const preview = {
   globalTypes: {
     colorMode: {
       name: 'Color mode',
-      description: 'Global color mode',
+      description: 'Preview the story in light or dark mode.',
       defaultValue: 'light',
       toolbar: {
         icon: 'mirror',
@@ -17,22 +98,9 @@ const preview = {
         showName: true,
       },
     },
-    spaceMode: {
-      name: 'Space mode',
-      description: 'Global spacing mode',
-      defaultValue: 'mobile',
-      toolbar: {
-        icon: 'component',
-        items: [
-          { value: 'mobile', title: 'Mobile' },
-          { value: 'widescreen', title: 'Widescreen' },
-        ],
-        showName: true,
-      },
-    },
     breakpoint: {
       name: 'Breakpoint',
-      description: 'Global breakpoint preview',
+      description: 'Label the current breakpoint review target.',
       defaultValue: 'mobile',
       toolbar: {
         icon: 'browser',
@@ -45,133 +113,86 @@ const preview = {
       },
     },
   },
+  initialGlobals: {
+    colorMode: 'light',
+    breakpoint: 'mobile',
+    viewport: { value: 'mobile', isRotated: false },
+  },
   decorators: [
     (story, context) => {
-      const typeMode = context.globals.breakpoint === 'widescreen' ? 'widescreen' : 'mobile';
-      const root = document.documentElement;
-      root.setAttribute('data-color-mode', context.globals.colorMode);
-      root.setAttribute('data-space-mode', context.globals.spaceMode);
-      root.setAttribute('data-breakpoint-mode', context.globals.breakpoint);
-      root.setAttribute('data-type-mode', typeMode);
+      const doc = document;
 
-      const body = document.body;
-      if (body) {
-        body.setAttribute('data-color-mode', context.globals.colorMode);
-        body.setAttribute('data-space-mode', context.globals.spaceMode);
-        body.setAttribute('data-breakpoint-mode', context.globals.breakpoint);
-        body.setAttribute('data-type-mode', typeMode);
-        body.classList.add('dds-storybook-body');
+      ensurePreviewFonts(doc);
+      resetPreviewDocument(doc, context.globals.colorMode);
+      const storyMarkup = normalizeStoryResult(story());
 
-        const computed = window.getComputedStyle(root);
-        body.style.backgroundColor = computed.getPropertyValue('--background-page').trim();
-        body.style.color = computed.getPropertyValue('--text-default').trim();
-        body.style.fontFamily = computed.getPropertyValue('--font-family-body').trim();
-        body.style.colorScheme = context.globals.colorMode === 'dark' ? 'dark' : 'light';
-      }
-
-      const rootNodes = ['#storybook-root', '#root'];
-      rootNodes.forEach((selector) => {
-        const node = document.querySelector(selector);
-        if (!node) return;
-        node.setAttribute('data-color-mode', context.globals.colorMode);
-        node.setAttribute('data-space-mode', context.globals.spaceMode);
-        node.setAttribute('data-breakpoint-mode', context.globals.breakpoint);
-        node.setAttribute('data-type-mode', typeMode);
-      });
-
-      return story();
+      return `
+        <div
+          class="delta-story-root"
+          data-color-mode="${context.globals.colorMode}"
+          data-breakpoint="${context.globals.breakpoint}"
+          data-story-title="${context.title ?? ''}"
+        >
+          <div class="delta-story-canvas">
+            ${storyMarkup}
+          </div>
+        </div>
+      `;
     },
   ],
   parameters: {
     controls: {
-      expanded: true,
+      disable: true,
     },
-    backgrounds: {
-      default: 'surface-light',
-      values: [
-        { name: 'surface-light', value: '#ffffff' },
-        { name: 'section-light', value: '#eeeeee' },
-        { name: 'surface-dark', value: '#01232d' },
-        { name: 'section-dark', value: '#003442' },
-      ],
+    actions: {
+      disable: true,
+    },
+    viewport: {
+      options: viewportOptions,
+      defaultViewport: 'mobile',
     },
     options: {
-      storySort: (a, b) => {
-        const normalizeEntry = (entry) => (Array.isArray(entry) ? entry[1] ?? {} : entry ?? {});
-        const rankTopLevel = (entry) => {
-          const story = normalizeEntry(entry);
-          const title = story.title ?? story.kind ?? '';
-          const topLevel = title.split('/')[0] ?? '';
-          const order = ['Welcome', 'Foundations', 'Atoms', 'Molecules', 'Organisms'];
-          const index = order.indexOf(topLevel);
-          return index === -1 ? order.length : index;
-        };
-        const rankSecondLevel = (entry) => {
-          const story = normalizeEntry(entry);
-          const title = story.title ?? story.kind ?? '';
-          const [topLevel = '', secondLevel = ''] = title.split('/');
-          const orders = {
-            Foundations: ['Colors', 'Typography', 'Spacing', 'Grid'],
-            Welcome: ['Cover', 'About'],
-          };
-          const order = orders[topLevel];
-          if (!order) {
-            return Number.MAX_SAFE_INTEGER;
+      storySort: (left, right) => {
+        const sortIndex = ['Welcome', 'Foundations', 'Atoms', 'Molecules', 'Organisms'];
+        const foundationOrder = ['Colors', 'Typography', 'Spacing', 'Grid'];
+        const getParts = (entry) => (entry.title ?? '').split('/');
+        const getName = (entry) => entry.name ?? '';
+        const topLevelLeft = getParts(left)[0] ?? '';
+        const topLevelRight = getParts(right)[0] ?? '';
+        const topDiff =
+          (sortIndex.indexOf(topLevelLeft) === -1 ? sortIndex.length : sortIndex.indexOf(topLevelLeft)) -
+          (sortIndex.indexOf(topLevelRight) === -1 ? sortIndex.length : sortIndex.indexOf(topLevelRight));
+
+        if (topDiff !== 0) {
+          return topDiff;
+        }
+
+        if (topLevelLeft === 'Foundations' && topLevelRight === 'Foundations') {
+          const foundationLeft = getParts(left)[1] ?? '';
+          const foundationRight = getParts(right)[1] ?? '';
+          const foundationDiff =
+            (foundationOrder.indexOf(foundationLeft) === -1
+              ? foundationOrder.length
+              : foundationOrder.indexOf(foundationLeft)) -
+            (foundationOrder.indexOf(foundationRight) === -1
+              ? foundationOrder.length
+              : foundationOrder.indexOf(foundationRight));
+
+          if (foundationDiff !== 0) {
+            return foundationDiff;
           }
-          const index = order.indexOf(secondLevel);
-          return index === -1 ? order.length : index;
-        };
-        const rankDocs = (entry) => {
-          const story = normalizeEntry(entry);
-          const title = story.title ?? story.kind ?? '';
-          const name = story.name ?? '';
-          const titleLeaf = title.split('/').pop() ?? '';
-          const isDocs = name === 'Docs' || name === 'Documentation' || titleLeaf === 'Documentation';
-          return isDocs ? 0 : 1;
-        };
-        const rankWelcomeStories = (entry) => {
-          const story = normalizeEntry(entry);
-          const title = story.title ?? story.kind ?? '';
-          const name = story.name ?? '';
-          if (title !== 'Welcome') {
-            return Number.MAX_SAFE_INTEGER;
-          }
-          const order = ['Cover', 'About'];
-          const index = order.indexOf(name);
-          return index === -1 ? order.length : index;
-        };
-        const alpha = (left, right) =>
-          String(left ?? '')
-            .toLowerCase()
-            .localeCompare(String(right ?? '').toLowerCase(), undefined, { numeric: true });
-
-        const topLevelDiff = rankTopLevel(a) - rankTopLevel(b);
-        if (topLevelDiff !== 0) {
-          return topLevelDiff;
         }
 
-        const secondLevelDiff = rankSecondLevel(a) - rankSecondLevel(b);
-        if (secondLevelDiff !== 0) {
-          return secondLevelDiff;
+        const docsRankLeft = /^(docs|documentation)$/i.test(getName(left)) ? 0 : 1;
+        const docsRankRight = /^(docs|documentation)$/i.test(getName(right)) ? 0 : 1;
+
+        if (docsRankLeft !== docsRankRight) {
+          return docsRankLeft - docsRankRight;
         }
 
-        const docsDiff = rankDocs(a) - rankDocs(b);
-        if (docsDiff !== 0) {
-          return docsDiff;
-        }
-
-        const welcomeDiff = rankWelcomeStories(a) - rankWelcomeStories(b);
-        if (welcomeDiff !== 0) {
-          return welcomeDiff;
-        }
-
-        const storyA = normalizeEntry(a);
-        const storyB = normalizeEntry(b);
-        const titleDiff = alpha(storyA.title ?? storyA.kind, storyB.title ?? storyB.kind);
-        if (titleDiff !== 0) {
-          return titleDiff;
-        }
-        return alpha(storyA.name, storyB.name);
+        return (left.title ?? left.id ?? '').localeCompare(right.title ?? right.id ?? '', undefined, {
+          numeric: true,
+        }) || getName(left).localeCompare(getName(right), undefined, { numeric: true });
       },
     },
   },

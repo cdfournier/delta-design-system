@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockquotes - The Delta Design System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Ovo&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #FF5247;
+            --color-primary-dark: #B22E28;
+            --color-secondary: #003442;
+            --color-secondary-dark: #01232D;
+            --color-black: #000000;
+            --color-white: #FFFFFF;
+            --color-gray-dark: #919191;
+            --color-gray-medium: #CCCCCC;
+            --color-gray-light: #EEEEEE;
+
+            --font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-family-heading: 'Ovo', Georgia, serif;
+            --max-width: 800px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--color-black);
+            background-color: var(--color-white);
+            padding: 32px 24px;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-family: var(--font-family-heading);
+            font-size: 48px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: var(--color-black);
+        }
+
+        h2 {
+            font-family: var(--font-family-heading);
+            font-size: 32px;
+            font-weight: 400;
+            line-height: 1.3;
+            margin-top: 48px;
+            margin-bottom: 16px;
+            color: var(--color-black);
+        }
+
+        h3 {
+            font-family: var(--font-family-heading);
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 1.4;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            color: var(--color-black);
+        }
+
+        h4 {
+            font-family: var(--font-family-heading);
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.4;
+            margin-top: 24px;
+            margin-bottom: 8px;
+            color: var(--color-black);
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.75;
+            margin-bottom: 16px;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        a {
+            color: var(--color-primary);
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: var(--color-secondary);
+        }
+
+        ul, ol {
+            margin-left: 24px;
+            margin-bottom: 16px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            line-height: 1.75;
+        }
+
+        code {
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+            background-color: var(--color-gray-light);
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        pre {
+            background-color: var(--color-gray-light);
+            padding: 16px;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin-bottom: 24px;
+        }
+
+        pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 24px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid var(--color-gray-medium);
+        }
+
+        th {
+            font-weight: 700;
+            background-color: var(--color-gray-light);
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--color-gray-medium);
+            margin: 48px 0;
+        }
+
+        .component-demo {
+            background-color: var(--color-gray-light);
+            padding: 32px;
+            border-radius: 4px;
+            margin: 24px 0;
+        }
+
+        .do-dont-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin: 24px 0;
+        }
+
+        @media (max-width: 48rem) {
+            .do-dont-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .do-section {
+            border-left: 4px solid #007000;
+            padding-left: 16px;
+        }
+
+        .dont-section {
+            border-left: 4px solid #C00C00;
+            padding-left: 16px;
+        }
+
+        .do-section h3,
+        .dont-section h3 {
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        .do-section p strong,
+        .dont-section p strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* Blockquote component tokens */
+        :root {
+            --brand-primary: #FF5247;
+            --text-default: #000000;
+            --text-link: #FF5247;
+            --global-white: #FFFFFF;
+            --md: 0.5rem;
+            --xl: 1rem;
+            --components-blockquote-quote-font-size: 0.75rem;
+            --components-blockquote-quote-line-height: 1.25rem;
+            --components-blockquote-cite-font-size: 0.625rem;
+            --components-blockquote-cite-line-height: 1rem;
+        }
+        /* @media (prefers-color-scheme: dark) {
+            :root {
+                --text-default: #FFFFFF;
+                --text-link: #FFFFFF;
+            }
+        } */
+
+        /* Demo blockquote styles */
+        .demo-blockquote {
+            display: flex;
+            flex-direction: column;
+            gap: var(--md);
+            padding: var(--xl);
+            background-color: var(--global-white);
+        }
+
+        .demo-blockquote--left {
+            border-left: 4px solid var(--brand-primary);
+            text-align: left;
+        }
+
+        .demo-blockquote--center {
+            border-top: 4px solid var(--brand-primary);
+            border-bottom: 4px solid var(--brand-primary);
+            text-align: center;
+            align-items: center;
+        }
+
+        .demo-blockquote--right {
+            border-right: 4px solid var(--brand-primary);
+            text-align: right;
+            align-items: flex-end;
+        }
+
+        .demo-blockquote__quote {
+            font-size: var(--components-blockquote-quote-font-size);
+            line-height: var(--components-blockquote-quote-line-height);
+            font-weight: 700;
+            color: var(--text-default);
+            margin: 0;
+        }
+
+        .demo-blockquote__cite {
+            font-size: var(--components-blockquote-cite-font-size);
+            line-height: var(--components-blockquote-cite-line-height);
+            font-weight: 700;
+            color: var(--text-link);
+            text-decoration: underline;
+            margin: 0;
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Blockquotes</h1>
+        <p>Blockquotes render a styled quotation with a prominent accent border, quote text, and a cite attribution link. They support three orientation variants that control the position of the accent border and text alignment.</p>
+
+        <hr>
+
+        <h2>Anatomy</h2>
+        <p>Blockquotes consist of:</p>
+        <ul>
+            <li><strong>Container:</strong> A flex column that holds the quote and cite elements, with padding and a gap between them</li>
+            <li><strong>Accent border:</strong> A 4px solid border in <code>brand/primary</code> positioned according to the orientation variant</li>
+            <li><strong>Quote text:</strong> The quoted content, rendered in bold using the <code>components/blockquote/quote</code> composite token</li>
+            <li><strong>Cite text:</strong> An attribution link rendered in bold and underlined, using the <code>components/blockquote/cite</code> composite token</li>
+        </ul>
+
+        <div class="component-demo">
+            <div class="demo-blockquote demo-blockquote--left" style="max-width: 320px;">
+                <p class="demo-blockquote__quote">We should embrace the fact that the web doesn't have the same constraints, and design for this flexibility.</p>
+                <a class="demo-blockquote__cite" href="#">John Allsopp, A Dao of Web Design</a>
+            </div>
+        </div>
+
+        <hr>
+
+        <h2>Variants</h2>
+        <p>Blockquotes have one property — <code>orientation</code> — with three values that control where the accent border appears and how the text aligns.</p>
+        <ul>
+            <li><strong>Left (default):</strong> 4px accent border on the left edge, text left-aligned. Use for standard inline quotations within flowing content.</li>
+            <li><strong>Center:</strong> 4px accent border on the top and bottom edges, text center-aligned. Use for pull quotes or featured testimonials that deserve visual prominence.</li>
+            <li><strong>Right:</strong> 4px accent border on the right edge, text right-aligned. Use when compositional balance in the layout calls for a mirrored treatment.</li>
+        </ul>
+
+        <hr>
+
+        <h2>States</h2>
+        <p>Blockquotes are static display components. The quote text has no interactive states. The cite element is an interactive link and inherits standard link states.</p>
+
+        <hr>
+
+        <h2>Typography</h2>
+        <p>Both the quote and cite text use Montserrat Bold (700). Typography tokens are scoped under <code>components/blockquote/…</code> and scale responsively by aliasing to global typography tokens.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Token</th>
+                    <th>Mobile/Tablet</th>
+                    <th>Widescreen</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Quote font-size</td>
+                    <td><code>components/blockquote/quote/font-size</code></td>
+                    <td>0.75rem / 12px (small)</td>
+                    <td>1.5rem / 24px (p)</td>
+                </tr>
+                <tr>
+                    <td>Quote line-height</td>
+                    <td><code>components/blockquote/quote/line-height</code></td>
+                    <td>1.25rem / 20px</td>
+                    <td>2.25rem / 36px</td>
+                </tr>
+                <tr>
+                    <td>Cite font-size</td>
+                    <td><code>components/blockquote/cite/font-size</code></td>
+                    <td>0.625rem / 10px (fine)</td>
+                    <td>1.25rem / 20px (small)</td>
+                </tr>
+                <tr>
+                    <td>Cite line-height</td>
+                    <td><code>components/blockquote/cite/line-height</code></td>
+                    <td>1rem / 16px</td>
+                    <td>1.875rem / 30px</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <h2>Spacing</h2>
+        <p>Padding and gap use global spacing tokens and scale responsively between mobile/tablet and widescreen.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Token</th>
+                    <th>Mobile/Tablet</th>
+                    <th>Widescreen</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>padding</td>
+                    <td><code>xl</code></td>
+                    <td>1rem / 16px</td>
+                    <td>2rem / 32px</td>
+                </tr>
+                <tr>
+                    <td>gap</td>
+                    <td><code>md</code></td>
+                    <td>0.5rem / 8px</td>
+                    <td>1rem / 16px</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <h2>Colors</h2>
+        <p>Blockquotes use semantic color tokens so they respond correctly to light and dark mode. The accent border color is the one exception — it uses <code>brand/primary</code> and does not change between modes.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Token</th>
+                    <th>Light mode</th>
+                    <th>Dark mode</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Accent border</td>
+                    <td><code>brand/primary</code></td>
+                    <td>#FF5247</td>
+                    <td>#FF5247</td>
+                </tr>
+                <tr>
+                    <td>Quote text</td>
+                    <td><code>text/default</code></td>
+                    <td>#000000 (global/black)</td>
+                    <td>#FFFFFF (global/white)</td>
+                </tr>
+                <tr>
+                    <td>Cite text</td>
+                    <td><code>text/link</code></td>
+                    <td>#FF5247 (brand/primary)</td>
+                    <td>#FFFFFF (global/white)</td>
+                </tr>
+                <tr>
+                    <td>Background</td>
+                    <td><code>page/background</code></td>
+                    <td>#FFFFFF (global/white)</td>
+                    <td>#01232D (brand/secondary-dark)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Dark mode note:</strong> In dark mode, both the quote text and cite text resolve to <code>global/white</code> (#FFFFFF), meaning the cite link loses its color distinction from the quote text. The solid underline decoration on the cite element becomes the primary visual differentiator.</p>
+
+        <hr>
+
+        <h2>Accessibility</h2>
+        <p>Always use the <code>&lt;blockquote&gt;</code> element for quoted content. Never apply blockquote styling to non-quoted text. The cite attribution should be rendered as an <code>&lt;a&gt;</code> element when a source URL is available, wrapped inside a <code>&lt;cite&gt;</code> element.</p>
+
+        <h3>Keyboard navigation</h3>
+        <p>The cite link must be keyboard accessible:</p>
+        <ul>
+            <li><strong>Tab:</strong> Moves focus to the cite link</li>
+            <li><strong>Shift + Tab:</strong> Moves focus back to the previous focusable element</li>
+            <li><strong>Enter:</strong> Activates the cite link</li>
+        </ul>
+
+        <h3>Screen readers</h3>
+        <p>Screen readers do not consistently announce the <code>&lt;blockquote&gt;</code> element, but the semantic HTML still provides correct document structure. Cite link text should describe the source clearly enough to be understood out of context.</p>
+
+        <h3>ARIA attributes</h3>
+        <p>Blockquotes rely on native HTML semantics and do not require additional ARIA attributes in standard usage. If the blockquote is part of a more complex interactive pattern, consider the following:</p>
+        <ul>
+            <li><strong>aria-label:</strong> Use on the cite link if the visible text alone does not clearly identify the source out of context</li>
+            <li><strong>aria-describedby:</strong> May be used to associate introductory text with the blockquote when the surrounding context is not conveyed by the DOM order alone</li>
+        </ul>
+
+        <h3>Focus management</h3>
+        <p>The blockquote container itself is not focusable. Focus applies only to the cite link when present. The cite link must have a visible focus indicator — the browser default is acceptable. Do not suppress the outline or replace it with a color-only indicator.</p>
+
+        <h3>Color contrast</h3>
+        <p>In dark mode, the cite link color changes from <code>brand/primary</code> to <code>global/white</code> to maintain sufficient contrast against the dark background. The underline decoration provides an additional non-color differentiator for users who cannot distinguish colors.</p>
+
+        <hr>
+
+        <h2>Usage</h2>
+
+        <h3>When to use</h3>
+        <ul>
+            <li><strong>External quotes:</strong> Citing content from other sources or authors</li>
+            <li><strong>Testimonials:</strong> Highlighting customer or user feedback</li>
+            <li><strong>Pull quotes:</strong> Emphasizing key passages from your own content</li>
+        </ul>
+
+        <h3>When not to use</h3>
+        <ul>
+            <li><strong>Indentation only:</strong> Don't use blockquotes just to indent text — use margin or padding instead</li>
+            <li><strong>Visual styling only:</strong> Don't use blockquotes for decorative purposes without actual quoted content</li>
+            <li><strong>Short inline quotes:</strong> Use the <code>&lt;q&gt;</code> element for short, inline quotations within a paragraph</li>
+        </ul>
+
+        <h3>Content guidelines</h3>
+        <ul>
+            <li><strong>Attribute all external quotes:</strong> Always provide a cite attribution when quoting another person or source</li>
+            <li><strong>Keep quotes intact:</strong> Don't modify quoted text — use ellipses (…) to indicate omitted content</li>
+            <li><strong>Write meaningful cite text:</strong> The cite link should identify the author and source clearly, not just say "Source" or "Read more"</li>
+            <li><strong>Provide surrounding context:</strong> Introduce quotes with adjacent text that explains their relevance</li>
+        </ul>
+
+        <h3>Placement</h3>
+        <p>Use <strong>left</strong> as the default for most contexts — it integrates naturally into flowing content. Use <strong>center</strong> when the quote deserves featured prominence, such as a hero testimonial or section break. Use <strong>right</strong> sparingly, and only when the surrounding layout specifically benefits from a mirrored composition.</p>
+
+        <h3>Best practices</h3>
+
+        <div class="do-dont-grid">
+            <div class="do-section">
+                <h3>Do</h3>
+
+                <p><strong>Use semantic HTML</strong></p>
+                <p>Always use <code>&lt;blockquote&gt;</code> and <code>&lt;cite&gt;</code> tags for proper document structure.</p>
+
+                <p><strong>Attribute external sources</strong></p>
+                <p>Include a cite attribution with a link to the source when quoting external content.</p>
+
+                <p><strong>Keep quotes accurate</strong></p>
+                <p>Preserve the original wording. Use ellipses to indicate omitted content.</p>
+
+                <p><strong>Introduce the quote</strong></p>
+                <p>Provide surrounding text that gives the quote context and relevance.</p>
+            </div>
+
+            <div class="dont-section">
+                <h3>Don't</h3>
+
+                <p><strong>Don't misuse for indentation</strong></p>
+                <p>Never use blockquotes just to indent or visually offset non-quoted content.</p>
+
+                <p><strong>Don't modify quoted text</strong></p>
+                <p>Don't alter quotes to fit your message. Preserve the original meaning.</p>
+
+                <p><strong>Don't use headings inside blockquotes</strong></p>
+                <p>Quotes are not headings. Apply blockquote styles via CSS, not heading tags.</p>
+
+                <p><strong>Don't over-use center or right orientations</strong></p>
+                <p>Use left as the default. Center and right orientations should be intentional, not decorative.</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <h2>Code reference</h2>
+
+        <h3>HTML</h3>
+        <pre><code>&lt;!-- Left orientation (default) --&gt;
+&lt;blockquote class="blockquote blockquote--left"&gt;
+  &lt;p&gt;We should embrace the fact that the web doesn't have the same constraints, and design for this flexibility.&lt;/p&gt;
+  &lt;cite&gt;&lt;a href="https://alistapart.com/article/dao/"&gt;John Allsopp, A Dao of Web Design&lt;/a&gt;&lt;/cite&gt;
+&lt;/blockquote&gt;
+
+&lt;!-- Center orientation --&gt;
+&lt;blockquote class="blockquote blockquote--center"&gt;
+  &lt;p&gt;Now more than ever, we're designing work meant to be viewed along a gradient of different experiences.&lt;/p&gt;
+  &lt;cite&gt;&lt;a href="https://alistapart.com/article/responsive-web-design/"&gt;Ethan Marcotte, Responsive Web Design&lt;/a&gt;&lt;/cite&gt;
+&lt;/blockquote&gt;
+
+&lt;!-- Right orientation --&gt;
+&lt;blockquote class="blockquote blockquote--right"&gt;
+  &lt;p&gt;Now more than ever, we're designing work meant to be viewed along a gradient of different experiences.&lt;/p&gt;
+  &lt;cite&gt;&lt;a href="https://alistapart.com/article/responsive-web-design/"&gt;Ethan Marcotte, Responsive Web Design&lt;/a&gt;&lt;/cite&gt;
+&lt;/blockquote&gt;</code></pre>
+
+        <h3>CSS</h3>
+        <pre><code>/* Base styles */
+.blockquote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--md); /* Mobile: 8px, Widescreen: 16px */
+  padding: var(--xl); /* Mobile: 16px, Widescreen: 32px */
+}
+
+.blockquote p {
+  font-size: var(--components-blockquote-quote-font-size); /* Mobile: 12px, Widescreen: 24px */
+  line-height: var(--components-blockquote-quote-line-height); /* Mobile: 20px, Widescreen: 36px */
+  font-weight: 700;
+  color: var(--text-default);
+  margin: 0;
+}
+
+.blockquote cite a {
+  font-size: var(--components-blockquote-cite-font-size); /* Mobile: 10px, Widescreen: 20px */
+  line-height: var(--components-blockquote-cite-line-height); /* Mobile: 16px, Widescreen: 30px */
+  font-weight: 700;
+  color: var(--text-link);
+  text-decoration: underline;
+  text-decoration-style: solid;
+}
+
+/* Orientation variants */
+.blockquote--left {
+  border-left: 4px solid var(--brand-primary);
+  text-align: left;
+  align-items: flex-start;
+}
+
+.blockquote--center {
+  border-top: 4px solid var(--brand-primary);
+  border-bottom: 4px solid var(--brand-primary);
+  text-align: center;
+  align-items: center;
+}
+
+.blockquote--right {
+  border-right: 4px solid var(--brand-primary);
+  text-align: right;
+  align-items: flex-end;
+}</code></pre>
+
+        <h3>Design tokens reference</h3>
+        <pre><code>/* Typography */
+--components-blockquote-quote-font-size    Mobile: 0.75rem / 12px   →   Widescreen: 1.5rem / 24px
+--components-blockquote-quote-line-height  Mobile: 1.25rem / 20px   →   Widescreen: 2.25rem / 36px
+--components-blockquote-cite-font-size     Mobile: 0.625rem / 10px  →   Widescreen: 1.25rem / 20px
+--components-blockquote-cite-line-height   Mobile: 1rem / 16px      →   Widescreen: 1.875rem / 30px
+
+/* Spacing */
+--xl   Mobile: 1rem / 16px     →   Widescreen: 2rem / 32px
+--md   Mobile: 0.5rem / 8px    →   Widescreen: 1rem / 16px
+
+/* Colors */
+--brand-primary    Light: #FF5247   Dark: #FF5247
+--text-default     Light: #000000   Dark: #FFFFFF
+--text-link        Light: #FF5247   Dark: #FFFFFF</code></pre>
+
+        <hr>
+
+        <h2>Resources</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote" target="_blank">MDN: blockquote element</a> — Official HTML blockquote documentation</li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/cite" target="_blank">MDN: cite element</a> — Official HTML cite documentation</li>
+            <li><a href="https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html" target="_blank">WCAG 2.1: Use of Color</a> — Accessibility requirements for color-only distinctions</li>
+            <li><a href="https://www.w3.org/WAI/WCAG21/Understanding/meaningful-sequence.html" target="_blank">WCAG 2.1: Meaningful Sequence</a> — Semantic structure for accessibility</li>
+        </ul>
+    </div>
+</body>
+</html>

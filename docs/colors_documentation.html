@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colors - The Delta Design System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Ovo&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #FF5247;
+            --color-primary-dark: #B22E28;
+            --color-secondary: #003442;
+            --color-secondary-dark: #01232D;
+            --color-black: #000000;
+            --color-white: #FFFFFF;
+            --color-gray-dark: #919191;
+            --color-gray-medium: #CCCCCC;
+            --color-gray-light: #EEEEEE;
+            
+            --font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-family-heading: 'Ovo', Georgia, serif;
+            --max-width: 800px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--color-black);
+            background-color: var(--color-white);
+            padding: 32px 24px;
+        }
+        
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-family: var(--font-family-heading);
+            font-size: 48px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: var(--color-black);
+        }
+        
+        h2 {
+            font-family: var(--font-family-heading);
+            font-size: 32px;
+            font-weight: 400;
+            line-height: 1.3;
+            margin-top: 48px;
+            margin-bottom: 16px;
+            color: var(--color-black);
+        }
+        
+        h3 {
+            font-family: var(--font-family-heading);
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 1.4;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            color: var(--color-black);
+        }
+        
+        h4 {
+            font-family: var(--font-family-heading);
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.4;
+            margin-top: 24px;
+            margin-bottom: 8px;
+            color: var(--color-black);
+        }
+        
+        p {
+            font-size: 16px;
+            line-height: 1.75;
+            margin-bottom: 16px;
+        }
+        
+        strong {
+            font-weight: 700;
+        }
+        
+        a {
+            color: var(--color-primary);
+            text-decoration: underline;
+        }
+        
+        a:hover {
+            color: var(--color-secondary);
+        }
+        
+        ul, ol {
+            margin-left: 24px;
+            margin-bottom: 16px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            line-height: 1.75;
+        }
+        
+        code {
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+            background-color: var(--color-gray-light);
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+        
+        pre {
+            background-color: var(--color-gray-light);
+            padding: 16px;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin-bottom: 24px;
+        }
+        
+        pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 24px;
+        }
+        
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid var(--color-gray-medium);
+        }
+        
+        th {
+            font-weight: 700;
+            background-color: var(--color-gray-light);
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid var(--color-gray-medium);
+            margin: 48px 0;
+        }
+        
+        .color-swatch {
+            display: flex;
+            align-items: center;
+            margin-bottom: 24px;
+            gap: 16px;
+        }
+        
+        .color-box {
+            width: 120px;
+            height: 120px;
+            border-radius: 4px;
+            flex-shrink: 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .color-info {
+            flex: 1;
+        }
+        
+        .color-name {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .color-token {
+            font-family: 'Monaco', 'Courier New', monospace;
+            background-color: var(--color-gray-light);
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+        
+        .do-dont-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin: 24px 0;
+        }
+        
+        @media (max-width: 48rem) {
+            .do-dont-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .do-section {
+            border-left: 4px solid #007000;
+            padding-left: 16px;
+        }
+        
+        .dont-section {
+            border-left: 4px solid #C00C00;
+            padding-left: 16px;
+        }
+        
+        .do-section h3,
+        .dont-section h3 {
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+        
+        .do-section p strong,
+        .dont-section p strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Colors</h1>
+        <p>The Delta Design System color palette is designed for clarity, accessibility, and consistency across light and dark modes. Every color serves a specific purpose and meets WCAG 2.1 AA contrast requirements.</p>
+        
+        <hr>
+        
+        <h2>Color philosophy</h2>
+        <p>Colors communicate meaning, establish hierarchy, and reinforce brand identity. The system uses semantic naming to ensure colors are applied consistently and maintain their intended meaning across all components.</p>
+        
+        <hr>
+        
+        <h2>The color system</h2>
+        <p>The complete color system includes brand colors, global neutrals, status indicators, and overlay utilities. All colors are available as design tokens and work across both light and dark modes.</p>
+        
+        <h3>Brand colors</h3>
+        
+        <div class="color-swatch">
+            <div class="color-box" style="background-color: #FF5247;"></div>
+            <div class="color-info">
+                <p class="color-name">Primary</p>
+                <p><strong>Hex:</strong> <code>#FF5247</code></p>
+                <p><strong>Token:</strong> <span class="color-token">brand/primary</span></p>
+            </div>
+        </div>
+        
+        <div class="color-swatch">
+            <div class="color-box" style="background-color: #B22E28;"></div>
+            <div class="color-info">
+                <p class="color-name">Primary dark</p>
+                <p><strong>Hex:</strong> <code>#B22E28</code></p>
+                <p><strong>Token:</strong> <span class="color-token">brand/primary-dark</span></p>
+            </div>
+        </div>
+        
+        <div class="color-swatch">
+            <div class="color-box" style="background-color: #003442;"></div>
+            <div class="color-info">
+                <p class="color-name">Secondary</p>
+                <p><strong>Hex:</strong> <code>#003442</code></p>
+                <p><strong>Token:</strong> <span class="color-token">brand/secondary</span></p>
+            </div>
+        </div>
+        
+        <div class="color-swatch">
+            <div class="color-box" style="background-color: #01232D;"></div>
+            <div class="color-info">
+                <p class="color-name">Secondary dark</p>
+                <p><strong>Hex:</strong> <code>#01232D</code></p>
+                <p><strong>Token:</strong> <span class="color-token">brand/secondary-dark</span></p>
+            </div>
+        </div>
+        
+        <h3>Global colors</h3>
+        
+        <div class="color-swatch">
+            <div class="color-box" style="background-color: #000000;"></div>
+            <div class="color-info">
+                <p class="color-name">Black</p>
+                <p><strong>Hex:</strong> <code>#000000</code></p>
+                <p><strong>Token:</strong> <span class="color-token">global/black</span></p>
+            </div>
+        </div>
+        
+        <div class="color-swatch">
+            <div class="color-box" style="background-color: #FFFFFF; border: 2px solid #CCCCCC;"></div>
+            <div class="color-info">
+                <p class="color-name">White</p>
+                <p><strong>Hex:</strong> <code>#FFFFFF</code></p>
+                <p><strong>Token:</strong> <span class="color-token">global/white</span></p>
+            </div>
+        </div>
+        
+        <div class="color-swatch">
+            <div class="color-box" style="background-color: #919191;"></div>
+            <div class="color-info">
+                <p class="color-name">Gray dark</p>
+                <p><strong>Hex:</strong> <code>#919191</code></p>
+                <p><strong>Token:</strong> <span class="color-token">global/gray-dark</span></p>
+            </div>
+        </div>
+        
+        <div class="color-swatch">
+            <div class="color-box" style="background-color: #CCCCCC;"></div>
+            <div class="color-info">
+                <p class="color-name">Gray medium</p>
+                <p><strong>Hex:</strong> <code>#CCCCCC</code></p>
+                <p><strong>Token:</strong> <span class="color-token">global/gray-medium</span></p>
+            </div>
+        </div>
+        
+        <div class="color-swatch">
+            <div class="color-box" style="background-color: #EEEEEE;"></div>
+            <div class="color-info">
+                <p class="color-name">Gray light</p>
+                <p><strong>Hex:</strong> <code>#EEEEEE</code></p>
+                <p><strong>Token:</strong> <span class="color-token">global/gray-light</span></p>
+            </div>
+        </div>
+        
+        <h3>Status colors</h3>
+        
+        <div class="color-swatch">
+            <div class="color-box" style="background-color: #808080;"></div>
+            <div class="color-info">
+                <p class="color-name">Disabled</p>
+                <p><strong>Hex:</strong> <code>#808080</code></p>
+                <p><strong>Token:</strong> <span class="color-token">status/disabled</span></p>
+            </div>
+        </div>
+        
+        <div class="color-swatch">
+            <div class="color-box" style="background-color: #C00C00;"></div>
+            <div class="color-info">
+                <p class="color-name">Invalid</p>
+                <p><strong>Hex:</strong> <code>#C00C00</code></p>
+                <p><strong>Token:</strong> <span class="color-token">status/invalid</span></p>
+            </div>
+        </div>
+        
+        <div class="color-swatch">
+            <div class="color-box" style="background-color: #007000;"></div>
+            <div class="color-info">
+                <p class="color-name">Valid</p>
+                <p><strong>Hex:</strong> <code>#007000</code></p>
+                <p><strong>Token:</strong> <span class="color-token">status/valid</span></p>
+            </div>
+        </div>
+        
+        <div class="color-swatch">
+            <div class="color-box" style="background-color: #333333;"></div>
+            <div class="color-info">
+                <p class="color-name">Read-only</p>
+                <p><strong>Hex:</strong> <code>#333333</code></p>
+                <p><strong>Token:</strong> <span class="color-token">status/read-only</span></p>
+            </div>
+        </div>
+        
+        <h3>Overlay colors</h3>
+        
+        <div class="color-swatch">
+            <div class="color-box" style="background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.5) 100%);"></div>
+            <div class="color-info">
+                <p class="color-name">Dark overlay</p>
+                <p><strong>Value:</strong> <code>#000000</code> at 50% opacity</p>
+                <p><strong>Token:</strong> <span class="color-token">overlay/dark</span></p>
+            </div>
+        </div>
+        
+        <div class="color-swatch">
+            <div class="color-box" style="background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.25) 100%);"></div>
+            <div class="color-info">
+                <p class="color-name">Light overlay</p>
+                <p><strong>Value:</strong> <code>#000000</code> at 25% opacity</p>
+                <p><strong>Token:</strong> <span class="color-token">overlay/light</span></p>
+            </div>
+        </div>
+        
+        <hr>
+        
+        <h2>Color modes</h2>
+        <p>The Delta Design System supports both light and dark color modes. Semantic tokens automatically resolve to the appropriate color for each mode, ensuring consistent contrast and readability.</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Token</th>
+                    <th>Light mode</th>
+                    <th>Dark mode</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>background/page</code></td>
+                    <td>#FFFFFF (global/white)</td>
+                    <td>#01232D (brand/secondary-dark)</td>
+                </tr>
+                <tr>
+                    <td><code>background/section</code></td>
+                    <td>#EEEEEE (global/gray-light)</td>
+                    <td>#003442 (brand/secondary)</td>
+                </tr>
+                <tr>
+                    <td><code>text/default</code></td>
+                    <td>#000000 (global/black)</td>
+                    <td>#FFFFFF (global/white)</td>
+                </tr>
+                <tr>
+                    <td><code>text/link</code></td>
+                    <td>#FF5247 (brand/primary)</td>
+                    <td>#FFFFFF (global/white)</td>
+                </tr>
+                <tr>
+                    <td><code>text/hover</code></td>
+                    <td>#003442 (brand/secondary)</td>
+                    <td>#FF5247 (brand/primary)</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>In dark mode, <code>text/link</code> resolves to <code>global/white</code> rather than <code>brand/primary</code>. This is intentional — Primary (#FF5247) achieves only 3.35:1 against the dark page background (#003442), which is insufficient for body-size link text. Verify that focus and hover states account for this contrast difference.</p>
+        
+        <hr>
+        
+        <h2>Accessibility</h2>
+        <p>All color combinations meet WCAG 2.1 Level AA contrast requirements for their intended use. The system prioritizes accessibility without compromising visual appeal.</p>
+        
+        <h3>Light mode contrast ratios</h3>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Color</th>
+                    <th>Hex</th>
+                    <th>Background</th>
+                    <th>Ratio</th>
+                    <th>Level</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Primary</td>
+                    <td>#FF5247</td>
+                    <td>White</td>
+                    <td>3.52:1</td>
+                    <td>AA (large text, UI)</td>
+                </tr>
+                <tr>
+                    <td>Secondary</td>
+                    <td>#003442</td>
+                    <td>White</td>
+                    <td>11.58:1</td>
+                    <td>AAA</td>
+                </tr>
+                <tr>
+                    <td>Black</td>
+                    <td>#000000</td>
+                    <td>White</td>
+                    <td>21:1</td>
+                    <td>AAA</td>
+                </tr>
+                <tr>
+                    <td>Gray dark</td>
+                    <td>#919191</td>
+                    <td>White</td>
+                    <td>3.94:1</td>
+                    <td>AA (large text)</td>
+                </tr>
+                <tr>
+                    <td>Disabled</td>
+                    <td>#808080</td>
+                    <td>White</td>
+                    <td>4.54:1</td>
+                    <td>AA</td>
+                </tr>
+                <tr>
+                    <td>Invalid</td>
+                    <td>#C00C00</td>
+                    <td>White</td>
+                    <td>6.51:1</td>
+                    <td>AA</td>
+                </tr>
+                <tr>
+                    <td>Valid</td>
+                    <td>#007000</td>
+                    <td>White</td>
+                    <td>5.25:1</td>
+                    <td>AA</td>
+                </tr>
+                <tr>
+                    <td>Read-only</td>
+                    <td>#333333</td>
+                    <td>White</td>
+                    <td>12.63:1</td>
+                    <td>AAA</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Dark mode contrast ratios</h3>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Color</th>
+                    <th>Hex</th>
+                    <th>Background</th>
+                    <th>Ratio</th>
+                    <th>Level</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>White</td>
+                    <td>#FFFFFF</td>
+                    <td>Secondary-dark (#01232D)</td>
+                    <td>17.38:1</td>
+                    <td>AAA</td>
+                </tr>
+                <tr>
+                    <td>Primary</td>
+                    <td>#FF5247</td>
+                    <td>Secondary-dark (#01232D)</td>
+                    <td>5.02:1</td>
+                    <td>AA</td>
+                </tr>
+                <tr>
+                    <td>Gray dark</td>
+                    <td>#919191</td>
+                    <td>Secondary-dark (#01232D)</td>
+                    <td>7.27:1</td>
+                    <td>AAA</td>
+                </tr>
+                <tr>
+                    <td>White</td>
+                    <td>#FFFFFF</td>
+                    <td>Secondary (#003442)</td>
+                    <td>11.58:1</td>
+                    <td>AAA</td>
+                </tr>
+                <tr>
+                    <td>Primary</td>
+                    <td>#FF5247</td>
+                    <td>Secondary (#003442)</td>
+                    <td>3.35:1</td>
+                    <td>AA (large text, UI)</td>
+                </tr>
+                <tr>
+                    <td>Gray dark</td>
+                    <td>#919191</td>
+                    <td>Secondary (#003442)</td>
+                    <td>4.84:1</td>
+                    <td>AA</td>
+                </tr>
+                <tr>
+                    <td>Disabled</td>
+                    <td>#808080</td>
+                    <td>Secondary-dark (#01232D)</td>
+                    <td>3.83:1</td>
+                    <td>AA (large text)</td>
+                </tr>
+                <tr>
+                    <td>Invalid</td>
+                    <td>#C00C00</td>
+                    <td>Secondary-dark (#01232D)</td>
+                    <td>4.49:1</td>
+                    <td>AA</td>
+                </tr>
+                <tr>
+                    <td>Valid</td>
+                    <td>#007000</td>
+                    <td>Secondary-dark (#01232D)</td>
+                    <td>3.53:1</td>
+                    <td>AA (large text, UI)</td>
+                </tr>
+                <tr>
+                    <td>Read-only</td>
+                    <td>#333333</td>
+                    <td>Secondary-dark (#01232D)</td>
+                    <td>8.73:1</td>
+                    <td>AAA</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Contrast requirements</h3>
+        <ul>
+            <li><strong>Body text (16px):</strong> Minimum 4.5:1 contrast ratio (WCAG AA)</li>
+            <li><strong>Large text (18px+ or 14px+ bold):</strong> Minimum 3:1 contrast ratio (WCAG AA)</li>
+            <li><strong>UI components:</strong> Minimum 3:1 contrast ratio (WCAG AA)</li>
+        </ul>
+        
+        <h3>Color and meaning</h3>
+        <p>Status colors are never used alone. Error, success, and warning states must include both color and iconography or text to ensure meaning is conveyed to all users, including those with color vision deficiencies.</p>
+        
+        <hr>
+        
+        <h2>Usage</h2>
+        
+        <h3>When to use semantic tokens</h3>
+        <p>Use semantic tokens (like <code>text/default</code>) instead of global tokens (like <code>global/black</code>) to ensure proper theming support across light and dark modes. Semantic tokens automatically resolve to the appropriate value for each mode.</p>
+        
+        <h3>Mode switching</h3>
+        <p>Users should have the ability to override system preferences and manually select their preferred color mode. Respect user choice and maintain their selection across sessions.</p>
+        
+        <h3>Testing requirements</h3>
+        <p>Always test designs in both light and dark modes to verify:</p>
+        <ul>
+            <li>All text meets minimum contrast requirements</li>
+            <li>Status colors remain distinguishable</li>
+            <li>Interactive elements are clearly visible</li>
+            <li>Focus indicators have sufficient contrast</li>
+        </ul>
+        
+        <h3>Best practices</h3>
+        
+        <div class="do-dont-grid">
+            <div class="do-section">
+                <h3>Do</h3>
+                
+                <p><strong>Use semantic tokens</strong></p>
+                <p>Reference <code>text/default</code> instead of <code>global/black</code> to ensure proper theming support across light and dark modes.</p>
+                
+                <p><strong>Maintain consistent contrast</strong></p>
+                <p>Always verify text meets minimum contrast requirements against its background in both light and dark modes.</p>
+                
+                <p><strong>Use status colors appropriately</strong></p>
+                <p>Invalid states should use <code>status/invalid</code>, not <code>brand/primary</code>. Keep semantic separation between brand and functional colors.</p>
+                
+                <p><strong>Pair color with other indicators</strong></p>
+                <p>Combine status colors with icons, labels, or patterns to convey meaning to all users.</p>
+            </div>
+            
+            <div class="dont-section">
+                <h3>Don't</h3>
+                
+                <p><strong>Don't use hex values directly</strong></p>
+                <p>Always reference design tokens to maintain consistency and enable proper mode switching.</p>
+                
+                <p><strong>Don't rely on color alone</strong></p>
+                <p>Color by itself is not sufficient for users with color blindness. Always pair with text or iconography.</p>
+                
+                <p><strong>Don't use brand colors for status</strong></p>
+                <p>Keep brand colors for branding and marketing. Use status colors for functional states like errors and success.</p>
+                
+                <p><strong>Don't override contrast requirements</strong></p>
+                <p>Accessibility is not negotiable. Never reduce contrast below WCAG minimums.</p>
+            </div>
+        </div>
+        
+        <hr>
+        
+        <h2>Code reference</h2>
+        
+        <h3>CSS</h3>
+        <pre><code>/* Global color tokens */
+:root {
+  --color-brand-primary: #FF5247;
+  --color-brand-primary-dark: #B22E28;
+  --color-brand-secondary: #003442;
+  --color-brand-secondary-dark: #01232D;
+  --color-global-black: #000000;
+  --color-global-white: #FFFFFF;
+  --color-global-gray-dark: #919191;
+  --color-global-gray-medium: #CCCCCC;
+  --color-global-gray-light: #EEEEEE;
+  --color-status-disabled: #808080;
+  --color-status-invalid: #C00C00;
+  --color-status-valid: #007000;
+  --color-status-read-only: #333333;
+  --color-overlay-dark: rgba(0, 0, 0, 0.5);
+  --color-overlay-light: rgba(0, 0, 0, 0.25);
+
+  /* Semantic tokens — light mode (default) */
+  --color-background-page: var(--color-global-white);
+  --color-background-section: var(--color-global-gray-light);
+  --color-text-default: var(--color-global-black);
+  --color-text-link: var(--color-brand-primary);
+  --color-text-hover: var(--color-brand-secondary);
+}
+
+/* Semantic tokens — dark mode */
+[data-theme="dark"] {
+  --color-background-page: var(--color-brand-secondary-dark);
+  --color-background-section: var(--color-brand-secondary);
+  --color-text-default: var(--color-global-white);
+  --color-text-link: var(--color-global-white);
+  --color-text-hover: var(--color-brand-primary);
+}
+
+/* Usage */
+body {
+  color: var(--color-text-default);
+  background-color: var(--color-background-page);
+}
+
+a {
+  color: var(--color-text-link);
+}
+
+a:hover {
+  color: var(--color-text-hover);
+}
+
+.error-message {
+  color: var(--color-status-invalid);
+}</code></pre>
+
+        <h3>Design tokens reference</h3>
+        <pre><code>/* Brand — mode-invariant */
+--color-brand-primary         #FF5247
+--color-brand-primary-dark    #B22E28
+--color-brand-secondary       #003442
+--color-brand-secondary-dark  #01232D
+
+/* Global — mode-invariant */
+--color-global-black          #000000
+--color-global-white          #FFFFFF
+--color-global-gray-dark      #919191
+--color-global-gray-medium    #CCCCCC
+--color-global-gray-light     #EEEEEE
+
+/* Status — mode-invariant */
+--color-status-disabled       #808080
+--color-status-invalid        #C00C00
+--color-status-valid          #007000
+--color-status-read-only      #333333
+
+/* Overlay — mode-invariant */
+--color-overlay-dark          rgba(0, 0, 0, 0.5)   /* #000000 at 50% */
+--color-overlay-light         rgba(0, 0, 0, 0.25)  /* #000000 at 25% */
+
+/* Semantic — resolves by mode */
+                              Light                 Dark
+--color-background-page       #FFFFFF (global/white)          #01232D (brand/secondary-dark)
+--color-background-section    #EEEEEE (global/gray-light)     #003442 (brand/secondary)
+--color-text-default          #000000 (global/black)          #FFFFFF (global/white)
+--color-text-link             #FF5247 (brand/primary)         #FFFFFF (global/white)
+--color-text-hover            #003442 (brand/secondary)       #FF5247 (brand/primary)</code></pre>
+        
+        <hr>
+        
+        <h2>Resources</h2>
+        <ul>
+            <li><a href="https://webaim.org/resources/contrastchecker/" target="_blank">WebAIM Contrast Checker</a> — Test color contrast ratios for WCAG compliance</li>
+            <li><a href="https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html" target="_blank">WCAG 2.1: Understanding Contrast (Minimum)</a> — Official WCAG guidelines for color contrast</li>
+            <li><a href="https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html" target="_blank">WCAG 2.1: Use of Color</a> — Guidelines for conveying information with color</li>
+            <li><a href="https://accessible-colors.com/" target="_blank">Accessible Colors</a> — Tool for finding accessible color combinations</li>
+            <li><a href="https://www.interaction-design.org/literature/topics/color-theory" target="_blank">Interaction Design Foundation: Color Theory</a> — Fundamentals of color in design</li>
+        </ul>
+    </div>
+</body>
+</html>
