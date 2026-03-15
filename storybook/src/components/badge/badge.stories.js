@@ -1,5 +1,44 @@
 function createBadgeDocumentation() {
   return `
+    <style>
+      .delta-docs .badge-specimen {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--components-badge-gap);
+      }
+
+      .delta-docs .badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: var(--components-badge-padding-t-b) var(--components-badge-padding-l-r);
+        border: var(--components-badge-border-width) solid transparent;
+        border-radius: var(--components-badge-border-radius);
+        color: var(--text-default);
+        font-family: var(--font-family-body);
+        font-size: var(--components-badge-font-size);
+        line-height: var(--components-badge-line-height);
+        font-weight: var(--font-weight-bold);
+        white-space: nowrap;
+      }
+
+      .delta-docs .badge--transparent {
+        border-color: var(--text-default);
+        background: transparent;
+        color: var(--text-default);
+      }
+
+      .delta-docs .badge--primary {
+        background: var(--brand-primary);
+        color: var(--global-white);
+      }
+
+      .delta-docs .badge--secondary {
+        background: var(--brand-secondary);
+        color: var(--global-white);
+      }
+    </style>
     <article class="delta-docs">
       <h1>Badges</h1>
       <p>A badge is a small, non-interactive label used to convey status, category, or count information at a glance. Badges always appear inline with or adjacent to the content they describe.</p>
@@ -13,9 +52,10 @@ function createBadgeDocumentation() {
         <li><strong>Label:</strong> A short text string &mdash; typically one word or a number &mdash; that communicates the badge&apos;s meaning.</li>
       </ul>
 
-      <div class="delta-docs__placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 live specimen placeholder</span>
-        <p>Render the badge anatomy specimen exactly as shown in the verified reference documentation.</p>
+      <div class="badge-specimen" aria-label="Badge variants specimen">
+        <span class="badge badge--primary">100</span>
+        <span class="badge badge--secondary">Featured</span>
+        <span class="badge badge--transparent">Draft</span>
       </div>
 
       <hr />

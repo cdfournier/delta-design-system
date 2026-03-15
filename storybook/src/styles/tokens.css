@@ -94,6 +94,13 @@
   --grid-specimen-column-line-height: 1;
   --grid-specimen-column-background: var(--brand-primary);
   --grid-specimen-column-text: var(--global-white);
+  --components-badge-font-size: 0.625rem;
+  --components-badge-line-height: 0.625rem;
+  --components-badge-padding-t-b: 0.125rem;
+  --components-badge-padding-l-r: 0.25rem;
+  --components-badge-border-radius: 0.25rem;
+  --components-badge-border-width: 0.0625rem;
+  --components-badge-gap: var(--spacing-md);
 
   --docs-font-size-body: 1rem;
   --docs-line-height-body: 1.75;
@@ -168,6 +175,11 @@
     --docs-table-cell-padding-inline: var(--spacing-md);
     --docs-table-cell-padding-block: var(--spacing-md);
     --docs-demo-padding: var(--spacing-xxl);
+    --components-badge-font-size: 1.25rem;
+    --components-badge-line-height: 1.25rem;
+    --components-badge-padding-t-b: 0.5rem;
+    --components-badge-padding-l-r: 0.75rem;
+    --components-badge-border-radius: 0.5rem;
 
     --h1-title-font-size: 5rem;
     --h1-title-line-height: 6.25rem;
