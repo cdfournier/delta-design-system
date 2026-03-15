@@ -233,6 +233,23 @@
   --components-content-cta-padding-top: var(--spacing-xl);
   --components-content-footer-padding-top: var(--spacing-xl);
   --components-content-link-icon-stroke-width: 1px;
+  --components-details-border-width: 1px;
+  --components-details-border-color: var(--neutral-gray-medium);
+  --components-details-border-radius: var(--border-radius-sm);
+  --components-details-padding: var(--spacing-md);
+  --components-details-gap: var(--spacing-sm);
+  --components-details-summary-font-size: var(--p-font-size);
+  --components-details-summary-line-height: var(--p-line-height);
+  --components-details-body-font-size: var(--p-font-size);
+  --components-details-body-line-height: var(--p-line-height);
+  --components-details-shell-background: var(--section-background);
+  --components-details-shell-radius: var(--border-radius-md);
+  --components-details-shell-padding: var(--spacing-xl);
+  --components-details-demo-gap: var(--spacing-xl);
+  --components-details-item-width: 21rem;
+  --components-details-icon-box-size: 1.75rem;
+  --components-details-icon-size: 1.5rem;
+  --components-details-icon-stroke-width: 1px;
 
   --docs-font-size-body: 1rem;
   --docs-line-height-body: 1.75;
