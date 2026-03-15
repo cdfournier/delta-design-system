@@ -277,6 +277,29 @@
   --components-fieldset-width: 26rem;
   --components-fieldset-gap: var(--spacing-sm);
   --components-fieldset-message-max-width: 39rem;
+  --components-messages-font-size: 0.75rem;
+  --components-messages-line-height: 1.25rem;
+  --components-messages-shell-background: var(--section-background);
+  --components-messages-shell-radius: var(--border-radius-md);
+  --components-messages-demo-gap: var(--spacing-xl);
+  --components-messages-inline-padding: var(--spacing-md);
+  --components-messages-inline-gap: var(--spacing-md);
+  --components-messages-inline-radius: var(--border-radius-sm);
+  --components-messages-inline-width: 40rem;
+  --components-messages-toast-width: 19.5rem;
+  --components-messages-close-size: 1.5rem;
+  --components-messages-close-stroke-width: 1px;
+  --components-messages-action-height: 1.75rem;
+  --components-messages-action-min-width: 4.625rem;
+  --components-messages-promo-min-height: 32rem;
+  --components-messages-promo-padding: var(--spacing-xl);
+  --components-messages-promo-close-size: 2rem;
+  --components-messages-promo-close-offset: var(--spacing-xl);
+  --components-messages-promo-content-width: 51rem;
+  --components-messages-promo-content-offset: 8rem;
+  --components-messages-background-invalid: var(--status-invalid);
+  --components-messages-background-valid: var(--status-valid);
+  --components-messages-background-toast: var(--status-read-only);
 
   --docs-font-size-body: 1rem;
   --docs-line-height-body: 1.75;
@@ -391,6 +414,9 @@
     --components-link-small-icon-size: 1.25rem;
     --components-link-fine-icon-size: 1rem;
     --components-feedback-height: 0.75rem;
+    --components-messages-font-size: 1.5rem;
+    --components-messages-line-height: 2.25rem;
+    --components-messages-action-height: 3rem;
 
     --h1-title-font-size: 5rem;
     --h1-title-line-height: 6.25rem;

@@ -1,5 +1,179 @@
 function createMessagesDocumentation() {
   return `
+    <style>
+      .delta-docs .messages-specimen-stack {
+        display: grid;
+        gap: var(--components-messages-demo-gap);
+      }
+
+      .delta-docs .messages-specimen-grid {
+        display: grid;
+        gap: var(--components-messages-demo-gap);
+      }
+
+      .delta-docs .messages-specimen-shell {
+        border-radius: var(--components-messages-shell-radius);
+        background: var(--components-messages-shell-background);
+      }
+
+      .delta-docs .messages-specimen {
+        display: flex;
+        align-items: center;
+        gap: var(--components-messages-inline-gap);
+        width: min(100%, var(--components-messages-inline-width));
+        padding: var(--components-messages-inline-padding);
+        border-radius: var(--components-messages-inline-radius);
+        background: var(--components-messages-background-invalid);
+      }
+
+      .delta-docs .messages-specimen--success {
+        background: var(--components-messages-background-valid);
+      }
+
+      .delta-docs .messages-specimen--toast {
+        width: min(100%, var(--components-messages-toast-width));
+        background: var(--components-messages-background-toast);
+      }
+
+      .delta-docs .messages-specimen--confirmation {
+        width: min(100%, var(--components-messages-inline-width));
+      }
+
+      .delta-docs .messages-specimen__text {
+        flex: 1 1 auto;
+        min-width: 0;
+        margin: 0;
+        color: var(--global-white);
+        font-family: var(--font-family-body);
+        font-size: var(--components-messages-font-size);
+        line-height: var(--components-messages-line-height);
+        font-weight: var(--font-weight-bold);
+      }
+
+      .delta-docs .messages-specimen__close {
+        display: inline-flex;
+        width: var(--components-messages-close-size);
+        height: var(--components-messages-close-size);
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        padding: 0;
+        border: 0;
+        border-radius: var(--border-radius-round);
+        background: transparent;
+        color: var(--global-white);
+        cursor: pointer;
+      }
+
+      .delta-docs .messages-specimen__close svg {
+        width: 100%;
+        height: 100%;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: var(--components-messages-close-stroke-width);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        vector-effect: non-scaling-stroke;
+      }
+
+      .delta-docs .messages-specimen__actions {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--components-messages-inline-gap);
+        flex: 0 0 auto;
+      }
+
+      .delta-docs .messages-specimen__action {
+        display: inline-flex;
+        min-width: var(--components-messages-action-min-width);
+        height: var(--components-messages-action-height);
+        align-items: center;
+        justify-content: center;
+        padding: var(--components-button-padding-t-b) var(--components-button-padding-l-r);
+        border: var(--docs-rule-width) solid var(--global-white);
+        border-radius: var(--components-button-border-radius);
+        background: transparent;
+        color: var(--global-white);
+        font-family: var(--font-family-body);
+        font-size: var(--components-button-font-size);
+        line-height: var(--components-button-line-height);
+        font-weight: var(--font-weight-bold);
+        white-space: nowrap;
+      }
+
+      .delta-docs .messages-specimen__action--solid {
+        background: var(--global-white);
+        color: var(--status-invalid);
+      }
+
+      .delta-docs .messages-specimen-promo {
+        position: relative;
+        width: 100%;
+        min-height: var(--components-messages-promo-min-height);
+        padding: var(--components-messages-promo-padding);
+        background: var(--page-background);
+      }
+
+      .delta-docs .messages-specimen-promo__close {
+        position: absolute;
+        top: var(--components-messages-promo-close-offset);
+        right: var(--components-messages-promo-close-offset);
+        display: inline-flex;
+        width: var(--components-messages-promo-close-size);
+        height: var(--components-messages-promo-close-size);
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border: 0;
+        border-radius: var(--border-radius-round);
+        background: transparent;
+        color: var(--text-link);
+        cursor: pointer;
+      }
+
+      .delta-docs .messages-specimen-promo__close svg {
+        width: var(--components-messages-close-size);
+        height: var(--components-messages-close-size);
+        fill: none;
+        stroke: currentColor;
+        stroke-width: var(--components-messages-close-stroke-width);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        vector-effect: non-scaling-stroke;
+      }
+
+      .delta-docs .messages-specimen-promo__content {
+        display: grid;
+        gap: 0;
+        width: min(100%, var(--components-messages-promo-content-width));
+        padding-top: var(--components-messages-promo-content-offset);
+      }
+
+      .delta-docs .messages-specimen-promo__title {
+        margin: 0;
+        color: var(--text-default);
+        font-family: var(--font-family-heading);
+        font-size: var(--h2-font-size);
+        line-height: var(--h2-line-height);
+        font-weight: var(--font-weight-regular);
+      }
+
+      .delta-docs .messages-specimen-promo__body {
+        margin: 0;
+        padding-top: var(--spacing-sm);
+        color: var(--text-default);
+        font-family: var(--font-family-body);
+        font-size: var(--p-font-size);
+        line-height: var(--p-line-height);
+      }
+
+      @media (min-width: 48rem) {
+        .delta-docs .messages-specimen-grid--anatomy {
+          grid-template-columns: repeat(2, minmax(0, max-content));
+          align-items: start;
+        }
+      }
+    </style>
     <article class="delta-docs">
       <h1>Messages</h1>
       <p>Messages provide user notifications, alerts, and feedback in various contexts. This includes modal dialogs for detailed content, inline notifications for status updates, and toast messages for brief, non-intrusive information.</p>
@@ -26,9 +200,34 @@ function createMessagesDocumentation() {
         <li><strong>Close button (optional):</strong> Dismissal control</li>
       </ul>
 
-      <div class="delta-docs__placeholder" aria-label="Messages anatomy specimen placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 placeholder</span>
-        <p>Live Messages anatomy specimens go here.</p>
+      <div class="messages-specimen-stack">
+        <div class="delta-docs__demo messages-specimen-shell" aria-label="Messages anatomy message specimen">
+          <div class="messages-specimen-grid messages-specimen-grid--anatomy">
+            <div class="messages-specimen">
+              <p class="messages-specimen__text">Error message</p>
+              <button class="messages-specimen__close" type="button" aria-label="Dismiss error">
+                <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                  <path d="M6 6L18 18"></path>
+                  <path d="M18 6L6 18"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="delta-docs__demo messages-specimen-shell" aria-label="Messages anatomy toast specimen">
+          <div class="messages-specimen-grid messages-specimen-grid--anatomy">
+            <div class="messages-specimen messages-specimen--toast">
+              <p class="messages-specimen__text">Toast message</p>
+              <button class="messages-specimen__close" type="button" aria-label="Dismiss toast">
+                <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                  <path d="M6 6L18 18"></path>
+                  <path d="M18 6L6 18"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
 
       <hr />
@@ -54,9 +253,67 @@ function createMessagesDocumentation() {
       <h3>Toast</h3>
       <p>Simple, non-intrusive notification for brief informational messages that don't require immediate action. Displayed in a fixed dark container, typically auto-dismissed.</p>
 
-      <div class="delta-docs__placeholder" aria-label="Messages variants specimen placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 placeholder</span>
-        <p>Live Messages variant specimens go here.</p>
+      <div class="messages-specimen-stack">
+        <div class="delta-docs__demo messages-specimen-shell" aria-label="Messages promo specimen">
+          <div class="messages-specimen-promo">
+            <button class="messages-specimen-promo__close" type="button" aria-label="Close promo banner">
+              <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                <path d="M6 6L18 18"></path>
+                <path d="M18 6L6 18"></path>
+              </svg>
+            </button>
+            <div class="messages-specimen-promo__content">
+              <h3 class="messages-specimen-promo__title">Promo banner</h3>
+              <p class="messages-specimen-promo__body">This is a banner for announcements, offers, or feature highlights. Uses Content component</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="delta-docs__demo messages-specimen-shell" aria-label="Messages confirmation specimen">
+          <div class="messages-specimen messages-specimen--confirmation">
+            <p class="messages-specimen__text">Confirmation message</p>
+            <div class="messages-specimen__actions">
+              <button class="messages-specimen__action" type="button">No</button>
+              <button class="messages-specimen__action messages-specimen__action--solid" type="button">Yes</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="delta-docs__demo messages-specimen-shell" aria-label="Messages error specimen">
+          <div class="messages-specimen">
+            <p class="messages-specimen__text">Error message</p>
+            <button class="messages-specimen__close" type="button" aria-label="Dismiss error">
+              <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                <path d="M6 6L18 18"></path>
+                <path d="M18 6L6 18"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="delta-docs__demo messages-specimen-shell" aria-label="Messages success specimen">
+          <div class="messages-specimen messages-specimen--success">
+            <p class="messages-specimen__text">Success message</p>
+            <button class="messages-specimen__close" type="button" aria-label="Dismiss success message">
+              <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                <path d="M6 6L18 18"></path>
+                <path d="M18 6L6 18"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="delta-docs__demo messages-specimen-shell" aria-label="Messages toast specimen">
+          <div class="messages-specimen messages-specimen--toast">
+            <p class="messages-specimen__text">Toast message</p>
+            <button class="messages-specimen__close" type="button" aria-label="Dismiss toast">
+              <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                <path d="M6 6L18 18"></path>
+                <path d="M18 6L6 18"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
 
       <hr />
