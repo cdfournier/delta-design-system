@@ -62,6 +62,18 @@ This has two implications:
 
 ---
 
+## Figma MCP access
+
+The Figma MCP server is available in this session. Use it to verify token values, component specs, and color values directly from Figma when the HTML reference file is uncertain or when something looks wrong.
+
+**Figma file key:** `tHT8Je5cvRTXFN9XQ7XqhA`
+
+When building a story, if a value in the HTML reference file seems inconsistent or you cannot confirm it, query Figma directly rather than guessing. Flag any discrepancies between the HTML file and Figma before proceeding — do not silently build from a value you are uncertain about.
+
+**Figma always wins over the HTML files.**
+
+---
+
 ## Visual specimens
 
 When building live rendered samples — color swatches, type specimens, spacing examples, component renders — match what Figma shows exactly. No additional metadata, no extra labels, no embellishments, no UI patterns that aren't in the Figma documentation.
@@ -69,8 +81,6 @@ When building live rendered samples — color swatches, type specimens, spacing 
 A color swatch is what Figma shows it to be. A component sample renders the component as Figma specifies it. Nothing more.
 
 ---
-
-
 
 ## Non-negotiable rules
 
