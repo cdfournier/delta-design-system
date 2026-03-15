@@ -67,8 +67,20 @@
   gap: var(--components-link-gap-hover);
 }
 
+.delta-docs .content-specimen__link:hover,
+.delta-docs .content-specimen__link:focus-visible {
+  color: var(--text-hover);
+  gap: var(--components-link-gap-hover);
+}
+
 [data-color-mode='dark'] .delta-docs .link-specimen:hover,
 [data-color-mode='dark'] .delta-docs .link-specimen:focus-visible {
+  color: var(--text-hover);
+  gap: var(--components-link-gap-hover);
+}
+
+[data-color-mode='dark'] .delta-docs .content-specimen__link:hover,
+[data-color-mode='dark'] .delta-docs .content-specimen__link:focus-visible {
   color: var(--text-hover);
   gap: var(--components-link-gap-hover);
 }

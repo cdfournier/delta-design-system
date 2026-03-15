@@ -222,6 +222,17 @@
   --components-card-horizontal-figure-width: 16rem;
   --components-card-horizontal-min-height: 12.5rem;
   --components-card-demo-gap: var(--spacing-xl);
+  --components-content-shell-background: var(--section-background);
+  --components-content-shell-radius: var(--border-radius-md);
+  --components-content-shell-padding: var(--spacing-xl);
+  --components-content-shell-max-width: 42rem;
+  --components-content-heading-width: 20.875rem;
+  --components-content-body-width: 20.875rem;
+  --components-content-body-padding-top: var(--spacing-sm);
+  --components-content-eyebrow-padding-bottom: var(--spacing-xs);
+  --components-content-cta-padding-top: var(--spacing-xl);
+  --components-content-footer-padding-top: var(--spacing-xl);
+  --components-content-link-icon-stroke-width: 1px;
 
   --docs-font-size-body: 1rem;
   --docs-line-height-body: 1.75;

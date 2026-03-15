@@ -1,5 +1,101 @@
 function createContentDocumentation() {
   return `
+    <style>
+      .delta-docs .content-specimen-shell {
+        border-radius: var(--components-content-shell-radius);
+        background: var(--components-content-shell-background);
+      }
+
+      [data-color-mode='dark'] .delta-docs .content-specimen-shell {
+        background: var(--section-background);
+      }
+
+      .delta-docs .content-specimen {
+        display: grid;
+        gap: 0;
+        width: min(100%, var(--components-content-shell-max-width));
+        padding: var(--components-content-shell-padding);
+      }
+
+      .delta-docs .content-specimen__eyebrow {
+        margin: 0;
+        padding-bottom: var(--components-content-eyebrow-padding-bottom);
+        color: var(--text-default);
+        font-family: var(--font-family-body);
+        font-size: var(--small-font-size);
+        line-height: var(--small-line-height);
+        font-weight: var(--font-weight-bold);
+        text-transform: uppercase;
+      }
+
+      .delta-docs .content-specimen__title {
+        margin: 0;
+        width: min(100%, var(--components-content-heading-width));
+        color: var(--text-default);
+        font-family: var(--font-family-heading);
+        font-size: var(--h1-title-font-size);
+        line-height: var(--h1-title-line-height);
+        font-weight: var(--font-weight-regular);
+      }
+
+      .delta-docs .content-specimen__body {
+        margin: 0;
+        width: min(100%, var(--components-content-body-width));
+        padding-top: var(--components-content-body-padding-top);
+        color: var(--text-default);
+        font-family: var(--font-family-body);
+        font-size: var(--h1-title-plus-p-font-size);
+        line-height: var(--h1-title-plus-p-line-height);
+      }
+
+      .delta-docs .content-specimen__cta {
+        display: flex;
+        padding-top: var(--components-content-cta-padding-top);
+      }
+
+      .delta-docs .content-specimen__link {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--components-link-gap-default);
+        color: var(--text-link);
+        font-family: var(--font-family-body);
+        font-size: var(--components-link-p-font-size);
+        line-height: var(--components-link-p-line-height);
+        font-weight: var(--font-weight-bold);
+        text-decoration: underline;
+        text-decoration-thickness: from-font;
+        text-underline-offset: var(--spacing-xs);
+      }
+
+      .delta-docs .content-specimen__link-icon {
+        display: inline-flex;
+        width: var(--components-link-p-icon-size);
+        height: var(--components-link-p-icon-size);
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+      }
+
+      .delta-docs .content-specimen__link-icon svg {
+        width: 100%;
+        height: 100%;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: var(--components-content-link-icon-stroke-width);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        vector-effect: non-scaling-stroke;
+      }
+
+      .delta-docs .content-specimen__footer {
+        margin: 0;
+        padding-top: var(--components-content-footer-padding-top);
+        color: var(--text-default);
+        font-family: var(--font-family-body);
+        font-size: var(--fine-font-size);
+        line-height: var(--fine-line-height);
+      }
+    </style>
     <article class="delta-docs">
       <h1>Content</h1>
       <p>The Content component is a reusable molecular pattern that provides a flexible container for structured text content. It combines optional eyebrows, heading/body pairs, call-to-action elements, and footers in a consistent, composable format used across cards, banners, and other organisms.</p>
@@ -16,9 +112,24 @@ function createContentDocumentation() {
         <li><strong>Footer (optional):</strong> Supporting content or metadata at the bottom</li>
       </ul>
 
-      <div class="delta-docs__placeholder" aria-label="Content anatomy specimen placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 placeholder</span>
-        <p>Live Content anatomy specimen goes here.</p>
+      <div class="delta-docs__demo content-specimen-shell" aria-label="Content anatomy specimen">
+        <div class="content-specimen">
+          <p class="content-specimen__eyebrow">Eyebrow</p>
+          <h2 class="content-specimen__title">Title Heading</h2>
+          <p class="content-specimen__body">Body</p>
+          <div class="content-specimen__cta">
+            <a class="content-specimen__link" href="/learn-more">
+              <span>Link</span>
+              <span class="content-specimen__link-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                  <path d="M5 12H19"></path>
+                  <path d="M13 6L19 12L13 18"></path>
+                </svg>
+              </span>
+            </a>
+          </div>
+          <p class="content-specimen__footer">Footer</p>
+        </div>
       </div>
 
       <hr />
