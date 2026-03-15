@@ -61,6 +61,30 @@
   color: var(--text-hover);
 }
 
+.delta-docs .chip__dismiss:hover .chip__dismiss-inner,
+.delta-docs .chip__dismiss:focus-visible .chip__dismiss-inner {
+  background: var(--components-chip-primary);
+}
+
+.delta-docs .chip--secondary .chip__dismiss:hover .chip__dismiss-inner,
+.delta-docs .chip--secondary .chip__dismiss:focus-visible .chip__dismiss-inner,
+.delta-docs .chip--secondary-hover .chip__dismiss:hover .chip__dismiss-inner,
+.delta-docs .chip--secondary-hover .chip__dismiss:focus-visible .chip__dismiss-inner {
+  background: var(--components-chip-secondary);
+}
+
+.delta-docs .chip__dismiss:hover .chip__dismiss-icon,
+.delta-docs .chip__dismiss:focus-visible .chip__dismiss-icon {
+  color: var(--components-chip-dismiss-icon-primary-hover);
+}
+
+.delta-docs .chip--secondary .chip__dismiss:hover .chip__dismiss-icon,
+.delta-docs .chip--secondary .chip__dismiss:focus-visible .chip__dismiss-icon,
+.delta-docs .chip--secondary-hover .chip__dismiss:hover .chip__dismiss-icon,
+.delta-docs .chip--secondary-hover .chip__dismiss:focus-visible .chip__dismiss-icon {
+  color: var(--components-chip-dismiss-icon-secondary-hover);
+}
+
 .delta-docs :where(code, pre) {
   font-family: var(--font-family-mono);
   font-size: var(--docs-font-size-code);
