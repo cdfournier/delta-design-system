@@ -1,26 +1,297 @@
 function createHeadersDocumentation() {
   return `
     <style>
-      .delta-docs .header-placeholder {
-        margin: 1.5rem 0;
-        padding: var(--docs-demo-padding);
-        border: var(--docs-rule-width) dashed var(--surface-border);
-        border-radius: var(--docs-surface-radius);
-        background: var(--surface-subtle);
+      .delta-docs .header-specimen-shell {
+        background: var(--page-background);
       }
 
-      .delta-docs .header-placeholder__label {
+      .delta-docs .header-specimen {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-xl);
+        width: 100%;
+      }
+
+      .delta-docs .header-specimen__top,
+      .delta-docs .header-specimen__panel {
+        width: 100%;
+        padding: var(--spacing-md);
+        border-radius: var(--border-radius-md);
+        background: var(--section-background);
+        backdrop-filter: blur(15px);
+      }
+
+      .delta-docs .header-specimen__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--spacing-md);
+        width: 100%;
+      }
+
+      .delta-docs .header-specimen__logo-space {
+        display: block;
+        width: 2.5625rem;
+        height: 2rem;
+        flex: 0 0 auto;
+      }
+
+      .delta-docs .header-specimen__menu-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+        padding: var(--spacing-xs);
+        border: 0;
+        border-radius: var(--border-radius-round);
+        background: transparent;
+        color: var(--text-link);
+        cursor: pointer;
+      }
+
+      .delta-docs .header-specimen__menu-icon {
+        position: relative;
+        display: block;
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+
+      .delta-docs .header-specimen__menu-icon--closed::before,
+      .delta-docs .header-specimen__menu-icon--closed::after,
+      .delta-docs .header-specimen__menu-icon--closed span,
+      .delta-docs .header-specimen__menu-icon--open::before,
+      .delta-docs .header-specimen__menu-icon--open::after {
+        content: '';
+        position: absolute;
+        display: block;
+        background: currentColor;
+      }
+
+      .delta-docs .header-specimen__menu-icon--closed::before,
+      .delta-docs .header-specimen__menu-icon--closed::after,
+      .delta-docs .header-specimen__menu-icon--closed span {
+        left: 0.25rem;
+        width: 1rem;
+        height: 0.0625rem;
+      }
+
+      .delta-docs .header-specimen__menu-icon--closed::before {
+        top: 0.4375rem;
+      }
+
+      .delta-docs .header-specimen__menu-icon--closed span {
+        top: 0.75rem;
+      }
+
+      .delta-docs .header-specimen__menu-icon--closed::after {
+        top: 1.0625rem;
+      }
+
+      .delta-docs .header-specimen__menu-icon--open::before,
+      .delta-docs .header-specimen__menu-icon--open::after {
+        top: 0.75rem;
+        left: 0.3125rem;
+        width: 0.875rem;
+        height: 0.0625rem;
+        transform-origin: center;
+      }
+
+      .delta-docs .header-specimen__menu-icon--open::before {
+        transform: rotate(45deg);
+      }
+
+      .delta-docs .header-specimen__menu-icon--open::after {
+        transform: rotate(-45deg);
+      }
+
+      .delta-docs .header-specimen__nav {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-xl);
+        flex: 1 1 auto;
+        min-width: 0;
+      }
+
+      .delta-docs .header-specimen__links {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-xl);
+        flex: 1 1 auto;
+        min-width: 0;
         margin: 0;
-        color: var(--text-default);
+        padding: 0 0 0 var(--spacing-xxxl);
+        list-style: none;
+      }
+
+      .delta-docs .header-specimen__links--mobile {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: var(--spacing-md);
+        padding-left: 0;
+      }
+
+      .delta-docs .header-specimen__link-item {
+        padding-top: var(--spacing-xs);
+        padding-bottom: var(--spacing-xs);
+        margin: 0;
+      }
+
+      .delta-docs .header-specimen__link {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--spacing-xs);
+        color: var(--text-link);
         font-family: var(--font-family-body);
+        font-weight: var(--font-weight-bold);
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .delta-docs .header-specimen__link:hover,
+      .delta-docs .header-specimen__link:focus-visible,
+      [data-color-mode='dark'] .delta-docs .header-specimen__link:hover,
+      [data-color-mode='dark'] .delta-docs .header-specimen__link:focus-visible {
+        color: var(--text-hover);
+      }
+
+      .delta-docs .header-specimen__link--desktop {
+        font-size: var(--p-font-size);
+        line-height: var(--p-line-height);
+      }
+
+      .delta-docs .header-specimen__link--mobile {
         font-size: var(--small-font-size);
         line-height: var(--small-line-height);
-        font-weight: var(--font-weight-bold);
       }
 
-      .delta-docs .header-placeholder__body {
-        margin: 0.5rem 0 0;
-        color: var(--text-muted);
+      .delta-docs .header-specimen__toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: var(--spacing-md);
+        flex: 0 0 auto;
+      }
+
+      .delta-docs .header-specimen__toggle--mobile {
+        width: 100%;
+        padding-top: var(--spacing-lg);
+      }
+
+      .delta-docs .header-specimen__toggle-icon {
+        display: inline-flex;
+        width: 1.25rem;
+        height: 1.25rem;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        color: var(--components-background-primary);
+      }
+
+      .delta-docs .header-specimen__toggle-icon svg {
+        width: 100%;
+        height: 100%;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: var(--components-input-icon-stroke-width);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        vector-effect: non-scaling-stroke;
+      }
+
+      .delta-docs .header-specimen__toggle-label {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+      .delta-docs .header-specimen__toggle-input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .delta-docs .header-specimen__toggle-track {
+        position: relative;
+        display: inline-flex;
+        width: var(--components-input-switch-width);
+        height: var(--components-input-switch-height);
+        align-items: center;
+        justify-content: flex-start;
+        padding: var(--components-input-switch-padding);
+        border: var(--docs-rule-width) solid var(--components-background-primary);
+        border-radius: var(--border-radius-round);
+        background: transparent;
+      }
+
+      .delta-docs .header-specimen__toggle-thumb {
+        display: block;
+        width: var(--components-input-switch-thumb-size);
+        height: var(--components-input-switch-thumb-size);
+        border-radius: var(--border-radius-round);
+        background: var(--components-background-primary);
+        transition: transform 0.2s ease, background-color 0.2s ease;
+      }
+
+      .delta-docs .header-specimen__toggle-input:checked + .header-specimen__toggle-track {
+        background: var(--components-background-primary);
+      }
+
+      .delta-docs .header-specimen__toggle-input:checked + .header-specimen__toggle-track .header-specimen__toggle-thumb {
+        background: var(--text-inverse);
+        transform: translateX(calc(var(--components-input-switch-width) - var(--components-input-switch-thumb-size) - (var(--components-input-switch-padding) * 2)));
+      }
+
+      .delta-docs .header-specimen__toggle-text {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      .delta-docs .header-specimen--mobile {
+        width: 18rem;
+      }
+
+      .delta-docs .header-specimen--mobile .header-specimen__panel {
+        display: none;
+      }
+
+      .delta-docs .header-specimen--mobile[data-menu-open='true'] .header-specimen__panel {
+        display: block;
+      }
+
+      .delta-docs .header-specimen--mobile[data-menu-open='false'] .header-specimen__menu-icon--open {
+        display: none;
+      }
+
+      .delta-docs .header-specimen--mobile[data-menu-open='true'] .header-specimen__menu-icon--closed {
+        display: none;
+      }
+
+      .delta-docs .header-specimen--desktop {
+        width: 100%;
+      }
+
+      .delta-docs .header-specimen__states {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-xl);
+        align-items: flex-start;
+      }
+
+      @media (max-width: 48rem) {
+        .delta-docs .header-specimen__links {
+          gap: var(--spacing-md);
+          padding-left: var(--spacing-xl);
+        }
       }
     </style>
     <article class="delta-docs">
@@ -40,9 +311,50 @@ function createHeadersDocumentation() {
         <li><strong>Navigation dropdown (mobile open):</strong> Vertical list of links with trailing arrow icons, plus the color mode toggle</li>
       </ul>
 
-      <div class="header-placeholder" aria-label="Header anatomy placeholder">
-        <p class="header-placeholder__label">Step 1 placeholder: Header anatomy sample</p>
-        <p class="header-placeholder__body">Live rendered anatomy specimen will be added in Step 2 after Figma verification and approval.</p>
+      <div class="delta-docs__demo header-specimen-shell" aria-label="Header anatomy specimen">
+        <header class="header-specimen header-specimen--desktop">
+          <div class="header-specimen__top">
+            <div class="header-specimen__row">
+              <div class="header-specimen__logo-space" aria-hidden="true"></div>
+              <nav class="header-specimen__nav" aria-label="Primary navigation">
+                <ul class="header-specimen__links">
+                  <li class="header-specimen__link-item"><a class="header-specimen__link header-specimen__link--desktop" href="/foundations">Link</a></li>
+                  <li class="header-specimen__link-item"><a class="header-specimen__link header-specimen__link--desktop" href="/atoms">Link</a></li>
+                  <li class="header-specimen__link-item"><a class="header-specimen__link header-specimen__link--desktop" href="/molecules">Link</a></li>
+                  <li class="header-specimen__link-item"><a class="header-specimen__link header-specimen__link--desktop" href="/organisms">Link</a></li>
+                  <li class="header-specimen__link-item"><a class="header-specimen__link header-specimen__link--desktop" href="/contact">Link</a></li>
+                </ul>
+                <div class="header-specimen__toggle">
+                  <span class="header-specimen__toggle-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                      <circle cx="12" cy="12" r="4"></circle>
+                      <path d="M12 2V4"></path>
+                      <path d="M12 20V22"></path>
+                      <path d="M4.93 4.93L6.34 6.34"></path>
+                      <path d="M17.66 17.66L19.07 19.07"></path>
+                      <path d="M2 12H4"></path>
+                      <path d="M20 12H22"></path>
+                      <path d="M4.93 19.07L6.34 17.66"></path>
+                      <path d="M17.66 6.34L19.07 4.93"></path>
+                    </svg>
+                  </span>
+                  <label class="header-specimen__toggle-label">
+                    <input class="header-specimen__toggle-input" type="checkbox" role="switch" aria-checked="false" aria-label="Toggle dark mode" />
+                    <span class="header-specimen__toggle-track" aria-hidden="true">
+                      <span class="header-specimen__toggle-thumb"></span>
+                    </span>
+                    <span class="header-specimen__toggle-text">Dark mode</span>
+                  </label>
+                  <span class="header-specimen__toggle-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                      <path d="M21 12.79A9 9 0 1 1 11.21 3c0 0 0 0 0 0A7 7 0 0 0 21 12.79Z"></path>
+                    </svg>
+                  </span>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </header>
       </div>
 
       <hr />
@@ -55,11 +367,6 @@ function createHeadersDocumentation() {
         <li><strong>Mobile — open:</strong> Top bar remains visible with the logo and a close (X) button; navigation dropdown appears below, containing the vertical link list with trailing arrow icons and the color mode toggle at the bottom</li>
       </ul>
 
-      <div class="header-placeholder" aria-label="Header variants placeholder">
-        <p class="header-placeholder__label">Step 1 placeholder: Header variants samples</p>
-        <p class="header-placeholder__body">Live rendered widescreen, mobile closed, and mobile open samples will be added in Step 2 after Figma verification and approval.</p>
-      </div>
-
       <hr />
 
       <h2>States</h2>
@@ -70,9 +377,104 @@ function createHeadersDocumentation() {
         <li><strong>Focus:</strong> All interactive elements (logo link, navigation links, menu toggle button, and color mode toggle) must show a visible focus ring when navigated by keyboard; focus indicators rely on browser defaults, enhanced as needed for visibility against the backdrop blur background</li>
       </ul>
 
-      <div class="header-placeholder" aria-label="Header states placeholder">
-        <p class="header-placeholder__label">Step 1 placeholder: Header state samples</p>
-        <p class="header-placeholder__body">Live rendered default, open, and focus state samples will be added in Step 2 after Figma verification and approval.</p>
+      <div class="delta-docs__demo header-specimen-shell" aria-label="Header state specimens">
+        <div class="header-specimen__states">
+          <header class="header-specimen header-specimen--mobile" data-menu-open="false">
+            <div class="header-specimen__top">
+              <div class="header-specimen__row">
+                <div class="header-specimen__logo-space" aria-hidden="true"></div>
+                <button class="header-specimen__menu-button" type="button" aria-label="Open menu" aria-expanded="false">
+                  <span class="header-specimen__menu-icon header-specimen__menu-icon--closed" aria-hidden="true"><span></span></span>
+                  <span class="header-specimen__menu-icon header-specimen__menu-icon--open" aria-hidden="true"></span>
+                </button>
+              </div>
+            </div>
+            <nav class="header-specimen__panel" aria-label="Primary navigation">
+              <ul class="header-specimen__links header-specimen__links--mobile">
+                <li class="header-specimen__link-item"><a class="header-specimen__link header-specimen__link--mobile" href="/foundations">Link</a></li>
+                <li class="header-specimen__link-item"><a class="header-specimen__link header-specimen__link--mobile" href="/atoms">Link</a></li>
+                <li class="header-specimen__link-item"><a class="header-specimen__link header-specimen__link--mobile" href="/molecules">Link</a></li>
+                <li class="header-specimen__link-item"><a class="header-specimen__link header-specimen__link--mobile" href="/organisms">Link</a></li>
+                <li class="header-specimen__link-item"><a class="header-specimen__link header-specimen__link--mobile" href="/contact">Link</a></li>
+              </ul>
+              <div class="header-specimen__toggle header-specimen__toggle--mobile">
+                <span class="header-specimen__toggle-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2V4"></path>
+                    <path d="M12 20V22"></path>
+                    <path d="M4.93 4.93L6.34 6.34"></path>
+                    <path d="M17.66 17.66L19.07 19.07"></path>
+                    <path d="M2 12H4"></path>
+                    <path d="M20 12H22"></path>
+                    <path d="M4.93 19.07L6.34 17.66"></path>
+                    <path d="M17.66 6.34L19.07 4.93"></path>
+                  </svg>
+                </span>
+                <label class="header-specimen__toggle-label">
+                  <input class="header-specimen__toggle-input" type="checkbox" role="switch" aria-checked="false" aria-label="Toggle dark mode" />
+                  <span class="header-specimen__toggle-track" aria-hidden="true">
+                    <span class="header-specimen__toggle-thumb"></span>
+                  </span>
+                  <span class="header-specimen__toggle-text">Dark mode</span>
+                </label>
+                <span class="header-specimen__toggle-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3c0 0 0 0 0 0A7 7 0 0 0 21 12.79Z"></path>
+                  </svg>
+                </span>
+              </div>
+            </nav>
+          </header>
+
+          <header class="header-specimen header-specimen--mobile" data-menu-open="true">
+            <div class="header-specimen__top">
+              <div class="header-specimen__row">
+                <div class="header-specimen__logo-space" aria-hidden="true"></div>
+                <button class="header-specimen__menu-button" type="button" aria-label="Close menu" aria-expanded="true">
+                  <span class="header-specimen__menu-icon header-specimen__menu-icon--closed" aria-hidden="true"><span></span></span>
+                  <span class="header-specimen__menu-icon header-specimen__menu-icon--open" aria-hidden="true"></span>
+                </button>
+              </div>
+            </div>
+            <nav class="header-specimen__panel" aria-label="Primary navigation">
+              <ul class="header-specimen__links header-specimen__links--mobile">
+                <li class="header-specimen__link-item"><a class="header-specimen__link header-specimen__link--mobile" href="/foundations">Link</a></li>
+                <li class="header-specimen__link-item"><a class="header-specimen__link header-specimen__link--mobile" href="/atoms">Link</a></li>
+                <li class="header-specimen__link-item"><a class="header-specimen__link header-specimen__link--mobile" href="/molecules">Link</a></li>
+                <li class="header-specimen__link-item"><a class="header-specimen__link header-specimen__link--mobile" href="/organisms">Link</a></li>
+                <li class="header-specimen__link-item"><a class="header-specimen__link header-specimen__link--mobile" href="/contact">Link</a></li>
+              </ul>
+              <div class="header-specimen__toggle header-specimen__toggle--mobile">
+                <span class="header-specimen__toggle-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2V4"></path>
+                    <path d="M12 20V22"></path>
+                    <path d="M4.93 4.93L6.34 6.34"></path>
+                    <path d="M17.66 17.66L19.07 19.07"></path>
+                    <path d="M2 12H4"></path>
+                    <path d="M20 12H22"></path>
+                    <path d="M4.93 19.07L6.34 17.66"></path>
+                    <path d="M17.66 6.34L19.07 4.93"></path>
+                  </svg>
+                </span>
+                <label class="header-specimen__toggle-label">
+                  <input class="header-specimen__toggle-input" type="checkbox" role="switch" aria-checked="false" aria-label="Toggle dark mode" />
+                  <span class="header-specimen__toggle-track" aria-hidden="true">
+                    <span class="header-specimen__toggle-thumb"></span>
+                  </span>
+                  <span class="header-specimen__toggle-text">Dark mode</span>
+                </label>
+                <span class="header-specimen__toggle-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3c0 0 0 0 0 0A7 7 0 0 0 21 12.79Z"></path>
+                  </svg>
+                </span>
+              </div>
+            </nav>
+          </header>
+        </div>
       </div>
 
       <hr />
@@ -674,6 +1076,39 @@ section/background      Light: #EEEEEE   Dark: #003442
 text/link               Light: #FF5247   Dark: #FFFFFF</code></pre>
 
       <hr />
+
+      <script>
+        (() => {
+          const article = document.currentScript ? document.currentScript.closest('.delta-docs') : null;
+          if (!article) return;
+
+          const syncMobileMenu = (specimen) => {
+            const isOpen = specimen.dataset.menuOpen === 'true';
+            const button = specimen.querySelector('.header-specimen__menu-button');
+            if (!button) return;
+            button.setAttribute('aria-expanded', String(isOpen));
+            button.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+          };
+
+          article.querySelectorAll('.header-specimen--mobile').forEach((specimen) => {
+            syncMobileMenu(specimen);
+
+            const button = specimen.querySelector('.header-specimen__menu-button');
+            if (button) {
+              button.addEventListener('click', () => {
+                specimen.dataset.menuOpen = specimen.dataset.menuOpen === 'true' ? 'false' : 'true';
+                syncMobileMenu(specimen);
+              });
+            }
+          });
+
+          article.querySelectorAll('.header-specimen__toggle-input').forEach((input) => {
+            input.addEventListener('change', () => {
+              input.setAttribute('aria-checked', String(input.checked));
+            });
+          });
+        })();
+      </script>
 
       <h2>Resources</h2>
       <ul>
