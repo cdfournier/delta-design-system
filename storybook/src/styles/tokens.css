@@ -300,6 +300,8 @@
   --components-messages-background-invalid: var(--status-invalid);
   --components-messages-background-valid: var(--status-valid);
   --components-messages-background-toast: var(--status-read-only);
+  --components-pagination-dot-size: 0.625rem;
+  --components-pagination-dot-border-width: 0.125rem;
 
   --docs-font-size-body: 1rem;
   --docs-line-height-body: 1.75;

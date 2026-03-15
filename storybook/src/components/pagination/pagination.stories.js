@@ -1,5 +1,42 @@
 function createPaginationDocumentation() {
   return `
+    <style>
+      .delta-docs .pagination-specimen-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .delta-docs .pagination-specimen {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-md);
+        margin: 0;
+        padding: var(--spacing-md) var(--spacing-xl);
+        border-radius: var(--border-radius-xxl);
+        background: var(--page-background);
+        list-style: none;
+      }
+
+      .delta-docs .pagination-specimen__item {
+        display: flex;
+      }
+
+      .delta-docs .pagination-specimen__dot {
+        width: var(--components-pagination-dot-size);
+        height: var(--components-pagination-dot-size);
+        padding: 0;
+        border: var(--components-pagination-dot-border-width) solid var(--neutral-gray-medium);
+        border-radius: 50%;
+        background: transparent;
+        cursor: pointer;
+      }
+
+      .delta-docs .pagination-specimen__dot--selected {
+        background: var(--neutral-gray-medium);
+        border-color: var(--neutral-gray-medium);
+      }
+    </style>
     <article class="delta-docs">
       <h1>Pagination</h1>
       <p>Pagination provides visual navigation for carousels, slideshows, and multi-step flows. Dot indicators show the current position and total number of pages or slides.</p>
@@ -14,9 +51,23 @@ function createPaginationDocumentation() {
         <li><strong>Indicator buttons:</strong> Individual interactive elements — one per page or slide — rendered as <code>&lt;button&gt;</code> elements inside <code>&lt;li&gt;</code> items.</li>
       </ul>
 
-      <div class="delta-docs__placeholder" aria-label="Pagination anatomy specimen placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 placeholder</span>
-        <p>Live Pagination anatomy specimen goes here.</p>
+      <div class="delta-docs__demo" aria-label="Pagination anatomy specimen">
+        <nav class="pagination-specimen-nav" aria-label="Pagination">
+          <ul class="pagination-specimen">
+            <li class="pagination-specimen__item">
+              <button class="pagination-specimen__dot pagination-specimen__dot--selected" type="button" aria-label="Page 1" aria-current="page"></button>
+            </li>
+            <li class="pagination-specimen__item">
+              <button class="pagination-specimen__dot" type="button" aria-label="Page 2"></button>
+            </li>
+            <li class="pagination-specimen__item">
+              <button class="pagination-specimen__dot" type="button" aria-label="Page 3"></button>
+            </li>
+            <li class="pagination-specimen__item">
+              <button class="pagination-specimen__dot" type="button" aria-label="Page 4"></button>
+            </li>
+          </ul>
+        </nav>
       </div>
 
       <hr />

@@ -143,6 +143,20 @@
   outline-offset: 2px;
 }
 
+.delta-docs .pagination-specimen__item {
+  margin-top: 0;
+}
+
+.delta-docs .pagination-specimen__dot:hover {
+  background: var(--neutral-gray-medium);
+  border-color: var(--neutral-gray-medium);
+}
+
+[data-color-mode='dark'] .delta-docs .pagination-specimen__dot:hover {
+  background: var(--neutral-gray-medium);
+  border-color: var(--neutral-gray-medium);
+}
+
 .delta-docs :where(code, pre) {
   font-family: var(--font-family-mono);
   font-size: var(--docs-font-size-code);
