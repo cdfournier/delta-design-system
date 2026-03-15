@@ -66,6 +66,34 @@
   --docs-accent-width: 0.25rem;
   --docs-code-radius: var(--border-radius-sm);
   --docs-surface-radius: var(--border-radius-md);
+  --breakpoint-tablet: 48rem;
+  --breakpoint-widescreen: 80rem;
+
+  --grid-columns-mobile: 4;
+  --grid-columns-tablet: 8;
+  --grid-columns-widescreen: 12;
+  --grid-gutter: 1rem;
+  --grid-span-quarter: 3;
+  --grid-span-third: 4;
+  --grid-span-half: 6;
+  --grid-span-sidebar-main: 8;
+  --grid-span-sidebar-side: 4;
+  --grid-span-golden-wide: 7;
+  --grid-span-golden-narrow: 5;
+  --grid-centered-start: 3;
+  --grid-centered-end: 11;
+  --grid-specimen-shell-background: var(--neutral-gray-light);
+  --grid-specimen-shell-padding: 2rem;
+  --grid-specimen-shell-radius: 0.25rem;
+  --grid-specimen-shell-margin-block: 1.5rem;
+  --grid-specimen-column-padding-block: 1rem;
+  --grid-specimen-column-padding-inline: 0.5rem;
+  --grid-specimen-column-radius: 0.125rem;
+  --grid-specimen-column-min-height: 3rem;
+  --grid-specimen-column-font-size: 0.75rem;
+  --grid-specimen-column-line-height: 1;
+  --grid-specimen-column-background: var(--brand-primary);
+  --grid-specimen-column-text: var(--global-white);
 
   --docs-font-size-body: 1rem;
   --docs-line-height-body: 1.75;

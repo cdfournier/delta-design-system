@@ -1,5 +1,125 @@
 function createGridDocumentation() {
   return `
+    <style>
+      .delta-docs .component-demo {
+        margin: var(--grid-specimen-shell-margin-block) 0;
+        padding: var(--grid-specimen-shell-padding);
+        border-radius: var(--grid-specimen-shell-radius);
+        background-color: var(--grid-specimen-shell-background);
+      }
+
+      .delta-docs .grid-demo {
+        display: grid;
+        gap: var(--grid-gutter);
+      }
+
+      .delta-docs .grid-demo-4 {
+        grid-template-columns: repeat(var(--grid-columns-mobile), minmax(0, 1fr));
+      }
+
+      .delta-docs .grid-demo-8 {
+        grid-template-columns: repeat(var(--grid-columns-mobile), minmax(0, 1fr));
+      }
+
+      .delta-docs .grid-demo-12 {
+        grid-template-columns: repeat(var(--grid-columns-mobile), minmax(0, 1fr));
+      }
+
+      .delta-docs .grid-column {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: var(--grid-specimen-column-min-height);
+        padding: var(--grid-specimen-column-padding-block) var(--grid-specimen-column-padding-inline);
+        border-radius: var(--grid-specimen-column-radius);
+        background-color: var(--grid-specimen-column-background);
+        color: var(--grid-specimen-column-text);
+        font-family: var(--font-family-body);
+        font-size: var(--grid-specimen-column-font-size);
+        line-height: var(--grid-specimen-column-line-height);
+        text-align: center;
+      }
+
+      .delta-docs .grid-column--span-quarter {
+        grid-column: 1 / -1;
+      }
+
+      .delta-docs .grid-column--span-third {
+        grid-column: 1 / -1;
+      }
+
+      .delta-docs .grid-column--span-half {
+        grid-column: 1 / -1;
+      }
+
+      .delta-docs .grid-column--span-sidebar-main {
+        grid-column: 1 / -1;
+      }
+
+      .delta-docs .grid-column--span-sidebar-side {
+        grid-column: 1 / -1;
+      }
+
+      .delta-docs .grid-column--span-golden-wide {
+        grid-column: 1 / -1;
+      }
+
+      .delta-docs .grid-column--span-golden-narrow {
+        grid-column: 1 / -1;
+      }
+
+      .delta-docs .grid-column--centered-content {
+        grid-column: 1 / -1;
+      }
+
+      @media (min-width: 48rem) {
+        .delta-docs .grid-demo-8 {
+          grid-template-columns: repeat(var(--grid-columns-tablet), minmax(0, 1fr));
+        }
+
+        .delta-docs .grid-demo-12 {
+          grid-template-columns: repeat(var(--grid-columns-widescreen), minmax(0, 1fr));
+        }
+
+        .delta-docs .grid-column--span-quarter {
+          grid-column: span var(--grid-span-quarter);
+        }
+
+        .delta-docs .grid-column--span-third {
+          grid-column: span var(--grid-span-third);
+        }
+
+        .delta-docs .grid-column--span-half {
+          grid-column: span var(--grid-span-half);
+        }
+
+        .delta-docs .grid-column--span-sidebar-main {
+          grid-column: span var(--grid-span-sidebar-main);
+        }
+
+        .delta-docs .grid-column--span-sidebar-side {
+          grid-column: span var(--grid-span-sidebar-side);
+        }
+
+        .delta-docs .grid-column--span-golden-wide {
+          grid-column: span var(--grid-span-golden-wide);
+        }
+
+        .delta-docs .grid-column--span-golden-narrow {
+          grid-column: span var(--grid-span-golden-narrow);
+        }
+
+        .delta-docs .grid-column--centered-content {
+          grid-column: var(--grid-centered-start) / var(--grid-centered-end);
+        }
+      }
+
+      @media (min-width: 80rem) {
+        .delta-docs .grid-column--centered-content {
+          grid-column: var(--grid-centered-start) / var(--grid-centered-end);
+        }
+      }
+    </style>
     <article class="delta-docs">
       <h1>Grid</h1>
       <p>A responsive grid system provides structure and consistency across layouts, helping designers and developers create balanced, organized interfaces.</p>
@@ -77,21 +197,45 @@ function createGridDocumentation() {
       <h3>Visual grid samples</h3>
 
       <p><strong>Mobile (4 columns):</strong></p>
-      <div class="delta-docs__placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 live specimen placeholder</span>
-        <p>Render the 4-column mobile visual grid sample exactly as shown in the reference documentation.</p>
+      <div class="component-demo">
+        <div class="grid-demo grid-demo-4">
+          <div class="grid-column">1</div>
+          <div class="grid-column">2</div>
+          <div class="grid-column">3</div>
+          <div class="grid-column">4</div>
+        </div>
       </div>
 
       <p><strong>Tablet (8 columns):</strong></p>
-      <div class="delta-docs__placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 live specimen placeholder</span>
-        <p>Render the 8-column tablet visual grid sample exactly as shown in the reference documentation.</p>
+      <div class="component-demo">
+        <div class="grid-demo grid-demo-8">
+          <div class="grid-column">1</div>
+          <div class="grid-column">2</div>
+          <div class="grid-column">3</div>
+          <div class="grid-column">4</div>
+          <div class="grid-column">5</div>
+          <div class="grid-column">6</div>
+          <div class="grid-column">7</div>
+          <div class="grid-column">8</div>
+        </div>
       </div>
 
       <p><strong>Widescreen (12 columns):</strong></p>
-      <div class="delta-docs__placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 live specimen placeholder</span>
-        <p>Render the 12-column widescreen visual grid sample exactly as shown in the reference documentation.</p>
+      <div class="component-demo">
+        <div class="grid-demo grid-demo-12">
+          <div class="grid-column">1</div>
+          <div class="grid-column">2</div>
+          <div class="grid-column">3</div>
+          <div class="grid-column">4</div>
+          <div class="grid-column">5</div>
+          <div class="grid-column">6</div>
+          <div class="grid-column">7</div>
+          <div class="grid-column">8</div>
+          <div class="grid-column">9</div>
+          <div class="grid-column">10</div>
+          <div class="grid-column">11</div>
+          <div class="grid-column">12</div>
+        </div>
       </div>
 
       <h3>Fluid grid dynamics</h3>
@@ -154,39 +298,53 @@ function createGridDocumentation() {
       <h3>Common layout patterns</h3>
 
       <p><strong>Fifty (50/50 split):</strong></p>
-      <div class="delta-docs__placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 live specimen placeholder</span>
-        <p>Render the 50/50 split layout pattern exactly as shown in the reference documentation.</p>
+      <div class="component-demo">
+        <div class="grid-demo grid-demo-12">
+          <div class="grid-column grid-column--span-half">6 columns</div>
+          <div class="grid-column grid-column--span-half">6 columns</div>
+        </div>
       </div>
 
       <p><strong>Thirds (33/33/33 split):</strong></p>
-      <div class="delta-docs__placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 live specimen placeholder</span>
-        <p>Render the thirds layout pattern exactly as shown in the reference documentation.</p>
+      <div class="component-demo">
+        <div class="grid-demo grid-demo-12">
+          <div class="grid-column grid-column--span-third">4 columns</div>
+          <div class="grid-column grid-column--span-third">4 columns</div>
+          <div class="grid-column grid-column--span-third">4 columns</div>
+        </div>
       </div>
 
       <p><strong>Fourths (25/25/25/25 split):</strong></p>
-      <div class="delta-docs__placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 live specimen placeholder</span>
-        <p>Render the fourths layout pattern exactly as shown in the reference documentation.</p>
+      <div class="component-demo">
+        <div class="grid-demo grid-demo-12">
+          <div class="grid-column grid-column--span-quarter">3 columns</div>
+          <div class="grid-column grid-column--span-quarter">3 columns</div>
+          <div class="grid-column grid-column--span-quarter">3 columns</div>
+          <div class="grid-column grid-column--span-quarter">3 columns</div>
+        </div>
       </div>
 
       <p><strong>Sidebar (66/33 split):</strong></p>
-      <div class="delta-docs__placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 live specimen placeholder</span>
-        <p>Render the sidebar layout pattern exactly as shown in the reference documentation.</p>
+      <div class="component-demo">
+        <div class="grid-demo grid-demo-12">
+          <div class="grid-column grid-column--span-sidebar-main">8 columns (main content)</div>
+          <div class="grid-column grid-column--span-sidebar-side">4 columns (sidebar)</div>
+        </div>
       </div>
 
       <p><strong>Golden ratio (58/42 split):</strong></p>
-      <div class="delta-docs__placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 live specimen placeholder</span>
-        <p>Render the golden ratio layout pattern exactly as shown in the reference documentation.</p>
+      <div class="component-demo">
+        <div class="grid-demo grid-demo-12">
+          <div class="grid-column grid-column--span-golden-wide">7 columns (golden wide)</div>
+          <div class="grid-column grid-column--span-golden-narrow">5 columns (golden narrow)</div>
+        </div>
       </div>
 
       <p><strong>Centered content (8 columns centered):</strong></p>
-      <div class="delta-docs__placeholder">
-        <span class="delta-docs__placeholder-label">Step 2 live specimen placeholder</span>
-        <p>Render the centered content layout pattern exactly as shown in the reference documentation.</p>
+      <div class="component-demo">
+        <div class="grid-demo grid-demo-12">
+          <div class="grid-column grid-column--centered-content">8 columns centered</div>
+        </div>
       </div>
 
       <hr />
