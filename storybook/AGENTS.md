@@ -81,7 +81,15 @@ delta-design-system/
 
 ---
 
-## Per-story build sequence
+## Version control
+
+**Never commit or push on your own.** Commits are a human checkpoint that signals explicit approval of completed work. Codex builds and proposes — the human reviews, approves, and commits.
+
+When a step or phase is complete and ready for review, say so clearly and stop. Do not run `git add`, `git commit`, or `git push` under any circumstances.
+
+---
+
+
 
 Every story is built in two steps. Do not combine them.
 
