@@ -222,6 +222,16 @@
   --components-card-horizontal-figure-width: 16rem;
   --components-card-horizontal-min-height: 12.5rem;
   --components-card-demo-gap: var(--spacing-xl);
+  --components-banner-demo-gap: var(--spacing-xl);
+  --components-banner-background-aspect-ratio: 1312 / 1024;
+  --components-banner-background-content-max-width: 46.25rem;
+  --components-banner-background-body-width: 20.875rem;
+  --components-banner-split-aspect-ratio: 1312 / 512;
+  --components-banner-split-gap: var(--spacing-md);
+  --components-banner-split-min-height: 17.75rem;
+  --components-banner-split-image-basis: 50%;
+  --components-banner-split-content-basis: 50%;
+  --components-banner-image-fit-position: center;
   --components-content-shell-background: var(--section-background);
   --components-content-shell-radius: var(--border-radius-md);
   --components-content-shell-padding: var(--spacing-xl);

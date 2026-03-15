@@ -1,5 +1,123 @@
 function createBannersDocumentation() {
   return `
+    <style>
+      .delta-docs .banner-specimen-stack {
+        display: grid;
+        gap: var(--components-banner-demo-gap);
+      }
+
+      .delta-docs .banner-specimen {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        border-radius: var(--border-radius-md);
+      }
+
+      .delta-docs .banner-specimen--background {
+        display: flex;
+        align-items: center;
+        aspect-ratio: var(--components-banner-background-aspect-ratio);
+        min-height: var(--components-banner-split-min-height);
+      }
+
+      .delta-docs .banner-specimen__image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: var(--components-banner-image-fit-position);
+      }
+
+      .delta-docs .banner-specimen--background .banner-specimen__image,
+      .delta-docs .banner-specimen--background .banner-specimen__overlay {
+        position: absolute;
+        inset: 0;
+      }
+
+      .delta-docs .banner-specimen__overlay {
+        background: var(--overlay-dark);
+      }
+
+      .delta-docs .banner-specimen__background-content {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        gap: 0;
+        width: min(100%, var(--components-banner-background-content-max-width));
+        padding: var(--spacing-xl);
+      }
+
+      .delta-docs .banner-specimen__title {
+        margin: 0;
+        font-family: var(--font-family-heading);
+        font-weight: var(--font-weight-regular);
+      }
+
+      .delta-docs .banner-specimen__title--hero {
+        color: var(--global-white);
+        font-size: var(--h1-title-font-size);
+        line-height: var(--h1-title-line-height);
+      }
+
+      .delta-docs .banner-specimen__title--split {
+        color: var(--text-default);
+        font-size: var(--h2-font-size);
+        line-height: var(--h2-line-height);
+      }
+
+      .delta-docs .banner-specimen__body {
+        margin: 0;
+        padding-top: var(--spacing-sm);
+        font-family: var(--font-family-body);
+        font-weight: var(--font-weight-regular);
+      }
+
+      .delta-docs .banner-specimen__body--hero {
+        width: min(100%, var(--components-banner-background-body-width));
+        color: var(--global-white);
+        font-size: var(--h1-title-plus-p-font-size);
+        line-height: var(--h1-title-plus-p-line-height);
+      }
+
+      .delta-docs .banner-specimen__body--split {
+        color: var(--text-default);
+        font-size: var(--p-font-size);
+        line-height: var(--p-line-height);
+      }
+
+      .delta-docs .banner-specimen--split {
+        display: grid;
+        width: 100%;
+        gap: var(--components-banner-split-gap);
+        background: var(--page-background);
+      }
+
+      .delta-docs .banner-specimen__figure {
+        margin: 0;
+        overflow: hidden;
+        border-radius: var(--border-radius-md);
+      }
+
+      .delta-docs .banner-specimen__split-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: var(--spacing-xl);
+      }
+
+      @media (min-width: 48rem) {
+        .delta-docs .banner-specimen--split {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          aspect-ratio: var(--components-banner-split-aspect-ratio);
+          min-height: var(--components-banner-split-min-height);
+        }
+
+        .delta-docs .banner-specimen__figure,
+        .delta-docs .banner-specimen__split-content {
+          min-height: 0;
+        }
+      }
+    </style>
     <article class="delta-docs">
       <h1>Banners</h1>
       <p>Banners are prominent content blocks for hero sections, promotional areas, and feature highlights. They combine imagery with the Content component to create engaging layouts with multiple alignment and orientation options.</p>
@@ -18,8 +136,15 @@ function createBannersDocumentation() {
         <li><strong>Content:</strong> Content component instance with heading, body text, and optional CTAs</li>
       </ul>
 
-      <div class="delta-docs__demo" aria-label="Background image banner specimen placeholder">
-        <p><strong>Step 2 placeholder:</strong> Live Background image banner specimens will be added here.</p>
+      <div class="delta-docs__demo" aria-label="Background image banner specimen">
+        <div class="banner-specimen banner-specimen--background">
+          <img class="banner-specimen__image" src="https://www.figma.com/api/mcp/asset/3a2844c6-ed47-498a-ac6c-04d77b5406a3" alt="" />
+          <div class="banner-specimen__overlay" aria-hidden="true"></div>
+          <div class="banner-specimen__background-content">
+            <h2 class="banner-specimen__title banner-specimen__title--hero">Title Heading</h2>
+            <p class="banner-specimen__body banner-specimen__body--hero">Body</p>
+          </div>
+        </div>
       </div>
 
       <h3>Split</h3>
@@ -30,8 +155,16 @@ function createBannersDocumentation() {
         <li><strong>Content panel:</strong> Content component instance with background color and padding</li>
       </ul>
 
-      <div class="delta-docs__demo" aria-label="Split banner specimen placeholder">
-        <p><strong>Step 2 placeholder:</strong> Live Split banner specimens will be added here.</p>
+      <div class="delta-docs__demo" aria-label="Split banner specimen">
+        <div class="banner-specimen banner-specimen--split">
+          <figure class="banner-specimen__figure">
+            <img class="banner-specimen__image" src="https://www.figma.com/api/mcp/asset/bc62da89-d394-4a4b-a9c0-eff0301a1ab1" alt="" />
+          </figure>
+          <div class="banner-specimen__split-content">
+            <h3 class="banner-specimen__title banner-specimen__title--split">Heading</h3>
+            <p class="banner-specimen__body banner-specimen__body--split">Body</p>
+          </div>
+        </div>
       </div>
 
       <hr />
@@ -51,10 +184,6 @@ function createBannersDocumentation() {
         <li><strong>Size — Widescreen:</strong> Enforces a minimum height of 17.75rem / 284px for visual impact on larger viewports.</li>
       </ul>
 
-      <div class="delta-docs__demo" aria-label="Background image banner variants placeholder">
-        <p><strong>Step 2 placeholder:</strong> Live Background image variant specimens will be added here.</p>
-      </div>
-
       <h3>Split</h3>
       <p>Split supports two configurable properties:</p>
       <ul>
@@ -63,10 +192,6 @@ function createBannersDocumentation() {
         <li><strong>Direction — Default:</strong> Image panel first, content panel second.</li>
         <li><strong>Direction — Reverse:</strong> Content panel first, image panel second. Useful when alternating split banners in a series.</li>
       </ul>
-
-      <div class="delta-docs__demo" aria-label="Split banner variants placeholder">
-        <p><strong>Step 2 placeholder:</strong> Live Split banner variant specimens will be added here.</p>
-      </div>
 
       <hr />
 
