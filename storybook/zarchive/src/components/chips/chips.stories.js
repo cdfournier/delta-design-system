@@ -1,229 +1,166 @@
 function createChipsDocumentation() {
   return `
     <style>
-      .delta-docs .chip-specimen-card {
-        display: inline-flex;
-        align-items: center;
-        background: var(--section-background);
-        border-radius: var(--border-radius-md);
+      .delta-docs .delta-docs__demo {
         padding: var(--spacing-xl);
+        border: 0;
+        border-radius: var(--border-radius-md);
+        background: var(--global-gray-light);
       }
 
-      [data-color-mode='dark'] .delta-docs .chip-specimen-card {
+      [data-color-mode='dark'] .delta-docs .delta-docs__demo {
         background: var(--brand-secondary);
       }
 
-      [data-color-mode='dark'] .delta-docs .chip--primary {
-        border-color: transparent;
-      }
-
-      .delta-docs .chip-specimen-row {
-        display: inline-flex;
-        align-items: center;
+      .delta-docs .chip-group {
+        display: flex;
         gap: var(--spacing-md);
         flex-wrap: wrap;
-      }
-
-      .delta-docs .chip-specimen-group {
-        display: inline-flex;
         align-items: center;
-        gap: var(--spacing-sm);
-      }
-
-      .delta-docs .chip-specimen-divider {
-        width: var(--docs-rule-width);
-        align-self: stretch;
-        background: var(--global-gray-dark);
       }
 
       .delta-docs .chip {
         display: inline-flex;
         align-items: center;
         gap: var(--components-chip-padding-gap);
-        padding: 0 var(--components-chip-padding-l-r);
-        border: var(--docs-rule-width) solid transparent;
+        padding: var(--components-chip-padding-t-b) var(--components-chip-padding-l-r);
         border-radius: var(--components-chip-border-radius);
-        background: var(--components-chip-primary);
-        color: var(--text-inverse);
-        font-family: var(--font-family-body);
         font-size: var(--components-chip-font-size);
         line-height: var(--components-chip-line-height);
+        font-family: var(--font-family-body);
         font-weight: var(--font-weight-regular);
+        cursor: pointer;
         text-decoration: none;
+        border: 0.0625rem solid transparent;
+        transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
       }
 
-      .delta-docs .chip--primary {
-        background: var(--components-chip-primary);
-        border-color: transparent;
-      }
-
-      .delta-docs .chip--primary-hover {
-        background: var(--components-chip-primary-dark);
+      .delta-docs .chip-primary {
+        background-color: var(--components-chip-primary);
+        color: var(--text-inverse);
         border-color: var(--components-chip-primary);
       }
 
-      .delta-docs .chip--secondary {
-        background: var(--components-chip-secondary);
+      .delta-docs .chip-primary:hover,
+      .delta-docs .chip-primary:focus {
+        background-color: var(--components-chip-primary-dark);
+        border-color: var(--components-chip-primary-dark);
+      }
+
+      .delta-docs .chip-secondary {
+        background-color: var(--components-chip-secondary);
+        color: var(--text-inverse);
         border-color: var(--components-chip-secondary);
       }
 
-      .delta-docs .chip--secondary-hover {
-        background: var(--components-chip-secondary-dark);
+      .delta-docs .chip-secondary:hover,
+      .delta-docs .chip-secondary:focus {
+        background-color: var(--components-chip-secondary-dark);
+        border-color: var(--components-chip-secondary-dark);
       }
 
-      .delta-docs .chip--primary-hover,
-      .delta-docs .chip--secondary-hover {
-        color: var(--global-white);
+      [data-color-mode="dark"] .delta-docs .chip-primary {
+        border-color: transparent;
       }
 
-      .delta-docs .chip--primary-hover .chip__label,
-      .delta-docs .chip--secondary-hover .chip__label {
-        color: var(--global-white);
-      }
-
-      .delta-docs .chip__label {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 0;
-        padding: var(--components-chip-padding-t-b) 0;
-        white-space: nowrap;
+      .delta-docs .chip-avatar {
+        width: var(--components-width-by-font-size-h3);
+        aspect-ratio: 1;
+        border-radius: var(--border-radius-round);
         overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-      .delta-docs .chip__icon,
-      .delta-docs .chip__toggle {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: var(--components-chip-icon-size);
-        height: var(--components-chip-icon-size);
-        padding: var(--components-chip-icon-padding);
         flex: 0 0 auto;
       }
 
-      .delta-docs .chip__check {
-        width: var(--components-chip-check-size);
-        height: var(--components-chip-check-size);
+      .delta-docs .chip-secondary .chip-avatar {
+        border: var(--spacing-xs) solid var(--components-chip-secondary);
       }
 
-      .delta-docs .chip__icon svg,
-      .delta-docs .chip__toggle svg {
-        width: var(--components-chip-icon-graphic-size);
-        height: var(--components-chip-icon-graphic-size);
+      .delta-docs .chip-icon {
+        width: var(--components-width-by-font-size-h3);
+        aspect-ratio: 1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+      }
+
+      .delta-docs .chip-icon path,
+      .delta-docs .check-icon path,
+      .delta-docs .chip-close svg path,
+      .delta-docs .chip-state-arrow path {
         stroke: currentColor;
         fill: none;
         stroke-linecap: round;
         stroke-linejoin: round;
       }
 
-      .delta-docs .chip__icon svg *,
-      .delta-docs .chip__toggle svg *,
-      .delta-docs .chip__dismiss-icon svg * {
-        stroke-width: var(--components-chip-icon-stroke-width);
-      }
-
-      .delta-docs .chip--avatar-left {
-        padding-left: var(--components-chip-padding-edge-with-avatar);
-      }
-
-      .delta-docs .chip--avatar-right {
-        padding-right: var(--components-chip-padding-edge-with-avatar);
-      }
-
-      .delta-docs .chip__avatar {
-        width: var(--components-chip-avatar-size);
-        height: var(--components-chip-avatar-size);
-        border: var(--components-chip-avatar-border-width) solid var(--components-chip-avatar-border-primary);
-        border-radius: var(--border-radius-round);
-        overflow: hidden;
+      .delta-docs .check-icon {
+        display: none;
+        width: var(--components-width-by-font-size-small);
+        aspect-ratio: 1;
         flex: 0 0 auto;
       }
 
-      .delta-docs .chip--secondary .chip__avatar,
-      .delta-docs .chip--secondary-hover .chip__avatar {
-        border-color: var(--components-chip-avatar-border-secondary);
-      }
-
-      .delta-docs .chip__avatar-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+      .delta-docs .chip.checked .check-icon {
         display: block;
       }
 
-      .delta-docs .chip__dismiss {
+      .delta-docs .chip-close {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: var(--components-chip-dismiss-size);
-        height: var(--components-chip-dismiss-size);
+        width: var(--components-width-by-font-size-h3);
+        aspect-ratio: 1;
         padding: var(--components-chip-button-padding-outer);
-        border: 0;
-        background: transparent;
-        color: inherit;
+        background: none;
+        border: none;
         cursor: pointer;
+        color: inherit;
         flex: 0 0 auto;
       }
 
-      .delta-docs .chip__dismiss-inner {
-        display: inline-flex;
+      .delta-docs .button-chip-inner {
+        display: flex;
         align-items: center;
         justify-content: center;
         width: 100%;
         height: 100%;
         padding: var(--components-chip-button-padding-inner);
         border-radius: var(--border-radius-round);
-        background: var(--components-chip-button-primary);
+        background-color: var(--components-chip-button-primary);
       }
 
-      .delta-docs .chip--secondary .chip__dismiss-inner,
-      .delta-docs .chip--secondary-hover .chip__dismiss-inner {
-        background: var(--components-chip-button-secondary);
+      .delta-docs .chip-secondary .button-chip-inner {
+        background-color: var(--components-chip-button-secondary);
       }
 
-      .delta-docs .chip__dismiss-icon {
+      .delta-docs .chip-state-comparison {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-md);
+        flex-wrap: wrap;
+      }
+
+      .delta-docs .chip-state-group {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-sm);
+      }
+
+      .delta-docs .chip-state-divider {
+        align-self: stretch;
+        width: var(--docs-rule-width);
+        background: var(--global-gray-dark);
+      }
+
+      .delta-docs .chip-state-arrow {
+        width: var(--components-width-by-font-size-h3);
+        aspect-ratio: 1;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: var(--components-chip-dismiss-icon-size);
-        height: var(--components-chip-dismiss-icon-size);
-        color: var(--components-chip-dismiss-icon-primary);
-      }
-
-      .delta-docs .chip--secondary .chip__dismiss-icon,
-      .delta-docs .chip--secondary-hover .chip__dismiss-icon {
-        color: var(--components-chip-dismiss-icon-secondary);
-      }
-
-      [data-color-mode='dark'] .delta-docs .chip__dismiss-inner {
-        border: 0;
-        background: var(--components-chip-button-primary);
-      }
-
-      [data-color-mode='dark'] .delta-docs .chip--secondary .chip__dismiss-inner,
-      [data-color-mode='dark'] .delta-docs .chip--secondary-hover .chip__dismiss-inner {
-        border: 0;
-        background: var(--components-chip-button-secondary);
-      }
-
-      [data-color-mode='dark'] .delta-docs .chip__dismiss-icon {
-        color: var(--global-white);
-      }
-
-      [data-color-mode='dark'] .delta-docs .chip--secondary .chip__dismiss-icon,
-      [data-color-mode='dark'] .delta-docs .chip--secondary-hover .chip__dismiss-icon {
-        color: var(--global-white);
-      }
-
-      .delta-docs .chip__dismiss-icon svg {
-        width: var(--components-chip-dismiss-icon-size);
-        height: var(--components-chip-dismiss-icon-size);
-        stroke: currentColor;
-        fill: none;
-        stroke-linecap: round;
-        stroke-linejoin: round;
+        color: var(--text-default);
+        flex: 0 0 auto;
       }
     </style>
     <article class="delta-docs">
@@ -243,43 +180,35 @@ function createChipsDocumentation() {
             <li><strong>Dismiss button (optional):</strong> A close button (<code>.button-chip</code>) that allows users to remove the chip. Has its own inner and outer padding tokens.</li>
         </ul>
 
-        <div class="chip-specimen-card" aria-label="Chips anatomy specimen">
-          <div class="chip-specimen-row">
-            <button class="chip chip--primary" type="button"><span class="chip__label">Primary</span></button>
-            <button class="chip chip--secondary" type="button">
-              <span class="chip__label">Secondary</span>
-              <span class="chip__toggle" aria-hidden="true">
-                <svg class="chip__check" viewBox="0 0 12 12" focusable="false" aria-hidden="true">
-                  <path d="M10 3L4.5 8.5L2 6" stroke-width="2"></path>
-                </svg>
-              </span>
-            </button>
-            <button class="chip chip--primary" type="button">
-              <span class="chip__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
-                  <rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.5"></rect>
-                  <path d="M4 7L12 13L20 7" stroke-width="1.5"></path>
-                </svg>
-              </span>
-              <span class="chip__label">Chip</span>
-            </button>
-            <span class="chip chip--secondary chip--avatar-left">
-              <span class="chip__avatar" aria-hidden="true">
-                <img class="chip__avatar-image" src="https://www.figma.com/api/mcp/asset/8ae19004-f754-4447-8b81-2cca08f1439d" alt="" />
-              </span>
-              <span class="chip__label">Chip</span>
-              <button class="chip__dismiss" type="button" aria-label="Remove Chip">
-                <span class="chip__dismiss-inner">
-                  <span class="chip__dismiss-icon" aria-hidden="true">
-                    <svg viewBox="0 0 12 12" focusable="false" aria-hidden="true">
-                      <path d="M9 3L3 9" stroke-width="2"></path>
-                      <path d="M3 3L9 9" stroke-width="2"></path>
+        <div class="delta-docs__demo">
+            <div class="chip-group">
+                <button class="chip chip-primary" type="button">Label</button>
+                <button class="chip chip-secondary checked" type="button" role="checkbox" aria-checked="true">
+                    Secondary
+                    <svg class="check-icon" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M10 3L4.5 8.5L2 6" stroke-width="2"/>
                     </svg>
-                  </span>
+                </button>
+                <span class="chip chip-primary">
+                    <svg class="chip-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M5 7H19" stroke-width="2"/>
+                        <path d="M5 12H19" stroke-width="2"/>
+                        <path d="M5 17H14" stroke-width="2"/>
+                    </svg>
+                    Chip
                 </span>
-              </button>
-            </span>
-          </div>
+                <span class="chip chip-secondary">
+                    <span class="chip-avatar" aria-hidden="true"></span>
+                    Chip
+                    <button class="chip-close" type="button" aria-label="Remove Chip">
+                        <span class="button-chip-inner">
+                            <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M9 3L3 9M3 3L9 9" stroke-width="2"/>
+                            </svg>
+                        </span>
+                    </button>
+                </span>
+            </div>
         </div>
 
         <hr>
@@ -290,102 +219,93 @@ function createChipsDocumentation() {
         <h3>Primary</h3>
         <p>Uses the brand primary color. Use primary chips when chips are the main interactive or filtering element on a surface.</p>
 
-        <div class="chip-specimen-card" aria-label="Primary chip specimen">
-          <div class="chip-specimen-row chip-specimen-row--tight">
-            <button class="chip chip--primary" type="button"><span class="chip__label">Primary</span></button>
-          </div>
+        <div class="delta-docs__demo">
+            <div class="chip-group">
+                <button class="chip chip-primary" type="button">Design</button>
+                <button class="chip chip-primary" type="button">Development</button>
+                <button class="chip chip-primary" type="button">Research</button>
+            </div>
         </div>
 
         <h3>Secondary</h3>
         <p>Uses the brand secondary color. Use secondary chips for less prominent selections, or to create visual hierarchy alongside primary elements.</p>
 
-        <div class="chip-specimen-card" aria-label="Secondary chip specimen">
-          <div class="chip-specimen-row chip-specimen-row--tight">
-            <button class="chip chip--secondary" type="button"><span class="chip__label">Secondary</span></button>
-          </div>
+        <div class="delta-docs__demo">
+            <div class="chip-group">
+                <button class="chip chip-secondary" type="button">Design</button>
+                <button class="chip chip-secondary" type="button">Development</button>
+                <button class="chip chip-secondary" type="button">Research</button>
+            </div>
         </div>
 
         <h3>With avatar</h3>
         <p>The <code>avatar-left</code> and <code>avatar-right</code> types place a circular avatar image at the leading or trailing edge of the chip. Use for chips that represent a person or named entity. The chip container uses <code>&lt;span&gt;</code> for non-interactive avatar chips.</p>
 
-        <div class="chip-specimen-card" aria-label="Avatar chip specimens">
-          <div class="chip-specimen-row">
-            <span class="chip chip--primary chip--avatar-left">
-              <span class="chip__avatar" aria-hidden="true">
-                <img class="chip__avatar-image" src="https://www.figma.com/api/mcp/asset/a317bbcc-f39b-4cd7-b746-976fff43b1a9" alt="" />
-              </span>
-              <span class="chip__label">Avatar left</span>
-            </span>
-            <span class="chip chip--primary chip--avatar-right">
-              <span class="chip__label">Avatar right</span>
-              <span class="chip__avatar" aria-hidden="true">
-                <img class="chip__avatar-image" src="https://www.figma.com/api/mcp/asset/a317bbcc-f39b-4cd7-b746-976fff43b1a9" alt="" />
-              </span>
-            </span>
-            <span class="chip chip--secondary chip--avatar-left">
-              <span class="chip__avatar" aria-hidden="true">
-                <img class="chip__avatar-image" src="https://www.figma.com/api/mcp/asset/a317bbcc-f39b-4cd7-b746-976fff43b1a9" alt="" />
-              </span>
-              <span class="chip__label">Avatar left</span>
-            </span>
-            <span class="chip chip--secondary chip--avatar-right">
-              <span class="chip__label">Avatar right</span>
-              <span class="chip__avatar" aria-hidden="true">
-                <img class="chip__avatar-image" src="https://www.figma.com/api/mcp/asset/a317bbcc-f39b-4cd7-b746-976fff43b1a9" alt="" />
-              </span>
-            </span>
-          </div>
+        <div class="delta-docs__demo">
+            <div class="chip-group">
+                <span class="chip chip-primary">
+                    <span class="chip-avatar" aria-hidden="true"></span>
+                    avatar-left
+                </span>
+                <span class="chip chip-secondary">
+                    avatar-right
+                    <span class="chip-avatar" aria-hidden="true"></span>
+                </span>
+            </div>
         </div>
 
         <h3>Selectable</h3>
         <p>When the <code>checked</code> property is enabled, a checkmark icon appears inside the chip to indicate a selected state. Use <code>role="checkbox"</code> and <code>aria-checked</code> for correct accessibility semantics. Toggle the <code>checked</code> class and <code>aria-checked</code> attribute via JavaScript.</p>
 
-        <div class="chip-specimen-card" aria-label="Selectable chip specimens">
-          <div class="chip-specimen-row">
-            <button class="chip chip--primary" type="button" role="checkbox" aria-checked="false"><span class="chip__label">Unchecked</span></button>
-            <button class="chip chip--primary" type="button" role="checkbox" aria-checked="true">
-              <span class="chip__label">Checked</span>
-              <span class="chip__toggle" aria-hidden="true">
-                <svg class="chip__check" viewBox="0 0 12 12" focusable="false" aria-hidden="true">
-                  <path d="M10 3L4.5 8.5L2 6" stroke-width="2"></path>
-                </svg>
-              </span>
-            </button>
-          </div>
+        <div class="delta-docs__demo">
+            <div class="chip-group">
+                <button class="chip chip-secondary" type="button" role="checkbox" aria-checked="false">
+                    Cats
+                    <svg class="check-icon" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M10 3L4.5 8.5L2 6" stroke-width="2"/>
+                    </svg>
+                </button>
+                <button class="chip chip-secondary checked" type="button" role="checkbox" aria-checked="true">
+                    Dogs
+                    <svg class="check-icon" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M10 3L4.5 8.5L2 6" stroke-width="2"/>
+                    </svg>
+                </button>
+                <button class="chip chip-secondary" type="button" role="checkbox" aria-checked="false">
+                    Birds
+                    <svg class="check-icon" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M10 3L4.5 8.5L2 6" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
         </div>
 
         <h3>Dismissible</h3>
         <p>When the <code>dismissable</code> property is enabled, a dismiss button (<code>.button-chip</code>) appears at the trailing edge of the chip. The chip container should be a <code>&lt;span&gt;</code>; the dismiss action uses a nested <code>&lt;button&gt;</code>. Use when users need to remove the chip from a set.</p>
 
-        <div class="chip-specimen-card" aria-label="Dismissible chip specimens">
-          <div class="chip-specimen-row">
-            <span class="chip chip--primary">
-              <span class="chip__label">Primary</span>
-              <button class="chip__dismiss" type="button" aria-label="Remove Primary">
-                <span class="chip__dismiss-inner">
-                  <span class="chip__dismiss-icon" aria-hidden="true">
-                    <svg viewBox="0 0 12 12" focusable="false" aria-hidden="true">
-                      <path d="M9 3L3 9" stroke-width="2"></path>
-                      <path d="M3 3L9 9" stroke-width="2"></path>
-                    </svg>
-                  </span>
+        <div class="delta-docs__demo">
+            <div class="chip-group">
+                <span class="chip chip-primary">
+                    Email
+                    <button class="chip-close" type="button" aria-label="Remove Email chip">
+                        <span class="button-chip-inner">
+                            <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M9 3L3 9M3 3L9 9" stroke-width="2"/>
+                            </svg>
+                        </span>
+                    </button>
                 </span>
-              </button>
-            </span>
-            <span class="chip chip--secondary">
-              <span class="chip__label">Secondary</span>
-              <button class="chip__dismiss" type="button" aria-label="Remove Secondary">
-                <span class="chip__dismiss-inner">
-                  <span class="chip__dismiss-icon" aria-hidden="true">
-                    <svg viewBox="0 0 12 12" focusable="false" aria-hidden="true">
-                      <path d="M9 3L3 9" stroke-width="2"></path>
-                      <path d="M3 3L9 9" stroke-width="2"></path>
-                    </svg>
-                  </span>
+                <span class="chip chip-primary">
+                    Phone
+                    <button class="chip-close" type="button" aria-label="Remove Phone chip">
+                        <span class="button-chip-inner">
+                            <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M9 3L3 9M3 3L9 9" stroke-width="2"/>
+                            </svg>
+                        </span>
+                    </button>
                 </span>
-              </button>
-            </span>
-          </div>
+            </div>
         </div>
 
         <hr>
@@ -396,40 +316,40 @@ function createChipsDocumentation() {
         <h3>Default</h3>
         <p>The resting state before any user interaction. Chips display their base background color.</p>
 
-        <div class="chip-specimen-card" aria-label="Default chip state specimen">
-          <div class="chip-specimen-row chip-specimen-row--tight">
-            <button class="chip chip--primary" type="button"><span class="chip__label">Primary</span></button>
-            <button class="chip chip--secondary" type="button"><span class="chip__label">Secondary</span></button>
-          </div>
+        <div class="delta-docs__demo">
+            <div class="chip-group">
+                <button class="chip chip-primary" type="button">Primary</button>
+                <button class="chip chip-secondary" type="button">Secondary</button>
+            </div>
         </div>
 
         <h3>Hover</h3>
         <p>When the cursor moves over interactive chips, the background darkens to the <code>-dark</code> variant of the chip color token. The border color uses the base chip color token.</p>
 
-        <div class="chip-specimen-card" aria-label="Hover chip state specimen">
-          <div class="chip-specimen-row">
-            <div class="chip-specimen-group">
-              <button class="chip chip--primary" type="button"><span class="chip__label">Chip</span></button>
-              <span class="chip__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
-                  <path d="M4 12H20" stroke-width="1.5"></path>
-                  <path d="M13 5L20 12L13 19" stroke-width="1.5"></path>
-                </svg>
-              </span>
-              <button class="chip chip--primary-hover" type="button"><span class="chip__label">Chip</span></button>
+        <div class="delta-docs__demo">
+            <div class="chip-state-comparison">
+                <div class="chip-state-group">
+                    <button class="chip chip-primary" type="button">Chip</button>
+                    <span class="chip-state-arrow" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M4 12H20" stroke-width="2"/>
+                            <path d="M13 5L20 12L13 19" stroke-width="2"/>
+                        </svg>
+                    </span>
+                    <button class="chip chip-primary" type="button" style="background-color: var(--components-chip-primary-dark); border-color: var(--components-chip-primary);">Chip</button>
+                </div>
+                <span class="chip-state-divider" aria-hidden="true"></span>
+                <div class="chip-state-group">
+                    <button class="chip chip-secondary" type="button">Chip</button>
+                    <span class="chip-state-arrow" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M4 12H20" stroke-width="2"/>
+                            <path d="M13 5L20 12L13 19" stroke-width="2"/>
+                        </svg>
+                    </span>
+                    <button class="chip chip-secondary" type="button" style="background-color: var(--components-chip-secondary-dark); border-color: var(--components-chip-secondary);">Chip</button>
+                </div>
             </div>
-            <span class="chip-specimen-divider" aria-hidden="true"></span>
-            <div class="chip-specimen-group">
-              <button class="chip chip--secondary" type="button"><span class="chip__label">Chip</span></button>
-              <span class="chip__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
-                  <path d="M4 12H20" stroke-width="1.5"></path>
-                  <path d="M13 5L20 12L13 19" stroke-width="1.5"></path>
-                </svg>
-              </span>
-              <button class="chip chip--secondary-hover" type="button"><span class="chip__label">Chip</span></button>
-            </div>
-          </div>
         </div>
 
         <h3>Focus</h3>
@@ -438,27 +358,21 @@ function createChipsDocumentation() {
         <h3>Selected (checked)</h3>
         <p>For selectable chips with <code>checked=yes</code>, a checkmark icon appears at the leading or trailing position depending on the chip type. The background color remains the base chip color (does not darken).</p>
 
-        <div class="chip-specimen-card" aria-label="Selected chip state specimen">
-          <div class="chip-specimen-row">
-            <button class="chip chip--primary" type="button" role="checkbox" aria-checked="false"><span class="chip__label">Unchecked</span></button>
-            <button class="chip chip--primary" type="button" role="checkbox" aria-checked="true">
-              <span class="chip__label">Checked</span>
-              <span class="chip__toggle" aria-hidden="true">
-                <svg class="chip__check" viewBox="0 0 12 12" focusable="false" aria-hidden="true">
-                  <path d="M10 3L4.5 8.5L2 6" stroke-width="2"></path>
-                </svg>
-              </span>
-            </button>
-            <button class="chip chip--secondary" type="button" role="checkbox" aria-checked="false"><span class="chip__label">Unchecked</span></button>
-            <button class="chip chip--secondary" type="button" role="checkbox" aria-checked="true">
-              <span class="chip__label">Checked</span>
-              <span class="chip__toggle" aria-hidden="true">
-                <svg class="chip__check" viewBox="0 0 12 12" focusable="false" aria-hidden="true">
-                  <path d="M10 3L4.5 8.5L2 6" stroke-width="2"></path>
-                </svg>
-              </span>
-            </button>
-          </div>
+        <div class="delta-docs__demo">
+            <div class="chip-group">
+                <button class="chip chip-primary checked" type="button" role="checkbox" aria-checked="true">
+                    Primary selected
+                    <svg class="check-icon" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="chip chip-secondary checked" type="button" role="checkbox" aria-checked="true">
+                    Secondary selected
+                    <svg class="check-icon" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
         </div>
 
         <hr>

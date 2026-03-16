@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Component Name] - The Delta Design System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Ovo&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #FF5247;
+            --color-primary-dark: #B22E28;
+            --color-secondary: #003442;
+            --color-secondary-dark: #01232D;
+            --color-black: #000000;
+            --color-white: #FFFFFF;
+            --color-gray-dark: #919191;
+            --color-gray-medium: #CCCCCC;
+            --color-gray-light: #EEEEEE;
+
+            --font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-family-heading: 'Ovo', Georgia, serif;
+            --max-width: 800px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--color-black);
+            background-color: var(--color-white);
+            padding: 32px 24px;
+        }
+
+        .container { max-width: var(--max-width); margin: 0 auto; }
+
+        h1 {
+            font-family: var(--font-family-heading);
+            font-size: 48px; font-weight: 400; line-height: 1.2;
+            margin-bottom: 16px; color: var(--color-black);
+        }
+        h2 {
+            font-family: var(--font-family-heading);
+            font-size: 32px; font-weight: 400; line-height: 1.3;
+            margin-top: 48px; margin-bottom: 16px; color: var(--color-black);
+        }
+        h3 {
+            font-family: var(--font-family-heading);
+            font-size: 24px; font-weight: 400; line-height: 1.4;
+            margin-top: 32px; margin-bottom: 12px; color: var(--color-black);
+        }
+        h4 {
+            font-family: var(--font-family-heading);
+            font-size: 18px; font-weight: 400; line-height: 1.4;
+            margin-top: 24px; margin-bottom: 8px; color: var(--color-black);
+        }
+
+        p { font-size: 16px; line-height: 1.75; margin-bottom: 16px; }
+        strong { font-weight: 700; }
+        a { color: var(--color-primary); text-decoration: underline; }
+        a:hover { color: var(--color-secondary); }
+        ul, ol { margin-left: 24px; margin-bottom: 16px; }
+        li { margin-bottom: 8px; line-height: 1.75; }
+
+        code {
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+            background-color: var(--color-gray-light);
+            padding: 2px 6px; border-radius: 3px;
+        }
+        pre {
+            background-color: var(--color-gray-light);
+            padding: 16px; border-radius: 4px;
+            overflow-x: auto; margin-bottom: 24px;
+        }
+        pre code { background-color: transparent; padding: 0; }
+
+        table { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
+        th, td { text-align: left; padding: 12px; border-bottom: 1px solid var(--color-gray-medium); }
+        th { font-weight: 700; background-color: var(--color-gray-light); }
+
+        hr { border: none; border-top: 1px solid var(--color-gray-medium); margin: 48px 0; }
+
+        .component-demo {
+            background-color: var(--color-gray-light);
+            padding: 32px; border-radius: 4px; margin: 24px 0;
+        }
+
+        .do-dont-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 24px; margin: 24px 0;
+        }
+        @media (max-width: 48rem) {
+            .do-dont-grid { grid-template-columns: 1fr; }
+        }
+        .do-section { border-left: 4px solid #007000; padding-left: 16px; }
+        .dont-section { border-left: 4px solid #C00C00; padding-left: 16px; }
+        .do-section h3, .dont-section h3 { margin-top: 0; margin-bottom: 16px; }
+        .do-section p strong, .dont-section p strong { display: block; margin-bottom: 4px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <h1>[Component Name]</h1>
+        <p>[Brief 1–2 sentence description of what this component is and its primary purpose.]</p>
+
+        <hr>
+
+        <h2>Anatomy</h2>
+        <!-- Anatomy lists the named elements of the component with strong labels.
+             A live rendered sample may be included when it genuinely aids understanding.
+             Omit the sample when it would just be an empty grey box. -->
+        <p>[Component name] consists of:</p>
+        <ul>
+            <li><strong>[Element name]:</strong> [Description]</li>
+            <li><strong>[Element name]:</strong> [Description]</li>
+            <li><strong>[Element name] (optional):</strong> [Description]</li>
+        </ul>
+
+        <hr>
+
+        <!-- VARIANTS
+             Choose the format that fits the component's complexity:
+
+             Simple (2–4 variants, minimal differences): use an unordered list.
+             Complex (variants with meaningful structural or visual differences): use h3 subsections.
+
+             A component-demo div may be included when a visual example genuinely adds value.
+             Omit component-demo divs when they would just be empty grey boxes. -->
+
+        <h2>Variants</h2>
+        <p>[Brief description of what varies in this component.]</p>
+
+        <!-- Simple variant format: -->
+        <ul>
+            <li><strong>[Variant name] (default):</strong> [Description and when to use.]</li>
+            <li><strong>[Variant name]:</strong> [Description and when to use.]</li>
+            <li><strong>[Variant name]:</strong> [Description and when to use.]</li>
+        </ul>
+
+        <!-- Complex variant format (replace the list above with h3 subsections if needed):
+        <h3>[Variant name]</h3>
+        <p>[Description and when to use.]</p>
+
+        <h3>[Variant name]</h3>
+        <p>[Description and when to use.]</p>
+        -->
+
+        <hr>
+
+        <!-- STATES
+             Only include states that actually apply to this component.
+             Omit states that don't apply — do not include them as empty placeholders.
+             Common states: Default, Hover, Active / Pressed, Focus, Disabled, Invalid, Valid, Loading. -->
+
+        <h2>States</h2>
+        <p>[Optional intro about how states work for this component.]</p>
+
+        <h3>Default</h3>
+        <p>[Description of the default/initial state.]</p>
+
+        <h3>Hover</h3>
+        <p>[Description of hover state and what changes visually.]</p>
+
+        <h3>Active / Pressed</h3>
+        <p>[Description of active/pressed state.]</p>
+
+        <h3>Focus</h3>
+        <p>[Description of focus state. Often defers to browser defaults or system focus ring.]</p>
+
+        <h3>Disabled</h3>
+        <p>[Description of disabled state — visual treatment and behaviour.]</p>
+
+        <hr>
+
+        <!-- TYPOGRAPHY
+             Table columns: Attribute | Token | Mobile/Tablet | Widescreen
+             Use rem / px (token) format for all numeric values.
+             Omit font-weight — it is never documented.
+             Omit font-family — it is never documented.
+             Omit this section entirely if the component has no text content of its own
+             (e.g. it delegates all typography to another component like Content).
+             Row labels use CSS property name format: font-size, line-height (lowercase, hyphenated).
+             Anatomy may include live rendered samples when a visual example genuinely adds value. -->
+
+        <h2>Typography</h2>
+        <p>[Optional intro about typography in this component.]</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Token</th>
+                    <th>Mobile/Tablet</th>
+                    <th>Widescreen</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>[font-size, line-height, etc. — lowercase, hyphenated CSS property name]</td>
+                    <td><code>[token/name]</code></td>
+                    <td>[X]rem / [X]px</td>
+                    <td>[X]rem / [X]px</td>
+                </tr>
+                <tr>
+                    <td>[e.g. line-height]</td>
+                    <td><code>[token/name]</code></td>
+                    <td>[X]rem / [X]px</td>
+                    <td>[X]rem / [X]px</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <!-- SPACING
+             Table columns: Attribute | Token | Mobile/Tablet | Widescreen
+             Use rem / px (token) format for all numeric values.
+             Row labels use CSS property name format: padding, gap, margin (lowercase, hyphenated).
+             When a property applies to multiple sides, list with commas: padding-top, padding-bottom
+             Do NOT use slashes in row labels — / is reserved for token name syntax.
+             Do NOT include width, height, min-width, max-width, min-height, max-height.
+             Do NOT include border-radius here — it has its own section. -->
+
+        <h2>Spacing</h2>
+        <p>[Optional intro about spacing in this component.]</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Token</th>
+                    <th>Mobile/Tablet</th>
+                    <th>Widescreen</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>[e.g. padding, padding-top, padding-top, padding-bottom, gap]</td>
+                    <td><code>[token/name]</code></td>
+                    <td>[X]rem / [X]px</td>
+                    <td>[X]rem / [X]px</td>
+                </tr>
+                <tr>
+                    <td>[e.g. gap]</td>
+                    <td><code>[token/name]</code></td>
+                    <td>[X]rem / [X]px</td>
+                    <td>[X]rem / [X]px</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <!-- BORDER-RADIUS
+             Table columns: Attribute | Token | Mobile/Tablet | Widescreen
+             Use rem / px (token) format for all numeric values.
+             Use (fixed) annotation for values that do not scale between breakpoints.
+             Row labels use CSS property name format: border-radius (lowercase, hyphenated).
+             When element disambiguation is needed, prepend element name: Container border-radius
+             Omit this section entirely if the component has no border-radius. -->
+
+        <h2>Border-radius</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Token</th>
+                    <th>Mobile/Tablet</th>
+                    <th>Widescreen</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>[border-radius, or e.g. Container border-radius]</td>
+                    <td><code>[token/name]</code></td>
+                    <td>[X]rem / [X]px</td>
+                    <td>[X]rem / [X]px</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <!-- COLORS
+             Table columns: Attribute | Token | Light mode | Dark mode
+             Format: #HEXVAL (alias name) in both Light mode and Dark mode columns.
+             Include alias name in parentheses only when it differs from the token name.
+             When a color is the same in both modes, show it in both columns — do not use "mode-invariant" language.
+             Always note any accessibility implications of dark mode color changes. -->
+
+        <h2>Colors</h2>
+        <p>[Optional intro about color usage in this component.]</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Token</th>
+                    <th>Light mode</th>
+                    <th>Dark mode</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>[e.g. background, color, border-color — lowercase, hyphenated CSS property name]</td>
+                    <td><code>[token/name]</code></td>
+                    <td>#HEXVAL (alias name)</td>
+                    <td>#HEXVAL (alias name)</td>
+                </tr>
+                <tr>
+                    <td>[e.g. color, border-color]</td>
+                    <td><code>[token/name]</code></td>
+                    <td>#HEXVAL (alias name)</td>
+                    <td>#HEXVAL (alias name)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Light/Dark mode:</strong> [Explain how colors change between modes, or note if the component is mode-invariant.]</p>
+
+        <hr>
+
+        <!-- ACCESSIBILITY
+             Include only the subsections that apply.
+             Standard subsections: Keyboard navigation, Screen readers, ARIA attributes, Focus management, Color contrast.
+             Omit subsections that genuinely don't apply — do not include them as empty placeholders. -->
+
+        <h2>Accessibility</h2>
+        <p>[Optional intro about accessibility considerations for this component.]</p>
+
+        <h3>Keyboard navigation</h3>
+        <p>[Component name] must be fully keyboard accessible:</p>
+        <ul>
+            <li><strong>Tab:</strong> [Action]</li>
+            <li><strong>Shift + Tab:</strong> [Action]</li>
+            <li><strong>Enter:</strong> [Action]</li>
+            <li><strong>Space:</strong> [Action]</li>
+            <li><strong>[Other key]:</strong> [Action]</li>
+        </ul>
+
+        <h3>Screen readers</h3>
+        <p>[Guidance on how screen readers interact with this component, including semantic HTML requirements.]</p>
+
+        <h3>ARIA attributes</h3>
+        <p>[List and explain relevant ARIA attributes:]</p>
+        <ul>
+            <li><strong>aria-label:</strong> [When and how to use]</li>
+            <li><strong>aria-labelledby:</strong> [When and how to use]</li>
+            <li><strong>aria-describedby:</strong> [When and how to use]</li>
+            <li><strong>[Other ARIA attribute]:</strong> [When and how to use]</li>
+        </ul>
+
+        <h3>Focus management</h3>
+        <p>[Guidance on focus indicators, focus order, and focus state treatment.]</p>
+
+        <h3>Color contrast</h3>
+        <p>[Explain color contrast requirements and how the component meets them in both light and dark modes.]</p>
+
+        <hr>
+
+        <h2>Usage</h2>
+
+        <h3>When to use</h3>
+        <p>Use [component name] when:</p>
+        <ul>
+            <li>[Use case]</li>
+            <li>[Use case]</li>
+            <li>[Use case]</li>
+        </ul>
+
+        <h3>When not to use</h3>
+        <p>Do not use [component name] when:</p>
+        <ul>
+            <li>[Avoid case — explain what to use instead]</li>
+            <li>[Avoid case — explain what to use instead]</li>
+            <li>[Avoid case — explain what to use instead]</li>
+        </ul>
+
+        <h3>Content guidelines</h3>
+        <p>[Guidance on writing content for this component — labels, text, copy length, etc.]</p>
+        <ul>
+            <li><strong>[Guideline]:</strong> [Explanation]</li>
+            <li><strong>[Guideline]:</strong> [Explanation]</li>
+        </ul>
+
+        <h3>Placement</h3>
+        <p>[Guidance on where and how to position this component in layouts and interfaces.]</p>
+
+        <h3>Best practices</h3>
+
+        <div class="do-dont-grid">
+            <div class="do-section">
+                <h3>Do</h3>
+
+                <p><strong>[Practice headline]</strong></p>
+                <p>[Explanation of the good practice and why it matters.]</p>
+
+                <p><strong>[Practice headline]</strong></p>
+                <p>[Explanation of the good practice and why it matters.]</p>
+
+                <p><strong>[Practice headline]</strong></p>
+                <p>[Explanation of the good practice and why it matters.]</p>
+
+                <p><strong>[Practice headline]</strong></p>
+                <p>[Explanation of the good practice and why it matters.]</p>
+            </div>
+
+            <div class="dont-section">
+                <h3>Don't</h3>
+
+                <p><strong>[Anti-pattern headline]</strong></p>
+                <p>[Explanation of what not to do and why to avoid it.]</p>
+
+                <p><strong>[Anti-pattern headline]</strong></p>
+                <p>[Explanation of what not to do and why to avoid it.]</p>
+
+                <p><strong>[Anti-pattern headline]</strong></p>
+                <p>[Explanation of what not to do and why to avoid it.]</p>
+
+                <p><strong>[Anti-pattern headline]</strong></p>
+                <p>[Explanation of what not to do and why to avoid it.]</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <h2>Code reference</h2>
+
+        <h3>HTML</h3>
+        <pre><code>&lt;!-- Basic example --&gt;
+[HTML code example]
+
+&lt;!-- [Variant or feature] --&gt;
+[HTML code example]
+
+&lt;!-- [State or modifier] --&gt;
+[HTML code example]</code></pre>
+
+        <h3>CSS</h3>
+        <pre><code>/* Base styles */
+.[component-class] {
+  [property]: [value];
+  [property]: [value];
+}
+
+/* [Variant or modifier] */
+.[component-class].[modifier] {
+  [property]: [value];
+}
+
+/* Widescreen */
+@media (min-width: 80rem) {
+  .[component-class] {
+    [property]: [value];
+  }
+}</code></pre>
+
+        <!-- Include the JavaScript section only if the component requires JS for functionality.
+             Omit it entirely for purely presentational components. -->
+        <h3>JavaScript</h3>
+        <pre><code>// [Functionality description]
+[JavaScript code example]</code></pre>
+
+        <h3>Design tokens reference</h3>
+        <pre><code>/* Typography */
+--token/name    Mobile: Xrem / Xpx   →   Widescreen: Xrem / Xpx
+
+/* Spacing */
+--token/name    Mobile: Xrem / Xpx   →   Widescreen: Xrem / Xpx
+
+/* Border-radius */
+--token/name    Mobile: Xrem / Xpx   →   Widescreen: Xrem / Xpx
+
+/* Colors */
+--token/name    Light: #HEXVAL   Dark: #HEXVAL</code></pre>
+
+        <hr>
+
+        <h2>Resources</h2>
+        <ul>
+            <li><a href="https://www.w3.org/WAI/ARIA/apg/" target="_blank">ARIA Authoring Practices Guide</a> — W3C patterns and widgets</li>
+            <li><a href="https://webaim.org/" target="_blank">WebAIM</a> — Web accessibility resources</li>
+            <li><a href="https://www.w3.org/WAI/WCAG21/quickref/" target="_blank">WCAG 2.1 Quick Reference</a> — Accessibility guidelines</li>
+            <li><a href="https://developer.mozilla.org/" target="_blank">MDN Web Docs</a> — HTML, CSS, JavaScript reference</li>
+            <!-- Add component-specific resources below -->
+        </ul>
+
+    </div>
+</body>
+</html>
