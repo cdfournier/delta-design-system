@@ -319,7 +319,12 @@ function createHeadersDocumentation() {
         <header class="header-specimen header-specimen--desktop">
           <div class="header-specimen__top">
             <div class="header-specimen__row">
-              <div class="header-specimen__logo-space" aria-hidden="true"></div>
+              <div class="header-specimen__logo-space" aria-hidden="true">
+                <svg class="header__logo-mark" viewBox="0 0 216 168" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <polygon points="108,0 0,168 108,168" fill="var(--components-logo-left)"/>
+                  <polygon points="108,0 216,168 108,168" fill="var(--components-logo-right)"/>
+                </svg>
+              </div>
               <nav class="header-specimen__nav" aria-label="Primary navigation">
                 <ul class="header-specimen__links">
                   <li class="header-specimen__link-item"><a class="header-specimen__link header-specimen__link--desktop" href="/foundations">Link</a></li>
@@ -386,7 +391,12 @@ function createHeadersDocumentation() {
           <header class="header-specimen header-specimen--mobile" data-menu-open="false">
             <div class="header-specimen__top">
               <div class="header-specimen__row">
-                <div class="header-specimen__logo-space" aria-hidden="true"></div>
+                <div class="header-specimen__logo-space" aria-hidden="true">
+                  <svg class="header__logo-mark" viewBox="0 0 216 168" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <polygon points="108,0 0,168 108,168" fill="var(--components-logo-left)"/>
+                    <polygon points="108,0 216,168 108,168" fill="var(--components-logo-right)"/>
+                  </svg>
+                </div>
                 <button class="header-specimen__menu-button" type="button" aria-label="Open menu" aria-expanded="false">
                   <span class="header-specimen__menu-icon header-specimen__menu-icon--closed" aria-hidden="true"><span></span></span>
                   <span class="header-specimen__menu-icon header-specimen__menu-icon--open" aria-hidden="true"></span>
@@ -434,7 +444,12 @@ function createHeadersDocumentation() {
           <header class="header-specimen header-specimen--mobile" data-menu-open="true">
             <div class="header-specimen__top">
               <div class="header-specimen__row">
-                <div class="header-specimen__logo-space" aria-hidden="true"></div>
+                <div class="header-specimen__logo-space" aria-hidden="true">
+                  <svg class="header__logo-mark" viewBox="0 0 216 168" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <polygon points="108,0 0,168 108,168" fill="var(--components-logo-left)"/>
+                    <polygon points="108,0 216,168 108,168" fill="var(--components-logo-right)"/>
+                  </svg>
+                </div>
                 <button class="header-specimen__menu-button" type="button" aria-label="Close menu" aria-expanded="true">
                   <span class="header-specimen__menu-icon header-specimen__menu-icon--closed" aria-hidden="true"><span></span></span>
                   <span class="header-specimen__menu-icon header-specimen__menu-icon--open" aria-hidden="true"></span>
