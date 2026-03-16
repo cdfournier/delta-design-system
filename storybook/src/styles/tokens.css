@@ -172,6 +172,9 @@
   --components-input-switch-padding-gap: 0.5rem; /* 8px */
   --components-input-switch-border-radius: 1rem; /* 16px */
   --components-input-switch-max-width: 2.25rem;  /* 36px */
+  --components-input-switch-width: 2.25rem;       /* 36px — fixed */
+  --components-input-switch-height: 1.25rem;      /* 20px — fixed */
+  --components-input-switch-thumb-size: 0.75rem;  /* 12px — fixed */
   --components-input-select-option-check-max-width: var(--p-font-size); /* aliases p/font-size */
 
   --components-tab-button-padding-l-r: 0.25rem;  /* 4px */
@@ -186,6 +189,23 @@
   --components-width-by-font-size-h3: var(--h3-font-size);       /* 28px */
   --components-width-by-font-size-h2: var(--h2-font-size);       /* 38px */
   --components-width-by-font-size-h1: var(--h1-font-size);       /* 50px */
+
+  /* --- Layout tokens — Mobile/Tablet --- */
+  --layout-wide-max-width: 44rem;           /* 704px */
+  --layout-fifty-max-width: 21rem;          /* 336px */
+  --layout-fifty-min-width: 16rem;          /* 256px */
+  --layout-thirds-max-width: 16rem;         /* 256px */
+  --layout-thirds-min-width: 16rem;         /* 256px */
+  --layout-fourths-max-width: 16rem;        /* 256px */
+  --layout-fourths-min-width: 16rem;        /* 256px */
+  --layout-golden-wide-max-width: 50.84rem; /* ~813px */
+  --layout-golden-narrow-max-width: 29.16rem; /* ~467px */
+
+  /* --- Link and button icon sizing --- */
+  --components-link-p-icon-size: var(--components-width-by-font-size-p);
+  --components-link-small-icon-size: var(--components-width-by-font-size-small);
+  --components-link-fine-icon-size: var(--components-width-by-font-size-fine);
+  --components-button-icon-size: var(--components-width-by-font-size-small);
 
   /* --- Docs tokens (documentation page layout — not component tokens) --- */
   --docs-max-width: 50rem;
@@ -295,9 +315,23 @@
     --components-input-checkbox-before-padding: 0.25rem; /* 4px */
     --components-input-radio-before-padding: 0.375rem;   /* 6px */
     --components-input-switch-max-width: 3.5rem; /* 56px */
+    --components-input-switch-width: 3.5rem;        /* 56px */
+    --components-input-switch-height: 1.75rem;      /* 28px */
+    --components-input-switch-thumb-size: 1.25rem;  /* 20px */
 
     --components-tab-button-padding-l-r: 0.5rem;  /* 8px */
     --components-tab-button-padding-t-b: 0.25rem; /* 4px */
+
+    /* --- Layout tokens — Widescreen --- */
+    --layout-wide-max-width: 82rem;           /* 1312px */
+    --layout-fifty-max-width: 40rem;          /* 640px */
+    --layout-fifty-min-width: 40rem;          /* 640px */
+    --layout-thirds-max-width: 26.33rem;      /* ~421px */
+    --layout-thirds-min-width: 25.83rem;      /* ~413px */
+    --layout-fourths-max-width: 19rem;        /* 304px */
+    --layout-fourths-min-width: 19rem;        /* 304px */
+    --layout-golden-wide-max-width: 50.84rem; /* ~813px — fixed */
+    --layout-golden-narrow-max-width: 29.16rem; /* ~467px — fixed */
   }
 }
 
