@@ -42,7 +42,7 @@ This document is the authoritative reference for all documentation in The Delta 
   - Often scale from mobile to widescreen
   - Example: `small` is 12px mobile → 20px widescreen
 
-- **Spacing tokens** (`xs`, `sm`, `md`, `lg`, `xl`, `xxl`, `xxxl`)
+- **Spacing tokens** (`xs`, `sm`, `md`, `lg`, `xl`, `xxl`, `xxxl`, `xxxxxl`)
   - Typically double from mobile to widescreen
   - Example: `sm` is 4px mobile → 8px widescreen
 
@@ -294,8 +294,9 @@ Spacing tokens are global and scale responsively. Use these values:
 | md | 0.5rem / 8px | 1rem / 16px |
 | lg | 0.75rem / 12px | 1.5rem / 24px |
 | xl | 1rem / 16px | 2rem / 32px |
-| xxl | 1.5rem / 24px | 3rem / 48px |
-| xxxl | 2rem / 32px | 4rem / 64px (verify in Figma) |
+| xxl | 1.25rem / 20px | 2.5rem / 40px |
+| xxxl | 1.5rem / 24px | 3rem / 48px |
+| xxxxxl | 2rem / 32px | 4rem / 64px |
 
 ---
 

@@ -97,8 +97,9 @@ Tokens scale between two breakpoints:
 | md | 0.5rem / 8px | 1rem / 16px |
 | lg | 0.75rem / 12px | 1.5rem / 24px |
 | xl | 1rem / 16px | 2rem / 32px |
-| xxl | 1.5rem / 24px | 3rem / 48px |
-| xxxl | 2rem / 32px | 4rem / 64px |
+| xxl | 1.25rem / 20px | 2.5rem / 40px |
+| xxxl | 1.5rem / 24px | 3rem / 48px |
+| xxxxxl | 2rem / 32px | 4rem / 64px |
 
 ### Border-radius token scale
 
