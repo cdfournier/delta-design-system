@@ -1,0 +1,19 @@
+{
+  "name": "delta-design-system-storybook",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@storybook/addon-a11y": "^8.6.18",
+    "@storybook/addon-docs": "^8.6.18",
+    "@storybook/addon-toolbars": "^8.6.18",
+    "@storybook/addon-viewport": "^8.6.18",
+    "@storybook/html-vite": "^8.6.18",
+    "storybook": "^8.6.18",
+    "vite": "^5.4.19"
+  }
+}

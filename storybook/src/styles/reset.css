@@ -1,0 +1,13 @@
+/* ==========================================================================
+   The Delta Design System — reset.css
+   
+   Minimal reset scoped to the story wrapper. Does not touch Storybook chrome.
+   ========================================================================== */
+
+.delta-docs *,
+.delta-docs *::before,
+.delta-docs *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

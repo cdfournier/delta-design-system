@@ -1,0 +1,561 @@
+/* ==========================================================================
+   The Delta Design System — tokens.css
+   
+   Single source of truth for all CSS custom properties.
+   
+   Breakpoint strategy:
+     :root                          — Mobile values (default)
+     @media (min-width: 48rem)      — Tablet component layout overrides
+     @media (min-width: 80rem)      — Widescreen overrides (all tokens)
+   
+   Dark mode:
+     [data-color-mode="dark"]       — Color overrides for dark mode
+   
+   Source: Figma variable JSON exports (2026-03-16)
+   ========================================================================== */
+
+
+/* --------------------------------------------------------------------------
+   COLORS — Light mode (default)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Brand */
+  --brand-primary: #FF5247;
+  --brand-primary-dark: #B22E28;
+  --brand-secondary: #003442;
+  --brand-secondary-dark: #01232D;
+
+  /* Global */
+  --global-black: #000000;
+  --global-white: #FFFFFF;
+  --global-gray-dark: #919191;
+  --global-gray-medium: #CCCCCC;
+  --global-gray-light: #EEEEEE;
+
+  /* Text */
+  --text-default: #000000;              /* alias: global/black */
+  --text-inverse: #FFFFFF;              /* alias: global/white */
+  --text-hover: #003442;               /* alias: brand/secondary */
+  --text-link: #FF5247;                /* alias: brand/primary */
+  --text-link-inverse: #FFFFFF;         /* alias: global/white */
+  --text-link-hover: #003442;           /* alias: brand/secondary */
+
+  /* Status */
+  --status-disabled: #808080;
+  --status-invalid: #C00C00;
+  --status-valid: #007000;
+  --status-read-only: #333333;
+
+  /* Page & Section */
+  --page-background: #FFFFFF;           /* alias: global/white */
+  --section-background: #EEEEEE;        /* alias: global/gray-light */
+
+  /* Overlay */
+  --overlay-dark: rgba(0, 0, 0, 0.5);
+  --overlay-light: rgba(0, 0, 0, 0.25);
+
+  /* Components — Background */
+  --components-background-primary: #FF5247;   /* alias: brand/primary */
+  --components-background-secondary: #003442; /* alias: brand/secondary */
+
+  /* Components — Border */
+  --components-border-primary: #FF5247;       /* alias: brand/primary */
+  --components-border-secondary: #003442;     /* alias: brand/secondary */
+
+  /* Components — Chip */
+  --components-chip-primary: #FF5247;         /* alias: brand/primary */
+  --components-chip-secondary: #003442;       /* alias: brand/secondary */
+  --components-chip-primary-dark: #B22E28;    /* alias: brand/primary-dark */
+  --components-chip-secondary-dark: #01232D;  /* alias: brand/secondary-dark */
+  --components-chip-button-primary: #FFFFFF;  /* alias: global/white */
+  --components-chip-button-secondary: #FFFFFF; /* alias: global/white */
+
+  /* Components — Logo */
+  --components-logo-left: #003442;            /* alias: brand/secondary */
+  --components-logo-right: #01232D;           /* alias: brand/secondary-dark */
+
+  /* Components — Option */
+  --components-option-hover: #EEEEEE;         /* alias: global/gray-light */
+  --components-option-label: #000000;         /* alias: global/black */
+
+
+/* --------------------------------------------------------------------------
+   TYPOGRAPHY — Mobile (default)
+   -------------------------------------------------------------------------- */
+
+  /* Headings */
+  --h1-title-font-size: 3.125rem;      /* 50px */
+  --h1-title-line-height: 3.5rem;      /* 56px */
+  --h1-title-p-font-size: 1rem;        /* 16px */
+  --h1-title-p-line-height: 1.75rem;   /* 28px */
+  --h1-title-p-paragraph-spacing: 1rem; /* 16px */
+  --h1-font-size: 3.125rem;            /* 50px */
+  --h1-line-height: 3.5rem;            /* 56px */
+  --h2-font-size: 2.375rem;            /* 38px */
+  --h2-line-height: 2.625rem;          /* 42px */
+  --h3-font-size: 1.75rem;             /* 28px */
+  --h3-line-height: 2rem;              /* 32px */
+  --h4-font-size: 1.5rem;              /* 24px */
+  --h4-line-height: 1.875rem;          /* 30px */
+  --h5-font-size: 1.25rem;             /* 20px */
+  --h5-line-height: 1.625rem;          /* 26px */
+
+  /* Body */
+  --p-font-size: 1rem;                 /* 16px */
+  --p-line-height: 1.5rem;             /* 24px */
+  --p-paragraph-spacing: 1rem;         /* 16px */
+
+  /* Small */
+  --small-font-size: 0.75rem;          /* 12px */
+  --small-line-height: 1.25rem;        /* 20px */
+  --small-paragraph-spacing: 0.75rem;  /* 12px */
+
+  /* Fine */
+  --fine-font-size: 0.625rem;          /* 10px */
+  --fine-line-height: 1rem;            /* 16px */
+  --fine-paragraph-spacing: 0.625rem;  /* 10px */
+
+  /* List */
+  --list-font-size: 1rem;              /* 16px */
+  --list-line-height: 1.5rem;          /* 24px */
+  --list-list-spacing: 1rem;           /* 16px */
+
+  /* Code — Body */
+  --code-body-font-size: 1.25rem;      /* 20px */
+  --code-body-line-height: 1.5rem;     /* 24px */
+  --code-body-paragraph-spacing: 1rem; /* 16px */
+  --code-body-letter-spacing: -0.16px;
+
+  /* Code — Small */
+  --code-small-font-size: 1rem;        /* 16px */
+  --code-small-line-height: 1.25rem;   /* 20px */
+  --code-small-paragraph-spacing: 0.75rem; /* 12px */
+  --code-small-letter-spacing: -0.12px;
+
+  /* Code — List */
+  --code-list-font-size: 1.25rem;      /* 20px */
+  --code-list-line-height: 1.5rem;     /* 24px */
+  --code-list-paragraph-spacing: 1rem; /* 16px */
+  --code-list-letter-spacing: -0.16px;
+
+  /* Component Typography — Badge */
+  --components-badge-font-size: 0.625rem;    /* 10px — alias: fine/font-size */
+  --components-badge-line-height: 0.625rem;  /* 10px */
+
+  /* Component Typography — Blockquote */
+  --components-blockquote-quote-font-size: 0.75rem;     /* 12px — alias: small/font-size */
+  --components-blockquote-quote-line-height: 1.25rem;   /* 20px — alias: small/line-height */
+  --components-blockquote-cite-font-size: 0.625rem;     /* 10px — alias: fine/font-size */
+  --components-blockquote-cite-line-height: 1rem;       /* 16px — alias: fine/line-height */
+
+  /* Component Typography — Button */
+  --components-button-font-size: 0.75rem;    /* 12px — alias: small/font-size */
+  --components-button-line-height: 0.75rem;  /* 12px */
+
+  /* Component Typography — Chip */
+  --components-chip-font-size: 0.75rem;      /* 12px — alias: small/font-size */
+  --components-chip-line-height: 0.75rem;    /* 12px */
+
+  /* Component Typography — Input (Text) */
+  --components-input-text-font-size: 1rem;   /* 16px — alias: p/font-size */
+  --components-input-text-line-height: 1.25rem; /* 20px */
+
+  /* Component Typography — Input (Checkbox) */
+  --components-input-checkbox-font-size: 1rem;   /* 16px — alias: p/font-size */
+  --components-input-checkbox-line-height: 1.25rem; /* 20px */
+
+  /* Component Typography — Messages */
+  --components-messages-font-size: 0.75rem;     /* 12px — alias: small/font-size */
+  --components-messages-line-height: 1.25rem;   /* 20px — alias: small/line-height */
+
+  /* Component Typography — Tab */
+  --components-tab-font-size: 0.625rem;  /* 10px — alias: fine/font-size */
+  --components-tab-line-height: 0.625rem; /* 10px */
+
+  /* Component Typography — Table */
+  --components-table-font-size: 1rem;    /* 16px — alias: p/font-size */
+  --components-table-line-height: 1.25rem; /* 20px */
+
+
+/* --------------------------------------------------------------------------
+   SPACING — Mobile (default)
+   -------------------------------------------------------------------------- */
+
+  /* Global spacing scale */
+  --spacing-xs: 0.125rem;              /* 2px */
+  --spacing-sm: 0.25rem;               /* 4px */
+  --spacing-md: 0.5rem;                /* 8px */
+  --spacing-lg: 0.75rem;               /* 12px */
+  --spacing-xl: 1rem;                  /* 16px */
+  --spacing-xxl: 1.25rem;              /* 20px */
+  --spacing-xxxl: 1.5rem;              /* 24px */
+  --spacing-xxxxxl: 2rem;              /* 32px */
+
+  /* Border-radius scale */
+  --border-radius-xs: 0.125rem;        /* 2px */
+  --border-radius-sm: 0.25rem;         /* 4px */
+  --border-radius-md: 0.5rem;          /* 8px */
+  --border-radius-lg: 1rem;            /* 16px */
+  --border-radius-xl: 1.5rem;          /* 24px */
+  --border-radius-xxl: 2rem;           /* 32px */
+  --border-radius-round: 6.25rem;      /* 100px */
+
+  /* Component Spacing — Badge */
+  --components-badge-padding-l-r: 0.25rem;       /* 4px */
+  --components-badge-padding-t-b: 0.125rem;      /* 2px */
+  --components-badge-border-radius: 0.25rem;     /* 4px */
+
+  /* Component Spacing — Banner */
+  --components-banner-padding-l-r: 0;            /* 0px */
+  --components-banner-tall-min-height: 35.5rem;  /* 568px */
+  --components-banner-short-min-height: 17.75rem; /* 284px */
+  --components-banner-content-max-width: 46.25rem; /* 740px */
+
+  /* Component Spacing — Button */
+  --components-button-padding-l-r: 1.5rem;       /* 24px */
+  --components-button-padding-t-b: 0.5rem;       /* 8px */
+  --components-button-padding-gap: 0.25rem;      /* 4px */
+  --components-button-border-radius: 2rem;       /* 32px */
+  --components-button-group-max-width: 4.375rem; /* 70px */
+
+  /* Component Spacing — Card */
+  --components-card-vertical-min-width: 16rem;           /* 256px */
+  --components-card-horizontal-min-width: 16rem;         /* 256px */
+  --components-card-horizontal-min-height: 12.5rem;      /* 200px */
+  --components-card-horizontal-figure-max-width: 16rem;  /* 256px */
+
+  /* Component Spacing — Chip */
+  --components-chip-padding-l-r: 0.5rem;         /* 8px */
+  --components-chip-padding-t-b: 0.5rem;         /* 8px */
+  --components-chip-padding-gap: 0.125rem;       /* 2px */
+  --components-chip-border-radius: 2rem;         /* 32px */
+  --components-chip-button-padding-inner: 0.125rem; /* 2px */
+  --components-chip-button-padding-outer: 0.25rem;  /* 4px */
+  --components-chip-button-max-height: 0.75rem;  /* 12px */
+  --components-chip-icon-padding: 0.125rem;      /* 2px */
+
+  /* Component Spacing — Input */
+  --components-input-max-width: 26.25rem;        /* 420px */
+  --components-input-min-width: 15.5rem;         /* 248px */
+  --components-input-radio-before-padding: 0.25rem; /* 4px */
+  --components-input-text-padding: 0.5rem;       /* 8px */
+  --components-input-text-padding-gap: 0.25rem;  /* 4px */
+  --components-input-text-border-radius: 0.25rem; /* 4px */
+  --components-input-checkbox-padding: 0.125rem; /* 2px */
+  --components-input-checkbox-padding-gap: 0.5rem; /* 8px */
+  --components-input-checkbox-border-radius: 0.25rem; /* 4px */
+  --components-input-checkbox-before-padding: 0.5rem; /* 8px */
+  --components-input-switch-padding: 0.25rem;    /* 4px */
+  --components-input-switch-padding-gap: 0.5rem; /* 8px */
+  --components-input-switch-border-radius: 1rem; /* 16px */
+  --components-input-switch-max-width: 2.25rem;  /* 36px */
+
+  /* Component Spacing — Feedback */
+  --components-feedback-height: 0.25rem;         /* 4px */
+  --components-feedback-max-width: 16rem;        /* 256px */
+
+  /* Component Spacing — Link */
+  --components-link-p-height: 1.5rem;            /* 24px */
+  --components-link-small-height: 1.25rem;       /* 20px */
+  --components-link-fine-height: 1rem;           /* 16px */
+
+  /* Component Spacing — Tab */
+  --components-tab-max-width: 16rem;             /* 256px */
+  --components-tab-min-height: 16rem;            /* 256px */
+  --components-tab-button-padding-l-r: 0.25rem;  /* 4px */
+  --components-tab-button-padding-t-b: 0.125rem; /* 2px */
+
+  /* Component Spacing — Width by font-size */
+  --components-width-by-font-size-fine: 0.625rem;  /* 10px */
+  --components-width-by-font-size-small: 0.75rem;  /* 12px */
+  --components-width-by-font-size-p: 1rem;         /* 16px */
+  --components-width-by-font-size-h5: 1.25rem;     /* 20px */
+  --components-width-by-font-size-h4: 1.5rem;      /* 24px */
+  --components-width-by-font-size-h3: 1.75rem;     /* 28px */
+  --components-width-by-font-size-h2: 2.375rem;    /* 38px */
+  --components-width-by-font-size-h1: 3.125rem;    /* 50px */
+
+  /* Layout */
+  --layout-wide-max-width: 44rem;                /* 704px */
+  --layout-wide-min-width: 16rem;                /* 256px */
+  --layout-fifty-max-width: 21rem;               /* 336px */
+  --layout-fifty-min-width: 16rem;               /* 256px */
+  --layout-thirds-max-width: 16rem;              /* 256px */
+  --layout-thirds-min-width: 16rem;              /* 256px */
+  --layout-fourths-max-width: 16rem;             /* 256px */
+  --layout-fourths-min-width: 16rem;             /* 256px */
+  --layout-golden-wide-max-width: 50.84rem;      /* 813.44px */
+  --layout-golden-wide-min-width: 16rem;         /* 256px */
+  --layout-golden-narrow-max-width: 29.16rem;    /* 466.56px */
+  --layout-golden-narrow-min-width: 16rem;       /* 256px */
+}
+
+
+/* --------------------------------------------------------------------------
+   TABLET OVERRIDES — @media (min-width: 48rem)
+   Component layout tokens only. Global spacing scale and typography remain
+   at mobile values until widescreen (80rem).
+   -------------------------------------------------------------------------- */
+@media (min-width: 48rem) {
+  :root {
+    /* Component Spacing — Banner */
+    --components-banner-padding-l-r: 1rem;         /* 16px */
+    --components-banner-tall-min-height: 64rem;    /* 1024px */
+    --components-banner-short-min-height: 32rem;   /* 512px */
+
+    /* Component Spacing — Button */
+    --components-button-group-max-width: 10.25rem; /* 164px */
+
+    /* Component Spacing — Card */
+    --components-card-vertical-min-width: 21.5rem;          /* 344px */
+    --components-card-horizontal-min-width: 44rem;          /* 704px */
+    --components-card-horizontal-figure-max-width: 21.5rem; /* 344px */
+
+    /* Component Spacing — Chip */
+    --components-chip-button-padding-outer: 0.375rem; /* 6px */
+    --components-chip-icon-padding: 0;               /* 0px */
+
+    /* Component Spacing — Feedback */
+    --components-feedback-height: 0.5rem;        /* 8px */
+    --components-feedback-max-width: 21.5rem;    /* 344px */
+
+    /* Component Spacing — Input */
+    --components-input-max-width: 23.75rem;      /* 380px */
+    --components-input-min-width: 21rem;         /* 336px */
+
+    /* Component Spacing — Tab */
+    --components-tab-max-width: 27.125rem;       /* 434px */
+    --components-tab-min-height: 21.25rem;       /* 340px */
+
+    /* Layout */
+    --layout-wide-min-width: 44rem;              /* 704px */
+    --layout-fifty-max-width: 22.5rem;           /* 360px */
+    --layout-fifty-min-width: 21rem;             /* 336px */
+    --layout-thirds-max-width: 15rem;            /* 240px */
+    --layout-thirds-min-width: 13.29rem;         /* 212.67px */
+    --layout-fourths-min-width: 9.5rem;          /* 152px */
+    --layout-golden-wide-min-width: 44rem;       /* 704px */
+    --layout-golden-narrow-min-width: 29.16rem;  /* 466.56px */
+  }
+}
+
+
+/* --------------------------------------------------------------------------
+   WIDESCREEN OVERRIDES — @media (min-width: 80rem)
+   All token categories: typography, spacing scale, border-radius, and
+   component tokens.
+   -------------------------------------------------------------------------- */
+@media (min-width: 80rem) {
+  :root {
+
+    /* Typography — Headings */
+    --h1-title-font-size: 5rem;          /* 80px */
+    --h1-title-line-height: 6.25rem;     /* 100px */
+    --h1-title-p-font-size: 2rem;        /* 32px */
+    --h1-title-p-line-height: 3.5rem;    /* 56px */
+    --h1-title-p-paragraph-spacing: 2rem; /* 32px */
+    --h1-font-size: 4.5rem;             /* 72px */
+    --h1-line-height: 5.625rem;          /* 90px */
+    --h2-font-size: 3.75rem;            /* 60px */
+    --h2-line-height: 4.625rem;          /* 74px */
+    --h3-font-size: 3.125rem;           /* 50px */
+    --h3-line-height: 3.875rem;          /* 62px */
+    --h4-font-size: 2.625rem;           /* 42px */
+    --h4-line-height: 3.25rem;           /* 52px */
+    --h5-font-size: 2rem;               /* 32px */
+    --h5-line-height: 2.5rem;            /* 40px */
+
+    /* Typography — Body */
+    --p-font-size: 1.5rem;              /* 24px */
+    --p-line-height: 2.25rem;            /* 36px */
+    --p-paragraph-spacing: 1.5rem;       /* 24px */
+
+    /* Typography — Small */
+    --small-font-size: 1.25rem;          /* 20px */
+    --small-line-height: 1.875rem;       /* 30px */
+    --small-paragraph-spacing: 1.25rem;  /* 20px */
+
+    /* Typography — Fine */
+    --fine-font-size: 1rem;              /* 16px */
+    --fine-line-height: 1.5rem;          /* 24px */
+    --fine-paragraph-spacing: 1rem;      /* 16px */
+
+    /* Typography — List */
+    --list-font-size: 1.5rem;            /* 24px */
+    --list-line-height: 2.5rem;          /* 40px */
+    --list-list-spacing: 1.5rem;         /* 24px */
+
+    /* Typography — Code Body */
+    --code-body-font-size: 1.75rem;      /* 28px */
+    --code-body-line-height: 2.25rem;    /* 36px */
+    --code-body-paragraph-spacing: 1.5rem; /* 24px */
+    --code-body-letter-spacing: -1.24px;
+
+    /* Typography — Code Small */
+    --code-small-font-size: 1.5rem;      /* 24px */
+    --code-small-line-height: 1.875rem;  /* 30px */
+    --code-small-paragraph-spacing: 1.25rem; /* 20px */
+    --code-small-letter-spacing: -0.2px;
+
+    /* Typography — Code List */
+    --code-list-font-size: 1.5rem;       /* 24px */
+    --code-list-line-height: 2.5rem;     /* 40px */
+    --code-list-paragraph-spacing: 1.5rem; /* 24px */
+    --code-list-letter-spacing: -0.24px;
+
+    /* Component Typography — Badge */
+    --components-badge-font-size: 1.25rem;       /* 20px — alias: small/font-size */
+    --components-badge-line-height: 1.25rem;     /* 20px */
+
+    /* Component Typography — Blockquote */
+    --components-blockquote-quote-font-size: 1.5rem;     /* 24px — alias: p/font-size */
+    --components-blockquote-quote-line-height: 2.25rem;  /* 36px — alias: p/line-height */
+    --components-blockquote-cite-font-size: 1.25rem;     /* 20px — alias: small/font-size */
+    --components-blockquote-cite-line-height: 1.875rem;  /* 30px — alias: small/line-height */
+
+    /* Component Typography — Button */
+    --components-button-font-size: 1.5rem;       /* 24px — alias: p/font-size */
+    --components-button-line-height: 1.5rem;     /* 24px */
+
+    /* Component Typography — Chip */
+    --components-chip-font-size: 1.5rem;         /* 24px — alias: p/font-size */
+    --components-chip-line-height: 1.5rem;       /* 24px */
+
+    /* Component Typography — Input (Text) */
+    --components-input-text-font-size: 1.5rem;   /* 24px — alias: p/font-size */
+    --components-input-text-line-height: 2rem;   /* 32px */
+
+    /* Component Typography — Input (Checkbox) */
+    --components-input-checkbox-font-size: 1.5rem;   /* 24px — alias: p/font-size */
+    --components-input-checkbox-line-height: 1.75rem; /* 28px */
+
+    /* Component Typography — Messages */
+    --components-messages-font-size: 1.5rem;     /* 24px — alias: p/font-size */
+    --components-messages-line-height: 2.25rem;  /* 36px — alias: p/line-height */
+
+    /* Component Typography — Tab */
+    --components-tab-font-size: 1.5rem;          /* 24px — alias: p/font-size */
+    --components-tab-line-height: 1.5rem;        /* 24px */
+
+    /* Component Typography — Table */
+    --components-table-font-size: 1.5rem;        /* 24px — alias: p/font-size */
+    --components-table-line-height: 1.875rem;    /* 30px */
+
+
+    /* Spacing — Global scale */
+    --spacing-xs: 0.25rem;               /* 4px */
+    --spacing-sm: 0.5rem;                /* 8px */
+    --spacing-md: 1rem;                  /* 16px */
+    --spacing-lg: 1.5rem;                /* 24px */
+    --spacing-xl: 2rem;                  /* 32px */
+    --spacing-xxl: 2.5rem;               /* 40px */
+    --spacing-xxxl: 3rem;                /* 48px */
+    --spacing-xxxxxl: 4rem;              /* 64px */
+
+    /* Border-radius scale */
+    --border-radius-xs: 0.25rem;         /* 4px */
+    --border-radius-sm: 0.5rem;          /* 8px */
+    --border-radius-md: 1rem;            /* 16px */
+    --border-radius-lg: 2rem;            /* 32px */
+    --border-radius-xl: 3rem;            /* 48px */
+    --border-radius-xxl: 4rem;           /* 64px */
+
+    /* Component Spacing — Badge */
+    --components-badge-padding-l-r: 0.75rem;     /* 12px */
+    --components-badge-padding-t-b: 0.5rem;      /* 8px */
+    --components-badge-border-radius: 0.5rem;    /* 8px */
+
+    /* Component Spacing — Banner */
+    --components-banner-padding-l-r: 2rem;       /* 32px */
+
+    /* Component Spacing — Button */
+    --components-button-padding-l-r: 2rem;       /* 32px */
+    --components-button-padding-t-b: 0.75rem;    /* 12px */
+    --components-button-group-max-width: 20rem;  /* 320px */
+
+    /* Component Spacing — Card */
+    --components-card-vertical-min-width: 26rem;          /* 416px */
+    --components-card-horizontal-min-width: 82rem;        /* 1312px */
+    --components-card-horizontal-figure-max-width: 33rem; /* 528px */
+
+    /* Component Spacing — Chip */
+    --components-chip-padding-l-r: 1.25rem;      /* 20px */
+    --components-chip-padding-t-b: 0.75rem;      /* 12px */
+    --components-chip-padding-gap: 0.25rem;      /* 4px */
+    --components-chip-button-padding-inner: 0.25rem; /* 4px */
+    --components-chip-button-padding-outer: 0.625rem; /* 10px */
+    --components-chip-button-max-height: 1.25rem; /* 20px */
+
+    /* Component Spacing — Input */
+    --components-input-max-width: 26rem;         /* 416px */
+    --components-input-min-width: 26rem;         /* 416px */
+    --components-input-radio-before-padding: 0.375rem; /* 6px */
+    --components-input-text-padding: 0.75rem;    /* 12px */
+    --components-input-checkbox-before-padding: 0.25rem; /* 4px */
+    --components-input-switch-max-width: 3.5rem; /* 56px */
+
+    /* Component Spacing — Feedback */
+    --components-feedback-height: 0.75rem;       /* 12px */
+    --components-feedback-max-width: 33rem;      /* 528px */
+
+    /* Component Spacing — Tab */
+    --components-tab-max-width: 43.75rem;        /* 700px */
+    --components-tab-min-height: 33.75rem;       /* 540px */
+    --components-tab-button-padding-l-r: 0.5rem; /* 8px */
+    --components-tab-button-padding-t-b: 0.25rem; /* 4px */
+
+    /* Layout */
+    --layout-wide-max-width: 82rem;              /* 1312px */
+    --layout-wide-min-width: 82rem;              /* 1312px */
+    --layout-fifty-max-width: 40rem;             /* 640px */
+    --layout-fifty-min-width: 40rem;             /* 640px */
+    --layout-thirds-max-width: 26.33rem;         /* 421.33px */
+    --layout-thirds-min-width: 25.83rem;         /* 413.33px */
+    --layout-fourths-max-width: 19rem;           /* 304px */
+    --layout-fourths-min-width: 19rem;           /* 304px */
+    --layout-golden-wide-min-width: 50.84rem;    /* 813.44px */
+    --layout-golden-narrow-min-width: 29.16rem;  /* 466.56px */
+  }
+}
+
+
+/* --------------------------------------------------------------------------
+   DARK MODE OVERRIDES — [data-color-mode="dark"]
+   -------------------------------------------------------------------------- */
+[data-color-mode="dark"] {
+  /* Text */
+  --text-default: #FFFFFF;              /* alias: global/white */
+  --text-inverse: #000000;              /* alias: global/black */
+  --text-hover: #FF5247;               /* alias: brand/primary */
+  --text-link: #FFFFFF;                /* alias: global/white */
+  --text-link-inverse: #FF5247;         /* alias: brand/primary */
+  --text-link-hover: #B22E28;           /* alias: brand/primary-dark */
+
+  /* Page & Section */
+  --page-background: #01232D;           /* alias: brand/secondary-dark */
+  --section-background: #003442;        /* alias: brand/secondary */
+
+  /* Components — Background */
+  --components-background-primary: #FFFFFF;   /* alias: global/white */
+  --components-background-secondary: #FFFFFF; /* alias: global/white */
+
+  /* Components — Border */
+  --components-border-primary: #FFFFFF;       /* alias: global/white */
+  --components-border-secondary: #FFFFFF;     /* alias: global/white */
+
+  /* Components — Chip */
+  --components-chip-primary: #FFFFFF;         /* alias: global/white */
+  --components-chip-secondary: #FFFFFF;       /* alias: global/white */
+  --components-chip-primary-dark: #FFFFFF;    /* alias: global/white */
+  --components-chip-secondary-dark: #FFFFFF;  /* alias: global/white */
+  --components-chip-button-primary: #FF5247;  /* alias: brand/primary */
+  --components-chip-button-secondary: #003442; /* alias: brand/secondary */
+
+  /* Components — Logo */
+  --components-logo-left: #FF5247;            /* alias: brand/primary */
+  --components-logo-right: #B22E28;           /* alias: brand/primary-dark */
+
+  /* Components — Option */
+  --components-option-hover: #003442;         /* alias: brand/secondary */
+  --components-option-label: #FFFFFF;         /* alias: global/white */
+}

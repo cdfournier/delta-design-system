@@ -1,0 +1,210 @@
+/* ==========================================================================
+   The Delta Design System — docs.css
+   
+   Documentation page layout and typography. Every selector is scoped under
+   .delta-docs to prevent style clash with Storybook chrome.
+   
+   These are documentation page styles — fixed sizes for the doc shell.
+   Component specimens within docs use token-driven custom properties from
+   tokens.css, not the values here.
+   ========================================================================== */
+
+
+/* --------------------------------------------------------------------------
+   Container
+   -------------------------------------------------------------------------- */
+.delta-docs {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: var(--text-default);
+  background-color: transparent;
+  padding: var(--spacing-xxxxxl) var(--spacing-xxxl);
+}
+
+
+/* --------------------------------------------------------------------------
+   Headings
+   -------------------------------------------------------------------------- */
+.delta-docs h1 {
+  font-family: 'Ovo', Georgia, serif;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--text-default);
+}
+
+.delta-docs h2 {
+  font-family: 'Ovo', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.3;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: var(--text-default);
+}
+
+.delta-docs h3 {
+  font-family: 'Ovo', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.4;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-default);
+}
+
+.delta-docs h4 {
+  font-family: 'Ovo', Georgia, serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-default);
+}
+
+
+/* --------------------------------------------------------------------------
+   Body text
+   -------------------------------------------------------------------------- */
+.delta-docs p {
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.delta-docs strong {
+  font-weight: 700;
+}
+
+.delta-docs a {
+  color: var(--text-link);
+  text-decoration: underline;
+}
+
+.delta-docs a:hover {
+  color: var(--text-link-hover);
+}
+
+
+/* --------------------------------------------------------------------------
+   Lists
+   -------------------------------------------------------------------------- */
+.delta-docs ul,
+.delta-docs ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.delta-docs li {
+  margin-bottom: 0.5rem;
+  line-height: 1.75;
+}
+
+
+/* --------------------------------------------------------------------------
+   Code
+   -------------------------------------------------------------------------- */
+.delta-docs code {
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 0.875rem;
+  background-color: var(--section-background);
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+}
+
+.delta-docs pre {
+  background-color: var(--section-background);
+  padding: 1rem;
+  border-radius: 0.25rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+.delta-docs pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+
+/* --------------------------------------------------------------------------
+   Tables
+   -------------------------------------------------------------------------- */
+.delta-docs table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.delta-docs th,
+.delta-docs td {
+  text-align: left;
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--global-gray-medium);
+}
+
+.delta-docs th {
+  font-weight: 700;
+  background-color: var(--section-background);
+}
+
+
+/* --------------------------------------------------------------------------
+   Horizontal rule
+   -------------------------------------------------------------------------- */
+.delta-docs hr {
+  border: none;
+  border-top: 1px solid var(--global-gray-medium);
+  margin: 3rem 0;
+}
+
+
+/* --------------------------------------------------------------------------
+   Component demo container
+   -------------------------------------------------------------------------- */
+.delta-docs .component-demo {
+  background-color: var(--section-background);
+  padding: 2rem;
+  border-radius: 0.25rem;
+  margin: 1.5rem 0;
+}
+
+
+/* --------------------------------------------------------------------------
+   Do / Don't grid
+   -------------------------------------------------------------------------- */
+.delta-docs .do-dont-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+@media (max-width: 48rem) {
+  .delta-docs .do-dont-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.delta-docs .do-section {
+  border-left: 4px solid #007000;
+  padding-left: 1rem;
+}
+
+.delta-docs .dont-section {
+  border-left: 4px solid #C00C00;
+  padding-left: 1rem;
+}
+
+.delta-docs .do-section h3,
+.delta-docs .dont-section h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.delta-docs .do-section p strong,
+.delta-docs .dont-section p strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}
