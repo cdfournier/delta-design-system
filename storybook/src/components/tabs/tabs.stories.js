@@ -686,7 +686,7 @@ function createTabsDocumentation() {
       <pre><code>/* Tabs container */
 .tabs {
   display: flex;
-  gap: var(--md);
+  gap: var(--spacing-md);
 }
 
 .tabs[data-direction="horizontal"] {
@@ -700,9 +700,9 @@ function createTabsDocumentation() {
 /* Tablist */
 .tablist {
   display: flex;
-  padding: var(--md);
+  padding: var(--spacing-md);
   background-color: var(--page-background);
-  gap: var(--md);
+  gap: var(--spacing-md);
 }
 
 .tabs[data-direction="horizontal"] .tablist {
@@ -718,10 +718,10 @@ function createTabsDocumentation() {
 
 /* Tab buttons */
 .tab-button {
-  padding-top: var(--sm);
-  padding-bottom: var(--sm);
-  padding-left: var(--md);
-  padding-right: var(--md);
+  padding-top: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
   border: none;
   background: transparent;
   border-radius: var(--components-button-border-radius);
@@ -756,7 +756,7 @@ function createTabsDocumentation() {
 
 /* Tab panels container */
 .tabpanels {
-  padding: var(--md);
+  padding: var(--spacing-md);
   background-color: var(--page-background);
   border-radius: var(--border-radius-md);
 }
@@ -764,7 +764,7 @@ function createTabsDocumentation() {
 /* Tab panel */
 .tab-panel {
   display: flex;
-  padding: var(--xl);
+  padding: var(--spacing-xl);
   background-color: var(--section-background);
   border-radius: var(--border-radius-md);
 }
@@ -780,7 +780,7 @@ function createTabsDocumentation() {
 
 .tab-panel[data-orientation="horizontal"] {
   flex-direction: row;
-  gap: var(--md);
+  gap: var(--spacing-md);
 }
 
 /* Figure */
@@ -880,9 +880,9 @@ function switchTab(newTab) {
 --components-tab-line-height  Mobile: 0.625rem / 10px   →   Widescreen: 1.5rem / 24px
 
 /* Spacing */
---sm    Mobile: 0.25rem / 4px   →   Widescreen: 0.5rem / 8px
---md    Mobile: 0.5rem / 8px    →   Widescreen: 1rem / 16px
---xl    Mobile: 1rem / 16px     →   Widescreen: 2rem / 32px
+--spacing-sm    Mobile: 0.25rem / 4px   →   Widescreen: 0.5rem / 8px
+--spacing-md    Mobile: 0.5rem / 8px    →   Widescreen: 1rem / 16px
+--spacing-xl    Mobile: 1rem / 16px     →   Widescreen: 2rem / 32px
 --components-button-padding-gap  Mobile: 0.25rem / 4px   →   Widescreen: 0.25rem / 4px
 
 /* Border-radius */

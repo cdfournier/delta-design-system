@@ -2,8 +2,8 @@ function createFeedbackDocumentation() {
   return `
     <style>
       .delta-docs .feedback-specimen-shell {
-        border-radius: var(--components-feedback-shell-radius);
-        background: var(--components-feedback-shell-background);
+        border-radius: var(--border-radius-md);
+        background: var(--section-background);
       }
 
       [data-color-mode='dark'] .delta-docs .feedback-specimen-shell {
@@ -37,7 +37,7 @@ function createFeedbackDocumentation() {
 
       .delta-docs .feedback-specimen-grid {
         display: grid;
-        gap: var(--components-feedback-demo-gap);
+        gap: var(--spacing-xl);
       }
 
       .delta-docs .feedback-specimen__label {
@@ -53,7 +53,7 @@ function createFeedbackDocumentation() {
       .delta-docs .feedback-specimen__meter-wrap {
         padding: var(--components-feedback-meter-padding);
         border-radius: var(--border-radius-sm);
-        background: var(--neutral-gray-medium);
+        background: var(--global-gray-medium);
       }
 
       .delta-docs .feedback-specimen__bar {
@@ -61,7 +61,7 @@ function createFeedbackDocumentation() {
         height: var(--components-feedback-height);
         overflow: hidden;
         border-radius: var(--border-radius-sm);
-        background: var(--neutral-gray-medium);
+        background: var(--global-gray-medium);
       }
 
       .delta-docs .feedback-specimen__bar--meter {
@@ -697,61 +697,61 @@ function createFeedbackDocumentation() {
       <h3>CSS</h3>
       <pre><code>/* Feedback base */
 .feedback {
-  max-width: var(--components/feedback/max-width);
+  max-width: var(--components-feedback-max-width);
 }
 
 /* Label */
 .feedback-label {
-  font-size: var(--small/font-size);
-  line-height: var(--small/line-height);
-  padding-bottom: var(--sm);
-  color: var(--text/default);
+  font-size: var(--small-font-size);
+  line-height: var(--small-line-height);
+  padding-bottom: var(--spacing-sm);
+  color: var(--text-default);
 }
 
 /* Bar (track) */
 .feedback-bar {
-  background-color: var(--global/gray-medium);
-  border-radius: var(--border-radius/sm);
+  background-color: var(--global-gray-medium);
+  border-radius: var(--border-radius-sm);
   overflow: hidden;
   position: relative;
 }
 
 /* Value (fill) */
 .feedback-value {
-  border-radius: var(--border-radius/sm);
+  border-radius: var(--border-radius-sm);
   transition: width 0.3s ease;
 }
 
 /* Progress colors */
 .progress .feedback-value {
-  background-color: var(--brand/primary);
+  background-color: var(--brand-primary);
 }
 
 /* Meter colors */
 .meter .feedback-value.optimum {
-  background-color: var(--status/valid);
+  background-color: var(--status-valid);
 }
 
 .meter .feedback-value.low,
 .meter .feedback-value.high {
-  background-color: var(--status/invalid);
+  background-color: var(--status-invalid);
 }
 
 /* Meter bar padding wrapper */
 .meter-bar {
-  padding: var(--xs);
-  background-color: var(--global/gray-medium);
-  border-radius: var(--border-radius/sm);
+  padding: var(--spacing-xs);
+  background-color: var(--global-gray-medium);
+  border-radius: var(--border-radius-sm);
 }
 
 /* Value/Min/Max text */
 .feedback-text {
-  font-size: var(--fine/font-size);
-  line-height: var(--fine/line-height);
-  padding-top: var(--sm);
+  font-size: var(--fine-font-size);
+  line-height: var(--fine-line-height);
+  padding-top: var(--spacing-sm);
   display: flex;
   justify-content: space-between;
-  color: var(--text/default);
+  color: var(--text-default);
 }
 
 /* Native element styling */
@@ -763,44 +763,44 @@ meter {
 
 progress::-webkit-progress-bar,
 meter::-webkit-meter-bar {
-  background-color: var(--global/gray-medium);
-  border-radius: var(--border-radius/sm);
+  background-color: var(--global-gray-medium);
+  border-radius: var(--border-radius-sm);
 }
 
 progress::-webkit-progress-value {
-  background-color: var(--brand/primary);
-  border-radius: var(--border-radius/sm);
+  background-color: var(--brand-primary);
+  border-radius: var(--border-radius-sm);
 }
 
 meter::-webkit-meter-optimum-value {
-  background-color: var(--status/valid);
+  background-color: var(--status-valid);
 }
 
 meter::-webkit-meter-suboptimum-value {
-  background-color: var(--status/invalid);
+  background-color: var(--status-invalid);
 }</code></pre>
 
       <h3>Design tokens reference</h3>
       <pre><code>/* Typography */
---small/font-size      Mobile: 0.75rem / 12px    →   Widescreen: 1.25rem / 20px
---small/line-height    Mobile: 1.25rem / 20px    →   Widescreen: 1.875rem / 30px
---fine/font-size       Mobile: 0.625rem / 10px   →   Widescreen: 1rem / 16px
---fine/line-height     Mobile: 1rem / 16px       →   Widescreen: 1.5rem / 24px
+--small-font-size      Mobile: 0.75rem / 12px    →   Widescreen: 1.25rem / 20px
+--small-line-height    Mobile: 1.25rem / 20px    →   Widescreen: 1.875rem / 30px
+--fine-font-size       Mobile: 0.625rem / 10px   →   Widescreen: 1rem / 16px
+--fine-line-height     Mobile: 1rem / 16px       →   Widescreen: 1.5rem / 24px
 
 /* Spacing */
 --components/feedback/height     Mobile: 0.25rem / 4px    →   Widescreen: 0.75rem / 12px
---sm                             Mobile: 0.25rem / 4px    →   Widescreen: 0.5rem / 8px
---xs                             Mobile: 0.125rem / 2px   →   Widescreen: 0.25rem / 4px
+--spacing-sm                             Mobile: 0.25rem / 4px    →   Widescreen: 0.5rem / 8px
+--spacing-xs                             Mobile: 0.125rem / 2px   →   Widescreen: 0.25rem / 4px
 
 /* Border-radius */
---border-radius/sm               Mobile: 0.25rem / 4px    →   Widescreen: 0.5rem / 8px
+--border-radius-sm               Mobile: 0.25rem / 4px    →   Widescreen: 0.5rem / 8px
 
 /* Colors */
---text/default         Light: #000000   Dark: #FFFFFF
---global/gray-medium   Light: #CCCCCC   Dark: #CCCCCC
---brand/primary        Light: #FF5247   Dark: #FF5247
---status/valid         Light: #007000   Dark: #007000
---status/invalid       Light: #C00C00   Dark: #C00C00</code></pre>
+--text-default         Light: #000000   Dark: #FFFFFF
+--global-gray-medium   Light: #CCCCCC   Dark: #CCCCCC
+--brand-primary        Light: #FF5247   Dark: #FF5247
+--status-valid         Light: #007000   Dark: #007000
+--status-invalid       Light: #C00C00   Dark: #C00C00</code></pre>
 
       <hr />
 

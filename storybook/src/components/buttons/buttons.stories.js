@@ -4,9 +4,9 @@ function createButtonsDocumentation() {
       .delta-docs .button-specimen-card {
         display: inline-flex;
         align-items: center;
-        background: var(--surface-subtle);
-        border-radius: var(--components-button-demo-shell-radius);
-        padding: var(--components-button-demo-shell-padding);
+        background: var(--section-background);
+        border-radius: var(--border-radius-md);
+        padding: var(--spacing-xl);
       }
 
       [data-color-mode='dark'] .delta-docs .button-specimen-card {
@@ -16,7 +16,7 @@ function createButtonsDocumentation() {
       .delta-docs .button-specimen-row {
         display: inline-flex;
         align-items: center;
-        gap: var(--components-button-demo-gap);
+        gap: var(--spacing-xl);
       }
 
       .delta-docs .button-specimen-row--icon {
@@ -26,7 +26,7 @@ function createButtonsDocumentation() {
       .delta-docs .button-specimen-group {
         display: inline-flex;
         align-items: center;
-        gap: var(--components-button-demo-gap);
+        gap: var(--spacing-xl);
       }
 
       .delta-docs .button-specimen-divider {
@@ -738,7 +738,7 @@ function createButtonsDocumentation() {
   font-size: var(--components-button-font-size);
   line-height: var(--components-button-line-height);
   font-weight: 700;
-  font-family: var(--font-family);
+  font-family: var(--font-family-body);
   text-decoration: none;
   border: 1px solid transparent;
   cursor: pointer;
@@ -747,7 +747,7 @@ function createButtonsDocumentation() {
 
 /* Icon-only button */
 .button-icon {
-  padding: var(--sm);
+  padding: var(--spacing-sm);
   width: 1.5rem;
   height: 1.5rem;
   border-radius: var(--border-radius-round);
@@ -853,7 +853,7 @@ function createButtonsDocumentation() {
 --components-button-padding-t-b    Mobile: 0.5rem / 8px     →   Widescreen: 0.75rem / 12px
 --components-button-padding-l-r    Mobile: 1.5rem / 24px    →   Widescreen: 2rem / 32px
 --components-button-padding-gap    Mobile: 0.25rem / 4px    →   Widescreen: 0.25rem / 4px
---sm                               Mobile: 0.25rem / 4px    →   Widescreen: 0.5rem / 8px
+--spacing-sm                               Mobile: 0.25rem / 4px    →   Widescreen: 0.5rem / 8px
 
 /* Border-radius */
 --components-button-border-radius  Mobile: 2rem / 32px (fixed)        →   Widescreen: 2rem / 32px (fixed)

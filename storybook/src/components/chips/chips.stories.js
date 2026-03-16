@@ -4,9 +4,9 @@ function createChipsDocumentation() {
       .delta-docs .chip-specimen-card {
         display: inline-flex;
         align-items: center;
-        background: var(--components-chip-specimen-shell-background);
-        border-radius: var(--components-chip-specimen-shell-radius);
-        padding: var(--components-chip-specimen-shell-padding);
+        background: var(--section-background);
+        border-radius: var(--border-radius-md);
+        padding: var(--spacing-xl);
       }
 
       [data-color-mode='dark'] .delta-docs .chip-specimen-card {
@@ -27,13 +27,13 @@ function createChipsDocumentation() {
       .delta-docs .chip-specimen-group {
         display: inline-flex;
         align-items: center;
-        gap: var(--components-chip-specimen-divider-gap);
+        gap: var(--spacing-sm);
       }
 
       .delta-docs .chip-specimen-divider {
-        width: var(--components-chip-specimen-divider-width);
+        width: var(--docs-rule-width);
         align-self: stretch;
-        background: var(--components-chip-specimen-divider-color);
+        background: var(--global-gray-dark);
       }
 
       .delta-docs .chip {
@@ -880,7 +880,7 @@ function createChipsDocumentation() {
 /* Chip group container */
 .chip-group {
   display: flex;
-  gap: var(--xs);
+  gap: var(--spacing-xs);
   flex-wrap: wrap;
   align-items: center;
   list-style: none;
@@ -962,7 +962,7 @@ document.querySelectorAll('.chip').forEach(chip => {
 --components/chip/padding-gap           Mobile: 0.125rem / 2px  →   Widescreen: 0.25rem / 4px
 --components/chip/button/padding-outer  Mobile: 0.25rem / 4px   →   Widescreen: 0.625rem / 10px
 --components/chip/button/padding-inner  Mobile: 0.125rem / 2px  →   Widescreen: 0.25rem / 4px
---xs (chip group gap)                   Mobile: 0.125rem / 2px  →   Widescreen: 0.25rem / 4px
+--spacing-xs (chip group gap)                   Mobile: 0.125rem / 2px  →   Widescreen: 0.25rem / 4px
 
 /* Border-radius */
 --components/chip/border-radius  2rem / 32px (fixed)

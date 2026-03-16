@@ -3,17 +3,17 @@ function createMessagesDocumentation() {
     <style>
       .delta-docs .messages-specimen-stack {
         display: grid;
-        gap: var(--components-messages-demo-gap);
+        gap: var(--spacing-xl);
       }
 
       .delta-docs .messages-specimen-grid {
         display: grid;
-        gap: var(--components-messages-demo-gap);
+        gap: var(--spacing-xl);
       }
 
       .delta-docs .messages-specimen-shell {
-        border-radius: var(--components-messages-shell-radius);
-        background: var(--components-messages-shell-background);
+        border-radius: var(--border-radius-md);
+        background: var(--section-background);
       }
 
       [data-color-mode='dark'] .delta-docs .messages-specimen-shell {
@@ -747,34 +747,34 @@ function createMessagesDocumentation() {
       <pre><code>/* Modal message */
 .message-modal {
   background-color: var(--page-background);
-  padding: var(--xl);
+  padding: var(--spacing-xl);
   position: relative;
 }
 
 @media (min-width: 80rem) {
   .message-modal {
-    padding: var(--xl);
+    padding: var(--spacing-xl);
   }
 }
 
 /* Promo message */
 .message-promo {
   background-color: var(--page-background);
-  padding: var(--xl);
+  padding: var(--spacing-xl);
   position: relative;
 }
 
 @media (min-width: 80rem) {
   .message-promo {
-    padding: var(--xl);
+    padding: var(--spacing-xl);
   }
 }
 
 /* Close button (Modal/Promo) */
 .message-close {
   position: absolute;
-  top: var(--xl);
-  right: var(--xl);
+  top: var(--spacing-xl);
+  right: var(--spacing-xl);
   border-radius: var(--border-radius-round);
   border: none;
   background: transparent;
@@ -784,8 +784,8 @@ function createMessagesDocumentation() {
 
 @media (min-width: 80rem) {
   .message-close {
-    top: var(--xl);
-    right: var(--xl);
+    top: var(--spacing-xl);
+    right: var(--spacing-xl);
   }
 }
 
@@ -793,21 +793,21 @@ function createMessagesDocumentation() {
 .message-error,
 .message-success,
 .message-confirmation {
-  padding: var(--md);
+  padding: var(--spacing-md);
   border-radius: var(--border-radius-sm);
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: var(--md);
+  gap: var(--spacing-md);
 }
 
 @media (min-width: 80rem) {
   .message-error,
   .message-success,
   .message-confirmation {
-    padding: var(--md);
+    padding: var(--spacing-md);
     border-radius: var(--border-radius-sm);
-    gap: var(--md);
+    gap: var(--spacing-md);
   }
 }
 
@@ -831,7 +831,7 @@ function createMessagesDocumentation() {
 /* Confirmation buttons */
 .message-actions {
   display: flex;
-  gap: var(--md);
+  gap: var(--spacing-md);
 }
 
 .button-transparent {
@@ -859,16 +859,16 @@ function createMessagesDocumentation() {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: var(--md);
-  padding: var(--md);
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
   background-color: var(--status-read-only);
   border-radius: var(--border-radius-sm);
 }
 
 @media (min-width: 80rem) {
   .toast {
-    gap: var(--md);
-    padding: var(--md);
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
     border-radius: var(--border-radius-sm);
   }
 }
@@ -950,8 +950,8 @@ function showToast(toastEl, duration = 5000) {
 --components-messages-line-height  Mobile: 1.25rem / 20px   →   Widescreen: 2.25rem / 36px
 
 /* Spacing */
---xl               Mobile: 1rem / 16px    →   Widescreen: 2rem / 32px
---md               Mobile: 0.5rem / 8px   →   Widescreen: 1rem / 16px
+--spacing-xl               Mobile: 1rem / 16px    →   Widescreen: 2rem / 32px
+--spacing-md               Mobile: 0.5rem / 8px   →   Widescreen: 1rem / 16px
 
 /* Border-radius */
 --border-radius-sm     Mobile: 0.25rem / 4px   →   Widescreen: 0.5rem / 8px

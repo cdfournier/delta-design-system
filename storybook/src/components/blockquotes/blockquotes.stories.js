@@ -4,7 +4,7 @@ function createBlockquotesDocumentation() {
       .delta-docs .blockquote-specimen {
         display: flex;
         flex-direction: column;
-        gap: var(--components-blockquote-demo-gap);
+        gap: var(--spacing-xl);
         max-width: var(--components-blockquote-demo-max-width);
       }
 
@@ -363,8 +363,8 @@ function createBlockquotesDocumentation() {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: var(--md); /* Mobile: 8px, Widescreen: 16px */
-  padding: var(--xl); /* Mobile: 16px, Widescreen: 32px */
+  gap: var(--spacing-md); /* Mobile: 8px, Widescreen: 16px */
+  padding: var(--spacing-xl); /* Mobile: 16px, Widescreen: 32px */
 }
 
 .blockquote p {
@@ -412,8 +412,8 @@ function createBlockquotesDocumentation() {
 --components-blockquote-cite-line-height   Mobile: 1rem / 16px      →   Widescreen: 1.875rem / 30px
 
 /* Spacing */
---xl   Mobile: 1rem / 16px     →   Widescreen: 2rem / 32px
---md   Mobile: 0.5rem / 8px    →   Widescreen: 1rem / 16px
+--spacing-xl   Mobile: 1rem / 16px     →   Widescreen: 2rem / 32px
+--spacing-md   Mobile: 0.5rem / 8px    →   Widescreen: 1rem / 16px
 
 /* Colors */
 --brand-primary    Light: #FF5247   Dark: #FF5247

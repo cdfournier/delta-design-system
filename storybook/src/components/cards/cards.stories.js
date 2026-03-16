@@ -3,7 +3,7 @@ function createCardsDocumentation() {
     <style>
       .delta-docs .card-specimen-stack {
         display: grid;
-        gap: var(--components-card-demo-gap);
+        gap: var(--spacing-xl);
       }
 
       .delta-docs .card-specimen {
@@ -422,26 +422,26 @@ function createCardsDocumentation() {
 
 /* Content area */
 .content {
-  padding: var(--xl);
+  padding: var(--spacing-xl);
   display: flex;
   flex-direction: column;
-  gap: var(--sm);
+  gap: var(--spacing-sm);
   flex: 1;
 }
 </code></pre>
 
       <h3>Design tokens reference</h3>
       <pre><code>/* Spacing */
---xl                                          Mobile: 1rem / 16px    →   Widescreen: 2rem / 32px
---sm                                          Mobile: 0.25rem / 4px  →   Widescreen: 0.5rem / 8px
+--spacing-xl                                          Mobile: 1rem / 16px    →   Widescreen: 2rem / 32px
+--spacing-sm                                          Mobile: 0.25rem / 4px  →   Widescreen: 0.5rem / 8px
 
 /* Border-radius */
 --border-radius/md                            Mobile: 0.5rem / 8px   →   Widescreen: 1rem / 16px
 
 /* Colors */
 --page/background                             Light: #FFFFFF   Dark: #01232D
---global/gray-medium                          Light: #CCCCCC   Dark: #CCCCCC
---text/default                                Light: #000000   Dark: #FFFFFF
+--global-gray-medium                          Light: #CCCCCC   Dark: #CCCCCC
+--text-default                                Light: #000000   Dark: #FFFFFF
 </code></pre>
 
       <hr />

@@ -17,7 +17,7 @@ function createTablesDocumentation() {
         grid-template-columns: repeat(5, minmax(0, 1fr));
         gap: var(--spacing-md);
         padding: var(--spacing-sm);
-        border-bottom: var(--docs-rule-width) solid var(--neutral-gray-medium);
+        border-bottom: var(--docs-rule-width) solid var(--global-gray-medium);
       }
 
       .delta-docs .table-specimen__row--header {
@@ -374,27 +374,27 @@ function createTablesDocumentation() {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  padding: var(--sm);
-  gap: var(--md);
-  border-bottom: 1px solid var(--global/gray-medium);
+  padding: var(--spacing-sm);
+  gap: var(--spacing-md);
+  border-bottom: 1px solid var(--global-gray-medium);
 }
 
 /* Header row */
 thead .table-row {
-  background-color: var(--section/background);
+  background-color: var(--section-background);
   align-items: center;
 }
 
 /* Cells — shared */
 .table-cell {
   flex: 1 0 0;
-  padding: var(--sm);
+  padding: var(--spacing-sm);
   display: flex;
   flex-direction: row;
   align-items: center;
-  font-size: var(--components/table/font-size);
-  line-height: var(--components/table/line-height);
-  color: var(--text/default);
+  font-size: var(--components-table-font-size);
+  line-height: var(--components-table-line-height);
+  color: var(--text-default);
 }
 
 /* Control cell */
@@ -405,24 +405,24 @@ thead .table-row {
 /* Checkbox — see Inputs documentation */
 .table-checkbox {
   appearance: none;
-  border: 1px solid var(--brand/primary);
-  border-radius: var(--input/checkbox/border-radius);
+  border: 1px solid var(--brand-primary);
+  border-radius: var(--components-input-checkbox-border-radius);
   cursor: pointer;
   flex-shrink: 0;
 }
 
 .table-checkbox:checked {
-  background-color: var(--brand/primary);
+  background-color: var(--brand-primary);
 }
 
 .table-checkbox-label {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: var(--md);
-  font-size: var(--components/table/font-size);
-  line-height: var(--components/table/line-height);
-  color: var(--text/default);
+  gap: var(--spacing-md);
+  font-size: var(--components-table-font-size);
+  line-height: var(--components-table-line-height);
+  color: var(--text-default);
   cursor: pointer;
 }
 
@@ -462,8 +462,8 @@ rowCheckboxes.forEach(cb => {
 --components-table-line-height  Mobile: 1.25rem / 20px →   Widescreen: 1.875rem / 30px
 
 /* Spacing */
---sm    Mobile: 0.25rem / 4px   →   Widescreen: 0.5rem / 8px
---md    Mobile: 0.5rem / 8px    →   Widescreen: 1rem / 16px
+--spacing-sm    Mobile: 0.25rem / 4px   →   Widescreen: 0.5rem / 8px
+--spacing-md    Mobile: 0.5rem / 8px    →   Widescreen: 1rem / 16px
 
 /* Colors */
 --section-background   Light: #EEEEEE   Dark: #003442

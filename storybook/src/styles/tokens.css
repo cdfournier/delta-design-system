@@ -1,506 +1,335 @@
+/* ============================================================
+   THE DELTA DESIGN SYSTEM — tokens.css
+   Source of truth: Figma variable exports (one-time baseline)
+   Mobile/Tablet values at :root — Widescreen overrides at 80rem
+   Dark mode overrides via [data-color-mode="dark"]
+   ============================================================ */
+
 :root {
+
+  /* --- Fonts --- */
   --font-family-body: 'Montserrat', sans-serif;
   --font-family-heading: 'Ovo', serif;
   --font-family-mono: 'SFMono-Regular', 'Monaco', 'Courier New', monospace;
   --font-weight-regular: 400;
   --font-weight-bold: 700;
 
-  --spacing-xs: 0.125rem;
-  --spacing-sm: 0.25rem;
-  --spacing-md: 0.5rem;
-  --spacing-lg: 0.75rem;
-  --spacing-xl: 1rem;
-  --spacing-xxl: 1.5rem;
-  --spacing-xxxl: 2rem;
-
-  --border-radius-xs: 0.125rem;
-  --border-radius-sm: 0.25rem;
-  --border-radius-md: 0.5rem;
-  --border-radius-lg: 1rem;
-  --border-radius-xl: 1.5rem;
-  --border-radius-xxl: 2rem;
-  --border-radius-round: 6.25rem;
-  --button-border-radius: 2rem;
-
-  --global-white: #ffffff;
+  /* --- Global colors --- */
+  --global-white: #FFFFFF;
   --global-black: #000000;
-  --brand-primary: #ff5247;
-  --brand-primary-dark: #b22e28;
+  --global-gray-light: #EEEEEE;
+  --global-gray-medium: #CCCCCC;
+  --global-gray-dark: #919191;
+
+  /* --- Brand colors (mode-invariant) --- */
+  --brand-primary: #FF5247;
+  --brand-primary-dark: #B22E28;
   --brand-secondary: #003442;
-  --brand-secondary-dark: #01232d;
-  --neutral-gray-light: #eeeeee;
-  --neutral-gray-medium: #cccccc;
-  --neutral-gray-dark: #919191;
+  --brand-secondary-dark: #01232D;
+
+  /* --- Status colors --- */
   --status-disabled: #808080;
-  --status-invalid: #c00c00;
+  --status-invalid: #C00C00;
   --status-valid: #007000;
   --status-read-only: #333333;
-  --positive-default: #007000;
-  --negative-default: #c00c00;
+
+  /* --- Overlay colors --- */
   --overlay-dark: rgb(0 0 0 / 50%);
   --overlay-light: rgb(0 0 0 / 25%);
 
+  /* --- Semantic color tokens — light mode --- */
   --text-default: var(--global-black);
   --text-inverse: var(--global-white);
   --text-link: var(--brand-primary);
+  --text-link-inverse: var(--global-white);
+  --text-link-hover: var(--brand-secondary);
   --text-hover: var(--brand-secondary);
-  --text-muted: var(--neutral-gray-dark);
+  --text-muted: var(--global-gray-dark);
   --page-background: var(--global-white);
-  --section-background: var(--neutral-gray-light);
-  --surface-subtle: var(--neutral-gray-light);
-  --surface-border: var(--neutral-gray-medium);
-  --surface-strong: var(--brand-secondary);
-  --focus-ring: var(--brand-primary);
+  --section-background: var(--global-gray-light);
+  --surface-border: var(--global-gray-medium);
 
+  /* --- Component color tokens — light mode --- */
+  --components-background-primary: var(--brand-primary);
+  --components-background-secondary: var(--brand-secondary);
+  --components-border-primary: var(--brand-primary);
+  --components-border-secondary: var(--brand-secondary);
+  --components-chip-primary: var(--brand-primary);
+  --components-chip-primary-dark: var(--brand-primary-dark);
+  --components-chip-secondary: var(--brand-secondary);
+  --components-chip-secondary-dark: var(--brand-secondary-dark);
+  --components-chip-button-primary: var(--global-white);
+  --components-chip-button-secondary: var(--global-white);
+  --components-logo-left: var(--brand-secondary);
+  --components-logo-right: var(--brand-secondary-dark);
+  --components-option-hover: var(--global-gray-light);
+  --components-option-label: var(--global-black);
+
+  /* --- Spacing — Mobile/Tablet --- */
+  --spacing-xs: 0.125rem;   /* 2px */
+  --spacing-sm: 0.25rem;    /* 4px */
+  --spacing-md: 0.5rem;     /* 8px */
+  --spacing-lg: 0.75rem;    /* 12px */
+  --spacing-xl: 1rem;       /* 16px */
+  --spacing-xxl: 1.25rem;   /* 20px */
+  --spacing-xxxl: 1.5rem;   /* 24px */
+  --spacing-xxxxxl: 2rem;   /* 32px */
+
+  /* --- Border-radius — Mobile/Tablet --- */
+  --border-radius-xs: 0.125rem;   /* 2px */
+  --border-radius-sm: 0.25rem;    /* 4px */
+  --border-radius-md: 0.5rem;     /* 8px */
+  --border-radius-lg: 1rem;       /* 16px */
+  --border-radius-xl: 1.5rem;     /* 24px */
+  --border-radius-xxl: 2rem;      /* 32px */
+  --border-radius-round: 6.25rem; /* 100px — fixed */
+  --button-border-radius: 2rem;   /* 32px — fixed */
+
+  /* --- Typography — Mobile/Tablet --- */
+  --h1-title-font-size: 3.125rem;  /* 50px */
+  --h1-title-line-height: 3.5rem;  /* 56px */
+  --h1-font-size: 3.125rem;        /* 50px */
+  --h1-line-height: 3.5rem;        /* 56px */
+  --h2-font-size: 2.375rem;        /* 38px */
+  --h2-line-height: 2.625rem;      /* 42px */
+  --h3-font-size: 1.75rem;         /* 28px */
+  --h3-line-height: 2rem;          /* 32px */
+  --h4-font-size: 1.5rem;          /* 24px */
+  --h4-line-height: 1.875rem;      /* 30px */
+  --h5-font-size: 1.25rem;         /* 20px */
+  --h5-line-height: 1.625rem;      /* 26px */
+  --p-font-size: 1rem;             /* 16px */
+  --p-line-height: 1.5rem;         /* 24px */
+  --small-font-size: 0.75rem;      /* 12px */
+  --small-line-height: 1.25rem;    /* 20px */
+  --fine-font-size: 0.625rem;      /* 10px */
+  --fine-line-height: 1rem;        /* 16px */
+  --list-font-size: 1rem;          /* 16px */
+  --list-line-height: 1.5rem;      /* 24px */
+  --code-body-font-size: 1.25rem;  /* 20px */
+  --code-body-line-height: 1.5rem; /* 24px */
+  --code-small-font-size: 1rem;    /* 16px */
+  --code-small-line-height: 1.25rem; /* 20px */
+
+  /* --- Component typography tokens — Mobile/Tablet --- */
+  --components-badge-font-size: var(--fine-font-size);
+  --components-badge-line-height: 0.625rem; /* 10px */
+  --components-blockquote-quote-font-size: var(--small-font-size);
+  --components-blockquote-quote-line-height: var(--small-line-height);
+  --components-blockquote-cite-font-size: var(--fine-font-size);
+  --components-blockquote-cite-line-height: var(--fine-line-height);
+  --components-button-font-size: var(--small-font-size);
+  --components-button-line-height: 0.75rem; /* 12px */
+  --components-chip-font-size: var(--small-font-size);
+  --components-chip-line-height: 0.75rem; /* 12px */
+  --components-input-text-font-size: var(--p-font-size);
+  --components-input-text-line-height: 1.25rem; /* 20px */
+  --components-input-checkbox-font-size: var(--p-font-size);
+  --components-input-checkbox-line-height: 1.25rem; /* 20px */
+  --components-messages-font-size: var(--small-font-size);
+  --components-messages-line-height: var(--small-line-height);
+  --components-tab-font-size: var(--fine-font-size);
+  --components-tab-line-height: 0.625rem; /* 10px */
+  --components-table-font-size: var(--p-font-size);
+  --components-table-line-height: 1.25rem; /* 20px */
+
+  /* --- Component spacing tokens — Mobile/Tablet --- */
+  --components-badge-padding-l-r: 0.25rem;     /* 4px */
+  --components-badge-padding-t-b: 0.125rem;    /* 2px */
+  --components-badge-border-radius: 0.25rem;   /* 4px */
+
+  --components-banner-padding-l-r: 0;
+  --components-banner-tall-min-height: 35.5rem;  /* 568px */
+  --components-banner-short-min-height: 17.75rem; /* 284px */
+  --components-banner-content-max-width: 46.25rem; /* 740px */
+
+  --components-button-padding-l-r: 1.5rem;     /* 24px */
+  --components-button-padding-t-b: 0.5rem;     /* 8px */
+  --components-button-padding-gap: 0.25rem;    /* 4px */
+  --components-button-border-radius: 2rem;     /* 32px — fixed */
+
+  --components-chip-padding-l-r: 0.5rem;       /* 8px */
+  --components-chip-padding-t-b: 0.5rem;       /* 8px */
+  --components-chip-padding-gap: 0.125rem;     /* 2px */
+  --components-chip-border-radius: 2rem;       /* 32px — fixed */
+  --components-chip-button-padding-inner: 0.125rem; /* 2px */
+  --components-chip-button-padding-outer: 0.25rem;  /* 4px */
+  --components-chip-icon-padding: 0.125rem;    /* 2px */
+
+  --components-feedback-height: 0.25rem;       /* 4px */
+  --components-feedback-max-width: 16rem;      /* 256px */
+
+  --components-input-text-padding: 0.5rem;     /* 8px */
+  --components-input-text-padding-gap: 0.25rem; /* 4px */
+  --components-input-text-border-radius: 0.25rem; /* 4px */
+  --components-input-checkbox-padding: 0.125rem;  /* 2px */
+  --components-input-checkbox-padding-gap: 0.5rem; /* 8px */
+  --components-input-checkbox-border-radius: 0.25rem; /* 4px */
+  --components-input-checkbox-height: 1.25rem; /* 20px */
+  --components-input-checkbox-before-padding: 0.5rem; /* 8px */
+  --components-input-radio-before-padding: 0.25rem;   /* 4px */
+  --components-input-switch-padding: 0.25rem;  /* 4px */
+  --components-input-switch-padding-gap: 0.5rem; /* 8px */
+  --components-input-switch-border-radius: 1rem; /* 16px */
+  --components-input-switch-max-width: 2.25rem;  /* 36px */
+  --components-input-select-option-check-max-width: var(--p-font-size); /* aliases p/font-size */
+
+  --components-tab-button-padding-l-r: 0.25rem;  /* 4px */
+  --components-tab-button-padding-t-b: 0.125rem; /* 2px */
+
+  /* --- Width by font-size tokens (fixed — alias to type scale) --- */
+  --components-width-by-font-size-fine: var(--fine-font-size);   /* 10px */
+  --components-width-by-font-size-small: var(--small-font-size); /* 12px */
+  --components-width-by-font-size-p: var(--p-font-size);         /* 16px */
+  --components-width-by-font-size-h5: var(--h5-font-size);       /* 20px */
+  --components-width-by-font-size-h4: var(--h4-font-size);       /* 24px */
+  --components-width-by-font-size-h3: var(--h3-font-size);       /* 28px */
+  --components-width-by-font-size-h2: var(--h2-font-size);       /* 38px */
+  --components-width-by-font-size-h1: var(--h1-font-size);       /* 50px */
+
+  /* --- Docs tokens (documentation page layout — not component tokens) --- */
   --docs-max-width: 50rem;
   --docs-page-padding-inline: var(--spacing-xl);
   --docs-page-padding-block: var(--spacing-xxl);
-  --docs-section-gap: var(--spacing-xxxl);
-  --docs-subsection-gap: var(--spacing-xxl);
+  --docs-section-gap: var(--spacing-xxxxxl);
   --docs-stack-gap: var(--spacing-xl);
-  --docs-grid-gap: var(--spacing-xl);
-  --docs-table-cell-padding-inline: var(--spacing-lg);
-  --docs-table-cell-padding-block: var(--spacing-md);
   --docs-demo-padding: var(--spacing-xxl);
   --docs-rule-width: 0.0625rem;
   --docs-accent-width: 0.25rem;
   --docs-code-radius: var(--border-radius-sm);
   --docs-surface-radius: var(--border-radius-md);
-  --breakpoint-tablet: 48rem;
-  --breakpoint-widescreen: 80rem;
-
-  --grid-columns-mobile: 4;
-  --grid-columns-tablet: 8;
-  --grid-columns-widescreen: 12;
-  --grid-gutter: 1rem;
-  --grid-span-quarter: 3;
-  --grid-span-third: 4;
-  --grid-span-half: 6;
-  --grid-span-sidebar-main: 8;
-  --grid-span-sidebar-side: 4;
-  --grid-span-golden-wide: 7;
-  --grid-span-golden-narrow: 5;
-  --grid-centered-start: 3;
-  --grid-centered-end: 11;
-  --grid-specimen-shell-background: var(--neutral-gray-light);
-  --grid-specimen-shell-padding: 2rem;
-  --grid-specimen-shell-radius: 0.25rem;
-  --grid-specimen-shell-margin-block: 1.5rem;
-  --grid-specimen-column-padding-block: 1rem;
-  --grid-specimen-column-padding-inline: 0.5rem;
-  --grid-specimen-column-radius: 0.125rem;
-  --grid-specimen-column-min-height: 3rem;
-  --grid-specimen-column-font-size: 0.75rem;
-  --grid-specimen-column-line-height: 1;
-  --grid-specimen-column-background: var(--brand-primary);
-  --grid-specimen-column-text: var(--global-white);
-  --components-badge-font-size: 0.625rem;
-  --components-badge-line-height: 0.625rem;
-  --components-badge-padding-t-b: 0.125rem;
-  --components-badge-padding-l-r: 0.25rem;
-  --components-badge-border-radius: 0.25rem;
-  --components-badge-border-width: 0.0625rem;
-  --components-badge-gap: var(--spacing-md);
-  --components-button-font-size: 0.75rem;
-  --components-button-line-height: 0.75rem;
-  --components-button-padding-t-b: 0.5rem;
-  --components-button-padding-l-r: 1.5rem;
-  --components-button-padding-gap: var(--spacing-sm);
-  --components-button-border-radius: var(--button-border-radius);
-  --components-button-icon-padding: var(--spacing-sm);
-  --components-button-icon-size: 1.5rem;
-  --components-button-icon-stroke-width: 0.125rem;
-  --components-button-demo-gap: var(--spacing-md);
-  --components-button-demo-section-gap: var(--spacing-xl);
-  --components-button-demo-shell-padding: var(--spacing-xl);
-  --components-button-demo-shell-radius: var(--border-radius-md);
-  --components-button-demo-icon-button-size: 3rem;
-  --components-icons-shell-background: var(--neutral-gray-light);
-  --components-icons-shell-padding: var(--spacing-xl);
-  --components-icons-shell-radius: var(--border-radius-md);
-  --components-icons-grid-gap: var(--spacing-md);
-  --components-icons-item-width: 11.25rem;
-  --components-icons-item-min-height: 7.375rem;
-  --components-icons-item-padding: var(--spacing-md);
-  --components-icons-item-gap: var(--spacing-sm);
-  --components-icons-item-radius: var(--border-radius-md);
-  --components-icons-specimen-size: 3rem;
-  --components-chip-font-size: 0.75rem;
-  --components-chip-line-height: 0.75rem;
-  --components-chip-padding-t-b: 0.5rem;
-  --components-chip-padding-l-r: 0.5rem;
-  --components-chip-padding-gap: var(--spacing-xs);
-  --components-chip-border-radius: var(--button-border-radius);
-  --components-chip-primary: var(--brand-primary);
-  --components-chip-primary-dark: var(--brand-primary-dark);
-  --components-chip-secondary: var(--brand-secondary);
-  --components-chip-secondary-dark: var(--brand-secondary-dark);
-  --components-chip-button-padding-outer: 0.25rem;
-  --components-chip-button-padding-inner: 0.125rem;
-  --components-chip-button-primary: var(--global-white);
-  --components-chip-button-secondary: var(--global-white);
-  --components-chip-dismiss-icon-primary: var(--brand-primary);
-  --components-chip-dismiss-icon-secondary: var(--brand-secondary);
-  --components-chip-dismiss-icon-primary-hover: var(--global-white);
-  --components-chip-dismiss-icon-secondary-hover: var(--global-white);
-  --components-chip-icon-padding: var(--spacing-xs);
-  --components-chip-icon-stroke-width: 1px;
-  --components-chip-control-size: calc(var(--components-chip-line-height) + var(--components-chip-padding-t-b) + var(--components-chip-padding-t-b));
-  --components-chip-icon-size: var(--components-chip-control-size);
-  --components-chip-icon-graphic-size: calc(var(--components-chip-control-size) - var(--components-chip-icon-padding) - var(--components-chip-icon-padding));
-  --components-chip-avatar-size: var(--components-chip-control-size);
-  --components-chip-avatar-border-width: 1px;
-  --components-chip-avatar-border-primary: var(--brand-primary);
-  --components-chip-avatar-border-secondary: var(--brand-secondary);
-  --components-chip-padding-edge-with-avatar: 0;
-  --components-chip-dismiss-size: var(--components-chip-control-size);
-  --components-chip-dismiss-icon-size: calc(var(--components-chip-control-size) - var(--components-chip-button-padding-outer) - var(--components-chip-button-padding-outer) - var(--components-chip-button-padding-inner) - var(--components-chip-button-padding-inner));
-  --components-chip-check-size: var(--components-chip-icon-graphic-size);
-  --components-chip-specimen-gap: var(--spacing-md);
-  --components-chip-specimen-tight-gap: 0;
-  --components-chip-specimen-divider-gap: var(--spacing-sm);
-  --components-chip-specimen-shell-padding: var(--spacing-xl);
-  --components-chip-specimen-shell-radius: var(--border-radius-md);
-  --components-chip-specimen-shell-background: var(--neutral-gray-light);
-  --components-chip-specimen-divider-width: var(--docs-rule-width);
-  --components-chip-specimen-divider-color: var(--neutral-gray-dark);
-  --components-blockquote-quote-font-size: 0.75rem;
-  --components-blockquote-quote-line-height: 1.25rem;
-  --components-blockquote-cite-font-size: 0.625rem;
-  --components-blockquote-cite-line-height: 1rem;
-  --components-blockquote-gap: var(--spacing-md);
-  --components-blockquote-padding: var(--spacing-xl);
-  --components-blockquote-accent-width: 0.25rem;
-  --components-blockquote-demo-gap: var(--spacing-xl);
-  --components-blockquote-demo-max-width: 50.84rem;
-  --components-blockquote-demo-left-width: 43.875rem;
-  --components-blockquote-demo-center-width: 33.8125rem;
-  --components-blockquote-demo-right-width: 43.4375rem;
-  --components-input-text-font-size: 1rem;
-  --components-input-text-line-height: 1.25rem;
-  --components-input-checkbox-font-size: 1rem;
-  --components-input-checkbox-line-height: 1.25rem;
-  --components-input-text-padding: 0.5rem;
-  --components-input-text-padding-gap: 0.25rem;
-  --components-input-text-border-radius: 0.25rem;
-  --components-input-checkbox-padding: 0.125rem;
-  --components-input-checkbox-padding-gap: 0.5rem;
-  --components-input-checkbox-control-size: 1.25rem;
-  --components-input-checkbox-border-radius: 0.25rem;
-  --components-input-radio-before-padding: 0.25rem;
-  --components-input-switch-padding: 0.25rem;
-  --components-input-switch-padding-gap: 0.5rem;
-  --components-input-switch-width: 2.25rem;
-  --components-input-switch-height: 1.25rem;
-  --components-input-switch-thumb-size: calc(var(--components-input-switch-height) - (var(--components-input-switch-padding) * 2));
-  --components-input-icon-size: 1rem;
-  --components-input-icon-stroke-width: 0.09375rem;
-  --components-input-placeholder: var(--neutral-gray-dark);
-  --components-option-label: var(--text-default);
-  --components-option-hover: var(--neutral-gray-light);
-  --components-input-demo-gap: var(--spacing-md);
-  --components-input-demo-stack-gap: var(--spacing-sm);
-  --components-input-demo-message-max-width: 39rem;
-  --components-link-p-font-size: 1rem;
-  --components-link-p-line-height: 1.5rem;
-  --components-link-small-font-size: 0.75rem;
-  --components-link-small-line-height: 1.25rem;
-  --components-link-fine-font-size: 0.625rem;
-  --components-link-fine-line-height: 1rem;
-  --components-link-p-icon-size: 1rem;
-  --components-link-small-icon-size: 0.75rem;
-  --components-link-fine-icon-size: 0.625rem;
-  --components-link-gap-default: var(--spacing-xs);
-  --components-link-gap-hover: var(--spacing-sm);
-  --components-link-demo-gap: var(--spacing-md);
-  --components-card-padding: var(--spacing-xl);
-  --components-card-content-gap: var(--spacing-sm);
-  --components-card-border-radius: var(--border-radius-md);
-  --components-card-border-width: var(--docs-rule-width);
-  --components-card-border-color: var(--neutral-gray-medium);
-  --components-card-vertical-width: 21rem;
-  --components-card-horizontal-figure-width: 16rem;
-  --components-card-horizontal-min-height: 12.5rem;
-  --components-card-demo-gap: var(--spacing-xl);
-  --components-banner-demo-gap: var(--spacing-xl);
-  --components-banner-background-aspect-ratio: 1312 / 1024;
-  --components-banner-background-content-max-width: 46.25rem;
-  --components-banner-background-body-width: 20.875rem;
-  --components-banner-split-aspect-ratio: 1312 / 512;
-  --components-banner-split-gap: var(--spacing-md);
-  --components-banner-split-min-height: 17.75rem;
-  --components-banner-split-image-basis: 50%;
-  --components-banner-split-content-basis: 50%;
-  --components-banner-image-fit-position: center;
-  --components-content-shell-background: var(--section-background);
-  --components-content-shell-radius: var(--border-radius-md);
-  --components-content-shell-padding: var(--spacing-xl);
-  --components-content-shell-max-width: 42rem;
-  --components-content-heading-width: 20.875rem;
-  --components-content-body-width: 20.875rem;
-  --components-content-body-padding-top: var(--spacing-sm);
-  --components-content-eyebrow-padding-bottom: var(--spacing-xs);
-  --components-content-cta-padding-top: var(--spacing-xl);
-  --components-content-footer-padding-top: var(--spacing-xl);
-  --components-content-link-icon-stroke-width: 1px;
-  --components-details-border-width: 1px;
-  --components-details-border-color: var(--neutral-gray-medium);
-  --components-details-border-radius: var(--border-radius-sm);
-  --components-details-padding: var(--spacing-md);
-  --components-details-gap: var(--spacing-sm);
-  --components-details-summary-font-size: var(--p-font-size);
-  --components-details-summary-line-height: var(--p-line-height);
-  --components-details-body-font-size: var(--p-font-size);
-  --components-details-body-line-height: var(--p-line-height);
-  --components-details-shell-background: var(--section-background);
-  --components-details-shell-radius: var(--border-radius-md);
-  --components-details-shell-padding: var(--spacing-xl);
-  --components-details-demo-gap: var(--spacing-xl);
-  --components-details-item-width: 21rem;
-  --components-details-icon-box-size: 1.75rem;
-  --components-details-icon-size: 1.5rem;
-  --components-details-icon-stroke-width: 1px;
-  --components-feedback-max-width: 33rem;
-  --components-feedback-height: 0.25rem;
-  --components-feedback-shell-background: var(--section-background);
-  --components-feedback-shell-radius: var(--border-radius-md);
-  --components-feedback-shell-padding: var(--spacing-xl);
-  --components-feedback-demo-gap: var(--spacing-xl);
-  --components-feedback-stack-gap: var(--spacing-xl);
-  --components-feedback-label-padding-bottom: var(--spacing-sm);
-  --components-feedback-text-padding-top: var(--spacing-sm);
-  --components-feedback-meter-padding: var(--spacing-xs);
-  --components-feedback-progress-width: 33rem;
-  --components-feedback-meter-width: 33rem;
-  --components-feedback-variant-width: 26.6667rem;
-  --components-feedback-value-display-width: 40.5rem;
-  --components-feedback-progress-value-width: 27.2727%;
-  --components-feedback-meter-optimum-width: 27.2727%;
-  --components-feedback-meter-low-width: 11.25%;
-  --components-feedback-meter-high-width: 58.5938%;
-  --components-fieldset-shell-background: var(--section-background);
-  --components-fieldset-shell-radius: var(--border-radius-md);
-  --components-fieldset-shell-padding: var(--spacing-xl);
-  --components-fieldset-shell-gap: var(--spacing-xl);
-  --components-fieldset-width-min: 15.5rem;
-  --components-fieldset-width-max: 26.25rem;
-  --components-fieldset-width: 26rem;
-  --components-fieldset-gap: var(--spacing-sm);
-  --components-fieldset-message-max-width: 39rem;
-  --components-messages-font-size: 0.75rem;
-  --components-messages-line-height: 1.25rem;
-  --components-messages-shell-background: var(--section-background);
-  --components-messages-shell-radius: var(--border-radius-md);
-  --components-messages-demo-gap: var(--spacing-xl);
-  --components-messages-inline-padding: var(--spacing-md);
-  --components-messages-inline-gap: var(--spacing-md);
-  --components-messages-inline-radius: var(--border-radius-sm);
-  --components-messages-inline-width: 40rem;
-  --components-messages-toast-width: 19.5rem;
-  --components-messages-close-size: 1.5rem;
-  --components-messages-close-stroke-width: 1px;
-  --components-messages-action-height: 1.75rem;
-  --components-messages-action-min-width: 4.625rem;
-  --components-messages-promo-min-height: 32rem;
-  --components-messages-promo-padding: var(--spacing-xl);
-  --components-messages-promo-close-size: 2rem;
-  --components-messages-promo-close-offset: var(--spacing-xl);
-  --components-messages-promo-content-width: 51rem;
-  --components-messages-promo-content-offset: 8rem;
-  --components-messages-background-invalid: var(--status-invalid);
-  --components-messages-background-valid: var(--status-valid);
-  --components-messages-background-toast: var(--status-read-only);
-  --components-footer-outer-padding: var(--spacing-xl);
-  --components-footer-group-padding: var(--spacing-xl);
-  --components-footer-group-radius: var(--border-radius-lg);
-  --components-footer-nav-padding: var(--spacing-md);
-  --components-footer-links-gap: var(--spacing-md);
-  --components-footer-link-item-padding: var(--spacing-xs);
-  --components-footer-brand-padding-top: var(--spacing-lg);
-  --components-footer-brand-gap: var(--spacing-md);
-  --components-footer-toggle-padding-top: var(--spacing-lg);
-  --components-footer-toggle-gap: var(--spacing-md);
-  --components-footer-brand-max-width: 16rem;
-  --components-footer-logo-width: 10.125rem;
-  --components-footer-logo-height: 7.875rem;
-  --components-footer-toggle-icon-size: 1.25rem;
-  --components-footer-copyright-padding-top: var(--spacing-md);
-  --components-logo-left: var(--brand-secondary);
-  --components-logo-right: var(--brand-secondary-dark);
-  --components-background-primary: var(--brand-primary);
-  --components-pagination-dot-size: 0.625rem;
-  --components-pagination-dot-border-width: 0.125rem;
-  --components-table-font-size: 1rem;
-  --components-table-line-height: 1.25rem;
-  --components-table-specimen-width: 100%;
-  --components-table-specimen-min-width: 65rem;
-
-  --docs-font-size-body: 1rem;
-  --docs-line-height-body: 1.75;
-  --docs-font-size-h1: 3rem;
-  --docs-line-height-h1: 1.2;
-  --docs-font-size-h2: 2rem;
-  --docs-line-height-h2: 1.3;
-  --docs-font-size-h3: 1.5rem;
-  --docs-line-height-h3: 1.4;
-  --docs-font-size-h4: 1.125rem;
-  --docs-line-height-h4: 1.4;
-  --docs-font-size-code: 0.875rem;
-  --docs-line-height-code: 1.6;
-  --docs-letter-spacing-placeholder: 0.02em;
-  --docs-letter-spacing-eyebrow: 0.04em;
-  --type-specimen-header-font-size: 0.75rem;
-  --type-specimen-header-line-height: 1rem;
-  --type-specimen-header-letter-spacing: 0.03125rem;
-  --type-specimen-family-heading-font-size: 2.25rem;
-  --type-specimen-family-heading-line-height: 1.2;
-  --type-specimen-family-body-font-size: 1rem;
-  --type-specimen-family-body-line-height: 1.5;
-  --type-specimen-family-body-gap: 0.5rem;
-
-  --h1-title-font-size: 3.125rem;
-  --h1-title-line-height: 3.5rem;
-  --h1-title-plus-p-font-size: 1rem;
-  --h1-title-plus-p-line-height: 1.75rem;
-  --h1-font-size: 3.125rem;
-  --h1-line-height: 3.5rem;
-  --h2-font-size: 2.375rem;
-  --h2-line-height: 2.625rem;
-  --h3-font-size: 1.75rem;
-  --h3-line-height: 2rem;
-  --h4-font-size: 1.5rem;
-  --h4-line-height: 1.875rem;
-  --h5-font-size: 1.25rem;
-  --h5-line-height: 1.625rem;
-  --p-font-size: 1rem;
-  --p-line-height: 1.5rem;
-  --list-font-size: 1rem;
-  --list-line-height: 1.25rem;
-  --small-font-size: 0.75rem;
-  --small-line-height: 1.25rem;
-  --fine-font-size: 0.625rem;
-  --fine-line-height: 1rem;
 }
+
+/* ============================================================
+   WIDESCREEN — token scale overrides at 80rem (1280px)
+   Layout breakpoint is 48rem (768px) — handled in component CSS
+   ============================================================ */
 
 @media (min-width: 80rem) {
   :root {
-    --spacing-xs: 0.25rem;
-    --spacing-sm: 0.5rem;
-    --spacing-md: 1rem;
-    --spacing-lg: 1.5rem;
-    --spacing-xl: 2rem;
-    --spacing-xxl: 3rem;
-    --spacing-xxxl: 4rem;
 
-    --border-radius-xs: 0.25rem;
-    --border-radius-sm: 0.5rem;
-    --border-radius-md: 1rem;
-    --border-radius-lg: 2rem;
-    --border-radius-xl: 3rem;
-    --border-radius-xxl: 4rem;
+    /* --- Spacing --- */
+    --spacing-xs: 0.25rem;    /* 4px */
+    --spacing-sm: 0.5rem;     /* 8px */
+    --spacing-md: 1rem;       /* 16px */
+    --spacing-lg: 1.5rem;     /* 24px */
+    --spacing-xl: 2rem;       /* 32px */
+    --spacing-xxl: 2.5rem;    /* 40px */
+    --spacing-xxxl: 3rem;     /* 48px */
+    --spacing-xxxxxl: 4rem;   /* 64px */
 
-    --docs-page-padding-inline: var(--spacing-xl);
-    --docs-page-padding-block: var(--spacing-xxl);
-    --docs-section-gap: var(--spacing-xxxl);
-    --docs-subsection-gap: var(--spacing-xxl);
-    --docs-stack-gap: var(--spacing-xl);
-    --docs-grid-gap: var(--spacing-xl);
-    --docs-table-cell-padding-inline: var(--spacing-md);
-    --docs-table-cell-padding-block: var(--spacing-md);
-    --docs-demo-padding: var(--spacing-xxl);
-    --components-badge-font-size: 1.25rem;
-    --components-badge-line-height: 1.25rem;
-    --components-badge-padding-t-b: 0.5rem;
-    --components-badge-padding-l-r: 0.75rem;
-    --components-badge-border-radius: 0.5rem;
-    --components-button-font-size: 1.5rem;
-    --components-button-line-height: 1.5rem;
-    --components-button-padding-t-b: 0.75rem;
-    --components-button-padding-l-r: 2rem;
-    --components-button-icon-padding: var(--spacing-sm);
-    --components-chip-font-size: 1.5rem;
-    --components-chip-line-height: 1.5rem;
-    --components-chip-padding-t-b: 0.75rem;
-    --components-chip-padding-l-r: 1.25rem;
-    --components-chip-padding-gap: var(--spacing-sm);
-    --components-chip-button-padding-outer: 0.625rem;
-    --components-chip-button-padding-inner: var(--spacing-sm);
-    --components-blockquote-quote-font-size: 1.5rem;
-    --components-blockquote-quote-line-height: 2.25rem;
-    --components-blockquote-cite-font-size: 1.25rem;
-    --components-blockquote-cite-line-height: 1.875rem;
-    --components-input-text-font-size: 1.5rem;
-    --components-input-text-line-height: 2rem;
-    --components-input-checkbox-font-size: 1.5rem;
-    --components-input-checkbox-line-height: 1.75rem;
-    --components-input-text-padding: 0.75rem;
-    --components-input-radio-before-padding: 0.375rem;
-    --components-input-switch-width: 3.5rem;
-    --components-input-switch-height: 2rem;
-    --components-input-icon-size: 1.5rem;
-    --components-link-p-font-size: 1.5rem;
-    --components-link-p-line-height: 2.25rem;
-    --components-link-small-font-size: 1.25rem;
-    --components-link-small-line-height: 1.875rem;
-    --components-link-fine-font-size: 1rem;
-    --components-link-fine-line-height: 1.5rem;
-    --components-link-p-icon-size: 1.5rem;
-    --components-link-small-icon-size: 1.25rem;
-    --components-link-fine-icon-size: 1rem;
-    --components-feedback-height: 0.75rem;
-    --components-messages-font-size: 1.5rem;
-    --components-messages-line-height: 2.25rem;
-    --components-messages-action-height: 3rem;
-    --components-table-font-size: 1.5rem;
-    --components-table-line-height: 1.875rem;
+    /* --- Border-radius --- */
+    --border-radius-xs: 0.25rem;  /* 4px */
+    --border-radius-sm: 0.5rem;   /* 8px */
+    --border-radius-md: 1rem;     /* 16px */
+    --border-radius-lg: 2rem;     /* 32px */
+    --border-radius-xl: 3rem;     /* 48px */
+    --border-radius-xxl: 4rem;    /* 64px */
+    /* round and button-border-radius are fixed — no override */
 
-    --h1-title-font-size: 5rem;
-    --h1-title-line-height: 6.25rem;
-    --h1-title-plus-p-font-size: 2rem;
-    --h1-title-plus-p-line-height: 3.5rem;
-    --h1-font-size: 4.5rem;
-    --h1-line-height: 5.625rem;
-    --h2-font-size: 3.75rem;
-    --h2-line-height: 4.625rem;
-    --h3-font-size: 3.125rem;
-    --h3-line-height: 3.875rem;
-    --h4-font-size: 2.625rem;
-    --h4-line-height: 3.25rem;
-    --h5-font-size: 2rem;
-    --h5-line-height: 2.5rem;
-    --p-font-size: 1.5rem;
-    --p-line-height: 3.5rem;
-    --list-font-size: 1.5rem;
-    --list-line-height: 2.125rem;
-    --small-font-size: 1.25rem;
-    --small-line-height: 1.875rem;
-    --fine-font-size: 1rem;
-    --fine-line-height: 1.5rem;
+    /* --- Typography --- */
+    --h1-title-font-size: 5rem;    /* 80px */
+    --h1-title-line-height: 6.25rem; /* 100px */
+    --h1-font-size: 4.5rem;        /* 72px */
+    --h1-line-height: 5.625rem;    /* 90px */
+    --h2-font-size: 3.75rem;       /* 60px */
+    --h2-line-height: 4.625rem;    /* 74px */
+    --h3-font-size: 3.125rem;      /* 50px */
+    --h3-line-height: 3.875rem;    /* 62px */
+    --h4-font-size: 2.625rem;      /* 42px */
+    --h4-line-height: 3.25rem;     /* 52px */
+    --h5-font-size: 2rem;          /* 32px */
+    --h5-line-height: 2.5rem;      /* 40px */
+    --p-font-size: 1.5rem;         /* 24px */
+    --p-line-height: 2.25rem;      /* 36px */
+    --small-font-size: 1.25rem;    /* 20px */
+    --small-line-height: 1.875rem; /* 30px */
+    --fine-font-size: 1rem;        /* 16px */
+    --fine-line-height: 1.5rem;    /* 24px */
+    --list-font-size: 1.5rem;      /* 24px */
+    --list-line-height: 2.5rem;    /* 40px */
+    --code-body-font-size: 1.75rem;  /* 28px */
+    --code-body-line-height: 2.25rem; /* 36px */
+    --code-small-font-size: 1.5rem;   /* 24px */
+    --code-small-line-height: 1.875rem; /* 30px */
+
+    /* --- Component typography — widescreen --- */
+    --components-badge-font-size: var(--small-font-size);
+    --components-badge-line-height: 1.25rem; /* 20px */
+    --components-blockquote-quote-font-size: var(--p-font-size);
+    --components-blockquote-quote-line-height: var(--p-line-height);
+    --components-blockquote-cite-font-size: var(--small-font-size);
+    --components-blockquote-cite-line-height: var(--small-line-height);
+    --components-button-font-size: var(--p-font-size);
+    --components-button-line-height: 1.5rem; /* 24px */
+    --components-chip-font-size: var(--p-font-size);
+    --components-chip-line-height: 1.5rem; /* 24px */
+    --components-input-text-line-height: 2rem; /* 32px */
+    --components-input-checkbox-line-height: 1.75rem; /* 28px */
+    --components-messages-font-size: var(--p-font-size);
+    --components-messages-line-height: var(--p-line-height);
+    --components-tab-font-size: var(--p-font-size);
+    --components-tab-line-height: 1.5rem; /* 24px */
+    --components-table-line-height: 1.875rem; /* 30px */
+
+    /* --- Component spacing — widescreen --- */
+    --components-badge-padding-l-r: 0.75rem;    /* 12px */
+    --components-badge-padding-t-b: 0.5rem;     /* 8px */
+    --components-badge-border-radius: 0.5rem;   /* 8px */
+
+    --components-banner-padding-l-r: 2rem;      /* 32px */
+
+    --components-button-padding-l-r: 2rem;      /* 32px */
+    --components-button-padding-t-b: 0.75rem;   /* 12px */
+
+    --components-chip-padding-l-r: 1.25rem;     /* 20px */
+    --components-chip-padding-t-b: 0.75rem;     /* 12px */
+    --components-chip-padding-gap: 0.25rem;     /* 4px */
+    --components-chip-button-padding-inner: 0.25rem; /* 4px */
+    --components-chip-button-padding-outer: 0.625rem; /* 10px */
+
+    --components-feedback-height: 0.75rem;      /* 12px */
+
+    --components-input-text-padding: 0.75rem;   /* 12px */
+    --components-input-checkbox-height: 1.75rem; /* 28px */
+    --components-input-checkbox-before-padding: 0.25rem; /* 4px */
+    --components-input-radio-before-padding: 0.375rem;   /* 6px */
+    --components-input-switch-max-width: 3.5rem; /* 56px */
+
+    --components-tab-button-padding-l-r: 0.5rem;  /* 8px */
+    --components-tab-button-padding-t-b: 0.25rem; /* 4px */
   }
 }
 
-[data-color-mode='dark'] {
+/* ============================================================
+   DARK MODE — color overrides via data attribute
+   Applied to the story wrapper element, not body or html
+   ============================================================ */
+
+[data-color-mode="dark"] {
   --text-default: var(--global-white);
   --text-inverse: var(--global-black);
   --text-link: var(--global-white);
+  --text-link-inverse: var(--brand-primary);
+  --text-link-hover: var(--brand-primary-dark);
   --text-hover: var(--brand-primary);
-  --text-muted: var(--neutral-gray-medium);
-  --components-option-label: var(--global-white);
+  --text-muted: var(--global-gray-medium);
   --page-background: var(--brand-secondary-dark);
   --section-background: var(--brand-secondary);
-  --surface-subtle: var(--brand-secondary);
-  --surface-border: var(--neutral-gray-dark);
-  --surface-strong: var(--global-white);
-  --focus-ring: var(--global-white);
-  --components-chip-primary: var(--global-white);
-  --components-chip-secondary: var(--global-white);
-  --components-logo-left: var(--brand-primary);
-  --components-logo-right: var(--brand-primary-dark);
+  --surface-border: var(--global-gray-dark);
+
   --components-background-primary: var(--global-white);
+  --components-background-secondary: var(--global-white);
+  --components-border-primary: var(--global-white);
+  --components-border-secondary: var(--global-white);
+  --components-chip-primary: var(--global-white);
+  --components-chip-primary-dark: var(--global-white);
+  --components-chip-secondary: var(--global-white);
+  --components-chip-secondary-dark: var(--global-white);
   --components-chip-button-primary: var(--brand-primary);
   --components-chip-button-secondary: var(--brand-secondary);
-  --components-chip-dismiss-icon-primary: var(--text-inverse);
-  --components-chip-dismiss-icon-secondary: var(--text-inverse);
-  --components-chip-dismiss-icon-primary-hover: var(--brand-primary);
-  --components-chip-dismiss-icon-secondary-hover: var(--brand-secondary);
+  --components-logo-left: var(--brand-primary);
+  --components-logo-right: var(--brand-primary-dark);
+  --components-option-hover: var(--brand-secondary);
+  --components-option-label: var(--global-white);
 }

@@ -91,9 +91,9 @@ function renderIconsSpecimen() {
       .delta-docs .icons-specimen-shell {
         display: inline-flex;
         max-width: 100%;
-        padding: var(--components-icons-shell-padding);
-        border-radius: var(--components-icons-shell-radius);
-        background: var(--components-icons-shell-background);
+        padding: var(--spacing-xl);
+        border-radius: var(--border-radius-md);
+        background: var(--section-background);
       }
 
       [data-color-mode='dark'] .delta-docs .icons-specimen-shell {
@@ -330,14 +330,14 @@ function createIconsDocumentation() {
 .icon-label {
   display: inline-flex;
   align-items: center;
-  gap: var(--xs);
+  gap: var(--spacing-xs);
 }
 
 /* Icon in a button (defers to button component gap token) */
 .button {
   display: inline-flex;
   align-items: center;
-  gap: var(--sm);
+  gap: var(--spacing-sm);
 }
 
 /* Icon-only button — touch target sized on the container */
@@ -350,11 +350,11 @@ function createIconsDocumentation() {
 
       <h3>Design tokens reference</h3>
       <pre><code>/* Colors */
---text/default    Light: #000000   Dark: #FFFFFF
+--text-default    Light: #000000   Dark: #FFFFFF
 
 /* Spacing — gap between icon and adjacent label */
---xs              Mobile: 0.125rem / 2px   →   Widescreen: 0.25rem / 4px
---sm              Mobile: 0.25rem / 4px    →   Widescreen: 0.5rem / 8px
+--spacing-xs              Mobile: 0.125rem / 2px   →   Widescreen: 0.25rem / 4px
+--spacing-sm              Mobile: 0.25rem / 4px    →   Widescreen: 0.5rem / 8px
 
 /* Icon dimensions — fixed, not token-driven */
 SVG width/height: 24px (fixed)

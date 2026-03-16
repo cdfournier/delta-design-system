@@ -483,7 +483,7 @@ p {
 }
 
 .heading-link:hover {
-  color: var(--color-primary);
+  color: var(--brand-primary);
 }
 
 /* Widescreen — 80rem / 1280px */
@@ -576,10 +576,10 @@ document.querySelectorAll('.heading-link-icon').forEach(button => {
 --p/line-height          Mobile: 1.5rem / 24px     →   Widescreen: 3.5rem / 56px
 --list/font-size         Mobile: 1rem / 16px       →   Widescreen: 1.5rem / 24px
 --list/line-height       Mobile: 1.25rem / 20px    →   Widescreen: 2.125rem / 34px
---small/font-size        Mobile: 0.75rem / 12px    →   Widescreen: 1.25rem / 20px
---small/line-height      Mobile: 1.25rem / 20px    →   Widescreen: 1.875rem / 30px
---fine/font-size         Mobile: 0.625rem / 10px   →   Widescreen: 1rem / 16px
---fine/line-height       Mobile: 1rem / 16px.      →   Widescreen: 1.5rem / 24px</code></pre>
+--small-font-size        Mobile: 0.75rem / 12px    →   Widescreen: 1.25rem / 20px
+--small-line-height      Mobile: 1.25rem / 20px    →   Widescreen: 1.875rem / 30px
+--fine-font-size         Mobile: 0.625rem / 10px   →   Widescreen: 1rem / 16px
+--fine-line-height       Mobile: 1rem / 16px.      →   Widescreen: 1.5rem / 24px</code></pre>
 
       <hr />
 

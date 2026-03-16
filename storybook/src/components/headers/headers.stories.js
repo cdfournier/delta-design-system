@@ -898,7 +898,7 @@ function createHeadersDocumentation() {
 
 /* Top bar */
 .header-top {
-  padding: var(--md);
+  padding: var(--spacing-md);
   background-color: var(--section-background);
   backdrop-filter: blur(15px);
   border-radius: var(--border-radius-md);
@@ -924,20 +924,20 @@ function createHeadersDocumentation() {
 @media (min-width: 48rem) {
   .header[data-size="widescreen"] .header-nav {
     display: flex;
-    padding-left: var(--xxxl);
+    padding-left: var(--spacing-xxxl);
   }
 }
 
 .header-links {
   display: flex;
-  gap: var(--xl);
+  gap: var(--spacing-xl);
   list-style: none;
   align-items: center;
 }
 
 .header-links li {
-  padding-top: var(--xs);
-  padding-bottom: var(--xs);
+  padding-top: var(--spacing-xs);
+  padding-bottom: var(--spacing-xs);
 }
 
 .header-links a {
@@ -962,8 +962,8 @@ function createHeadersDocumentation() {
 /* Mobile navigation dropdown */
 .header-nav-mobile {
   display: none;
-  margin-top: var(--xl);
-  padding: var(--md);
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-md);
   background-color: var(--section-background);
   backdrop-filter: blur(15px);
   border-radius: var(--border-radius-md);
@@ -972,26 +972,26 @@ function createHeadersDocumentation() {
 .header[data-size="mobile"][data-state="open"] .header-nav-mobile {
   display: flex;
   flex-direction: column;
-  gap: var(--md);
+  gap: var(--spacing-md);
   align-items: flex-end;
 }
 
 .header-links-mobile {
   display: flex;
   flex-direction: column;
-  gap: var(--md);
+  gap: var(--spacing-md);
   list-style: none;
 }
 
 .header-links-mobile li {
-  padding-top: var(--xs);
-  padding-bottom: var(--xs);
+  padding-top: var(--spacing-xs);
+  padding-bottom: var(--spacing-xs);
 }
 
 .header-links-mobile a {
   display: flex;
   align-items: center;
-  gap: var(--xs);
+  gap: var(--spacing-xs);
   font-size: var(--small-font-size);
   line-height: var(--small-line-height);
   color: var(--text-link);
@@ -1002,7 +1002,7 @@ function createHeadersDocumentation() {
 .header-toggle {
   display: flex;
   align-items: center;
-  gap: var(--md);
+  gap: var(--spacing-md);
 }
 
 .header[data-size="mobile"] .header-toggle {
@@ -1011,7 +1011,7 @@ function createHeadersDocumentation() {
 
 .header[data-size="mobile"][data-state="open"] .header-toggle {
   display: flex;
-  padding-top: var(--lg);
+  padding-top: var(--spacing-lg);
 }
 
 .header-toggle-label {

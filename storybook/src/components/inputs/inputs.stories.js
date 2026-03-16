@@ -9,7 +9,7 @@ function createInputsDocumentation() {
       .delta-docs .input-specimen-row {
         display: inline-flex;
         align-items: center;
-        gap: var(--components-input-demo-gap);
+        gap: var(--spacing-xl);
         flex-wrap: wrap;
       }
 
@@ -1049,7 +1049,7 @@ select {
   border-radius: var(--components-input-text-border-radius);
   font-size: var(--components-input-text-font-size);
   line-height: var(--components-input-text-line-height);
-  font-family: var(--font-family);
+  font-family: var(--font-family-body);
   background-color: var(--page-background);
   color: var(--text-default);
 }
@@ -1164,10 +1164,10 @@ toggleButton.addEventListener('click', () => {
 --components/input/text/line-height      Mobile: 1.25rem / 20px   →   Widescreen: 2rem / 32px
 --components/input/checkbox/font-size    Mobile: 1rem / 16px   →   Widescreen: 1.5rem / 24px
 --components/input/checkbox/line-height  Mobile: 1.25rem / 20px   →   Widescreen: 1.75rem / 28px
---fine/font-size                         Mobile: 0.625rem / 10px   →   Widescreen: 1rem / 16px
---fine/line-height                       Mobile: 1rem / 16px       →   Widescreen: 1.5rem / 24px
---small/font-size                        Mobile: 0.75rem / 12px    →   Widescreen: 1.25rem / 20px
---small/line-height                      Mobile: 1.25rem / 20px    →   Widescreen: 1.875rem / 30px
+--fine-font-size                         Mobile: 0.625rem / 10px   →   Widescreen: 1rem / 16px
+--fine-line-height                       Mobile: 1rem / 16px       →   Widescreen: 1.5rem / 24px
+--small-font-size                        Mobile: 0.75rem / 12px    →   Widescreen: 1.25rem / 20px
+--small-line-height                      Mobile: 1.25rem / 20px    →   Widescreen: 1.875rem / 30px
 
 /* Spacing */
 --components/input/text/padding          Mobile: 0.5rem / 8px   →   Widescreen: 0.75rem / 12px
@@ -1186,15 +1186,15 @@ toggleButton.addEventListener('click', () => {
 --border-radius/round                      6.25rem / 100px (fixed)
 
 /* Colors */
---global/gray-medium    Light: #CCCCCC   Dark: #CCCCCC
+--global-gray-medium    Light: #CCCCCC   Dark: #CCCCCC
 --global/gray-dark      Light: #919191   Dark: #919191
 --page/background       Light: #FFFFFF   Dark: #01232D
---text/default          Light: #000000   Dark: #FFFFFF
---brand/primary         Light: #FF5247   Dark: #FF5247
+--text-default          Light: #000000   Dark: #FFFFFF
+--brand-primary         Light: #FF5247   Dark: #FF5247
 --status/disabled       Light: #808080   Dark: #808080
 --status/read-only      Light: #333333   Dark: #333333
---status/valid          Light: #007000   Dark: #007000
---status/invalid              Light: #C00C00   Dark: #C00C00
+--status-valid          Light: #007000   Dark: #007000
+--status-invalid              Light: #C00C00   Dark: #C00C00
 --components/option/label      Light: #000000   Dark: #000000
 --components/option/hover      Light: #EEEEEE   Dark: #EEEEEE</code></pre>
 

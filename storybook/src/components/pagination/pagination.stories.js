@@ -30,15 +30,15 @@ function createPaginationDocumentation() {
         width: var(--components-pagination-dot-size);
         height: var(--components-pagination-dot-size);
         padding: 0;
-        border: var(--components-pagination-dot-border-width) solid var(--neutral-gray-medium);
+        border: var(--components-pagination-dot-border-width) solid var(--global-gray-medium);
         border-radius: 50%;
         background: transparent;
         cursor: pointer;
       }
 
       .delta-docs .pagination-specimen__dot--selected {
-        background: var(--neutral-gray-medium);
-        border-color: var(--neutral-gray-medium);
+        background: var(--global-gray-medium);
+        border-color: var(--global-gray-medium);
       }
     </style>
     <article class="delta-docs">
@@ -363,8 +363,8 @@ function createPaginationDocumentation() {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: var(--md);           /* 0.5rem / 8px mobile */
-  padding: var(--md) var(--xl); /* 0.5rem 1rem / 8px 16px mobile */
+  gap: var(--spacing-md);           /* 0.5rem / 8px mobile */
+  padding: var(--spacing-md) var(--spacing-xl); /* 0.5rem 1rem / 8px 16px mobile */
   background-color: var(--page-background);
   border-radius: var(--border-radius-xxl); /* 2rem / 32px mobile */
   list-style: none;
@@ -372,8 +372,8 @@ function createPaginationDocumentation() {
 
 @media (min-width: 80rem) {
   .pagination {
-    gap: var(--md);           /* 1rem / 16px widescreen */
-    padding: var(--md) var(--xl); /* 1rem 2rem / 16px 32px widescreen */
+    gap: var(--spacing-md);           /* 1rem / 16px widescreen */
+    padding: var(--spacing-md) var(--spacing-xl); /* 1rem 2rem / 16px 32px widescreen */
     border-radius: var(--border-radius-xxl); /* 4rem / 64px widescreen */
   }
 }
@@ -445,8 +445,8 @@ function navigateToPage(index) {
 
       <h3>Design tokens reference</h3>
       <pre><code>/* Spacing */
---md                  Mobile: 0.5rem / 8px   →   Widescreen: 1rem / 16px
---xl                  Mobile: 1rem / 16px    →   Widescreen: 2rem / 32px
+--spacing-md                  Mobile: 0.5rem / 8px   →   Widescreen: 1rem / 16px
+--spacing-xl                  Mobile: 1rem / 16px    →   Widescreen: 2rem / 32px
 
 /* Border-radius */
 --border-radius-xxl   Mobile: 2rem / 32px   →   Widescreen: 4rem / 64px

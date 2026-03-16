@@ -64,7 +64,7 @@ function createColorsDocumentation() {
       </div>
 
       <div class="color-swatch">
-        <div class="color-box" style="--swatch-background: var(--global-white); --swatch-border-width: 0.125rem; --swatch-border-color: var(--neutral-gray-medium);"></div>
+        <div class="color-box" style="--swatch-background: var(--global-white); --swatch-border-width: 0.125rem; --swatch-border-color: var(--global-gray-medium);"></div>
         <div class="color-info">
           <p class="color-name">White</p>
           <p><strong>Hex:</strong> <code>#FFFFFF</code></p>
@@ -73,7 +73,7 @@ function createColorsDocumentation() {
       </div>
 
       <div class="color-swatch">
-        <div class="color-box" style="--swatch-background: var(--neutral-gray-dark);"></div>
+        <div class="color-box" style="--swatch-background: var(--global-gray-dark);"></div>
         <div class="color-info">
           <p class="color-name">Gray dark</p>
           <p><strong>Hex:</strong> <code>#919191</code></p>
@@ -82,7 +82,7 @@ function createColorsDocumentation() {
       </div>
 
       <div class="color-swatch">
-        <div class="color-box" style="--swatch-background: var(--neutral-gray-medium);"></div>
+        <div class="color-box" style="--swatch-background: var(--global-gray-medium);"></div>
         <div class="color-info">
           <p class="color-name">Gray medium</p>
           <p><strong>Hex:</strong> <code>#CCCCCC</code></p>
@@ -91,7 +91,7 @@ function createColorsDocumentation() {
       </div>
 
       <div class="color-swatch">
-        <div class="color-box" style="--swatch-background: var(--neutral-gray-light);"></div>
+        <div class="color-box" style="--swatch-background: var(--global-gray-light);"></div>
         <div class="color-info">
           <p class="color-name">Gray light</p>
           <p><strong>Hex:</strong> <code>#EEEEEE</code></p>
@@ -435,74 +435,74 @@ function createColorsDocumentation() {
       <h3>CSS</h3>
       <pre><code>/* Global color tokens */
 :root {
-  --color-brand-primary: #FF5247;
-  --color-brand-primary-dark: #B22E28;
-  --color-brand-secondary: #003442;
-  --color-brand-secondary-dark: #01232D;
-  --color-global-black: #000000;
-  --color-global-white: #FFFFFF;
+  --brand-primary: #FF5247;
+  --brand-primary-dark: #B22E28;
+  --brand-secondary: #003442;
+  --brand-secondary-dark: #01232D;
+  --global-black: #000000;
+  --global-white: #FFFFFF;
   --color-global-gray-dark: #919191;
   --color-global-gray-medium: #CCCCCC;
-  --color-global-gray-light: #EEEEEE;
+  --global-gray-light: #EEEEEE;
   --color-status-disabled: #808080;
-  --color-status-invalid: #C00C00;
+  --status-invalid: #C00C00;
   --color-status-valid: #007000;
   --color-status-read-only: #333333;
   --color-overlay-dark: rgba(0, 0, 0, 0.5);
   --color-overlay-light: rgba(0, 0, 0, 0.25);
 
   /* Semantic tokens — light mode (default) */
-  --color-background-page: var(--color-global-white);
-  --color-background-section: var(--color-global-gray-light);
-  --color-text-default: var(--color-global-black);
-  --color-text-link: var(--color-brand-primary);
-  --color-text-hover: var(--color-brand-secondary);
+  --page-background: var(--global-white);
+  --color-background-section: var(--global-gray-light);
+  --text-default: var(--global-black);
+  --text-link: var(--brand-primary);
+  --text-hover: var(--brand-secondary);
 }
 
 /* Semantic tokens — dark mode */
 [data-theme="dark"] {
-  --color-background-page: var(--color-brand-secondary-dark);
-  --color-background-section: var(--color-brand-secondary);
-  --color-text-default: var(--color-global-white);
-  --color-text-link: var(--color-global-white);
-  --color-text-hover: var(--color-brand-primary);
+  --page-background: var(--brand-secondary-dark);
+  --color-background-section: var(--brand-secondary);
+  --text-default: var(--global-white);
+  --text-link: var(--global-white);
+  --text-hover: var(--brand-primary);
 }
 
 /* Usage */
 body {
-  color: var(--color-text-default);
-  background-color: var(--color-background-page);
+  color: var(--text-default);
+  background-color: var(--page-background);
 }
 
 a {
-  color: var(--color-text-link);
+  color: var(--text-link);
 }
 
 a:hover {
-  color: var(--color-text-hover);
+  color: var(--text-hover);
 }
 
 .error-message {
-  color: var(--color-status-invalid);
+  color: var(--status-invalid);
 }</code></pre>
 
       <h3>Design tokens reference</h3>
       <pre><code>/* Brand — mode-invariant */
---color-brand-primary         #FF5247
---color-brand-primary-dark    #B22E28
---color-brand-secondary       #003442
---color-brand-secondary-dark  #01232D
+--brand-primary         #FF5247
+--brand-primary-dark    #B22E28
+--brand-secondary       #003442
+--brand-secondary-dark  #01232D
 
 /* Global — mode-invariant */
---color-global-black          #000000
---color-global-white          #FFFFFF
+--global-black          #000000
+--global-white          #FFFFFF
 --color-global-gray-dark      #919191
 --color-global-gray-medium    #CCCCCC
---color-global-gray-light     #EEEEEE
+--global-gray-light     #EEEEEE
 
 /* Status — mode-invariant */
 --color-status-disabled       #808080
---color-status-invalid        #C00C00
+--status-invalid        #C00C00
 --color-status-valid          #007000
 --color-status-read-only      #333333
 
@@ -512,11 +512,11 @@ a:hover {
 
 /* Semantic — resolves by mode */
                               Light                 Dark
---color-background-page       #FFFFFF (global/white)          #01232D (brand/secondary-dark)
+--page-background       #FFFFFF (global/white)          #01232D (brand/secondary-dark)
 --color-background-section    #EEEEEE (global/gray-light)     #003442 (brand/secondary)
---color-text-default          #000000 (global/black)          #FFFFFF (global/white)
---color-text-link             #FF5247 (brand/primary)         #FFFFFF (global/white)
---color-text-hover            #003442 (brand/secondary)       #FF5247 (brand/primary)</code></pre>
+--text-default          #000000 (global/black)          #FFFFFF (global/white)
+--text-link             #FF5247 (brand/primary)         #FFFFFF (global/white)
+--text-hover            #003442 (brand/secondary)       #FF5247 (brand/primary)</code></pre>
 
       <hr />
 

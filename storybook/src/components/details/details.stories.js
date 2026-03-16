@@ -2,8 +2,8 @@ function createDetailsDocumentation() {
   return `
     <style>
       .delta-docs .details-specimen-shell {
-        border-radius: var(--components-details-shell-radius);
-        background: var(--components-details-shell-background);
+        border-radius: var(--border-radius-md);
+        background: var(--section-background);
       }
 
       [data-color-mode='dark'] .delta-docs .details-specimen-shell {
@@ -12,7 +12,7 @@ function createDetailsDocumentation() {
 
       .delta-docs .details-specimen-grid {
         display: grid;
-        gap: var(--components-details-demo-gap);
+        gap: var(--spacing-xl);
         align-items: flex-start;
       }
 
@@ -419,18 +419,18 @@ function createDetailsDocumentation() {
       <h3>CSS</h3>
       <pre><code>/* Details container */
 .details {
-  padding: var(--md);
-  border: 1px solid var(--global\/gray-medium);
-  border-radius: var(--border-radius\/sm);
+  padding: var(--spacing-md);
+  border: 1px solid var(--global-gray-medium);
+  border-radius: var(--border-radius-sm);
   display: flex;
   flex-direction: column;
-  gap: var(--sm);
+  gap: var(--spacing-sm);
 }
 
 @media (min-width: 80rem) {
   .details {
-    padding: var(--md);
-    gap: var(--sm);
+    padding: var(--spacing-md);
+    gap: var(--spacing-sm);
   }
 }
 
@@ -438,12 +438,12 @@ function createDetailsDocumentation() {
 .details-summary {
   display: flex;
   align-items: center;
-  gap: var(--sm);
+  gap: var(--spacing-sm);
   cursor: pointer;
-  font-size: var(--p\/font-size);
-  line-height: var(--p\/line-height);
+  font-size: var(--p-font-size);
+  line-height: var(--p-line-height);
   font-weight: 700;
-  color: var(--text\/default);
+  color: var(--text-default);
   list-style: none;
   user-select: none;
 }
@@ -459,7 +459,7 @@ function createDetailsDocumentation() {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  padding: var(--sm);
+  padding: var(--spacing-sm);
   margin-left: auto;
 }
 
@@ -470,9 +470,9 @@ function createDetailsDocumentation() {
 
 /* Body content */
 .details-body {
-  font-size: var(--p\/font-size);
-  line-height: var(--p\/line-height);
-  color: var(--text\/default);
+  font-size: var(--p-font-size);
+  line-height: var(--p-line-height);
+  color: var(--text-default);
 }
 
 /* Icon change on open (native details) */
@@ -482,13 +482,13 @@ details[open] .details-icon svg path:last-child {
 
 /* Focus state */
 .details-summary:focus {
-  outline: 2px solid var(--brand\/primary);
+  outline: 2px solid var(--brand-primary);
   outline-offset: 2px;
 }
 
 /* Details group (accordion) */
 .details-group .details + .details {
-  margin-top: var(--sm);
+  margin-top: var(--spacing-sm);
 }</code></pre>
 
       <h3>JavaScript</h3>
@@ -510,8 +510,8 @@ detailsTrigger.addEventListener('click', () => {
 
       <h3>Design tokens reference</h3>
       <pre><code>/* Spacing */
---md                  Mobile: 0.5rem / 8px    →   Widescreen: 1rem / 16px
---sm                  Mobile: 0.25rem / 4px   →   Widescreen: 0.5rem / 8px
+--spacing-md                  Mobile: 0.5rem / 8px    →   Widescreen: 1rem / 16px
+--spacing-sm                  Mobile: 0.25rem / 4px   →   Widescreen: 0.5rem / 8px
 
 /* Border-radius */
 --border-radius-sm    Mobile: 0.25rem / 4px   →   Widescreen: 0.5rem / 8px

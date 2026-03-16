@@ -714,12 +714,12 @@ function createFootersDocumentation() {
       <h3>CSS</h3>
       <pre><code>/* ---- Outer container ---- */
 .footer {
-  padding: var(--xl);
+  padding: var(--spacing-xl);
 }
 
 /* ---- Group container ---- */
 .footer-group {
-  padding: var(--xl);
+  padding: var(--spacing-xl);
   background-color: var(--section-background);
   border-radius: var(--border-radius-lg);
 }
@@ -738,15 +738,15 @@ function createFootersDocumentation() {
 
 /* ---- Navigation ---- */
 .footer-nav {
-  padding-top: var(--md);
-  padding-bottom: var(--md);
+  padding-top: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
 }
 
 .footer-links {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: var(--md);
+  gap: var(--spacing-md);
   align-items: center;
 }
 
@@ -755,8 +755,8 @@ function createFootersDocumentation() {
 }
 
 .footer-link-item {
-  padding-top: var(--xs);
-  padding-bottom: var(--xs);
+  padding-top: var(--spacing-xs);
+  padding-bottom: var(--spacing-xs);
 }
 
 /* ---- Links ---- */
@@ -788,8 +788,8 @@ function createFootersDocumentation() {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--md);
-  padding-top: var(--lg);
+  gap: var(--spacing-md);
+  padding-top: var(--spacing-lg);
 }
 
 .footer-heading {
@@ -803,8 +803,8 @@ function createFootersDocumentation() {
 .footer-toggle {
   display: flex;
   align-items: center;
-  gap: var(--md);
-  padding-top: var(--lg);
+  gap: var(--spacing-md);
+  padding-top: var(--spacing-lg);
   justify-content: center;
 }
 
@@ -859,18 +859,18 @@ toggle.addEventListener('change', () => {
 
       <h3>Design tokens reference</h3>
       <pre><code>/* Typography */
---small/font-size    Mobile: 0.75rem / 12px   →   Widescreen: 1.25rem / 20px
---small/line-height  Mobile: 1.25rem / 20px   →   Widescreen: 1.875rem / 30px
+--small-font-size    Mobile: 0.75rem / 12px   →   Widescreen: 1.25rem / 20px
+--small-line-height  Mobile: 1.25rem / 20px   →   Widescreen: 1.875rem / 30px
 --h2/font-size       Mobile: 1.5rem / 24px    →   Widescreen: 3.75rem / 60px
 --h2/line-height     Mobile: 1.875rem / 30px  →   Widescreen: 4.625rem / 74px
---fine/font-size     Mobile: 0.625rem / 10px  →   Widescreen: 1rem / 16px
---fine/line-height   Mobile: 1rem / 16px      →   Widescreen: 1.5rem / 24px
+--fine-font-size     Mobile: 0.625rem / 10px  →   Widescreen: 1rem / 16px
+--fine-line-height   Mobile: 1rem / 16px      →   Widescreen: 1.5rem / 24px
 
 /* Spacing */
---xl    Mobile: 1rem / 16px      →   Widescreen: 2rem / 32px
---lg    Mobile: 0.75rem / 12px   →   Widescreen: 1.5rem / 24px
---md    Mobile: 0.5rem / 8px     →   Widescreen: 1rem / 16px
---xs    Mobile: 0.125rem / 2px   →   Widescreen: 0.25rem / 4px
+--spacing-xl    Mobile: 1rem / 16px      →   Widescreen: 2rem / 32px
+--spacing-lg    Mobile: 0.75rem / 12px   →   Widescreen: 1.5rem / 24px
+--spacing-md    Mobile: 0.5rem / 8px     →   Widescreen: 1rem / 16px
+--spacing-xs    Mobile: 0.125rem / 2px   →   Widescreen: 0.25rem / 4px
 --components/input/switch/padding-gap   Mobile: 0.5rem / 8px   →   Widescreen: 1rem / 16px
 
 /* Border-radius */
@@ -878,9 +878,9 @@ toggle.addEventListener('change', () => {
 --components/input/switch/border-radius  Mobile: 1rem / 16px   →   Widescreen: 2rem / 32px
 
 /* Colors */
---section/background              Light: #EEEEEE   Dark: #003442
+--section-background              Light: #EEEEEE   Dark: #003442
 --page/background                 Light: #FFFFFF   Dark: #01232D
---text/default                    Light: #000000   Dark: #FFFFFF
+--text-default                    Light: #000000   Dark: #FFFFFF
 --text/link                       Light: #FF5247   Dark: #FFFFFF
 --components/background/primary   Light: #FF5247   Dark: #FFFFFF
 --components/logo/left            Light: #003442   Dark: #FF5247

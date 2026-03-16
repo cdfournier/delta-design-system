@@ -3,7 +3,7 @@ function createBannersDocumentation() {
     <style>
       .delta-docs .banner-specimen-stack {
         display: grid;
-        gap: var(--components-banner-demo-gap);
+        gap: var(--spacing-xl);
       }
 
       .delta-docs .banner-specimen {
@@ -75,8 +75,8 @@ function createBannersDocumentation() {
       .delta-docs .banner-specimen__body--hero {
         width: min(100%, var(--components-banner-background-body-width));
         color: var(--global-white);
-        font-size: var(--h1-title-plus-p-font-size);
-        line-height: var(--h1-title-plus-p-line-height);
+        font-size: var(--h1-title-font-size);
+        line-height: var(--h1-title-line-height);
       }
 
       .delta-docs .banner-specimen__body--split {
@@ -537,7 +537,7 @@ function createBannersDocumentation() {
 .content {
   position: relative;
   z-index: 1;
-  padding: var(--xl);
+  padding: var(--spacing-xl);
   color: var(--global-white);
 }
 
@@ -579,15 +579,15 @@ function createBannersDocumentation() {
 }
 
 .split.orientation-vertical .content {
-  padding-top: var(--xl);
-  padding-bottom: var(--xl);
+  padding-top: var(--spacing-xl);
+  padding-bottom: var(--spacing-xl);
 }
 
 /* Horizontal orientation */
 .split.orientation-horizontal {
   flex-direction: row;
   align-items: center;
-  gap: var(--md);
+  gap: var(--spacing-md);
 }
 
 .split.orientation-horizontal .figure,
@@ -596,7 +596,7 @@ function createBannersDocumentation() {
 }
 
 .split.orientation-horizontal .content {
-  padding: var(--xl);
+  padding: var(--spacing-xl);
 }
 
 /* Reverse direction */
@@ -622,8 +622,8 @@ function createBannersDocumentation() {
 
       <h3>Design tokens reference</h3>
       <pre><code>/* Spacing */
---xl                            Mobile: 1rem / 16px    →   Widescreen: 2rem / 32px
---md                            Mobile: 0.5rem / 8px   →   Widescreen: 1rem / 16px
+--spacing-xl                            Mobile: 1rem / 16px    →   Widescreen: 2rem / 32px
+--spacing-md                            Mobile: 0.5rem / 8px   →   Widescreen: 1rem / 16px
 --components-banner-padding-l-r Mobile: 0rem / 0px     →   Widescreen: 2rem / 32px
 
 /* Border-radius */

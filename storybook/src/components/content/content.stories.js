@@ -2,8 +2,8 @@ function createContentDocumentation() {
   return `
     <style>
       .delta-docs .content-specimen-shell {
-        border-radius: var(--components-content-shell-radius);
-        background: var(--components-content-shell-background);
+        border-radius: var(--border-radius-md);
+        background: var(--section-background);
       }
 
       [data-color-mode='dark'] .delta-docs .content-specimen-shell {
@@ -14,7 +14,7 @@ function createContentDocumentation() {
         display: grid;
         gap: 0;
         width: min(100%, var(--components-content-shell-max-width));
-        padding: var(--components-content-shell-padding);
+        padding: var(--spacing-xl);
       }
 
       .delta-docs .content-specimen__eyebrow {
@@ -44,8 +44,8 @@ function createContentDocumentation() {
         padding-top: var(--components-content-body-padding-top);
         color: var(--text-default);
         font-family: var(--font-family-body);
-        font-size: var(--h1-title-plus-p-font-size);
-        line-height: var(--h1-title-plus-p-line-height);
+        font-size: var(--h1-title-font-size);
+        line-height: var(--h1-title-line-height);
       }
 
       .delta-docs .content-specimen__cta {
@@ -340,14 +340,14 @@ function createContentDocumentation() {
       <h3>CSS</h3>
       <pre><code>/* Content container */
 .content {
-  padding: var(--xl);
+  padding: var(--spacing-xl);
 }
 
 /* Typography — title+p variant */
 .content-title-p h1 {
   font-size: var(--h1-title-font-size);
   line-height: var(--h1-title-line-height);
-  margin-bottom: var(--sm);
+  margin-bottom: var(--spacing-sm);
   color: var(--text-default);
 }
 
@@ -355,7 +355,7 @@ function createContentDocumentation() {
   font-size: var(--small-font-size);
   line-height: var(--small-line-height);
   text-transform: uppercase;
-  margin-bottom: var(--xs);
+  margin-bottom: var(--spacing-xs);
   color: var(--text-default);
 }
 
@@ -363,7 +363,7 @@ function createContentDocumentation() {
 .content-h-p h2 {
   font-size: var(--h2-font-size);
   line-height: var(--h2-line-height);
-  margin-bottom: var(--sm);
+  margin-bottom: var(--spacing-sm);
   color: var(--text-default);
 }
 
@@ -371,7 +371,7 @@ function createContentDocumentation() {
   font-size: var(--small-font-size);
   line-height: var(--small-line-height);
   text-transform: uppercase;
-  margin-bottom: var(--xs);
+  margin-bottom: var(--spacing-xs);
   color: var(--text-default);
 }
 
@@ -386,8 +386,8 @@ function createContentDocumentation() {
 .content-cta {
   display: flex;
   align-items: center;
-  gap: var(--md);
-  margin-top: var(--xl);
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
 }
 
 .content-cta a {
@@ -399,7 +399,7 @@ function createContentDocumentation() {
 
 /* Footer */
 .content-footer {
-  margin-top: var(--xl);
+  margin-top: var(--spacing-xl);
   font-size: var(--fine-font-size);
   line-height: var(--fine-line-height);
   color: var(--text-default);
@@ -408,7 +408,7 @@ function createContentDocumentation() {
 /* Widescreen */
 @media (min-width: 80rem) {
   .content {
-    padding: var(--xl);
+    padding: var(--spacing-xl);
   }
 }</code></pre>
 
@@ -422,19 +422,19 @@ function createContentDocumentation() {
 --h1-title+p/line-height   Mobile: 1.75rem / 28px    →   Widescreen: 3.5rem / 56px
 --p/font-size              Mobile: 1rem / 16px       →   Widescreen: 1.5rem / 24px
 --p/line-height            Mobile: 1.5rem / 24px     →   Widescreen: 2.25rem / 36px
---small/font-size          Mobile: 0.75rem / 12px    →   Widescreen: 1.25rem / 20px
---small/line-height        Mobile: 1.25rem / 20px    →   Widescreen: 1.875rem / 30px
---fine/font-size           Mobile: 0.625rem / 10px   →   Widescreen: 1rem / 16px
---fine/line-height         Mobile: 1.125rem / 18px   →   Widescreen: 1.5rem / 24px
+--small-font-size          Mobile: 0.75rem / 12px    →   Widescreen: 1.25rem / 20px
+--small-line-height        Mobile: 1.25rem / 20px    →   Widescreen: 1.875rem / 30px
+--fine-font-size           Mobile: 0.625rem / 10px   →   Widescreen: 1rem / 16px
+--fine-line-height         Mobile: 1.125rem / 18px   →   Widescreen: 1.5rem / 24px
 
 /* Spacing */
---xl                       Mobile: 1rem / 16px       →   Widescreen: 2rem / 32px
---md                       Mobile: 0.5rem / 8px      →   Widescreen: 1rem / 16px
---sm                       Mobile: 0.25rem / 4px     →   Widescreen: 0.5rem / 8px
---xs                       Mobile: 0.125rem / 2px    →   Widescreen: 0.25rem / 4px
+--spacing-xl                       Mobile: 1rem / 16px       →   Widescreen: 2rem / 32px
+--spacing-md                       Mobile: 0.5rem / 8px      →   Widescreen: 1rem / 16px
+--spacing-sm                       Mobile: 0.25rem / 4px     →   Widescreen: 0.5rem / 8px
+--spacing-xs                       Mobile: 0.125rem / 2px    →   Widescreen: 0.25rem / 4px
 
 /* Colors */
---text/default             Light: #000000   Dark: #FFFFFF
+--text-default             Light: #000000   Dark: #FFFFFF
 --text/link                Light: #FF5247   Dark: #FFFFFF</code></pre>
 
       <hr />

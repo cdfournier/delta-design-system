@@ -24,7 +24,7 @@ function createLinksDocumentation() {
         line-height: var(--components-link-p-line-height);
       }
 
-      .delta-docs .link-specimen--small {
+      .delta-docs .link-specimen--spacing-small {
         font-size: var(--components-link-small-font-size);
         line-height: var(--components-link-small-line-height);
       }
@@ -38,7 +38,7 @@ function createLinksDocumentation() {
         display: inline-flex;
         flex-wrap: wrap;
         align-items: center;
-        gap: var(--components-link-demo-gap);
+        gap: var(--spacing-xl);
       }
 
       .delta-docs .link-specimen__label {
@@ -57,7 +57,7 @@ function createLinksDocumentation() {
         height: var(--components-link-p-icon-size);
       }
 
-      .delta-docs .link-specimen--small .link-specimen__icon {
+      .delta-docs .link-specimen--spacing-small .link-specimen__icon {
         width: var(--components-link-small-icon-size);
         height: var(--components-link-small-icon-size);
       }
@@ -128,7 +128,7 @@ function createLinksDocumentation() {
       <p>Compact link size suitable for navigation menus, lists, or supplementary content.</p>
 
       <div class="delta-docs__demo" aria-label="Small link specimen">
-        <a class="link-specimen link-specimen--small" href="/small-size">
+        <a class="link-specimen link-specimen--spacing-small" href="/small-size">
           <span class="link-specimen__label">Small size</span>
           <span class="link-specimen__icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
@@ -450,12 +450,12 @@ a:hover {
 .link-with-arrow {
   display: inline-flex;
   align-items: center;
-  gap: var(--xs); /* 0.125rem / 2px mobile */
+  gap: var(--spacing-xs); /* 0.125rem / 2px mobile */
   transition: gap 0.2s ease, color 0.2s ease;
 }
 
 .link-with-arrow:hover {
-  gap: var(--sm); /* 0.25rem / 4px mobile */
+  gap: var(--spacing-sm); /* 0.25rem / 4px mobile */
 }
 
 .link-with-arrow svg {
@@ -488,16 +488,16 @@ a:hover {
     --small-line-height: 1.875rem;
     --p-font-size:       1.5rem;
     --p-line-height:     2.25rem;
-    --xs:                0.25rem;
-    --sm:                0.5rem;
+    --spacing-xs:                0.25rem;
+    --spacing-sm:                0.5rem;
   }
 
   .link-with-arrow {
-    gap: var(--xs); /* 0.25rem / 4px widescreen */
+    gap: var(--spacing-xs); /* 0.25rem / 4px widescreen */
   }
 
   .link-with-arrow:hover {
-    gap: var(--sm); /* 0.5rem / 8px widescreen */
+    gap: var(--spacing-sm); /* 0.5rem / 8px widescreen */
   }
 }
 
@@ -509,16 +509,16 @@ a:focus-visible {
 
       <h3>Design tokens reference</h3>
       <pre><code>/* Typography */
---fine/font-size          Mobile: 0.625rem / 10px   →   Widescreen: 1rem / 16px
---fine/line-height        Mobile: 1rem / 16px       →   Widescreen: 1.5rem / 24px
---small/font-size         Mobile: 0.75rem / 12px    →   Widescreen: 1.25rem / 20px
---small/line-height       Mobile: 1.25rem / 20px    →   Widescreen: 1.875rem / 30px
+--fine-font-size          Mobile: 0.625rem / 10px   →   Widescreen: 1rem / 16px
+--fine-line-height        Mobile: 1rem / 16px       →   Widescreen: 1.5rem / 24px
+--small-font-size         Mobile: 0.75rem / 12px    →   Widescreen: 1.25rem / 20px
+--small-line-height       Mobile: 1.25rem / 20px    →   Widescreen: 1.875rem / 30px
 --p/font-size             Mobile: 1rem / 16px       →   Widescreen: 1.5rem / 24px
 --p/line-height           Mobile: 1.5rem / 24px     →   Widescreen: 2.25rem / 36px
 
 /* Spacing */
---xs                      Mobile: 0.125rem / 2px    →   Widescreen: 0.25rem / 4px
---sm                      Mobile: 0.25rem / 4px     →   Widescreen: 0.5rem / 8px
+--spacing-xs                      Mobile: 0.125rem / 2px    →   Widescreen: 0.25rem / 4px
+--spacing-sm                      Mobile: 0.25rem / 4px     →   Widescreen: 0.5rem / 8px
 
 /* Colors */
 --text/link               Light: #FF5247   Dark: #FFFFFF

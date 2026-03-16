@@ -2,8 +2,8 @@ function createFieldsetsDocumentation() {
   return `
     <style>
       .delta-docs .fieldset-specimen-shell {
-        border-radius: var(--components-fieldset-shell-radius);
-        background: var(--components-fieldset-shell-background);
+        border-radius: var(--border-radius-md);
+        background: var(--section-background);
       }
 
       [data-color-mode='dark'] .delta-docs .fieldset-specimen-shell {
@@ -13,7 +13,7 @@ function createFieldsetsDocumentation() {
       .delta-docs .fieldset-specimen-grid {
         display: grid;
         gap: var(--components-fieldset-shell-gap);
-        padding: var(--components-fieldset-shell-padding);
+        padding: var(--spacing-xl);
       }
 
       .delta-docs .fieldset-specimen {
@@ -591,11 +591,11 @@ function createFieldsetsDocumentation() {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--sm);
+  gap: var(--spacing-sm);
 }
 
 .fieldset--choice {
-  gap: var(--md);
+  gap: var(--spacing-md);
 }
 
 /* Label */
@@ -609,14 +609,14 @@ function createFieldsetsDocumentation() {
 
 /* Legend bottom padding */
 .fieldset legend {
-  padding-bottom: var(--xs);
+  padding-bottom: var(--spacing-xs);
 }
 
 /* Legend label (fine print) */
 .legend-label {
   font-size: var(--fine-font-size);
   line-height: var(--fine-line-height);
-  margin-left: var(--md);
+  margin-left: var(--spacing-md);
   color: var(--text-default);
 }
 
@@ -702,13 +702,13 @@ function createFieldsetsDocumentation() {
 /* Widescreen */
 @media (min-width: 80rem) {
   .fieldset {
-    gap: var(--sm);
+    gap: var(--spacing-sm);
   }
   .fieldset--choice {
-    gap: var(--md);
+    gap: var(--spacing-md);
   }
   .fieldset legend {
-    padding-bottom: var(--xs);
+    padding-bottom: var(--spacing-xs);
   }
   .fieldset label,
   .fieldset legend {
@@ -745,9 +745,9 @@ function createFieldsetsDocumentation() {
 --components-input-checkbox-line-height   1.25rem / 20px (fixed)
 
 /* Spacing */
---xs                                      Mobile: 0.125rem / 2px   →   Widescreen: 0.25rem / 4px
---sm                                      Mobile: 0.25rem / 4px    →   Widescreen: 0.5rem / 8px
---md                                      Mobile: 0.5rem / 8px     →   Widescreen: 1rem / 16px
+--spacing-xs                                      Mobile: 0.125rem / 2px   →   Widescreen: 0.25rem / 4px
+--spacing-sm                                      Mobile: 0.25rem / 4px    →   Widescreen: 0.5rem / 8px
+--spacing-md                                      Mobile: 0.5rem / 8px     →   Widescreen: 1rem / 16px
 --components-input-text-padding           Mobile: 0.5rem / 8px     →   Widescreen: 0.75rem / 12px
 --components-input-text-padding-gap       0.25rem / 4px (fixed)
 --components-input-checkbox-padding       0.125rem / 2px (fixed)
