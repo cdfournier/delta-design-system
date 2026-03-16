@@ -471,7 +471,7 @@ function navigateToPage(index) {
 }
 
 const meta = {
-  title: 'Components/Pagination',
+  title: 'Molecules/Pagination',
 };
 
 export default meta;

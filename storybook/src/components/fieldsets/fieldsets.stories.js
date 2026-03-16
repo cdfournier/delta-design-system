@@ -787,7 +787,7 @@ function createFieldsetsDocumentation() {
 }
 
 const meta = {
-  title: 'Components/Fieldsets',
+  title: 'Molecules/Fieldsets',
 };
 
 export default meta;

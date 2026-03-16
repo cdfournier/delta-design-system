@@ -881,7 +881,7 @@ function createButtonsDocumentation() {
 }
 
 const meta = {
-  title: 'Components/Buttons',
+  title: 'Atoms/Buttons',
 };
 
 export default meta;

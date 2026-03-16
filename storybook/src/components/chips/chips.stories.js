@@ -993,7 +993,7 @@ document.querySelectorAll('.chip').forEach(chip => {
 }
 
 const meta = {
-  title: 'Components/Chips',
+  title: 'Atoms/Chips',
 };
 
 export default meta;

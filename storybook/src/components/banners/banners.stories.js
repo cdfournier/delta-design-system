@@ -653,7 +653,7 @@ function createBannersDocumentation() {
 }
 
 const meta = {
-  title: 'Components/Banners',
+  title: 'Organisms/Banners',
 };
 
 export default meta;

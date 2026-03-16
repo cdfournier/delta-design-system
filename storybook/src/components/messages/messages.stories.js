@@ -989,7 +989,7 @@ function showToast(toastEl, duration = 5000) {
 }
 
 const meta = {
-  title: 'Components/Messages',
+  title: 'Molecules/Messages',
 };
 
 export default meta;

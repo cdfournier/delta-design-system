@@ -460,7 +460,7 @@ function createCardsDocumentation() {
 }
 
 const meta = {
-  title: 'Components/Cards',
+  title: 'Molecules/Cards',
 };
 
 export default meta;

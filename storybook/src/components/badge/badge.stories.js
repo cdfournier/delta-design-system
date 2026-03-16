@@ -405,7 +405,7 @@ function createBadgeDocumentation() {
 }
 
 const meta = {
-  title: 'Components/Badge',
+  title: 'Atoms/Badge',
 };
 
 export default meta;

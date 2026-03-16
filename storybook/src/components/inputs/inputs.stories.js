@@ -1214,7 +1214,7 @@ toggleButton.addEventListener('click', () => {
 }
 
 const meta = {
-  title: 'Components/Inputs',
+  title: 'Atoms/Inputs',
 };
 
 export default meta;

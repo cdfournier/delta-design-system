@@ -1130,7 +1130,7 @@ text/link               Light: #FF5247   Dark: #FFFFFF</code></pre>
 }
 
 export default {
-  title: 'Components/Headers',
+  title: 'Organisms/Headers',
   parameters: {
     layout: 'fullscreen',
   },

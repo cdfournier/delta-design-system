@@ -377,7 +377,7 @@ stroke-width:     1 (fixed)</code></pre>
 }
 
 const meta = {
-  title: 'Components/Icons',
+  title: 'Atoms/Icons',
 };
 
 export default meta;

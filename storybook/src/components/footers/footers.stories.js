@@ -877,7 +877,7 @@ toggle.addEventListener('change', () => {
 }
 
 const meta = {
-  title: 'Components/Footers',
+  title: 'Organisms/Footers',
 };
 
 export default meta;

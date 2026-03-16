@@ -452,7 +452,7 @@ function createContentDocumentation() {
 }
 
 const meta = {
-  title: 'Components/Content',
+  title: 'Molecules/Content',
 };
 
 export default meta;

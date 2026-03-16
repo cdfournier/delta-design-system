@@ -817,7 +817,7 @@ meter::-webkit-meter-suboptimum-value {
 }
 
 const meta = {
-  title: 'Components/Feedback',
+  title: 'Molecules/Feedback',
 };
 
 export default meta;

@@ -434,7 +434,7 @@ function createBlockquotesDocumentation() {
 }
 
 const meta = {
-  title: 'Components/Blockquotes',
+  title: 'Atoms/Blockquotes',
 };
 
 export default meta;

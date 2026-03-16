@@ -490,7 +490,7 @@ rowCheckboxes.forEach(cb => {
 }
 
 const meta = {
-  title: 'Components/Tables',
+  title: 'Molecules/Tables',
 };
 
 export default meta;

@@ -913,7 +913,7 @@ function switchTab(newTab) {
 }
 
 export default {
-  title: 'Components/Tabs',
+  title: 'Organisms/Tabs',
   parameters: {
     layout: 'fullscreen',
   },

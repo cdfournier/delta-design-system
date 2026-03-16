@@ -539,7 +539,7 @@ detailsTrigger.addEventListener('click', () => {
 }
 
 const meta = {
-  title: 'Components/Details',
+  title: 'Molecules/Details',
 };
 
 export default meta;

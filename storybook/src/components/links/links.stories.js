@@ -540,7 +540,7 @@ a:focus-visible {
 }
 
 const meta = {
-  title: 'Components/Links',
+  title: 'Atoms/Links',
 };
 
 export default meta;
