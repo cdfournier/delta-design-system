@@ -20,7 +20,7 @@ const viewportOptions = {
   widescreen: {
     name: 'Widescreen',
     styles: {
-      width: '1280px',
+      width: '100%',
       height: '900px',
     },
   },

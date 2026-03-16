@@ -9,12 +9,13 @@ function createTabsDocumentation() {
 
       .delta-docs .tabs-specimen__tablist {
         display: flex;
+        width: fit-content;
         flex-wrap: wrap;
         gap: var(--spacing-md);
         align-items: center;
         padding: var(--spacing-md);
         border-radius: var(--border-radius-xxl);
-        background: var(--page-background);
+        background: var(--section-background);
       }
 
       .delta-docs .tabs-specimen__tab {
@@ -123,7 +124,16 @@ function createTabsDocumentation() {
         color: var(--text-hover);
       }
 
-      @media (min-width: 80rem) {
+      [data-color-mode="dark"] .delta-docs .tabs-specimen__tablist {
+        background: var(--brand-secondary);
+      }
+
+      @media (min-width: 64rem) {
+        .delta-docs .tabs-specimen__tablist {
+          flex-wrap: nowrap;
+          flex-direction: row;
+        }
+
         .delta-docs .tabs-specimen__panel {
           grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
           gap: var(--spacing-md);
