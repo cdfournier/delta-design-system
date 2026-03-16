@@ -9,6 +9,14 @@
   line-height: var(--docs-line-height-body);
 }
 
+.delta-docs a,
+.delta-docs button,
+.delta-docs input,
+.delta-docs select,
+.delta-docs textarea {
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
 .delta-docs :where(h1, h2, h3, h4, p, ul, ol, table, pre, hr, blockquote) {
   margin: 0;
 }
