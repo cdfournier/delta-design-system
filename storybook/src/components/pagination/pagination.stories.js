@@ -18,6 +18,10 @@ function createPaginationDocumentation() {
         list-style: none;
       }
 
+      [data-color-mode='dark'] .delta-docs .pagination-specimen {
+        background: var(--brand-secondary);
+      }
+
       .delta-docs .pagination-specimen__item {
         display: flex;
       }

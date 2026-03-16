@@ -6,6 +6,10 @@ function createFeedbackDocumentation() {
         background: var(--components-feedback-shell-background);
       }
 
+      [data-color-mode='dark'] .delta-docs .feedback-specimen-shell {
+        background: var(--brand-secondary);
+      }
+
       .delta-docs .feedback-specimen {
         width: min(100%, var(--components-feedback-max-width));
       }

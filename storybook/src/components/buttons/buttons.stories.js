@@ -9,6 +9,10 @@ function createButtonsDocumentation() {
         padding: var(--components-button-demo-shell-padding);
       }
 
+      [data-color-mode='dark'] .delta-docs .button-specimen-card {
+        background: var(--brand-secondary);
+      }
+
       .delta-docs .button-specimen-row {
         display: inline-flex;
         align-items: center;

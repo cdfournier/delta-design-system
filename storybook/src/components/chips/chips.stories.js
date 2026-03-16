@@ -9,15 +9,19 @@ function createChipsDocumentation() {
         padding: var(--components-chip-specimen-shell-padding);
       }
 
+      [data-color-mode='dark'] .delta-docs .chip-specimen-card {
+        background: var(--brand-secondary);
+      }
+
+      [data-color-mode='dark'] .delta-docs .chip--primary {
+        border-color: transparent;
+      }
+
       .delta-docs .chip-specimen-row {
         display: inline-flex;
         align-items: center;
-        gap: var(--components-chip-specimen-gap);
+        gap: var(--spacing-md);
         flex-wrap: wrap;
-      }
-
-      .delta-docs .chip-specimen-row--tight {
-        gap: var(--components-chip-specimen-tight-gap);
       }
 
       .delta-docs .chip-specimen-group {
@@ -50,7 +54,7 @@ function createChipsDocumentation() {
 
       .delta-docs .chip--primary {
         background: var(--components-chip-primary);
-        border-color: var(--components-chip-primary);
+        border-color: transparent;
       }
 
       .delta-docs .chip--primary-hover {
@@ -65,7 +69,16 @@ function createChipsDocumentation() {
 
       .delta-docs .chip--secondary-hover {
         background: var(--components-chip-secondary-dark);
-        border-color: var(--components-chip-secondary);
+      }
+
+      .delta-docs .chip--primary-hover,
+      .delta-docs .chip--secondary-hover {
+        color: var(--global-white);
+      }
+
+      .delta-docs .chip--primary-hover .chip__label,
+      .delta-docs .chip--secondary-hover .chip__label {
+        color: var(--global-white);
       }
 
       .delta-docs .chip__label {
@@ -182,6 +195,26 @@ function createChipsDocumentation() {
       .delta-docs .chip--secondary .chip__dismiss-icon,
       .delta-docs .chip--secondary-hover .chip__dismiss-icon {
         color: var(--components-chip-dismiss-icon-secondary);
+      }
+
+      [data-color-mode='dark'] .delta-docs .chip__dismiss-inner {
+        border: 0;
+        background: var(--components-chip-button-primary);
+      }
+
+      [data-color-mode='dark'] .delta-docs .chip--secondary .chip__dismiss-inner,
+      [data-color-mode='dark'] .delta-docs .chip--secondary-hover .chip__dismiss-inner {
+        border: 0;
+        background: var(--components-chip-button-secondary);
+      }
+
+      [data-color-mode='dark'] .delta-docs .chip__dismiss-icon {
+        color: var(--global-white);
+      }
+
+      [data-color-mode='dark'] .delta-docs .chip--secondary .chip__dismiss-icon,
+      [data-color-mode='dark'] .delta-docs .chip--secondary-hover .chip__dismiss-icon {
+        color: var(--global-white);
       }
 
       .delta-docs .chip__dismiss-icon svg {
@@ -790,7 +823,6 @@ function createChipsDocumentation() {
 .chip-secondary:hover,
 .chip-secondary:focus {
   background-color: var(--components-chip-secondary-dark);
-  border-color: var(--components-chip-secondary-dark);
 }
 
 /* Checkmark toggle (hidden by default, shown when checked) */

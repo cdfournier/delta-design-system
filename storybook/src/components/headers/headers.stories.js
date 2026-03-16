@@ -5,6 +5,10 @@ function createHeadersDocumentation() {
         background: var(--page-background);
       }
 
+      [data-color-mode='dark'] .delta-docs .header-specimen-shell {
+        background: var(--brand-secondary);
+      }
+
       .delta-docs .header-specimen {
         display: flex;
         flex-direction: column;

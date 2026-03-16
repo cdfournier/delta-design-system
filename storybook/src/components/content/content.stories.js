@@ -7,7 +7,7 @@ function createContentDocumentation() {
       }
 
       [data-color-mode='dark'] .delta-docs .content-specimen-shell {
-        background: var(--section-background);
+        background: var(--brand-secondary);
       }
 
       .delta-docs .content-specimen {

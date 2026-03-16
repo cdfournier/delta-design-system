@@ -96,6 +96,10 @@ function renderIconsSpecimen() {
         background: var(--components-icons-shell-background);
       }
 
+      [data-color-mode='dark'] .delta-docs .icons-specimen-shell {
+        background: var(--brand-secondary);
+      }
+
       .delta-docs .icons-specimen-grid {
         display: flex;
         flex-wrap: wrap;

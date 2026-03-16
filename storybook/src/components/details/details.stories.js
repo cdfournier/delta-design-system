@@ -6,6 +6,10 @@ function createDetailsDocumentation() {
         background: var(--components-details-shell-background);
       }
 
+      [data-color-mode='dark'] .delta-docs .details-specimen-shell {
+        background: var(--brand-secondary);
+      }
+
       .delta-docs .details-specimen-grid {
         display: grid;
         gap: var(--components-details-demo-gap);

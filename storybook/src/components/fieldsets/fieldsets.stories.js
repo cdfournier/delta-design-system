@@ -6,6 +6,10 @@ function createFieldsetsDocumentation() {
         background: var(--components-fieldset-shell-background);
       }
 
+      [data-color-mode='dark'] .delta-docs .fieldset-specimen-shell {
+        background: var(--brand-secondary);
+      }
+
       .delta-docs .fieldset-specimen-grid {
         display: grid;
         gap: var(--components-fieldset-shell-gap);

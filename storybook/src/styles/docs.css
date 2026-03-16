@@ -249,6 +249,13 @@
   background: var(--section-background);
 }
 
+[data-color-mode='dark'] .delta-docs__demo,
+[data-color-mode='dark'] .delta-docs__placeholder,
+[data-color-mode='dark'] .delta-docs .type-specimen,
+[data-color-mode='dark'] .delta-docs .spacing-specimen {
+  background: var(--brand-secondary);
+}
+
 .delta-docs__placeholder {
   display: grid;
   gap: var(--spacing-sm);

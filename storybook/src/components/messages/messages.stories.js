@@ -16,6 +16,10 @@ function createMessagesDocumentation() {
         background: var(--components-messages-shell-background);
       }
 
+      [data-color-mode='dark'] .delta-docs .messages-specimen-shell {
+        background: var(--brand-secondary);
+      }
+
       .delta-docs .messages-specimen {
         display: flex;
         align-items: center;
