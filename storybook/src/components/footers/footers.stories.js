@@ -87,6 +87,26 @@ function createFootersDocumentation() {
         padding-top: var(--components-footer-brand-padding-top);
       }
 
+      .delta-docs .footer-specimen__logo-mark {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .delta-docs .footer-specimen__logo {
+        width: var(--components-footer-logo-width);
+        height: var(--components-footer-logo-height);
+      }
+
+      .delta-docs .footer-specimen__logo-left {
+        fill: var(--components-logo-left);
+      }
+
+      .delta-docs .footer-specimen__logo-right {
+        fill: var(--components-logo-right);
+      }
+
       .delta-docs .footer-specimen__heading {
         margin: 0;
         color: var(--text-default);
@@ -264,6 +284,12 @@ function createFootersDocumentation() {
 
               <div class="footer-specimen__brand">
                 <div class="footer-specimen__wordmark">
+                  <div class="footer-specimen__logo-mark" aria-hidden="true">
+                    <svg class="footer-specimen__logo" viewBox="0 0 216 168" focusable="false" aria-hidden="true">
+                      <polygon class="footer-specimen__logo-left" points="0,168 108,0 108,168" />
+                      <polygon class="footer-specimen__logo-right" points="108,0 216,168 108,168" />
+                    </svg>
+                  </div>
                   <h3 class="footer-specimen__heading footer-specimen__heading--wordmark">The Delta Design System</h3>
                 </div>
 
