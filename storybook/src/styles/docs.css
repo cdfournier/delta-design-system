@@ -322,6 +322,45 @@
 
 
 /* --------------------------------------------------------------------------
+   Badge component
+   -------------------------------------------------------------------------- */
+.delta-docs .badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--components-badge-padding-t-b) var(--components-badge-padding-l-r);
+  border-radius: var(--components-badge-border-radius);
+  font-size: var(--components-badge-font-size);
+  line-height: var(--components-badge-line-height);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.delta-docs .badge-primary {
+  background-color: var(--brand-primary);
+  color: var(--global-white);
+}
+
+.delta-docs .badge-secondary {
+  background-color: var(--brand-secondary);
+  color: var(--global-white);
+}
+
+.delta-docs .badge-transparent {
+  background-color: transparent;
+  color: var(--text-default);
+  border: 1px solid var(--text-default);
+}
+
+.delta-docs .badge-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+
+/* --------------------------------------------------------------------------
    Color swatches
    -------------------------------------------------------------------------- */
 .delta-docs .color-swatch-grid {
