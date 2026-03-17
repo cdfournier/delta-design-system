@@ -168,6 +168,7 @@
   padding: 2rem;
   border-radius: 0.25rem;
   margin: 1.5rem 0;
+  overflow-x: auto;
 }
 
 
@@ -280,6 +281,47 @@
 
 
 /* --------------------------------------------------------------------------
+   Grid specimens
+   -------------------------------------------------------------------------- */
+.delta-docs .grid-demo {
+  display: grid;
+  gap: var(--spacing-xl);
+}
+
+.delta-docs .grid-demo-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.delta-docs .grid-demo-8 {
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.delta-docs .grid-demo-12 {
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.delta-docs .grid-column {
+  background-color: var(--brand-primary);
+  padding: var(--spacing-xl) var(--spacing-md);
+  text-align: center;
+  color: var(--global-white);
+  font-size: var(--fine-font-size);
+  line-height: var(--fine-line-height);
+  border-radius: var(--border-radius-xs);
+  min-height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delta-docs .layout-demo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xl);
+}
+
+
+/* --------------------------------------------------------------------------
    Color swatches
    -------------------------------------------------------------------------- */
 .delta-docs .color-swatch-grid {
@@ -366,6 +408,12 @@
 @media (max-width: 48rem) {
   .delta-docs .do-dont-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 47.999rem) {
+  .delta-docs .layout-demo > .grid-column {
+    flex-basis: 100% !important;
   }
 }
 
