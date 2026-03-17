@@ -209,16 +209,6 @@
             <li><strong>Icon (optional):</strong> Visual reinforcement placed before (left) or after (right) the label</li>
         </ul>
 
-        <div class="component-demo">
-            <div class="button-group">
-                <button class="button button-primary-solid">Primary</button>
-                <button class="button button-secondary-solid">Secondary</button>
-                <button class="button button-white-solid" style="background-color:#003442;">White</button>
-                <button class="button button-primary-outline">Outline</button>
-                <button class="button button-primary-transparent">Transparent</button>
-            </div>
-        </div>
-
         <hr>
 
         <h2>Variants</h2>
@@ -231,6 +221,38 @@
             <li><strong>Secondary:</strong> Uses the brand teal palette. For supporting actions that complement the primary action without competing for attention.</li>
             <li><strong>White:</strong> Uses white as the foreground color. For buttons placed on dark or colored backgrounds where primary and secondary colors would lack contrast.</li>
         </ul>
+
+        <div class="component-demo">
+            <div class="button-group">
+                <button class="button button-primary-solid">Primary</button>
+                <button class="button button-secondary-solid">Secondary</button>
+                <button class="button button-white-solid" style="background-color: transparent;">White</button>
+                <button class="button button-primary-solid">
+                    <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 12H5M5 12L12 5M5 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Primary
+                </button>
+                <button class="button button-secondary-solid">
+                    Secondary
+                    <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="button button-white-solid" style="background-color: transparent;">
+                    <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <polyline points="20 6 9 17 4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    White
+                    <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
 
         <h3>Style</h3>
         <p>Style controls the visual weight and fill treatment of buttons. Regular buttons support two styles: solid and transparent.</p>

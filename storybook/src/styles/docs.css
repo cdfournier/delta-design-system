@@ -417,6 +417,183 @@
 
 
 /* --------------------------------------------------------------------------
+   Button component
+   -------------------------------------------------------------------------- */
+.delta-docs .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--components-button-padding-gap);
+  padding: var(--components-button-padding-t-b) var(--components-button-padding-l-r);
+  border-radius: var(--components-button-border-radius);
+  font-size: var(--components-button-font-size);
+  line-height: var(--components-button-line-height);
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.delta-docs .button-icon {
+  padding: var(--spacing-sm);
+  width: var(--components-button-icon-size, 1.5rem);
+  aspect-ratio: 1;
+  border-radius: var(--border-radius-round);
+}
+
+.delta-docs .button svg {
+  width: var(--components-button-font-size);
+  height: var(--components-button-font-size);
+  flex-shrink: 0;
+}
+
+.delta-docs .button-primary-solid {
+  background-color: var(--brand-primary);
+  color: var(--global-white);
+  border-color: var(--brand-primary);
+}
+
+.delta-docs .button-primary-solid:hover {
+  background-color: var(--global-white);
+  color: var(--brand-primary);
+  border-color: var(--brand-primary);
+}
+
+.delta-docs .button-primary-outline {
+  background-color: transparent;
+  color: var(--brand-primary);
+  border-color: var(--brand-primary);
+}
+
+.delta-docs .button-primary-outline:hover {
+  background-color: var(--brand-primary);
+  color: var(--global-white);
+  border-color: var(--brand-primary);
+}
+
+.delta-docs .button-primary-transparent {
+  background-color: transparent;
+  color: var(--brand-primary);
+  border-color: transparent;
+}
+
+.delta-docs .button-primary-transparent:hover {
+  background-color: var(--brand-primary);
+  color: var(--global-white);
+  border-color: var(--brand-primary);
+}
+
+.delta-docs .button-secondary-solid {
+  background-color: var(--brand-secondary);
+  color: var(--global-white);
+  border-color: var(--brand-secondary);
+}
+
+.delta-docs .button-secondary-solid:hover {
+  background-color: var(--global-white);
+  color: var(--brand-secondary);
+  border-color: var(--brand-secondary);
+}
+
+.delta-docs .button-secondary-outline {
+  background-color: transparent;
+  color: var(--brand-secondary);
+  border-color: var(--brand-secondary);
+}
+
+.delta-docs .button-secondary-outline:hover {
+  background-color: var(--brand-secondary);
+  color: var(--global-white);
+  border-color: var(--brand-secondary);
+}
+
+.delta-docs .button-secondary-transparent {
+  background-color: transparent;
+  color: var(--brand-secondary);
+  border-color: transparent;
+}
+
+.delta-docs .button-secondary-transparent:hover {
+  background-color: var(--brand-secondary);
+  color: var(--global-white);
+  border-color: var(--brand-secondary);
+}
+
+.delta-docs .button-white-solid {
+  background-color: var(--global-white);
+  color: var(--brand-primary);
+  border-color: var(--global-white);
+}
+
+.delta-docs .button-white-solid:hover {
+  background-color: var(--brand-primary);
+  color: var(--global-white);
+  border-color: var(--global-white);
+}
+
+.delta-docs .button-white-outline {
+  background-color: transparent;
+  color: var(--global-white);
+  border-color: var(--global-white);
+}
+
+.delta-docs .button-white-outline:hover {
+  background-color: var(--global-white);
+  color: var(--brand-primary);
+  border-color: var(--global-white);
+}
+
+.delta-docs .button-white-transparent {
+  background-color: transparent;
+  color: var(--global-white);
+  border-color: transparent;
+}
+
+.delta-docs .button-white-transparent:hover {
+  background-color: var(--global-white);
+  color: var(--brand-primary);
+  border-color: var(--global-white);
+}
+
+.delta-docs .button:disabled,
+.delta-docs .button[aria-disabled="true"] {
+  background-color: var(--status-disabled);
+  color: var(--global-white);
+  border-color: var(--status-disabled);
+  cursor: not-allowed;
+}
+
+.delta-docs .button-primary-transparent:disabled,
+.delta-docs .button-primary-transparent[aria-disabled="true"],
+.delta-docs .button-secondary-transparent:disabled,
+.delta-docs .button-secondary-transparent[aria-disabled="true"],
+.delta-docs .button-white-transparent:disabled,
+.delta-docs .button-white-transparent[aria-disabled="true"] {
+  background-color: transparent;
+  color: var(--status-disabled);
+  border-color: transparent;
+}
+
+.delta-docs .button-icon.button-primary-outline:disabled,
+.delta-docs .button-icon.button-primary-outline[aria-disabled="true"],
+.delta-docs .button-icon.button-secondary-outline:disabled,
+.delta-docs .button-icon.button-secondary-outline[aria-disabled="true"] {
+  background-color: transparent;
+  color: var(--status-disabled);
+  border-color: var(--status-disabled);
+}
+
+.delta-docs .button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+
+/* --------------------------------------------------------------------------
    Color swatches
    -------------------------------------------------------------------------- */
 .delta-docs .color-swatch-grid {
