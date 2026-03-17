@@ -25,7 +25,7 @@ const preview = {
         tablet: { name: 'Tablet', styles: { width: '768px', height: '1024px' } },
         widescreen: { name: 'Widescreen', styles: { width: '100%', height: '100%' } },
       },
-      defaultViewport: 'mobile',
+      defaultViewport: 'widescreen',
     },
     layout: 'fullscreen',
   },
