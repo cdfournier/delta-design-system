@@ -217,34 +217,35 @@
             }
         } */
 
-        /* Demo blockquote styles */
-        .demo-blockquote {
+        /* Blockquote component styles */
+        .blockquote {
             display: flex;
             flex-direction: column;
+            justify-content: center;
             gap: var(--md);
             padding: var(--xl);
-            background-color: var(--global-white);
         }
 
-        .demo-blockquote--left {
+        .blockquote--left {
             border-left: 4px solid var(--brand-primary);
             text-align: left;
+            align-items: flex-start;
         }
 
-        .demo-blockquote--center {
+        .blockquote--center {
             border-top: 4px solid var(--brand-primary);
             border-bottom: 4px solid var(--brand-primary);
             text-align: center;
             align-items: center;
         }
 
-        .demo-blockquote--right {
+        .blockquote--right {
             border-right: 4px solid var(--brand-primary);
             text-align: right;
             align-items: flex-end;
         }
 
-        .demo-blockquote__quote {
+        .blockquote p {
             font-size: var(--components-blockquote-quote-font-size);
             line-height: var(--components-blockquote-quote-line-height);
             font-weight: 700;
@@ -252,20 +253,19 @@
             margin: 0;
         }
 
-        .demo-blockquote__cite {
+        .blockquote cite {
+            font-style: normal;
+        }
+
+        .blockquote cite a {
             font-size: var(--components-blockquote-cite-font-size);
             line-height: var(--components-blockquote-cite-line-height);
             font-weight: 700;
             color: var(--text-link);
             text-decoration: underline;
-            margin: 0;
+            text-decoration-style: solid;
         }
 
-        .demo-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 16px;
-        }
     </style>
 </head>
 <body>
@@ -285,10 +285,18 @@
         </ul>
 
         <div class="component-demo">
-            <div class="demo-blockquote demo-blockquote--left" style="max-width: 320px;">
-                <p class="demo-blockquote__quote">We should embrace the fact that the web doesn't have the same constraints, and design for this flexibility.</p>
-                <a class="demo-blockquote__cite" href="#">John Allsopp, A Dao of Web Design</a>
-            </div>
+            <blockquote class="blockquote blockquote--left" style="max-width: 320px;">
+                <p>We should embrace the fact that the web doesn't have the same constraints, and design for this flexibility.</p>
+                <cite><a href="https://alistapart.com/article/dao/">John Allsopp, A Dao of Web Design</a></cite>
+            </blockquote>
+            <blockquote class="blockquote blockquote--center" style="max-width: 320px;">
+                <p>If you wish to make an apple pie from scratch, you must first invent the universe.</p>
+                <cite><a href="#">Carl Sagan, Cosmos</a></cite>
+            </blockquote>
+            <blockquote class="blockquote blockquote--right" style="max-width: 320px;">
+                <p>Now more than ever, we're designing work meant to be viewed along a gradient of different experiences.</p>
+                <cite><a href="https://alistapart.com/article/responsive-web-design/">Ethan Marcotte, Responsive Web Design</a></cite>
+            </blockquote>
         </div>
 
         <hr>

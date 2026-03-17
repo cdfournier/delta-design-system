@@ -168,6 +168,9 @@
   padding: 2rem;
   border-radius: 0.25rem;
   margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
   overflow-x: auto;
 }
 
@@ -357,6 +360,59 @@
   flex-wrap: wrap;
   gap: var(--spacing-md);
   align-items: center;
+}
+
+
+/* --------------------------------------------------------------------------
+   Blockquote component
+   -------------------------------------------------------------------------- */
+.delta-docs .blockquote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-xl);
+  margin: 0;
+}
+
+.delta-docs .blockquote p {
+  font-size: var(--components-blockquote-quote-font-size);
+  line-height: var(--components-blockquote-quote-line-height);
+  font-weight: 700;
+  color: var(--text-default);
+  margin: 0;
+}
+
+.delta-docs .blockquote cite {
+  font-style: normal;
+}
+
+.delta-docs .blockquote cite a {
+  font-size: var(--components-blockquote-cite-font-size);
+  line-height: var(--components-blockquote-cite-line-height);
+  font-weight: 700;
+  color: var(--text-link);
+  text-decoration: underline;
+  text-decoration-style: solid;
+}
+
+.delta-docs .blockquote--left {
+  border-left: 4px solid var(--brand-primary);
+  text-align: left;
+  align-items: flex-start;
+}
+
+.delta-docs .blockquote--center {
+  border-top: 4px solid var(--brand-primary);
+  border-bottom: 4px solid var(--brand-primary);
+  text-align: center;
+  align-items: center;
+}
+
+.delta-docs .blockquote--right {
+  border-right: 4px solid var(--brand-primary);
+  text-align: right;
+  align-items: flex-end;
 }
 
 
