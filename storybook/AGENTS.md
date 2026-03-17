@@ -72,6 +72,22 @@ When building a story, if a value in the HTML reference file seems inconsistent 
 
 **Figma always wins over the HTML files.**
 
+### Figma documentation pages vs. Figma variables
+
+Figma has two layers of truth that can disagree:
+
+1. **Figma variables** (accessed via dev mode and variable exports) — these are the authoritative token values. Token names, resolved values, and responsive scaling all come from here.
+
+2. **Figma documentation pages** (the handwritten content in the documentation frames) — these are manually authored. They may contain stale values, incorrect token names, or terminology errors.
+
+When the documentation page text disagrees with the Figma variables, the variables win. Common discrepancies found in previous work:
+- Documentation Code reference sections using `--color-` prefixed token names while Figma variables use unprefixed names (`--brand-primary`, `--text-default`)
+- Documentation using `[data-theme="dark"]` while the implementation uses `[data-color-mode="dark"]`
+- Table values not matching the actual variable exports (e.g. wrong line-height values for `p` and `list` tokens)
+- Specimen detail text using "desktop" instead of "widescreen"
+
+**Always cross-reference documentation page content against Figma dev mode output and variable exports before building from it.** Flag discrepancies before proceeding.
+
 ### Step 2 — standard Figma query workflow
 
 Every Step 2 begins with two Figma queries before any code is written:
@@ -92,13 +108,25 @@ When building live rendered samples — color swatches, type specimens, spacing 
 
 A color swatch is what Figma shows it to be. A component sample renders the component as Figma specifies it. Nothing more.
 
+### Token-driven specimens
+All specimens must use CSS custom properties from `tokens.css` — never hardcoded pixel values. This ensures specimens scale automatically at breakpoints and respond to dark mode toggling. Use `var(--text-default)` for text color and `var(--section-background)` for specimen card backgrounds so they react to the color mode toggle.
+
+### Specimen labels must match Figma exactly
+Verify all labels, names, and descriptive text in specimens against the Figma documentation page before building. Common discrepancies found in previous work:
+- "Hex:" vs "Color:" — Figma uses "Color:" for color swatch labels
+- "Dark overlay" vs "Overlay dark" — Figma uses "Overlay dark"
+- "desktop" vs "widescreen" — Figma should use "widescreen" (flag if it says "desktop")
+
+### Inline code text inside specimens
+When `<code>` elements appear inline inside compact card specimens (e.g., hex values inside color swatch cards), use `font-size: inherit` from the parent element rather than the `docs.css` base `code` font-size. The base `code` styling is designed for code blocks in documentation prose, not for inline values in specimen cards.
+
 ---
 
 ## Non-negotiable rules
 
 ### Semantic HTML
 - Never use heading tags (`h1`–`h4`) for non-heading content — labels, token names, card titles, and UI text are not headings
-- Use `p` with bold styling for emphasized labels and names within specimens and samples
+- **Figma component names map directly to HTML elements.** When a Figma text component is named `small`, the HTML element is `<small>`. When it is named `p`, the element is `<p>`. The component name *is* the semantic specification — do not wrap a `small` component's content in a `<p>` tag or vice versa. This applies to all text components in the design system.
 - The heading hierarchy of every page must match the HTML reference file exactly — do not introduce additional headings or change existing ones
 
 ### Specimen HTML structure
@@ -125,6 +153,31 @@ A color swatch is what Figma shows it to be. A component sample renders the comp
 - Dark mode overrides use `[data-color-mode="dark"]` attribute selector — never `@media (prefers-color-scheme: dark)`
 - Layout breakpoints (structural changes) trigger at `48rem`; token scale breakpoints trigger at `80rem` — these are separate concerns
 
+### Layout tokens — percentages, not pixels
+Figma layout tokens (`layout/fifty`, `layout/thirds`, `layout/fourths`, `layout/golden-wide`, `layout/golden-narrow`) use pixel values because Figma cannot express percentages. The implementation intent is fluid:
+
+| Figma token | Implementation intent |
+|-------------|----------------------|
+| `layout/fifty` | 50% of container |
+| `layout/thirds` | 33.33% of container |
+| `layout/fourths` | 25% of container |
+| `layout/golden-wide` | ~61.8% of container |
+| `layout/golden-narrow` | ~38.2% of container |
+
+In CSS, implement these as `flex-basis: calc(percentage - gap)` — not as fixed pixel widths. Use flex-based layouts that wrap naturally. For 2-up swatch or card grids:
+
+```css
+.item {
+  flex: 1 1 100%;                              /* mobile: full width */
+}
+@media (min-width: 48rem) {
+  .item {
+    flex: 1 1 calc(50% - var(--spacing-xl));   /* tablet+: 2-up */
+    max-width: calc(50% - var(--spacing-xl));   /* prevent solo items from stretching */
+  }
+}
+```
+
 ### Square elements
 - For square elements (icons, avatars, checkboxes, dismiss buttons), use `width` and `aspect-ratio: 1` — never set both `width` and `height` to the same value
 
@@ -133,7 +186,7 @@ A color swatch is what Figma shows it to be. A component sample renders the comp
 - `data-color-mode` and `data-breakpoint` attributes must be set on the story wrapper element so CSS custom property overrides cascade correctly
 
 ### Responsive defaults
-- Default viewport is mobile (375px) — widescreen is never the default
+- Default viewport is widescreen (100%) — this is a reviewer experience setting, not a development constraint. The token system is mobile-first.
 - All breakpoint media queries use rem, never px: `@media (min-width: 80rem)`
 - 1440px is a Figma frame size only — it is not a code breakpoint
 
@@ -147,6 +200,8 @@ A color swatch is what Figma shows it to be. A component sample renders the comp
 ## Version control
 
 **Never commit or push on your own.** Commits are a human checkpoint that signals explicit approval of completed work. Codex builds and proposes — the human reviews, approves, and commits.
+
+**Never start Storybook.** The human runs the dev server locally on a known port and verifies in the browser. Codex creates and modifies files only. Do not run `npm run storybook` or any command that starts a dev server.
 
 When a step or phase is complete and ready for review, say so clearly and stop. Do not run `git add`, `git commit`, or `git push` under any circumstances.
 

@@ -172,6 +172,44 @@
 
 
 /* --------------------------------------------------------------------------
+   Type specimens
+   -------------------------------------------------------------------------- */
+.delta-docs .type-specimen {
+  margin: var(--spacing-xxxxxl) 0;
+  padding: var(--spacing-xxxl);
+  background-color: var(--section-background);
+  border-radius: var(--border-radius-md);
+}
+
+.delta-docs .type-specimen-header {
+  font-size: var(--small-font-size);
+  font-weight: 700;
+  color: var(--global-gray-dark);
+  margin-bottom: var(--spacing-xl);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.delta-docs .type-specimen-example {
+  margin-bottom: var(--spacing-xl);
+}
+
+.delta-docs .type-details {
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: var(--fine-font-size);
+  line-height: var(--fine-line-height);
+  color: var(--global-gray-dark);
+  border-top: 1px solid var(--global-gray-medium);
+  padding-top: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+}
+
+.delta-docs .type-details a {
+  color: var(--text-link);
+}
+
+
+/* --------------------------------------------------------------------------
    Color swatches
    -------------------------------------------------------------------------- */
 .delta-docs .color-swatch-grid {
