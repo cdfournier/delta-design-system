@@ -211,11 +211,16 @@
             </div>
             <div class="spacing-visual">
                 <span class="spacing-label">xxl</span>
+                <div class="spacing-bar" style="width: 20px;"></div>
+                <span class="spacing-value">1.25rem / 20px</span>
+            </div>
+            <div class="spacing-visual">
+                <span class="spacing-label">xxxl</span>
                 <div class="spacing-bar" style="width: 24px;"></div>
                 <span class="spacing-value">1.5rem / 24px</span>
             </div>
             <div class="spacing-visual">
-                <span class="spacing-label">xxxl</span>
+                <span class="spacing-label">xxxxl</span>
                 <div class="spacing-bar" style="width: 32px;"></div>
                 <span class="spacing-value">2rem / 32px</span>
             </div>
@@ -251,11 +256,16 @@
             </div>
             <div class="spacing-visual">
                 <span class="spacing-label">xxl</span>
+                <div class="spacing-bar" style="width: 40px;"></div>
+                <span class="spacing-value">2.5rem / 40px</span>
+            </div>
+            <div class="spacing-visual">
+                <span class="spacing-label">xxxl</span>
                 <div class="spacing-bar" style="width: 48px;"></div>
                 <span class="spacing-value">3rem / 48px</span>
             </div>
             <div class="spacing-visual">
-                <span class="spacing-label">xxxl</span>
+                <span class="spacing-label">xxxxl</span>
                 <div class="spacing-bar" style="width: 64px;"></div>
                 <span class="spacing-value">4rem / 64px</span>
             </div>
@@ -299,11 +309,16 @@
                 </tr>
                 <tr>
                     <td><code>xxl</code></td>
+                    <td>1.25rem / 20px</td>
+                    <td>2.5rem / 40px</td>
+                </tr>
+                <tr>
+                    <td><code>xxxl</code></td>
                     <td>1.5rem / 24px</td>
                     <td>3rem / 48px</td>
                 </tr>
                 <tr>
-                    <td><code>xxxl</code></td>
+                    <td><code>xxxxl</code></td>
                     <td>2rem / 32px</td>
                     <td>4rem / 64px</td>
                 </tr>
@@ -325,7 +340,7 @@
 
         <h3>Relative units</h3>
 
-        <p>The spacing system uses rem units, maintaining consistent relationships with typography as content scales. When users adjust their browser's base font size, spacing scales proportionally with text — ensuring layouts maintain their visual rhythm for users who customise their reading experience.</p>
+        <p>The spacing system uses rem units, maintaining consistent relationships with typography as content scales. When users adjust their browser's base font size, spacing scales proportionally with text — ensuring layouts maintain their visual rhythm for users who customize their reading experience.</p>
 
         <hr>
 
@@ -442,13 +457,13 @@
                 </tr>
                 <tr>
                     <td><code>border-radius/round</code></td>
-                    <td>6.25rem / 100px (fixed)</td>
-                    <td>6.25rem / 100px (fixed)</td>
+                    <td>6.25rem / 100px</td>
+                    <td>6.25rem / 100px</td>
                 </tr>
             </tbody>
         </table>
 
-        <p><code>border-radius/round</code> is a fixed value and does not scale responsively.</p>
+        <p><code>border-radius/round</code> does not scale responsively.</p>
 
         <hr>
 
@@ -484,7 +499,8 @@
         <p><strong>lg:</strong> Moderate spacing between related sections. Use for margins between form fields, spacing in navigation, or gaps in content blocks.</p>
         <p><strong>xl:</strong> Standard spacing between distinct elements. Use for paragraph spacing, margins between components, or padding in containers.</p>
         <p><strong>xxl:</strong> Increased spacing for emphasis. Use for margins around important elements or to create breathing room in dense layouts.</p>
-        <p><strong>xxxl:</strong> Large spacing between major sections. Use for separating distinct content areas or creating strong visual breaks.</p>
+        <p><strong>xxxl:</strong> Large spacing between related sections. Use for separating content areas or creating visual breaks.</p>
+        <p><strong>xxxxl:</strong> Maximum spacing between major sections. Use for separating distinct content areas or creating strong visual breaks.</p>
 
         <h3>Vertical rhythm</h3>
 
@@ -492,7 +508,7 @@
 
         <ul>
             <li><strong>Paragraph spacing:</strong> <code>xl</code> (1rem / 16px mobile, 2rem / 32px widescreen)</li>
-            <li><strong>Section breaks:</strong> <code>xxxl</code> (2rem / 32px mobile, 4rem / 64px widescreen) between major content areas</li>
+            <li><strong>Section breaks:</strong> <code>xxxxl</code> (2rem / 32px mobile, 4rem / 64px widescreen) between major content areas</li>
             <li><strong>List item spacing:</strong> <code>xl</code> (1rem / 16px mobile, 2rem / 32px widescreen)</li>
         </ul>
 
@@ -550,7 +566,7 @@
         <pre><code>/* Usage examples */
 .card {
   padding: var(--spacing-xl);         /* 1rem / 16px mobile, 2rem / 32px widescreen */
-  margin-bottom: var(--spacing-xxxl); /* 2rem / 32px mobile, 4rem / 64px widescreen */
+  margin-bottom: var(--spacing-xxxxl); /* 2rem / 32px mobile, 4rem / 64px widescreen */
   border-radius: var(--border-radius-md);
 }
 
@@ -565,13 +581,14 @@
 
         <h3>Design tokens reference</h3>
         <pre><code>/* Spacing tokens */
---spacing-xs     Mobile: 0.125rem / 2px   →   Widescreen: 0.25rem / 4px
---spacing-sm     Mobile: 0.25rem / 4px    →   Widescreen: 0.5rem / 8px
---spacing-md     Mobile: 0.5rem / 8px     →   Widescreen: 1rem / 16px
---spacing-lg     Mobile: 0.75rem / 12px   →   Widescreen: 1.5rem / 24px
---spacing-xl     Mobile: 1rem / 16px      →   Widescreen: 2rem / 32px
---spacing-xxl    Mobile: 1.5rem / 24px    →   Widescreen: 3rem / 48px
---spacing-xxxl   Mobile: 2rem / 32px      →   Widescreen: 4rem / 64px
+--spacing-xs       Mobile: 0.125rem / 2px   →   Widescreen: 0.25rem / 4px
+--spacing-sm       Mobile: 0.25rem / 4px    →   Widescreen: 0.5rem / 8px
+--spacing-md       Mobile: 0.5rem / 8px     →   Widescreen: 1rem / 16px
+--spacing-lg       Mobile: 0.75rem / 12px   →   Widescreen: 1.5rem / 24px
+--spacing-xl       Mobile: 1rem / 16px      →   Widescreen: 2rem / 32px
+--spacing-xxl      Mobile: 1.25rem / 20px   →   Widescreen: 2.5rem / 40px
+--spacing-xxxl     Mobile: 1.5rem / 24px    →   Widescreen: 3rem / 48px
+--spacing-xxxxl    Mobile: 2rem / 32px      →   Widescreen: 4rem / 64px
 
 /* Border-radius tokens */
 --border-radius-xs     Mobile: 0.125rem / 2px    →   Widescreen: 0.25rem / 4px
@@ -580,7 +597,7 @@
 --border-radius-lg     Mobile: 1rem / 16px       →   Widescreen: 2rem / 32px
 --border-radius-xl     Mobile: 1.5rem / 24px     →   Widescreen: 3rem / 48px
 --border-radius-xxl    Mobile: 2rem / 32px       →   Widescreen: 4rem / 64px
---border-radius-round  Fixed:  6.25rem / 100px   →   Fixed: 6.25rem / 100px</code></pre>
+--border-radius-round  6.25rem / 100px           →   6.25rem / 100px</code></pre>
 
         <hr>
 

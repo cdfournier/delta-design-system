@@ -29,7 +29,7 @@ export const Infrastructure = () => {
         <div style="width: var(--spacing-xl); height: var(--spacing-xl); background: var(--brand-primary);" title="xl"></div>
         <div style="width: var(--spacing-xxl); height: var(--spacing-xxl); background: var(--brand-primary);" title="xxl"></div>
         <div style="width: var(--spacing-xxxl); height: var(--spacing-xxxl); background: var(--brand-primary);" title="xxxl"></div>
-        <div style="width: var(--spacing-xxxxxl); height: var(--spacing-xxxxxl); background: var(--brand-primary);" title="xxxxxl"></div>
+        <div style="width: var(--spacing-xxxxl); height: var(--spacing-xxxxl); background: var(--brand-primary);" title="xxxxl"></div>
       </div>
 
       <hr>

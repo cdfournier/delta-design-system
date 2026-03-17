@@ -18,7 +18,7 @@
   line-height: 1.6;
   color: var(--text-default);
   background-color: transparent;
-  padding: var(--spacing-xxxxxl) var(--spacing-xxxl);
+  padding: var(--spacing-xxxxl) var(--spacing-xxxl);
 }
 
 
@@ -175,7 +175,7 @@
    Type specimens
    -------------------------------------------------------------------------- */
 .delta-docs .type-specimen {
-  margin: var(--spacing-xxxxxl) 0;
+  margin: var(--spacing-xxxxl) 0;
   padding: var(--spacing-xxxl);
   background-color: var(--section-background);
   border-radius: var(--border-radius-md);
@@ -206,6 +206,76 @@
 
 .delta-docs .type-details a {
   color: var(--text-link);
+}
+
+
+/* --------------------------------------------------------------------------
+   Spacing specimens
+   -------------------------------------------------------------------------- */
+.delta-docs .spacing-specimen {
+  margin: var(--spacing-xxxl) 0;
+  padding: var(--spacing-xxxl);
+  background-color: var(--section-background);
+  border-radius: var(--border-radius-md);
+}
+
+.delta-docs .spacing-visual {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+  margin: var(--spacing-md) 0;
+}
+
+.delta-docs .spacing-bar {
+  height: var(--spacing-xxxl);
+  background-color: var(--brand-primary);
+  border-radius: var(--border-radius-xs);
+  flex-shrink: 0;
+}
+
+.delta-docs .spacing-label {
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: var(--fine-font-size);
+  line-height: var(--fine-line-height);
+  color: var(--global-gray-dark);
+  min-width: 3.25rem;
+}
+
+.delta-docs .spacing-value {
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: var(--fine-font-size);
+  line-height: var(--fine-line-height);
+  color: var(--global-gray-dark);
+}
+
+
+/* --------------------------------------------------------------------------
+   Border-radius specimens
+   -------------------------------------------------------------------------- */
+.delta-docs .radius-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xl);
+  margin: var(--spacing-xxxl) 0;
+}
+
+.delta-docs .radius-item {
+  text-align: center;
+}
+
+.delta-docs .radius-specimen {
+  display: block;
+  width: 4rem;
+  aspect-ratio: 1;
+  background-color: var(--brand-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.delta-docs .radius-label {
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: var(--fine-font-size);
+  line-height: var(--fine-line-height);
+  color: var(--global-gray-dark);
 }
 
 
