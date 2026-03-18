@@ -889,3 +889,41 @@
 .delta-docs .chip-secondary .button-chip:hover {
   color: var(--text-inverse);
 }
+
+/* --------------------------------------------------------------------------
+   Icon component
+   -------------------------------------------------------------------------- */
+.delta-docs .icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.delta-docs .icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-md) var(--spacing-sm);
+  background: var(--page-background);
+  border-radius: var(--border-radius-sm);
+  gap: var(--spacing-sm);
+}
+
+.delta-docs .icon-item svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  flex-shrink: 0;
+}
+
+.delta-docs .icon-item span {
+  font-size: var(--small-font-size);
+  line-height: var(--small-line-height);
+  color: var(--global-gray-dark);
+  word-break: break-word;
+}
