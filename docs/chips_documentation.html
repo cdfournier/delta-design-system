@@ -118,6 +118,7 @@
             --components-chip-button-secondary: #FFFFFF;
             --text-inverse: #FFFFFF;
             --border-radius-round: 6.25rem;
+            --components-width-by-font-size-h3: 1.75rem;
             --xs: 0.125rem;
         }
 
@@ -165,24 +166,24 @@
         }
 
         .chip-avatar {
-            width: 16px;
-            height: 16px;
+            width: var(--components-width-by-font-size-h3);
+            aspect-ratio: 1;
             border-radius: var(--border-radius-round);
             background-color: rgba(255,255,255,0.3);
             overflow: hidden;
         }
 
         .chip-icon {
-            width: 12px;
-            height: 12px;
+            width: var(--components-width-by-font-size-h3);
+            aspect-ratio: 1;
         }
 
         .button-chip {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 32px;
-            height: 32px;
+            width: var(--components-width-by-font-size-h3);
+            aspect-ratio: 1;
             padding: var(--components-chip-button-padding-outer);
             background: none;
             border: none;
@@ -212,8 +213,8 @@
 
         .chip .check-icon {
             display: none;
-            width: 12px;
-            height: 12px;
+            width: var(--components-chip-font-size);
+            height: var(--components-chip-font-size);
         }
         .chip.checked .check-icon {
             display: block;
@@ -772,8 +773,8 @@
 /* Checkmark toggle (hidden by default, shown when checked) */
 .chip .check-icon {
   display: none;
-  width: 0.75rem;
-  height: 0.75rem;
+  width: var(--components-chip-font-size);
+  height: var(--components-chip-font-size);
 }
 .chip.checked .check-icon {
   display: block;
@@ -781,6 +782,8 @@
 
 /* Avatar */
 .chip-avatar {
+  width: var(--components-width-by-font-size-h3);
+  aspect-ratio: 1;
   border-radius: var(--border-radius-round);
   overflow: hidden;
 }
@@ -790,8 +793,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
+  width: var(--components-width-by-font-size-h3);
+  aspect-ratio: 1;
   padding: var(--components-chip-button-padding-outer);
   background: none;
   border: none;
@@ -907,6 +910,9 @@ document.querySelectorAll('.chip').forEach(chip => {
 --components/chip/button/padding-outer  Mobile: 0.25rem / 4px   →   Widescreen: 0.625rem / 10px
 --components/chip/button/padding-inner  Mobile: 0.125rem / 2px  →   Widescreen: 0.25rem / 4px
 --xs (chip group gap)                   Mobile: 0.125rem / 2px  →   Widescreen: 0.25rem / 4px
+
+/* Sizing (inline elements: icons, avatar, dismiss button) */
+--components/width/by-font-size/h3     Mobile: 1.75rem / 28px  →   Widescreen: 3.125rem / 50px
 
 /* Border-radius */
 --components/chip/border-radius  2rem / 32px (fixed)
