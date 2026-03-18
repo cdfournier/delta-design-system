@@ -723,3 +723,169 @@
   display: block;
   margin-bottom: 0.25rem;
 }
+
+/* --------------------------------------------------------------------------
+   Chip component
+   -------------------------------------------------------------------------- */
+
+.delta-docs .chip-group {
+  display: flex;
+  gap: var(--spacing-xs);
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.delta-docs .chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--components-chip-padding-gap);
+  padding: 0 var(--components-chip-padding-l-r);
+  border-radius: var(--components-chip-border-radius);
+  font-size: var(--components-chip-font-size);
+  line-height: var(--components-chip-line-height);
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.delta-docs span.chip {
+  cursor: default;
+}
+
+.delta-docs .chip-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--components-chip-padding-t-b) 0;
+  flex-shrink: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.delta-docs .chip-primary {
+  background-color: var(--components-chip-primary);
+  color: var(--text-inverse);
+  border-color: var(--components-chip-primary);
+}
+
+.delta-docs .chip-secondary {
+  background-color: var(--components-chip-secondary);
+  color: var(--text-inverse);
+  border-color: var(--components-chip-secondary);
+}
+
+.delta-docs .chip .check-icon {
+  display: none;
+  width: var(--components-chip-font-size);
+  height: var(--components-chip-font-size);
+  flex-shrink: 0;
+}
+
+.delta-docs .chip.checked .check-icon {
+  display: block;
+}
+
+.delta-docs .chip-icon-left,
+.delta-docs .chip-icon-right {
+  display: flex;
+  align-items: center;
+  width: var(--components-width-by-font-size-h3);
+  aspect-ratio: 1;
+  padding: var(--spacing-xs);
+  flex-shrink: 0;
+}
+
+.delta-docs .chip-icon-left svg,
+.delta-docs .chip-icon-right svg {
+  width: var(--components-chip-font-size);
+  height: var(--components-chip-font-size);
+}
+
+.delta-docs .chip-avatar {
+  width: var(--components-width-by-font-size-h3);
+  aspect-ratio: 1;
+  border-radius: var(--border-radius-round);
+  overflow: hidden;
+  flex-shrink: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.delta-docs .chip-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.delta-docs .chip-avatar-left {
+  padding-left: 0;
+}
+
+.delta-docs .chip-avatar-right {
+  padding-right: 0;
+}
+
+.delta-docs .button-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--components-width-by-font-size-h3);
+  aspect-ratio: 1;
+  align-self: auto;
+  padding: var(--components-chip-button-padding-outer);
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.delta-docs .button-chip-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: var(--components-chip-button-padding-inner);
+  border-radius: var(--border-radius-round);
+  background-color: var(--components-chip-button-primary);
+  transition: background-color 0.15s ease;
+}
+
+.delta-docs .chip-secondary .button-chip-inner {
+  background-color: var(--components-chip-button-secondary);
+}
+
+.delta-docs .button-chip svg {
+  width: var(--components-chip-font-size);
+  height: var(--components-chip-font-size);
+  flex-shrink: 0;
+}
+
+.delta-docs .chip-primary .button-chip {
+  color: var(--components-chip-primary);
+}
+
+.delta-docs .chip-secondary .button-chip {
+  color: var(--components-chip-secondary);
+}
+
+.delta-docs .chip-primary .button-chip:hover .button-chip-inner {
+  background-color: var(--components-chip-primary);
+}
+
+.delta-docs .chip-primary .button-chip:hover {
+  color: var(--text-inverse);
+}
+
+.delta-docs .chip-secondary .button-chip:hover .button-chip-inner {
+  background-color: var(--components-chip-secondary);
+}
+
+.delta-docs .chip-secondary .button-chip:hover {
+  color: var(--text-inverse);
+}

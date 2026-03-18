@@ -548,8 +548,8 @@
   --components-chip-secondary: #FFFFFF;       /* alias: global/white */
   --components-chip-primary-dark: #FFFFFF;    /* alias: global/white */
   --components-chip-secondary-dark: #FFFFFF;  /* alias: global/white */
-  --components-chip-button-primary: #FF5247;  /* alias: brand/primary */
-  --components-chip-button-secondary: #003442; /* alias: brand/secondary */
+  --components-chip-button-primary: #FFFFFF;  /* alias: global/white */
+  --components-chip-button-secondary: #FFFFFF; /* alias: global/white */
 
   /* Components — Logo */
   --components-logo-left: #FF5247;            /* alias: brand/primary */
