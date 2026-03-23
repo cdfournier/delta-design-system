@@ -1094,6 +1094,46 @@
   margin-bottom: var(--spacing-xs);
 }
 
+/* --------------------------------------------------------------------------
+   Link component
+   -------------------------------------------------------------------------- */
+
+.delta-docs .demo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  color: var(--text-link);
+  text-decoration: underline;
+  font-weight: 700;
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.delta-docs .demo-link:hover {
+  gap: var(--spacing-sm);
+  color: var(--text-link-hover);
+}
+
+.delta-docs .demo-link svg {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+
+.delta-docs .link-fine {
+  font-size: var(--fine-font-size);
+  line-height: var(--fine-line-height);
+}
+
+.delta-docs .link-small {
+  font-size: var(--small-font-size);
+  line-height: var(--small-line-height);
+}
+
+.delta-docs .link-p {
+  font-size: var(--p-font-size);
+  line-height: var(--p-line-height);
+}
+
 .delta-docs .input-select {
   appearance: none;
   -webkit-appearance: none;
