@@ -927,3 +927,179 @@
   color: var(--global-gray-dark);
   word-break: break-word;
 }
+
+/* --------------------------------------------------------------------------
+   Input component
+   -------------------------------------------------------------------------- */
+
+.delta-docs .input-text,
+.delta-docs .input-select {
+  display: block;
+  width: 100%;
+  padding: var(--components-input-text-padding);
+  border: 1px solid var(--global-gray-medium);
+  border-radius: var(--components-input-text-border-radius);
+  font-size: var(--components-input-text-font-size);
+  line-height: var(--components-input-text-line-height);
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--page-background);
+  color: var(--text-default);
+  margin-bottom: var(--components-input-text-padding-gap);
+}
+
+.delta-docs .input-text::placeholder {
+  color: var(--global-gray-dark);
+}
+
+.delta-docs .input-text:disabled,
+.delta-docs .input-select:disabled {
+  border-color: var(--status-disabled);
+  color: var(--status-disabled);
+  cursor: not-allowed;
+}
+
+.delta-docs .input-text[readonly] {
+  border-color: var(--status-read-only);
+}
+
+.delta-docs .input-text.valid {
+  border-color: var(--status-valid);
+  color: var(--status-valid);
+}
+
+.delta-docs .input-text.invalid {
+  border-color: var(--status-invalid);
+  color: var(--status-invalid);
+}
+
+/* Custom checkbox */
+.delta-docs input[type="checkbox"]:not([role="switch"]) {
+  appearance: none;
+  -webkit-appearance: none;
+  width: var(--components-input-checkbox-line-height);
+  height: var(--components-input-checkbox-line-height);
+  border: 1px solid var(--brand-primary);
+  border-radius: var(--components-input-text-border-radius);
+  background-color: var(--page-background);
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--components-input-checkbox-padding);
+}
+
+.delta-docs input[type="checkbox"]:not([role="switch"]):checked {
+  border-color: var(--brand-primary);
+  background-color: var(--brand-primary);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E");
+  background-size: calc(100% - var(--components-input-checkbox-padding) * 2);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Custom radio */
+.delta-docs input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: var(--components-input-checkbox-line-height);
+  height: var(--components-input-checkbox-line-height);
+  border: 1px solid var(--brand-primary);
+  border-radius: var(--border-radius-round);
+  background-color: var(--page-background);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.delta-docs input[type="radio"]:checked {
+  border-color: var(--brand-primary);
+  background: radial-gradient(
+    circle,
+    var(--brand-primary) 35%,
+    var(--page-background) 36%
+  );
+}
+
+/* Custom switch */
+.delta-docs input[role="switch"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: var(--components-input-switch-max-width);
+  height: var(--components-input-checkbox-line-height);
+  border: 1px solid var(--brand-primary);
+  border-radius: var(--components-input-switch-border-radius);
+  background-color: var(--page-background);
+  cursor: pointer;
+  flex-shrink: 0;
+  position: relative;
+  padding: var(--components-input-switch-padding);
+}
+
+.delta-docs input[role="switch"]::before {
+  content: '';
+  display: block;
+  height: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--border-radius-round);
+  background-color: var(--brand-primary);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.delta-docs input[role="switch"]:checked {
+  border-color: var(--brand-primary);
+  background-color: var(--brand-primary);
+}
+
+.delta-docs input[role="switch"]:checked::before {
+  background-color: var(--global-white);
+  transform: translateX(calc(var(--components-input-switch-max-width) - var(--components-input-checkbox-line-height)));
+}
+
+.delta-docs .checkbox-group,
+.delta-docs .radio-group,
+.delta-docs .switch-group {
+  display: flex;
+  align-items: center;
+  gap: var(--components-input-checkbox-padding-gap);
+  margin-bottom: var(--components-input-text-padding-gap);
+}
+
+.delta-docs .message {
+  font-size: var(--fine-font-size);
+  line-height: var(--fine-line-height);
+  margin-top: var(--components-input-text-padding-gap);
+  color: var(--text-default);
+}
+
+.delta-docs .message.valid {
+  color: var(--status-valid);
+}
+
+.delta-docs .message.invalid {
+  color: var(--status-invalid);
+}
+
+.delta-docs .message.disabled {
+  color: var(--status-disabled);
+}
+
+.delta-docs .message.read-only {
+  color: var(--status-read-only);
+}
+
+.delta-docs label {
+  display: block;
+  font-size: var(--small-font-size);
+  line-height: var(--small-line-height);
+  margin-bottom: var(--spacing-xs);
+}
+
+.delta-docs .input-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='%23919191' stroke-width='1' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--components-input-text-padding) center;
+  background-size: var(--components-input-text-line-height);
+  padding-right: calc(var(--components-input-text-padding) + var(--components-input-text-line-height) + var(--components-input-text-padding-gap));
+}
