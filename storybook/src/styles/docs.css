@@ -1134,6 +1134,85 @@
   line-height: var(--p-line-height);
 }
 
+/* --------------------------------------------------------------------------
+   Card component
+   -------------------------------------------------------------------------- */
+
+.delta-docs .card {
+  background-color: var(--page-background);
+  border: 1px solid var(--global-gray-medium);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+}
+
+.delta-docs .card-vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.delta-docs .card-horizontal {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 48rem) {
+  .delta-docs .card-horizontal {
+    flex-direction: row;
+  }
+
+  .delta-docs .card-horizontal-reverse {
+    flex-direction: row-reverse;
+  }
+
+  .delta-docs .card-horizontal .figure {
+    max-width: var(--components-card-horizontal-figure-max-width);
+    flex: 1 0 0;
+  }
+}
+
+.delta-docs .card .figure {
+  overflow: hidden;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.delta-docs .card-vertical .figure {
+  aspect-ratio: 16 / 10;
+}
+
+.delta-docs .card .figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.delta-docs .card .content {
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  flex: 1;
+  justify-content: center;
+}
+
+.delta-docs .card .content h3 {
+  font-family: 'Ovo', Georgia, serif;
+  font-size: var(--h3-font-size);
+  line-height: var(--h3-line-height);
+  font-weight: 400;
+  color: var(--text-default);
+  margin: 0;
+}
+
+.delta-docs .card .content p {
+  font-size: var(--p-font-size);
+  line-height: var(--p-line-height);
+  color: var(--text-default);
+  margin: 0;
+}
+
 .delta-docs .input-select {
   appearance: none;
   -webkit-appearance: none;
