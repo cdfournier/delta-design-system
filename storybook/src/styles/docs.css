@@ -1279,6 +1279,79 @@
   color: var(--text-default);
 }
 
+/* --------------------------------------------------------------------------
+   Details component
+   -------------------------------------------------------------------------- */
+
+.delta-docs .details {
+  width: 100%;
+  padding: var(--spacing-md);
+  border: 1px solid var(--global-gray-medium);
+  border-radius: var(--border-radius-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.delta-docs .details-summary {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  cursor: pointer;
+  font-size: var(--p-font-size);
+  line-height: var(--p-line-height);
+  font-weight: 700;
+  color: var(--text-default);
+  list-style: none;
+  user-select: none;
+  margin: 0;
+  width: 100%;
+}
+
+.delta-docs .details-summary > span:first-child {
+  flex: 1;
+}
+
+.delta-docs .details-summary span {
+  margin: 0;
+}
+
+.delta-docs .details-summary::-webkit-details-marker {
+  display: none;
+}
+
+.delta-docs .details-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: var(--spacing-sm);
+  margin-left: auto;
+}
+
+.delta-docs .details-icon svg {
+  display: block;
+  stroke: currentColor;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.delta-docs .details-body {
+  padding-top: var(--spacing-sm);
+  font-size: var(--p-font-size);
+  line-height: var(--p-line-height);
+  color: var(--text-default);
+  margin: 0;
+}
+
+.delta-docs .details-body p {
+  margin: 0;
+}
+
+.delta-docs details[open] .details-icon svg path:last-child {
+  display: none;
+}
+
+
 .delta-docs .input-select {
   appearance: none;
   -webkit-appearance: none;
