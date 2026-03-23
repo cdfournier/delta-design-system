@@ -1213,6 +1213,72 @@
   margin: 0;
 }
 
+/* --------------------------------------------------------------------------
+   Content component
+   -------------------------------------------------------------------------- */
+
+.delta-docs .content-specimen {
+  padding: var(--spacing-xl);
+  max-width: 46.25rem;
+}
+
+.delta-docs .content-title-p h1 {
+  font-family: 'Ovo', Georgia, serif;
+  font-size: var(--h1-title-font-size);
+  line-height: var(--h1-title-line-height);
+  font-weight: 400;
+  margin: 0 0 var(--spacing-sm) 0;
+  color: var(--text-default);
+}
+
+.delta-docs .content-h-p h2 {
+  font-family: 'Ovo', Georgia, serif;
+  font-size: var(--h2-font-size);
+  line-height: var(--h2-line-height);
+  font-weight: 400;
+  margin: 0 0 var(--spacing-sm) 0;
+  color: var(--text-default);
+}
+
+.delta-docs .content-eyebrow {
+  font-size: var(--small-font-size);
+  line-height: var(--small-line-height);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 var(--spacing-xs) 0;
+  color: var(--text-default);
+}
+
+.delta-docs .content-specimen p:not(.content-eyebrow):not(.content-footer) {
+  font-size: var(--p-font-size);
+  line-height: var(--p-line-height);
+  color: var(--text-default);
+  margin: 0;
+}
+
+.delta-docs .content-cta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+}
+
+.delta-docs .content-cta a {
+  font-size: var(--small-font-size);
+  line-height: var(--small-line-height);
+  color: var(--text-link);
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.delta-docs .content-footer {
+  margin-top: var(--spacing-xl);
+  font-size: var(--fine-font-size);
+  line-height: var(--fine-line-height);
+  color: var(--text-default);
+}
+
 .delta-docs .input-select {
   appearance: none;
   -webkit-appearance: none;
