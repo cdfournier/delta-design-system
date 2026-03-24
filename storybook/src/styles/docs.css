@@ -1432,3 +1432,165 @@
     flex: 1;
   }
 }
+
+/* Messages — Modal/Promo */
+.delta-docs .message-modal,
+.delta-docs .message-promo {
+  background-color: var(--page-background);
+  padding: var(--spacing-xl);
+  position: relative;
+}
+
+/* Messages — Close button (Modal/Promo) */
+.delta-docs .message-close {
+  position: absolute;
+  top: var(--spacing-xl);
+  right: var(--spacing-xl);
+  border-radius: var(--border-radius-round);
+  border: none;
+  background: transparent;
+  color: var(--text-link);
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Messages — Inline (Error, Success, Confirmation) */
+.delta-docs .message-error,
+.delta-docs .message-success,
+.delta-docs .message-confirmation {
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.delta-docs .message-error,
+.delta-docs .message-confirmation {
+  background-color: var(--status-invalid);
+}
+
+.delta-docs .message-success {
+  background-color: var(--status-valid);
+}
+
+/* Messages — Inline close button */
+.delta-docs .message-error .message-close,
+.delta-docs .message-success .message-close {
+  position: static;
+  color: var(--global-white);
+  border-radius: var(--border-radius-round);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Messages — Message text */
+.delta-docs .message-text {
+  font-size: var(--components-messages-font-size);
+  line-height: var(--components-messages-line-height);
+  font-weight: 700;
+  color: var(--global-white);
+  flex: 1;
+}
+
+/* Messages — Confirmation buttons */
+.delta-docs .message-actions {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.delta-docs .button-transparent {
+  background: transparent;
+  border: 1px solid var(--global-white);
+  color: var(--global-white);
+  font-weight: 700;
+  padding: var(--components-button-padding-t-b) var(--components-button-padding-l-r);
+  border-radius: var(--components-button-border-radius);
+  font-size: var(--components-button-font-size);
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.delta-docs .button-solid {
+  background: var(--global-white);
+  border: 1px solid var(--global-white);
+  color: var(--status-invalid);
+  font-weight: 700;
+  padding: var(--components-button-padding-t-b) var(--components-button-padding-l-r);
+  border-radius: var(--components-button-border-radius);
+  font-size: var(--components-button-font-size);
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Messages — Toast */
+.delta-docs .toast {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background-color: var(--status-read-only);
+  border-radius: var(--border-radius-sm);
+}
+
+.delta-docs .toast-message {
+  font-size: var(--components-messages-font-size);
+  line-height: var(--components-messages-line-height);
+  font-weight: 700;
+  color: var(--global-white);
+  flex: 1;
+}
+
+.delta-docs .toast-close {
+  border-radius: var(--border-radius-round);
+  border: none;
+  background: transparent;
+  color: var(--global-white);
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Messages — Promo content reset */
+.delta-docs .message-content {
+  padding: var(--spacing-xl);
+}
+
+.delta-docs .message-content h2 {
+  margin: 0;
+}
+
+.delta-docs .message-content p {
+  margin: 0;
+}
+
+/* Messages — Confirmation button hover (color swap) */
+.delta-docs .button-transparent:hover {
+  background: var(--global-white);
+  color: var(--status-invalid);
+}
+
+.delta-docs .button-solid:hover {
+  background: transparent;
+  color: var(--global-white);
+}
+
+/* Messages — Close button hover (Modal/Promo) */
+.delta-docs .message-modal .message-close:hover,
+.delta-docs .message-promo .message-close:hover {
+  color: var(--brand-primary-dark);
+}
+
+/* Messages — Close button hover (Inline messages) */
+.delta-docs .message-error .message-close:hover,
+.delta-docs .message-success .message-close:hover {
+  color: var(--global-gray-dark);
+}
+
+/* Messages — Toast close button hover */
+.delta-docs .toast-close:hover {
+  color: var(--global-gray-dark);
+}

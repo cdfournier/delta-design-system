@@ -220,11 +220,7 @@
                     <td>1.25rem / 20px</td>
                     <td>2.25rem / 36px</td>
                 </tr>
-                <tr>
-                    <td>Confirmation button labels</td>
-                    <td>—</td>
-                    <td colspan="2">See Button component documentation</td>
-                </tr>
+
             </tbody>
         </table>
 
@@ -260,11 +256,7 @@
                     <td>0.5rem / 8px</td>
                     <td>1rem / 16px</td>
                 </tr>
-                <tr>
-                    <td>Confirmation buttons</td>
-                    <td>—</td>
-                    <td colspan="2">See Button component documentation</td>
-                </tr>
+
             </tbody>
         </table>
 
@@ -291,14 +283,14 @@
                 <tr>
                     <td>Close button</td>
                     <td><code>border-radius/round</code></td>
-                    <td>6.25rem / 100px (fixed)</td>
-                    <td>6.25rem / 100px (fixed)</td>
+                    <td>6.25rem / 100px</td>
+                    <td>6.25rem / 100px</td>
                 </tr>
                 <tr>
                     <td>Confirmation buttons</td>
                     <td><code>components/button/border-radius</code></td>
-                    <td>2rem / 32px (fixed)</td>
-                    <td>2rem / 32px (fixed)</td>
+                    <td>2rem / 32px</td>
+                    <td>2rem / 32px</td>
                 </tr>
             </tbody>
         </table>
@@ -612,23 +604,11 @@
   position: relative;
 }
 
-@media (min-width: 80rem) {
-  .message-modal {
-    padding: var(--xl);
-  }
-}
-
 /* Promo message */
 .message-promo {
   background-color: var(--page-background);
   padding: var(--xl);
   position: relative;
-}
-
-@media (min-width: 80rem) {
-  .message-promo {
-    padding: var(--xl);
-  }
 }
 
 /* Close button (Modal/Promo) */
@@ -643,13 +623,6 @@
   cursor: pointer;
 }
 
-@media (min-width: 80rem) {
-  .message-close {
-    top: var(--xl);
-    right: var(--xl);
-  }
-}
-
 /* Inline messages (Error, Success, Confirmation) */
 .message-error,
 .message-success,
@@ -660,16 +633,6 @@
   flex-direction: row;
   align-items: center;
   gap: var(--md);
-}
-
-@media (min-width: 80rem) {
-  .message-error,
-  .message-success,
-  .message-confirmation {
-    padding: var(--md);
-    border-radius: var(--border-radius-sm);
-    gap: var(--md);
-  }
 }
 
 .message-error,
@@ -726,14 +689,6 @@
   border-radius: var(--border-radius-sm);
 }
 
-@media (min-width: 80rem) {
-  .toast {
-    gap: var(--md);
-    padding: var(--md);
-    border-radius: var(--border-radius-sm);
-  }
-}
-
 .toast-message {
   font-size: var(--components-messages-font-size);
   line-height: var(--components-messages-line-height);
@@ -746,15 +701,6 @@
   background: transparent;
   color: var(--global-white);
   cursor: pointer;
-}
-
-/* Focus states */
-.message-close:focus,
-.toast-close:focus,
-.button-transparent:focus,
-.button-solid:focus {
-  outline: 2px solid var(--brand-primary);
-  outline-offset: 2px;
 }</code></pre>
 
         <h3>JavaScript</h3>
@@ -816,13 +762,13 @@ function showToast(toastEl, duration = 5000) {
 
 /* Border-radius */
 --border-radius-sm     Mobile: 0.25rem / 4px   →   Widescreen: 0.5rem / 8px
---border-radius-round  6.25rem / 100px (fixed)
+--border-radius-round  6.25rem / 100px
 
 /* Button tokens (see Buttons documentation) */
 --components-button-font-size       Mobile: 0.75rem / 12px   →   Widescreen: 1.5rem / 24px
 --components-button-padding-t-b     Mobile: 0.5rem / 8px     →   Widescreen: 0.75rem / 12px
 --components-button-padding-l-r     Mobile: 1.5rem / 24px    →   Widescreen: 2rem / 32px
---components-button-border-radius   2rem / 32px (fixed)
+--components-button-border-radius   2rem / 32px
 
 /* Colors */
 --page-background   Light: #FFFFFF    Dark: #01232D
