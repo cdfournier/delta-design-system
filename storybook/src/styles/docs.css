@@ -1361,3 +1361,74 @@
   background-size: var(--components-input-text-line-height);
   padding-right: calc(var(--components-input-text-padding) + var(--components-input-text-line-height) + var(--components-input-text-padding-gap));
 }
+
+/* Feedback */
+.delta-docs .feedback {
+  max-width: var(--components-feedback-max-width);
+}
+
+.delta-docs .feedback-label {
+  font-size: var(--small-font-size);
+  line-height: var(--small-line-height);
+  font-weight: 700;
+  padding-bottom: var(--spacing-sm);
+  color: var(--text-default);
+}
+
+.delta-docs .feedback-bar {
+  background-color: var(--global-gray-medium);
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+  position: relative;
+}
+
+.delta-docs .feedback-value {
+  height: var(--components-feedback-height);
+  border-radius: var(--border-radius-sm);
+}
+
+.delta-docs .progress .feedback-value {
+  background-color: var(--brand-primary);
+}
+
+.delta-docs .meter .feedback-value.optimum {
+  background-color: var(--status-valid);
+}
+
+.delta-docs .meter .feedback-value.low,
+.delta-docs .meter .feedback-value.high {
+  background-color: var(--status-invalid);
+}
+
+.delta-docs .meter-bar {
+  padding: var(--spacing-xs);
+  background-color: var(--global-gray-medium);
+  border-radius: var(--border-radius-sm);
+}
+
+.delta-docs .feedback-text {
+  font-size: var(--fine-font-size);
+  line-height: var(--fine-line-height);
+  font-weight: 700;
+  padding-top: var(--spacing-sm);
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-default);
+}
+
+.delta-docs .feedback-specimen-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 100%;
+}
+
+@media (min-width: 48rem) {
+  .delta-docs .feedback-specimen-row {
+    flex-direction: row;
+  }
+
+  .delta-docs .feedback-specimen-row > .feedback {
+    flex: 1;
+  }
+}
