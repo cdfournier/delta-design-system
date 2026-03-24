@@ -184,10 +184,19 @@
         </ul>
 
         <div class="component-demo">
-            <div class="fieldset-demo">
-                <label for="demo-text">Label</label>
-                <input type="text" id="demo-text" placeholder="Placeholder">
-                <div class="message">Message text provides context or validation feedback</div>
+            <div style="display: flex; gap: 16px;">
+                <div class="fieldset-demo">
+                    <label for="demo-text">Label</label>
+                    <input type="text" id="demo-text" placeholder="Placeholder">
+                    <div class="message">Message text provides context or validation feedback</div>
+                </div>
+                <div class="fieldset-demo">
+                    <label for="demo-select">Label</label>
+                    <select id="demo-select">
+                        <option>Select</option>
+                    </select>
+                    <div class="message">Message text provides context or validation feedback</div>
+                </div>
             </div>
         </div>
 
@@ -309,7 +318,7 @@
         <table>
             <thead>
                 <tr>
-                    <th>Element</th>
+                    <th>Attribute</th>
                     <th>Token</th>
                     <th>Light mode</th>
                     <th>Dark mode</th>
@@ -323,31 +332,31 @@
                     <td>#FFFFFF (global/white)</td>
                 </tr>
                 <tr>
-                    <td>message color (default)</td>
+                    <td>Message text — default</td>
                     <td><code>text/default</code></td>
                     <td>#000000 (global/black)</td>
                     <td>#FFFFFF (global/white)</td>
                 </tr>
                 <tr>
-                    <td>message color (invalid)</td>
+                    <td>Message text — invalid</td>
                     <td><code>status/invalid</code></td>
                     <td>#C00C00</td>
                     <td>#C00C00</td>
                 </tr>
                 <tr>
-                    <td>message color (valid)</td>
+                    <td>Message text — valid</td>
                     <td><code>status/valid</code></td>
                     <td>#007000</td>
                     <td>#007000</td>
                 </tr>
                 <tr>
-                    <td>message color (disabled)</td>
+                    <td>Message text — disabled</td>
                     <td><code>status/disabled</code></td>
                     <td>#808080</td>
                     <td>#808080</td>
                 </tr>
                 <tr>
-                    <td>message color (read-only)</td>
+                    <td>Message text — read-only</td>
                     <td><code>status/read-only</code></td>
                     <td>#333333</td>
                     <td>#333333</td>
@@ -778,24 +787,24 @@
 --fine-line-height                        Mobile: 1rem / 16px      →   Widescreen: 1.5rem / 24px
 --components-input-text-font-size         Mobile: 1rem / 16px      →   Widescreen: 1.5rem / 24px
 --components-input-text-line-height       Mobile: 1.25rem / 20px   →   Widescreen: 2rem / 32px
---components-input-checkbox-font-size     1rem / 16px (fixed)
---components-input-checkbox-line-height   1.25rem / 20px (fixed)
+--components-input-checkbox-font-size     1rem / 16px
+--components-input-checkbox-line-height   1.25rem / 20px
 
 /* Spacing */
 --xs                                      Mobile: 0.125rem / 2px   →   Widescreen: 0.25rem / 4px
 --sm                                      Mobile: 0.25rem / 4px    →   Widescreen: 0.5rem / 8px
 --md                                      Mobile: 0.5rem / 8px     →   Widescreen: 1rem / 16px
 --components-input-text-padding           Mobile: 0.5rem / 8px     →   Widescreen: 0.75rem / 12px
---components-input-text-padding-gap       0.25rem / 4px (fixed)
---components-input-checkbox-padding       0.125rem / 2px (fixed)
---components-input-checkbox-padding-gap   0.5rem / 8px (fixed)
---components-input-switch-padding         0.25rem / 4px (fixed)
---components-input-switch-padding-gap     0.5rem / 8px (fixed)
+--components-input-text-padding-gap       0.25rem / 4px
+--components-input-checkbox-padding       0.125rem / 2px
+--components-input-checkbox-padding-gap   0.5rem / 8px
+--components-input-switch-padding         0.25rem / 4px
+--components-input-switch-padding-gap     0.5rem / 8px
 
 /* Border-radius */
---components-input-text-border-radius     0.25rem / 4px (fixed)
---input-checkbox-border-radius            0.25rem / 4px (fixed)
---components-input-switch-border-radius   1rem / 16px (fixed)
+--components-input-text-border-radius     0.25rem / 4px
+--input-checkbox-border-radius            0.25rem / 4px
+--components-input-switch-border-radius   1rem / 16px
 
 /* Colors */
 --text-default         Light: #000000   Dark: #FFFFFF

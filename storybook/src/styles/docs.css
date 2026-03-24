@@ -1627,6 +1627,109 @@
   align-items: center;
 }
 
+/* Fieldsets — Specimen row */
+.delta-docs .fieldset-specimen-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 100%;
+}
+
+@media (min-width: 48rem) {
+  .delta-docs .fieldset-specimen-row {
+    flex-direction: row;
+  }
+
+  .delta-docs .fieldset-specimen-row > * {
+    flex: 1;
+  }
+}
+
+/* Fieldsets — Container */
+.delta-docs .fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.delta-docs .fieldset--choice {
+  gap: var(--spacing-md);
+}
+
+/* Fieldsets — Label and legend */
+.delta-docs .fieldset label,
+.delta-docs .fieldset legend {
+  display: block;
+  font-size: var(--small-font-size);
+  line-height: var(--small-line-height);
+  font-weight: 700;
+  color: var(--text-default);
+}
+
+/* Fieldsets — Legend bottom padding */
+.delta-docs .fieldset legend {
+  padding-bottom: var(--spacing-xs);
+}
+
+/* Fieldsets — Legend label (fine print) */
+.delta-docs .legend-label {
+  font-size: var(--fine-font-size);
+  line-height: var(--fine-line-height);
+  font-weight: 700;
+  margin-left: var(--spacing-md);
+  color: var(--text-default);
+}
+
+/* Fieldsets — Message text */
+.delta-docs .fieldset .message {
+  font-size: var(--fine-font-size);
+  line-height: var(--fine-line-height);
+  color: var(--text-default);
+  margin-top: 0;
+}
+
+.delta-docs .fieldset .message.error {
+  color: var(--status-invalid);
+}
+
+.delta-docs .fieldset .message.valid {
+  color: var(--status-valid);
+}
+
+.delta-docs .fieldset .message.disabled {
+  color: var(--status-disabled);
+}
+
+.delta-docs .fieldset .message.read-only {
+  color: var(--status-read-only);
+}
+
+/* Fieldsets — Choice group layout */
+.delta-docs .fieldset .checkbox-group,
+.delta-docs .fieldset .radio-group,
+.delta-docs .fieldset .switch-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--components-input-checkbox-padding-gap);
+  margin-bottom: 0;
+}
+
+.delta-docs .fieldset .checkbox-group label,
+.delta-docs .fieldset .radio-group label,
+.delta-docs .fieldset .switch-group label {
+  display: flex;
+  align-items: center;
+  gap: var(--components-input-checkbox-padding-gap);
+  font-size: var(--components-input-checkbox-font-size);
+  line-height: var(--components-input-checkbox-line-height);
+  color: var(--text-default);
+  cursor: pointer;
+  margin: 0;
+}
+
 /* Messages — Confirmation button hover (color swap) */
 .delta-docs .button-transparent:hover {
   background: var(--global-white);
