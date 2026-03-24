@@ -1579,6 +1579,54 @@
   margin: 0;
 }
 
+/* Pagination — Nav container */
+.delta-docs .pagination-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Pagination — List (pill container) */
+.delta-docs .pagination {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-xl);
+  background-color: var(--page-background);
+  border-radius: var(--border-radius-xxl);
+  list-style: none;
+  margin: 0;
+}
+
+/* Pagination — Indicator dot */
+.delta-docs .pagination-dot {
+  width: var(--components-width-by-font-size-fine);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid var(--global-gray-medium);
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 150ms ease-out;
+}
+
+/* Pagination — Selected and hover */
+.delta-docs .pagination-dot.selected,
+.delta-docs .pagination-dot[aria-current="page"],
+.delta-docs .pagination-dot:hover {
+  background-color: var(--global-gray-medium);
+  border-color: var(--global-gray-medium);
+}
+
+/* Pagination — Reset list item styles */
+.delta-docs .pagination li {
+  margin: 0;
+  line-height: 0;
+  display: flex;
+  align-items: center;
+}
+
 /* Messages — Confirmation button hover (color swap) */
 .delta-docs .button-transparent:hover {
   background: var(--global-white);
