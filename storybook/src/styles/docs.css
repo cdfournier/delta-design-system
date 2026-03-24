@@ -1443,6 +1443,8 @@
 
 /* Messages — Close button (Modal/Promo) */
 .delta-docs .message-close {
+  width: var(--components-width-by-font-size-h4);
+  aspect-ratio: 1;
   position: absolute;
   top: var(--spacing-xl);
   right: var(--spacing-xl);
@@ -1478,6 +1480,8 @@
 /* Messages — Inline close button */
 .delta-docs .message-error .message-close,
 .delta-docs .message-success .message-close {
+  width: var(--components-width-by-font-size-h4);
+  aspect-ratio: 1;
   position: static;
   color: var(--global-white);
   border-radius: var(--border-radius-round);
@@ -1546,12 +1550,20 @@
 }
 
 .delta-docs .toast-close {
+  width: var(--components-width-by-font-size-h4);
+  aspect-ratio: 1;
   border-radius: var(--border-radius-round);
   border: none;
   background: transparent;
   color: var(--global-white);
   cursor: pointer;
   transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Messages — Close button icon sizing */
+.delta-docs .message-close svg,
+.delta-docs .toast-close svg {
+  display: block;
 }
 
 /* Messages — Promo content reset */
