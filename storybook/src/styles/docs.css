@@ -1799,3 +1799,125 @@
 .delta-docs .toast-close:hover {
   color: var(--global-gray-dark);
 }
+
+/* Banners — Background Image specimen */
+.delta-docs .banner-bg-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 300px;
+}
+
+.delta-docs .banner-bg-image-img {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.delta-docs .banner-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--overlay-dark);
+  border-radius: inherit;
+}
+
+.delta-docs .banner-bg-content {
+  position: relative;
+  z-index: 1;
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.delta-docs .banner-title {
+  font-family: 'Ovo', Georgia, serif;
+  font-size: var(--h1-title-font-size);
+  line-height: var(--h1-title-line-height);
+  font-weight: 400;
+  color: var(--global-white);
+  margin: 0;
+}
+
+.delta-docs .banner-body {
+  font-size: var(--h1-title-p-font-size);
+  line-height: var(--h1-title-p-line-height);
+  color: var(--global-white);
+  margin: 0;
+  padding-top: var(--spacing-sm);
+}
+
+/* Banners — Split specimen */
+.delta-docs .banner-split {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  gap: var(--spacing-md);
+}
+
+@media (min-width: 48rem) {
+  .delta-docs .banner-split {
+    flex-direction: row;
+    align-items: center;
+    min-height: 300px;
+  }
+}
+
+.delta-docs .banner-split-figure {
+  flex: 1;
+  overflow: hidden;
+  border-radius: var(--border-radius-md);
+}
+
+@media (min-width: 48rem) {
+  .delta-docs .banner-split-figure {
+    align-self: stretch;
+  }
+}
+
+.delta-docs .banner-split-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+.delta-docs .banner-split-content {
+  flex: 1;
+  padding: var(--spacing-xl) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media (min-width: 48rem) {
+  .delta-docs .banner-split-content {
+    padding: var(--spacing-xl);
+  }
+}
+
+.delta-docs .banner-split-heading {
+  font-family: 'Ovo', Georgia, serif;
+  font-size: var(--h2-font-size);
+  line-height: var(--h2-line-height);
+  font-weight: 400;
+  color: var(--text-default);
+  margin: 0;
+}
+
+.delta-docs .banner-split-body {
+  font-size: var(--p-font-size);
+  line-height: var(--p-line-height);
+  color: var(--text-default);
+  margin: 0;
+  padding-top: var(--spacing-sm);
+}
