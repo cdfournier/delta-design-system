@@ -128,6 +128,40 @@
         <li><strong>Table (assembled):</strong> The complete component combining thead and tbody within a scroll wrapper</li>
     </ul>
 
+    <div class="component-demo" style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; min-width: 400px; background-color: var(--color-white);">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Category</th>
+                    <th style="text-align: right;">Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>yyyy/mm/dd</td>
+                    <td>Category</td>
+                    <td style="text-align: right;"><span style="font-size: 0.65em; vertical-align: super;">$</span>000.00</td>
+                </tr>
+                <tr>
+                    <td>yyyy/mm/dd</td>
+                    <td>Category</td>
+                    <td style="text-align: right;"><span style="font-size: 0.65em; vertical-align: super;">$</span>00.00</td>
+                </tr>
+                <tr>
+                    <td>yyyy/mm/dd</td>
+                    <td>Category</td>
+                    <td style="text-align: right;"><span style="font-size: 0.65em; vertical-align: super;">$</span>00.00</td>
+                </tr>
+                <tr>
+                    <td>yyyy/mm/dd</td>
+                    <td>Category</td>
+                    <td style="text-align: right;"><span style="font-size: 0.65em; vertical-align: super;">$</span>000.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
     <hr>
 
     <h2>Variants</h2>
@@ -139,26 +173,6 @@
     </ul>
 
     <hr>
-
-    <!-- <h2>States</h2>
-    <p>Table interactivity is primarily expressed through the control cell's checkbox. Row-level hover and focus states are recommended for usability but are not defined by a design token — implement using standard browser focus styles and a subtle background tint.</p>
-
-    <h3>Default</h3>
-    <p>Rows display with a bottom border in <code>global/gray-medium</code>. The <code>thead</code> row has a <code>section/background</code> fill. All cell text uses <code>text/default</code>.</p>
-
-    <h3>Hover</h3>
-    <p>Body rows may show a subtle background highlight on hover to aid scanning. This is not defined by a token — use a low-opacity overlay or a tinted value consistent with your implementation.</p>
-
-    <h3>Focus</h3>
-    <p>Interactive elements within cells (checkboxes, links) must display a visible focus indicator. Use the browser default focus ring or a custom outline consistent with the system focus style.</p>
-
-    <h3>Checked</h3>
-    <p>When a control cell checkbox is checked, the checkbox fill changes to <code>brand/primary</code> (#FF5247). The border remains <code>brand/primary</code> in both states.</p>
-
-    <h3>Indeterminate</h3>
-    <p>The select-all checkbox in the header should reflect an indeterminate state when only some rows are selected. This is set via the <code>indeterminate</code> JavaScript property and should be visually communicated — typically as a dash or partial fill within the checkbox.</p>
-
-    <hr> -->
 
     <h2>Typography</h2>
     <p>Table typography uses component-specific tokens that scale responsively between breakpoints.</p>
@@ -244,22 +258,16 @@
                 <td>#003442 (brand/secondary)</td>
             </tr>
             <tr>
-                <td>Row border-bottom</td>
+                <td>Row bottom border</td>
                 <td><code>global/gray-medium</code></td>
                 <td>#CCCCCC</td>
                 <td>#CCCCCC</td>
             </tr>
             <tr>
-                <td>Cell color</td>
+                <td>Cell text (all variants)</td>
                 <td><code>text/default</code></td>
                 <td>#000000 (global/black)</td>
                 <td>#FFFFFF (global/white)</td>
-            </tr>
-            <tr>
-                <td>Checkbox border, Checkbox fill (checked)</td>
-                <td><code>brand/primary</code></td>
-                <td>#FF5247</td>
-                <td>#FF5247</td>
             </tr>
         </tbody>
     </table>
@@ -370,57 +378,47 @@
     <h2>Code reference</h2>
 
     <h3>HTML</h3>
-    <pre><code>&lt;!-- Table with all three cell variants --&gt;
+    <pre><code>&lt;!-- Basic data table --&gt;
 &lt;div class="table-wrapper"&gt;
   &lt;table class="table"&gt;
-    &lt;caption class="visually-hidden"&gt;Team members and their roles&lt;/caption&gt;
+    &lt;caption class="visually-hidden"&gt;Recent expenses&lt;/caption&gt;
 
     &lt;thead&gt;
       &lt;tr class="table-row"&gt;
-        &lt;!-- Control header cell: select-all checkbox --&gt;
-        &lt;th class="table-cell table-cell--control" scope="col"&gt;
-          &lt;label class="table-checkbox-label"&gt;
-            &lt;input type="checkbox"
-                   class="table-checkbox"
-                   aria-label="Select all rows"&gt;
-          &lt;/label&gt;
-        &lt;/th&gt;
-        &lt;!-- Header cells --&gt;
-        &lt;th class="table-cell table-cell--header" scope="col"&gt;Name&lt;/th&gt;
-        &lt;th class="table-cell table-cell--header" scope="col"&gt;Role&lt;/th&gt;
-        &lt;th class="table-cell table-cell--header" scope="col"&gt;Department&lt;/th&gt;
-        &lt;th class="table-cell table-cell--header" scope="col"&gt;Status&lt;/th&gt;
+        &lt;th class="table-cell" scope="col"&gt;Date&lt;/th&gt;
+        &lt;th class="table-cell" scope="col"&gt;Category&lt;/th&gt;
+        &lt;th class="table-cell table-cell--right" scope="col"&gt;Cost&lt;/th&gt;
       &lt;/tr&gt;
     &lt;/thead&gt;
 
     &lt;tbody&gt;
       &lt;tr class="table-row"&gt;
-        &lt;!-- Control body cell: row-selection checkbox --&gt;
-        &lt;td class="table-cell table-cell--control"&gt;
-          &lt;label class="table-checkbox-label"&gt;
-            &lt;input type="checkbox"
-                   class="table-checkbox"
-                   aria-label="Select row: Jane Smith"&gt;
-          &lt;/label&gt;
+        &lt;td class="table-cell"&gt;yyyy/mm/dd&lt;/td&gt;
+        &lt;td class="table-cell"&gt;Category&lt;/td&gt;
+        &lt;td class="table-cell table-cell--right"&gt;
+          &lt;span class="table-currency"&gt;$&lt;/span&gt;000.00
         &lt;/td&gt;
-        &lt;!-- Text cells --&gt;
-        &lt;td class="table-cell table-cell--text"&gt;Jane Smith&lt;/td&gt;
-        &lt;td class="table-cell table-cell--text"&gt;Designer&lt;/td&gt;
-        &lt;td class="table-cell table-cell--text"&gt;Product&lt;/td&gt;
-        &lt;td class="table-cell table-cell--text"&gt;Active&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr class="table-row"&gt;
-        &lt;td class="table-cell table-cell--control"&gt;
-          &lt;label class="table-checkbox-label"&gt;
-            &lt;input type="checkbox"
-                   class="table-checkbox"
-                   aria-label="Select row: Marcus Lee"&gt;
-          &lt;/label&gt;
+        &lt;td class="table-cell"&gt;yyyy/mm/dd&lt;/td&gt;
+        &lt;td class="table-cell"&gt;Category&lt;/td&gt;
+        &lt;td class="table-cell table-cell--right"&gt;
+          &lt;span class="table-currency"&gt;$&lt;/span&gt;00.00
         &lt;/td&gt;
-        &lt;td class="table-cell table-cell--text"&gt;Marcus Lee&lt;/td&gt;
-        &lt;td class="table-cell table-cell--text"&gt;Engineer&lt;/td&gt;
-        &lt;td class="table-cell table-cell--text"&gt;Platform&lt;/td&gt;
-        &lt;td class="table-cell table-cell--text"&gt;Active&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr class="table-row"&gt;
+        &lt;td class="table-cell"&gt;yyyy/mm/dd&lt;/td&gt;
+        &lt;td class="table-cell"&gt;Category&lt;/td&gt;
+        &lt;td class="table-cell table-cell--right"&gt;
+          &lt;span class="table-currency"&gt;$&lt;/span&gt;00.00
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr class="table-row"&gt;
+        &lt;td class="table-cell"&gt;yyyy/mm/dd&lt;/td&gt;
+        &lt;td class="table-cell"&gt;Category&lt;/td&gt;
+        &lt;td class="table-cell table-cell--right"&gt;
+          &lt;span class="table-currency"&gt;$&lt;/span&gt;000.00
+        &lt;/td&gt;
       &lt;/tr&gt;
     &lt;/tbody&gt;
   &lt;/table&gt;
@@ -435,16 +433,11 @@
 /* Table */
 .table {
   border-collapse: collapse;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  background-color: var(--page/background);
 }
 
 /* Rows */
 .table-row {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
   padding: var(--sm);
   gap: var(--md);
   border-bottom: 1px solid var(--global/gray-medium);
@@ -453,48 +446,25 @@
 /* Header row */
 thead .table-row {
   background-color: var(--section/background);
-  align-items: center;
 }
 
 /* Cells — shared */
 .table-cell {
-  flex: 1 0 0;
   padding: var(--sm);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   font-size: var(--components/table/font-size);
   line-height: var(--components/table/line-height);
   color: var(--text/default);
 }
 
-/* Control cell */
-.table-cell--control {
-  justify-content: center;
+/* Right-aligned cell */
+.table-cell--right {
+  text-align: right;
 }
 
-/* Checkbox — see Inputs documentation */
-.table-checkbox {
-  appearance: none;
-  border: 1px solid var(--brand/primary);
-  border-radius: var(--input/checkbox/border-radius);
-  cursor: pointer;
-  flex-shrink: 0;
-}
-
-.table-checkbox:checked {
-  background-color: var(--brand/primary);
-}
-
-.table-checkbox-label {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: var(--md);
-  font-size: var(--components/table/font-size);
-  line-height: var(--components/table/line-height);
-  color: var(--text/default);
-  cursor: pointer;
+/* Currency symbol */
+.table-currency {
+  font-size: 0.65em;
+  vertical-align: super;
 }
 
 /* Visually hidden utility */
@@ -507,26 +477,6 @@ thead .table-row {
   border: 0;
 }</code></pre>
 
-    <h3>JavaScript</h3>
-    <p>JavaScript is required to manage the indeterminate state of the select-all checkbox when only some rows are selected.</p>
-    <pre><code>// Manage select-all checkbox indeterminate state
-const selectAll = document.querySelector('.table-checkbox[aria-label="Select all rows"]');
-const rowCheckboxes = document.querySelectorAll('.table-checkbox:not([aria-label="Select all rows"])');
-
-function updateSelectAll() {
-  const checkedCount = [...rowCheckboxes].filter(cb => cb.checked).length;
-  selectAll.checked = checkedCount === rowCheckboxes.length;
-  selectAll.indeterminate = checkedCount > 0 &amp;&amp; checkedCount &lt; rowCheckboxes.length;
-}
-
-selectAll.addEventListener('change', () => {
-  rowCheckboxes.forEach(cb => { cb.checked = selectAll.checked; });
-});
-
-rowCheckboxes.forEach(cb => {
-  cb.addEventListener('change', updateSelectAll);
-});</code></pre>
-
     <h3>Design tokens reference</h3>
     <pre><code>/* Typography */
 --components-table-font-size    Mobile: 1rem / 16px    →   Widescreen: 1.5rem / 24px
@@ -537,13 +487,10 @@ rowCheckboxes.forEach(cb => {
 --md    Mobile: 0.5rem / 8px    →   Widescreen: 1rem / 16px
 
 /* Colors */
+--page-background      Light: #FFFFFF   Dark: #01232D
 --section-background   Light: #EEEEEE   Dark: #003442
 --global-gray-medium   Light: #CCCCCC   Dark: #CCCCCC
---text-default         Light: #000000   Dark: #FFFFFF
---brand-primary        Light: #FF5247   Dark: #FF5247
---page-background      Light: #FFFFFF   Dark: #01232D
-
-/* Checkbox tokens — see Inputs documentation */</code></pre>
+--text-default         Light: #000000   Dark: #FFFFFF</code></pre>
 
     <hr>
 

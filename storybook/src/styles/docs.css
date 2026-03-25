@@ -1730,6 +1730,48 @@
   margin: 0;
 }
 
+/* Tables — Specimen table */
+.delta-docs .table-specimen {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--page-background);
+}
+
+.delta-docs .table-specimen th,
+.delta-docs .table-specimen td {
+  padding: var(--spacing-sm);
+  font-size: var(--components-table-font-size);
+  line-height: var(--components-table-line-height);
+  color: var(--text-default);
+  text-align: left;
+  border-bottom: 1px solid var(--global-gray-medium);
+}
+
+.delta-docs .table-specimen th {
+  font-weight: 700;
+  background-color: var(--section-background);
+}
+
+.delta-docs .table-specimen td {
+  font-weight: 400;
+}
+
+/* Tables — Right-aligned cell */
+.delta-docs .table-specimen .table-cell-right {
+  text-align: right;
+}
+
+/* Tables — Currency symbol (smaller, superscript) */
+.delta-docs .table-specimen .table-currency {
+  font-size: 0.65em;
+  vertical-align: super;
+}
+
+/* Tables — Horizontal scroll at mobile */
+.delta-docs .table-specimen {
+  min-width: 400px;
+}
+
 /* Messages — Confirmation button hover (color swap) */
 .delta-docs .button-transparent:hover {
   background: var(--global-white);
