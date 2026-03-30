@@ -106,6 +106,7 @@
             --page-background: #FFFFFF;
             --text-default: #000000;
             --text-link: #FF5247;
+            --brand-secondary: #003442;
             --components-background-primary: #FF5247;
             --components-logo-left: #003442;
             --components-logo-right: #01232D;
@@ -115,8 +116,8 @@
             --xs: 0.125rem;
             --small-font-size: 0.75rem;
             --small-line-height: 1.25rem;
-            --h2-font-size: 1.5rem;
-            --h2-line-height: 1.875rem;
+            --h4-font-size: 1.5rem;
+            --h4-line-height: 1.875rem;
             --fine-font-size: 0.625rem;
             --fine-line-height: 1rem;
             --border-radius-lg: 1rem;
@@ -169,15 +170,15 @@
 
         <h2>States</h2>
         <ul>
-            <li><strong>Default:</strong> The footer renders with a light gray group container background, black text for the heading and fine print, and red link text with underlines. The color mode toggle defaults to the light mode position.</li>
-            <li><strong>Hover:</strong> Navigation links follow the standard link hover behavior: color transitions from <code>text/link</code> (#FF5247) to <code>text/link</code> hover state. Arrow icons move with the link element.</li>
+            <li><strong>Default:</strong> The footer renders with a light gray group container background, black text for the heading and fine print, and red link text. The color mode toggle defaults to the light mode position.</li>
+            <li><strong>Hover:</strong> Navigation links change color on hover: <code>text/link</code> (#FF5247) transitions to <code>brand/secondary</code> (#003442) in light mode; white transitions to <code>brand/primary</code> (#FF5247) in dark mode.</li>
             <li><strong>Focus:</strong> All interactive elements — navigation links and the color mode toggle — display visible focus indicators. Focus styles defer to the browser default or the global focus ring defined in the design system.</li>
         </ul>
 
         <hr>
 
         <h2>Typography</h2>
-        <p>Navigation links use the <code>small</code> type token with bold weight. The heading uses the <code>h2</code> type token. Fine print uses the <code>fine</code> token. All text tokens scale responsively between mobile and widescreen breakpoints.</p>
+        <p>Navigation links use the <code>small</code> type token with bold weight. The heading uses the <code>h4</code> type token. Fine print uses the <code>fine</code> token. All text tokens scale responsively between mobile and widescreen breakpoints.</p>
 
         <table>
             <thead>
@@ -203,15 +204,15 @@
                 </tr>
                 <tr>
                     <td>Heading font-size</td>
-                    <td><code>h2/font-size</code></td>
+                    <td><code>h4/font-size</code></td>
                     <td>1.5rem / 24px</td>
-                    <td>3.75rem / 60px</td>
+                    <td>2.625rem / 42px</td>
                 </tr>
                 <tr>
                     <td>Heading line-height</td>
-                    <td><code>h2/line-height</code></td>
+                    <td><code>h4/line-height</code></td>
                     <td>1.875rem / 30px</td>
-                    <td>4.625rem / 74px</td>
+                    <td>3.25rem / 52px</td>
                 </tr>
                 <tr>
                     <td>Fine print font-size</td>
@@ -306,7 +307,7 @@
         <table>
             <thead>
                 <tr>
-                    <th>Element</th>
+                    <th>Attribute</th>
                     <th>Token</th>
                     <th>Mobile/Tablet</th>
                     <th>Widescreen</th>
@@ -329,7 +330,7 @@
         <table>
             <thead>
                 <tr>
-                    <th>Element</th>
+                    <th>Attribute</th>
                     <th>Token</th>
                     <th>Light mode</th>
                     <th>Dark mode</th>
@@ -475,54 +476,37 @@
         <h2>Code reference</h2>
 
         <h3>HTML</h3>
-        <pre><code>&lt;!-- Footer - Mobile layout (default) --&gt;
-&lt;footer class="footer" data-size="mobile"&gt;
-  &lt;div class="footer-group"&gt;
-    &lt;div class="footer-row"&gt;
+        <pre><code>&lt;!-- Footer --&gt;
+&lt;footer&gt;
+  &lt;div class="group"&gt;
+    &lt;div class="row"&gt;
 
       &lt;!-- Navigation --&gt;
-      &lt;nav class="footer-nav" aria-label="Footer navigation"&gt;
-        &lt;ul class="footer-links"&gt;
-          &lt;li class="footer-link-item"&gt;
-            &lt;a href="/about" class="footer-link"&gt;About&lt;/a&gt;
-          &lt;/li&gt;
-          &lt;li class="footer-link-item"&gt;
-            &lt;a href="/contact" class="footer-link"&gt;Contact&lt;/a&gt;
-          &lt;/li&gt;
-          &lt;li class="footer-link-item"&gt;
-            &lt;a href="/privacy" class="footer-link"&gt;Privacy&lt;/a&gt;
-          &lt;/li&gt;
-          &lt;li class="footer-link-item"&gt;
-            &lt;a href="/terms" class="footer-link"&gt;Terms&lt;/a&gt;
-          &lt;/li&gt;
+      &lt;nav aria-label="Footer navigation"&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="/about" class="link"&gt;About&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="/contact" class="link"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="/privacy" class="link"&gt;Privacy&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="/terms" class="link"&gt;Terms&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/nav&gt;
 
       &lt;!-- Brand --&gt;
-      &lt;div class="footer-brand"&gt;
-        &lt;div class="footer-logo-mark"&gt;
-          &lt;svg class="footer-logo" viewBox="0 0 40 40" aria-hidden="true"&gt;
+      &lt;div class="brand"&gt;
+        &lt;div class="the-delta-design-system-mark"&gt;
+          &lt;svg class="logo" viewBox="0 0 1024 796" aria-hidden="true"&gt;
             &lt;!-- Delta logo --&gt;
           &lt;/svg&gt;
-          &lt;p class="footer-heading"&gt;The Delta Design System&lt;/p&gt;
+          &lt;h2&gt;The Delta Design System&lt;/h2&gt;
         &lt;/div&gt;
 
         &lt;!-- Color mode toggle --&gt;
-        &lt;div class="footer-toggle"&gt;
-          &lt;svg class="footer-toggle-icon" viewBox="0 0 24 24" aria-hidden="true"&gt;
+        &lt;div class="toggle-color-mode"&gt;
+          &lt;svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"&gt;
             &lt;!-- Sun icon --&gt;
           &lt;/svg&gt;
-          &lt;label class="footer-toggle-label"&gt;
-            &lt;input
-              type="checkbox"
-              class="footer-toggle-input"
-              role="switch"
-              aria-checked="false"
-              aria-label="Toggle dark mode"&gt;
-            &lt;span class="footer-toggle-track"&gt;&lt;/span&gt;
-            &lt;span class="footer-toggle-text"&gt;Dark mode&lt;/span&gt;
-          &lt;/label&gt;
-          &lt;svg class="footer-toggle-icon" viewBox="0 0 24 24" aria-hidden="true"&gt;
+          &lt;input type="checkbox" role="switch" aria-label="Toggle dark mode"&gt;
+          &lt;svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"&gt;
             &lt;!-- Moon icon --&gt;
           &lt;/svg&gt;
         &lt;/div&gt;
@@ -531,47 +515,54 @@
     &lt;/div&gt;
 
     &lt;!-- Fine print --&gt;
-    &lt;p class="footer-fine"&gt;&amp;copy; 2026 The Delta Design System. All rights reserved.&lt;/p&gt;
+    &lt;p class="copyright"&gt;&amp;copy; 2026 The Delta Design System. All rights reserved.&lt;/p&gt;
   &lt;/div&gt;
-&lt;/footer&gt;
-
-&lt;!-- Footer - Widescreen layout --&gt;
-&lt;footer class="footer" data-size="widescreen"&gt;
-  &lt;!-- Same structure; layout shifts are handled via CSS --&gt;
 &lt;/footer&gt;</code></pre>
 
         <h3>CSS</h3>
         <pre><code>/* ---- Outer container ---- */
-.footer {
+footer {
   padding: var(--xl);
 }
 
 /* ---- Group container ---- */
-.footer-group {
+.group {
   padding: var(--xl);
-  background-color: var(--section-background);
-  border-radius: var(--border-radius-lg);
+  background-color: var(--section\/background);
+  border-radius: var(--border-radius\/lg);
 }
 
 /* ---- Row ---- */
-.footer-row {
+.row {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.footer[data-size="widescreen"] .footer-row {
-  flex-direction: row;
-  align-items: center;
+@media (min-width: 48rem) {
+  .row {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 /* ---- Navigation ---- */
-.footer-nav {
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding-top: var(--md);
   padding-bottom: var(--md);
 }
 
-.footer-links {
+@media (min-width: 48rem) {
+  nav {
+    flex: 1;
+    align-items: flex-start;
+  }
+}
+
+ul {
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -579,41 +570,44 @@
   align-items: center;
 }
 
-.footer[data-size="widescreen"] .footer-links {
-  align-items: flex-start;
+@media (min-width: 48rem) {
+  ul {
+    align-items: flex-start;
+  }
 }
 
-.footer-link-item {
+li {
   padding-top: var(--xs);
   padding-bottom: var(--xs);
 }
 
 /* ---- Links ---- */
-.footer-link {
-  display: inline-block;
-  font-size: var(--small-font-size);
-  line-height: var(--small-line-height);
-  color: var(--text-link);
+.link {
+  font-size: var(--small\/font-size);
+  line-height: var(--small\/line-height);
+  color: var(--text\/link);
   text-decoration: none;
 }
 
-.footer-link:hover {
-  text-decoration: underline;
+.link:hover {
+  color: var(--brand\/secondary);
 }
 
 /* ---- Brand ---- */
-.footer-brand {
+.brand {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
-.footer[data-size="widescreen"] .footer-brand {
-  margin-left: auto;
+@media (min-width: 48rem) {
+  .brand {
+    margin-left: auto;
+  }
 }
 
-.footer-logo-mark {
+.the-delta-design-system-mark {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -621,64 +615,75 @@
   padding-top: var(--lg);
 }
 
-.footer-heading {
+.logo {
+  display: block;
+  width: var(--components\/width\/by-font-size\/h1);
+  aspect-ratio: 1024 / 796;
+}
+
+h2 {
   font-family: var(--font-family-heading);
-  font-size: var(--h2-font-size);
-  line-height: var(--h2-line-height);
-  color: var(--text-default);
+  font-size: var(--h4\/font-size);
+  line-height: var(--h4\/line-height);
+  color: var(--text\/default);
 }
 
 /* ---- Color mode toggle ---- */
-.footer-toggle {
+.toggle-color-mode {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: var(--md);
   padding-top: var(--lg);
-  justify-content: center;
 }
 
-.footer-toggle-label {
-  display: flex;
-  align-items: center;
-  gap: var(--components-input-switch-padding-gap);
+.toggle-color-mode .icon {
+  width: var(--components\/width\/by-font-size\/p);
+  aspect-ratio: 1;
+}
+
+input[role="switch"] {
+  appearance: none;
+  background: transparent;
+  border: 1px solid var(--text\/link);
+  border-radius: var(--components\/input\/switch\/border-radius);
+  padding: var(--components\/input\/switch\/padding);
   cursor: pointer;
 }
 
-.footer-toggle-input {
-  /* Full switch styling: see Fieldsets documentation */
-  border-radius: var(--components-input-switch-border-radius);
+input[role="switch"]::before {
+  content: '';
+  display: block;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--text\/link);
 }
 
-.footer-toggle-text {
-  /* Visually hidden but accessible to screen readers */
-  position: absolute;
-  clip: rect(0, 0, 0, 0);
-  overflow: hidden;
-  white-space: nowrap;
-  border: 0;
-  padding: 0;
-  margin: -1px;
+input[role="switch"]:checked {
+  background: var(--text\/link);
+}
+
+input[role="switch"]:checked::before {
+  background: var(--global\/white);
 }
 
 /* ---- Fine print ---- */
-.footer-fine {
-  font-size: var(--fine-font-size);
-  line-height: var(--fine-line-height);
-  color: var(--text-default);
+.copyright {
+  font-size: var(--fine\/font-size);
+  line-height: var(--fine\/line-height);
+  color: var(--text\/default);
   text-align: center;
-  margin-top: 0;
 }
 
-/* ---- Widescreen ---- */
-@media (min-width: 80rem) {
-  .footer-group {
-    border-radius: var(--border-radius-lg);
+@media (min-width: 48rem) {
+  .copyright {
+    text-align: right;
   }
 }</code></pre>
 
         <h3>JavaScript</h3>
         <pre><code>// Color mode toggle
-const toggle = document.querySelector('.footer-toggle-input');
+const toggle = document.querySelector('.toggle-color-mode input[role="switch"]');
 
 toggle.addEventListener('change', () => {
   const isDark = toggle.checked;
@@ -690,8 +695,8 @@ toggle.addEventListener('change', () => {
         <pre><code>/* Typography */
 --small/font-size    Mobile: 0.75rem / 12px   →   Widescreen: 1.25rem / 20px
 --small/line-height  Mobile: 1.25rem / 20px   →   Widescreen: 1.875rem / 30px
---h2/font-size       Mobile: 1.5rem / 24px    →   Widescreen: 3.75rem / 60px
---h2/line-height     Mobile: 1.875rem / 30px  →   Widescreen: 4.625rem / 74px
+--h4/font-size       Mobile: 1.5rem / 24px    →   Widescreen: 2.625rem / 42px
+--h4/line-height     Mobile: 1.875rem / 30px  →   Widescreen: 3.25rem / 52px
 --fine/font-size     Mobile: 0.625rem / 10px  →   Widescreen: 1rem / 16px
 --fine/line-height   Mobile: 1rem / 16px      →   Widescreen: 1.5rem / 24px
 
@@ -702,6 +707,10 @@ toggle.addEventListener('change', () => {
 --xs    Mobile: 0.125rem / 2px   →   Widescreen: 0.25rem / 4px
 --components/input/switch/padding-gap   Mobile: 0.5rem / 8px   →   Widescreen: 1rem / 16px
 
+/* Sizing */
+--components/width/by-font-size/h1   Mobile: 3.125rem / 50px   →   Widescreen: 4.5rem / 72px
+--components/width/by-font-size/p    Mobile: 1rem / 16px   →   Widescreen: 1.5rem / 24px
+
 /* Border-radius */
 --border-radius/lg                       Mobile: 1rem / 16px   →   Widescreen: 2rem / 32px
 --components/input/switch/border-radius  Mobile: 1rem / 16px   →   Widescreen: 2rem / 32px
@@ -711,6 +720,7 @@ toggle.addEventListener('change', () => {
 --page/background                 Light: #FFFFFF   Dark: #01232D
 --text/default                    Light: #000000   Dark: #FFFFFF
 --text/link                       Light: #FF5247   Dark: #FFFFFF
+--brand/secondary                 Light: #003442   Dark: #003442
 --components/background/primary   Light: #FF5247   Dark: #FFFFFF
 --components/logo/left            Light: #003442   Dark: #FF5247
 --components/logo/right           Light: #01232D   Dark: #B22E28</code></pre>

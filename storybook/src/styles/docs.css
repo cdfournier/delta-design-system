@@ -1028,7 +1028,7 @@
   height: var(--components-input-checkbox-line-height);
   border: 1px solid var(--brand-primary);
   border-radius: var(--components-input-switch-border-radius);
-  background-color: var(--page-background);
+  background-color: transparent;
   cursor: pointer;
   flex-shrink: 0;
   position: relative;
@@ -1920,4 +1920,164 @@
   color: var(--text-default);
   margin: 0;
   padding-top: var(--spacing-sm);
+}
+
+/* Footers — Specimen */
+.delta-docs .component-demo footer {
+  padding: var(--spacing-xl);
+}
+
+.delta-docs .component-demo footer .group {
+  padding: var(--spacing-xl);
+  background-color: var(--section-background);
+  border-radius: var(--border-radius-lg);
+}
+
+.delta-docs .component-demo footer .row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media (min-width: 48rem) {
+  .delta-docs .component-demo footer .row {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.delta-docs .component-demo footer nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  width: 100%;
+}
+
+@media (min-width: 48rem) {
+  .delta-docs .component-demo footer nav {
+    flex: 1;
+    align-items: flex-start;
+  }
+}
+
+.delta-docs .component-demo footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+@media (min-width: 48rem) {
+  .delta-docs .component-demo footer ul {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+}
+
+.delta-docs .component-demo footer li {
+  padding-top: var(--spacing-xs);
+  padding-bottom: var(--spacing-xs);
+  margin: 0;
+  line-height: normal;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 48rem) {
+  .delta-docs .component-demo footer li {
+    justify-content: flex-start;
+  }
+}
+
+.delta-docs .component-demo footer .link {
+  font-size: var(--small-font-size);
+  line-height: var(--small-line-height);
+  color: var(--text-link);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.delta-docs .component-demo footer .link:hover {
+  color: var(--brand-secondary);
+  text-decoration: none;
+}
+
+[data-color-mode="dark"] .delta-docs .component-demo footer .link:hover {
+  color: var(--brand-primary);
+}
+
+.delta-docs .component-demo footer .brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+@media (min-width: 48rem) {
+  .delta-docs .component-demo footer .brand {
+    margin-left: auto;
+    width: auto;
+    flex: 0 0 auto;
+  }
+}
+
+.delta-docs .component-demo footer .the-delta-design-system-mark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding-top: var(--spacing-lg);
+}
+
+.delta-docs .component-demo footer .logo {
+  display: block;
+  width: var(--components-width-by-font-size-h1);
+  aspect-ratio: 1024 / 796;
+}
+
+.delta-docs .component-demo footer h2 {
+  font-family: 'Ovo', Georgia, serif;
+  font-size: var(--h4-font-size);
+  line-height: var(--h4-line-height);
+  font-weight: 400;
+  color: var(--text-default);
+  text-align: center;
+  margin: 0;
+}
+
+.delta-docs .component-demo footer .toggle-color-mode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  padding-top: var(--spacing-lg);
+  width: 100%;
+}
+
+.delta-docs .component-demo footer .toggle-color-mode .icon {
+  width: var(--components-width-by-font-size-p);
+  aspect-ratio: 1;
+  flex-shrink: 0;
+}
+
+.delta-docs .component-demo footer .copyright {
+  font-size: var(--fine-font-size);
+  line-height: var(--fine-line-height);
+  color: var(--text-default);
+  text-align: center;
+  margin: 0;
+}
+
+@media (min-width: 48rem) {
+  .delta-docs .component-demo footer .copyright {
+    text-align: right;
+  }
 }
