@@ -2081,3 +2081,209 @@
     text-align: right;
   }
 }
+
+/* Headers — Specimen */
+
+.delta-docs .component-demo:has(header) {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Shared header styles */
+.delta-docs .component-demo header {
+  position: relative;
+}
+
+.delta-docs .component-demo header .header-top {
+  padding: var(--spacing-md);
+  background-color: var(--section-background);
+  backdrop-filter: blur(15px);
+  border-radius: var(--border-radius-md);
+}
+
+.delta-docs .component-demo header .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.delta-docs .component-demo header .logo {
+  display: flex;
+  align-items: center;
+  height: var(--components-width-by-font-size-h3);
+  aspect-ratio: 1024 / 796;
+  text-decoration: none;
+}
+
+.delta-docs .component-demo header .logo svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Button menu toggle */
+.delta-docs .component-demo header .button-menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  border-radius: var(--border-radius-round);
+  cursor: pointer;
+  padding: 0;
+  width: var(--components-width-by-font-size-h4);
+  aspect-ratio: 1;
+}
+
+.delta-docs .component-demo header .button-icon {
+  width: 100%;
+  height: 100%;
+}
+
+/* Widescreen specimen */
+.delta-docs .component-demo .header-widescreen-specimen nav {
+  display: flex;
+  flex: 1;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+.delta-docs .component-demo .header-widescreen-specimen ul {
+  display: flex;
+  flex: 1;
+  gap: var(--spacing-xl);
+  list-style: none;
+  align-items: center;
+  padding: 0;
+  padding-left: var(--spacing-xxxl);
+  margin: 0;
+}
+
+.delta-docs .component-demo .header-widescreen-specimen li {
+  padding-top: var(--spacing-xs);
+  padding-bottom: var(--spacing-xs);
+  margin: 0;
+  line-height: normal;
+}
+
+.delta-docs .component-demo .header-widescreen-specimen .link {
+  font-size: var(--p-font-size);
+  line-height: var(--p-line-height);
+  color: var(--text-link);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.delta-docs .component-demo .header-widescreen-specimen .link:hover {
+  color: var(--brand-secondary);
+  text-decoration: none;
+}
+
+[data-color-mode="dark"] .delta-docs .component-demo .header-widescreen-specimen .link:hover {
+  color: var(--brand-primary);
+}
+
+/* Widescreen toggle */
+.delta-docs .component-demo .header-widescreen-specimen .toggle-color-mode {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-shrink: 0;
+}
+
+.delta-docs .component-demo .header-widescreen-specimen .toggle-color-mode .icon {
+  width: var(--components-width-by-font-size-p);
+  aspect-ratio: 1;
+  flex-shrink: 0;
+}
+
+/* Mobile specimen — closed */
+.delta-docs .component-demo .header-mobile-specimen[data-state="closed"] nav {
+  display: none;
+}
+
+/* Mobile specimen — open */
+.delta-docs .component-demo .header-mobile-specimen[data-state="open"] {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.delta-docs .component-demo .header-mobile-specimen[data-state="open"] nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  align-items: flex-end;
+  padding: var(--spacing-md);
+  background-color: var(--section-background);
+  backdrop-filter: blur(15px);
+  border-radius: var(--border-radius-md);
+}
+
+.delta-docs .component-demo .header-mobile-specimen[data-state="open"] ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.delta-docs .component-demo .header-mobile-specimen[data-state="open"] li {
+  padding-top: var(--spacing-xs);
+  padding-bottom: var(--spacing-xs);
+  margin: 0;
+  line-height: normal;
+}
+
+.delta-docs .component-demo .header-mobile-specimen .link {
+  font-size: var(--small-font-size);
+  line-height: var(--small-line-height);
+  color: var(--text-link);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.delta-docs .component-demo .header-mobile-specimen .link:hover {
+  color: var(--brand-secondary);
+  text-decoration: none;
+}
+
+[data-color-mode="dark"] .delta-docs .component-demo .header-mobile-specimen .link:hover {
+  color: var(--brand-primary);
+}
+
+/* Mobile toggle */
+.delta-docs .component-demo .header-mobile-specimen .toggle-color-mode {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding-top: var(--spacing-lg);
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.delta-docs .component-demo .header-mobile-specimen .toggle-color-mode .icon {
+  width: var(--components-width-by-font-size-p);
+  aspect-ratio: 1;
+  flex-shrink: 0;
+}
+
+/* Mobile variant row */
+.delta-docs .component-demo .header-mobile-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+}
+
+@media (min-width: 48rem) {
+  .delta-docs .component-demo .header-mobile-row {
+    flex-direction: row;
+    gap: var(--spacing-xl);
+  }
+}
+
+.delta-docs .component-demo .header-mobile-row .header-mobile-specimen {
+  flex: 1;
+  max-width: none;
+}

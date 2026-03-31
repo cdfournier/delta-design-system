@@ -133,7 +133,7 @@
             <li><strong>Navigation (widescreen):</strong> Horizontal list of text links displayed inline</li>
             <li><strong>Color mode toggle (widescreen):</strong> Sun icon, switch, and moon icon — visible inline in the top bar</li>
             <li><strong>Menu button (mobile):</strong> Hamburger icon when closed; close (X) icon when open</li>
-            <li><strong>Navigation dropdown (mobile open):</strong> Vertical list of links with trailing arrow icons, plus the color mode toggle</li>
+            <li><strong>Navigation dropdown (mobile open):</strong> Vertical list of links, plus the color mode toggle</li>
         </ul>
 
         <hr>
@@ -141,9 +141,9 @@
         <h2>Variants</h2>
         <p>The Header has two layout variants determined by viewport size, and a state variant for the mobile menu:</p>
         <ul>
-            <li><strong>Widescreen:</strong> Single horizontal top bar with all navigation visible inline; links have no trailing icons; color mode toggle sits at the right of the navigation row; no menu toggle button</li>
+            <li><strong>Widescreen:</strong> Single horizontal top bar with all navigation visible inline; color mode toggle sits at the right of the navigation row; no menu toggle button</li>
             <li><strong>Mobile — closed:</strong> Compact top bar showing only the logo and hamburger menu button; navigation and color mode toggle are hidden until the menu is opened</li>
-            <li><strong>Mobile — open:</strong> Top bar remains visible with the logo and a close (X) button; navigation dropdown appears below, containing the vertical link list with trailing arrow icons and the color mode toggle at the bottom</li>
+            <li><strong>Mobile — open:</strong> Top bar remains visible with the logo and a close (X) button; navigation dropdown appears below, containing the vertical link list and the color mode toggle at the bottom</li>
         </ul>
 
         <hr>
@@ -429,129 +429,84 @@
 
         <h3>HTML</h3>
         <pre><code>&lt;!-- Header - Widescreen --&gt;
-&lt;header class="header" data-size="widescreen"&gt;
+&lt;header&gt;
   &lt;div class="header-top"&gt;
-    &lt;div class="header-row"&gt;
+    &lt;div class="row"&gt;
 
       &lt;!-- Logo --&gt;
-      &lt;a href="/" class="header-logo" aria-label="Home"&gt;
-        &lt;svg viewBox="0 0 40 40"&gt;&lt;!-- Logo SVG --&gt;&lt;/svg&gt;
+      &lt;a href="/" class="logo" aria-label="Home"&gt;
+        &lt;svg viewBox="0 0 1024 796" aria-hidden="true"&gt;&lt;!-- Logo SVG --&gt;&lt;/svg&gt;
       &lt;/a&gt;
 
       &lt;!-- Navigation --&gt;
-      &lt;nav class="header-nav" aria-label="Primary navigation"&gt;
-        &lt;ul class="header-links"&gt;
-          &lt;li&gt;&lt;a href="/about"&gt;About&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href="/products"&gt;Products&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href="/services"&gt;Services&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href="/contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+      &lt;nav aria-label="Primary navigation"&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="/about" class="link"&gt;About&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="/products" class="link"&gt;Products&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="/services" class="link"&gt;Services&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="/contact" class="link"&gt;Contact&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
-      &lt;/nav&gt;
 
-      &lt;!-- Color mode toggle --&gt;
-      &lt;div class="header-toggle"&gt;
-        &lt;svg class="header-toggle-icon" viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;!-- Sun --&gt;&lt;/svg&gt;
-        &lt;label class="header-toggle-label"&gt;
-          &lt;input type="checkbox"
-                 class="header-toggle-input"
-                 aria-label="Toggle dark mode"&gt;
-          &lt;span class="header-toggle-track"&gt;&lt;/span&gt;
-        &lt;/label&gt;
-        &lt;svg class="header-toggle-icon" viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;!-- Moon --&gt;&lt;/svg&gt;
-      &lt;/div&gt;
+        &lt;!-- Color mode toggle --&gt;
+        &lt;div class="toggle-color-mode"&gt;
+          &lt;svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"&gt;&lt;!-- Sun --&gt;&lt;/svg&gt;
+          &lt;input type="checkbox" role="switch" aria-label="Toggle dark mode"&gt;
+          &lt;svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"&gt;&lt;!-- Moon --&gt;&lt;/svg&gt;
+        &lt;/div&gt;
+      &lt;/nav&gt;
 
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/header&gt;
 
 &lt;!-- Header - Mobile Closed --&gt;
-&lt;header class="header" data-size="mobile" data-state="closed"&gt;
+&lt;header data-state="closed"&gt;
   &lt;div class="header-top"&gt;
-    &lt;div class="header-row"&gt;
-
-      &lt;!-- Logo --&gt;
-      &lt;a href="/" class="header-logo" aria-label="Home"&gt;
-        &lt;svg viewBox="0 0 40 40"&gt;&lt;!-- Logo SVG --&gt;&lt;/svg&gt;
+    &lt;div class="row"&gt;
+      &lt;a href="/" class="logo" aria-label="Home"&gt;
+        &lt;svg viewBox="0 0 1024 796" aria-hidden="true"&gt;&lt;!-- Logo SVG --&gt;&lt;/svg&gt;
       &lt;/a&gt;
-
-      &lt;!-- Menu toggle --&gt;
-      &lt;button class="header-menu-toggle"
-              aria-label="Open menu"
-              aria-expanded="false"&gt;
-        &lt;svg class="header-menu-icon" viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;!-- Hamburger --&gt;&lt;/svg&gt;
+      &lt;button class="button-menu-toggle" aria-label="Open menu" aria-expanded="false"&gt;
+        &lt;svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;!-- Hamburger --&gt;&lt;/svg&gt;
       &lt;/button&gt;
-
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/header&gt;
 
 &lt;!-- Header - Mobile Open --&gt;
-&lt;header class="header" data-size="mobile" data-state="open"&gt;
+&lt;header data-state="open"&gt;
   &lt;div class="header-top"&gt;
-    &lt;div class="header-row"&gt;
-
-      &lt;!-- Logo --&gt;
-      &lt;a href="/" class="header-logo" aria-label="Home"&gt;
-        &lt;svg viewBox="0 0 40 40"&gt;&lt;!-- Logo SVG --&gt;&lt;/svg&gt;
+    &lt;div class="row"&gt;
+      &lt;a href="/" class="logo" aria-label="Home"&gt;
+        &lt;svg viewBox="0 0 1024 796" aria-hidden="true"&gt;&lt;!-- Logo SVG --&gt;&lt;/svg&gt;
       &lt;/a&gt;
-
-      &lt;!-- Menu toggle --&gt;
-      &lt;button class="header-menu-toggle"
-              aria-label="Close menu"
-              aria-expanded="true"&gt;
-        &lt;svg class="header-menu-icon" viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;!-- Close X --&gt;&lt;/svg&gt;
+      &lt;button class="button-menu-toggle" aria-label="Close menu" aria-expanded="true"&gt;
+        &lt;svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;!-- Close X --&gt;&lt;/svg&gt;
       &lt;/button&gt;
-
     &lt;/div&gt;
   &lt;/div&gt;
 
   &lt;!-- Navigation dropdown --&gt;
-  &lt;nav class="header-nav-mobile" aria-label="Primary navigation"&gt;
-    &lt;ul class="header-links-mobile"&gt;
-      &lt;li&gt;
-        &lt;a href="/about"&gt;
-          About
-          &lt;svg viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;!-- Arrow --&gt;&lt;/svg&gt;
-        &lt;/a&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;a href="/products"&gt;
-          Products
-          &lt;svg viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;!-- Arrow --&gt;&lt;/svg&gt;
-        &lt;/a&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;a href="/services"&gt;
-          Services
-          &lt;svg viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;!-- Arrow --&gt;&lt;/svg&gt;
-        &lt;/a&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;a href="/contact"&gt;
-          Contact
-          &lt;svg viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;!-- Arrow --&gt;&lt;/svg&gt;
-        &lt;/a&gt;
-      &lt;/li&gt;
+  &lt;nav aria-label="Primary navigation"&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="/about" class="link"&gt;About&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="/products" class="link"&gt;Products&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="/services" class="link"&gt;Services&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="/contact" class="link"&gt;Contact&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
 
     &lt;!-- Color mode toggle --&gt;
-    &lt;div class="header-toggle"&gt;
-      &lt;svg class="header-toggle-icon" viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;!-- Sun --&gt;&lt;/svg&gt;
-      &lt;label class="header-toggle-label"&gt;
-        &lt;input type="checkbox"
-               class="header-toggle-input"
-               aria-label="Toggle dark mode"&gt;
-        &lt;span class="header-toggle-track"&gt;&lt;/span&gt;
-      &lt;/label&gt;
-      &lt;svg class="header-toggle-icon" viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;!-- Moon --&gt;&lt;/svg&gt;
+    &lt;div class="toggle-color-mode"&gt;
+      &lt;svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"&gt;&lt;!-- Sun --&gt;&lt;/svg&gt;
+      &lt;input type="checkbox" role="switch" aria-label="Toggle dark mode"&gt;
+      &lt;svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"&gt;&lt;!-- Moon --&gt;&lt;/svg&gt;
     &lt;/div&gt;
   &lt;/nav&gt;
-
 &lt;/header&gt;</code></pre>
 
         <h3>CSS</h3>
         <pre><code>/* Header container */
-.header {
+header {
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -560,136 +515,139 @@
 /* Top bar */
 .header-top {
   padding: var(--md);
-  background-color: var(--section-background);
+  background-color: var(--section\/background);
   backdrop-filter: blur(15px);
-  border-radius: var(--border-radius-md);
+  border-radius: var(--border-radius\/md);
 }
 
-.header-row {
+.row {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 /* Logo */
-.header-logo {
+.logo {
   display: flex;
+  align-items: center;
+  height: var(--components\/width\/by-font-size\/h3);
+  aspect-ratio: 1024 / 796;
+}
+
+/* Navigation — shared */
+nav {
+  display: flex;
+  gap: var(--xl);
   align-items: center;
 }
 
-/* Widescreen navigation */
-.header-nav {
-  display: none;
-}
-
-@media (min-width: 48rem) {
-  .header[data-size="widescreen"] .header-nav {
-    display: flex;
-    padding-left: var(--xxxl);
-  }
-}
-
-.header-links {
+ul {
   display: flex;
   gap: var(--xl);
   list-style: none;
   align-items: center;
+  padding-left: var(--xxxl);
 }
 
-.header-links li {
+li {
   padding-top: var(--xs);
   padding-bottom: var(--xs);
 }
 
-.header-links a {
-  font-size: var(--p-font-size);
-  line-height: var(--p-line-height);
-  color: var(--text-link);
-  text-decoration: underline;
+.link {
+  font-size: var(--p\/font-size);
+  line-height: var(--p\/line-height);
+  color: var(--text\/link);
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--brand\/secondary);
 }
 
 /* Mobile menu toggle */
-.header-menu-toggle {
+.button-menu-toggle {
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
   background: transparent;
-  border-radius: var(--border-radius-round);
+  border-radius: var(--border-radius\/round);
   cursor: pointer;
   padding: 0;
+  width: var(--components\/width\/by-font-size\/h4);
+  aspect-ratio: 1;
 }
 
 /* Mobile navigation dropdown */
-.header-nav-mobile {
-  display: none;
-  margin-top: var(--xl);
-  padding: var(--md);
-  background-color: var(--section-background);
-  backdrop-filter: blur(15px);
-  border-radius: var(--border-radius-md);
-}
-
-.header[data-size="mobile"][data-state="open"] .header-nav-mobile {
+header[data-state="open"] nav {
   display: flex;
   flex-direction: column;
   gap: var(--md);
   align-items: flex-end;
+  margin-top: var(--xl);
+  padding: var(--md);
+  background-color: var(--section\/background);
+  backdrop-filter: blur(15px);
+  border-radius: var(--border-radius\/md);
 }
 
-.header-links-mobile {
-  display: flex;
+header[data-state="open"] ul {
   flex-direction: column;
   gap: var(--md);
-  list-style: none;
+  padding-left: 0;
 }
 
-.header-links-mobile li {
-  padding-top: var(--xs);
-  padding-bottom: var(--xs);
-}
-
-.header-links-mobile a {
-  display: flex;
-  align-items: center;
-  gap: var(--xs);
-  font-size: var(--small-font-size);
-  line-height: var(--small-line-height);
-  color: var(--text-link);
-  text-decoration: underline;
+header[data-state="open"] .link {
+  font-size: var(--small\/font-size);
+  line-height: var(--small\/line-height);
 }
 
 /* Color mode toggle */
-.header-toggle {
+.toggle-color-mode {
   display: flex;
   align-items: center;
   gap: var(--md);
 }
 
-.header[data-size="mobile"] .header-toggle {
-  display: none;
-}
-
-.header[data-size="mobile"][data-state="open"] .header-toggle {
-  display: flex;
+header[data-state="open"] .toggle-color-mode {
   padding-top: var(--lg);
 }
 
-.header-toggle-label {
-  display: flex;
-  align-items: center;
-  gap: var(--components-input-switch-padding-gap);
+.toggle-color-mode .icon {
+  width: var(--components\/width\/by-font-size\/p);
+  aspect-ratio: 1;
 }
 
-.header-toggle-input {
-  /* See Fieldsets documentation for complete switch styling */
-  border-radius: var(--components-input-switch-border-radius);
+input[role="switch"] {
+  appearance: none;
+  background: transparent;
+  border: 1px solid var(--text\/link);
+  border-radius: var(--components\/input\/switch\/border-radius);
+  padding: var(--components\/input\/switch\/padding);
+  cursor: pointer;
+}
+
+input[role="switch"]::before {
+  content: '';
+  display: block;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--text\/link);
+}
+
+input[role="switch"]:checked {
+  background: var(--text\/link);
+}
+
+input[role="switch"]:checked::before {
+  background: var(--global\/white);
 }</code></pre>
 
         <h3>JavaScript</h3>
         <pre><code>// Mobile menu toggle functionality
-const menuToggle = document.querySelector('.header-menu-toggle');
-const header = document.querySelector('.header');
+const menuToggle = document.querySelector('.button-menu-toggle');
+const header = document.querySelector('header');
 
 menuToggle.addEventListener('click', () => {
   const isOpen = header.dataset.state === 'open';
@@ -703,14 +661,14 @@ menuToggle.addEventListener('click', () => {
 
   // Move focus to first link when menu opens
   if (!isOpen) {
-    const firstLink = document.querySelector('.header-links-mobile a');
+    const firstLink = header.querySelector('nav .link');
     firstLink?.focus();
   }
 });
 
 // Close menu on link click — return focus to toggle
-const mobileLinks = document.querySelectorAll('.header-links-mobile a');
-mobileLinks.forEach(link => {
+const navLinks = header.querySelectorAll('nav .link');
+navLinks.forEach(link => {
   link.addEventListener('click', () => {
     header.dataset.state = 'closed';
     menuToggle.setAttribute('aria-expanded', 'false');
@@ -731,29 +689,38 @@ document.addEventListener('keydown', (e) => {
 
         <h3>Design tokens reference</h3>
         <pre><code>/* Typography — mobile layout */
-small/font-size    0.75rem / 12px (fixed)
-small/line-height  1.25rem / 20px (fixed)
+--small/font-size    0.75rem / 12px (fixed)
+--small/line-height  1.25rem / 20px (fixed)
 
 /* Typography — widescreen layout */
-p/font-size    1rem / 16px (fixed)
-p/line-height  1.5rem / 24px (fixed)
+--p/font-size    1rem / 16px (fixed)
+--p/line-height  1.5rem / 24px (fixed)
 
 /* Spacing */
-xs     0.125rem / 2px (fixed)
-md     0.5rem / 8px (fixed)
-lg     0.75rem / 12px (fixed)
-xl     1rem / 16px (fixed)
-xxxl   1.5rem / 24px (fixed)
-components/input/switch/padding-gap  0.5rem / 8px (fixed)
+--xs     0.125rem / 2px (fixed)
+--md     0.5rem / 8px (fixed)
+--lg     0.75rem / 12px (fixed)
+--xl     1rem / 16px (fixed)
+--xxxl   1.5rem / 24px (fixed)
+--components/input/switch/padding-gap  0.5rem / 8px (fixed)
+
+/* Sizing */
+--components/width/by-font-size/h3   Mobile: 1.75rem / 28px   →   Widescreen: 3.125rem / 50px
+--components/width/by-font-size/h4   Mobile: 1.5rem / 24px    →   Widescreen: 2.625rem / 42px
+--components/width/by-font-size/p    Mobile: 1rem / 16px      →   Widescreen: 1.5rem / 24px
 
 /* Border-radius */
-border-radius/md                     0.5rem / 8px (fixed)
-border-radius/round                  6.25rem / 100px (fixed)
-components/input/switch/border-radius  1rem / 16px (fixed)
+--border-radius/md                     0.5rem / 8px (fixed)
+--border-radius/round                  6.25rem / 100px (fixed)
+--components/input/switch/border-radius  1rem / 16px (fixed)
 
 /* Colors */
-section/background      Light: #EEEEEE   Dark: #003442
-text/link               Light: #FF5247   Dark: #FFFFFF</code></pre>
+--section/background              Light: #EEEEEE   Dark: #003442
+--text/link                       Light: #FF5247   Dark: #FFFFFF
+--brand/secondary                 Light: #003442   Dark: #003442
+--components/background/primary   Light: #FF5247   Dark: #FFFFFF
+--components/logo/left            Light: #003442   Dark: #FF5247
+--components/logo/right           Light: #01232D   Dark: #B22E28</code></pre>
 
         <hr>
 
