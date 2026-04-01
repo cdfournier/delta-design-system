@@ -8,17 +8,17 @@ export const Documentation = () => {
   return `
     <div class="delta-docs">
       <h1>Tabs</h1>
-      <p>A tab system organizes related content into multiple sections within the same space. It allows users to switch between panels by selecting a tab, reducing scrolling and keeping interfaces more concise and navigable.</p>
+      <p>Tabs organize related content into separate panels, allowing users to switch between views without leaving the page. The Tabs system is a compound component consisting of tab buttons, a tablist container, content panels, and the assembled tab interface.</p>
 
       <hr />
 
       <h2>Anatomy</h2>
+      <p>The Tabs component system consists of four sub-components:</p>
       <ul>
-        <li><strong>Tab list:</strong> A container that groups all tab buttons.</li>
-        <li><strong>Tab button:</strong> A label users select to reveal associated content.</li>
-        <li><strong>Tab panel:</strong> The content region linked to the active tab.</li>
-        <li><strong>Optional figure:</strong> A supporting image or media block inside the panel.</li>
-        <li><strong>Content area:</strong> Includes heading, body copy, and optional footer or CTA.</li>
+        <li><strong>Tab button:</strong> Individual trigger button for switching panels</li>
+        <li><strong>Tablist:</strong> Container holding all tab buttons</li>
+        <li><strong>Tab panel:</strong> Content area displayed for the active tab, containing an optional figure and a heading with body text (see the Content component for typography details)</li>
+        <li><strong>Tab (assembled):</strong> Complete system combining a tablist and tab panels</li>
       </ul>
 
       <div class="component-demo">
@@ -82,114 +82,123 @@ export const Documentation = () => {
 
       <h2>Variants</h2>
       <ul>
-        <li><strong>Direction:</strong> Horizontal or vertical tab list arrangement.</li>
-        <li><strong>Style:</strong> Primary or secondary selected-state treatment.</li>
-        <li><strong>Panel orientation:</strong> Content may stack vertically or sit side by side.</li>
+        <li><strong>Horizontal:</strong> Tablist appears above panels with tabs arranged in a horizontal row; panels stack vertically below; best for most contexts with 3–7 short labels</li>
+        <li><strong>Vertical:</strong> Tablist appears to the left of panels with tabs arranged in a vertical column; panels appear beside the tablist; works well when labels are longer or available width is limited</li>
       </ul>
 
       <hr />
 
       <h2>States</h2>
       <ul>
-        <li><strong>Default:</strong> Unselected tab buttons are transparent with text-default color.</li>
-        <li><strong>Selected:</strong> The active tab is filled with brand color and white text.</li>
-        <li><strong>Hover:</strong> Tabs may support hover feedback to indicate interactivity.</li>
-        <li><strong>Focus:</strong> Keyboard focus should remain clearly visible.</li>
+        <li><strong>Default:</strong> Unselected tabs appear as text labels with no background or border</li>
+        <li><strong>Selected:</strong> The active tab receives a filled background and border in either primary (red) or secondary (dark teal) brand color with white text</li>
+        <li><strong>Hover:</strong> Unselected tabs provide visual feedback on pointer hover</li>
+        <li><strong>Focus:</strong> Keyboard focus shows a visible outline; only the active tab is in the tab order, with arrow keys navigating between tabs</li>
       </ul>
 
       <hr />
 
       <h2>Typography</h2>
+      <p>Tab panel content uses the Content component for headings and body text. See the Content component documentation for complete typography specifications.</p>
+
       <table>
         <thead>
           <tr>
-            <th>Element</th>
-            <th>Font family</th>
-            <th>Font size</th>
-            <th>Line height</th>
-            <th>Font weight</th>
+            <th>Attribute</th>
+            <th>Token</th>
+            <th>Mobile/Tablet</th>
+            <th>Widescreen</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Tab button</td>
-            <td>Montserrat</td>
+            <td>Tab button font-size</td>
             <td><code>components/tab/font-size</code></td>
+            <td>0.625rem / 10px</td>
+            <td>1.5rem / 24px</td>
+          </tr>
+          <tr>
+            <td>Tab button line-height</td>
             <td><code>components/tab/line-height</code></td>
-            <td>700</td>
-          </tr>
-          <tr>
-            <td>Panel heading</td>
-            <td>Ovo</td>
-            <td><code>h3/font-size</code></td>
-            <td><code>h3/line-height</code></td>
-            <td>400</td>
-          </tr>
-          <tr>
-            <td>Panel body</td>
-            <td>Montserrat</td>
-            <td><code>p/font-size</code></td>
-            <td><code>p/line-height</code></td>
-            <td>400</td>
-          </tr>
-          <tr>
-            <td>Panel footer / fine print</td>
-            <td>Montserrat</td>
-            <td><code>fine/font-size</code></td>
-            <td><code>fine/line-height</code></td>
-            <td>400 / 700 for link</td>
+            <td>0.625rem / 10px</td>
+            <td>1.5rem / 24px</td>
           </tr>
         </tbody>
       </table>
 
-      <p>The selected tab label remains bold; panel copy follows standard content type tokens for hierarchy and readability.</p>
-
       <hr />
 
       <h2>Spacing</h2>
+
       <table>
         <thead>
           <tr>
-            <th>Element</th>
+            <th>Attribute</th>
             <th>Token</th>
+            <th>Mobile/Tablet</th>
+            <th>Widescreen</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Tabs container gap</td>
-            <td><code>spacing/md</code></td>
+            <td>Tab button padding-left, padding-right</td>
+            <td><code>md</code></td>
+            <td>0.5rem / 8px</td>
+            <td>1rem / 16px</td>
+          </tr>
+          <tr>
+            <td>Tab button padding-top, padding-bottom</td>
+            <td><code>sm</code></td>
+            <td>0.25rem / 4px</td>
+            <td>0.5rem / 8px</td>
+          </tr>
+          <tr>
+            <td>Tab button gap</td>
+            <td><code>components/button/padding-gap</code></td>
+            <td>0.25rem / 4px</td>
+            <td>0.25rem / 4px</td>
           </tr>
           <tr>
             <td>Tablist padding</td>
-            <td><code>spacing/md</code></td>
+            <td><code>md</code></td>
+            <td>0.5rem / 8px</td>
+            <td>1rem / 16px</td>
           </tr>
           <tr>
             <td>Tablist gap</td>
-            <td><code>spacing/md</code></td>
+            <td><code>md</code></td>
+            <td>0.5rem / 8px</td>
+            <td>1rem / 16px</td>
           </tr>
           <tr>
-            <td>Tab button vertical padding</td>
-            <td><code>spacing/sm</code></td>
+            <td>Tab panels container padding</td>
+            <td><code>md</code></td>
+            <td>0.5rem / 8px</td>
+            <td>1rem / 16px</td>
           </tr>
           <tr>
-            <td>Tab button horizontal padding</td>
-            <td><code>spacing/md</code></td>
+            <td>Tab panel padding</td>
+            <td><code>xl</code></td>
+            <td>1rem / 16px</td>
+            <td>2rem / 32px</td>
           </tr>
           <tr>
-            <td>Tabpanels padding</td>
-            <td><code>spacing/md</code></td>
+            <td>Tab panel gap (horizontal)</td>
+            <td><code>md</code></td>
+            <td>0.5rem / 8px</td>
+            <td>1rem / 16px</td>
           </tr>
           <tr>
-            <td>Panel content padding</td>
-            <td><code>spacing/xl</code></td>
+            <td>Tab panel gap (vertical)</td>
+            <td>—</td>
+            <td>0 (stacked, no gap)</td>
+            <td>0 (stacked, no gap)</td>
           </tr>
           <tr>
-            <td>Body spacing above heading</td>
-            <td><code>spacing/sm</code></td>
-          </tr>
-          <tr>
-            <td>Footer spacing above body</td>
-            <td><code>spacing/xl</code></td>
+            <td>Tablist to panels gap</td>
+            <td><code>md</code></td>
+            <td>0.5rem / 8px</td>
+            <td>1rem / 16px</td>
           </tr>
         </tbody>
       </table>
@@ -197,33 +206,52 @@ export const Documentation = () => {
       <hr />
 
       <h2>Border-radius</h2>
+
       <table>
         <thead>
           <tr>
-            <th>Element</th>
+            <th>Attribute</th>
             <th>Token</th>
+            <th>Mobile/Tablet</th>
+            <th>Widescreen</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Horizontal tablist</td>
-            <td><code>border-radius/xxl</code></td>
-          </tr>
-          <tr>
             <td>Tab button</td>
             <td><code>components/button/border-radius</code></td>
+            <td>2rem / 32px</td>
+            <td>2rem / 32px</td>
           </tr>
           <tr>
-            <td>Tabpanels container</td>
+            <td>Tablist (horizontal)</td>
+            <td><code>border-radius/xxl</code></td>
+            <td>2rem / 32px</td>
+            <td>4rem / 64px</td>
+          </tr>
+          <tr>
+            <td>Tablist (vertical)</td>
             <td><code>border-radius/md</code></td>
+            <td>0.5rem / 8px</td>
+            <td>1rem / 16px</td>
+          </tr>
+          <tr>
+            <td>Tab panels container</td>
+            <td><code>border-radius/md</code></td>
+            <td>0.5rem / 8px</td>
+            <td>1rem / 16px</td>
           </tr>
           <tr>
             <td>Tab panel</td>
             <td><code>border-radius/md</code></td>
+            <td>0.5rem / 8px</td>
+            <td>1rem / 16px</td>
           </tr>
           <tr>
-            <td>Figure (horizontal at widescreen)</td>
-            <td><code>border-radius/md</code> on left side only</td>
+            <td>Figure / image</td>
+            <td><code>border-radius/md</code></td>
+            <td>0.5rem / 8px</td>
+            <td>1rem / 16px</td>
           </tr>
         </tbody>
       </table>
@@ -231,198 +259,374 @@ export const Documentation = () => {
       <hr />
 
       <h2>Colors</h2>
+
       <table>
         <thead>
           <tr>
-            <th>Element</th>
+            <th>Attribute</th>
+            <th>Token</th>
             <th>Light mode</th>
             <th>Dark mode</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Tablist / tabpanels background</td>
+            <td>Tab button default text</td>
+            <td><code>text/default</code></td>
+            <td>#000000 (global/black)</td>
+            <td>#FFFFFF (global/white)</td>
+          </tr>
+          <tr>
+            <td>Tab button default background</td>
+            <td>—</td>
+            <td>transparent</td>
+            <td>transparent</td>
+          </tr>
+          <tr>
+            <td>Tab button selected background (primary)</td>
+            <td><code>brand/primary</code></td>
+            <td>#FF5247</td>
+            <td>#FF5247</td>
+          </tr>
+          <tr>
+            <td>Tab button selected background (secondary)</td>
+            <td><code>brand/secondary</code></td>
+            <td>#003442</td>
+            <td>#003442</td>
+          </tr>
+          <tr>
+            <td>Tab button selected text</td>
+            <td><code>global/white</code></td>
+            <td>#FFFFFF</td>
+            <td>#FFFFFF</td>
+          </tr>
+          <tr>
+            <td>Tablist background</td>
             <td><code>page/background</code></td>
+            <td>#FFFFFF (global/white)</td>
+            <td>#01232D (brand/secondary-dark)</td>
+          </tr>
+          <tr>
+            <td>Tab panels container background</td>
             <td><code>page/background</code></td>
+            <td>#FFFFFF (global/white)</td>
+            <td>#01232D (brand/secondary-dark)</td>
           </tr>
           <tr>
             <td>Tab panel background</td>
             <td><code>section/background</code></td>
-            <td><code>section/background</code></td>
+            <td>#EEEEEE (global/gray-light)</td>
+            <td>#003442 (brand/secondary)</td>
           </tr>
           <tr>
-            <td>Unselected tab text</td>
+            <td>Panel text</td>
             <td><code>text/default</code></td>
-            <td><code>text/default</code></td>
-          </tr>
-          <tr>
-            <td>Selected primary tab</td>
-            <td><code>brand/primary</code> with <code>global/white</code> text</td>
-            <td><code>brand/primary</code> with <code>global/white</code> text</td>
-          </tr>
-          <tr>
-            <td>Selected secondary tab</td>
-            <td><code>brand/secondary</code> with <code>global/white</code> text</td>
-            <td><code>brand/secondary</code> with <code>global/white</code> text</td>
-          </tr>
-          <tr>
-            <td>Footer link</td>
-            <td><code>text/link</code></td>
-            <td><code>text/link</code></td>
+            <td>#000000 (global/black)</td>
+            <td>#FFFFFF (global/white)</td>
           </tr>
         </tbody>
       </table>
 
-      <p>In dark mode, token overrides ensure surfaces and text adapt automatically while brand colors remain consistent for selected tabs and hover treatments.</p>
+      <p><strong>Light/dark mode behavior:</strong> Container and panel backgrounds adapt to theme. Selected tab button brand colors remain consistent across modes. In dark mode, <code>page/background</code> resolves to <code>brand/secondary-dark</code> (#01232D) and <code>section/background</code> resolves to <code>brand/secondary</code> (#003442) — note these are distinct dark-mode values that maintain visual contrast between the tablist/panels container and the active panel.</p>
 
       <hr />
 
       <h2>Accessibility</h2>
+
       <h3>Keyboard navigation</h3>
-      <p>Tabs should support arrow-key navigation within the tab list, with Home and End keys moving focus to the first and last tabs where applicable.</p>
+      <p>Tabs must support full keyboard interaction. The tablist uses a roving tabindex pattern — only the active tab is in the natural tab order.</p>
+      <ul>
+        <li><strong>Tab:</strong> Moves focus into and out of the tablist as a single stop</li>
+        <li><strong>Arrow Right / Arrow Down:</strong> Move focus to the next tab (Right for horizontal tablists, Down for vertical)</li>
+        <li><strong>Arrow Left / Arrow Up:</strong> Move focus to the previous tab (Left for horizontal, Up for vertical)</li>
+        <li><strong>Home:</strong> Move focus to the first tab</li>
+        <li><strong>End:</strong> Move focus to the last tab</li>
+        <li><strong>Enter / Space:</strong> Activate the focused tab if not using automatic activation</li>
+      </ul>
 
       <h3>Screen readers</h3>
-      <p>Use the WAI-ARIA tab pattern: <code>role="tablist"</code> on the list, <code>role="tab"</code> on buttons, and <code>role="tabpanel"</code> on panels, linked via <code>aria-controls</code> and <code>aria-labelledby</code>.</p>
+      <p>Use semantic ARIA roles to expose the tab structure correctly to assistive technology:</p>
+      <ul>
+        <li>Use <code>role="tablist"</code> on the tablist container</li>
+        <li>Use <code>role="tab"</code> on each tab button</li>
+        <li>Use <code>role="tabpanel"</code> on each panel</li>
+        <li>Provide an <code>aria-label</code> on the tablist to describe the group of tabs</li>
+        <li>Use descriptive, unique label text on each tab button — screen reader users navigate by tab label</li>
+        <li>Ensure panel content is accessible when displayed, including proper heading hierarchy and image alt text</li>
+      </ul>
+
+      <h3>ARIA attributes</h3>
+      <ul>
+        <li><strong>aria-selected:</strong> Set to <code>"true"</code> on the active tab, <code>"false"</code> on all others</li>
+        <li><strong>aria-controls:</strong> Link each tab button to its panel via the panel's ID</li>
+        <li><strong>aria-labelledby:</strong> Link each panel back to its controlling tab via the tab's ID</li>
+        <li><strong>aria-label:</strong> Apply to the tablist element to name the tab group (e.g. "Content sections")</li>
+        <li><strong>tabindex:</strong> Active tab uses <code>tabindex="0"</code>; inactive tabs use <code>tabindex="-1"</code></li>
+      </ul>
 
       <h3>Focus management</h3>
-      <p>Only the active tab should be in the tab order by default; inactive tabs should use <code>tabindex="-1"</code> until focused programmatically.</p>
-
-      <h3>Announcements</h3>
-      <p>When selection changes, assistive technologies should announce the newly active tab and associated panel context.</p>
+      <p>Provide a clear, visible focus indicator on all tab buttons. The Delta Design System uses a 2px outline in <code>brand/primary</code> (#FF5247) with a 2px offset. When a tab is activated via keyboard, consider whether to move focus to the panel or keep it on the tab — both patterns are valid; choose based on context and content length.</p>
 
       <h3>Color contrast</h3>
-      <p>Ensure text and selected-state fills meet WCAG contrast requirements in both light and dark modes.</p>
+      <p>All text and interactive elements must meet WCAG 2.1 AA contrast requirements (4.5:1 for normal text, 3:1 for large text and UI components):</p>
+      <ul>
+        <li>Default tab text (<code>text/default</code> on transparent) relies on the background behind the tablist — ensure the page background provides sufficient contrast</li>
+        <li>Selected tab text (white on <code>brand/primary</code> #FF5247) meets 3:1 — verify against specific use contexts</li>
+        <li>Selected tab text (white on <code>brand/secondary</code> #003442) exceeds 4.5:1</li>
+        <li>Panel body text (<code>text/default</code> on <code>section/background</code>) — black on #EEEEEE exceeds 4.5:1 in light mode</li>
+        <li>Do not rely on color alone to indicate selected state — the filled background, border, and text color change together provide multiple cues</li>
+      </ul>
 
       <hr />
 
       <h2>Usage</h2>
+
       <h3>When to use</h3>
+      <p>Use Tabs when you need to:</p>
       <ul>
-        <li>To organize related content into digestible sections within a shared area.</li>
-        <li>When users benefit from switching between categories, views, or grouped information.</li>
-        <li>When the number of sections is limited and labels remain concise.</li>
+        <li>Organize related content into distinct, parallel categories</li>
+        <li>Allow users to switch between views without page navigation</li>
+        <li>Reduce visual complexity by hiding secondary content until requested</li>
+        <li>Group settings, configuration options, or comparable items</li>
       </ul>
 
       <h3>When not to use</h3>
+      <p>Do not use Tabs when:</p>
       <ul>
-        <li>For long, complex navigation systems better suited to sidebars or separate pages.</li>
-        <li>When tab labels are too long to fit comfortably.</li>
-        <li>When users need to compare content across panels simultaneously.</li>
+        <li>Content should be viewed simultaneously — use page sections instead</li>
+        <li>Information follows a sequential process — use a stepper or wizard pattern</li>
+        <li>Users need to see all content to complete a task</li>
+        <li>There are more than 7–8 tabs — consider alternative navigation or content organization</li>
       </ul>
 
       <h3>Content guidelines</h3>
       <ul>
-        <li>Keep tab labels short, descriptive, and scannable.</li>
-        <li>Use consistent content structure across panels when possible.</li>
-        <li>Include optional media only when it adds clarity or context.</li>
+        <li><strong>Keep labels concise:</strong> 1–2 words per tab label; avoid full sentences or long phrases</li>
+        <li><strong>Use parallel structure:</strong> All tab labels should follow the same grammatical pattern (all nouns, all verbs, etc.)</li>
+        <li><strong>Default to the most important tab:</strong> Show the most commonly needed content in the first tab by default</li>
+        <li><strong>Ensure panel independence:</strong> Each panel's content should make sense on its own without requiring users to read other panels first</li>
+        <li><strong>Write descriptive labels:</strong> Labels must uniquely identify the panel content — avoid generic labels like "Tab 1" or "More"</li>
       </ul>
 
+      <h3>Placement</h3>
+      <p>Use the horizontal tablist direction for most contexts, particularly when following common web patterns with 3–7 short labels. Use the vertical tablist when tab labels are longer, available width is limited, or when creating sidebar-style navigation. The vertical assembled layout (tablist left of panels) works well in content-heavy interfaces with wider viewports.</p>
+
       <h3>Best practices</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Do</th>
-            <th>Don't</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Keep labels concise and distinct</td>
-            <td>Use long or ambiguous tab labels</td>
-          </tr>
-          <tr>
-            <td>Maintain consistent panel structure</td>
-            <td>Mix unrelated layouts without reason</td>
-          </tr>
-          <tr>
-            <td>Hide inactive panels from view</td>
-            <td>Show multiple panels when only one should be active</td>
-          </tr>
-        </tbody>
-      </table>
+
+      <div class="do-dont-grid">
+        <div class="do-section">
+          <h3>Do</h3>
+
+          <p><strong>Keep labels scannable</strong></p>
+          <p>Use short, descriptive labels that clearly indicate the panel content. Users scan tab labels to decide where to go.</p>
+
+          <p><strong>Default to the relevant tab</strong></p>
+          <p>Select the most useful or commonly accessed tab by default based on user context or task.</p>
+
+          <p><strong>Make selected state obvious</strong></p>
+          <p>The filled background, border, and white text together create a clear selected indicator across both brand color styles.</p>
+
+          <p><strong>Support full keyboard navigation</strong></p>
+          <p>Implement arrow key navigation with roving tabindex, Home/End keys, and proper ARIA attributes.</p>
+        </div>
+
+        <div class="dont-section">
+          <h3>Don't</h3>
+
+          <p><strong>Don't use too many tabs</strong></p>
+          <p>More than 7–8 tabs becomes difficult to scan and may exceed the tablist container, especially on mobile.</p>
+
+          <p><strong>Don't hide critical content</strong></p>
+          <p>Essential information that all users need should be immediately visible, not buried behind a tab click.</p>
+
+          <p><strong>Don't use tabs for sequential steps</strong></p>
+          <p>Multi-step processes require a stepper or wizard pattern that communicates progress and enforces order.</p>
+
+          <p><strong>Don't mix tab styles on one tablist</strong></p>
+          <p>All tab buttons within a single tablist must use the same style (all primary or all secondary). Mixed styles create visual inconsistency.</p>
+        </div>
+      </div>
 
       <hr />
 
       <h2>Code reference</h2>
+
       <h3>HTML</h3>
-      <pre><code>&lt;div class="tabs" data-direction="horizontal"&gt;
-  &lt;div class="tablist" role="tablist" aria-label="Picasso's Bull"&gt;
-    &lt;button class="tab-button" role="tab" aria-selected="true" aria-controls="panel-intro" id="tab-intro" tabindex="0" data-style="primary"&gt;Intro&lt;/button&gt;
-    &lt;button class="tab-button" role="tab" aria-selected="false" aria-controls="panel-one" id="tab-one" tabindex="-1" data-style="primary"&gt;One&lt;/button&gt;
-    &lt;button class="tab-button" role="tab" aria-selected="false" aria-controls="panel-two" id="tab-two" tabindex="-1" data-style="primary"&gt;Two&lt;/button&gt;
-    &lt;button class="tab-button" role="tab" aria-selected="false" aria-controls="panel-three" id="tab-three" tabindex="-1" data-style="primary"&gt;Three&lt;/button&gt;
-    &lt;button class="tab-button" role="tab" aria-selected="false" aria-controls="panel-four" id="tab-four" tabindex="-1" data-style="primary"&gt;Four&lt;/button&gt;
+      <pre><code>&lt;!-- Tabs - Horizontal direction, primary style --&gt;
+&lt;div class="tabs" data-direction="horizontal"&gt;
+
+  &lt;!-- Tablist --&gt;
+  &lt;div class="tablist" role="tablist" aria-label="Content sections"&gt;
+    &lt;button class="tab-button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="panel-1"
+            id="tab-1"
+            tabindex="0"
+            data-style="primary"&gt;
+      Overview
+    &lt;/button&gt;
+    &lt;button class="tab-button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-2"
+            id="tab-2"
+            tabindex="-1"
+            data-style="primary"&gt;
+      Details
+    &lt;/button&gt;
+    &lt;button class="tab-button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-3"
+            id="tab-3"
+            tabindex="-1"
+            data-style="primary"&gt;
+      Specs
+    &lt;/button&gt;
   &lt;/div&gt;
 
+  &lt;!-- Tab panels --&gt;
   &lt;div class="tabpanels"&gt;
-    &lt;div class="tab-panel" role="tabpanel" id="panel-intro" aria-labelledby="tab-intro"&gt;
+    &lt;div class="tab-panel"
+         role="tabpanel"
+         id="panel-1"
+         aria-labelledby="tab-1"
+         data-orientation="vertical"&gt;
       &lt;figure class="tab-figure"&gt;
-        &lt;img src="picasso-bull.jpg" alt="Pablo Picasso's The Bull, a series of eleven lithographs showing progressive abstraction"&gt;
+        &lt;img src="image1.jpg" alt="Product overview"&gt;
       &lt;/figure&gt;
       &lt;div class="tab-content"&gt;
-        &lt;h3&gt;The Bull by Pablo Picasso – A Lesson in Abstraction&lt;/h3&gt;
-        &lt;p&gt;Pablo Picasso's The Bull is a series of eleven lithographs created in 1945. It depicts the bull at various stages of abstraction, starting with a fairly realistic depiction and ending with nothing but a few lines.&lt;/p&gt;
-        &lt;footer class="tab-footer"&gt;
-          &lt;p class="tab-fine"&gt;by &lt;a href="https://drawpaintacademy.com/the-bull/" target="_blank"&gt;Dan Scott&lt;/a&gt;&lt;/p&gt;
-        &lt;/footer&gt;
+        &lt;h2&gt;Product Overview&lt;/h2&gt;
+        &lt;p&gt;Description of the product and its key features.&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
 
-    &lt;div class="tab-panel" role="tabpanel" id="panel-one" aria-labelledby="tab-one" hidden&gt;
+    &lt;div class="tab-panel"
+         role="tabpanel"
+         id="panel-2"
+         aria-labelledby="tab-2"
+         hidden
+         data-orientation="vertical"&gt;
+      &lt;figure class="tab-figure"&gt;
+        &lt;img src="image2.jpg" alt="Product details"&gt;
+      &lt;/figure&gt;
       &lt;div class="tab-content"&gt;
-        &lt;h3&gt;One&lt;/h3&gt;
-        &lt;p&gt;Content for the first tab panel.&lt;/p&gt;
+        &lt;h2&gt;Product Details&lt;/h2&gt;
+        &lt;p&gt;Detailed information about the product.&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
 
-    &lt;div class="tab-panel" role="tabpanel" id="panel-two" aria-labelledby="tab-two" hidden&gt;
+    &lt;div class="tab-panel"
+         role="tabpanel"
+         id="panel-3"
+         aria-labelledby="tab-3"
+         hidden
+         data-orientation="vertical"&gt;
       &lt;div class="tab-content"&gt;
-        &lt;h3&gt;Two&lt;/h3&gt;
-        &lt;p&gt;Content for the second tab panel.&lt;/p&gt;
+        &lt;h2&gt;Technical Specs&lt;/h2&gt;
+        &lt;p&gt;Technical specifications and requirements.&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
+  &lt;/div&gt;
 
-    &lt;div class="tab-panel" role="tabpanel" id="panel-three" aria-labelledby="tab-three" hidden&gt;
+&lt;/div&gt;
+
+&lt;!-- Tabs - Vertical direction, secondary style --&gt;
+&lt;div class="tabs" data-direction="vertical"&gt;
+  &lt;div class="tablist" role="tablist" aria-label="Product sections"&gt;
+    &lt;button class="tab-button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="panel-a"
+            id="tab-a"
+            tabindex="0"
+            data-style="secondary"&gt;
+      Features
+    &lt;/button&gt;
+    &lt;button class="tab-button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-b"
+            id="tab-b"
+            tabindex="-1"
+            data-style="secondary"&gt;
+      Reviews
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="tabpanels"&gt;
+    &lt;div class="tab-panel"
+         role="tabpanel"
+         id="panel-a"
+         aria-labelledby="tab-a"
+         data-orientation="horizontal"&gt;
+      &lt;figure class="tab-figure"&gt;
+        &lt;img src="features.jpg" alt="Product features"&gt;
+      &lt;/figure&gt;
       &lt;div class="tab-content"&gt;
-        &lt;h3&gt;Three&lt;/h3&gt;
-        &lt;p&gt;Content for the third tab panel.&lt;/p&gt;
+        &lt;h2&gt;Features&lt;/h2&gt;
+        &lt;p&gt;Key features and benefits.&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
-
-    &lt;div class="tab-panel" role="tabpanel" id="panel-four" aria-labelledby="tab-four" hidden&gt;
+    &lt;div class="tab-panel"
+         role="tabpanel"
+         id="panel-b"
+         aria-labelledby="tab-b"
+         hidden
+         data-orientation="horizontal"&gt;
       &lt;div class="tab-content"&gt;
-        &lt;h3&gt;Four&lt;/h3&gt;
-        &lt;p&gt;Content for the fourth tab panel.&lt;/p&gt;
+        &lt;h2&gt;Reviews&lt;/h2&gt;
+        &lt;p&gt;Customer reviews and ratings.&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
       <h3>CSS</h3>
-      <pre><code>.tabs {
+      <pre><code>/* Tabs container */
+.tabs {
   display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
+  gap: var(--md);
 }
 
+.tabs[data-direction="horizontal"] {
+  flex-direction: column;
+}
+
+.tabs[data-direction="vertical"] {
+  flex-direction: row;
+}
+
+/* Tablist */
 .tablist {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-md);
-  padding: var(--spacing-md);
+  padding: var(--md);
   background-color: var(--page-background);
+  gap: var(--md);
+}
+
+.tabs[data-direction="horizontal"] .tablist {
+  flex-direction: row;
+  flex-wrap: wrap;
   border-radius: var(--border-radius-xxl);
 }
 
+.tabs[data-direction="vertical"] .tablist {
+  flex-direction: column;
+  border-radius: var(--border-radius-md);
+}
+
+/* Tab buttons */
 .tab-button {
-  padding: var(--spacing-sm) var(--spacing-md);
-  border: 1px solid transparent;
+  padding-top: var(--sm);
+  padding-bottom: var(--sm);
+  padding-left: var(--md);
+  padding-right: var(--md);
+  border: none;
   background: transparent;
   border-radius: var(--components-button-border-radius);
-  font-family: 'Montserrat', sans-serif;
   font-size: var(--components-tab-font-size);
   line-height: var(--components-tab-line-height);
-  font-weight: 700;
   text-align: center;
   white-space: nowrap;
   color: var(--text-default);
@@ -430,180 +634,179 @@ export const Documentation = () => {
   transition: all 150ms ease-out;
 }
 
+/* Selected state — Primary */
 .tab-button[aria-selected="true"][data-style="primary"] {
   background-color: var(--brand-primary);
-  border-color: var(--brand-primary);
+  border: 1px solid var(--brand-primary);
   color: var(--global-white);
 }
 
+/* Selected state — Secondary */
 .tab-button[aria-selected="true"][data-style="secondary"] {
   background-color: var(--brand-secondary);
-  border-color: var(--brand-secondary);
+  border: 1px solid var(--brand-secondary);
   color: var(--global-white);
 }
 
+/* Focus state */
+.tab-button:focus {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
+}
+
+/* Tab panels container */
 .tabpanels {
-  padding: var(--spacing-md);
+  padding: var(--md);
   background-color: var(--page-background);
   border-radius: var(--border-radius-md);
 }
 
+/* Tab panel */
 .tab-panel {
   display: flex;
-  flex-direction: column;
-  gap: 0;
+  padding: var(--xl);
   background-color: var(--section-background);
   border-radius: var(--border-radius-md);
-  overflow: clip;
-  min-height: 16rem;
-}
-
-@media (min-width: 48rem) {
-  .tab-panel {
-    flex-direction: row;
-    gap: var(--spacing-md);
-  }
 }
 
 .tab-panel[hidden] {
   display: none;
 }
 
+.tab-panel[data-orientation="vertical"] {
+  flex-direction: column;
+  gap: 0;
+}
+
+.tab-panel[data-orientation="horizontal"] {
+  flex-direction: row;
+  gap: var(--md);
+}
+
+/* Figure */
 .tab-figure {
   margin: 0;
   overflow: clip;
+  border-radius: var(--border-radius-md);
 }
 
-.tab-panel .tab-figure {
+.tab-panel[data-orientation="vertical"] .tab-figure {
   width: 100%;
   aspect-ratio: 1.618;
 }
 
-@media (min-width: 48rem) {
-  .tab-panel .tab-figure {
-    flex: 1;
-    align-self: stretch;
-    width: auto;
-    aspect-ratio: auto;
-    border-radius: var(--border-radius-md) 0 0 var(--border-radius-md);
-  }
+.tab-panel[data-orientation="horizontal"] .tab-figure {
+  flex: 1;
+  align-self: stretch;
 }
 
 .tab-figure img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  pointer-events: none;
 }
 
+/* Panel content — see Content component for typography */
 .tab-content {
   flex: 1;
-  padding: var(--spacing-xl);
-}
-
-.tab-content h3 {
-  font-family: 'Ovo', Georgia, serif;
-  font-size: var(--h3-font-size);
-  line-height: var(--h3-line-height);
-  font-weight: 400;
-  color: var(--text-default);
-  margin: 0;
-}
-
-.tab-content p {
-  font-family: 'Montserrat', sans-serif;
-  font-size: var(--p-font-size);
-  line-height: var(--p-line-height);
-  color: var(--text-default);
-  margin: var(--spacing-sm) 0 0 0;
-}
-
-.tab-footer {
-  padding-top: var(--spacing-xl);
-}
-
-.tab-fine {
-  font-family: 'Montserrat', sans-serif;
-  font-size: var(--fine-font-size);
-  line-height: var(--fine-line-height);
-  color: var(--text-default);
-  margin: 0;
-}
-
-.tab-fine a {
-  color: var(--text-link);
-  text-decoration: underline;
-  font-weight: 700;
-}
-
-.tab-fine a:hover {
-  color: var(--brand-secondary);
-  text-decoration: underline;
-}
-
-[data-color-mode="dark"] .tab-fine a:hover {
-  color: var(--brand-primary);
 }</code></pre>
 
       <h3>JavaScript</h3>
-      <pre><code>const tabButtons = document.querySelectorAll('[role="tab"]');
-const tabPanels = document.querySelectorAll('[role="tabpanel"]');
+      <pre><code>// Tab switching functionality
+const tablist = document.querySelector('[role="tablist"]');
+const tabs = tablist.querySelectorAll('[role="tab"]');
+const panels = document.querySelectorAll('[role="tabpanel"]');
 
-tabButtons.forEach((button) =&gt; {
-  button.addEventListener('click', () =&gt; {
-    const targetPanel = button.getAttribute('aria-controls');
-
-    tabButtons.forEach((tab) =&gt; {
-      tab.setAttribute('aria-selected', 'false');
-      tab.setAttribute('tabindex', '-1');
-    });
-
-    tabPanels.forEach((panel) =&gt; {
-      panel.hidden = true;
-    });
-
-    button.setAttribute('aria-selected', 'true');
-    button.setAttribute('tabindex', '0');
-    document.getElementById(targetPanel).hidden = false;
+// Handle tab clicks
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    switchTab(tab);
   });
-});</code></pre>
+});
+
+// Handle keyboard navigation
+tablist.addEventListener('keydown', (e) => {
+  const currentTab = document.activeElement;
+  const currentIndex = Array.from(tabs).indexOf(currentTab);
+
+  let nextIndex = currentIndex;
+
+  // Horizontal tablist: Left/Right arrows
+  if (tablist.parentElement.dataset.direction === 'horizontal') {
+    if (e.key === 'ArrowRight') nextIndex = (currentIndex + 1) % tabs.length;
+    if (e.key === 'ArrowLeft') nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+  }
+  // Vertical tablist: Up/Down arrows
+  else {
+    if (e.key === 'ArrowDown') nextIndex = (currentIndex + 1) % tabs.length;
+    if (e.key === 'ArrowUp') nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+  }
+
+  if (e.key === 'Home') nextIndex = 0;
+  if (e.key === 'End') nextIndex = tabs.length - 1;
+
+  if (nextIndex !== currentIndex) {
+    e.preventDefault();
+    tabs[nextIndex].focus();
+    // Auto-activate on arrow key focus (remove for manual activation pattern)
+    switchTab(tabs[nextIndex]);
+  }
+});
+
+function switchTab(newTab) {
+  const newPanelId = newTab.getAttribute('aria-controls');
+  const newPanel = document.getElementById(newPanelId);
+
+  // Deselect all tabs and hide all panels
+  tabs.forEach(tab => {
+    tab.setAttribute('aria-selected', 'false');
+    tab.setAttribute('tabindex', '-1');
+  });
+
+  panels.forEach(panel => {
+    panel.setAttribute('hidden', '');
+  });
+
+  // Select new tab and show its panel
+  newTab.setAttribute('aria-selected', 'true');
+  newTab.setAttribute('tabindex', '0');
+  newPanel.removeAttribute('hidden');
+}</code></pre>
 
       <h3>Design tokens reference</h3>
       <pre><code>/* Typography */
---components/tab/font-size
---components/tab/line-height
---h3/font-size
---h3/line-height
---p/font-size
---p/line-height
---fine/font-size
---fine/line-height
+--components-tab-font-size    Mobile: 0.625rem / 10px   →   Widescreen: 1.5rem / 24px
+--components-tab-line-height  Mobile: 0.625rem / 10px   →   Widescreen: 1.5rem / 24px
 
 /* Spacing */
---spacing/sm
---spacing/md
---spacing/xl
+--sm    Mobile: 0.25rem / 4px   →   Widescreen: 0.5rem / 8px
+--md    Mobile: 0.5rem / 8px    →   Widescreen: 1rem / 16px
+--xl    Mobile: 1rem / 16px     →   Widescreen: 2rem / 32px
+--components-button-padding-gap  Mobile: 0.25rem / 4px   →   Widescreen: 0.25rem / 4px
 
 /* Border-radius */
---components/button/border-radius
---border-radius/md
---border-radius/xxl
+--components-button-border-radius  Mobile: 2rem / 32px   →   Widescreen: 2rem / 32px
+--border-radius-xxl                Mobile: 2rem / 32px   →   Widescreen: 4rem / 64px
+--border-radius-md                 Mobile: 0.5rem / 8px  →   Widescreen: 1rem / 16px
 
 /* Colors */
---page/background
---section/background
---text/default
---text/link
---brand/primary
---brand/secondary
---global/white</code></pre>
+--brand-primary       Light: #FF5247   Dark: #FF5247
+--brand-secondary     Light: #003442   Dark: #003442
+--global-white        Light: #FFFFFF   Dark: #FFFFFF
+--text-default        Light: #000000   Dark: #FFFFFF
+--page-background     Light: #FFFFFF   Dark: #01232D
+--section-background  Light: #EEEEEE   Dark: #003442</code></pre>
 
       <hr />
 
       <h2>Resources</h2>
       <ul>
-        <li><a href="https://www.w3.org/WAI/ARIA/apg/patterns/tabs/">WAI-ARIA Authoring Practices: Tabs Pattern</a></li>
-        <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/tab_role">MDN: ARIA tab role</a></li>
+        <li><a href="https://www.w3.org/WAI/ARIA/apg/patterns/tabs/" target="_blank">ARIA Authoring Practices Guide: Tabs Pattern</a> — W3C tabs implementation guidance</li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/tab_role" target="_blank">MDN: tab role</a> — ARIA tab role documentation</li>
+        <li><a href="https://webaim.org/" target="_blank">WebAIM</a> — Web accessibility resources</li>
+        <li><a href="https://www.w3.org/WAI/WCAG21/quickref/" target="_blank">WCAG 2.1 Quick Reference</a> — Accessibility guidelines</li>
+        <li><a href="https://www.nngroup.com/articles/tabs-used-right/" target="_blank">Nielsen Norman Group: Tabs, Used Right</a> — UX best practices for tabs</li>
       </ul>
     </div>
   `;
