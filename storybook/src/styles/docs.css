@@ -2287,3 +2287,173 @@
   flex: 1;
   max-width: none;
 }
+
+/* Tabs — Specimen */
+.delta-docs .component-demo:has(.tabs) {
+  padding: 1rem;
+}
+
+/* Tabs container */
+.delta-docs .component-demo .tabs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+/* Tablist */
+.delta-docs .component-demo .tablist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background-color: var(--page-background);
+  border-radius: var(--border-radius-xxl);
+  align-self: flex-start;
+}
+
+/* Tab buttons */
+.delta-docs .component-demo .tab-button {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid transparent;
+  background: transparent;
+  border-radius: var(--components-button-border-radius);
+  font-family: 'Montserrat', sans-serif;
+  font-size: var(--components-tab-font-size);
+  line-height: var(--components-tab-line-height);
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  color: var(--text-default);
+  cursor: pointer;
+  transition: all 150ms ease-out;
+}
+
+/* Selected state — Primary */
+.delta-docs .component-demo .tab-button[aria-selected="true"][data-style="primary"] {
+  background-color: var(--brand-primary);
+  border-color: var(--brand-primary);
+  color: var(--global-white);
+}
+
+/* Selected state — Secondary */
+.delta-docs .component-demo .tab-button[aria-selected="true"][data-style="secondary"] {
+  background-color: var(--brand-secondary);
+  border-color: var(--brand-secondary);
+  color: var(--global-white);
+}
+
+/* Tab panels container */
+.delta-docs .component-demo .tabpanels {
+  padding: var(--spacing-md);
+  background-color: var(--page-background);
+  border-radius: var(--border-radius-md);
+}
+
+/* Tab panel */
+.delta-docs .component-demo .tab-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background-color: var(--section-background);
+  border-radius: var(--border-radius-md);
+  overflow: clip;
+  min-height: 16rem;
+}
+
+@media (min-width: 48rem) {
+  .delta-docs .component-demo .tab-panel {
+    flex-direction: row;
+    gap: var(--spacing-md);
+  }
+}
+
+.delta-docs .component-demo .tab-panel[hidden] {
+  display: none;
+}
+
+/* Figure */
+.delta-docs .component-demo .tab-figure {
+  margin: 0;
+  overflow: clip;
+}
+
+.delta-docs .component-demo .tab-panel .tab-figure {
+  width: 100%;
+  aspect-ratio: 1.618;
+}
+
+@media (min-width: 48rem) {
+  .delta-docs .component-demo .tab-panel .tab-figure {
+    flex: 1;
+    align-self: stretch;
+    width: auto;
+    aspect-ratio: auto;
+    border-radius: var(--border-radius-md) 0 0 var(--border-radius-md);
+  }
+}
+
+.delta-docs .component-demo .tab-figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Panel content */
+.delta-docs .component-demo .tab-content {
+  flex: 1;
+  padding: var(--spacing-xl);
+}
+
+.delta-docs .component-demo .tab-content h3 {
+  font-family: 'Ovo', Georgia, serif;
+  font-size: var(--h3-font-size);
+  line-height: var(--h3-line-height);
+  font-weight: 400;
+  color: var(--text-default);
+  margin: 0;
+}
+
+.delta-docs .component-demo .tab-content p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: var(--p-font-size);
+  line-height: var(--p-line-height);
+  color: var(--text-default);
+  margin: var(--spacing-sm) 0 0 0;
+}
+
+/* Footer / fine print inside panel */
+.delta-docs .component-demo .tab-footer {
+  padding: 0;
+  padding-top: var(--spacing-xl);
+  margin: 0;
+}
+
+.delta-docs .component-demo .tab-fine {
+  font-family: 'Montserrat', sans-serif;
+  font-size: var(--fine-font-size);
+  line-height: var(--fine-line-height);
+  color: var(--text-default);
+  margin: 0;
+}
+
+.delta-docs .component-demo .tab-content p.tab-fine {
+  font-size: var(--fine-font-size);
+  line-height: var(--fine-line-height);
+  margin: 0;
+}
+
+.delta-docs .component-demo .tab-fine a {
+  color: var(--text-link);
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.delta-docs .component-demo .tab-fine a:hover {
+  color: var(--brand-secondary);
+  text-decoration: underline;
+}
+
+[data-color-mode="dark"] .delta-docs .component-demo .tab-fine a:hover {
+  color: var(--brand-primary);
+}
