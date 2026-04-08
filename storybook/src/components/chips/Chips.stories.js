@@ -32,7 +32,7 @@ export const Documentation = () => {
             <span class="chip-label">Label</span>
           </span>
           <span class="chip chip-primary">
-            <span class="chip-icon-left">
+            <span class="span-icon-left">
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/>
                 <path d="M2 8L12 14L22 8" stroke="currentColor" stroke-width="2"/>
@@ -541,7 +541,7 @@ export const Documentation = () => {
 &lt;!-- Dismissible chip --&gt;
 &lt;span class="chip chip-primary"&gt;
   Label
-  &lt;button class="chip-close button-chip" aria-label="Remove Label chip"&gt;
+  &lt;button class="button-chip" aria-label="Remove Label chip"&gt;
     &lt;svg viewBox="0 0 12 12" fill="none"&gt;
       &lt;path d="M9 3L3 9M3 3L9 9" stroke="currentColor" stroke-width="2"
             stroke-linecap="round"/&gt;

@@ -791,8 +791,8 @@
   display: block;
 }
 
-.delta-docs .chip-icon-left,
-.delta-docs .chip-icon-right {
+.delta-docs .span-icon-left,
+.delta-docs .span-icon-right {
   display: flex;
   align-items: center;
   width: var(--components-width-by-font-size-h3);
@@ -801,8 +801,8 @@
   flex-shrink: 0;
 }
 
-.delta-docs .chip-icon-left svg,
-.delta-docs .chip-icon-right svg {
+.delta-docs .span-icon-left svg,
+.delta-docs .span-icon-right svg {
   width: var(--components-chip-font-size);
   height: var(--components-chip-font-size);
 }
