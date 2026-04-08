@@ -280,7 +280,7 @@ export const Documentation = () => {
       &lt;tr class="table-row"&gt;
         &lt;th class="table-cell" scope="col"&gt;Date&lt;/th&gt;
         &lt;th class="table-cell" scope="col"&gt;Category&lt;/th&gt;
-        &lt;th class="table-cell table-cell--right" scope="col"&gt;Cost&lt;/th&gt;
+        &lt;th class="table-cell table-cell-right" scope="col"&gt;Cost&lt;/th&gt;
       &lt;/tr&gt;
     &lt;/thead&gt;
 
@@ -288,28 +288,28 @@ export const Documentation = () => {
       &lt;tr class="table-row"&gt;
         &lt;td class="table-cell"&gt;yyyy/mm/dd&lt;/td&gt;
         &lt;td class="table-cell"&gt;Category&lt;/td&gt;
-        &lt;td class="table-cell table-cell--right"&gt;
+        &lt;td class="table-cell table-cell-right"&gt;
           &lt;span class="table-currency"&gt;$&lt;/span&gt;000.00
         &lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr class="table-row"&gt;
         &lt;td class="table-cell"&gt;yyyy/mm/dd&lt;/td&gt;
         &lt;td class="table-cell"&gt;Category&lt;/td&gt;
-        &lt;td class="table-cell table-cell--right"&gt;
+        &lt;td class="table-cell table-cell-right"&gt;
           &lt;span class="table-currency"&gt;$&lt;/span&gt;00.00
         &lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr class="table-row"&gt;
         &lt;td class="table-cell"&gt;yyyy/mm/dd&lt;/td&gt;
         &lt;td class="table-cell"&gt;Category&lt;/td&gt;
-        &lt;td class="table-cell table-cell--right"&gt;
+        &lt;td class="table-cell table-cell-right"&gt;
           &lt;span class="table-currency"&gt;$&lt;/span&gt;00.00
         &lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr class="table-row"&gt;
         &lt;td class="table-cell"&gt;yyyy/mm/dd&lt;/td&gt;
         &lt;td class="table-cell"&gt;Category&lt;/td&gt;
-        &lt;td class="table-cell table-cell--right"&gt;
+        &lt;td class="table-cell table-cell-right"&gt;
           &lt;span class="table-currency"&gt;$&lt;/span&gt;000.00
         &lt;/td&gt;
       &lt;/tr&gt;
@@ -350,7 +350,7 @@ thead .table-row {
 }
 
 /* Right-aligned cell */
-.table-cell--right {
+.table-cell-right {
   text-align: right;
 }
 
