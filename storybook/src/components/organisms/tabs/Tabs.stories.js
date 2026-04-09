@@ -1,4 +1,4 @@
-import picassoBull from '../../images/picasso-bull.jpg';
+import picassoBull from '../../../images/picasso-bull.jpg';
 
 export default {
   title: 'Organisms/Tabs',

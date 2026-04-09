@@ -1,4 +1,4 @@
-import cardPlaceholder from '../../images/card-placeholder.jpg';
+import cardPlaceholder from '../../../images/card-placeholder.jpg';
 
 export default {
   title: 'Organisms/Banners',

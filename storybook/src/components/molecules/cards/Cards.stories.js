@@ -1,4 +1,4 @@
-import cardImage from '../../images/card-placeholder.jpg';
+import cardImage from '../../../images/card-placeholder.jpg';
 
 export default {
   title: 'Molecules/Cards',

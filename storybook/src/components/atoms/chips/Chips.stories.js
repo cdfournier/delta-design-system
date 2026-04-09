@@ -1,4 +1,4 @@
-import avatarPlaceholder from '../../images/avatar-placeholder.jpg';
+import avatarPlaceholder from '../../../images/avatar-placeholder.jpg';
 
 export default {
   title: 'Atoms/Chips',
