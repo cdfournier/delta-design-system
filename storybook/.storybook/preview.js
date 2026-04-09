@@ -27,6 +27,17 @@ const preview = {
       },
       defaultViewport: 'widescreen',
     },
+    options: {
+      storySort: {
+        order: [
+          'Getting Started', ['Welcome', 'Feature Flags'],
+          'Foundations', ['Colors', 'Grid', 'Spacing', 'Typography'],
+          'Atoms', ['Badges', 'Blockquotes', 'Buttons', 'Chips', 'Icons', 'Inputs', 'Links'],
+          'Molecules', ['Cards', 'Content', 'Details', 'Feedback', 'Fieldsets', 'Messages', 'Pagination', 'Tables'],
+          'Organisms', ['Banners', 'Footers', 'Headers', 'Tabs'],
+        ],
+      },
+    },
     layout: 'fullscreen',
   },
   decorators: [
