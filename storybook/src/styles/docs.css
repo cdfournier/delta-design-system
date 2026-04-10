@@ -170,6 +170,7 @@
   margin: 1.5rem 0;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: var(--spacing-md);
   overflow-x: auto;
 }
@@ -2456,4 +2457,90 @@
 
 [data-color-mode="dark"] .delta-docs .component-demo .tab-fine a:hover {
   color: var(--brand-primary);
+}
+
+/* ==========================================================================
+   Code toggle — "Show code" / "Hide code" for specimens
+   ========================================================================== */
+
+.delta-docs .code-toggle-wrapper {
+  margin-top: -20px;
+  margin-bottom: 24px;
+}
+
+.delta-docs .code-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  font-family: var(--font-family);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--text-default);
+  background: transparent;
+  border: 1px solid var(--surface-border, #CCCCCC);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.delta-docs .code-toggle-btn:hover {
+  border-color: var(--text-default);
+}
+
+.delta-docs .code-toggle-block {
+  margin-top: 8px;
+  background-color: var(--color-gray-light, #EEEEEE);
+  border: 1px solid var(--surface-border, #CCCCCC);
+  border-radius: 4px;
+  padding: 16px;
+  overflow-x: auto;
+}
+
+.delta-docs .code-toggle-block code {
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-default);
+  background: transparent;
+  padding: 0;
+}
+
+/* ==========================================================================
+   Badge specimens
+   ========================================================================== */
+
+.delta-docs .component-demo .badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--components-badge-padding-t-b) var(--components-badge-padding-l-r);
+  border-radius: var(--components-badge-border-radius);
+  font-size: var(--components-badge-font-size);
+  line-height: var(--components-badge-line-height);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.delta-docs .component-demo .badge-primary {
+  background-color: var(--brand-primary);
+  color: var(--global-white);
+}
+
+.delta-docs .component-demo .badge-secondary {
+  background-color: var(--brand-secondary);
+  color: var(--global-white);
+}
+
+.delta-docs .component-demo .badge-transparent {
+  background-color: transparent;
+  color: var(--text-default);
+  border: 1px solid var(--text-default);
+}
+
+.delta-docs .component-demo .badge-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  align-items: center;
 }

@@ -1,47 +1,24 @@
 export default {
   title: 'Atoms/Badges',
+  argTypes: {
+    variant: {
+      control: { type: 'select' },
+      options: ['primary', 'secondary', 'transparent'],
+      description: 'Badge style variant',
+      table: {
+        defaultValue: { summary: 'primary' },
+      },
+    },
+    label: {
+      control: { type: 'text' },
+      description: 'Badge label text',
+    },
+  },
 };
 
 export const Documentation = () => {
   return `
     <div class="delta-docs">
-      <style>
-        .delta-docs .component-demo .badge {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          padding: var(--components-badge-padding-t-b) var(--components-badge-padding-l-r);
-          border-radius: var(--components-badge-border-radius);
-          font-size: var(--components-badge-font-size);
-          line-height: var(--components-badge-line-height);
-          font-weight: 700;
-          white-space: nowrap;
-        }
-
-        .delta-docs .component-demo .badge-primary {
-          background-color: var(--brand-primary);
-          color: var(--global-white);
-        }
-
-        .delta-docs .component-demo .badge-secondary {
-          background-color: var(--brand-secondary);
-          color: var(--global-white);
-        }
-
-        .delta-docs .component-demo .badge-transparent {
-          background-color: transparent;
-          color: var(--text-default);
-          border: 1px solid var(--text-default);
-        }
-
-        .delta-docs .component-demo .badge-group {
-          display: flex;
-          flex-wrap: wrap;
-          gap: var(--spacing-md);
-          align-items: center;
-        }
-      </style>
-
       <h1>Badges</h1>
       <p>A badge is a small, non-interactive label used to convey status, category, or count information at a glance. Badges always appear inline with or adjacent to the content they describe.</p>
 
@@ -406,4 +383,21 @@ export const Documentation = () => {
       </ul>
     </div>
   `;
+};
+
+export const Playground = {
+  tags: ['!autodocs'],
+  args: {
+    variant: 'primary',
+    label: 'New',
+  },
+  render: (args) => {
+    return `
+      <div class="delta-docs" style="padding: 32px 24px;">
+        <div class="component-demo">
+          <span class="badge badge-${args.variant}">${args.label}</span>
+        </div>
+      </div>
+    `;
+  },
 };

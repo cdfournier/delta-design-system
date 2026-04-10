@@ -1,6 +1,7 @@
 import '../src/styles/tokens.css';
 import '../src/styles/reset.css';
 import '../src/styles/docs.css';
+import { initCodeToggles } from '../src/utilities/code-toggle.js';
 
 /** @type { import('@storybook/html').Preview } */
 const preview = {
@@ -60,6 +61,9 @@ const preview = {
       } else if (story instanceof HTMLElement) {
         wrapper.appendChild(story);
       }
+
+      // Initialize "Show code" toggles after DOM is rendered
+      setTimeout(() => initCodeToggles(wrapper), 0);
 
       return wrapper;
     },
