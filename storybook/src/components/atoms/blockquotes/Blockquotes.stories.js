@@ -4,67 +4,6 @@ export default {
 
 export const Documentation = () => {
   return `
-    <style>
-      :root {
-        --brand-primary: #FF5247;
-        --text-default: #000000;
-        --text-link: #FF5247;
-        --global-white: #FFFFFF;
-        --md: 0.5rem;
-        --xl: 1rem;
-        --components-blockquote-quote-font-size: 0.75rem;
-        --components-blockquote-quote-line-height: 1.25rem;
-        --components-blockquote-cite-font-size: 0.625rem;
-        --components-blockquote-cite-line-height: 1rem;
-      }
-      /* @media (prefers-color-scheme: dark) {
-        :root { --text-default: #FFFFFF; --text-link: #FFFFFF; }
-      } */
-
-      .delta-docs .component-demo .blockquote {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: var(--md);
-        padding: var(--xl);
-      }
-
-      .delta-docs .component-demo .blockquote p {
-        font-size: var(--components-blockquote-quote-font-size);
-        line-height: var(--components-blockquote-quote-line-height);
-        font-weight: 700;
-        color: var(--text-default);
-        margin: 0;
-      }
-
-      .delta-docs .component-demo .blockquote cite a {
-        font-size: var(--components-blockquote-cite-font-size);
-        line-height: var(--components-blockquote-cite-line-height);
-        font-weight: 700;
-        color: var(--text-link);
-        text-decoration: underline;
-        text-decoration-style: solid;
-      }
-
-      .delta-docs .component-demo .blockquote-left {
-        border-left: 4px solid var(--brand-primary);
-        text-align: left;
-        align-items: flex-start;
-      }
-
-      .delta-docs .component-demo .blockquote-center {
-        border-top: 4px solid var(--brand-primary);
-        border-bottom: 4px solid var(--brand-primary);
-        text-align: center;
-        align-items: center;
-      }
-
-      .delta-docs .component-demo .blockquote-right {
-        border-right: 4px solid var(--brand-primary);
-        text-align: right;
-        align-items: flex-end;
-      }
-    </style>
     <div class="delta-docs">
       <h1>Blockquotes</h1>
       <p>Blockquotes render a styled quotation with a prominent accent border, quote text, and a cite attribution link. They support three orientation variants that control the position of the accent border and text alignment.</p>

@@ -397,20 +397,20 @@
   text-decoration-style: solid;
 }
 
-.delta-docs .blockquote--left {
+.delta-docs .blockquote-left {
   border-left: 4px solid var(--brand-primary);
   text-align: left;
   align-items: flex-start;
 }
 
-.delta-docs .blockquote--center {
+.delta-docs .blockquote-center {
   border-top: 4px solid var(--brand-primary);
   border-bottom: 4px solid var(--brand-primary);
   text-align: center;
   align-items: center;
 }
 
-.delta-docs .blockquote--right {
+.delta-docs .blockquote-right {
   border-right: 4px solid var(--brand-primary);
   text-align: right;
   align-items: flex-end;
