@@ -1,5 +1,21 @@
 export default {
   title: 'Atoms/Blockquotes',
+  argTypes: {
+    orientation: {
+      control: { type: 'select' },
+      options: ['left', 'center', 'right'],
+      description: 'Accent border position and text alignment',
+      table: { defaultValue: { summary: 'left' } },
+    },
+    quote: {
+      control: { type: 'text' },
+      description: 'Quote text',
+    },
+    cite: {
+      control: { type: 'text' },
+      description: 'Attribution text',
+    },
+  },
 };
 
 export const Documentation = () => {
@@ -358,4 +374,25 @@ export const Documentation = () => {
       </ul>
     </div>
   `;
+};
+
+export const Playground = {
+  tags: ['!autodocs'],
+  args: {
+    orientation: 'left',
+    quote: 'We should embrace the fact that the web doesn\'t have the same constraints, and design for this flexibility.',
+    cite: 'John Allsopp, A Dao of Web Design',
+  },
+  render: (args) => {
+    return `
+      <div class="delta-docs" style="padding: 32px 24px;">
+        <div class="component-demo">
+          <blockquote class="blockquote blockquote-${args.orientation}">
+            <p>${args.quote}</p>
+            <cite><a href="#">${args.cite}</a></cite>
+          </blockquote>
+        </div>
+      </div>
+    `;
+  },
 };

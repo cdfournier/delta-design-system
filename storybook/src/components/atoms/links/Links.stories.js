@@ -1,5 +1,17 @@
 export default {
   title: 'Atoms/Links',
+  argTypes: {
+    size: {
+      control: { type: 'select' },
+      options: ['p', 'small', 'fine'],
+      description: 'Typography size variant',
+      table: { defaultValue: { summary: 'p' } },
+    },
+    label: {
+      control: { type: 'text' },
+      description: 'Link text',
+    },
+  },
 };
 
 export const Documentation = () => {
@@ -453,4 +465,26 @@ a:focus-visible {
       </ul>
     </div>
   `;
+};
+
+export const Playground = {
+  tags: ['!autodocs'],
+  args: {
+    size: 'p',
+    label: 'Example link',
+  },
+  render: (args) => {
+    return `
+      <div class="delta-docs" style="padding: 32px 24px;">
+        <div class="component-demo">
+          <a href="#" class="demo-link link-${args.size}" onclick="return false;">
+            ${args.label}
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M8 0L6.59 1.41 12.17 7H0v2h12.17l-5.58 5.59L8 16l8-8z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    `;
+  },
 };

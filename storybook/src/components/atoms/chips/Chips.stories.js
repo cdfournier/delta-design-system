@@ -2,6 +2,18 @@ import avatarPlaceholder from '../../../images/avatar-placeholder.jpg';
 
 export default {
   title: 'Atoms/Chips',
+  argTypes: {
+    variant: {
+      control: { type: 'select' },
+      options: ['primary', 'secondary'],
+      description: 'Chip color variant',
+      table: { defaultValue: { summary: 'primary' } },
+    },
+    label: {
+      control: { type: 'text' },
+      description: 'Chip label text',
+    },
+  },
 };
 
 export const Documentation = () => {
@@ -760,4 +772,23 @@ document.querySelectorAll('.chip').forEach(chip => {
       </ul>
     </div>
   `;
+};
+
+export const Playground = {
+  tags: ['!autodocs'],
+  args: {
+    variant: 'primary',
+    label: 'Label',
+  },
+  render: (args) => {
+    return `
+      <div class="delta-docs" style="padding: 32px 24px;">
+        <div class="component-demo">
+          <span class="chip chip-${args.variant}">
+            <span class="chip-label">${args.label}</span>
+          </span>
+        </div>
+      </div>
+    `;
+  },
 };

@@ -1,5 +1,23 @@
 export default {
   title: 'Atoms/Buttons',
+  argTypes: {
+    variant: {
+      control: { type: 'select' },
+      options: ['primary', 'secondary', 'white'],
+      description: 'Color palette',
+      table: { defaultValue: { summary: 'primary' } },
+    },
+    style: {
+      control: { type: 'select' },
+      options: ['solid', 'transparent'],
+      description: 'Visual treatment',
+      table: { defaultValue: { summary: 'solid' } },
+    },
+    label: {
+      control: { type: 'text' },
+      description: 'Button label text',
+    },
+  },
 };
 
 export const Documentation = () => {
@@ -787,4 +805,26 @@ export const Documentation = () => {
       </ul>
     </div>
   `;
+};
+
+export const Playground = {
+  tags: ['!autodocs'],
+  args: {
+    variant: 'primary',
+    style: 'solid',
+    label: 'Button',
+  },
+  render: (args) => {
+    const button = `<button class="button button-${args.variant}-${args.style}" type="button">${args.label}</button>`;
+    const inner = args.variant === 'white'
+      ? `<div class="button-group" style="background-color: var(--brand-secondary); padding: var(--spacing-xl); border-radius: var(--border-radius-md);">${button}</div>`
+      : `<div class="button-group">${button}</div>`;
+    return `
+      <div class="delta-docs" style="padding: 32px 24px;">
+        <div class="component-demo">
+          ${inner}
+        </div>
+      </div>
+    `;
+  },
 };

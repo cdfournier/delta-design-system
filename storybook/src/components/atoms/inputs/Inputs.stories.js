@@ -1,5 +1,21 @@
 export default {
   title: 'Atoms/Inputs',
+  argTypes: {
+    label: {
+      control: { type: 'text' },
+      description: 'Label text',
+    },
+    placeholder: {
+      control: { type: 'text' },
+      description: 'Placeholder text',
+    },
+    type: {
+      control: { type: 'select' },
+      options: ['text', 'email', 'password'],
+      description: 'Input type',
+      table: { defaultValue: { summary: 'text' } },
+    },
+  },
 };
 
 export const Documentation = () => {
@@ -869,4 +885,23 @@ toggleButton.addEventListener('click', () => {
       </ul>
     </div>
   `;
+};
+
+export const Playground = {
+  tags: ['!autodocs'],
+  args: {
+    label: 'Email address',
+    placeholder: 'Enter your email',
+    type: 'email',
+  },
+  render: (args) => {
+    return `
+      <div class="delta-docs" style="padding: 32px 24px;">
+        <div class="component-demo">
+          <label for="playground-input">${args.label}</label>
+          <input type="${args.type}" id="playground-input" class="input-text" placeholder="${args.placeholder}">
+        </div>
+      </div>
+    `;
+  },
 };
