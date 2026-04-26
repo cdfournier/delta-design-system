@@ -1,5 +1,49 @@
 export default {
   title: 'Molecules/Feedback',
+  argTypes: {
+    kind: {
+      control: { type: 'inline-radio' },
+      options: ['progress', 'meter'],
+      description: 'Feedback type',
+      table: { defaultValue: { summary: 'progress' } },
+    },
+    value: {
+      control: { type: 'range', min: 0, max: 100, step: 1 },
+      description: 'Fill percentage (0–100)',
+      table: { defaultValue: { summary: '60' } },
+    },
+    bounds: {
+      control: { type: 'inline-radio' },
+      options: ['optimum', 'low', 'high'],
+      description: 'Meter bounds (meter kind only)',
+      if: { arg: 'kind', eq: 'meter' },
+      table: { defaultValue: { summary: 'optimum' } },
+    },
+    label: {
+      control: { type: 'text' },
+      description: 'Label text',
+    },
+    showText: {
+      control: { type: 'boolean' },
+      description: 'Show text below the bar (value text for progress, min/max for meter)',
+      table: { defaultValue: { summary: 'true' } },
+    },
+    valueText: {
+      control: { type: 'text' },
+      description: 'Value text shown to the right (progress kind only)',
+      if: { arg: 'kind', eq: 'progress' },
+    },
+    minText: {
+      control: { type: 'text' },
+      description: 'Min label (meter kind only)',
+      if: { arg: 'kind', eq: 'meter' },
+    },
+    maxText: {
+      control: { type: 'text' },
+      description: 'Max label (meter kind only)',
+      if: { arg: 'kind', eq: 'meter' },
+    },
+  },
 };
 
 export const Documentation = () => {
@@ -702,4 +746,52 @@ meter::-webkit-meter-suboptimum-value {
       </ul>
     </div>
   `;
+};
+
+export const Playground = {
+  tags: ['!autodocs'],
+  args: {
+    kind: 'progress',
+    value: 60,
+    bounds: 'optimum',
+    label: 'Label',
+    showText: true,
+    valueText: 'Value',
+    minText: 'Min',
+    maxText: 'Max',
+  },
+  render: (args) => {
+    const bar = args.kind === 'progress'
+      ? `<div class="feedback-bar">
+              <div class="feedback-value" style="width: ${args.value}%"></div>
+            </div>`
+      : `<div class="meter-bar">
+              <div class="feedback-bar">
+                <div class="feedback-value ${args.bounds}" style="width: ${args.value}%"></div>
+              </div>
+            </div>`;
+    const text = args.showText
+      ? args.kind === 'progress'
+        ? `<div class="feedback-text">
+              <span></span>
+              <span>${args.valueText}</span>
+            </div>`
+        : `<div class="feedback-text">
+              <span>${args.minText}</span>
+              <span>${args.maxText}</span>
+            </div>`
+      : '';
+
+    return `
+      <div class="delta-docs" style="padding: 32px 24px;">
+        <div class="component-demo">
+          <div class="feedback ${args.kind}">
+            <div class="feedback-label">${args.label}</div>
+            ${bar}
+            ${text}
+          </div>
+        </div>
+      </div>
+    `;
+  },
 };

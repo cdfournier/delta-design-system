@@ -1366,6 +1366,7 @@
 
 /* Feedback */
 .delta-docs .feedback {
+  width: 100%;
   max-width: var(--components-feedback-max-width);
 }
 
