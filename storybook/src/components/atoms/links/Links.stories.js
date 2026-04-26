@@ -7,6 +7,17 @@ export default {
       description: 'Typography size variant',
       table: { defaultValue: { summary: 'p' } },
     },
+    state: {
+      control: { type: 'inline-radio' },
+      options: ['default', 'hover'],
+      description: 'Visual state preview',
+      table: { defaultValue: { summary: 'default' } },
+    },
+    arrow: {
+      control: { type: 'boolean' },
+      description: 'Show arrow icon',
+      table: { defaultValue: { summary: 'true' } },
+    },
     label: {
       control: { type: 'text' },
       description: 'Link text',
@@ -471,17 +482,28 @@ export const Playground = {
   tags: ['!autodocs'],
   args: {
     size: 'p',
+    state: 'default',
+    arrow: true,
     label: 'Example link',
   },
   render: (args) => {
+    const classes = ['demo-link', `link-${args.size}`];
+    if (args.arrow) classes.push('link-with-arrow');
+    const hoverStyle = args.state === 'hover'
+      ? ` style="color: var(--text-link-hover);${args.arrow ? ' gap: var(--sm);' : ''}"`
+      : '';
+    const arrow = args.arrow
+      ? `<svg viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M8 0L6.59 1.41 12.17 7H0v2h12.17l-5.58 5.59L8 16l8-8z"/>
+            </svg>`
+      : '';
+
     return `
       <div class="delta-docs" style="padding: 32px 24px;">
         <div class="component-demo">
-          <a href="#" class="demo-link link-${args.size}" onclick="return false;">
+          <a href="#" onclick="return false;" class="${classes.join(' ')}"${hoverStyle}>
             ${args.label}
-            <svg viewBox="0 0 16 16" aria-hidden="true">
-              <path d="M8 0L6.59 1.41 12.17 7H0v2h12.17l-5.58 5.59L8 16l8-8z"/>
-            </svg>
+            ${arrow}
           </a>
         </div>
       </div>
