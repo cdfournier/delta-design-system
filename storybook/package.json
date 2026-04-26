@@ -15,6 +15,6 @@
     "@storybook/addon-viewport": "^8.6.18",
     "@storybook/html-vite": "^8.6.18",
     "storybook": "^8.6.18",
-    "vite": "^5.4.19"
+    "vite": "^8.0.10"
   }
 }
