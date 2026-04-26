@@ -1,5 +1,84 @@
 export default {
   title: 'Molecules/Content',
+  argTypes: {
+    variant: {
+      control: { type: 'inline-radio' },
+      options: ['title+p', 'h+p'],
+      description: 'Heading and body type combination',
+      table: { defaultValue: { summary: 'title+p' } },
+    },
+    eyebrow: {
+      control: { type: 'boolean' },
+      description: 'Show eyebrow',
+      table: { defaultValue: { summary: 'false' } },
+    },
+    cta: {
+      control: { type: 'boolean' },
+      description: 'Show CTA',
+      table: { defaultValue: { summary: 'false' } },
+    },
+    footer: {
+      control: { type: 'boolean' },
+      description: 'Show footer',
+      table: { defaultValue: { summary: 'false' } },
+    },
+    eyebrowText: {
+      control: { type: 'text' },
+      description: 'Eyebrow text',
+      if: { arg: 'eyebrow', truthy: true },
+    },
+    headingText: {
+      control: { type: 'text' },
+      description: 'Heading text',
+    },
+    bodyText: {
+      control: { type: 'text' },
+      description: 'Body text',
+    },
+    ctaType: {
+      control: { type: 'inline-radio' },
+      options: ['link', 'button'],
+      description: 'CTA element type',
+      if: { arg: 'cta', truthy: true },
+      table: { defaultValue: { summary: 'link' } },
+    },
+    ctaText: {
+      control: { type: 'text' },
+      description: 'CTA text',
+      if: { arg: 'cta', truthy: true },
+    },
+    ctaButtonVariant: {
+      control: { type: 'inline-radio' },
+      options: ['primary', 'secondary', 'white'],
+      description: 'CTA button color palette',
+      if: { arg: 'ctaType', eq: 'button' },
+      table: { defaultValue: { summary: 'primary' } },
+    },
+    ctaButtonStyle: {
+      control: { type: 'inline-radio' },
+      options: ['solid', 'transparent'],
+      description: 'CTA button visual treatment',
+      if: { arg: 'ctaType', eq: 'button' },
+      table: { defaultValue: { summary: 'solid' } },
+    },
+    ctaButtonIconLeft: {
+      control: { type: 'boolean' },
+      description: 'CTA button: show pre-icon',
+      if: { arg: 'ctaType', eq: 'button' },
+      table: { defaultValue: { summary: 'false' } },
+    },
+    ctaButtonIconRight: {
+      control: { type: 'boolean' },
+      description: 'CTA button: show post-icon',
+      if: { arg: 'ctaType', eq: 'button' },
+      table: { defaultValue: { summary: 'false' } },
+    },
+    footerText: {
+      control: { type: 'text' },
+      description: 'Footer text',
+      if: { arg: 'footer', truthy: true },
+    },
+  },
 };
 
 export const Documentation = () => {
@@ -362,4 +441,74 @@ export const Documentation = () => {
       </ul>
     </div>
   `;
+};
+
+export const Playground = {
+  tags: ['!autodocs'],
+  args: {
+    variant: 'title+p',
+    eyebrow: false,
+    cta: false,
+    footer: false,
+    eyebrowText: 'Eyebrow',
+    headingText: 'Heading',
+    bodyText: 'Body text that provides supporting information and context.',
+    ctaType: 'link',
+    ctaText: 'Learn more',
+    ctaButtonVariant: 'primary',
+    ctaButtonStyle: 'solid',
+    ctaButtonIconLeft: false,
+    ctaButtonIconRight: false,
+    footerText: 'Fine print or additional context',
+  },
+  render: (args) => {
+    const variantClass = args.variant === 'title+p' ? 'title-p' : 'h-p';
+    const heading = args.variant === 'title+p'
+      ? `<h1>${args.headingText}</h1>`
+      : `<h2>${args.headingText}</h2>`;
+    const eyebrow = args.eyebrow ? `<p class="content-eyebrow">${args.eyebrowText}</p>` : '';
+    const preIcon = `<svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19 12H5M5 12L12 5M5 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>`;
+    const postIcon = `<svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>`;
+    const ctaContent = args.ctaType === 'button'
+      ? `<button class="button button-${args.ctaButtonVariant}-${args.ctaButtonStyle}" type="button">
+                ${args.ctaButtonIconLeft ? preIcon : ''}
+                ${args.ctaText}
+                ${args.ctaButtonIconRight ? postIcon : ''}
+              </button>`
+      : `<a href="#" class="demo-link" onclick="return false;">
+                ${args.ctaText}
+                <svg viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="M8 0L6.59 1.41 12.17 7H0v2h12.17l-5.58 5.59L8 16l8-8z"/>
+                </svg>
+              </a>`;
+    const ctaInner = `<div class="content-cta">
+              ${ctaContent}
+            </div>`;
+    const cta = args.cta
+      ? args.ctaType === 'button' && args.ctaButtonVariant === 'white'
+        ? `<div style="background-color: var(--brand-secondary); padding: var(--spacing-xl); border-radius: var(--border-radius-md);">
+              ${ctaInner}
+            </div>`
+        : ctaInner
+      : '';
+    const footer = args.footer ? `<p class="content-footer">${args.footerText}</p>` : '';
+
+    return `
+      <div class="delta-docs" style="padding: 32px 24px;">
+        <div class="component-demo">
+          <div class="content content-${variantClass}">
+            ${eyebrow}
+            ${heading}
+            <p>${args.bodyText}</p>
+            ${cta}
+            ${footer}
+          </div>
+        </div>
+      </div>
+    `;
+  },
 };
