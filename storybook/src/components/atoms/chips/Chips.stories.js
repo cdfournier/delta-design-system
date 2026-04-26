@@ -9,9 +9,43 @@ export default {
       description: 'Chip color variant',
       table: { defaultValue: { summary: 'primary' } },
     },
+    type: {
+      control: { type: 'inline-radio' },
+      options: ['basic', 'avatar-left', 'avatar-right'],
+      description: 'Chip type',
+      table: { defaultValue: { summary: 'basic' } },
+    },
+    state: {
+      control: { type: 'inline-radio' },
+      options: ['default', 'hover'],
+      description: 'Visual state preview',
+      table: { defaultValue: { summary: 'default' } },
+    },
     label: {
       control: { type: 'text' },
       description: 'Chip label text',
+    },
+    iconLeft: {
+      control: { type: 'boolean' },
+      description: 'Show leading icon (basic type only)',
+      if: { arg: 'type', eq: 'basic' },
+      table: { defaultValue: { summary: 'false' } },
+    },
+    iconRight: {
+      control: { type: 'boolean' },
+      description: 'Show trailing icon (basic type only)',
+      if: { arg: 'type', eq: 'basic' },
+      table: { defaultValue: { summary: 'false' } },
+    },
+    checked: {
+      control: { type: 'boolean' },
+      description: 'Selected state (adds checkmark)',
+      table: { defaultValue: { summary: 'false' } },
+    },
+    dismissible: {
+      control: { type: 'boolean' },
+      description: 'Show dismiss button',
+      table: { defaultValue: { summary: 'false' } },
     },
   },
 };
@@ -778,14 +812,64 @@ export const Playground = {
   tags: ['!autodocs'],
   args: {
     variant: 'primary',
+    type: 'basic',
+    state: 'default',
     label: 'Label',
+    iconLeft: false,
+    iconRight: false,
+    checked: false,
+    dismissible: false,
   },
   render: (args) => {
+    const mailIcon = `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/>
+  <path d="M2 8L12 14L22 8" stroke="currentColor" stroke-width="2"/>
+</svg>`;
+    const checkIcon = `<svg class="check-icon" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`;
+    const dismissButton = `<button class="button-chip" type="button" aria-label="Remove ${args.label} chip">
+  <span class="button-chip-inner">
+    <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9 3L3 9M3 3L9 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </span>
+</button>`;
+    const hoverStyles = {
+      primary: 'background-color: var(--components-chip-primary-dark); border-color: var(--components-chip-primary-dark);',
+      secondary: 'background-color: var(--components-chip-secondary-dark); border-color: var(--components-chip-secondary-dark);',
+    };
+    const classes = ['chip', `chip-${args.variant}`];
+    if (args.type === 'avatar-left') classes.push('chip-avatar-left');
+    if (args.type === 'avatar-right') classes.push('chip-avatar-right');
+    if (args.checked) classes.push('checked');
+
+    const attrs = [
+      `class="${classes.join(' ')}"`,
+      args.checked ? 'role="checkbox"' : '',
+      args.checked ? 'aria-checked="true"' : '',
+      args.state === 'hover' ? `style="${hoverStyles[args.variant]}"` : '',
+    ].filter(Boolean).join(' ');
+
+    const children = [
+      args.type === 'avatar-left' ? `<span class="chip-avatar"><img src="${avatarPlaceholder}" alt=""></span>` : '',
+      args.type === 'basic' && args.iconLeft ? `<span class="span-icon-left">
+  ${mailIcon}
+</span>` : '',
+      `<span class="chip-label">${args.label}</span>`,
+      args.type === 'basic' && args.iconRight ? `<span class="span-icon-right">
+  ${mailIcon}
+</span>` : '',
+      args.checked ? checkIcon : '',
+      args.type === 'avatar-right' ? `<span class="chip-avatar"><img src="${avatarPlaceholder}" alt=""></span>` : '',
+      args.dismissible ? dismissButton : '',
+    ].filter(Boolean).join('\n            ');
+
     return `
       <div class="delta-docs" style="padding: 32px 24px;">
         <div class="component-demo">
-          <span class="chip chip-${args.variant}">
-            <span class="chip-label">${args.label}</span>
+          <span ${attrs}>
+            ${children}
           </span>
         </div>
       </div>

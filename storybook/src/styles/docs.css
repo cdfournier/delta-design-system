@@ -796,6 +796,7 @@
 .delta-docs .span-icon-right {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: var(--components-width-by-font-size-h3);
   aspect-ratio: 1;
   padding: var(--spacing-xs);
