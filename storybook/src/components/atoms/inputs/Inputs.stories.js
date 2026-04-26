@@ -1,21 +1,5 @@
 export default {
   title: 'Atoms/Inputs',
-  argTypes: {
-    label: {
-      control: { type: 'text' },
-      description: 'Label text',
-    },
-    placeholder: {
-      control: { type: 'text' },
-      description: 'Placeholder text',
-    },
-    type: {
-      control: { type: 'select' },
-      options: ['text', 'email', 'password'],
-      description: 'Input type',
-      table: { defaultValue: { summary: 'text' } },
-    },
-  },
 };
 
 export const Documentation = () => {
@@ -887,19 +871,258 @@ toggleButton.addEventListener('click', () => {
   `;
 };
 
-export const Playground = {
+export const TextPlayground = {
   tags: ['!autodocs'],
+  argTypes: {
+    type: {
+      control: { type: 'select' },
+      options: ['text', 'email', 'password', 'tel', 'url'],
+      description: 'HTML input type',
+      table: { defaultValue: { summary: 'text' } },
+    },
+    state: {
+      control: { type: 'inline-radio' },
+      options: ['default', 'disabled', 'invalid', 'read-only', 'valid'],
+      description: 'Visual state',
+      table: { defaultValue: { summary: 'default' } },
+    },
+    label: {
+      control: { type: 'text' },
+      description: 'Label text',
+    },
+    placeholder: {
+      control: { type: 'text' },
+      description: 'Placeholder text',
+    },
+    value: {
+      control: { type: 'text' },
+      description: 'Input value',
+    },
+    showPassword: {
+      control: { type: 'boolean' },
+      description: 'Show password as plain text (password type only)',
+      if: { arg: 'type', eq: 'password' },
+      table: { defaultValue: { summary: 'false' } },
+    },
+  },
   args: {
-    label: 'Email address',
-    placeholder: 'Enter your email',
-    type: 'email',
+    type: 'text',
+    state: 'default',
+    label: 'Label',
+    placeholder: 'Placeholder',
+    value: '',
+    showPassword: false,
   },
   render: (args) => {
+    const inputType = args.type === 'password' && args.showPassword ? 'text' : args.type;
+    const classes = ['input-text'];
+    if (args.state === 'valid') classes.push('valid');
+    if (args.state === 'invalid') classes.push('invalid');
+    const attrs = [
+      args.state === 'disabled' ? 'disabled' : '',
+      args.state === 'read-only' ? 'readonly' : '',
+      args.state === 'invalid' ? 'aria-invalid="true"' : '',
+      args.state === 'valid' ? 'aria-invalid="false"' : '',
+    ].filter(Boolean).join(' ');
+
     return `
       <div class="delta-docs" style="padding: 32px 24px;">
         <div class="component-demo">
-          <label for="playground-input">${args.label}</label>
-          <input type="${args.type}" id="playground-input" class="input-text" placeholder="${args.placeholder}">
+          <label for="playground-text-input">${args.label}</label>
+          <input type="${inputType}" id="playground-text-input" class="${classes.join(' ')}" placeholder="${args.placeholder}" value="${args.value}"${attrs ? ` ${attrs}` : ''}>
+        </div>
+      </div>
+    `;
+  },
+};
+
+export const SelectPlayground = {
+  tags: ['!autodocs'],
+  argTypes: {
+    state: {
+      control: { type: 'inline-radio' },
+      options: ['default', 'disabled', 'invalid', 'valid'],
+      description: 'Visual state',
+      table: { defaultValue: { summary: 'default' } },
+    },
+    label: {
+      control: { type: 'text' },
+      description: 'Label text',
+    },
+  },
+  args: {
+    state: 'default',
+    label: 'Label',
+  },
+  render: (args) => {
+    const classes = ['input-select'];
+    if (args.state === 'valid') classes.push('valid');
+    if (args.state === 'invalid') classes.push('invalid');
+    const attrs = [
+      args.state === 'disabled' ? 'disabled' : '',
+      args.state === 'invalid' ? 'aria-invalid="true"' : '',
+      args.state === 'valid' ? 'aria-invalid="false"' : '',
+    ].filter(Boolean).join(' ');
+
+    return `
+      <div class="delta-docs" style="padding: 32px 24px;">
+        <div class="component-demo">
+          <label for="playground-select">${args.label}</label>
+          <select id="playground-select" class="${classes.join(' ')}"${attrs ? ` ${attrs}` : ''}>
+            <option>Select an option</option>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+          </select>
+        </div>
+      </div>
+    `;
+  },
+};
+
+export const CheckboxPlayground = {
+  tags: ['!autodocs'],
+  argTypes: {
+    state: {
+      control: { type: 'inline-radio' },
+      options: ['default', 'disabled', 'invalid', 'valid'],
+      description: 'Visual state',
+      table: { defaultValue: { summary: 'default' } },
+    },
+    checked: {
+      control: { type: 'boolean' },
+      description: 'Checked value',
+      table: { defaultValue: { summary: 'false' } },
+    },
+    direction: {
+      control: { type: 'inline-radio' },
+      options: ['default', 'reverse'],
+      description: 'Layout direction',
+      table: { defaultValue: { summary: 'default' } },
+    },
+    label: {
+      control: { type: 'text' },
+      description: 'Label text',
+    },
+  },
+  args: {
+    state: 'default',
+    checked: false,
+    direction: 'default',
+    label: 'Checkbox label',
+  },
+  render: (args) => {
+    const groupStyle = args.direction === 'reverse' ? ' style="flex-direction: row-reverse; justify-content: flex-end;"' : '';
+    const attrs = [
+      args.state === 'disabled' ? 'disabled' : '',
+      args.state === 'invalid' ? 'aria-invalid="true"' : '',
+      args.state === 'valid' ? 'aria-invalid="false"' : '',
+      args.checked ? 'checked' : '',
+    ].filter(Boolean).join(' ');
+
+    return `
+      <div class="delta-docs" style="padding: 32px 24px;">
+        <div class="component-demo">
+          <div class="checkbox-group"${groupStyle}>
+            <input type="checkbox" id="playground-checkbox"${attrs ? ` ${attrs}` : ''}>
+            <label for="playground-checkbox">${args.label}</label>
+          </div>
+        </div>
+      </div>
+    `;
+  },
+};
+
+export const RadioPlayground = {
+  tags: ['!autodocs'],
+  argTypes: {
+    state: {
+      control: { type: 'inline-radio' },
+      options: ['default', 'disabled', 'invalid', 'valid'],
+      description: 'Visual state',
+      table: { defaultValue: { summary: 'default' } },
+    },
+    checked: {
+      control: { type: 'boolean' },
+      description: 'Checked value',
+      table: { defaultValue: { summary: 'false' } },
+    },
+    label: {
+      control: { type: 'text' },
+      description: 'Label text',
+    },
+  },
+  args: {
+    state: 'default',
+    checked: false,
+    label: 'Radio label',
+  },
+  render: (args) => {
+    const attrs = [
+      args.state === 'disabled' ? 'disabled' : '',
+      args.state === 'invalid' ? 'aria-invalid="true"' : '',
+      args.state === 'valid' ? 'aria-invalid="false"' : '',
+      args.checked ? 'checked' : '',
+    ].filter(Boolean).join(' ');
+
+    return `
+      <div class="delta-docs" style="padding: 32px 24px;">
+        <div class="component-demo">
+          <div class="radio-group">
+            <input type="radio" id="playground-radio" name="playground-radio"${attrs ? ` ${attrs}` : ''}>
+            <label for="playground-radio">${args.label}</label>
+          </div>
+        </div>
+      </div>
+    `;
+  },
+};
+
+export const SwitchPlayground = {
+  tags: ['!autodocs'],
+  argTypes: {
+    state: {
+      control: { type: 'inline-radio' },
+      options: ['default', 'disabled'],
+      description: 'Visual state',
+      table: { defaultValue: { summary: 'default' } },
+    },
+    checked: {
+      control: { type: 'boolean' },
+      description: 'Checked value',
+      table: { defaultValue: { summary: 'false' } },
+    },
+    direction: {
+      control: { type: 'inline-radio' },
+      options: ['default', 'reverse'],
+      description: 'Layout direction',
+      table: { defaultValue: { summary: 'default' } },
+    },
+    label: {
+      control: { type: 'text' },
+      description: 'Label text',
+    },
+  },
+  args: {
+    state: 'default',
+    checked: false,
+    direction: 'default',
+    label: 'Switch label',
+  },
+  render: (args) => {
+    const groupStyle = args.direction === 'reverse' ? ' style="flex-direction: row-reverse; justify-content: flex-end;"' : '';
+    const attrs = [
+      args.state === 'disabled' ? 'disabled' : '',
+      args.checked ? 'checked' : '',
+    ].filter(Boolean).join(' ');
+
+    return `
+      <div class="delta-docs" style="padding: 32px 24px;">
+        <div class="component-demo">
+          <div class="switch-group"${groupStyle}>
+            <input type="checkbox" id="playground-switch" role="switch"${attrs ? ` ${attrs}` : ''}>
+            <label for="playground-switch">${args.label}</label>
+          </div>
         </div>
       </div>
     `;
