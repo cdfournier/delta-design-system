@@ -2,6 +2,28 @@ import cardImage from '../../../images/card-placeholder.jpg';
 
 export default {
   title: 'Molecules/Cards',
+  argTypes: {
+    orientation: {
+      control: { type: 'inline-radio' },
+      options: ['vertical', 'horizontal'],
+      description: 'Card orientation',
+      table: { defaultValue: { summary: 'vertical' } },
+    },
+    reverse: {
+      control: { type: 'boolean' },
+      description: 'Reverse figure position (horizontal only)',
+      if: { arg: 'orientation', eq: 'horizontal' },
+      table: { defaultValue: { summary: 'false' } },
+    },
+    heading: {
+      control: { type: 'text' },
+      description: 'Card heading text',
+    },
+    body: {
+      control: { type: 'text' },
+      description: 'Card body text',
+    },
+  },
 };
 
 export const Documentation = () => {
@@ -387,4 +409,43 @@ export const Documentation = () => {
       </ul>
     </div>
   `;
+};
+
+export const Playground = {
+  tags: ['!autodocs'],
+  args: {
+    orientation: 'vertical',
+    reverse: false,
+    heading: 'Card heading',
+    body: 'Supporting body text that provides context and information about this card.',
+  },
+  render: (args) => {
+    const classes = ['card'];
+    if (args.orientation === 'vertical') classes.push('card-vertical');
+    if (args.orientation === 'horizontal') classes.push('card-horizontal');
+    if (args.orientation === 'horizontal' && args.reverse) classes.push('card-horizontal-reverse');
+    const articleStyle = args.orientation === 'vertical' ? ' style="max-width: var(--components-card-vertical-min-width);"' : '';
+    const article = `<article class="${classes.join(' ')}"${articleStyle}>
+            <figure class="figure">
+              <img src="${cardImage}" alt="Placeholder image">
+            </figure>
+            <div class="content">
+              <h3>${args.heading}</h3>
+              <p>${args.body}</p>
+            </div>
+          </article>`;
+    const specimen = args.orientation === 'horizontal'
+      ? `<div style="display: flex; flex-direction: column; gap: var(--spacing-xl);">
+            ${article}
+          </div>`
+      : article;
+
+    return `
+      <div class="delta-docs" style="padding: 32px 24px;">
+        <div class="component-demo">
+          ${specimen}
+        </div>
+      </div>
+    `;
+  },
 };
