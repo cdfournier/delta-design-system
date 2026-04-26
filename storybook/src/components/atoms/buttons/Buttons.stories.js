@@ -1,6 +1,12 @@
 export default {
   title: 'Atoms/Buttons',
   argTypes: {
+    kind: {
+      control: { type: 'inline-radio' },
+      options: ['regular', 'icon'],
+      description: 'Button kind',
+      table: { defaultValue: { summary: 'regular' } },
+    },
     variant: {
       control: { type: 'select' },
       options: ['primary', 'secondary', 'white'],
@@ -9,13 +15,32 @@ export default {
     },
     style: {
       control: { type: 'select' },
-      options: ['solid', 'transparent'],
+      options: ['solid', 'outline', 'transparent'],
       description: 'Visual treatment',
       table: { defaultValue: { summary: 'solid' } },
+    },
+    state: {
+      control: { type: 'inline-radio' },
+      options: ['default', 'hover', 'disabled'],
+      description: 'Visual state preview',
+      table: { defaultValue: { summary: 'default' } },
     },
     label: {
       control: { type: 'text' },
       description: 'Button label text',
+      if: { arg: 'kind', eq: 'regular' },
+    },
+    iconLeft: {
+      control: { type: 'boolean' },
+      description: 'Show pre-icon (regular kind only)',
+      if: { arg: 'kind', eq: 'regular' },
+      table: { defaultValue: { summary: 'false' } },
+    },
+    iconRight: {
+      control: { type: 'boolean' },
+      description: 'Show post-icon (regular kind only)',
+      if: { arg: 'kind', eq: 'regular' },
+      table: { defaultValue: { summary: 'false' } },
     },
   },
 };
@@ -810,17 +835,60 @@ export const Documentation = () => {
 export const Playground = {
   tags: ['!autodocs'],
   args: {
+    kind: 'regular',
     variant: 'primary',
     style: 'solid',
+    state: 'default',
     label: 'Button',
+    iconLeft: false,
+    iconRight: false,
   },
   render: (args) => {
-    const button = `<button class="button button-${args.variant}-${args.style}" type="button">${args.label}</button>`;
+    const preIcon = `<svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M19 12H5M5 12L12 5M5 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`;
+    const postIcon = `<svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`;
+    const searchIcon = `<svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+  <path d="M16 16L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</svg>`;
+    const hoverStyles = {
+      'primary-solid': 'background-color: var(--global-white); color: var(--brand-primary); border-color: var(--brand-primary);',
+      'primary-transparent': 'background-color: var(--brand-primary); color: var(--global-white); border-color: var(--brand-primary);',
+      'primary-outline': 'background-color: var(--brand-primary); color: var(--global-white); border-color: var(--brand-primary);',
+      'secondary-solid': 'background-color: var(--global-white); color: var(--brand-secondary); border-color: var(--brand-secondary);',
+      'secondary-transparent': 'background-color: var(--brand-secondary); color: var(--global-white); border-color: var(--brand-secondary);',
+      'secondary-outline': 'background-color: var(--brand-secondary); color: var(--global-white); border-color: var(--brand-secondary);',
+      'white-solid': 'background-color: var(--brand-primary); color: var(--global-white); border-color: var(--global-white);',
+      'white-transparent': 'background-color: var(--global-white); color: var(--brand-primary); border-color: var(--global-white);',
+    };
+    const isInvalidWhiteIcon = args.kind === 'icon' && args.variant === 'white' && args.style !== 'transparent';
+    const renderedStyle = isInvalidWhiteIcon ? 'transparent' : args.style;
+    const className = args.kind === 'icon'
+      ? `button button-${args.variant}-${renderedStyle} button-icon`
+      : `button button-${args.variant}-${renderedStyle}`;
+    const stateAttrs = args.state === 'disabled' ? ' disabled aria-disabled="true"' : '';
+    const hoverStyle = args.state === 'hover' && hoverStyles[`${args.variant}-${renderedStyle}`]
+      ? ` style="${hoverStyles[`${args.variant}-${renderedStyle}`]}"`
+      : '';
+    const content = args.kind === 'icon'
+      ? searchIcon
+      : `${args.iconLeft ? preIcon : ''}${args.label}${args.iconRight ? postIcon : ''}`;
+    const ariaLabel = args.kind === 'icon' ? ' aria-label="Search"' : '';
+    const button = `<button class="${className}" type="button"${stateAttrs}${ariaLabel}${hoverStyle}>${content}</button>`;
+    const note = isInvalidWhiteIcon
+      ? `<p style="font-size: var(--small-font-size); line-height: var(--small-line-height); color: var(--brand-primary); margin-bottom: var(--spacing-md);">
+  Note: white icon buttons only support the transparent style. Showing transparent.
+</p>`
+      : '';
     const inner = args.variant === 'white'
       ? `<div class="button-group" style="background-color: var(--brand-secondary); padding: var(--spacing-xl); border-radius: var(--border-radius-md);">${button}</div>`
       : `<div class="button-group">${button}</div>`;
     return `
       <div class="delta-docs" style="padding: 32px 24px;">
+        ${note}
         <div class="component-demo">
           ${inner}
         </div>
