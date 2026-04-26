@@ -1,5 +1,20 @@
 export default {
   title: 'Molecules/Details',
+  argTypes: {
+    open: {
+      control: { type: 'boolean' },
+      description: 'Initial open state',
+      table: { defaultValue: { summary: 'false' } },
+    },
+    summaryText: {
+      control: { type: 'text' },
+      description: 'Summary text',
+    },
+    bodyText: {
+      control: { type: 'text' },
+      description: 'Body text',
+    },
+  },
 };
 
 export const Documentation = () => {
@@ -474,4 +489,35 @@ detailsTrigger.addEventListener('click', () => {
       </ul>
     </div>
   `;
+};
+
+export const Playground = {
+  tags: ['!autodocs'],
+  args: {
+    open: false,
+    summaryText: 'Summary',
+    bodyText: 'Body',
+  },
+  render: (args) => {
+    return `
+      <div class="delta-docs" style="padding: 32px 24px;">
+        <div class="component-demo">
+          <details class="details"${args.open ? ' open' : ''}>
+            <summary class="details-summary">
+              <span>${args.summaryText}</span>
+              <span class="details-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14"/>
+                  <path d="M12 5v14"/>
+                </svg>
+              </span>
+            </summary>
+            <div class="details-body">
+              <p>${args.bodyText}</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    `;
+  },
 };
