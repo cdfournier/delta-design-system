@@ -1663,7 +1663,13 @@
 }
 
 /* Fieldsets — Label and legend */
-.delta-docs .fieldset label,
+.delta-docs .fieldset > label {
+  display: block;
+  font-size: var(--small-font-size);
+  line-height: var(--small-line-height);
+  color: var(--text-default);
+}
+
 .delta-docs .fieldset legend {
   display: block;
   font-size: var(--small-font-size);
@@ -1731,6 +1737,49 @@
   color: var(--text-default);
   cursor: pointer;
   margin: 0;
+}
+
+/* Fieldsets — Valid and invalid states */
+.delta-docs .fieldset select[aria-invalid="true"] {
+  color: var(--status-invalid);
+}
+
+.delta-docs .fieldset select.valid {
+  color: var(--status-valid);
+}
+
+.delta-docs .fieldset .checkbox-group input[type="checkbox"][aria-invalid="true"],
+.delta-docs .fieldset .radio-group input[type="radio"][aria-invalid="true"] {
+  accent-color: var(--status-invalid);
+  outline: 1px solid var(--status-invalid);
+}
+
+.delta-docs .fieldset .checkbox-group input[type="checkbox"].valid,
+.delta-docs .fieldset .checkbox-group input[type="checkbox"][aria-invalid="false"],
+.delta-docs .fieldset .radio-group input[type="radio"].valid,
+.delta-docs .fieldset .radio-group input[type="radio"][aria-invalid="false"] {
+  accent-color: var(--status-valid);
+  outline: 1px solid var(--status-valid);
+}
+
+.delta-docs .fieldset .checkbox-group label:has(input[aria-invalid="true"]),
+.delta-docs .fieldset .radio-group label:has(input[aria-invalid="true"]),
+.delta-docs .fieldset .switch-group label:has(input[aria-invalid="true"]) {
+  color: var(--status-invalid);
+}
+
+.delta-docs .fieldset .checkbox-group label:has(input[aria-invalid="false"]),
+.delta-docs .fieldset .radio-group label:has(input[aria-invalid="false"]),
+.delta-docs .fieldset .switch-group label:has(input[aria-invalid="false"]) {
+  color: var(--status-valid);
+}
+
+.delta-docs .fieldset .switch-group input[role="switch"][aria-invalid="true"] + .switch-track {
+  border-color: var(--status-invalid);
+}
+
+.delta-docs .fieldset .switch-group input[role="switch"][aria-invalid="false"] + .switch-track {
+  border-color: var(--status-valid);
 }
 
 /* Tables — Specimen table */

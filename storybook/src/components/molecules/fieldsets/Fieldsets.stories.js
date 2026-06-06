@@ -667,3 +667,404 @@ export const Documentation = () => {
     </div>
   `;
 };
+
+const fieldsetStateAttrs = (state, includeReadOnly = false) => [
+  state === 'disabled' ? 'disabled' : '',
+  includeReadOnly && state === 'read-only' ? 'readonly' : '',
+  state === 'invalid' ? 'aria-invalid="true"' : '',
+  state === 'valid' ? 'aria-invalid="false"' : '',
+].filter(Boolean).join(' ');
+
+const fieldsetMessage = (args, allowError = true) => {
+  if (!args.showMessage) return '';
+  const classes = ['message'];
+  if (allowError && args.state === 'invalid') classes.push('error');
+  if (args.state === 'valid') classes.push('valid');
+  return `<div class="${classes.join(' ')}">${args.messageText}</div>`;
+};
+
+const fieldsetLegend = (args) => {
+  const legendLabel = args.showLegendLabel ? ` <span class="legend-label">${args.legendLabel}</span>` : '';
+  return `<legend>${args.legend}${legendLabel}</legend>`;
+};
+
+export const TextPlayground = {
+  tags: ['!autodocs'],
+  argTypes: {
+    type: {
+      control: { type: 'select' },
+      options: ['text', 'email', 'password', 'tel', 'url'],
+      description: 'HTML input type',
+      table: { defaultValue: { summary: 'text' } },
+    },
+    state: {
+      control: { type: 'inline-radio' },
+      options: ['default', 'disabled', 'invalid', 'read-only', 'valid'],
+      description: 'Visual state',
+      table: { defaultValue: { summary: 'default' } },
+    },
+    label: {
+      control: { type: 'text' },
+      description: 'Label text',
+    },
+    placeholder: {
+      control: { type: 'text' },
+      description: 'Placeholder text',
+    },
+    value: {
+      control: { type: 'text' },
+      description: 'Input value (source of truth — typing in the rendered input does not persist across control changes)',
+    },
+    showPassword: {
+      control: { type: 'boolean' },
+      description: 'Show password as plain text (password type only)',
+      if: { arg: 'type', eq: 'password' },
+      table: { defaultValue: { summary: 'false' } },
+    },
+    showMessage: {
+      control: { type: 'boolean' },
+      description: 'Show message slot',
+      table: { defaultValue: { summary: 'true' } },
+    },
+    messageText: {
+      control: { type: 'text' },
+      description: 'Message text',
+      if: { arg: 'showMessage', truthy: true },
+    },
+  },
+  args: {
+    type: 'text',
+    state: 'default',
+    label: 'Label',
+    placeholder: 'Placeholder',
+    value: '',
+    showPassword: false,
+    showMessage: true,
+    messageText: 'Message text provides context or validation feedback',
+  },
+  render: (args) => {
+    const inputType = args.type === 'password' && args.showPassword ? 'text' : args.type;
+    const classes = ['input-text'];
+    if (args.state === 'valid') classes.push('valid');
+    if (args.state === 'invalid') classes.push('invalid');
+    const attrs = fieldsetStateAttrs(args.state, true);
+    const eyeSvg = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>`;
+    const eyeOffSvg = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+                <line x1="1" y1="1" x2="23" y2="23"/>
+              </svg>`;
+    const passwordToggleHandler = `var i = this.previousElementSibling;
+                  var showing = i.type === 'text';
+                  i.type = showing ? 'password' : 'text';
+                  this.setAttribute('aria-label', showing ? 'Show password' : 'Hide password');
+                  this.innerHTML = showing
+                    ? '<svg width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;><path d=&quot;M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z&quot;/><circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;3&quot;/></svg>'
+                    : '<svg width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;><path d=&quot;M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24&quot;/><line x1=&quot;1&quot; y1=&quot;1&quot; x2=&quot;23&quot; y2=&quot;23&quot;/></svg>';`;
+    const input = args.type === 'password'
+      ? `<div style="position: relative;">
+              <input id="playground-fieldset-text" type="${inputType}" class="${classes.join(' ')}" placeholder="${args.placeholder}" value="${args.value}"${attrs ? ` ${attrs}` : ''} style="padding-right: 2.5rem;">
+              <button type="button" aria-label="${args.showPassword ? 'Hide password' : 'Show password'}" style="position: absolute; right: 0.5rem; top: 50%; transform: translateY(-50%); background: transparent; border: 0; padding: 0.25rem; cursor: pointer; color: var(--brand-primary); display: flex; align-items: center;" onclick="${passwordToggleHandler}">
+                ${args.showPassword ? eyeOffSvg : eyeSvg}
+              </button>
+            </div>`
+      : `<input id="playground-fieldset-text" type="${inputType}" class="${classes.join(' ')}" placeholder="${args.placeholder}" value="${args.value}"${attrs ? ` ${attrs}` : ''}>`;
+
+    return `
+      <div class="delta-docs" style="padding: 32px 24px;">
+        <div class="component-demo">
+          <fieldset class="fieldset">
+            <label for="playground-fieldset-text">${args.label}</label>
+            ${input}
+            ${fieldsetMessage(args)}
+          </fieldset>
+        </div>
+      </div>
+    `;
+  },
+};
+
+export const SelectPlayground = {
+  tags: ['!autodocs'],
+  argTypes: {
+    state: {
+      control: { type: 'inline-radio' },
+      options: ['default', 'disabled', 'invalid', 'valid'],
+      description: 'Visual state',
+      table: { defaultValue: { summary: 'default' } },
+    },
+    label: {
+      control: { type: 'text' },
+      description: 'Label text',
+    },
+    showMessage: {
+      control: { type: 'boolean' },
+      description: 'Show message slot',
+      table: { defaultValue: { summary: 'true' } },
+    },
+    messageText: {
+      control: { type: 'text' },
+      description: 'Message text',
+      if: { arg: 'showMessage', truthy: true },
+    },
+  },
+  args: {
+    state: 'default',
+    label: 'Label',
+    showMessage: true,
+    messageText: 'Message text provides context or validation feedback',
+  },
+  render: (args) => {
+    const classes = ['input-select'];
+    if (args.state === 'valid') classes.push('valid');
+    if (args.state === 'invalid') classes.push('invalid');
+    const attrs = fieldsetStateAttrs(args.state);
+
+    return `
+      <div class="delta-docs" style="padding: 32px 24px;">
+        <div class="component-demo">
+          <fieldset class="fieldset">
+            <label for="playground-fieldset-select">${args.label}</label>
+            <select id="playground-fieldset-select" class="${classes.join(' ')}"${attrs ? ` ${attrs}` : ''}>
+              <option>Select an option</option>
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+            </select>
+            ${fieldsetMessage(args)}
+          </fieldset>
+        </div>
+      </div>
+    `;
+  },
+};
+
+export const CheckboxPlayground = {
+  tags: ['!autodocs'],
+  argTypes: {
+    state: {
+      control: { type: 'inline-radio' },
+      options: ['default', 'disabled', 'invalid', 'valid'],
+      description: 'Visual state (applies to all checkboxes in the group)',
+      table: { defaultValue: { summary: 'default' } },
+    },
+    direction: {
+      control: { type: 'inline-radio' },
+      options: ['default', 'reverse'],
+      description: 'Layout direction',
+      table: { defaultValue: { summary: 'default' } },
+    },
+    legend: {
+      control: { type: 'text' },
+      description: 'Legend text',
+    },
+    legendLabel: {
+      control: { type: 'text' },
+      description: 'Optional legend-label (e.g. "(Optional)")',
+    },
+    showLegendLabel: {
+      control: { type: 'boolean' },
+      description: 'Show legend-label',
+      table: { defaultValue: { summary: 'false' } },
+    },
+    showMessage: {
+      control: { type: 'boolean' },
+      description: 'Show message slot',
+      table: { defaultValue: { summary: 'true' } },
+    },
+    messageText: {
+      control: { type: 'text' },
+      description: 'Message text',
+      if: { arg: 'showMessage', truthy: true },
+    },
+  },
+  args: {
+    state: 'default',
+    direction: 'default',
+    legend: 'Legend',
+    legendLabel: '(Optional)',
+    showLegendLabel: false,
+    showMessage: true,
+    messageText: 'Select all that apply.',
+  },
+  render: (args) => {
+    const attrs = fieldsetStateAttrs(args.state);
+    const groupStyle = args.direction === 'reverse' ? ' style="flex-direction: column;"' : '';
+    const labelStyle = args.direction === 'reverse' ? ' style="flex-direction: row-reverse; justify-content: flex-end;"' : '';
+
+    return `
+      <div class="delta-docs" style="padding: 32px 24px;">
+        <div class="component-demo">
+          <fieldset class="fieldset">
+            ${fieldsetLegend(args)}
+            <div class="checkbox-group"${groupStyle}>
+              <label${labelStyle}>
+                <input type="checkbox" value="option-1"${attrs ? ` ${attrs}` : ''}>
+                Option 1
+              </label>
+              <label${labelStyle}>
+                <input type="checkbox" value="option-2"${attrs ? ` ${attrs}` : ''}>
+                Option 2
+              </label>
+              <label${labelStyle}>
+                <input type="checkbox" value="option-3"${attrs ? ` ${attrs}` : ''}>
+                Option 3
+              </label>
+            </div>
+            ${fieldsetMessage(args)}
+          </fieldset>
+        </div>
+      </div>
+    `;
+  },
+};
+
+export const RadioPlayground = {
+  tags: ['!autodocs'],
+  argTypes: {
+    state: {
+      control: { type: 'inline-radio' },
+      options: ['default', 'disabled', 'invalid', 'valid'],
+      description: 'Visual state (applies to all radios in the group)',
+      table: { defaultValue: { summary: 'default' } },
+    },
+    legend: {
+      control: { type: 'text' },
+      description: 'Legend text',
+    },
+    legendLabel: {
+      control: { type: 'text' },
+      description: 'Optional legend-label (e.g. "(Optional)")',
+    },
+    showLegendLabel: {
+      control: { type: 'boolean' },
+      description: 'Show legend-label',
+      table: { defaultValue: { summary: 'false' } },
+    },
+    showMessage: {
+      control: { type: 'boolean' },
+      description: 'Show message slot',
+      table: { defaultValue: { summary: 'true' } },
+    },
+    messageText: {
+      control: { type: 'text' },
+      description: 'Message text',
+      if: { arg: 'showMessage', truthy: true },
+    },
+  },
+  args: {
+    state: 'default',
+    legend: 'Legend',
+    legendLabel: '(Optional)',
+    showLegendLabel: false,
+    showMessage: true,
+    messageText: 'Choose one option.',
+  },
+  render: (args) => {
+    const attrs = fieldsetStateAttrs(args.state);
+
+    return `
+      <div class="delta-docs" style="padding: 32px 24px;">
+        <div class="component-demo">
+          <fieldset class="fieldset">
+            ${fieldsetLegend(args)}
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="playground-fieldset-radio" value="option-1"${attrs ? ` ${attrs}` : ''}>
+                Option 1
+              </label>
+              <label>
+                <input type="radio" name="playground-fieldset-radio" value="option-2"${attrs ? ` ${attrs}` : ''}>
+                Option 2
+              </label>
+              <label>
+                <input type="radio" name="playground-fieldset-radio" value="option-3"${attrs ? ` ${attrs}` : ''}>
+                Option 3
+              </label>
+            </div>
+            ${fieldsetMessage(args)}
+          </fieldset>
+        </div>
+      </div>
+    `;
+  },
+};
+
+export const SwitchPlayground = {
+  tags: ['!autodocs'],
+  argTypes: {
+    state: {
+      control: { type: 'inline-radio' },
+      options: ['default', 'disabled', 'invalid', 'valid'],
+      description: 'Visual state (applies to all switches in the group)',
+      table: { defaultValue: { summary: 'default' } },
+    },
+    direction: {
+      control: { type: 'inline-radio' },
+      options: ['default', 'reverse'],
+      description: 'Layout direction',
+      table: { defaultValue: { summary: 'default' } },
+    },
+    legend: {
+      control: { type: 'text' },
+      description: 'Legend text',
+    },
+    legendLabel: {
+      control: { type: 'text' },
+      description: 'Optional legend-label (e.g. "(Optional)")',
+    },
+    showLegendLabel: {
+      control: { type: 'boolean' },
+      description: 'Show legend-label',
+      table: { defaultValue: { summary: 'false' } },
+    },
+    showMessage: {
+      control: { type: 'boolean' },
+      description: 'Show message slot',
+      table: { defaultValue: { summary: 'true' } },
+    },
+    messageText: {
+      control: { type: 'text' },
+      description: 'Message text',
+      if: { arg: 'showMessage', truthy: true },
+    },
+  },
+  args: {
+    state: 'default',
+    direction: 'default',
+    legend: 'Legend',
+    legendLabel: '(Optional)',
+    showLegendLabel: false,
+    showMessage: true,
+    messageText: 'Toggle settings as needed.',
+  },
+  render: (args) => {
+    const attrs = fieldsetStateAttrs(args.state);
+    const labelStyle = args.direction === 'reverse' ? ' style="flex-direction: row-reverse; justify-content: flex-end;"' : '';
+
+    return `
+      <div class="delta-docs" style="padding: 32px 24px;">
+        <div class="component-demo">
+          <fieldset class="fieldset">
+            ${fieldsetLegend(args)}
+            <div class="switch-group">
+              <label class="switch-label"${labelStyle}>
+                <input type="checkbox" role="switch"${attrs ? ` ${attrs}` : ''}>
+                <span class="switch-track"></span>
+                Setting 1
+              </label>
+              <label class="switch-label"${labelStyle}>
+                <input type="checkbox" role="switch"${attrs ? ` ${attrs}` : ''}>
+                <span class="switch-track"></span>
+                Setting 2
+              </label>
+            </div>
+            ${fieldsetMessage(args)}
+          </fieldset>
+        </div>
+      </div>
+    `;
+  },
+};
