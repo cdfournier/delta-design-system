@@ -1,3 +1,9 @@
 .DS_Store
 storybook/node_modules/
 storybook/storybook-static/
+assets/.DS_Store
+atoms/.DS_Store
+css/.DS_Store
+molecules/.DS_Store
+organisms/.DS_Store
+style/.DS_Store
